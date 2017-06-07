@@ -1,5 +1,5 @@
 # Back-End
->Back-End: Implementation for Capstone Project
+>Back-End: Server & Database for Capstone Project
 
 ### Code9; Team Members
 - Seonin David

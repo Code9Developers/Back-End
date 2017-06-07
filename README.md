@@ -15,6 +15,8 @@
 
 * <b>Build Node.js server with Mongod</b> : https://medium.freecodecamp.com/building-a-simple-node-js-api-in-under-30-minutes-a07ea9e390d2
 
+* <b>Travis CI - Integration Testing</b> : https://docs.travis-ci.com/user/getting-started/#Selecting-a-programming-language
+
 <hr/>
 
 #### How to import a project into IntelliJ
@@ -33,7 +35,7 @@ Let me <i>(Joshua)</i> know if you have any issues.
 ### Testing
 #### Unit Testing
 * TBA
-#### Integration testing
+#### Integration Testing
 * TBA
 
 ---

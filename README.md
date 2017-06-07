@@ -28,6 +28,8 @@
 
 Let me <i>(Joshua)</i> know if you have any issues.
 
+<hr/>
+
 ### Testing
 #### Unit Testing
 * TBA

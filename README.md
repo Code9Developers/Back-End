@@ -17,6 +17,8 @@
 
 * <b>Travis CI - Integration Testing</b> : https://docs.travis-ci.com/user/getting-started/#Selecting-a-programming-language
 
+* <b>Travis Node JS example</b> : https://code.tutsplus.com/articles/team-collaboration-with-github--net-29876 
+
 <hr/>
 
 #### How to import a project into IntelliJ

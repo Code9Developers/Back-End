@@ -36,7 +36,8 @@ Let me <i>(Joshua)</i> know if you have any issues.
 
 ### Testing
 #### Unit Testing
-* TBA
+* <b>Testing MongoDB</b>: http://rob.conery.io/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/
+* <b>JavaScript Testing Framework</b>: https://mochajs.org/#installation 
 #### Integration Testing
 * TBA
 

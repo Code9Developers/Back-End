@@ -19,6 +19,8 @@
 
 * <b>Travis Node JS example</b> : https://code.tutsplus.com/articles/team-collaboration-with-github--net-29876 
 
+* <br>Mongo DB Schema</b> : https://docs.mongodb.com/bi-connector/master/schema-configuration/ 
+
 <hr/>
 
 #### How to import a project into IntelliJ

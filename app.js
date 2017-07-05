@@ -11,6 +11,10 @@ var users = require('./routes/users');
 var app = express();
 
 // view engine setup
+// var engines = require('consolidate');
+// app.engine('html', engines.html);
+// app.engine('ejs', engines.ejs);
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -38,13 +42,9 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
   res.status(err.status || 500);
   res.render('error');
 });
 
-app.listen(5000,function () {
-    console.log("Listining on 5000");
-});
 
 module.exports = app;

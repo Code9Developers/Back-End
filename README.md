@@ -43,7 +43,12 @@ Let me <i>(Joshua)</i> know if you have any issues.
 * <b>Testing MongoDB</b>: http://rob.conery.io/2012/02/25/testing-your-model-with-mocha-mongo-and-nodejs/
 * <b>JavaScript Testing Framework</b>: https://mochajs.org/#installation 
 #### Integration Testing
-* TBA
+
+
+#### Running the server
+* Since nodemon is installed  to run the server type `npm run dev`
+* To restart at any time, enter `rs`
+
 
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

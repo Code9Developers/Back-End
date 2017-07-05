@@ -8,9 +8,8 @@
 * Added directories for routing, views and public(which is for css,js and images)
 * This is not a concrete file structure it is just a starting point
 
-### 1.1.0 - DD.MM.YYYY
-
-*
+### 1.0.1 - 05/07/2017
+* Fixed 404 page not found
 *
 
 ### 1.2.0 - DD.MM.YYYY

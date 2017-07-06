@@ -1,9 +1,10 @@
 {
   "name": "back-end",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./bin/www"
+    "dev": "nodemon ./bin/www",
+    "test": "mocha"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -12,22 +13,11 @@
     "ejs": "~2.5.6",
     "express": "~4.15.2",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
-    "bluebird": "^3.1.1"
+    "serve-favicon": "~2.4.2"
+
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "browser-sync": "^2.12.10",
-    "jquery": "^2.2.3",
-    "bootstrap": "^3.3.7",
-    "font-awesome": "fontawesome#^4.6.1",
-    "fastclick": "^1.0.6",
-    "nprogress": "^0.2.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
-    "gulp-uglify": "^1.5.3"
+    "browser-sync": "^2.12.10"
   }
 }

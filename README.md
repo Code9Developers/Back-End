@@ -49,6 +49,9 @@ Let me <i>(Joshua)</i> know if you have any issues.
 * Since nodemon is installed  to run the server type `npm run dev`
 * To restart at any time, enter `rs`
 
-
+#### Important Packages
+ * `helmet` which proctects the app from well-known web vulnerabilities
+ * `nsp` which can be used to check for vulnerabilities
+ * 
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

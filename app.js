@@ -6,6 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
 
+var mongo = require('mongodb') ;
+var schemas = require('./database/schemas.js') ;
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 

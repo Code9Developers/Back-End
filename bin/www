@@ -7,10 +7,14 @@
 var app = require('../app');
 var debug = require('debug')('back-end:server');
 var http = require('http');
+var schemas = require('.././database/schemas.js') ;
 
 /**
  * Get port from environment and store in Express.
  */
+
+//create schemas for database
+schemas.create_schemas() ;
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);

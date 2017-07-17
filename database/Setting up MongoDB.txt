@@ -1,0 +1,25 @@
+1) Download and Install MongoDB Community Server from":
+	 "https://www.mongodb.com/download-center#community"
+
+2) Using cmd (Admin), go to the directory where MongoDB was installed and direct to: 
+	 "MongoDB/server/<latest version>/bin/"
+
+
+Note: <some directory> is the parent directory of /Back-End/.
+Note: if mongo.log already exists, delete it before completing step (3)
+
+3) Enter in cmd (Admin):
+	"mongod --directoryperdb --dbpath <some directory>/Back-End/database/data/ --logpath <some directory>/Back-End/database/mongo.log --rest --install"
+
+4) Enter in cmd (Admin):
+	"net start MongoDB"
+  
+  
+  npm packages installed:
+  
+  helmet
+  mongod
+  mongodb
+  mongoose
+  
+  Or just run "npm install" in cmd (Admin) in "<some directory>/Back-End/"

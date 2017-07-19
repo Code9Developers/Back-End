@@ -24,7 +24,7 @@ exports.insertEmployee = function(_json) {
 }
 
 //other search templates could be added
-exports.findEmployee = function(Id) {
+exports.findEmployee = function(Id, callback) {
 
     var employee = schemas.employee;
 
@@ -36,7 +36,8 @@ exports.findEmployee = function(Id) {
             console.log("Employee not found.");
         }
         else {
-            console.log(doc);
+            console.log("Employee found.") ;
+            return callback(doc) ;
         }
     });
 }
@@ -58,7 +59,7 @@ exports.insertProject = function(_json) {
     });
 }
 
-exports.findProject = function(Id) {
+exports.findProject = function(Id, callback) {
 
     var project = schemas.project;
 
@@ -70,7 +71,8 @@ exports.findProject = function(Id) {
             console.log("Project not found.");
         }
         else {
-            console.log(doc);
+            console.log("Project found.") ;
+            return callback(doc) ;
         }
     });
 }
@@ -84,7 +86,20 @@ exports.encrypt = function(value, callback) {
 //to call encyrpt:
 /*
  var hashed = dbs.encrypt(<password>, function(hashed) {
-    //use hashed as result
-    console.log("Hashed password: " + hashed);
+ //use hashed as result
+ console.log("Hashed password: " + hashed);
  })
  */
+
+exports.authenticate = function(user_id, password, callback) {
+    var emp = module.exports.findEmployee(user_id, function(emp) {
+        var hash = emp.password ;
+        bcrypt.compare(password, hash, function (err, res) {
+            if (err) {
+                console.log("Authentication error.") ;
+                console.log(err) ;
+            }
+            return callback(res);
+        });
+    })
+}

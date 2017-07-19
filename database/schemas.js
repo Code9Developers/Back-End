@@ -1,40 +1,61 @@
 var exports = module.exports = {} ;
+
+var mongoose = require('mongoose') ;
+var connection = require('.././database/connect.js') ;
 var mongoose = require('mongoose') ;
 
 exports.create_schemas = function() {
-    var url = 'mongodb://localhost:27017/kpmg_dbs' ;
 
-     mongoose.connect(url, { useMongoClient: true }, function(err, db) {
-        if (err) {
-            console.log("Connection to database failed.") ;
-            console.log("Schemas could not be created.") ;
-        }
-        else {
-            console.log("Connection to database established.") ;
-            create_employee(db) ;
-            //each schema has their own initialiser function that is called here
+    var db = connection.db ;
 
-            console.log("Schemas successfully created.") ;
-        }
-     });
+    create_employee(db) ;
+
+    create_project(db) ;
+
+    console.log("Schemas successfully created.") ;
+
  };
 
 
 //all schema initialser functions are below -->
 
 function create_employee(db) {
+
     var schema = mongoose.Schema({
+        _id: String,
         name: String,
         surname: String,
         password: String,
-        role: String, //add more if necessary
+        //password_date: Date, //could be countdown integer
+        //profile_pic: Document,
+        //email : String,
+        role: String,
         employment_length: Number, //years? months?
         skill: []
+        //current projects [] -> stores project id's
+        //past projects [] -> stores project id's
     }) ;
 
-    var employee = db.model('employee', schema) ;
+    var employee = mongoose.model('employee', schema) ;
     exports.employee = employee ;
 
-    console.log('employee schema created.') ;
+    console.log('Employee schema created.') ;
 
+}
+
+function create_project(db) {
+
+    var schema = mongoose.Schema({
+        _id: String,
+        name: String,
+        description: String,
+        owner: String,
+        manager: String,
+        employees_assigned: [{employee_id: String, role: String}]
+    }) ;
+
+    var project = mongoose.model('project', schema) ;
+    exports.project = project ;
+
+    console.log('Project schema created.') ;
 }

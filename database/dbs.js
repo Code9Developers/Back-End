@@ -99,6 +99,7 @@ exports.authenticate = function(user_id, password, callback) {
                 console.log("Authentication error.") ;
                 console.log(err) ;
             }
+            console.log("res: "+res);
             return callback(res);
         });
     })

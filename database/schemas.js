@@ -26,14 +26,14 @@ function create_employee(db) {
         name: String,
         surname: String,
         password: String,
-        //password_date: Date, //could be countdown integer
+        password_date: Date, //could be countdown integer
         //profile_pic: Document,
-        //email : String,
+        email : String,
         role: String,
         employment_length: Number, //years? months?
-        skill: []
-        //current projects [] -> stores project id's
-        //past projects [] -> stores project id's
+        skill: [],
+        current_projects: [], //-> stores project id's
+        past_projects: [] //-> stores project id's
     }) ;
 
     var employee = mongoose.model('employee', schema) ;

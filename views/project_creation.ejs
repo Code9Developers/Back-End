@@ -318,7 +318,7 @@
             <!--</ul>-->
             <div class="clearfix"></div>
             <!-- start form for validation -->
-            <form id="demo-form" data-parsley-validate>
+            <form method="post" action="project_creation"  id="demo-form" data-parsley-validate>
                 <label for="projectname">Project Name * :</label>
                 <input type="text" id="projectname" class="form-control" name="projectname" required />
 
@@ -334,7 +334,7 @@
 
                 <!-- Skills required-->
                 <label class="control-label">Skill Tags</label>
-                <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
+                <input id="tags_1" type="text" name="skills" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
                 <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
 
                 <!--TODO Fix employee allocation format Make it a table on click-->
@@ -1018,7 +1018,7 @@
                 <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
 
                 <label class="control-label">Contact Number * :</label>
-                <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                <input type="text" name=="class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
 
                 <br/><hr/>
                 <!-- Project Manger Details-->
@@ -1033,7 +1033,7 @@
 
                 <br/><hr/>
                 <br/>
-                <span class="btn btn-primary">Validate form (CHANGE)</span>
+                <input class="btn btn-primary" type="submit" value="Validate form (CHANGE)">
             </form>
             <!-- end form for validations -->
         </div>
@@ -1111,7 +1111,7 @@
 <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="/javascript/custom.min.js"></script>
+<script src="javascripts/custom.min.js"></script>
 
 </body>
 </html>

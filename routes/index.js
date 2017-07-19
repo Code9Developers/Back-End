@@ -19,7 +19,9 @@ router.post('/dashboard',function (req,res,next) {
     res.render('index',{ title: 'dashboard',username:req.body.username,password: req.body.password });
 });
 
-
+router.get("/project_creation",function (req,res,next) {
+    res.render('project_creation');
+});
 //example for using mongodb to insert
 router.get('/example_insert_route', function(req, res) {
 

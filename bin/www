@@ -6,7 +6,10 @@
 
 var app = require('../app');
 var debug = require('debug')('back-end:server');
+var fs = require('fs');
 var http = require('http');
+var mongoose = require('mongoose') ;
+
 var schemas = require('.././database/schemas.js') ;
 
 /**
@@ -20,9 +23,8 @@ var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTPS server.
  */
-
 var server = http.createServer(app);
 
 /**

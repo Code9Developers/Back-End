@@ -22,6 +22,12 @@ schemas.create_schemas() ;
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+//create connection to dbs
+connection.connect() ;
+
+//create schemas for database
+schemas.create_schemas() ;
+
 /**
  * Create HTTPS server.
  */

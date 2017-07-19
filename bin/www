@@ -7,14 +7,12 @@
 var app = require('../app');
 var debug = require('debug')('back-end:server');
 var http = require('http');
+var connection = require('.././database/connect.js') ;
 var schemas = require('.././database/schemas.js') ;
 
 /**
  * Get port from environment and store in Express.
  */
-
-//create schemas for database
-schemas.create_schemas() ;
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
@@ -31,6 +29,11 @@ var server = http.createServer(app);
 
 server.listen(port,function () {
     console.log("Listening on port 3000");
+     //create connection to dbs
+     connection.connect() ;
+
+     //create schemas for database
+     schemas.create_schemas() ;
 });
 server.on('error', onError);
 server.on('listening', onListening);

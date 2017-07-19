@@ -17,6 +17,12 @@ var schemas = require('.././database/schemas.js') ;
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
+//create connection to dbs
+connection.connect() ;
+
+//create schemas for database
+schemas.create_schemas() ;
+
 /**
  * Create HTTP server.
  */
@@ -29,11 +35,6 @@ var server = http.createServer(app);
 
 server.listen(port,function () {
     console.log("Listening on port 3000");
-     //create connection to dbs
-     connection.connect() ;
-
-     //create schemas for database
-     schemas.create_schemas() ;
 });
 server.on('error', onError);
 server.on('listening', onListening);

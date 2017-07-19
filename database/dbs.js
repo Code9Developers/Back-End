@@ -75,7 +75,7 @@ exports.findProject = function(Id) {
     });
 }
 
-function encrypt(value, callback) {
+exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
         return callback(hash) ;
     });
@@ -83,7 +83,7 @@ function encrypt(value, callback) {
 
 //to call encyrpt:
 /*
- var hashed = encrypt(<password>, function(hashed) {
+ var hashed = dbs.encrypt(<password>, function(hashed) {
     //use hashed as result
     console.log("Hashed password: " + hashed);
  })

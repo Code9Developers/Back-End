@@ -6,7 +6,9 @@
 
 var app = require('../app');
 var debug = require('debug')('back-end:server');
+var fs = require('fs');
 var http = require('http');
+var mongoose = require('mongoose') ;
 var connection = require('.././database/connect.js') ;
 var schemas = require('.././database/schemas.js') ;
 
@@ -14,19 +16,21 @@ var schemas = require('.././database/schemas.js') ;
  * Get port from environment and store in Express.
  */
 
+//create schemas for database
+schemas.create_schemas() ;
+
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 //create connection to dbs
 connection.connect() ;
 
-//create schemas for database
-schemas.create_schemas() ;
+// //create schemas for database
+// schemas.create_schemas() ;
 
 /**
- * Create HTTP server.
+ * Create HTTPS server.
  */
-
 var server = http.createServer(app);
 
 /**

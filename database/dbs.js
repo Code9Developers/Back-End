@@ -35,6 +35,7 @@ exports.findEmployee = function(Id, callback) {
         }
         else if (!doc) {
             console.log("Employee not found.");
+            return callback(doc);
         }
         else {
             console.log("Employee found.") ;
@@ -78,10 +79,7 @@ exports.findProject = function(Id, callback) {
     });
 }
 
-// exports.encrypt = function(value, callback) {
-//     return bcrypt.hashSync(value, 10)
-//
-// }
+
 
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
@@ -91,7 +89,14 @@ exports.encrypt = function(value, callback) {
 
 exports.authenticate = function(user_id, password, callback) {
     var emp = module.exports.findEmployee(user_id, function(emp) {
-        var hash = emp.password ;
+        if(emp!=null){
+            var hash = emp.password ;
+        }
+        else
+        {
+            return callback(false);
+        }
+
         bcrypt.compare(password, hash, function (err, res) {
             if (err) {
                 console.log("Authentication error.") ;

@@ -51,22 +51,16 @@ router.post("/project_creation",isAuntenticated,function (req,res,next) {
     res.render('index',{projectname:req.body.projectname,projectdescription:req.body.projectdescription,skills:req.body.skills});
 
 });
-//example for using mongodb to insert
-// router.get('/test-insert', function(req, res, next) {
-//     var value = {_id: 'emp_id_123', name: 'John', surname: 'Doe', password: 'BushDid911', password_date: '21-07-2017', email: 'johndoe@kpmg.com', role: 'employee', employment_length: '3', skill: ['MS Office', 'Python']} ;
-//
-//     dbs.insertEmployee(value) ;
-// });
-//
-// router.get('/test-find', function(req, res, next) {
-//     dbs.findEmployee('emp_id_123') ;
-// });
+
+router.get('/test-find', function(req, res, next) {
+    dbs.findEmployee('emp_id_123') ;
+});
 
 router.get('/admin',isAuntenticated,function (req,res,next) {
     res.render("admin");
 });
 
-router.post('/register_employee',isAuntenticated,function (req,res,next) {
+router.post('/register_employee',function (req,res,next) {
     var rand_password = generator.generate({
         length: 10,
         numbers: true,
@@ -89,7 +83,7 @@ router.post('/register_employee',isAuntenticated,function (req,res,next) {
             skill: [req.body.skills],
             past_projects:[req.body.pastprojects]} ;
 
-        dbs.insertEmployee(emp) ;
+        dbs.insertUser(emp) ;
         res.render('index',{valu:JSON.stringify(emp),rand:rand_password});
     });
 

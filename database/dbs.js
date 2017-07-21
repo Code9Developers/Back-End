@@ -24,6 +24,7 @@ exports.insertEmployee = function(_json) {
 }
 
 //other search templates could be added
+
 exports.findEmployee = function(Id, callback) {
 
     var employee = schemas.employee;
@@ -77,19 +78,16 @@ exports.findProject = function(Id, callback) {
     });
 }
 
+// exports.encrypt = function(value, callback) {
+//     return bcrypt.hashSync(value, 10)
+//
+// }
+
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
         return callback(hash) ;
     });
 }
-
-//to call encyrpt:
-/*
- var hashed = dbs.encrypt(<password>, function(hashed) {
- //use hashed as result
- console.log("Hashed password: " + hashed);
- })
- */
 
 exports.authenticate = function(user_id, password, callback) {
     var emp = module.exports.findEmployee(user_id, function(emp) {

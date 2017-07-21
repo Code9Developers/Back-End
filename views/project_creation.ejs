@@ -55,6 +55,10 @@
     <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
     <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
     <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="/stylesheets/custom.min.css" rel="stylesheet">
@@ -195,7 +199,7 @@
                     <a data-toggle="tooltip" data-placement="top" title="Lock">
                         <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                     </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="/">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -319,12 +323,35 @@
             <div class="clearfix"></div>
             <!-- start form for validation -->
             <form method="post" action="project_creation"  id="demo-form" data-parsley-validate>
-                <label for="projectname">Project Name * :</label>
-                <input type="text" id="projectname" class="form-control" name="projectname" required />
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="projectname">Project Name * :</label>
+                        <input type="text" id="projectname" class="form-control" name="projectname" required />
+                    </div>
 
-                <label for="projectdescription">Project Description (minimum of 20 characters, max of 150) :</label>
-                <textarea id="projectdescription" required="required" class="form-control" name="projectdescription" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="150" data-parsley-minlength-message="You need to enter at least a 20 characters long description.."
-                          data-parsley-validation-threshold="10"></textarea>
+                    <div class="col-md-4">
+                        <label>Project Date * :</label>
+                        <br/>
+                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                            <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                            <span>December 30, 2016 - January 28, 2099</span> <b class="caret"></b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="projectdescription">Project Description (minimum of 20 characters, max of 150) :</label>
+                        <textarea id="projectdescription" rows="4" required="required" class="form-control" name="projectdescription" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="150" data-parsley-minlength-message="You need to enter at least a 20 characters long description.."
+                                  data-parsley-validation-threshold="10"></textarea>
+                    </div>
+                    <!-- Skills required-->
+                    <div class="col-md-6">
+                        <label class="control-label">Skill Tags</label>
+                        <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
+                        <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
+                    </div>
+                </div>
 
                 <!--<label for="projectpassword">Project Password * :</label>-->
                 <!--<input type="password" id="projectpassword" class="form-control" name="projectpassword" required />-->
@@ -332,15 +359,17 @@
                 <!--<label for="projectpasswordconfirm">Project Password Confirm * :</label>-->
                 <!--<input type="password" id="projectpasswordconfirm" class="form-control" name="projectpasswordconfirm" required />-->
 
-                <!-- Skills required-->
-                <label class="control-label">Skill Tags</label>
-                <input id="tags_1" type="text" name="skills" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
-                <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
 
                 <!--TODO Fix employee allocation format Make it a table on click-->
                 <!-- Employees-->
                 <label>Employee Allocation</label><br/>
-                <a class="btn btn-app">
+
+                <div class="col-md-5 col-sm-5 col-xs-12">
+                    <label>Number of Employees *</label>
+                    <input type="text" id="range_31" value="" min="0" name="numemp" />
+                </div>
+
+                <a class="btn btn-app" id="employeeallocator">
                     <span class="badge bg-green" id="assignEmpCount"></span>
                     <i class="fa fa-users"></i> Assign Employees
                 </a>
@@ -1010,30 +1039,33 @@
                 <!-- TODO Table end-->
 
                 <br/><hr/>
-                <!-- Project Owner Details-->
-                <label for="projectowner">Project Owner * :</label>
-                <input type="text" id="projectowner" class="form-control" name="projectowner" required />
+                <div class="row">
+                    <!-- Project Owner Details-->
+                    <div class="col-md-6">
+                        <label for="projectowner">Project Owner * :</label>
+                        <input type="text" id="projectowner" class="form-control" name="projectowner" required />
 
-                <label for="projectowneremail">Project Owner Email * :</label>
-                <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
+                        <label for="projectowneremail">Project Owner Email * :</label>
+                        <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
 
-                <label class="control-label">Contact Number * :</label>
-                <input type="text" name=="class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                        <label class="control-label">Contact Number * :</label>
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                    </div>
+                    <!-- Project Manger Details-->
+                    <div class="col-md-6">
+                        <label for="projectmanager">Project Manager * :</label>
+                        <input type="text" id="projectmanager" class="form-control" name="projectmanager" required />
 
-                <br/><hr/>
-                <!-- Project Manger Details-->
-                <label for="projectmanager">Project Manager * :</label>
-                <input type="text" id="projectmanager" class="form-control" name="projectmanager" required />
+                        <label for="projectmanageremail">Project Manager Email * :</label>
+                        <input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />
 
-                <label for="projectmanageremail">Project Manager Email * :</label>
-                <input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />
-
-                <label class="control-label">Contact Number * :</label>
-                <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
-
+                        <label class="control-label">Contact Number * :</label>
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                    </div>
+                </div>
                 <br/><hr/>
                 <br/>
-                <input class="btn btn-primary" type="submit" value="Validate form (CHANGE)">
+                <input class="btn btn-primary" type="submit" value="Submit">
             </form>
             <!-- end form for validations -->
         </div>
@@ -1109,6 +1141,8 @@
 <script src="vendors/jszip/dist/jszip.min.js"></script>
 <script src="vendors/pdfmake/build/pdfmake.min.js"></script>
 <script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- Ion.RangeSlider -->
+<script src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script src="javascripts/custom.min.js"></script>

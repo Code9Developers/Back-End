@@ -3,30 +3,51 @@ var router = express.Router();
 var mongoose = require('mongoose') ;
 var schemas = require('.././database/schemas.js') ;
 var dbs = require('.././database/dbs.js') ;
+var generator = require('generate-password');
 
-function isAuthenticated(req, res, next) {
 
-
-    if (dbs.authenticate(req.body.username,req.body.password))
-    {
-        return next();
-    }
-    res.redirect('/');
+function login_check(req, res, next) {
+    var result=dbs.authenticate(req.body.username,req.body.password,function (result) {
+        if(result)
+        {
+            return next();
+        }
+        else
+        {
+            res.redirect('/');
+        }
+    });
 }
+
+function isAuntenticated(req,res,next) {
+    var result=dbs.authenticate(req.session.username,req.body.session,function (result) {
+        if(result)
+        {
+            return next();
+        }
+        else
+        {
+            res.redirect('/');
+        }
+    });
+}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('login');
 });
 
-router.post('/dashboard',isAuthenticated,function (req,res,next) {
-    res.render('index');
+router.post('/dashboard',login_check,function (req,res,next) {
+    req.session.username=req.body.username;
+    req.session.password=req.body.password;
+    res.render('admin');
 });
 
-router.get("/project_creation",function (req,res,next) {
+router.get("/project_creation",isAuntenticated,function (req,res,next) {
     res.render('project_creation');
 });
 
-router.post("/project_creation",function (req,res,next) {
+router.post("/project_creation",isAuntenticated,function (req,res,next) {
     res.render('index',{projectname:req.body.projectname,projectdescription:req.body.projectdescription,skills:req.body.skills});
 
 });
@@ -41,16 +62,44 @@ router.get('/test-find', function(req, res, next) {
     dbs.findEmployee('emp_id_123') ;
 });
 
-router.get('/admin',function (req,res,next) {
+router.get('/admin',isAuntenticated,function (req,res,next) {
     res.render("admin");
 });
 
 router.post('/register_employee',function (req,res,next) {
-    var today = new Date();
-    //var enc_pass=dbs.encrypt(req.body.password);
-    var emp = {_id: req.body.empid, name: req.body.firstname, surname: req.body.lastname, password:req.body.password , password_date: today, email: req.body.email, role: req.body.role, employment_length: req.body.emp_length, skill: [req.body.skills],past_projects:[req.body.pastprojects]} ;
+    var rand_password = generator.generate({
+        length: 10,
+        numbers: true,
+        symbols: true,
+        uppercase: true
+    });
 
-   // dbs.insertEmployee(emp) ;
-    res.render('index',{valu:JSON.stringify(value)});
+    var today = new Date();
+
+    var enc_pass=dbs.encrypt(rand_password,function (enc_pass) {
+        var emp = {
+            _id: req.body.empid,
+            name: req.body.firstname,
+            surname: req.body.lastname,
+            password:enc_pass ,
+            password_date: today,
+            email: req.body.email,
+            role: req.body.role,
+            employment_length: req.body.emp_length,
+            skill: [req.body.skills],
+            past_projects:[req.body.pastprojects]} ;
+
+        dbs.insertEmployee(emp) ;
+        res.render('index',{valu:JSON.stringify(emp),rand:rand_password});
+    });
+
+
+   //Pass: :-_fBNet/R
+    //u: S_D
+});
+
+router.get("/logout",function (req,res,next) {
+    req.session.reset();
+    res.redirect('/');
 });
 module.exports = router;

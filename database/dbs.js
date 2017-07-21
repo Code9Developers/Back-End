@@ -5,19 +5,19 @@ var schemas = require('.././database/schemas.js') ;
 var connection = require('.././database/connect.js') ;
 var bcrypt = require('bcrypt') ;
 
-exports.insertEmployee = function(_json) {
+exports.insertUser = function(_json) {
 
-    var employee = schemas.employee ;
+    var user = schemas.user ;
 
-    var employee1 = new employee(_json) ;
+    var _user = new user(_json) ;
 
-    employee1.save(function (err) {
+    _user.save(function (err) {
         if (err) {
-            console.log("Employee could not be inserted.") ;
+            console.log(_user.role + " could not be inserted.") ;
             console.log(err) ;
         }
         else {
-            console.log("Successfully inserted employee.") ;
+            console.log("Successfully inserted " + _user.role + ".") ;
         }
     }) ;
 
@@ -25,20 +25,19 @@ exports.insertEmployee = function(_json) {
 
 //other search templates could be added
 
-exports.findEmployee = function(Id, callback) {
+exports.findUser = function(Id, callback) {
 
-    var employee = schemas.employee;
+    var user = schemas.user;
 
-    employee.findOne({_id: Id}, function (err, doc) {
+    user.findOne({_id: Id}, function (err, doc) {
         if (err) {
-            console.log("Error finding Employee.");
+            console.log("Error finding User.");
         }
         else if (!doc) {
-            console.log("Employee not found.");
-            return callback(doc);
+            console.log("User not found.");
         }
         else {
-            console.log("Employee found.") ;
+            console.log("User found.") ;
             return callback(doc) ;
         }
     });
@@ -79,7 +78,10 @@ exports.findProject = function(Id, callback) {
     });
 }
 
-
+// exports.encrypt = function(value, callback) {
+//     return bcrypt.hashSync(value, 10)
+//
+// }
 
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
@@ -88,22 +90,27 @@ exports.encrypt = function(value, callback) {
 }
 
 exports.authenticate = function(user_id, password, callback) {
-    var emp = module.exports.findEmployee(user_id, function(emp) {
-        if(emp!=null){
-            var hash = emp.password ;
-        }
-        else
-        {
-            return callback(false);
-        }
-
+    var user = module.exports.findUser(user_id, function(user) {
+        var hash = user.password ;
         bcrypt.compare(password, hash, function (err, res) {
             if (err) {
                 console.log("Authentication error.") ;
                 console.log(err) ;
             }
-            console.log("res: "+res);
+            console.log("authenticated: " + res);
             return callback(res);
         });
+    })
+}
+
+exports.get_role = function(user_id, callback) {
+    var user = module.exports.findUser(user_id, function(user) {
+        if (!emp) {
+            console.log("User not found.") ;
+        }
+        else {
+            console.log(user.role + "found.") ;
+            return callback(user.role) ;
+        }
     })
 }

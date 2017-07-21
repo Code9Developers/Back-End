@@ -8,7 +8,7 @@ exports.create_schemas = function() {
 
     var db = connection.db ;
 
-    create_employee(db) ;
+    create_user(db) ;
 
     create_project(db) ;
 
@@ -19,7 +19,7 @@ exports.create_schemas = function() {
 
 //all schema initialser functions are below -->
 
-function create_employee(db) {
+function create_user(db) {
 //  TO DO: Add position field eg.system analyst
     var schema = mongoose.Schema({
         _id: String,
@@ -36,29 +36,28 @@ function create_employee(db) {
         past_projects: [] //-> stores project id's
     }) ;
 
-    var employee = mongoose.model('employee', schema) ;
-    exports.employee = employee ;
+    var user = mongoose.model('user', schema) ;
+    exports.user = user ;
 
-    console.log('Employee schema created.') ;
+    console.log('User schema created.') ;
 
 }
 
 function create_project(db) {
 
-    //TO DO:
-    // project_length:String(shows project start date and end e.g. December 30, 2016)
-    // owner_contact_details
-    // owner_email
-    // manager_email
-    // manager_contact_details
-    //CHANGE- manager->manager_name
-    //CHANGE= owner->owner_name
+    //I still recommend that we reference the manager.
+
     var schema = mongoose.Schema({
         _id: String,
         name: String,
         description: String,
-        owner: String,
-        manager: String,
+        project_duration: String,
+        owner_name: String,
+        owner_contact: String,
+        owner_email: String,
+        manager_name: String,
+        manager_contact: String,
+        manager_email: String,
         employees_assigned: [{employee_id: String, role: String}]
     }) ;
 

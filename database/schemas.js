@@ -20,7 +20,7 @@ exports.create_schemas = function() {
 //all schema initialser functions are below -->
 
 function create_employee(db) {
-
+//  TO DO: Add position field eg.system analyst
     var schema = mongoose.Schema({
         _id: String,
         name: String,
@@ -45,6 +45,14 @@ function create_employee(db) {
 
 function create_project(db) {
 
+    //TO DO:
+    // project_length:String(shows project start date and end e.g. December 30, 2016)
+    // owner_contact_details
+    // owner_email
+    // manager_email
+    // manager_contact_details
+    //CHANGE- manager->manager_name
+    //CHANGE= owner->owner_name
     var schema = mongoose.Schema({
         _id: String,
         name: String,

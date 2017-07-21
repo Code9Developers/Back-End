@@ -5,9 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var helmet = require('helmet');
-
-var mongo = require('mongodb') ;
-var schemas = require('./database/schemas.js') ;
+var session = require('client-sessions');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -24,6 +22,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+    cookieName: 'session',
+    secret: 'random_string_goes_here',
+    duration: 30 * 60 * 1000,
+    activeDuration: 5 * 60 * 1000
+}));
+
 app.use('/', index);
 app.use('/users', users);
 
@@ -39,7 +44,8 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  console.log(err.message);
+  console.log(err.status);
   res.status(err.status || 500);
   res.render('error500');
 });

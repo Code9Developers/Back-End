@@ -109,7 +109,7 @@ exports.get_role = function(user_id, callback) {
             console.log("User not found.") ;
         }
         else {
-            console.log(user.role + "found.") ;
+            console.log(user.role + " found.") ;
             return callback(user.role) ;
         }
     })

@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose') ;
 var schemas = require('.././database/schemas.js') ;
 var dbs = require('.././database/dbs.js') ;
+var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
 
 
@@ -54,6 +55,24 @@ router.post("/project_creation",isAuntenticated,function (req,res,next) {
 
 router.get('/test-find', function(req, res, next) {
     dbs.findEmployee('emp_id_123') ;
+});
+
+//Easy access to project creation page
+router.get('/test_project_creation', function(req, res, next)
+{
+    res.render('project_creation');
+});
+
+router.get('/test_algorithm', function(req, res, next) {
+    console.log("employee allocation requested");
+    console.log("the request url is "+req.url);
+    //algorithm.create_test_employees();
+    algorithm.view_employees()
+    algorithm.get_unallocated_users(2, function(val) {
+        var result = JSON.stringify(val);
+        res.send(result);
+    });
+    res.contentType('application/json');
 });
 
 router.get('/admin',isAuntenticated,function (req,res,next) {

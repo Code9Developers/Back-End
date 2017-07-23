@@ -49,12 +49,30 @@ router.post('/dashboard',login_check,function (req,res,next) {
     res.render('admin');
 });
 
-router.get("/project_creation",isAuntenticated,function (req,res,next) {
+router.get("/project_creation",function (req,res,next) {
     res.render('project_creation');
 });
 
-router.post("/project_creation",isAuntenticated,function (req,res,next) {
-    res.render('index',{projectname:req.body.projectname,projectdescription:req.body.projectdescription,skills:req.body.skills});
+router.post("/project_creation",function (req,res,next) {
+    var rand_id=Math.floor((Math.random() * 100) + 1).toString();
+    var project_id="kpmg_"+req.body.projectname+rand_id;
+
+    var project={
+        _id: project_id,
+        name: req.body.projectname,
+        description: req.body.projectdescription,
+        project_duration: req.body.duration,
+        owner_name: req.body.projectowner,
+        owner_contact: req.body.projectownercontact,
+        owner_email: req.body.projectowneremail,
+        manager_name: req.body.projectmanager,
+        manager_contact: req.body.projectmanagercontact,
+        manager_email: req.body.projectmanageremail,
+        employees_assigned:[]
+    };
+
+    dbs.insertProject(project);
+    //res.render('index',{p:JSON.stringify(project),skills:req.body.skills});
 
 });
 

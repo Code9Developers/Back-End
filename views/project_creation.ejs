@@ -97,14 +97,14 @@
                             <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="index.html">Dashboard</a></li>
-                                    <li><a href="inbox.html">Inbox</a></li>
-                                    <li><a href="calendar.html">Calendar</a></li>
+                                    <li><a href="inbox.html">Inbox <span class="label label-success pull-right">Coming Soon</span></a></li>
+                                    <li><a href="calendar.html">Calendar<span class="label label-success pull-right">Coming Soon</span></a></li>
                                 </ul>
                             </li>
                             <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
                                 <ul class="nav child_menu">
                                     <li><a href="register.html">Register User</a></li>
-                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="profile.html">Profile <span class="label label-success pull-right">Coming Soon</span></a></li>
                                     <li><a href="projects.html">Projects</a></li>
                                 </ul>
                             </li>
@@ -199,7 +199,7 @@
                     <a data-toggle="tooltip" data-placement="top" title="Lock">
                         <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
                     </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="/">
+                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
                         <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
@@ -306,7 +306,7 @@
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <h2>New Project<small> Create a new project</small></h2>
+            <h2>New Project<small>&nbsp;&nbsp;&nbsp;Create a new project</small></h2>
             <!--<ul class="nav navbar-right panel_toolbox">-->
             <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
             <!--</li>-->
@@ -322,7 +322,8 @@
             <!--</ul>-->
             <div class="clearfix"></div>
             <!-- start form for validation -->
-            <form method="post" action="project_creation"  id="demo-form" data-parsley-validate>
+            <form id="demo-form" action="project_creation" method="post" data-parsley-validate>
+
                 <div class="row">
                     <div class="col-md-6">
                         <label for="projectname">Project Name * :</label>
@@ -332,13 +333,14 @@
                     <div class="col-md-4">
                         <label>Project Date * :</label>
                         <br/>
-                        <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                        <div id="reportrange"  class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
                             <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                            <span>December 30, 2016 - January 28, 2099</span> <b class="caret"></b>
+                            <input name="duration">December 30, 2016 - January 28, 2099 <b class="caret"></b>
                         </div>
                     </div>
                 </div>
 
+                <br/>
                 <div class="row">
                     <div class="col-md-6">
                         <label for="projectdescription">Project Description (minimum of 20 characters, max of 150) :</label>
@@ -348,31 +350,27 @@
                     <!-- Skills required-->
                     <div class="col-md-6">
                         <label class="control-label">Skill Tags</label>
-                        <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
+                        <input id="tags_1" type="text"  name="skills" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
                         <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
                     </div>
                 </div>
 
-                <!--<label for="projectpassword">Project Password * :</label>-->
-                <!--<input type="password" id="projectpassword" class="form-control" name="projectpassword" required />-->
-
-                <!--<label for="projectpasswordconfirm">Project Password Confirm * :</label>-->
-                <!--<input type="password" id="projectpasswordconfirm" class="form-control" name="projectpasswordconfirm" required />-->
-
-
                 <!--TODO Fix employee allocation format Make it a table on click-->
+                <!-- TODO ask KPMG about min team size-->
                 <!-- Employees-->
                 <label>Employee Allocation</label><br/>
 
-                <div class="col-md-5 col-sm-5 col-xs-12">
+                <div class="col-md-6 col-sm-6 col-xs-12">
                     <label>Number of Employees *</label>
-                    <input type="text" id="range_31" value="" min="0" name="numemp" />
+                    <input type="text"  value="" min="0" name="numemp" />
                 </div>
 
-                <a class="btn btn-app" id="employeeallocator">
-                    <span class="badge bg-green" id="assignEmpCount"></span>
-                    <i class="fa fa-users"></i> Assign Employees
-                </a>
+                <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
+                    <a class="btn btn-app" id="employeeallocator" onclick="hello()">
+                        <span class="docs-tooltip badge bg-green" id="assignEmpCount"></span>
+                        <i class="fa fa-users"></i> Assign Employees
+                    </a>
+                </span>
 
                 <!-- TODO show this table once button is clicked-->
                 <div class="">
@@ -1049,7 +1047,7 @@
                         <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
 
                         <label class="control-label">Contact Number * :</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectownercontact" required >
                     </div>
                     <!-- Project Manger Details-->
                     <div class="col-md-6">
@@ -1060,12 +1058,12 @@
                         <input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />
 
                         <label class="control-label">Contact Number * :</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectmanagercontact"required >
                     </div>
                 </div>
                 <br/><hr/>
                 <br/>
-                <input class="btn btn-primary" type="submit" value="Submit">
+                <input class="btn btn-primary" value="Add New Project" type="submit">
             </form>
             <!-- end form for validations -->
         </div>
@@ -1081,6 +1079,9 @@
         <!-- /footer content -->
     </div>
 </div>
+
+
+
 
 <!-- jQuery -->
 <script src="vendors/jquery/dist/jquery.min.js"></script>
@@ -1145,7 +1146,7 @@
 <script src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="javascripts/custom.min.js"></script>
+<script src="/javascripts/custom.min.js"></script>
 
 </body>
 </html>

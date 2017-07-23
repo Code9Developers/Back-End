@@ -105,6 +105,11 @@ router.get("/logout",function (req,res,next) {
 });
 
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
+router.get('/calendar', function(req, res, next)
+{
+    res.render('project_creation');
+});
+
 
 //Easy access to project creation page
 router.get('/test_project_creation', function(req, res, next)
@@ -126,6 +131,7 @@ router.get('/remove_test_employees', function(req, res, next)
     res.render('login');
 });
 
+//Displays all users currently in the db to the console
 router.get('/view_test_employees', function(req, res, next)
 {
     dbs.view_employees();

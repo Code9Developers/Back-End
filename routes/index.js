@@ -104,6 +104,10 @@ router.get("/logout",function (req,res,next) {
     res.redirect('/');
 });
 
+
+router.get("/calendar",function (req,res,next) {
+    res.render('calendar');
+});
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page

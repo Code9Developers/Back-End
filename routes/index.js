@@ -3,11 +3,14 @@ var router = express.Router();
 var mongoose = require('mongoose') ;
 var schemas = require('.././database/schemas.js') ;
 var dbs = require('.././database/dbs.js') ;
+var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
 
 
 function login_check(req, res, next) {
+    console.log("checking authenticate");
     var result=dbs.authenticate(req.body.username,req.body.password,function (result) {
+        console.log("result found");
         if(result)
         {
             return next();
@@ -15,12 +18,13 @@ function login_check(req, res, next) {
         else
         {
             res.redirect('/');
+            console.log("Redirecting to login page");
         }
     });
 }
 
 function isAuntenticated(req,res,next) {
-    var result=dbs.authenticate(req.session.username,req.body.session,function (result) {
+    dbs.authenticate(req.session.username,req.body.session,function (result) {
         if(result)
         {
             return next();
@@ -39,7 +43,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/dashboard',login_check,function (req,res,next) {
     req.session.username=req.body.username;
+    console.log("Session username is : "+req.session.username);
     req.session.password=req.body.password;
+    console.log("Session password is : "+req.session.password);
     res.render('admin');
 });
 
@@ -56,6 +62,7 @@ router.get('/test-find', function(req, res, next) {
     dbs.findEmployee('emp_id_123') ;
 });
 
+
 router.get('/admin',isAuntenticated,function (req,res,next) {
     res.render("admin");
 });
@@ -70,7 +77,7 @@ router.post('/register_employee',function (req,res,next) {
 
     var today = new Date();
 
-    var enc_pass=dbs.encrypt(rand_password,function (enc_pass) {
+    dbs.encrypt(rand_password,function (enc_pass) {
         var emp = {
             _id: req.body.empid,
             name: req.body.firstname,
@@ -96,4 +103,45 @@ router.get("/logout",function (req,res,next) {
     req.session.reset();
     res.redirect('/');
 });
+
+//FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
+
+//Easy access to project creation page
+router.get('/test_project_creation', function(req, res, next)
+{
+    res.render('project_creation');
+});
+
+//Creates 5 test emplyees into the database
+router.get('/create_test_employees', function(req, res, next)
+{
+    dbs.create_test_employees();
+    res.render('login');
+});
+
+//Removes the 5 test employees from the database
+router.get('/remove_test_employees', function(req, res, next)
+{
+    dbs.remove_test_employees();
+    res.render('login');
+});
+
+router.get('/view_test_employees', function(req, res, next)
+{
+    dbs.view_employees();
+    res.render('login');
+});
+
+router.get('/test_algorithm', function(req, res, next) {
+    console.log("employee allocation requested");
+    console.log("the request url is "+req.url);
+
+    dbs.view_employees();
+    algorithm.get_unallocated_users(2, function(val) {
+        var result = JSON.stringify(val);
+        res.send(result);
+    });
+    res.contentType('application/json');
+});
+
 module.exports = router;

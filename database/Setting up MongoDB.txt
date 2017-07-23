@@ -23,3 +23,19 @@ Note: if mongo.log already exists, delete it before completing step (3)
   mongoose
   
   Or just run "npm install" in cmd (Admin) in "<some directory>/Back-End/"
+
+TO VIEW a MONGO DB collection
+*Note i will be useing the example data base "kpmgh_dbs" and the collection "users"
+
+1) go to the directory of where you installed mongo db (example) "C:\Windows\System32\cmd.exe"
+
+2) open cmd in this directory
+
+3) type and enter "mongo"
+
+4) enter "show dbs" to show all data bases
+
+5) enter "use kpmg_dbs" to use the kpmg_dbs database
+
+6) enter "db.users.find().pretty()" to view the users collection
+

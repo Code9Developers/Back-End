@@ -71,8 +71,9 @@ router.post("/project_creation",function (req,res,next) {
         employees_assigned:[]
     };
 
+
     dbs.insertProject(project);
-    //res.render('index',{p:JSON.stringify(project),skills:req.body.skills});
+    res.render('index',{p:JSON.stringify(project),skills:req.body.skills});
 
 });
 

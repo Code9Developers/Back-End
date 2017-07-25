@@ -107,14 +107,14 @@ exports.authenticate = function(user_id, password, callback) {
     })
 };
 
-exports.get_role = function(user_id, callback) {
+exports.get_user = function(user_id, callback) {
     module.exports.findUser(user_id, function(user) {
         if (!user) {
             console.log("User not found.") ;
         }
         else {
-            console.log(user.role + " found.") ;
-            return callback(user.role) ;
+            console.log(user.name + " found.") ;
+            return callback(user) ;
         }
     })
 };

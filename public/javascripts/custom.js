@@ -9,6 +9,7 @@
 (function($,sr){
     // debouncing function from John Hann
     // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
+
     var debounce = function (func, threshold, execAsap) {
       var timeout;
 
@@ -4993,7 +4994,9 @@ function init_charts() {
 	   
 	   
 	$(document).ready(function() {
-				
+
+
+
 		init_sparklines();
 		init_flot_chart();
 		init_sidebar();

@@ -242,3 +242,24 @@ exports.view_employees = function()
         }
     });
 };
+
+//A function to statically create projects into the db
+exports.create_test_employees = function(_id, name, description, project_duration, owner_name, owner_contact, owner_email, manager_name, manager_contact, manager_email, employees_assigned) {
+    console.log("creating project");
+
+};
+
+//A function to return the projects for a user
+exports.get_role = function(user_id, callback) {
+    module.exports.findUser(user_id, function(user) {
+        if (!user) {
+            console.log("User not found.") ;
+        }
+        else {
+            console.log(user.role + " found.") ;
+            return callback(user.role) ;
+        }
+    })
+};
+
+//A function to display a project

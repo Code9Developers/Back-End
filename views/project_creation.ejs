@@ -36,10 +36,6 @@
     <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
     <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
-    <!--Angular-->
-    <script src="vendors/angular/angular.min.js"></script>
-    <link href="vendors/angular/angularScript.js" rel="stylesheet">
-
     <!-- iCheck -->
     <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- bootstrap-wysiwyg -->
@@ -308,11 +304,11 @@
                     <label>No. of Employees: *</label>
                     <input id="numemp" type="number" class="form-control"  value="" min="0" name="numemp" />
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
                             <span class="docs-tooltip badge bg-green" id="assignEmpCount"></span>
-                             <button ng-click="decrease()" type="button" class="fa fa-users" ng-disabled="wait">Allocate Employees</button>
-                            <p ng-show="wait" style="color: #ff4034">Processing</p>
+                            <button id="assignEmployees" type="button" class="fa fa-users">Allocate Employees</button>
+                     </span>
                     </span>
                 </div>
 
@@ -367,8 +363,9 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <button onclick="$requestEmpApproval();" style="float: right" type="button" class="btn btn-round btn-dark docs-tooltip" data-toggle="tooltip" title="Approve generated employees">Approve Selection</button>
-                            <button onclick="$requestEmpRemoval();" style="float: left" type="button" class="btn btn-round btn-danger docs-tooltip" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
+                            <button id="approveEmployee" style="float: right" type="button" class="btn-round btn-dark docs-tooltip" data-toggle="tooltip" title="Approve generated employees">Approve Selection</button>
+                            +                            <button id="removeEmployee" style="float: left" type="button" class="btn-round btn-danger docs-tooltip" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
+
                         </div>
                     </div>
                 </div>
@@ -401,7 +398,7 @@
                 </div>
                 <br/><hr/>
                 <br/>
-                <input class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation" type="submit" value="Create Project">
+                <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation" type="submit" value="Create Project">
             </form>
             <!-- end form for validations -->
         </div>
@@ -481,7 +478,8 @@
 <script src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 
 <!-- Custom Theme Scripts -->
-<script src="/javascripts/custom.min.js"></script>
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/code9Custom.js"></script>
 
 </body>
 </html>

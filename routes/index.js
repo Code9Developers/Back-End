@@ -41,12 +41,18 @@ router.get('/', function(req, res, next) {
     res.render('login');
 });
 
-router.post('/dashboard',login_check,function (req,res,next) {
+router.post('/dashboard',function (req,res,next) {
     req.session.username=req.body.username;
-    console.log("Session username is : "+req.session.username);
     req.session.password=req.body.password;
-    console.log("Session password is : "+req.session.password);
-    res.render('admin');
+
+    var user=dbs.get_user(req.session.username, function(user) {
+        if(user.role=="Manager"){
+            res.render('project_creation',{role:user.role,name:user.name,surname:user.surname});
+        }
+        else if(user.role=="Admin"){
+            res.render('admin',{role:user.role,name:user.name,surname:user.surname});
+        }
+    });
 });
 
 router.get("/project_creation",function (req,res,next) {
@@ -57,11 +63,12 @@ router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
 
+    var duration=req.body.start_date+"-"+req.body.end_date;
     var project={
         _id: project_id,
         name: req.body.projectname,
         description: req.body.projectdescription,
-        project_duration: req.body.duration,
+        project_duration: duration,
         owner_name: req.body.projectowner,
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
@@ -75,6 +82,8 @@ router.post("/project_creation",function (req,res,next) {
     dbs.insertProject(project);
     res.render('index',{p:JSON.stringify(project),skills:req.body.skills});
 
+
+
 });
 
 router.get('/test-find', function(req, res, next) {
@@ -82,7 +91,7 @@ router.get('/test-find', function(req, res, next) {
 });
 
 
-router.get('/admin',isAuntenticated,function (req,res,next) {
+router.get('/admin',function (req,res,next) {
     res.render("admin");
 });
 
@@ -95,8 +104,7 @@ router.post('/register_employee',function (req,res,next) {
     });
 
     var today = new Date();
-
-    dbs.encrypt(rand_password,function (enc_pass) {
+    dbs.encrypt("test",function (enc_pass) {
         var emp = {
             _id: req.body.empid,
             name: req.body.firstname,
@@ -110,12 +118,8 @@ router.post('/register_employee',function (req,res,next) {
             past_projects:[req.body.pastprojects]} ;
 
         dbs.insertUser(emp) ;
-        res.render('index',{valu:JSON.stringify(emp),rand:rand_password});
+        res.render('index',{valu:JSON.stringify(emp)});
     });
-
-
-   //Pass: :-_fBNet/R
-    //u: S_D
 });
 
 router.get("/logout",function (req,res,next) {

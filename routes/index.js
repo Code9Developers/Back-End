@@ -195,4 +195,17 @@ router.get('/test_algorithm', function(req, res, next) {
     res.contentType('application/json');
 });
 
+/* NOTE: Add authenticate*/
+router.post('/test_algorithm', function(req, res, next) {
+    console.log("employee allocation requested");
+    console.log("the request url is "+req.url);
+
+    dbs.view_employees();
+    algorithm.get_unallocated_users(2, function(val) {
+        var result = JSON.stringify(val);
+        res.send(result);
+    });
+    res.contentType('application/json');
+});
+
 module.exports = router;

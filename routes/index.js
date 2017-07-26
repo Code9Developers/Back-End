@@ -8,7 +8,6 @@ var generator = require('generate-password');
 
 
 function login_check(req, res, next) {
-    console.log("checking authenticate");
     var result=dbs.authenticate(req.body.username,req.body.password,function (result) {
         console.log("result found");
         if(result)
@@ -36,7 +35,7 @@ function isAuntenticated(req,res,next) {
     });
 }
 
-/* GET home page. */
+
 router.get('/', function(req, res, next) {
     res.render('login');
 });
@@ -47,6 +46,9 @@ router.post('/dashboard',function (req,res,next) {
 
     var user=dbs.get_user(req.session.username, function(user) {
         if(user.role=="Manager"){
+            req.session.name=user.name;
+            req.session.surname=user.surname;
+            req.session.role=user.role;
             res.render('project_creation',{role:user.role,name:user.name,surname:user.surname});
         }
         else if(user.role=="Admin"){
@@ -56,13 +58,13 @@ router.post('/dashboard',function (req,res,next) {
 });
 
 router.get("/project_creation",function (req,res,next) {
-    res.render('project_creation');
+    res.render('project_creation',{role:req.session.role,name:req.session.name,surname:req.session.surname});
 });
 
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
-    var datediff=require("datediff");
+
     var duration=req.body.start_date+"-"+req.body.end_date;
     var project={
         _id: project_id,
@@ -78,16 +80,11 @@ router.post("/project_creation",function (req,res,next) {
         employees_assigned:[]
     };
 
-    var project_length=datediff
     dbs.insertProject(project);
-    res.render('project_view',{owner_name:owner_name,manager_name:manager_name,project_name:name});
+    var user=dbs.get_user(req.session.username, function(user) {
+        res.render('project_view',{name:user.name,surname:user.surname,owner_name:req.body.projectowner,manager_name:req.body.projectmanager,project_name:req.body.projectname,end_date:req.body.end_date,start_date:req.body.start_date,project_description:req.body.projectdescription});
+    });
 
-
-
-});
-
-router.get('/test-find', function(req, res, next) {
-    dbs.findEmployee('emp_id_123') ;
 });
 
 
@@ -126,6 +123,13 @@ router.get("/logout",function (req,res,next) {
     req.session.reset();
     res.redirect('/');
 });
+
+
+// TEST EMPLOYEE FIND
+router.get('/test-find', function(req, res, next) {
+    dbs.findEmployee('emp_id_123') ;
+});
+
 
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 

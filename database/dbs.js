@@ -44,6 +44,26 @@ exports.findUser = function(Id, callback) {
     });
 };
 
+//returns all users where attributes 'attrib' have value of 'value'
+exports.findUsers = function(attrb, value, number, callback) {
+
+    var user = schemas.user ;
+
+    user.find({ attrib: value }, function(err, docs) {
+        if (err) {
+            console.log("Error finding Users.") ;
+            console.log(err) ;
+        }
+        else if (!docs) {
+            console.log("No Users found.") ;
+        }
+        else {
+            console.log("Users found.") ;
+            return callback(docs);
+        }
+    }).limit(number);
+}
+
 exports.insertProject = function(_json) {
 
     var project = schemas.project ;
@@ -128,7 +148,7 @@ exports.create_test_employees = function() {
     module.exports.encrypt("test", function (enc_pass) {
         var emp = {
             _id: "emp1",
-            name: "employee1",
+            name: "Sargon",
             surname: "test",
             password: enc_pass,
             password_date: today,
@@ -141,7 +161,7 @@ exports.create_test_employees = function() {
         };
 
         var emp2 = {
-            _id: "emp2",
+            _id: "Nebuchadnezzar",
             name: "employee2",
             surname: "test",
             password: enc_pass,
@@ -156,7 +176,7 @@ exports.create_test_employees = function() {
 
         var emp3 = {
             _id: "emp3",
-            name: "employee3",
+            name: "Xerxes",
             surname: "test",
             password: enc_pass,
             password_date: today,
@@ -170,7 +190,7 @@ exports.create_test_employees = function() {
 
         var emp4 = {
             _id: "emp4",
-            name: "employee4",
+            name: "Chandragupta",
             surname: "test",
             password: enc_pass,
             password_date: today,
@@ -184,7 +204,7 @@ exports.create_test_employees = function() {
 
         var emp5 = {
             _id: "emp5",
-            name: "employee5",
+            name: "Ptolemy",
             surname: "test",
             password: enc_pass,
             password_date: today,
@@ -201,7 +221,7 @@ exports.create_test_employees = function() {
         module.exports.insertUser(emp3);
         module.exports.insertUser(emp4);
         module.exports.insertUser(emp5);
-        console.log("employees added to data base")
+        console.log("Test employees added to data base")
     });
 };
 
@@ -209,7 +229,7 @@ exports.create_test_employees = function() {
 exports.remove_test_employees = function() {
     console.log("removing users");
     var user = schemas.user;
-    user.remove({role: "System test"}, function (err, result) {
+    user.remove({}, function (err, result) {
         if (err) {
             console.log("Error removing users.");
         }

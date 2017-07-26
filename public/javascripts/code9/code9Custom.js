@@ -7,10 +7,13 @@ $(document).ready(function() {
     <!--This is where we add our own functions-->
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
-        //window.alert("HELLO");
-        $.get("test_algorithm", function(data, status){
-                //alert("Data: " + data + "\nStatus: " + status);
-            //window.alert("we have a response");
+        $.get("test_algorithm",
+            {
+                num_empl: 5,
+                skills: ["test", "test", "test"],
+                duration: 2
+            },function(data, status){
+                console.log(data);
             });
         //window.alert("Employees Assigned");
     });

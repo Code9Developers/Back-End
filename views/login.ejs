@@ -29,26 +29,26 @@
     <meta name="theme-color" content="#ffffff">
 
     <!-- Bootstrap -->
-    <link href="/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- NProgress -->
-    <link href="/vendors/nprogress/nprogress.css" rel="stylesheet">
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- Animate.css -->
-    <link href="/vendors/animate.css/animate.min.css" rel="stylesheet">
+    <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
 
     <!-- iCheck -->
-    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
     <!-- bootstrap-wysiwyg -->
-    <link href="/vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
     <!-- Select2 -->
-    <link href="/vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet">
     <!-- Switchery -->
-    <link href="/vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
     <!-- starrr -->
-    <link href="/vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
-    <link href="/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="/stylesheets/custom.min.css" rel="stylesheet">
@@ -72,7 +72,7 @@
                     </div>
                     <div>
                         <button class="btn btn-default submit" type="submit">Login</button>
-                        <!--<a class="reset_pass" href="#">Lost your password?</a>-->
+                        <a class="reset_pass" href="#">Lost your password?</a>
                         <!--Maybe we can add a lost your password part in later on -->
                     </div>
 
@@ -90,42 +90,89 @@
                 </form>
             </section>
         </div>
+
+        <div id="register" class="animate form registration_form">
+            <section class="login_content">
+                <form class="form-horizontal form-label-left">
+                    <h1>Create Account</h1>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Username" required="" />
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email" required="" />
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password" required="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <input id="tags_1" type="text" class="tags form-control" value="social, adverts, sales" />
+                                <div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="separator">
+                        <p class="change_link">Already a member ?
+                            <a href="#signin" class="to_register"> Log in </a>
+                        </p>
+
+                        <div class="clearfix"></div>
+                        <br />
+
+                        <div>
+                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
+                            <br/>
+                            <br/>
+                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
     </div>
 </div>
 
 <!-- jQuery -->
-<script src="/vendors/jquery/dist/jquery.min.js"></script>
+<script src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
-<script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<script src="/vendors/fastclick/lib/fastclick.js"></script>
+<script src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress -->
-<script src="/vendors/nprogress/nprogress.js"></script>
+<script src="vendors/nprogress/nprogress.js"></script>
 <!-- bootstrap-progressbar -->
-<script src="/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- iCheck -->
-<script src="/vendors/iCheck/icheck.min.js"></script>
+<script src="vendors/iCheck/icheck.min.js"></script>
 <!-- bootstrap-daterangepicker -->
-<script src="/vendors/moment/min/moment.min.js"></script>
-<script src="/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script src="vendors/moment/min/moment.min.js"></script>
+<script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 <!-- bootstrap-wysiwyg -->
-<script src="/vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
-<script src="/vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
-<script src="/vendors/google-code-prettify/src/prettify.js"></script>
+<script src="vendors/bootstrap-wysiwyg/js/bootstrap-wysiwyg.min.js"></script>
+<script src="vendors/jquery.hotkeys/jquery.hotkeys.js"></script>
+<script src="vendors/google-code-prettify/src/prettify.js"></script>
 <!-- jQuery Tags Input -->
-<script src="/vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
 <!-- Switchery -->
-<script src="/vendors/switchery/dist/switchery.min.js"></script>
+<script src="vendors/switchery/dist/switchery.min.js"></script>
 <!-- Select2 -->
-<script src="/vendors/select2/dist/js/select2.full.min.js"></script>
+<script src="vendors/select2/dist/js/select2.full.min.js"></script>
 <!-- Parsley -->
-<script src="/vendors/parsleyjs/dist/parsley.min.js"></script>
+<script src="vendors/parsleyjs/dist/parsley.min.js"></script>
 <!-- Autosize -->
-<script src="/vendors/autosize/dist/autosize.min.js"></script>
+<script src="vendors/autosize/dist/autosize.min.js"></script>
 <!-- jQuery autocomplete -->
-<script src="/vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
+<script src="vendors/devbridge-autocomplete/dist/jquery.autocomplete.min.js"></script>
 <!-- starrr -->
-<script src="/vendors/starrr/dist/starrr.js"></script>
+<script src="vendors/starrr/dist/starrr.js"></script>
 <!-- Custom Theme Scripts -->
 <script src="/javascripts/custom.min.js"></script>
 </body>

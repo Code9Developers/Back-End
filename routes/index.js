@@ -165,10 +165,12 @@ router.get('/view_test_employees', function(req, res, next)
 
 router.get('/test_algorithm', function(req, res, next) {
     console.log("employee allocation requested");
-    console.log("the request url is "+req.url);
+    console.log("the request number of employees is "+req.param('num_empl'));
+    console.log("the request number of employees is "+req.param('skills'));
+    console.log("the request number of employees is "+req.param('duration'));
 
-    dbs.view_employees();
-    algorithm.get_unallocated_users(2, function(val) {
+    //dbs.view_employees();
+    algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration') , function(val) {
         var result = JSON.stringify(val);
         res.send(result);
     });

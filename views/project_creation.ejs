@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Register</title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-wysiwyg -->
+    <link href="vendors/google-code-prettify/bin/prettify.min.css" rel="stylesheet">
+    <!-- Select2 -->
+    <link href="vendors/select2/dist/css/select2.min.css" rel="stylesheet">
+    <!-- Switchery -->
+    <link href="vendors/switchery/dist/switchery.min.css" rel="stylesheet">
+    <!-- starrr -->
+    <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
+    <!-- bootstrap-daterangepicker -->
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="vendors/normalize-css/normalize.css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="/stylesheets/custom.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <!-- KPMG Logo Side Bar-->
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><img src="images/logo/KPMG_Square_White.png" width="55px" height="55px"></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                <div class="profile clearfix">
+                    <div class="profile_pic">
+                        <img src="images/default_user.png" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2><%=name %> <%=surname%></h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>General</h3>
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="#">Dashboard<span class="label label-success pull-right">Coming Soon</span></a></li>
+                                    <li><a href="#">Inbox <span class="label label-success pull-right">Coming Soon</span></a></li>
+                                    <li><a href="#">Calendar<span class="label label-success pull-right">Coming Soon</span></a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <%
+                                    if(typeof role != 'undefined')
+                                    {
+                                    if(role=="Manager"){
+                                    %><li><a href="project_creation">Add Project</a></li><%
+                                    }
+                                    if(role=="Admin"){
+                                    %><li><a href="admin">Register Employee</a></li><%
+                                    }
+                                    }%>
+                                    <!--TODO: Add this code to every page but make sure that user_role is sent to that page -->
+                                    <li><a href="#">Profile <span class="label label-success pull-right">Coming Soon</span></a></li>
+                                    <li><a href="#">Projects</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /sidebar menu -->
+
+                <!-- /menu footer buttons -->
+                <div class="sidebar-footer hidden-small">
+                    <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="logout">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- /menu footer buttons -->
+            </div>
+        </div>
+
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="images/default_user.png" alt=""><%=name %> <%=surname%>
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;"> Profile</a></li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li><a href="javascript:;">Help</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
+                        </li>
+
+                        <li role="presentation" class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-green">6</span>
+                            </a>
+                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
+                                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="text-center">
+                                        <a>
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <h2>New Project<small>&nbsp;&nbsp;&nbsp;Create a new project</small></h2>
+            <hr/>
+            <!--<ul class="nav navbar-right panel_toolbox">-->
+            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+            <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li><a href="#">Settings 1</a>-->
+            <!--</li>-->
+            <!--<li><a href="#">Settings 2</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <div class="clearfix"></div>
+            <!-- start form for validation -->
+            <form id="demo-form" data-parsley-validate action="project_creation" method="post">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="projectname">Project Name: *</label>
+                        <input type="text" id="projectname" class="form-control" name="projectname" required />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label>Project Date: *</label>
+                        <br/>
+                        <div class="col-md-5">
+                            <label>Start Date: </label>
+                            <input name="start_date" class="form-control" type="date" placeholder="yyyy-mm-dd" required/>
+                        </div>
+
+                        <div class="col-md-5 col-md-offset-1">
+                            <label>End Date: </label>
+                            <input name="end_date" class="form-control" type="date" placeholder="yyyy-mm-dd" required/>
+                        </div>
+                    </div>
+                </div>
+
+                <br/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="projectdescription">Project Description (minimum of 20 characters, max of 150) : *</label>
+                        <textarea id="projectdescription" rows="4" required="required" class="form-control" name="projectdescription" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="150" data-parsley-minlength-message="You need to enter at least a 20 characters long description.."
+                                  data-parsley-validation-threshold="10"></textarea>
+                    </div>
+                    <!-- Skills required-->
+                    <div class="col-md-6">
+                        <label class="control-label">Skill Tags</label>
+                        <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" name="skills" required  />
+                        <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
+                    </div>
+                </div>
+
+                <!--TODO Fix employee allocation format Make it a table on click-->
+                <!-- TODO ask KPMG about min team size-->
+                <!-- Employees-->
+                <label>Employee Allocation</label><br/>
+
+                <div class="col-md-2 col-sm-2 col-xs-2">
+                    <label>No. of Employees: *</label>
+                    <input id="numemp" type="number" class="form-control"  value="" min="0" name="numemp" />
+                </div>
+                <div class="col-md-6">
+                    <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
+                            <span class="docs-tooltip badge bg-green" id="assignEmpCount"></span>
+                            <button id="assignEmployees" type="button" class="fa fa-users">Allocate Employees</button>
+                     </span>
+                    </span>
+                </div>
+
+                <!-- TODO show this table once button is clicked-->
+                <div class="">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Allocated Employees</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <p class="text-muted font-13 m-b-30">
+                                DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>
+                            </p>
+                            <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
+                                <thead>
+                                <tr>
+                                    <th>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    <th>Office</th>
+                                    <th>Employment Length</th>
+                                    <th>Projects Completed</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Donna Snider</td>
+                                    <td>Customer Support</td>
+                                    <td>Room 4</td>
+                                    <td>27</td>
+                                    <td>50</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Saint Clair</td>
+                                    <td>Auditor</td>
+                                    <td>Room 7</td>
+                                    <td>12</td>
+                                    <td>23</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button id="approveEmployee" style="float: right" type="button" class="btn-round btn-dark docs-tooltip" data-toggle="tooltip" title="Approve generated employees">Approve Selection</button>
+                            +                            <button id="removeEmployee" style="float: left" type="button" class="btn-round btn-danger docs-tooltip" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- TODO Table end-->
+
+                <br/><hr/>
+                <div class="row">
+                    <!-- Project Owner Details-->
+                    <div class="col-md-6">
+                        <label for="projectowner">Project Owner: *</label>
+                        <input type="text" id="projectowner" class="form-control" name="projectowner" required />
+
+                        <label for="projectowneremail">Project Owner Email: *</label>
+                        <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
+
+                        <label class="control-label">Contact Number: *</label>
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectownercontact" required >
+                    </div>
+                    <!-- Project Manger Details-->
+                    <div class="col-md-6">
+                        <label for="projectmanager">Project Manager: *</label>
+                        <input type="text" id="projectmanager" class="form-control" name="projectmanager" required />
+
+                        <label for="projectmanageremail">Project Manager Email: *</label>
+                        <input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />
+
+                        <label class="control-label">Contact Number: *</label>
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectmanagercontact" required >
+                    </div>
+                </div>
+                <br/><hr/>
+                <br/>
+                <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation" type="submit" value="Create Project">
+            </form>
+            <!-- end form for validations -->
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- Parsley -->
+<script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- iCheck -->
+<script src="vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="vendors/Flot/jquery.flot.js"></script>
+<script src="vendors/Flot/jquery.flot.pie.js"></script>
+<script src="vendors/Flot/jquery.flot.time.js"></script>
+<script src="vendors/Flot/jquery.flot.stack.js"></script>
+<script src="vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="vendors/moment/min/moment.min.js"></script>
+<script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- jquery.inputmask -->
+<script src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<!-- jQuery Tags Input -->
+<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Datatables -->
+<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="vendors/jszip/dist/jszip.min.js"></script>
+<script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- Ion.RangeSlider -->
+<script src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/javascripts/custom.js"></script>
+<script src="/javascripts/code9Custom.js"></script>
+
+</body>
+</html>

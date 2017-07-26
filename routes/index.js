@@ -62,7 +62,7 @@ router.get("/project_creation",function (req,res,next) {
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
-
+    var datediff=require("datediff");
     var duration=req.body.start_date+"-"+req.body.end_date;
     var project={
         _id: project_id,
@@ -78,9 +78,9 @@ router.post("/project_creation",function (req,res,next) {
         employees_assigned:[]
     };
 
-
+    var project_length=datediff
     dbs.insertProject(project);
-    res.render('index',{p:JSON.stringify(project),skills:req.body.skills});
+    res.render('project_view',{owner_name:owner_name,manager_name:manager_name,project_name:name});
 
 
 

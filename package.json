@@ -25,6 +25,7 @@
     "helmet": "^3.6.1",
     "kerberos": "~0.0.17",
     "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2"
+    "serve-favicon": "~2.4.2",
+    "datediff": "^0.0.1"
   }
 }

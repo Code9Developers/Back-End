@@ -20,7 +20,6 @@ exports.create_schemas = function() {
 //all schema initialser functions are below -->
 
 function create_user(db) {
-//  TO DO: Add position field eg.system analyst
     var schema = mongoose.Schema({
         _id: String,
         name: String,
@@ -30,6 +29,7 @@ function create_user(db) {
         //profile_pic: Document,
         email : String,
         role: String,
+        position: String,
         employment_length: Number, //years? months?
         skill: [],
         current_projects: [], //-> stores project id's
@@ -45,8 +45,6 @@ function create_user(db) {
 
 function create_project(db) {
 
-    //I still recommend that we reference the manager.
-
     var schema = mongoose.Schema({
         _id: String,
         name: String,
@@ -58,7 +56,9 @@ function create_project(db) {
         manager_name: String,
         manager_contact: String,
         manager_email: String,
-        employees_assigned: [{employee_id: String, role: String}]
+        employees_assigned: [{employee_id: String, role: String}],
+        emmployee_rates: [{employee_id: String, rate: Number}],
+        project_budget: Number
     }) ;
 
     var project = mongoose.model('project', schema) ;

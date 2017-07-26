@@ -3876,7 +3876,6 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/validator/multifield.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/validator/validator.jquery.json" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/validator/validator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/calendar.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/public/vendors/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" />
@@ -3890,7 +3889,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/mongo.log" afterPath="$PROJECT_DIR$/database/mongo.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/custom.js" afterPath="$PROJECT_DIR$/public/javascripts/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_creation.ejs" afterPath="$PROJECT_DIR$/views/project_creation.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -4852,11 +4850,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500996993776</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added Project Creation">
+      <created>1501082947481</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1501082947481</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90491000" />
+    <option name="totallyTimeSpent" value="90582000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -5019,9 +5024,9 @@
     <MESSAGE value="Added all vendors and project_creation page" />
     <MESSAGE value="Added registration page so employees can be registered&#10;Fixed some layout error on project creation page&#10;Created insert so employees can be inserted to the db (Still need to fix the encryption of passwords and double check if the format is right)" />
     <MESSAGE value="added login functionality" />
-    <MESSAGE value="Added Project Creation" />
     <MESSAGE value="Added AJAX code&#10;Files Updated: project_creation.ejs,custom.js&#10;Files Added: code9Custom.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AJAX code&#10;Files Updated: project_creation.ejs,custom.js&#10;Files Added: code9Custom.js" />
+    <MESSAGE value="Added Project Creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Project Creation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

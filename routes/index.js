@@ -86,25 +86,6 @@ router.post("/project_creation",function (req,res,next) {
 
 });
 
-/* NOTE: Add authenticate*/
-router.post("/new_project",function (req,res,next) {
-    console.log("Attempting to create a new project");
-    console.log(req.body);
-
-    /*now i need to add it to the db*/
-    dbs.insertProject(req.body);
-});
-
-/* A function to get all current projects for a user
- NOTE: still add authenticate*/
-router.post("/view_projects",function (req,res,next) {
-    console.log("Attempting to view all projects for the current session user");
-    console.log("current user session is :"+req.session.username);
-
-    //get all the current projects for the user from the user db
-    //now search the projects db for the projects duration and description
-});
-
 router.get('/test-find', function(req, res, next) {
     dbs.findEmployee('emp_id_123') ;
 });
@@ -114,7 +95,6 @@ router.get('/admin',function (req,res,next) {
     res.render("admin");
 });
 
-/* NOTE: Add authenticate for teh current admin*/
 router.post('/register_employee',function (req,res,next) {
     var rand_password = generator.generate({
         length: 10,
@@ -147,12 +127,6 @@ router.get("/logout",function (req,res,next) {
     res.redirect('/');
 });
 
-/* NOTE: Add authenticate*/
-router.get("/calendar",function (req,res,next) {
-    res.render('calendar');
-});
-
-
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page
@@ -175,28 +149,13 @@ router.get('/remove_test_employees', function(req, res, next)
     res.render('login');
 });
 
-//Displays all users currently in the db to the console
 router.get('/view_test_employees', function(req, res, next)
 {
     dbs.view_employees();
     res.render('login');
 });
 
-/* NOTE: Add authenticate*/
 router.get('/test_algorithm', function(req, res, next) {
-    console.log("employee allocation requested");
-    console.log("the request url is "+req.url);
-
-    dbs.view_employees();
-    algorithm.get_unallocated_users(2, function(val) {
-        var result = JSON.stringify(val);
-        res.send(result);
-    });
-    res.contentType('application/json');
-});
-
-/* NOTE: Add authenticate*/
-router.post('/test_algorithm', function(req, res, next) {
     console.log("employee allocation requested");
     console.log("the request url is "+req.url);
 

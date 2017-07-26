@@ -72,7 +72,15 @@
                     </div>
                     <div class="profile_info">
                         <span>Welcome,</span>
-                        <h2><%=name %> <%=surname%></h2>
+                        <%
+                        if((typeof name != 'undefined') && (typeof surname != 'undefined'))
+                        {
+                        %><h2><%=name%> <%=surname%></h2><%
+                        }
+                        else{
+                        %><h2>user</h2><%
+                        }
+                        %>
                     </div>
                 </div>
                 <!-- /menu profile quick info -->
@@ -143,7 +151,14 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="">
                             <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/default_user.png" alt=""><%=name %> <%=surname%>
+                                <img src="images/default_user.png" alt="">
+                                <%if((typeof name != 'undefined') && (typeof surname != 'undefined'))
+                                {
+                                %><span><%=name%> <%=surname %></span><%}
+                                else{
+                                    %><a>user</a><%
+                                }
+                                %>
                                 <span class=" fa fa-angle-down"></span>
                             </a>
                             <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -169,7 +184,14 @@
                                     <a>
                                         <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
                                         <span>
-                          <span><%=name %> <%=surname%></span>
+                          <span>
+                              <%if((typeof name != 'undefined') && (typeof surname != 'undefined'))
+                              {
+                              %><a><%=name%> <%=surname %></a><%}
+                              else{
+                              %><a>user</a><%
+                              }
+                              %></span>
                           <span class="time">3 mins ago</span>
                         </span>
                                         <span class="message">

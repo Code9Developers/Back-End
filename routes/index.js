@@ -77,16 +77,14 @@ router.post("/project_creation",function (req,res,next) {
         manager_name: req.body.projectmanager,
         manager_contact: req.body.projectmanagercontact,
         manager_email: req.body.projectmanageremail,
-        employees_assigned:[]
+        employees_assigned:[],
+        project_budget:req.body.budget
     };
-
-
-
 
 
     dbs.insertProject(project);
     var user=dbs.get_user(req.session.username, function(user) {
-        res.render('project_view',{name:user.name,surname:user.surname,owner_name:req.body.projectowner,manager_name:req.body.projectmanager,project_name:req.body.projectname,end_date:req.body.end_date,start_date:req.body.start_date,project_description:req.body.projectdescription});
+        res.render('project_view',{name:user.name,surname:user.surname,owner_name:req.body.projectowner,manager_name:req.body.projectmanager,project_name:req.body.projectname,end_date:req.body.end_date,start_date:req.body.start_date,project_description:req.body.projectdescription,budget:req.body.budget});
     });
 
 });
@@ -114,6 +112,7 @@ router.post('/register_employee',function (req,res,next) {
             password_date: today,
             email: req.body.email,
             role: req.body.role,
+            position:req.body.position,
             employment_length: req.body.emp_length,
             skill: [req.body.skills],
             past_projects:[req.body.pastprojects]} ;

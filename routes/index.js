@@ -6,7 +6,7 @@ var dbs = require('.././database/dbs.js') ;
 var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
 
-
+var employees;
 function login_check(req, res, next) {
     var result=dbs.authenticate(req.body.username,req.body.password,function (result) {
         console.log("result found");
@@ -64,7 +64,7 @@ router.get("/project_creation",function (req,res,next) {
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
-
+    var assigned_emp=[];
     var duration=req.body.start_date+"-"+req.body.end_date;
     var project={
         _id: project_id,
@@ -77,7 +77,7 @@ router.post("/project_creation",function (req,res,next) {
         manager_name: req.body.projectmanager,
         manager_contact: req.body.projectmanagercontact,
         manager_email: req.body.projectmanageremail,
-        employees_assigned:[],
+        employees_assigned:[employees],
         project_budget:req.body.budget
     };
 
@@ -172,6 +172,7 @@ router.get('/test_algorithm', function(req, res, next) {
     //dbs.view_employees();
     algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration'),  req.param('budget'), function(val) {
         var result = JSON.stringify(val);
+        employees=JSON.parse(result);
         res.send(result);
     });
     res.contentType('application/json');

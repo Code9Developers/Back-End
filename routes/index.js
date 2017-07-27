@@ -137,7 +137,7 @@ router.get('/test-find', function(req, res, next) {
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page
-router.post('/test_project_creation', function(req, res, next)
+router.get('/test_project_creation', function(req, res, next)
 {
     res.render('project_creation');
 });
@@ -165,11 +165,12 @@ router.get('/view_test_employees', function(req, res, next)
 router.get('/test_algorithm', function(req, res, next) {
     console.log("employee allocation requested");
     console.log("the request number of employees is "+req.param('num_empl'));
-    console.log("the request number of employees is "+req.param('skills'));
-    console.log("the request number of employees is "+req.param('duration'));
+    console.log("the request skills of employees is "+req.param('skills'));
+    console.log("the request duration of project is "+req.param('duration'));
+    console.log("the request budget of project is "+req.param('budget'));
 
     //dbs.view_employees();
-    algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration') , function(val) {
+    algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration'),  req.param('budget'), function(val) {
         var result = JSON.stringify(val);
         res.send(result);
     });

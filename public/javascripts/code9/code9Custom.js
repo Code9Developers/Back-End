@@ -9,9 +9,10 @@ $(document).ready(function() {
         e.preventDefault(); // disable the default form submit event
         $.get("test_algorithm",
             {
-                num_empl: 5,
+                num_empl: $('#numemp').val(),
                 skills: ["test", "test", "test"],
-                duration: 2
+                duration: 2,
+                budget: $('#budget').val()
             },function(data, status){
                 //Sets up the table dynamically
                 $("#employeeTable").append("<div class='x_title'>"+

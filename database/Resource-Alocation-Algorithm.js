@@ -6,11 +6,12 @@ var exports = module.exports = {} ;
 var schemas = require('.././database/schemas.js') ;
 var dbs = require('.././database/dbs.js') ;
 
-exports.get_unallocated_users = function(num_emp, skills, duration, callback) {
+exports.get_unallocated_users = function(num_emp, skills, duration, budget, callback) {
   console.log("unallocated users requested");
-    console.log("number of employees : "+num_emp);
+    console.log("number of employees : "+parseInt(num_emp));
     console.log("skills : "+skills);
     console.log("duration : "+ duration);
+    console.log("budget : "+ budget);
     var user = schemas.user;
 
     user.find({current_projects: []},function (err, result) {
@@ -31,5 +32,5 @@ exports.get_unallocated_users = function(num_emp, skills, duration, callback) {
             console.log(return_json);
             return callback(return_json);
         }
-    });//.limit(number);
+    }).limit(parseInt(num_emp));
 };

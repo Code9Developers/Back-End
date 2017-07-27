@@ -137,7 +137,7 @@ router.get('/test-find', function(req, res, next) {
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page
-router.get('/test_project_creation', function(req, res, next)
+router.post('/test_project_creation', function(req, res, next)
 {
     res.render('project_creation');
 });

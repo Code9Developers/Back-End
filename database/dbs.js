@@ -161,13 +161,13 @@ exports.create_test_employees = function() {
         };
 
         var emp2 = {
-            _id: "Nebuchadnezzar",
-            name: "employee2",
+            _id: "emp2",
+            name: "Nebuchadnezzar",
             surname: "test",
             password: enc_pass,
             password_date: today,
             email: "employee2@gmail.com",
-            role: "System test",
+            role: "Manager",
             employment_length: 1,
             skill: [],
             current_projects: [],
@@ -181,7 +181,7 @@ exports.create_test_employees = function() {
             password: enc_pass,
             password_date: today,
             email: "employee3@gmail.com",
-            role: "System test",
+            role: "Admin",
             employment_length: 1,
             skill: [],
             current_projects: [],

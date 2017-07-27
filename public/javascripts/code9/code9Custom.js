@@ -78,6 +78,15 @@ $(document).ready(function() {
     $('#createProjectbtn').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
         window.alert("Project Created");
+        //TO NICAEDIN
+        /*I have not specifeid the route name or location fo this get yet so you can make it what ever name you want
+        * just don't make it 'project_creation' as we have this already fro requesting the page*/
 
+        //What i need from you
+        /*collect the allocated employee names, the project name, project start and end date, project description, budget,
+        * project owner, project owner email, project owner contact number*/
+
+        /*later the request will also require the manager information but we do not have the appropriate support for this yet*/
+        //simply send this information to the server in json format
     });
 });

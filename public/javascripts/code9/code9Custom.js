@@ -15,6 +15,7 @@ $(document).ready(function() {
                 budget: $('#budget').val()
             },function(data, status){
                 //Sets up the table dynamically
+                $("#employeeTable").empty();
                 $("#employeeTable").append("<div class='x_title'>"+
                     " <h2>Allocated Employees</h2>"+
                     "<ul class='nav navbar-right panel_toolbox'>"+
@@ -24,17 +25,16 @@ $(document).ready(function() {
                     "</div>"+
                     "<div class='x_content'>"+
                     "<p class='text-muted font-13 m-b-30'>"+
-                    "DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>"+
                     "<p>"+
-                    "<table id='datatable-checkbox' class='table table-striped table-bordered bulk_action'>"+
+                    "<table id='datatable-checkbox' class='table table-striped table-bordered bulk_action' >"+
                     "<thead>"+
                     "<tr>"+
                     "<th>"+
                     "<th><input type='checkbox' id='check-all' class='flat'></th>"+
                     "<th>"+
                     "<th>Name</th>"+
+                    "<th>Surname</th>"+
                     "<th>Position</th>"+
-                    "<th>Office</th>"+
                     "<th>Employment Length</th>"+
                     "<th>Projects Completed</th>"+
                     "</tr>"+
@@ -52,10 +52,10 @@ $(document).ready(function() {
                         "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
                         "</td>"+
                         "<td>"+value.name+"</td>"+
-                        "<td>"+value.role+"</td>"+
-                        "<td>test</td>"+
+                        "<td>"+value.surname+"</td>"+
+                        "<td>"+value.position+"</td>"+
                         "<td>"+value.employment_length+"</td>"+
-                        "<td>test projects</td>"+
+                        "<td>"+value.past_projects+"</td>"+
                         "</tr>");
                 });
                 // console.log(data);
@@ -76,17 +76,7 @@ $(document).ready(function() {
     });
 
     $('#createProjectbtn').on('click', function (e) {
-        e.preventDefault(); // disable the default form submit event
+        //.preventDefault(); // disable the default form submit event
         window.alert("Project Created");
-        //TO NICAEDIN
-        /*I have not specifeid the route name or location fo this get yet so you can make it what ever name you want
-        * just don't make it 'project_creation' as we have this already fro requesting the page*/
-
-        //What i need from you
-        /*collect the allocated employee names, the project name, project start and end date, project description, budget,
-        * project owner, project owner email, project owner contact number*/
-
-        /*later the request will also require the manager information but we do not have the appropriate support for this yet*/
-        //simply send this information to the server in json format
     });
 });

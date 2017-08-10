@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function() {
-
+    var globEmployees = null;
     <!--This is where we add our own functions-->
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
@@ -43,6 +43,8 @@ $(document).ready(function() {
                     " <button id='approveEmployee' style='float: right' type='button' class='btn-round btn-dark docs-tooltip' data-toggle='tooltip' title='Approve generated employees'>Approve Selection</button>"+
                     "<button id='removeEmployee' style='float: left' type='button' class='btn-round btn-danger docs-tooltip' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
 
+                //Store employees in global variable
+                globEmployees = data;
                 //Loops through the JSON string and produces table
                 $.each(data,function(key,value){
                     // console.log(value.name);
@@ -77,6 +79,20 @@ $(document).ready(function() {
 
     $('#createProjectbtn').on('click', function (e) {
         //.preventDefault(); // disable the default form submit event
-        window.alert("Project Created");
+        if(globEmployees == null){
+
+            window.alert("Employees not assigned");
+        }else {
+            $.get("project_creation", {
+                    num_empl: $('#numemp').val(),
+                    duration: 2,
+                    budget: $('#budget').val(),
+                    emplArr: globEmployees
+                }, function (data, status) {
+
+
+                }
+            )
+        }
     });
 });

@@ -122,6 +122,30 @@ router.post('/register_employee',function (req,res,next) {
     });
 });
 
+router.get("/all_projects",function (req,res,next) {
+    var val={
+                projects:[
+                    {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
+                    {project_name:"test2",num_emp:4,date_created:"23/05/2017",progress:30},
+                    {project_name:"test3",num_emp:6,date_created:"23/06/2017",progress:40},
+                    {project_name:"test4",num_emp:8,date_created:"23/07/2017",progress:50},
+                    {project_name:"test5",num_emp:9,date_created:"24/06/2017",progress:80},
+                    {project_name:"test6",num_emp:4,date_created:"13/06/2017",progress:59},
+                    {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
+                    {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
+                    {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
+
+                ]
+            };
+    var result = JSON.stringify(val);
+    employees=JSON.parse(result);
+    res.send(result);
+});
+
+router.get("/projects",function (req,res,next) {
+    res.render('projects');
+});
+
 router.get("/logout",function (req,res,next) {
     req.session.reset();
     res.redirect('/');
@@ -177,5 +201,7 @@ router.get('/test_algorithm', function(req, res, next) {
     });
     res.contentType('application/json');
 });
+
+
 
 module.exports = router;

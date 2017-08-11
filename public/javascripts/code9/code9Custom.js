@@ -83,7 +83,7 @@ $(document).ready(function() {
 
             window.alert("Employees not assigned");
         }else {
-            $.get("project_creation", {
+            $.post("project_creation", {
                     num_empl: $('#numemp').val(),
                     duration: 2,
                     budget: $('#budget').val(),

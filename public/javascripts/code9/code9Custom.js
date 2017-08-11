@@ -79,17 +79,18 @@ $(document).ready(function() {
 
     $('#createProjectbtn').on('click', function (e) {
         //.preventDefault(); // disable the default form submit event
+       // window.alert("Employees not assigned");
         if(globEmployees == null){
 
             window.alert("Employees not assigned");
         }else {
-            $.post("project_creation", {
+            $.get("project_creation", {
                     num_empl: $('#numemp').val(),
                     duration: 2,
                     budget: $('#budget').val(),
                     emplArr: globEmployees
                 }, function (data, status) {
-
+                window.alert("Employees assigned");
 
                 }
             )

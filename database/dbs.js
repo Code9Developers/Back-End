@@ -44,8 +44,8 @@ exports.findUser = function(Id, callback) {
     });
 };
 
-//returns all users where attributes 'attrib' have value of 'value'
-exports.findUsers = function(attrb, value, number, callback) {
+//returns all (max{number}) users where attributes 'attrib' have value of 'value'
+exports.findUsers = function(attrib, value, number, callback) {
 
     var user = schemas.user ;
 
@@ -64,6 +64,19 @@ exports.findUsers = function(attrb, value, number, callback) {
     }).limit(number);
 }
 
+//should we have a function like this for every attribute of each schema?
+exports.getUserRole = function(user_id, callback) {
+    module.exports.findUser(user_id, function(user) {
+        if (!user) {
+            console.log("User not found.") ;
+        }
+        else {
+            console.log(user.role + " found.") ;
+            return callback(user.role) ;
+        }
+    })
+};
+
 exports.insertProject = function(_json) {
 
     var project = schemas.project ;
@@ -76,7 +89,7 @@ exports.insertProject = function(_json) {
             console.log(err) ;
         }
         else {
-            console.log("Successfully inserted project.") ;
+            console.log("Successfully inserted Project.") ;
         }
     });
 };
@@ -99,10 +112,46 @@ exports.findProject = function(Id, callback) {
     });
 };
 
-// exports.encrypt = function(value, callback) {
-//     return bcrypt.hashSync(value, 10)
-//
-// }
+//returns all projects where attributes 'attrib' have value of 'value'
+exports.findProjects = function(attrb, value, number, callback) {
+
+    var project = schemas.project ;
+
+    project.find({ attrib: value }, function(err, docs) {
+        if (err) {
+            console.log("Error finding Projects.") ;
+            console.log(err) ;
+        }
+        else if (!docs) {
+            console.log("No Projects found.") ;
+        }
+        else {
+            console.log("Projects found.") ;
+            return callback(docs);
+        }
+    }).limit(number);
+}
+
+
+//returns all active projects
+exports.activeProjects = function(callback) {
+    var project = schemas.project ;
+    var today = new Date();
+
+    project.find({}, function(err, docs) {
+        if (err) {
+            console.log("Error finding Projects.") ;
+            console.log(err) ;
+        }
+        else if (!docs) {
+            console.log("No Projects found.") ;
+        }
+        else {
+            console.log("Projects found.") ;
+            return callback(docs);
+        }
+    }).$where('this.project_start_date <= today AND this.project_end_date >= today').exec(callback)
+}
 
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
@@ -127,153 +176,3 @@ exports.authenticate = function(user_id, password, callback) {
     })
 };
 
-exports.get_user = function(user_id, callback) {
-    module.exports.findUser(user_id, function(user) {
-        if (!user) {
-            console.log("User not found.") ;
-        }
-        else {
-            console.log(user.name + " found.") ;
-            return callback(user) ;
-        }
-    })
-};
-
-//Functions made for testing purposes
-//A function to statically create employees into the db
-exports.create_test_employees = function() {
-    console.log("creating a user");
-
-    var today = new Date();
-    module.exports.encrypt("test", function (enc_pass) {
-        var emp = {
-            _id: "emp1",
-            name: "Sargon",
-            surname: "test",
-            password: enc_pass,
-            password_date: today,
-            email: "employee1@gmail.com",
-            role: "System test",
-            employment_length: 1,
-            skill: [],
-            current_projects: [],
-            past_projects: []
-        };
-
-        var emp2 = {
-            _id: "emp2",
-            name: "Nebuchadnezzar",
-            surname: "test",
-            password: enc_pass,
-            password_date: today,
-            email: "employee2@gmail.com",
-            role: "Manager",
-            employment_length: 1,
-            skill: [],
-            current_projects: [],
-            past_projects: []
-        };
-
-        var emp3 = {
-            _id: "emp3",
-            name: "Xerxes",
-            surname: "test",
-            password: enc_pass,
-            password_date: today,
-            email: "employee3@gmail.com",
-            role: "Admin",
-            employment_length: 1,
-            skill: [],
-            current_projects: [],
-            past_projects: []
-        };
-
-        var emp4 = {
-            _id: "emp4",
-            name: "Chandragupta",
-            surname: "test",
-            password: enc_pass,
-            password_date: today,
-            email: "employee4@gmail.com",
-            role: "System test",
-            employment_length: 1,
-            skill: [],
-            current_projects: [],
-            past_projects: []
-        };
-
-        var emp5 = {
-            _id: "emp5",
-            name: "Ptolemy",
-            surname: "test",
-            password: enc_pass,
-            password_date: today,
-            email: "employee5@gmail.com",
-            role: "System test",
-            employment_length: 1,
-            skill: [],
-            current_projects: [],
-            past_projects: []
-        };
-        //dbs.remove({name: "Testy"});  /*THIS deletes all previous users in the db*/
-        module.exports.insertUser(emp);
-        module.exports.insertUser(emp2);
-        module.exports.insertUser(emp3);
-        module.exports.insertUser(emp4);
-        module.exports.insertUser(emp5);
-        console.log("Test employees added to data base")
-    });
-};
-
-//A function to statically remove employees from the db
-exports.remove_test_employees = function() {
-    console.log("removing users");
-    var user = schemas.user;
-    user.remove({}, function (err, result) {
-        if (err) {
-            console.log("Error removing users.");
-        }
-        else if (!result) {
-            console.log("database is empty.");
-        }
-        else {
-            console.log("Users removed");
-            console.log(JSON.stringify(result));
-        }
-    });
-};
-
-
-//A function to display the db in the terminal
-exports.view_employees = function()
-{
-    console.log("viewing all employees in user db");
-    var user = schemas.user;
-    user.find(function (err, result) {
-        if (err) {
-            console.log("Error displaying users.");
-        }
-        else if (!result) {
-            console.log("database is empty.");
-        }
-        else {
-            console.log("employees found");
-            console.log(JSON.stringify(result));
-        }
-    });
-};
-
-//A function to return the projects for a user
-exports.get_role = function(user_id, callback) {
-    module.exports.findUser(user_id, function(user) {
-        if (!user) {
-            console.log("User not found.") ;
-        }
-        else {
-            console.log(user.role + " found.") ;
-            return callback(user.role) ;
-        }
-    })
-};
-
-//A function to display a project

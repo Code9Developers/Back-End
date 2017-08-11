@@ -49,7 +49,8 @@ function create_project(db) {
         _id: String,
         name: String,
         description: String,
-        project_duration: String,
+        project_start_date: Date,
+        project_end_date: Date,
         owner_name: String,
         owner_contact: String,
         owner_email: String,
@@ -57,7 +58,7 @@ function create_project(db) {
         manager_contact: String,
         manager_email: String,
         employees_assigned: [{employee_id: String, role: String}],
-        emmployee_rates: [{employee_id: String, rate: Number}],
+        employee_rates: [{employee_id: String, rate: Number}],
         project_budget: Number
     }) ;
 

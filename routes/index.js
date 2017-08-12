@@ -3,6 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose') ;
 var schemas = require('.././database/schemas.js') ;
 var dbs = require('.././database/dbs.js') ;
+var test_data = require('.././database/test_data.js') ;
 var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
 
@@ -122,6 +123,30 @@ router.post('/register_employee',function (req,res,next) {
     });
 });
 
+router.get("/all_projects",function (req,res,next) {
+    var val={
+                projects:[
+                    {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
+                    {project_name:"test2",num_emp:4,date_created:"23/05/2017",progress:30},
+                    {project_name:"test3",num_emp:6,date_created:"23/06/2017",progress:40},
+                    {project_name:"test4",num_emp:8,date_created:"23/07/2017",progress:50},
+                    {project_name:"test5",num_emp:9,date_created:"24/06/2017",progress:80},
+                    {project_name:"test6",num_emp:4,date_created:"13/06/2017",progress:59},
+                    {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
+                    {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
+                    {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
+
+                ]
+            };
+    var result = JSON.stringify(val);
+    employees=JSON.parse(result);
+    res.send(result);
+});
+
+router.get("/projects",function (req,res,next) {
+    res.render('projects');
+});
+
 router.get("/logout",function (req,res,next) {
     req.session.reset();
     res.redirect('/');
@@ -145,8 +170,9 @@ router.get('/test_project_creation', function(req, res, next)
 //Creates 5 test emplyees into the database
 router.get('/create_test_employees', function(req, res, next)
 {
-    dbs.create_test_employees();
-    res.render('login');
+    //dbs.create_test_employees();
+    test_data.create_All_test_employees(7, 43);
+    //res.render('login');
 });
 
 //Removes the 5 test employees from the database
@@ -158,7 +184,7 @@ router.get('/remove_test_employees', function(req, res, next)
 
 router.get('/view_test_employees', function(req, res, next)
 {
-    dbs.view_employees();
+    test_data.view_users();
     res.render('login');
 });
 

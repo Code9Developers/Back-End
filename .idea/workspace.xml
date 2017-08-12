@@ -2,605 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/asset/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine_favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.bower.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.editorconfig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.github/CONTRIBUTING.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.github/ISSUE_TEMPLATE.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/.npmignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/build/amd2common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/build/build.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/build/mangleString.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/build/optimize.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.common.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.simple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/echarts.simple.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/extension/bmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/extension/bmap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/extension/dataTool.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/dist/extension/dataTool.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/bmap/BMapCoordSys.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/bmap/BMapModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/bmap/BMapView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/bmap/bmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/dataTool/gexf.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/dataTool/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/dataTool/prepareBoxplotData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/dataTool/quantile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/echarts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/extension/webpack.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/index.common.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/index.simple.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/china-contour.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/china.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/anhui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/aomen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/beijing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/chongqing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/fujian.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/gansu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/guangdong.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/guangxi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/guizhou.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/hainan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/hebei.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/heilongjiang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/henan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/hubei.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/hunan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/jiangsu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/jiangxi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/jilin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/liaoning.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/neimenggu.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/ningxia.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/qinghai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/shandong.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/shanghai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/shanxi.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/shanxi1.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/sichuan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/tianjin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/xianggang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/xinjiang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/xizang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/yunnan.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/province/zhejiang.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/js/world.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/china-contour.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/china.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/anhui.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/aomen.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/beijing.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/chongqing.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/fujian.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/gansu.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/guangdong.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/guangxi.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/guizhou.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/hainan.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/hebei.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/heilongjiang.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/henan.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/hubei.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/hunan.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/jiangsu.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/jiangxi.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/jilin.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/liaoning.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/neimenggu.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/ningxia.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/qinghai.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/shandong.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/shanghai.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/shanxi.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/shanxi1.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/sichuan.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/tianjin.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/xianggang.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/xinjiang.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/xizang.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/yunnan.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/province/zhejiang.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/map/json/world.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/CoordinateSystem.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/ExtensionAPI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/action/createDataSelectAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/action/geoRoam.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/action/roamHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/bar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/bar/BarSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/bar/BarView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/bar/barItemStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/boxplot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/boxplot/BoxplotSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/boxplot/BoxplotView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/boxplot/boxplotLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/boxplot/boxplotVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick/CandlestickSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick/CandlestickView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick/candlestickLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick/candlestickVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/candlestick/preprocessor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/chord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/chord/ChordSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/chord/ChordView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/chord/Ribbon.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/chord/chordCircularLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/effectScatter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/effectScatter/EffectScatterSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/effectScatter/EffectScatterView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/funnel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/funnel/FunnelSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/funnel/FunnelView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/funnel/funnelLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/gauge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/gauge/GaugeSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/gauge/GaugeView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/gauge/PointerPath.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/GraphSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/GraphView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/adjustEdge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/backwardCompat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/categoryFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/categoryVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/circularLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/circularLayoutHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/createView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/edgeVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/forceHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/forceLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/roamAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/simpleLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/simpleLayoutEdge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/graph/simpleLayoutHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/heatmap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/heatmap/HeatmapLayer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/heatmap/HeatmapSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/heatmap/HeatmapView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/EffectLine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/EffectSymbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/LargeSymbolDraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/Line.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/LineDraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/LinePath.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/Symbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/SymbolDraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/WhiskerBoxDraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/createGraphFromNodeEdge.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/createGraphFromNodeMatrix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/createListFromArray.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/helper/whiskerBoxCommon.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/line.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/line/LineSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/line/LineView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/line/lineAnimationDiff.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/line/poly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/lines.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/lines/LinesSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/lines/LinesView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/lines/linesLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/MapSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/MapView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/backwardCompat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/mapDataStatistic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/mapSymbolLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/map/mapVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/parallel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/parallel/ParallelSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/parallel/ParallelView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/parallel/parallelVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/pie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/pie/PieSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/pie/PieView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/pie/labelLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/pie/pieLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/radar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/radar/RadarSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/radar/RadarView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/radar/backwardCompat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/radar/radarLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/sankey.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/sankey/SankeySeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/sankey/SankeyView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/sankey/sankeyLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/sankey/sankeyVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/scatter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/scatter/ScatterSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/scatter/ScatterView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/themeRiver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/themeRiver/ThemeRiverSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/themeRiver/ThemeRiverView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/themeRiver/themeRiverLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/themeRiver/themeRiverVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/Breadcrumb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/TreemapSeries.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/TreemapView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/treemapAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/treemapLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/chart/treemap/treemapVisual.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/angleAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/AngleAxisView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/AxisBuilder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/AxisView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/ParallelAxisView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/RadiusAxisView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/SingleAxisView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/axis/parallelAxisAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/AxisProxy.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/DataZoomModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/DataZoomView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/InsideZoomModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/InsideZoomView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/SelectZoomModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/SelectZoomView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/SliderZoomModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/SliderZoomView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/dataZoomAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/dataZoomProcessor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/history.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/roams.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoom/typeDefaulter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoomInside.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/dataZoomSelect.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/geo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/geo/GeoView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/MapDraw.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/RoamController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/SelectController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/interactionMutex.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/listComponent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/selectableMixin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/helper/sliderMove.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/legend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/legend/LegendModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/legend/LegendView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/legend/legendAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/legend/legendFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/markLine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/markPoint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/marker/MarkLineModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/marker/MarkLineView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/marker/MarkPointModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/marker/MarkPointView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/marker/markerHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/parallel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/parallelAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/polar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/radar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/radar/RadarView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/radiusAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/single.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/singleAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/SliderTimelineModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/SliderTimelineView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/TimelineAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/TimelineModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/TimelineView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/preprocessor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/timelineAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/timeline/typeDefaulter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/title.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/ToolboxModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/ToolboxView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/feature/DataView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/feature/DataZoom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/feature/MagicType.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/feature/Restore.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/feature/SaveAsImage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/toolbox/featureManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/tooltip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/tooltip/TooltipContent.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/tooltip/TooltipModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/tooltip/TooltipView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/ContinuousModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/ContinuousView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/PiecewiseModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/PiecewiseView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/VisualMapModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/VisualMapView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/helper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/preprocessor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/typeDefaulter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/visualCoding.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMap/visualMapAction.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMapContinuous.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/component/visualMapPiecewise.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/Axis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/View.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/axisDefault.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/axisHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/axisModelCommonMixin.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/axisModelCreator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/Axis2D.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/AxisModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/Cartesian.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/Cartesian2D.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/Grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/GridModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/cartesian/axisLabelInterval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/Geo.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/GeoModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/Region.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/fix/geoCoord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/fix/nanhai.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/fix/textCoord.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/geoCreator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/geo/parseGeoJson.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/AxisModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/Parallel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/ParallelAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/ParallelModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/parallelCreator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/parallel/parallelPreprocessor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/AngleAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/AxisModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/Polar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/PolarModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/RadiusAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/polar/polarCreator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/radar/IndicatorAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/radar/Radar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/radar/RadarModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/single/AxisModel.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/single/Single.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/single/SingleAxis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/coord/single/singleCreator.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/DataDiffer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/Graph.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/List.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/Tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/helper/completeDimensions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/data/helper/linkList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/echarts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/layout/barGrid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/layout/points.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/loading/default.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/Component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/Global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/Model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/OptionManager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/Series.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/globalDefault.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/areaStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/boxLayout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/itemStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/lineStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/makeStyleMapper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/model/mixin/textStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/preprocessor/backwardCompat.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/preprocessor/helper/compatStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/processor/dataFilter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/processor/dataSample.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/scale/Interval.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/scale/Log.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/scale/Ordinal.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/scale/Scale.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/scale/Time.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/KDTree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/animation.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/array/nest.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/clazz.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/format.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/graphic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/layout.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/number.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/quickSelect.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/symbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/util/throttle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/view/Chart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/view/Component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/visual/VisualMapping.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/visual/dataColor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/visual/seriesColor.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/visual/symbol.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/src/visual/visualDefault.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/area.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/area2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/axes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/axis.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/bar-large.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/bar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/bar2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/bmap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/boxplot-multi.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/boxplot.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/candlestick.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/candlestickConnect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/chord.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/color-mix-aqi.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/connect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/connect2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/Michelson-Morley.json.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/aqi/BJdata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/aqi/GZdata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/aqi/SHdata.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/aqi/processAQI.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/disk.tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/energy.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/les-miserables.gexf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/masterPainterColorChoice.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/obama_budget_proposal_2012.tree.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/option-view.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/option-view2.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/product.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/rainfall.json.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/security-sh-2013.json.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/data/timelineGDP.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataView.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-axes.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-axis-type.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-cartesian-h.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-cartesian-v.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-dataShadow.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-dataShadow0.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-dataShadow1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-dataShadow2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-dynamic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-rainfall-connect.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-rainfall-inside.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-rainfall.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-scatter-category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-scatter-hv-polar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-scatter-hv.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoom-scatter-toolbox.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dataZoomHighPrecision.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/diff.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/dynamicData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/effectScatter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/esl.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/force.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/force2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/force3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/funnel.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/gauge.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/geoLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/geoScatter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/getOption.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/graph-grid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/graph-simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/graph.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/heatmap-map.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/heatmap.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ie8.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/largeLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/lib/dat.gui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/lib/draggable.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/lib/facePrint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/lib/jquery.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/line.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/loading.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/logScale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/map-contour.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/map.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/mapWorld.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/markLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/markPoint.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/masterPainterColorChoice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/media-dataZoom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/media-finance.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/media-pie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/mix.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/mobileBench.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/multipleGrid.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/parallel-aqi.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/pie.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/pie2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/pie3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/pieDynamic.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/polarLine.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/polarLine2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/polarScatter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/punchCard.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/radar.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/radar2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/radar3.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/radar4.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/reset.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/roseType.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/sankey.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/scale-integer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/scatter.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/selectedMode.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/showTip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/symbol.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/theme.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/themeRiver.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/timeScale.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/timeline-finance.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/timeline-layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/tooltip.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/treemap-disk.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/treemap-obama.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/treemap-option.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/treemap-option2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/treemap-simple.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/.jshintrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/MIT.LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/configure" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/core/uiHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/core/utHelper.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/canteen.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/imagediff.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/boot.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/console.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine-html.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/lib/jasmine-2.3.4/jasmine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/component/visualMap/setOption.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/data/List.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/model/Component.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/model/Global.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/model/timelineOptions.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/ui/config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/ui/legend.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/ui/title.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/ui/title.subtextStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/ui/title.textStyle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/util/graphic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/util/model.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/spec/util/number.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/ui.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/ut.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/ut/ut.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-categories.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-continuous.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-layout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-opacity.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-pieces.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-scatter-colorAndSymbol.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/visualMap-scatter-symbolSize.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/webkit-dep.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/test/worldPopulationBubble.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/dark.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/infographic.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/macarons.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/roma.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/shine.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/area.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/bar.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/graph.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/map.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/pie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/option/scatter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/tool/thumb.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/theme/vintage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/echarts/webpack.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/www" afterPath="$PROJECT_DIR$/bin/www" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js" afterPath="$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" afterPath="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/custom.js" afterPath="$PROJECT_DIR$/public/javascripts/custom.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="$PROJECT_DIR$/views/index.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_creation.ejs" afterPath="$PROJECT_DIR$/views/project_creation.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_view.ejs" afterPath="$PROJECT_DIR$/views/project_view.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/dbs.js" afterPath="$PROJECT_DIR$/database/dbs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/mongo.log" afterPath="$PROJECT_DIR$/database/mongo.log" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -616,20 +20,8 @@
       <file leaf-file-name="project_creation.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="276">
               <caret line="491" column="1" lean-forward="false" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="schemas.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/schemas.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -638,8 +30,43 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1989">
-              <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
+            <state relative-caret-position="-357">
+              <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+              <folding>
+                <element signature="e#1077#1642#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dbs.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/dbs.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding>
+                <element signature="e#298#632#0" expanded="false" />
+                <element signature="e#718#1067#0" expanded="false" />
+                <element signature="e#1200#1605#0" expanded="false" />
+                <element signature="e#1647#1977#0" expanded="false" />
+                <element signature="e#2025#2392#0" expanded="false" />
+                <element signature="e#2538#2630#0" expanded="false" />
+                <element signature="e#2694#3297#0" expanded="false" />
+                <element signature="e#3347#3597#0" expanded="false" />
+                <element signature="e#3737#6105#0" expanded="false" />
+                <element signature="e#6207#6607#0" expanded="false" />
+                <element signature="e#6694#7110#0" expanded="false" />
+                <element signature="e#7207#7462#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schemas.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/schemas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -655,80 +82,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="code9Custom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/code9/code9Custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-              <folding>
-                <marker date="1501181684214" expanded="true" signature="816:828" ph="..." />
-                <marker date="1501181684214" expanded="true" signature="1854:1866" ph="..." />
-                <marker date="1501181684214" expanded="true" signature="2065:2076" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1819">
-              <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#section#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="project_view.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="364" column="121" lean-forward="false" selection-start-line="364" selection-start-column="121" selection-end-line="364" selection-end-column="121" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/index.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-490">
-              <caret line="5046" column="20" lean-forward="false" selection-start-line="5046" selection-start-column="20" selection-end-line="5046" selection-end-column="20" />
-              <folding>
-                <marker date="1501182894088" expanded="true" signature="31208:31240" ph="..." />
-                <marker date="1501182894088" expanded="true" signature="32760:32767" ph="×" />
-                <marker date="1501182894088" expanded="true" signature="55042:55054" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Resource-Alocation-Algorithm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
+            <state relative-caret-position="373">
               <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="56" />
-              <folding>
-                <marker date="1501180603955" expanded="true" signature="263:1378" ph="{...}" />
-                <marker date="1501180603955" expanded="true" signature="579:1349" ph="{...}" />
-                <marker date="1501180603955" expanded="true" signature="763:1343" ph="{...}" />
-                <marker date="1501180603955" expanded="true" signature="951:1253" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -817,10 +176,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1294" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -841,7 +199,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -913,6 +270,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -925,6 +283,7 @@
     <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -939,119 +298,6 @@
       <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\public\images" />
       <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/dbs.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/mongo.log</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/javascripts/code9/code9Custom.js</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1153,6 +399,7 @@
       <workItem from="1501161952272" duration="722000" />
       <workItem from="1501162690615" duration="866000" />
       <workItem from="1501164230723" duration="1858000" />
+      <workItem from="1502300854237" duration="1236000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -1249,7 +496,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105673000" />
+    <option name="totallyTimeSpent" value="106909000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1261,41 +508,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-7" y="0" width="1294" height="1047" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34369886" sideWeight="0.5045386" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Websocket Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22133759" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3238512" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28884026" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32405892" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28968903" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3420622" sideWeight="0.49546143" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20347957" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34354487" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1303,12 +533,9 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Websocket Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3238512" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1316,14 +543,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28884026" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34354487" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26013985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1537,7 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-323">
           <caret line="2" column="39" lean-forward="false" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1587,19 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="265" column="58" lean-forward="true" selection-start-line="265" selection-start-column="58" selection-end-line="265" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#3;n#form#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/Setting up MongoDB.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1621,104 +829,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/dbs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="143" column="44" lean-forward="false" selection-start-line="143" selection-start-column="44" selection-end-line="143" selection-end-column="44" />
-          <folding>
-            <element signature="e#298#632#0" expanded="false" />
-            <element signature="e#718#1067#0" expanded="false" />
-            <element signature="e#1199#1604#0" expanded="false" />
-            <element signature="e#1646#1976#0" expanded="false" />
-            <element signature="e#2024#2391#0" expanded="false" />
-            <element signature="e#2537#2629#0" expanded="false" />
-            <element signature="e#2693#3296#0" expanded="false" />
-            <element signature="e#3346#3596#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/schemas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
+        <state relative-caret-position="595">
           <caret line="35" column="21" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="56" />
-          <folding>
-            <marker date="1501180603955" expanded="true" signature="263:1378" ph="{...}" />
-            <marker date="1501180603955" expanded="true" signature="579:1349" ph="{...}" />
-            <marker date="1501180603955" expanded="true" signature="763:1343" ph="{...}" />
-            <marker date="1501180603955" expanded="true" signature="951:1253" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-490">
+        <state relative-caret-position="85782">
           <caret line="5046" column="20" lean-forward="false" selection-start-line="5046" selection-start-column="20" selection-end-line="5046" selection-end-column="20" />
-          <folding>
-            <marker date="1501182894088" expanded="true" signature="31208:31240" ph="..." />
-            <marker date="1501182894088" expanded="true" signature="32760:32767" ph="×" />
-            <marker date="1501182894088" expanded="true" signature="55042:55054" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/code9/code9Custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
-          <folding>
-            <marker date="1501181684214" expanded="true" signature="816:828" ph="..." />
-            <marker date="1501181684214" expanded="true" signature="1854:1866" ph="..." />
-            <marker date="1501181684214" expanded="true" signature="2065:2076" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bin/www">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="491" column="1" lean-forward="false" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="364" column="121" lean-forward="false" selection-start-line="364" selection-start-column="121" selection-end-line="364" selection-end-column="121" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#form#0;n#section#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1730,11 +853,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/code9/code9Custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="74" column="0" lean-forward="true" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="114" column="26" lean-forward="true" selection-start-line="114" selection-start-column="26" selection-end-line="114" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="364" column="121" lean-forward="false" selection-start-line="364" selection-start-column="121" selection-end-line="364" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/www">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="48" column="0" lean-forward="true" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="27" column="56" lean-forward="false" selection-start-line="27" selection-start-column="11" selection-end-line="27" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="265" column="58" lean-forward="true" selection-start-line="265" selection-start-column="58" selection-end-line="265" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="491" column="1" lean-forward="false" selection-start-line="491" selection-start-column="1" selection-end-line="491" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/dbs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="66" column="0" lean-forward="false" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding>
+            <element signature="e#298#632#0" expanded="false" />
+            <element signature="e#718#1067#0" expanded="false" />
+            <element signature="e#1200#1605#0" expanded="false" />
+            <element signature="e#1647#1977#0" expanded="false" />
+            <element signature="e#2025#2392#0" expanded="false" />
+            <element signature="e#2538#2630#0" expanded="false" />
+            <element signature="e#2694#3297#0" expanded="false" />
+            <element signature="e#3347#3597#0" expanded="false" />
+            <element signature="e#3737#6105#0" expanded="false" />
+            <element signature="e#6207#6607#0" expanded="false" />
+            <element signature="e#6694#7110#0" expanded="false" />
+            <element signature="e#7207#7462#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="115" column="51" lean-forward="true" selection-start-line="115" selection-start-column="51" selection-end-line="115" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="-357">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
+          <folding>
+            <element signature="e#1077#1642#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

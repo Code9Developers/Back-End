@@ -20,7 +20,8 @@ exports.insertUser = function(_json) {
         else {
             console.log("Successfully inserted " + _user.role + ".") ;
         }
-    });
+    }) ;
+
 };
 
 //other search templates could be added

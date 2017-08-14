@@ -141,7 +141,7 @@ router.get("/all_projects",function (req,res,next) {
             };
     var result = JSON.stringify(val);
     employees=JSON.parse(result);
-    res.send(result);
+    res.send(val);
 });
 
 router.get("/projects",function (req,res,next) {

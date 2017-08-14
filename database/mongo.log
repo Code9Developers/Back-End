@@ -187,3 +187,65 @@
 2017-08-14T17:54:48.451+0200 I -        [conn56] end connection 127.0.0.1:65137 (1 connection now open)
 2017-08-14T17:54:49.462+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65299 #57 (1 connection now open)
 2017-08-14T17:54:49.470+0200 I NETWORK  [conn57] received client metadata from 127.0.0.1:65299 conn57: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T17:59:59.129+0200 I -        [conn57] end connection 127.0.0.1:65299 (1 connection now open)
+2017-08-14T18:00:42.343+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65423 #58 (1 connection now open)
+2017-08-14T18:00:42.353+0200 I NETWORK  [conn58] received client metadata from 127.0.0.1:65423 conn58: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:00:48.819+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65447 #59 (2 connections now open)
+2017-08-14T18:00:48.825+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65448 #60 (3 connections now open)
+2017-08-14T18:00:48.831+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65449 #61 (4 connections now open)
+2017-08-14T18:00:48.850+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65450 #62 (5 connections now open)
+2017-08-14T18:00:49.166+0200 I COMMAND  [conn60] command kpmg_dbs.users command: insert { insert: "users", documents: [ { _id: "project manager 3", name: "project manager first_name 3", surname: "project manager second_name 3", password: "$2a$10$XsaUWuUF6yI8uzFlQZGSJuLByrPU/g5CkUHm/CBMBUsyceThh/iDS", password_date: new Date(1502726448717), email: "employee1@gmail.com", position: "project manager", employment_length: 5, past_projects: [], current_projects: [], skill: [], __v: 0 } ], ordered: false } ninserted:0 exception: E11000 duplicate key error collection: kpmg_dbs.users index: _id_ dup key: { : "project manager 3" } code:11000 numYields:0 reslen:204 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 283ms
+2017-08-14T18:00:49.166+0200 I COMMAND  [conn61] command kpmg_dbs.users command: insert { insert: "users", documents: [ { _id: "project manager 4", name: "project manager first_name 4", surname: "project manager second_name 4", password: "$2a$10$XsaUWuUF6yI8uzFlQZGSJuLByrPU/g5CkUHm/CBMBUsyceThh/iDS", password_date: new Date(1502726448717), email: "employee1@gmail.com", position: "project manager", employment_length: 5, past_projects: [], current_projects: [], skill: [], __v: 0 } ], ordered: false } ninserted:0 exception: E11000 duplicate key error collection: kpmg_dbs.users index: _id_ dup key: { : "project manager 4" } code:11000 numYields:0 reslen:204 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 282ms
+2017-08-14T18:00:49.166+0200 I COMMAND  [conn62] command kpmg_dbs.users command: insert { insert: "users", documents: [ { _id: "project manager 5", name: "project manager first_name 5", surname: "project manager second_name 5", password: "$2a$10$XsaUWuUF6yI8uzFlQZGSJuLByrPU/g5CkUHm/CBMBUsyceThh/iDS", password_date: new Date(1502726448717), email: "employee1@gmail.com", position: "project manager", employment_length: 5, past_projects: [], current_projects: [], skill: [], __v: 0 } ], ordered: false } ninserted:0 exception: E11000 duplicate key error collection: kpmg_dbs.users index: _id_ dup key: { : "project manager 5" } code:11000 numYields:0 reslen:204 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 282ms
+2017-08-14T18:00:49.166+0200 I COMMAND  [conn59] command kpmg_dbs.users command: insert { insert: "users", documents: [ { _id: "project manager 2", name: "project manager first_name 2", surname: "project manager second_name 2", password: "$2a$10$XsaUWuUF6yI8uzFlQZGSJuLByrPU/g5CkUHm/CBMBUsyceThh/iDS", password_date: new Date(1502726448717), email: "employee1@gmail.com", position: "project manager", employment_length: 5, past_projects: [], current_projects: [], skill: [], __v: 0 } ], ordered: false } ninserted:0 exception: E11000 duplicate key error collection: kpmg_dbs.users index: _id_ dup key: { : "project manager 2" } code:11000 numYields:0 reslen:204 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 294ms
+2017-08-14T18:00:49.185+0200 I COMMAND  [conn58] command kpmg_dbs.users command: insert { insert: "users", documents: [ { _id: "project manager 1", name: "project manager first_name 1", surname: "project manager second_name 1", password: "$2a$10$XsaUWuUF6yI8uzFlQZGSJuLByrPU/g5CkUHm/CBMBUsyceThh/iDS", password_date: new Date(1502726448717), email: "employee1@gmail.com", position: "project manager", employment_length: 5, past_projects: [], current_projects: [], skill: [], __v: 0 } ], ordered: false } ninserted:0 exception: E11000 duplicate key error collection: kpmg_dbs.users index: _id_ dup key: { : "project manager 1" } code:11000 numYields:0 reslen:204 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 294ms
+2017-08-14T18:00:57.858+0200 I WRITE    [conn58] remove kpmg_dbs.users planSummary: COLLSCAN keysExamined:0 docsExamined:50 ndeleted:50 keysDeleted:50 numYields:1 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } 165ms
+2017-08-14T18:00:57.859+0200 I COMMAND  [conn58] command kpmg_dbs.$cmd command: delete { delete: "users", deletes: [ { q: {}, limit: 0 } ], ordered: true } numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_query 174ms
+2017-08-14T18:04:52.134+0200 I -        [conn59] end connection 127.0.0.1:65447 (5 connections now open)
+2017-08-14T18:04:52.134+0200 I -        [conn58] end connection 127.0.0.1:65423 (5 connections now open)
+2017-08-14T18:04:52.134+0200 I -        [conn62] end connection 127.0.0.1:65450 (5 connections now open)
+2017-08-14T18:04:52.134+0200 I -        [conn61] end connection 127.0.0.1:65449 (2 connections now open)
+2017-08-14T18:04:52.134+0200 I -        [conn60] end connection 127.0.0.1:65448 (2 connections now open)
+2017-08-14T18:04:53.106+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65517 #63 (1 connection now open)
+2017-08-14T18:04:53.115+0200 I NETWORK  [conn63] received client metadata from 127.0.0.1:65517 conn63: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:05:04.840+0200 I -        [conn63] end connection 127.0.0.1:65517 (1 connection now open)
+2017-08-14T18:05:05.777+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:65521 #64 (1 connection now open)
+2017-08-14T18:05:05.792+0200 I NETWORK  [conn64] received client metadata from 127.0.0.1:65521 conn64: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:05:09.652+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49153 #65 (2 connections now open)
+2017-08-14T18:05:09.660+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49154 #66 (3 connections now open)
+2017-08-14T18:05:09.668+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49160 #67 (4 connections now open)
+2017-08-14T18:05:09.674+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49161 #68 (5 connections now open)
+2017-08-14T18:06:07.693+0200 I -        [conn67] end connection 127.0.0.1:49160 (5 connections now open)
+2017-08-14T18:06:07.694+0200 I -        [conn65] end connection 127.0.0.1:49153 (4 connections now open)
+2017-08-14T18:06:07.694+0200 I -        [conn68] end connection 127.0.0.1:49161 (4 connections now open)
+2017-08-14T18:06:07.694+0200 I -        [conn64] end connection 127.0.0.1:65521 (2 connections now open)
+2017-08-14T18:06:07.694+0200 I -        [conn66] end connection 127.0.0.1:49154 (1 connection now open)
+2017-08-14T18:06:08.684+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49185 #69 (1 connection now open)
+2017-08-14T18:06:08.694+0200 I NETWORK  [conn69] received client metadata from 127.0.0.1:49185 conn69: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:06:41.303+0200 I -        [conn69] end connection 127.0.0.1:49185 (1 connection now open)
+2017-08-14T18:06:42.211+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49218 #70 (1 connection now open)
+2017-08-14T18:06:42.223+0200 I NETWORK  [conn70] received client metadata from 127.0.0.1:49218 conn70: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:06:44.902+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49240 #71 (2 connections now open)
+2017-08-14T18:06:44.910+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49241 #72 (3 connections now open)
+2017-08-14T18:06:44.913+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49242 #73 (4 connections now open)
+2017-08-14T18:06:44.916+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49243 #74 (5 connections now open)
+2017-08-14T18:10:22.228+0200 I -        [conn70] end connection 127.0.0.1:49218 (5 connections now open)
+2017-08-14T18:10:22.229+0200 I -        [conn72] end connection 127.0.0.1:49241 (4 connections now open)
+2017-08-14T18:10:22.229+0200 I -        [conn74] end connection 127.0.0.1:49243 (3 connections now open)
+2017-08-14T18:10:22.229+0200 I -        [conn71] end connection 127.0.0.1:49240 (2 connections now open)
+2017-08-14T18:10:22.229+0200 I -        [conn73] end connection 127.0.0.1:49242 (1 connection now open)
+2017-08-14T18:10:23.251+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49295 #75 (1 connection now open)
+2017-08-14T18:10:23.260+0200 I NETWORK  [conn75] received client metadata from 127.0.0.1:49295 conn75: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:11:39.780+0200 I -        [conn75] end connection 127.0.0.1:49295 (1 connection now open)
+2017-08-14T18:11:40.793+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49356 #76 (1 connection now open)
+2017-08-14T18:11:40.813+0200 I NETWORK  [conn76] received client metadata from 127.0.0.1:49356 conn76: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:13:25.698+0200 I -        [conn76] end connection 127.0.0.1:49356 (1 connection now open)
+2017-08-14T18:13:26.634+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49393 #77 (1 connection now open)
+2017-08-14T18:13:26.643+0200 I NETWORK  [conn77] received client metadata from 127.0.0.1:49393 conn77: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:13:37.914+0200 I -        [conn77] end connection 127.0.0.1:49393 (1 connection now open)
+2017-08-14T18:13:38.764+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49397 #78 (1 connection now open)
+2017-08-14T18:13:38.773+0200 I NETWORK  [conn78] received client metadata from 127.0.0.1:49397 conn78: { driver: { name: "nodejs", version: "2.2.27" }, os: { type: "Windows_NT", name: "win32", architecture: "x64", version: "10.0.14393" }, platform: "Node.js v6.11.0, LE, mongodb-core: 2.1.11" }
+2017-08-14T18:13:50.203+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49425 #79 (2 connections now open)
+2017-08-14T18:13:50.210+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49426 #80 (3 connections now open)
+2017-08-14T18:13:50.215+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49427 #81 (4 connections now open)
+2017-08-14T18:13:50.216+0200 I NETWORK  [thread1] connection accepted from 127.0.0.1:49428 #82 (5 connections now open)

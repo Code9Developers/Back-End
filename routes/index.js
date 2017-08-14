@@ -45,7 +45,8 @@ router.post('/dashboard',function (req,res,next) {
     req.session.username=req.body.username;
     req.session.password=req.body.password;
 
-    var user=dbs.get_user(req.session.username, function(user) {
+    var user=dbs.findUser(req.session.username, function(user) {
+        console.log(user.role);
         if(user.role=="Manager"){
             req.session.name=user.name;
             req.session.surname=user.surname;

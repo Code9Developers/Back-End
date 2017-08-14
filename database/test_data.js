@@ -92,6 +92,7 @@ exports.create_test_employees = function() {
 //A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file
 exports.create_All_test_employees = function(num_manager, num_employees) {
+    //var enc_pass;
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
         console.log("creating roles array");
@@ -110,6 +111,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 password: enc_pass,
                 password_date: today,
                 email: email,
+                role: "Manager",
                 position: roles[0],
                 employment_length: 5,
                 skill: [],
@@ -130,6 +132,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 password: enc_pass,
                 password_date: today,
                 email: email,
+                role: "Employee",
                 position: roles[1],
                 employment_length: Math.floor(Math.random()*(4 - 1 + 1)+ 1),
                 skill: [],
@@ -157,6 +160,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
 //25% of managers have been working for 100% of the number of years
 exports.create_past_Projects = function(num_years) {
     //we need to get the number of managers
+    var num_managers = 0;
     //for each year
     //create initial date starting from the current year minus num_years
     /*var d = new Date();
@@ -181,16 +185,22 @@ exports.create_past_Projects = function(num_years) {
         new Date().setMonth(9, 31), new Date().setMonth(10, 15), new Date().setMonth(10, 30), new Date().setMonth(11, 15),
         new Date().setMonth(11, 31)];
     var year_count = 1;
-    for (var loop = 0; loop < num_years; loop++)
-    {
+    //for (var loop = 0; loop < num_years; loop++)
+    //{
         //if the number of years is less that 25% of the total number of years
-        if(year_count < num_years*0.25)
-        {
+        //if(year_count < num_years*0.25)
+        //{
             //create 24 projects for 25% of the managers for each year for these projects
-            //for(var loop = )
-        }
+            for(var loop = 0; loop <  floor(num_years*0.25); loop++)
+            {
+                for(var loop = 0; loop < floor(num_managers*0.25); loop++)
+                {
+                    //for()
+                }
+            }
+        //}
 
-    }
+    //}
 };
 
 

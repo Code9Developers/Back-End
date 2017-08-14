@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="Updated:&#10;custom.js&#10;index.js&#10;added one line to code9Custom.js">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/data/50-first_names.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/data/50-second_names.txt" />
+    <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/mongo.log" afterPath="$PROJECT_DIR$/database/mongo.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/test_data.js" afterPath="$PROJECT_DIR$/database/test_data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mochawesome-report/assets/app.css" afterPath="$PROJECT_DIR$/test/mochawesome-report/assets/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mochawesome-report/assets/app.js" afterPath="$PROJECT_DIR$/test/mochawesome-report/assets/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mochawesome-report/mochawesome.html" afterPath="$PROJECT_DIR$/test/mochawesome-report/mochawesome.html" />
@@ -27,7 +23,7 @@
       <file leaf-file-name="test_data.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/test_data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="-272">
               <caret line="169" column="37" lean-forward="true" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
               <folding>
                 <element signature="e#211#2513#0" expanded="false" />
@@ -152,10 +148,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="339" />
-    <option name="y" value="95" />
-    <option name="width" value="1354" />
-    <option name="height" value="886" />
+    <option name="x" value="-7" />
+    <option name="width" value="1431" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -244,6 +239,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Back-End" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Back-End" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code9" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -403,7 +420,7 @@
       <workItem from="1502458571022" duration="3593000" />
       <workItem from="1502553551755" duration="4359000" />
       <workItem from="1502637763554" duration="2979000" />
-      <workItem from="1502704809093" duration="1844000" />
+      <workItem from="1502704809093" duration="2040000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -496,11 +513,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501162461022</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated:&#10;custom.js&#10;index.js&#10;added one line to code9Custom.js">
+      <created>1502714857742</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1502714857742</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119892000" />
+    <option name="totallyTimeSpent" value="120088000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -512,14 +536,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="339" y="95" width="1354" height="886" extended-state="0" />
+    <frame x="-7" y="0" width="1431" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26975685" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25484565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3238512" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28805238" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23632385" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25929978" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -641,7 +665,8 @@
     <MESSAGE value="Added Project Creation" />
     <MESSAGE value="Added AJAX code&#10;Files Updated: project_creation.ejs,custom.js&#10;Files Added: code9Custom.js" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Code9Developers/Back-End into jordan-version-4&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Code9Developers/Back-End into jordan-version-4&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Updated:&#10;custom.js&#10;index.js&#10;added one line to code9Custom.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated:&#10;custom.js&#10;index.js&#10;added one line to code9Custom.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -848,13 +873,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/code9/code9Custom.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-68">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -894,6 +912,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="178" column="61" lean-forward="false" selection-start-line="178" selection-start-column="61" selection-end-line="178" selection-end-column="61" />
+          <folding>
+            <element signature="n#!!block;n#login_check#0" expanded="false" />
+            <element signature="n#!!block;n#isAuntenticated#0" expanded="false" />
+            <element signature="e#1133#1698#0" expanded="false" />
+            <element signature="e#1757#1870#0" expanded="false" />
+            <element signature="e#1930#3109#0" expanded="false" />
+            <element signature="e#3247#4010#0" expanded="false" />
+            <element signature="e#4065#5064#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -937,9 +964,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/code9/code9Custom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="27" lean-forward="true" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding>
+            <marker date="1502552122412" expanded="true" signature="845:857" ph="..." />
+            <marker date="1502552122412" expanded="true" signature="1883:1895" ph="..." />
+            <marker date="1502552122412" expanded="true" signature="2094:2105" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/test_data.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="-272">
           <caret line="169" column="37" lean-forward="true" selection-start-line="169" selection-start-column="37" selection-end-line="169" selection-end-column="37" />
           <folding>
             <element signature="e#211#2513#0" expanded="false" />

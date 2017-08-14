@@ -89,7 +89,7 @@ exports.create_test_employees = function() {
     });
 };
 
-//A function to statically create 225 employees and 75 managers into the db
+//A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file
 exports.create_All_test_employees = function(num_manager, num_employees) {
     dbs.encrypt("test", function (enc_pass) {
@@ -150,16 +150,46 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
 
 //Each project manager has 1 project every 2 weeks
 //thats 2 project a month and 24 projects a year
-exports.create_past_Projects = function(num_years, num_managers) {
+//25% of managers have been working for 25% of the number of years, the first 25%, so the first 25% of project years
+    // we assign only enough projects that 25% of managers could do (each manager manages 24 in a year
+//25% of managers have been working for 50% of the number of years
+//25% of managers have been working for 75% of the number of years
+//25% of managers have been working for 100% of the number of years
+exports.create_past_Projects = function(num_years) {
+    //we need to get the number of managers
     //for each year
     //create initial date starting from the current year minus num_years
+    /*var d = new Date();
     var year = d.getFullYear(-num_years);
     var month = d.getMonth();
-    var day = d.getDate();
-    var project_count = 0;
+    var day = d.getDate();*/
+    var project_count = 1;
+    //we need to make a months array with 24 starting dates (1 every two weeks)
+    var months_start_array = [new Date().setMonth(0, 1), new Date().setMonth(0, 16),new Date().setMonth(1, 1),
+        new Date().setMonth(1, 16), new Date().setMonth(2, 1), new Date().setMonth(2, 16), new Date().setMonth(3, 1),
+        new Date().setMonth(3, 16), new Date().setMonth(4, 1), new Date().setMonth(4, 16), new Date().setMonth(5, 1),
+        new Date().setMonth(5, 16), new Date().setMonth(6, 1), new Date().setMonth(6, 16), new Date().setMonth(7, 1),
+        new Date().setMonth(7, 16), new Date().setMonth(8, 1), new Date().setMonth(8, 16), new Date().setMonth(9, 1),
+        new Date().setMonth(9, 16), new Date().setMonth(10, 1), new Date().setMonth(10, 16), new Date().setMonth(11, 1),
+        new Date().setMonth(11, 16)];
+
+    var months_end_array = [new Date().setMonth(0, 15), new Date().setMonth(0, 31),new Date().setMonth(1, 15),
+        new Date().setMonth(1, 28), new Date().setMonth(2, 15), new Date().setMonth(2, 31), new Date().setMonth(3, 15),
+        new Date().setMonth(3, 30), new Date().setMonth(4, 15), new Date().setMonth(4, 31), new Date().setMonth(5, 15),
+        new Date().setMonth(5, 30), new Date().setMonth(6, 15), new Date().setMonth(6, 31), new Date().setMonth(7, 15),
+        new Date().setMonth(7, 31), new Date().setMonth(8, 15), new Date().setMonth(8, 29), new Date().setMonth(9, 15),
+        new Date().setMonth(9, 31), new Date().setMonth(10, 15), new Date().setMonth(10, 30), new Date().setMonth(11, 15),
+        new Date().setMonth(11, 31)];
+    var year_count = 1;
     for (var loop = 0; loop < num_years; loop++)
     {
-        //create a date
+        //if the number of years is less that 25% of the total number of years
+        if(year_count < num_years*0.25)
+        {
+            //create 24 projects for 25% of the managers for each year for these projects
+            //for(var loop = )
+        }
+
     }
 };
 
@@ -168,6 +198,11 @@ exports.create_past_Projects = function(num_years, num_managers) {
 //25% of managers have been working for 50% of the number of years
 //25% of managers have been working for 75% of the number of years
 //25% of managers have been working for 100% of the number of years
+
+//The amount of projects eaxh year grows with the amount of managers
+//so for the beggining years (25%) we had the fewest amount of projects per year only enough that 25% of managers could do
+//the next 25% of years (50% years complete) we had 25% more projects
+//this follows for the following two 25% of years
 exports.assign_past_Projects = function(num_years, projects_per_year)
 {
     //we need to query the db for the amount of managers

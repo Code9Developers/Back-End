@@ -172,13 +172,13 @@ router.get('/create_test_employees', function(req, res, next)
 {
     //dbs.create_test_employees();
     test_data.create_All_test_employees(7, 43);
-    //res.render('login');
+    res.render('login');
 });
 
 //Removes the 5 test employees from the database
 router.get('/remove_test_employees', function(req, res, next)
 {
-    dbs.remove_test_employees();
+    test_data.remove_users();
     res.render('login');
 });
 

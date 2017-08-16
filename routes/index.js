@@ -63,16 +63,33 @@ router.get("/project_creation",function (req,res,next) {
     res.render('project_creation',{role:req.session.role,name:req.session.name,surname:req.session.surname});
 });
 
+router.get('/store_emp',function (req,res,next) {
+    var el=JSON.parse(req.param("emplArr"));
+    var num_empl=parseInt(JSON.parse(req.param("num_empl")));
+
+
+    employees="[";
+    for(var key in el){
+
+        if(parseInt(key)==(num_empl-1)){
+            employees=employees+"_id: "+ el[key]._id+"]";
+        }
+        else{
+            employees=employees+"_id: "+ el[key]._id+",";
+        }
+    }
+});
+
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
-    var assigned_emp=[];
-    var duration=req.body.start_date+"-"+req.body.end_date;
+
     var project={
         _id: project_id,
         name: req.body.projectname,
         description: req.body.projectdescription,
-        project_duration: duration,
+        project_start_date: req.body.start_date,
+        project_end_date: req.body.end_date,
         owner_name: req.body.projectowner,
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
@@ -83,24 +100,22 @@ router.post("/project_creation",function (req,res,next) {
 
 
     dbs.insertProject(project);
-    var user = dbs.get_user(req.session.username, function(user) {
-        var manager = dbs.findUser(req.body.projectmanagerid, function(manager) {
-            var managerName = manager.name ;
-            res.render('project_view', {
-                name: user.name,
-                surname: user.surname,
-                owner_name: req.body.projectowner,
-                manager_name: managerName,
-                project_name: req.body.projectname,
-                end_date: req.body.end_date,
-                start_date: req.body.start_date,
-                project_description: req.body.projectdescription,
-                budget: req.body.budget
-            });
-        });
+    var user=dbs.findUser(req.session.username, function(user) {
+        res.render('project_view',{
+            name:user.name,
+            surname:user.surname,
+            owner_name:req.body.projectowner,
+            manager_name:req.body.projectmanager,
+            project_name:req.body.projectname,
+            end_date:req.body.end_date,
+            start_date:req.body.start_date,
+            project_description:req.body.projectdescription,
+            budget:req.body.budget}
+            );
     });
 
 });
+
 
 
 router.get('/admin',function (req,res,next) {
@@ -123,6 +138,7 @@ router.post('/register_employee',function (req,res,next) {
             surname: req.body.lastname,
             password:enc_pass ,
             password_date: today,
+            contact:req.body.contact,
             email: req.body.email,
             role: req.body.role,
             position:req.body.position,
@@ -136,6 +152,22 @@ router.post('/register_employee',function (req,res,next) {
 });
 
 router.get("/all_projects",function (req,res,next) {
+  var p;
+  var i=0;
+    var all_projects=dbs.activeProjects(function (all_projects) {
+        i=0;
+        for(x in all_projects){
+            console.log(all_projects[x]);
+            // for(i=0;i<(all_projects[x].employees_assigned).length;i++){
+            //     console.log(i);
+            // }
+            console.log(all_projects[x].projwDFect_duration);
+            var dateCreated = (all_projects[x].project_duration).substring(0,10);
+            p=p+{projects_name:all_projects[x].name,num_emp:i,date_created:dateCreated,progress:50}
+        }
+    });
+
+    console.log(all_projects);
     var val={
                 projects:[
                     {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
@@ -164,13 +196,17 @@ router.get("/logout",function (req,res,next) {
     res.redirect('/');
 });
 
-
-// TEST EMPLOYEE FIND
-router.get('/test-find', function(req, res, next) {
-    dbs.findEmployee('emp_id_123') ;
+router.get("/project_milestone",function (req,res,next) {
+    res.render('project_milestones');
 });
 
+router.get("/project_edit",function (req,res,next) {
+    res.render('project_edit');
+});
 
+router.get("/project_detail",function (req,res,next) {
+    res.render('project_view');
+});
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page

@@ -11,14 +11,14 @@
                 <form action="dashboard" method="post">
                     <h1>Login Form</h1>
                     <div>
-                        <input type="text" class="form-control" name="username" placeholder="Username" required="" />
+                        <input type="text" class="form-control" placeholder="Username" required="" />
                     </div>
                     <div>
-                        <input type="password" class="form-control" name="password" placeholder="Password" required="" />
+                        <input type="password" class="form-control" placeholder="Password" required="" />
                     </div>
                     <div>
-                        <button class="btn btn-default submit" type="submit">Login</button>
-                        <a class="reset_pass" href="#">Lost your password?</a>
+                        <input class="btn btn-default submit" type="submit" value="Submit">
+                        <!--<a class="reset_pass" href="#">Lost your password?</a>-->
                         <!--Maybe we can add a lost your password part in later on -->
                     </div>
 
@@ -29,7 +29,9 @@
                         <br />
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
+                            <br/>
+                            <br/>
                             <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                         </div>
                     </div>
@@ -60,7 +62,7 @@
                         </div>
                     </div>
                     <div>
-                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                        <input class="btn btn-default submit" type="submit" value="Submit">
                     </div>
 
                     <div class="clearfix"></div>
@@ -86,5 +88,5 @@
     </div>
 </div>
 
-
+</body>
 <%- include('footer'); %>

@@ -49,7 +49,8 @@
     <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
+    <!-- bootstrap Tags -->
+    <link href="vendors/bootstrap-tagsinput-latest/src/bootstrap-tagsinput.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/stylesheets/custom.min.css" rel="stylesheet">
 </head>
@@ -248,30 +249,22 @@
                     </div>
                 </div>
                 <div class="row" style="margin-bottom: 10px">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <label for="email">Email: *</label>
                         <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="" />
+                    </div>
+                    <div class="col-md-3">
+                        <label class="control-label">Contact Number: *</label>
+                        <input type="text" name="contact" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
                     </div>
                     <div class="col-md-3">
                         <label for="emplength">Employment Length (in years): *</label>
                         <input id="emplength" name="emplength" type="number" class="form-control" placeholder="Employment Length" required="" />
                     </div>
-                    <div class="col-md-3">
-                        <label for="positionlist">Position: *</label>
-                        <select class="form-control" id="positionlist" name="position">
-                            <option>Senior Analyst</option>
-                            <option>Junior Analyst</option>
-                            <option>Senior Auditor</option>
-                            <option>Junior Auditor</option>
-                            <option>Web Developer</option>
-                            <option>Accountant</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="row" style="margin-bottom: 10px">
-                    <div class="col-md-6">
-                        <label for="pastprojects">Past Projects: *</label>
-                        <textarea id="pastprojects" name="pastprojects" rows="4" required="required" class="form-control" placeholder="MS Office, Accounting Skills, Auditor. Comma separated"></textarea>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Past Projects: *</label>
+                        <input id="tags_2" name="pastprojects" type="text" data-role="" class="form-control" placeholder="add a tag" value="Standard Bank Audit"/>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Skill Tags: *</label>
@@ -283,6 +276,7 @@
                 </div>
 
                 <div class="clearfix"></div>
+                </div>
             </form>
             <!-- end form for validations -->
         </div>
@@ -299,51 +293,4 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="vendors/nprogress/nprogress.js"></script>
-<!-- Chart.js -->
-<script src="vendors/Chart.js/dist/Chart.min.js"></script>
-<!-- gauge.js -->
-<script src="vendors/gauge.js/dist/gauge.min.js"></script>
-<!-- bootstrap-progressbar -->
-<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-<!-- iCheck -->
-<script src="vendors/iCheck/icheck.min.js"></script>
-<!-- Skycons -->
-<script src="vendors/skycons/skycons.js"></script>
-<!-- Parsley -->
-<script src="vendors/parsleyjs/dist/parsley.min.js"></script>
-<!-- Flot -->
-<script src="vendors/Flot/jquery.flot.js"></script>
-<script src="vendors/Flot/jquery.flot.pie.js"></script>
-<script src="vendors/Flot/jquery.flot.time.js"></script>
-<script src="vendors/Flot/jquery.flot.stack.js"></script>
-<script src="vendors/Flot/jquery.flot.resize.js"></script>
-<!-- Flot plugins -->
-<script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script src="vendors/flot.curvedlines/curvedLines.js"></script>
-<!-- DateJS -->
-<script src="vendors/DateJS/build/date.js"></script>
-<!-- JQVMap -->
-<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
-<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-<!-- bootstrap-daterangepicker -->
-<script src="vendors/moment/min/moment.min.js"></script>
-<script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- jQuery Tags Input -->
-<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-
-
-<!-- Custom Theme Scripts -->
-<script src="/javascripts/custom.min.js"></script>
-
-</body>
-</html>
+<%- include('footer'); %>

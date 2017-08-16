@@ -53,6 +53,8 @@
     <link href="vendors/bootstrap-tagsinput-latest/src/bootstrap-tagsinput.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="/stylesheets/custom.min.css" rel="stylesheet">
+    <!-- Bootstrap Multi-select-->
+    <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet"/>
 </head>
 <body class="nav-md">
 <div class="container body">
@@ -263,8 +265,15 @@
                     </div>
                 <div class="row" style="margin-bottom: 10px">
                     <div class="form-group col-md-6">
-                        <label class="control-label">Past Projects: *</label>
-                        <input id="tags_2" name="pastprojects" type="text" data-role="" class="form-control" placeholder="add a tag" value="Standard Bank Audit"/>
+                        <label for="pastprojects" class="control-label">Past Projects: *</label>
+                        <select id="pastprojects" class="multiselect-ui form-control" multiple="multiple">
+                            <option value="cheese">Cheese</option>
+                            <option value="tomatoes">Tomatoes</option>
+                            <option value="mozarella">Mozzarella</option>
+                            <option value="mushrooms">Mushrooms</option>
+                            <option value="pepperoni">Pepperoni</option>
+                            <option value="onions">Onions</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Skill Tags: *</label>

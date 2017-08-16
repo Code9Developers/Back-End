@@ -37,8 +37,8 @@ function create_user(db) {
         position: String,
         employment_length: Number, //years? months?
         skill: [],
-        current_projects: [{project_id: String}], //-> stores project id's
-        past_projects: [{project_id: String}] //-> stores project id's
+        current_projects: [{_id: String}], //-> stores project id's
+        past_projects: [{_id: String}] //-> stores project id's
     }) ;
 
     var user = mongoose.model('user', schema) ;
@@ -68,10 +68,11 @@ function create_project(db) {
         owner_contact: String,
         owner_email: String,
         manager_id: String,
-        employees_assigned: [{employee_id: String, role: String}],
-        employee_rates: [{employee_id: String, rate: Number}],
+        employees_assigned: [{_id: String, role: String}],
+        employee_rates: [{_id: String, rate: Number}],
         project_budget: Number,
-        tasks: [{task_id: String}]
+        tasks: [{task_id: String}],
+        status: String
     }) ;
 
     var project = mongoose.model('project', schema) ;
@@ -86,7 +87,7 @@ function create_task(db) {
         _id: String,
         description: String,
         project_id: String, //project that the task is part of
-        employees_assigned: [{employee_id: String}]
+        employees_assigned: [{_id: String}]
     }) ;
 
     var task = mongoose.model('task', schema) ;
@@ -101,11 +102,11 @@ function create_notification(db) {
         _id: String,
         user_id: String, //id of user that notification is intended for
         message: String,
-        date_create: Date,
+        date_created: Date,
         isRead: Boolean
     }) ;
 
-    var notification = mongoose.model('Notification', schema) ;
+    var notification = mongoose.model('notification', schema) ;
     exports.notification = notification ;
 
     console.log('Notification schema created.') ;

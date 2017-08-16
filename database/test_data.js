@@ -225,7 +225,8 @@ exports.create_test_project = function() {
         manager_id: "emp2",
         employees_assigned: [],
         employee_rates: [],
-        project_budget: 5
+        project_budget: 5,
+        status: "active"
     };
     dbs.insertProject(proj1) ;
 }

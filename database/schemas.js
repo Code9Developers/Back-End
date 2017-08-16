@@ -38,7 +38,8 @@ function create_user(db) {
         employment_length: Number, //years? months?
         skill: [],
         current_projects: [{_id: String}], //-> stores project id's
-        past_projects: [{_id: String}] //-> stores project id's
+        past_projects: []
+        // past_projects: [{_id: String}] //-> stores project id's
     }) ;
 
     var user = mongoose.model('user', schema) ;

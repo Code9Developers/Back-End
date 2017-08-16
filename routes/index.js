@@ -129,6 +129,19 @@ router.post('/register_employee',function (req,res,next) {
         symbols: true,
         uppercase: true
     });
+    // var temp_past_projects=(req.body.pastprojects).split(",");
+    // var past_projects_length=parseInt(temp_past_projects.length);
+    // var past_projects="[";
+    // for(var i=0;i<past_projects_length;i++){
+    //     if(i==past_projects_length-1){
+    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"}]";
+    //     }
+    //     else{
+    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"},";
+    //     }
+    // }
+    // console.log(JSON.parse(JSON.stringify(past_projects)));
+    // console.log(past_projects);
 
     var today = new Date();
     dbs.encrypt("test",function (enc_pass) {
@@ -144,7 +157,7 @@ router.post('/register_employee',function (req,res,next) {
             position:req.body.position,
             employment_length: req.body.emp_length,
             skill: [req.body.skills],
-            past_projects:[req.body.pastprojects]} ;
+            past_projects:req.body.pastprojects} ;
 
         dbs.insertUser(emp) ;
         res.render('index',{valu:JSON.stringify(emp)});
@@ -313,7 +326,7 @@ router.get('/test_algorithm', function(req, res, next) {
     algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration'),  req.param('budget'), function(val) {
         var result = JSON.stringify(val);
         employees=JSON.parse(result);
-        res.send(result);
+        res.send(val);
     });
     res.contentType('application/json');
 });

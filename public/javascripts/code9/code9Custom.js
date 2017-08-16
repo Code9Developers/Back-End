@@ -4,15 +4,18 @@
 
 $(document).ready(function() {
     var globEmployees = null;
+    // $("#employeeTable").empty();
     <!--This is where we add our own functions-->
     // <!--Loading the table for the projects page but I might change the way this works later on-->
     $('#assignEmployees').on('click', function (e) {
+        var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
+
         $.get("test_algorithm",
             {
-                num_empl: $('#numemp').val(),
-                skills: ["test", "test", "test"],
-                duration: 2,
+                num_empl: parseInt(num_employees[1]),
+                skills: [$('#tags_1').val()],
+                duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
             },function(data, status){
                 //Sets up the table dynamically
@@ -81,6 +84,8 @@ $(document).ready(function() {
     $('#createProjectbtn').on('click', function (e) {
         //.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
+        console.log("Hello");
+        console.log($('#range_31').val());
         if(globEmployees == null){
 
             window.alert("Employees not assigned");

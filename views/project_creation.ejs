@@ -288,12 +288,12 @@
                         <br/>
                         <div class="col-md-5">
                             <label>Start Date: </label>
-                            <input name="start_date" class="form-control" type="date" placeholder="yyyy-mm-dd" required/>
+                            <input class="form-control" type="date" required/>
                         </div>
 
                         <div class="col-md-5 col-md-offset-1">
                             <label>End Date: </label>
-                            <input name="end_date" class="form-control" type="date" placeholder="yyyy-mm-dd" required/>
+                            <input class="form-control" type="date" required/>
                         </div>
                     </div>
                 </div>
@@ -308,7 +308,7 @@
                     <!-- Skills required-->
                     <div class="col-md-6">
                         <label class="control-label">Skill Tags</label>
-                        <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" name="skills" required  />
+                        <input id="tags_1" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
                         <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
                     </div>
                 </div>
@@ -317,27 +317,31 @@
                 <!-- TODO ask KPMG about min team size-->
                 <!-- Employees-->
                 <label>Employee Allocation</label><br/>
+                <div class="row">
+                    <div class="col-md-2 col-sm-2 col-xs-12">
+                        <label>No. of Employees: *</label>
+                        <input type="number" id="numemp" value="" min="0" name="numemp" placeholder="Other amount" />
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
 
-                <div class="col-md-2 col-sm-2 col-xs-12">
-                    <label>No. of Employees: *</label>
-                    <input type="number" id="numemp" value="" min="0" name="numemp" placeholder="Other amount" />
-                </div>
-                <div class="col-md-3 col-sm-3 col-xs-12">
-                    <label>Project Budget: *</label><br/><span> R</span>
-                    <input name="budget" id="budget" type="number" min="0.00" step="0.01" placeholder="0,00" />
-                </div>
-                <div class="col-md-6">
+                        <input type="text" id="range_31" value="" name="numemp" />
+                        <br/>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <label>Project Budget: *</label><br/><span> R</span>
+                        <input name="budget" type="number" min="0.00" step="0.01" placeholder="0,00" />
+                    </div>
+                    <div class="col-md-3">
                     <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
-                            <span class="docs-tooltip badge bg-green" id="assignEmpCount"></span>
-                            <button id="assignEmployees" type="button" class="fa fa-users">Allocate Employees</button>
-                     </span>
+                        <button id="assignEmployees" type="button" class="btn btn-dark "><span class="fa fa-users"></span> Allocate Employees</button>
                     </span>
+                    </div>
                 </div>
 
                 <!-- TODO show this table once button is clicked-->
                 <div class="">
-                    <div id="employeeTable" class="x_panel">
-                        <!--<div class="x_title">
+                    <div class="x_panel">
+                        <div class="x_title">
                             <h2>Allocated Employees</h2>
                             <ul class="nav navbar-right panel_toolbox">
                                 <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
@@ -345,9 +349,9 @@
                             <div class="clearfix"></div>
                         </div>
                         <div class="x_content">
-                            <p class="text-muted font-13 m-b-30">
-                                DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>
-                            </p>
+                            <!--<p class="text-muted font-13 m-b-30">-->
+                            <!--DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>-->
+                            <!--</p>-->
                             <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
                                 <thead>
                                 <tr>
@@ -361,6 +365,7 @@
                                     <th>Projects Completed</th>
                                 </tr>
                                 </thead>
+
                                 <tbody>
                                 <tr>
                                     <td>
@@ -380,13 +385,52 @@
                                     <td>Auditor</td>
                                     <td>Room 7</td>
                                     <td>12</td>
-                                    <td>23</td>
+                                    <td>2</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Brielle Williamson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>Room 10</td>
+                                    <td>13</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Herrod Chandler</td>
+                                    <td>Sales Assistant</td>
+                                    <td>N/A</td>
+                                    <td>36</td>
+                                    <td>64</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Rhona Davidson</td>
+                                    <td>Integration Specialist</td>
+                                    <td>Room 1</td>
+                                    <td>55</td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    <th><input type="checkbox" id="check-all" class="flat"></th>
+                                    </td>
+                                    <td>Colleen Hurst</td>
+                                    <td>Auditor</td>
+                                    <td>Room 7</td>
+                                    <td>26</td>
+                                    <td>34</td>
                                 </tr>
                                 </tbody>
                             </table>
-                            <button id="approveEmployee" style="float: right" type="button" class="btn-round btn-dark docs-tooltip" data-toggle="tooltip" title="Approve generated employees">Approve Selection</button>
-                            +                            <button id="removeEmployee" style="float: left" type="button" class="btn-round btn-danger docs-tooltip" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
-                        </div>-->
+                            <button id="removeEmployee" type="button" class="btn docs-tooltip btn-danger btn-round" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
+                        </div>
                     </div>
                 </div>
                 <!-- TODO Table end-->
@@ -402,23 +446,23 @@
                         <input type="email" id="projectowneremail" class="form-control" name="projectowneremail" data-parsley-trigger="change" required />
 
                         <label class="control-label">Contact Number: *</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectownercontact" required >
+                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
                     </div>
                     <!-- Project Manger Details-->
-                    <div class="col-md-6">
-                        <label for="projectmanager">Project Manager: *</label>
-                        <input type="text" id="projectmanager" class="form-control" name="projectmanager" required />
+                    <!--<div class="col-md-6">-->
+                    <!--<label for="projectmanager">Project Manager: *</label>-->
+                    <!--<input type="text" id="projectmanager" class="form-control" name="projectmanager" required />-->
 
-                        <label for="projectmanageremail">Project Manager Email: *</label>
-                        <input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />
+                    <!--<label for="projectmanageremail">Project Manager Email: *</label>-->
+                    <!--<input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />-->
 
-                        <label class="control-label">Contact Number: *</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" name="projectmanagercontact" required >
-                    </div>
+                    <!--<label class="control-label">Contact Number: *</label>-->
+                    <!--<input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >-->
+                    <!--</div>-->
                 </div>
                 <br/><hr/>
                 <br/>
-                <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation" type="submit" value="Create Project">
+                <button id="createProjectbtn" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation">Create Project</button>
             </form>
             <!-- end form for validations -->
         </div>
@@ -435,4 +479,73 @@
     </div>
 </div>
 
-<%- include('footer'); %>
+<!-- jQuery -->
+<script src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress -->
+<script src="vendors/nprogress/nprogress.js"></script>
+<!-- Chart.js -->
+<script src="vendors/Chart.js/dist/Chart.min.js"></script>
+<!-- gauge.js -->
+<script src="vendors/gauge.js/dist/gauge.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- Parsley -->
+<script src="vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- iCheck -->
+<script src="vendors/iCheck/icheck.min.js"></script>
+<!-- Skycons -->
+<script src="vendors/skycons/skycons.js"></script>
+<!-- Flot -->
+<script src="vendors/Flot/jquery.flot.js"></script>
+<script src="vendors/Flot/jquery.flot.pie.js"></script>
+<script src="vendors/Flot/jquery.flot.time.js"></script>
+<script src="vendors/Flot/jquery.flot.stack.js"></script>
+<script src="vendors/Flot/jquery.flot.resize.js"></script>
+<!-- Flot plugins -->
+<script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+<script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+<script src="vendors/flot.curvedlines/curvedLines.js"></script>
+<!-- DateJS -->
+<script src="vendors/DateJS/build/date.js"></script>
+<!-- JQVMap -->
+<script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
+<script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script src="vendors/moment/min/moment.min.js"></script>
+<script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+<!-- jquery.inputmask -->
+<script src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<!-- jQuery Tags Input -->
+<script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Datatables -->
+<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script src="vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script src="vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script src="vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script src="vendors/jszip/dist/jszip.min.js"></script>
+<script src="vendors/pdfmake/build/pdfmake.min.js"></script>
+<script src="vendors/pdfmake/build/vfs_fonts.js"></script>
+<!-- Ion.RangeSlider -->
+<script src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script src="/javascripts/custom.js"></script>
+<!--Custom js
+-->
+<script src="/javascripts/code9/code9Custom.js"></script>
+
+</body>
+</html>

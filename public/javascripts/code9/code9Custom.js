@@ -5,66 +5,7 @@
 $(document).ready(function() {
     var globEmployees = null;
     <!--This is where we add our own functions-->
-
     // <!--Loading the table for the projects page but I might change the way this works later on-->
-   // window.alert("all proj");
-    $.get("all_projects",{
-
-
-    },function(data,status){
-
-        $('#projectsPageTable').empty();
-        $('#projectsPageTable').append("<table class='table table-striped projects'>"+
-            "<thead>"+
-            "<tr>"+
-            "<th style='width: 1%'>#</th>"+
-            "<th style='width: 20%'>Project Name</th>"+
-            "<th>Team Members</th>"+
-            " <th>Project Progress</th>"+
-            "<th>Status</th>"+
-            "<th style='width: 20%'>#Edit</th>"+
-            " </tr>"+
-            " </thead>"+
-            "<tbody id='projViewTable'>"+
-            "</tbody>"+
-            "</table>"
-        );
-       //window.alert(data.projects);
-        //data = JSON.parse(data);
-        $.each(data.projects,function(key,value){
-            // console.log(value.name);
-            // window.alert(value.project_name);
-            $("#projViewTable").append("<tr>"+
-                "<td>"+
-                "#"+
-                "</td>"+
-                "<td>"+
-                "<a>"+value.project_name+"</a>"+
-                "<br/>"+
-                "<small>"+value.date_created+"</small>"+
-                "</td>"+
-                "<td>"+value.num_emp+
-                "</td>"+
-                "<td class='project_progress'>"+
-                "<div class='progress progress_sm'>"+
-                "<div class='progress-bar bg-green' role='progressbar' data-transitiongoal='"+value.progress+"'></div>"+
-                "</div>"+
-                "<small>"+value.progress+"% Complete</small>"+
-                "</td>"+
-                "<td>"+
-                "<button type='button' class='btn btn-success btn-xs'>Success</button>"+
-                "</td>"+
-                "<td>"+
-                "<a href='#' class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
-                "<a href='#' class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
-                "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>"+
-                "</td>"+
-                "</tr>");
-        });
-
-    });
-
-
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
         $.get("test_algorithm",
@@ -117,7 +58,7 @@ $(document).ready(function() {
                         "<td>"+value.surname+"</td>"+
                         "<td>"+value.position+"</td>"+
                         "<td>"+value.employment_length+"</td>"+
-                        "<td>"+value.past_projects+"</td>"+
+                        "<td>"+JSON.parse(value.past_projects)+"</td>"+
                         "</tr>");
                 });
                 // console.log(data);
@@ -143,15 +84,19 @@ $(document).ready(function() {
         if(globEmployees == null){
 
             window.alert("Employees not assigned");
+            $("#demo-form").submit(function(e){
+                e.preventDefault();
+            });
         }else {
-            $.get("project_creation", {
+            window.alert(JSON.stringify(globEmployees));
+            $.get("store_emp", {
                     num_empl: $('#numemp').val(),
                     duration: 2,
                     budget: $('#budget').val(),
-                    emplArr: globEmployees
+                    emplArr: JSON.stringify(globEmployees)
                 }, function (data, status) {
-                window.alert("Employees assigned");
-
+                     //e.submit();
+                    $("#demo-form").submit();
                 }
             )
         }

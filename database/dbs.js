@@ -21,7 +21,6 @@ exports.insertUser = function(_json) {
             console.log("Successfully inserted " + _user.role + ".") ;
         }
     }) ;
-
 };
 
 //other search templates could be added
@@ -34,7 +33,7 @@ exports.findUser = function(Id, callback) {
         if (err) {
             console.log("Error finding User.");
         }
-        else if (!doc) {
+        else if (doc == "[]") {
             console.log("User not found.");
         }
         else {
@@ -54,7 +53,7 @@ exports.findUsers = function(attrib, value, number, callback) {
             console.log("Error finding Users.") ;
             console.log(err) ;
         }
-        else if (!docs) {
+        else if (doc == "[]") {
             console.log("No Users found.") ;
         }
         else {
@@ -75,6 +74,34 @@ exports.getUserRole = function(user_id, callback) {
             return callback(user.role) ;
         }
     })
+};
+
+//assigns project to user
+exports.assignProject = function(user_id, project_id) {
+
+    var user = schemas.user ;
+    var project = schemas.project ;
+
+    user.findByIdAndUpdate( user_id , { $push: {current_projects: {_id: project_id}}}, function(err) {
+        if (!err) {
+            console.log("Project added to User.") ;
+        }
+        else {
+            console.log("Error adding Project to User.") ;
+        }
+    });
+
+
+    project.findByIdAndUpdate( project_id , { $push: {employees_assigned: {_id: user_id}}}, function(err) {
+        if (!err) {
+            console.log("User added to Project.") ;
+        }
+        else {
+            console.log("Error adding User to Project.") ;
+        }
+    });
+
+    //employee rates?
 };
 
 exports.insertProject = function(_json) {
@@ -102,7 +129,7 @@ exports.findProject = function(Id, callback) {
         if (err) {
             console.log("Error finding Project.");
         }
-        else if (!doc) {
+        else if (doc == "[]") {
             console.log("Project not found.");
         }
         else {
@@ -138,20 +165,72 @@ exports.activeProjects = function(callback) {
     var project = schemas.project ;
     var today = new Date();
 
-    project.find({}, function(err, docs) {
+    project.find({ project_start_date: {$lt: today}, project_end_date: {$gt: today}}, function(err, docs) {
         if (err) {
             console.log("Error finding Projects.") ;
             console.log(err) ;
         }
-        else if (!docs) {
-            console.log("No Projects found.") ;
+        else if (docs == "[]") { //for some reason, all collections are stored as follows "[ <collections> ]'
+            console.log("No active projects found.") ;
         }
         else {
-            console.log("Projects found.") ;
+            console.log("Active projects found.") ;
             return callback(docs);
         }
-    }).$where('this.project_start_date <= today AND this.project_end_date >= today').exec(callback)
-}
+    });
+};
+
+exports.insertTask = function(_json) {
+
+    var task = schemas.task ;
+
+    var _task = new task(_json) ;
+
+    _task.save(function (err) {
+        if (err) {
+            console.log("Task could not be inserted.") ;
+            console.log(err) ;
+        }
+        else {
+            console.log("Successfully inserted Task.") ;
+        }
+    }) ;
+};
+
+exports.insertNotification = function(_json) {
+
+    var notification = schemas.notification ;
+
+    var _notification = new notification(_json) ;
+
+    _notification.save(function (err) {
+        if (err) {
+            console.log("Notification could not be inserted.") ;
+            console.log(err) ;
+        }
+        else {
+            console.log("Successfully inserted Notification.") ;
+        }
+    }) ;
+};
+
+exports.unreadNotifications = function(user_id, callback) {
+    var notification = schemas.notification ;
+
+    notification.find({ user_id: user_id, isRead: false}, function(err, docs) {
+        if (err) {
+            console.log("Error finding Notifications.") ;
+            console.log(err) ;
+        }
+        else if (docs == "[]") { //for some reason, all collections are stored as follows "[ <collections> ]'
+            console.log("No Unread Notifications found.") ;
+        }
+        else {
+            console.log("Unread Notifications found.") ;
+            return callback(docs);
+        }
+    });
+};
 
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {

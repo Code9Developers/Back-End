@@ -76,17 +76,28 @@ router.post("/project_creation",function (req,res,next) {
         owner_name: req.body.projectowner,
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
-        manager_name: req.body.projectmanager,
-        manager_contact: req.body.projectmanagercontact,
-        manager_email: req.body.projectmanageremail,
+        manager_id: req.body.projectmanagerid,
         employees_assigned:[employees],
         project_budget:req.body.budget
     };
 
 
     dbs.insertProject(project);
-    var user=dbs.get_user(req.session.username, function(user) {
-        res.render('project_view',{name:user.name,surname:user.surname,owner_name:req.body.projectowner,manager_name:req.body.projectmanager,project_name:req.body.projectname,end_date:req.body.end_date,start_date:req.body.start_date,project_description:req.body.projectdescription,budget:req.body.budget});
+    var user = dbs.get_user(req.session.username, function(user) {
+        var manager = dbs.findUser(req.body.projectmanagerid, function(manager) {
+            var managerName = manager.name ;
+            res.render('project_view', {
+                name: user.name,
+                surname: user.surname,
+                owner_name: req.body.projectowner,
+                manager_name: managerName,
+                project_name: req.body.projectname,
+                end_date: req.body.end_date,
+                start_date: req.body.start_date,
+                project_description: req.body.projectdescription,
+                budget: req.body.budget
+            });
+        });
     });
 
 });
@@ -172,7 +183,43 @@ router.get('/test_project_creation', function(req, res, next)
 router.get('/create_test_employees', function(req, res, next)
 {
     //dbs.create_test_employees();
-    test_data.create_All_test_employees(7, 43);
+    test_data.create_test_employees(7, 43);
+    res.render('login');
+});
+
+router.get('/create_test_project', function(req, res, next)
+{
+    //dbs.create_test_employees();
+    test_data.create_test_project();
+    res.render('login');
+});
+
+router.get('/create_test_notifications', function(req, res, next)
+{
+    test_data.create_test_notifications();
+    res.render('login');
+});
+
+
+router.get('/active_projects', function(req, res, next)
+{
+    var projects = dbs.activeProjects(function(projects) {
+        console.log(projects) ;
+    });
+    res.render('login');
+});
+
+router.get('/unread_notifications', function(req, res, next)
+{
+    var unread = dbs.unreadNotifications("emp1", function(unread) {
+        console.log(unread) ;
+    });
+    res.render('login');
+});
+
+router.get('/assign_projects', function(req, res, next)
+{
+    dbs.assignProject("emp1", "kpmg1") ;
     res.render('login');
 });
 
@@ -183,9 +230,33 @@ router.get('/remove_test_employees', function(req, res, next)
     res.render('login');
 });
 
+router.get('/remove_test_projects', function(req, res, next)
+{
+    test_data.remove_projects();
+    res.render('login');
+});
+
+router.get('/remove_test_notifications', function(req, res, next)
+{
+    test_data.remove_notifications();
+    res.render('login');
+});
+
+router.get('/remove_test_tasks', function(req, res, next)
+{
+    test_data.remove_tasks();
+    res.render('login');
+});
+
 router.get('/view_test_employees', function(req, res, next)
 {
     test_data.view_users();
+    res.render('login');
+});
+
+router.get('/view_test_projects', function(req, res, next)
+{
+    test_data.view_projects();
     res.render('login');
 });
 

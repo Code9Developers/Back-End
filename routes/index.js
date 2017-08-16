@@ -326,7 +326,7 @@ router.get('/test_algorithm', function(req, res, next) {
     algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration'),  req.param('budget'), function(val) {
         var result = JSON.stringify(val);
         employees=JSON.parse(result);
-        res.send(result);
+        res.send(val);
     });
     res.contentType('application/json');
 });

@@ -49,12 +49,17 @@
     <link href="vendors/starrr/dist/starrr.css" rel="stylesheet">
     <!-- bootstrap-daterangepicker -->
     <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Code9 -->
+    <link href="vendors/Code-9/code9.css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <link href="vendors/dropzone/dist/min/dropzone.min.css" rel="stylesheet">
     <!-- bootstrap Tags -->
     <link href="vendors/bootstrap-tagsinput-latest/src/bootstrap-tagsinput.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="/stylesheets/custom.min.css" rel="stylesheet">
     <!-- Bootstrap Multi-select-->
     <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" rel="stylesheet"/>
+
+    <link href="/stylesheets/custom.min.css" rel="stylesheet">
 </head>
 <body class="nav-md">
 <div class="container body">
@@ -264,8 +269,7 @@
                         <input id="emplength" name="emplength" type="number" class="form-control" placeholder="Employment Length" required="" />
                     </div>
                 <div class="row" style="margin-bottom: 10px">
-                    <div class="form-group col-md-6">
-                        <label for="pastprojects" class="control-label">Past Projects: *</label>
+                    <label for="pastprojects" class="control-label">Past Projects: *</label>
                         <select id="pastprojects" class="multiselect-ui form-control" multiple="multiple">
                             <option value="cheese">Cheese</option>
                             <option value="tomatoes">Tomatoes</option>
@@ -274,7 +278,6 @@
                             <option value="pepperoni">Pepperoni</option>
                             <option value="onions">Onions</option>
                         </select>
-                    </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Skill Tags: *</label>
                         <input id="tags_1" name="skills" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
@@ -301,5 +304,20 @@
         <!-- /footer content -->
     </div>
 </div>
+<script>
+    function addCombo() {
+        var textb = document.getElementById("txtCombo");
+        var combo = document.getElementById("combo");
 
+        var option = document.createElement("option");
+        option.text = textb.value;
+        option.value = textb.value;
+        try {
+            combo.add(option, null); //Standard
+        }catch(error) {
+            combo.add(option); // IE only
+        }
+        textb.value = "";
+    }
+</script>
 <%- include('footer'); %>

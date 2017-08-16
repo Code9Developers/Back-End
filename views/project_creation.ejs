@@ -318,10 +318,10 @@
                 <!-- Employees-->
                 <label>Employee Allocation</label><br/>
                 <div class="row">
-                    <div class="col-md-2 col-sm-2 col-xs-12">
-                        <label>No. of Employees: *</label>
-                        <input type="number" id="numemp" value="" min="0" name="numemp" placeholder="Other amount" />
-                    </div>
+                    <!--<div class="col-md-2 col-sm-2 col-xs-12">-->
+                        <!--<label>No. of Employees: *</label>-->
+                        <!--<input type="number" id="numemp" value="" min="0" name="numemp" placeholder="Other amount" />-->
+                    <!--</div>-->
                     <div class="col-md-4 col-sm-4 col-xs-12">
 
                         <input type="text" id="range_31" value="" name="numemp" />
@@ -329,7 +329,7 @@
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12">
                         <label>Project Budget: *</label><br/><span> R</span>
-                        <input name="budget" type="number" min="0.00" step="0.01" placeholder="0,00" />
+                        <input id="budget" name="budget" type="number" min="0.00" step="1" placeholder="0.00" />
                     </div>
                     <div class="col-md-3">
                     <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
@@ -348,91 +348,94 @@
                             </ul>
                             <div class="clearfix"></div>
                         </div>
-                        <div class="x_content">
+                        <div class="">
+                            <div employeeTable class="x_content">
+                            </div>
+                        </div>
                             <!--<p class="text-muted font-13 m-b-30">-->
                             <!--DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function: <code>$().DataTable();</code>-->
                             <!--</p>-->
-                            <table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">
-                                <thead>
-                                <tr>
-                                    <th>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </th>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Employment Length</th>
-                                    <th>Projects Completed</th>
-                                </tr>
-                                </thead>
+                            <!--<table id="datatable-checkbox" class="table table-striped table-bordered bulk_action">-->
+                                <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</th>-->
+                                    <!--<th>Name</th>-->
+                                    <!--<th>Position</th>-->
+                                    <!--<th>Office</th>-->
+                                    <!--<th>Employment Length</th>-->
+                                    <!--<th>Projects Completed</th>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
 
-                                <tbody>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Donna Snider</td>
-                                    <td>Customer Support</td>
-                                    <td>Room 4</td>
-                                    <td>27</td>
-                                    <td>50</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Saint Clair</td>
-                                    <td>Auditor</td>
-                                    <td>Room 7</td>
-                                    <td>12</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Brielle Williamson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Room 10</td>
-                                    <td>13</td>
-                                    <td>5</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Herrod Chandler</td>
-                                    <td>Sales Assistant</td>
-                                    <td>N/A</td>
-                                    <td>36</td>
-                                    <td>64</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Rhona Davidson</td>
-                                    <td>Integration Specialist</td>
-                                    <td>Room 1</td>
-                                    <td>55</td>
-                                    <td>80</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                    <th><input type="checkbox" id="check-all" class="flat"></th>
-                                    </td>
-                                    <td>Colleen Hurst</td>
-                                    <td>Auditor</td>
-                                    <td>Room 7</td>
-                                    <td>26</td>
-                                    <td>34</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <button id="removeEmployee" type="button" class="btn docs-tooltip btn-danger btn-round" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>
-                        </div>
-                    </div>
-                </div>
+                                <!--<tbody>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Donna Snider</td>-->
+                                    <!--<td>Customer Support</td>-->
+                                    <!--<td>Room 4</td>-->
+                                    <!--<td>27</td>-->
+                                    <!--<td>50</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Saint Clair</td>-->
+                                    <!--<td>Auditor</td>-->
+                                    <!--<td>Room 7</td>-->
+                                    <!--<td>12</td>-->
+                                    <!--<td>2</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Brielle Williamson</td>-->
+                                    <!--<td>Integration Specialist</td>-->
+                                    <!--<td>Room 10</td>-->
+                                    <!--<td>13</td>-->
+                                    <!--<td>5</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Herrod Chandler</td>-->
+                                    <!--<td>Sales Assistant</td>-->
+                                    <!--<td>N/A</td>-->
+                                    <!--<td>36</td>-->
+                                    <!--<td>64</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Rhona Davidson</td>-->
+                                    <!--<td>Integration Specialist</td>-->
+                                    <!--<td>Room 1</td>-->
+                                    <!--<td>55</td>-->
+                                    <!--<td>80</td>-->
+                                <!--</tr>-->
+                                <!--<tr>-->
+                                    <!--<td>-->
+                                    <!--<th><input type="checkbox" id="check-all" class="flat"></th>-->
+                                    <!--</td>-->
+                                    <!--<td>Colleen Hurst</td>-->
+                                    <!--<td>Auditor</td>-->
+                                    <!--<td>Room 7</td>-->
+                                    <!--<td>26</td>-->
+                                    <!--<td>34</td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                            <!--<button id="removeEmployee" type="button" class="btn docs-tooltip btn-danger btn-round" data-toggle="tooltip" title="Remove selected employee/employees from project">Remove Selection</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <!-- TODO Table end-->
 
                 <br/><hr/>
@@ -464,6 +467,8 @@
                 <br/>
                 <button id="createProjectbtn" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" title="Confirm new project creation">Create Project</button>
             </form>
+                </div>
+            </div>
             <!-- end form for validations -->
         </div>
         <!-- /page content -->

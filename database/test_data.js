@@ -22,7 +22,7 @@ exports.create_test_employees = function() {
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp2 = {
@@ -37,7 +37,7 @@ exports.create_test_employees = function() {
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp3 = {
@@ -52,7 +52,7 @@ exports.create_test_employees = function() {
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp4 = {
@@ -67,7 +67,7 @@ exports.create_test_employees = function() {
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp5 = {
@@ -82,7 +82,7 @@ exports.create_test_employees = function() {
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
         //dbs.remove({name: "Testy"});  /*THIS deletes all previous users in the db*/
         dbs.insertUser(emp);
@@ -144,7 +144,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 employment_length: Math.floor(Math.random()*(4 - 1 + 1)+ 1),
                 skill: [],
                 current_projects: [],
-                past_projects: []
+                past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
             };
             emp_list[emp_count] = new_json_obj;
             employee_ids += 1;

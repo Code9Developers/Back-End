@@ -76,7 +76,7 @@ exports.getUserRole = function(user_id, callback) {
     })
 };
 
-//assigns project to user
+//assigns project to user and vice versa
 exports.assignProject = function(user_id, project_id) {
 
     var user = schemas.user ;
@@ -91,7 +91,6 @@ exports.assignProject = function(user_id, project_id) {
         }
     });
 
-
     project.findByIdAndUpdate( project_id , { $push: {employees_assigned: {_id: user_id}}}, function(err) {
         if (!err) {
             console.log("User added to Project.") ;
@@ -102,6 +101,11 @@ exports.assignProject = function(user_id, project_id) {
     });
 
     //employee rates?
+};
+
+//remove employee from project and vice versa
+exports.dismissProject = function(user_id, project_id) {
+    //will be implemented later
 };
 
 exports.insertProject = function(_json) {
@@ -157,25 +161,19 @@ exports.findProjects = function(attrb, value, number, callback) {
             return callback(docs);
         }
     }).limit(number);
-}
+};
 
-
-//returns all active projects
-exports.activeProjects = function(callback) {
+//checks if projects are complete and updates status
+exports.refreshProjectStatus = function() {
     var project = schemas.project ;
-    var today = new Date();
+    var today = new Date() ;
 
-    project.find({ project_start_date: {$lt: today}, project_end_date: {$gt: today}}, function(err, docs) {
-        if (err) {
-            console.log("Error finding Projects.") ;
-            console.log(err) ;
-        }
-        else if (docs == "[]") { //for some reason, all collections are stored as follows "[ <collections> ]'
-            console.log("No active projects found.") ;
+    project.update( { project_end_date: {$lt: today}} , { $set: {status: "completed"}}, function(err) {
+        if (!err) {
+            console.log("Projects status updated.") ;
         }
         else {
-            console.log("Active projects found.") ;
-            return callback(docs);
+            console.log("Error updating Projects status.") ;
         }
     });
 };

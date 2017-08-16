@@ -260,6 +260,12 @@ router.get('/view_test_projects', function(req, res, next)
     res.render('login');
 });
 
+router.get('/refresh_project_status', function(req, res, next)
+{
+    dbs.refreshProjectStatus();
+    res.render('login');
+});
+
 router.get('/test_algorithm', function(req, res, next) {
     console.log("employee allocation requested");
     console.log("the request number of employees is "+req.param('num_empl'));

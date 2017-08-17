@@ -78,6 +78,8 @@ router.get('/store_emp',function (req,res,next) {
             employees=employees+"_id: "+ el[key]._id+",";
         }
     }
+
+    console.log(employees);
 });
 
 router.post("/project_creation",function (req,res,next) {
@@ -94,24 +96,24 @@ router.post("/project_creation",function (req,res,next) {
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
         manager_id: req.body.projectmanagerid,
-        employees_assigned:[employees],
         project_budget:req.body.budget
     };
 
 
     dbs.insertProject(project);
     var user=dbs.findUser(req.session.username, function(user) {
-        res.render('project_view',{
-            name:user.name,
-            surname:user.surname,
-            owner_name:req.body.projectowner,
-            manager_name:req.body.projectmanager,
-            project_name:req.body.projectname,
-            end_date:req.body.end_date,
-            start_date:req.body.start_date,
-            project_description:req.body.projectdescription,
-            budget:req.body.budget}
-            );
+         res.render('project_view'
+             // {
+        //     name:user.name,
+        //     surname:user.surname,
+        //     owner_name:req.body.projectowner,
+        //     manager_name:req.body.projectmanager,
+        //     project_name:req.body.projectname,
+        //     end_date:req.body.end_date,
+        //     start_date:req.body.start_date,
+        //     project_description:req.body.projectdescription,
+        //     budget:req.body.budget}
+       );
     });
 
 });
@@ -204,6 +206,16 @@ router.get("/projects",function (req,res,next) {
     res.render('projects');
 });
 
+router.get("/username",function (req,res,next) {
+    res.send(req.session.username);
+});
+
+router.get("/role",function (req,res,next) {
+    var user=dbs.findUser(req.session.username, function(user) {
+        res.send(user.role);
+    });
+});
+
 router.get("/logout",function (req,res,next) {
     req.session.reset();
     res.redirect('/');
@@ -261,9 +273,9 @@ router.get('/active_projects', function(req, res, next)
 router.get('/unread_notifications', function(req, res, next)
 {
     var unread = dbs.unreadNotifications("emp1", function(unread) {
-        console.log(unread) ;
+        res.send(unread);
     });
-    res.render('login');
+
 });
 
 router.get('/assign_projects', function(req, res, next)
@@ -326,7 +338,7 @@ router.get('/test_algorithm', function(req, res, next) {
     algorithm.get_unallocated_users(req.param('num_empl'),req.param('skills'), req.param('duration'),  req.param('budget'), function(val) {
         var result = JSON.stringify(val);
         employees=JSON.parse(result);
-        res.send(val);
+        res.send(result);
     });
     res.contentType('application/json');
 });

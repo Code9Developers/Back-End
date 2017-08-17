@@ -136,7 +136,6 @@ router.get("/all_projects",function (req,res,next) {
                     {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
                     {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
                     {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
-
                 ]
             };
     var result = JSON.stringify(val);
@@ -145,7 +144,15 @@ router.get("/all_projects",function (req,res,next) {
 });
 
 router.get("/projects",function (req,res,next) {
+
     res.render('projects');
+});
+
+router.get("/create_past_projects",function (req,res,next) {
+    //Because of the Math.floor() we get a less managers than planned
+    //And and less years for projects than we give
+    test_data.create_past_Projects(15);
+    res.render('login');
 });
 
 router.get("/logout",function (req,res,next) {
@@ -172,7 +179,7 @@ router.get('/test_project_creation', function(req, res, next)
 router.get('/create_test_employees', function(req, res, next)
 {
     //dbs.create_test_employees();
-    test_data.create_All_test_employees(7, 43);
+    test_data.create_All_test_employees(30, 270);
     res.render('login');
 });
 

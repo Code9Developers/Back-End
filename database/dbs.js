@@ -76,32 +76,60 @@ exports.getUserRole = function(user_id, callback) {
     })
 };
 
-//assigns project to user and vice versa
-exports.assignProject = function(user_id, project_id) {
+exports.assignProjectToUser = function(user_id, project_id) {
 
-    var user = schemas.user ;
-    var project = schemas.project ;
+    var user = schemas.user;
+    var project = schemas.project;
 
-    user.findByIdAndUpdate( user_id , { $push: {current_projects: {_id: project_id}}}, function(err) {
+    user.findByIdAndUpdate(user_id, {$push: {current_projects: {_id: project_id}}}, function (err) {
         if (!err) {
-            console.log("Project added to User.") ;
+            console.log("Project added to User.");
         }
         else {
-            console.log("Error adding Project to User.") ;
+            console.log("Error adding Project to User.");
         }
     });
+};
 
-    project.findByIdAndUpdate( project_id , { $push: {employees_assigned: {_id: user_id}}}, function(err) {
-        if (!err) {
-            console.log("User added to Project.") ;
-        }
-        else {
-            console.log("Error adding User to Project.") ;
-        }
-    });
+exports.assignUsersToProject = function(user_id, project_id) {
+    project.findByIdAndUpdate( project_id , { $push: {employees_assigned: user_id}}, function(err) {
+            if (!err) {
+                console.log("User added to Project.") ;
+            }
+            else {
+                console.log("Error adding User to Project.") ;
+            }
+        });
 
     //employee rates?
 };
+
+//assigns project to user and vice versa
+// exports.assignProject = function(user_id, project_id) {
+//
+//     var user = schemas.user ;
+//     var project = schemas.project ;
+//
+//     user.findByIdAndUpdate( user_id , { $push: {current_projects: {_id: project_id}}}, function(err) {
+//         if (!err) {
+//             console.log("Project added to User.") ;
+//         }
+//         else {
+//             console.log("Error adding Project to User.") ;
+//         }
+//     });
+//
+//     project.findByIdAndUpdate( project_id , { $push: {employees_assigned: {_id: user_id}}}, function(err) {
+//         if (!err) {
+//             console.log("User added to Project.") ;
+//         }
+//         else {
+//             console.log("Error adding User to Project.") ;
+//         }
+//     });
+//
+//     //employee rates?
+// };
 
 //remove employee from project and vice versa
 exports.dismissProject = function(user_id, project_id) {

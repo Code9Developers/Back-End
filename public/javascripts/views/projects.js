@@ -2,11 +2,7 @@
  * Created by Seonin David on 2017/08/16.
  */
 $(document).ready(function() {
-    var globEmployees = null;
-    <!--This is where we add our own functions-->
 
-    // <!--Loading the table for the projects page but I might change the way this works later on-->
-    // window.alert("all proj");
     $.get("all_projects", {}, function (data, status) {
 
         $('#projectsPageTable').empty();

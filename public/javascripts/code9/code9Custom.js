@@ -3,6 +3,8 @@
  */
 
 $(document).ready(function() {
+    // <!--Dynamically check notifications-->
+
     var globEmployees = null;
     // $("#employeeTable").empty();
 
@@ -75,8 +77,7 @@ $(document).ready(function() {
     $('#createProjectbtn').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
-        window.alert("Hello");
-        console.log($('#range_31').val());
+
         if(globEmployees == null){
 
             window.alert("Employees not assigned");
@@ -84,9 +85,10 @@ $(document).ready(function() {
                 e.preventDefault();
             });
         }else {
+            var num_employees=($('#range_31').val()).split(";");
             window.alert(JSON.stringify(globEmployees));
             $.get("store_emp", {
-                    num_empl: $('#numemp').val(),
+                    num_empl:num_employees[1],
                     duration: 2,
                     budget: $('#budget').val(),
                     emplArr: JSON.stringify(globEmployees)

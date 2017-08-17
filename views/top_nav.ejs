@@ -25,7 +25,7 @@
                     </ul>
                 </li>
 
-                <li role="presentation" class="dropdown">
+                <li id="unreadNotification" role="presentation" class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
                         <i class="fa fa-envelope-o"></i>
                         <span class="badge bg-green">1</span>
@@ -57,10 +57,50 @@
 <script src="vendors/jquery/dist/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
+        var us="";
         $.get("username",
             {
             },function(data, status) {
                 $(".username").append(data);
+                $.get("unread_notifications", {
+                    _id:data
+                }, function (data, status) {
+
+                    $('#unreadNotification').empty();
+                    $('#unreadNotification').append( "<a href='javascript:;' class='dropdown-toggle info-number' data-toggle='dropdown' aria-expanded='false'>"+
+                        "<i class='fa fa-envelope-o'></i>"+
+                        "<span class='badge bg-green'>"+data.length+"</span>"+
+                        "</a>"+
+                        "<ul id='menu1' class='dropdown-menu list-unstyled msg_list' role='menu'>"+
+                        "<li>"+
+                        "<div class='text-center'>"+
+                        "<a>"+
+                        "<strong>See All Alerts</strong>"+
+                        "<i class='fa fa-angle-right'></i>"+
+                        "</a>"+
+                        "</div>"+
+                        "</li>"+
+                        "</ul>"
+                    );
+                    //window.alert(data.projects);
+                    //data = JSON.parse(data);
+                    $.each(data, function (key, value) {
+
+                        // window.alert(value.project_name);
+                        var new_date = value.date_created.substr(0, 10);
+                        $("#menu1").prepend("<li>"+
+                            "<a>"+
+                            "<span class='message'>"+
+                            value.message+
+                            "</span>"+
+                            "<span class='message'>Date Created:  "+new_date+"</span>"+
+                            "</a>"+
+                            "</li>");
+                    });
+
+                });
             });
+
+
     });
 </script>

@@ -11,29 +11,29 @@ exports.create_test_employees = function() {
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
         var emp = {
-            _id: "emp1",
+            _id: "test_manager_12",
             name: "Sargon",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee1@gmail.com",
-            role: "System test",
+            role: "Manager",
             employment_length: 1,
             skill: [],
-            current_projects: [],
+            current_projects: [{_id:"kpmg_aaaas"}],
             past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp2 = {
-            _id: "emp2",
+            _id: "emp7",
             name: "Nebuchadnezzar",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee2@gmail.com",
-            role: "Manager",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
@@ -41,14 +41,14 @@ exports.create_test_employees = function() {
         };
 
         var emp3 = {
-            _id: "emp3",
+            _id: "emp8",
             name: "Xerxes",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee3@gmail.com",
-            role: "Admin",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
@@ -56,14 +56,14 @@ exports.create_test_employees = function() {
         };
 
         var emp4 = {
-            _id: "emp4",
+            _id: "emp9",
             name: "Chandragupta",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee4@gmail.com",
-            role: "System test",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
@@ -71,14 +71,14 @@ exports.create_test_employees = function() {
         };
 
         var emp5 = {
-            _id: "emp5",
+            _id: "emp11",
             name: "Ptolemy",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee5@gmail.com",
-            role: "System test",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
@@ -338,7 +338,7 @@ exports.view_projects = function() {
         }
         else {
             console.log("Projects found");
-            console.log(JSON.stringify(result, null, 1));
+            return(JSON.stringify(result, null, 1));
         }
     });
 };

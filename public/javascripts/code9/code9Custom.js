@@ -5,8 +5,7 @@
 $(document).ready(function() {
     var globEmployees = null;
     // $("#employeeTable").empty();
-    <!--This is where we add our own functions-->
-    // <!--Loading the table for the projects page but I might change the way this works later on-->
+
     $('#assignEmployees').on('click', function (e) {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
@@ -18,7 +17,6 @@ $(document).ready(function() {
                 duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
             },function(data, status){
-                //Sets up the table dynamically
                 $("#employeeTable").empty();
                 $("#employeeTable").append("<div class='x_title'>"+
                     " <h2>Allocated Employees</h2>"+
@@ -44,15 +42,10 @@ $(document).ready(function() {
                     "</tr>"+
                     "</thead>"+
                     "<tbody id='emptBody'></tbody></table>"+
-                    " <button id='approveEmployee' style='float: right' type='button' class='btn-round btn-dark docs-tooltip' data-toggle='tooltip' title='Approve generated employees'>Approve Selection</button>"+
-                    "<button id='removeEmployee' style='float: left' type='button' class='btn-round btn-danger docs-tooltip' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
+                "<button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
 
-                //Store employees in global variable
                 globEmployees = data;
-                //Loops through the JSON string and produces table
                 $.each(data,function(key,value){
-                    // console.log(value.name);
-                    //  window.alert(data);
                     $("#emptBody").append("<tr>"+
                         "<td>"+
                         "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
@@ -61,12 +54,10 @@ $(document).ready(function() {
                         "<td>"+value.surname+"</td>"+
                         "<td>"+value.position+"</td>"+
                         "<td>"+value.employment_length+"</td>"+
-                        "<td>"+JSON.parse(value.past_projects)+"</td>"+
+                        "<td>"+value.past_projects+"</td>"+
                         "</tr>");
                 });
-                // console.log(data);
             });
-        //window.alert("Employees Assigned");
     });
 
     $('#approveEmployee').on('click', function (e) {
@@ -82,9 +73,9 @@ $(document).ready(function() {
     });
 
     $('#createProjectbtn').on('click', function (e) {
-        //.preventDefault(); // disable the default form submit event
+        ///e.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
-        console.log("Hello");
+        window.alert("Hello");
         console.log($('#range_31').val());
         if(globEmployees == null){
 

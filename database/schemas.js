@@ -37,9 +37,8 @@ function create_user(db) {
         position: String,
         employment_length: Number, //years? months?
         skill: [],
-        current_projects: [{_id: String}], //-> stores project id's
-        past_projects: []
-        // past_projects: [{_id: String}] //-> stores project id's
+        current_projects: [], //-> stores project id's
+        past_projects: [] //-> stores project id's
     }) ;
 
     var user = mongoose.model('user', schema) ;
@@ -69,11 +68,12 @@ function create_project(db) {
         owner_contact: String,
         owner_email: String,
         manager_id: String,
-        employees_assigned: [{_id: String, role: String}],
+        employees_assigned: [],
         employee_rates: [{_id: String, rate: Number}],
         project_budget: Number,
-        tasks: [{task_id: String}],
-        status: String
+        tasks: [],//stores task id's
+        status: String, //active, completed, pending
+        milestones: [{_id: String, description: String}]
     }) ;
 
     var project = mongoose.model('project', schema) ;
@@ -88,7 +88,8 @@ function create_task(db) {
         _id: String,
         description: String,
         project_id: String, //project that the task is part of
-        employees_assigned: [{_id: String}]
+        milestone_id: String, //milestone in project to which task belongs
+        employees_assigned: []
     }) ;
 
     var task = mongoose.model('task', schema) ;

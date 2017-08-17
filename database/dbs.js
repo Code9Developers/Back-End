@@ -215,6 +215,20 @@ exports.refreshProjectStatus = function() {
     });
 };
 
+exports.editProjectEndDate = function(project_id, new_project_end_date) {
+    var project = schemas.project ;
+
+    project.findByIdAndUpdate( project_id , { $set: {project_end_date: new_project_end_date}}, function(err) {
+        if (!err) {
+            console.log("Project end date updated.") ;
+        }
+        else {
+            console.log("Error updating Project end date.") ;
+            console.log(err) ;
+        }
+    });
+};
+
 //insert milestone in project
 exports.insertMilestone = function(project_id, _json) {
 
@@ -244,6 +258,36 @@ exports.findMilestones = function(project_id, callback) {
         }
     });
 };
+
+//removes all expired milestones from project
+exports.removeExpiredMilestones = function(project_id) {
+    var project = schemas.project;
+    var today = new Date() ;
+
+    project.findByIdAndUpdate( project_id , { $pull:  {milestones: {end_date: {$lt: today}}}}, function(err) {
+        if (!err) {
+            console.log("Expired Milestone removed from Project.") ;
+        }
+        else {
+            console.log("Error removing expired Milestone from Project.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+/*exports.editMilestoneEndDate = function(project_id, milestone_id, new_milestone_end_date) {
+    var project = schemas.project ;
+
+    project.findByIdAndUpdate( project_id , { $set: {milestones: {{_id: milestone_id}, {end_date: new_milestone_end_date}}}}, function(err) {
+        if (!err) {
+            console.log("Project end date updated.") ;
+        }
+        else {
+            console.log("Error updating Project end date.") ;
+            console.log(err) ;
+        }
+    });
+};*/
 
 exports.insertTask = function(_json) {
 

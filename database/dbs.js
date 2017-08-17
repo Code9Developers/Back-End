@@ -64,7 +64,7 @@ exports.findUsers = function(attrib, value, callback) {
             return callback(docs);
         }
     });
-}
+};
 
 //should we have a function like this for every attribute of each schema?
 exports.getUserRole = function(user_id, callback) {
@@ -181,7 +181,7 @@ exports.findProjects = function(attrib, value, callback) {
 };
 
 //returns all projects
-exports.findProjects = function(callback) {
+exports.findAllProjects = function(callback) {
     var project = schemas.project ;
 
     project.find({}, function(err, docs) {
@@ -211,6 +211,36 @@ exports.refreshProjectStatus = function() {
         else {
             console.log("Error updating Projects status.") ;
             console.log(err) ;
+        }
+    });
+};
+
+//insert milestone in project
+exports.insertMilestone = function(project_id, _json) {
+
+    var project = schemas.project;
+
+    project.findByIdAndUpdate( project_id , { $push:  {milestones: _json}}, function(err) {
+        if (!err) {
+            console.log("Milestone added to Project.") ;
+        }
+        else {
+            console.log("Error adding Milestone to Project.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+//may need to compare doc.milestone to null for no milestones
+exports.findMilestones = function(project_id, callback) {
+
+    var doc = module.exports.findProject(project_id, function(doc) {
+        if (doc.milestones == "[]") {
+            console.log("No Milestones found.") ;
+        }
+        else {
+            console.log("Milestones found.") ;
+            return callback(doc.milestones) ;
         }
     });
 };
@@ -287,6 +317,6 @@ exports.authenticate = function(user_id, password, callback) {
             console.log("authenticated: " + res);
             return callback(res);
         });
-    })
+    });
 };
 

@@ -32,6 +32,7 @@ exports.findUser = function(Id, callback) {
     user.findOne({_id: Id}, function (err, doc) {
         if (err) {
             console.log("Error finding User.");
+            console.log(err) ;
         }
         else if (doc == "[]") {
             console.log("User not found.");
@@ -44,23 +45,25 @@ exports.findUser = function(Id, callback) {
 };
 
 //returns all (max{number}) users where attributes 'attrib' have value of 'value'
-exports.findUsers = function(attrib, value, number, callback) {
+exports.findUsers = function(attrib, value, callback) {
 
     var user = schemas.user ;
+    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+    console.log(query) ;
 
-    user.find({ attrib: value }, function(err, docs) {
+    user.find(query, function(err, docs) {
         if (err) {
             console.log("Error finding Users.") ;
             console.log(err) ;
         }
-        else if (doc == "[]") {
+        else if (docs == "[]") {
             console.log("No Users found.") ;
         }
         else {
             console.log("Users found.") ;
             return callback(docs);
         }
-    }).limit(number);
+    });
 }
 
 //should we have a function like this for every attribute of each schema?
@@ -78,58 +81,41 @@ exports.getUserRole = function(user_id, callback) {
 
 exports.assignProjectToUser = function(user_id, project_id) {
 
-    var user = schemas.user;
-    var project = schemas.project;
+    var user = schemas.user ;
 
-    user.findByIdAndUpdate(user_id, {$push: {current_projects: {_id: project_id}}}, function (err) {
+    user.findByIdAndUpdate(user_id, {$push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
         }
         else {
             console.log("Error adding Project to User.");
+            console.log(err) ;
         }
     });
 };
 
-exports.assignUsersToProject = function(user_id, project_id) {
-    project.findByIdAndUpdate( project_id , { $push: {employees_assigned: user_id}}, function(err) {
-            if (!err) {
-                console.log("User added to Project.") ;
-            }
-            else {
-                console.log("Error adding User to Project.") ;
-            }
-        });
+exports.assignUserToProject = function(user_id, project_id) {
+
+    var project = schemas.project;
+
+    project.findByIdAndUpdate( project_id , { $push:  {employees_assigned: user_id}}, function(err) {
+        if (!err) {
+            console.log("User added to Project.") ;
+        }
+        else {
+            console.log("Error adding User to Project.") ;
+            console.log(err) ;
+        }
+    });
 
     //employee rates?
 };
 
 //assigns project to user and vice versa
-// exports.assignProject = function(user_id, project_id) {
-//
-//     var user = schemas.user ;
-//     var project = schemas.project ;
-//
-//     user.findByIdAndUpdate( user_id , { $push: {current_projects: {_id: project_id}}}, function(err) {
-//         if (!err) {
-//             console.log("Project added to User.") ;
-//         }
-//         else {
-//             console.log("Error adding Project to User.") ;
-//         }
-//     });
-//
-//     project.findByIdAndUpdate( project_id , { $push: {employees_assigned: {_id: user_id}}}, function(err) {
-//         if (!err) {
-//             console.log("User added to Project.") ;
-//         }
-//         else {
-//             console.log("Error adding User to Project.") ;
-//         }
-//     });
-//
-//     //employee rates?
-// };
+exports.assignProject = function(user_id, project_id) {
+    module.exports.assignProjectToUser(user_id, project_id) ;
+    module.exports.assignUserToProject(user_id, project_id) ;
+};
 
 //remove employee from project and vice versa
 exports.dismissProject = function(user_id, project_id) {
@@ -160,6 +146,7 @@ exports.findProject = function(Id, callback) {
     project.findOne({_id: Id}, function (err, doc) {
         if (err) {
             console.log("Error finding Project.");
+            console.log(err) ;
         }
         else if (doc == "[]") {
             console.log("Project not found.");
@@ -172,11 +159,13 @@ exports.findProject = function(Id, callback) {
 };
 
 //returns all projects where attributes 'attrib' have value of 'value'
-exports.findProjects = function(attrb, value, number, callback) {
+exports.findProjects = function(attrib, value, callback) {
 
     var project = schemas.project ;
+    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+    console.log(query) ;
 
-    project.find({ attrib: value }, function(err, docs) {
+    project.find(query, function(err, docs) {
         if (err) {
             console.log("Error finding Projects.") ;
             console.log(err) ;
@@ -188,7 +177,26 @@ exports.findProjects = function(attrb, value, number, callback) {
             console.log("Projects found.") ;
             return callback(docs);
         }
-    }).limit(number);
+    });
+};
+
+//returns all projects
+exports.findProjects = function(callback) {
+    var project = schemas.project ;
+
+    project.find({}, function(err, docs) {
+        if (err) {
+            console.log("Error finding Projects.") ;
+            console.log(err) ;
+        }
+        else if (!docs) {
+            console.log("No Projects found.") ;
+        }
+        else {
+            console.log("All Projects found.") ;
+            return callback(docs);
+        }
+    });
 };
 
 //checks if projects are complete and updates status
@@ -202,6 +210,7 @@ exports.refreshProjectStatus = function() {
         }
         else {
             console.log("Error updating Projects status.") ;
+            console.log(err) ;
         }
     });
 };

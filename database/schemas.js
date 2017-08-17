@@ -69,7 +69,7 @@ function create_project(db) {
         owner_email: String,
         manager_id: String,
         employees_assigned: [],
-        employee_rates: [{_id: String, rate: Number}],
+        employee_rates: [], //corresponding index with employees_assigned
         project_budget: Number,
         tasks: [],//stores task id's
         status: String, //active, completed, pending

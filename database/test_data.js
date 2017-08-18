@@ -12,78 +12,78 @@ exports.create_test_employees = function() {
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
         var emp = {
-            _id: "test_manager_12",
+            _id: "emp1",
             name: "Sargon",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee1@gmail.com",
-            role: "Manager",
+            role: "System test",
             employment_length: 1,
             skill: [],
-            current_projects: [{_id:"kpmg_aaaas"}],
-            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+            current_projects: [],
+            past_projects: []
         };
 
         var emp2 = {
-            _id: "emp7",
+            _id: "emp2",
             name: "Nebuchadnezzar",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee2@gmail.com",
-            role: "Employee",
+            role: "Manager",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+            past_projects: []
         };
 
         var emp3 = {
-            _id: "emp8",
+            _id: "emp3",
             name: "Xerxes",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee3@gmail.com",
-            role: "Employee",
+            role: "Admin",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+            past_projects: []
         };
 
         var emp4 = {
-            _id: "emp9",
+            _id: "emp4",
             name: "Chandragupta",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee4@gmail.com",
-            role: "Employee",
+            role: "System test",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+            past_projects: []
         };
 
         var emp5 = {
-            _id: "emp11",
+            _id: "emp5",
             name: "Ptolemy",
             surname: "test",
             password: enc_pass,
             password_date: today,
             contact: "123 456 7890",
             email: "employee5@gmail.com",
-            role: "Employee",
+            role: "System test",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+            past_projects: []
         };
         //dbs.remove({name: "Testy"});  /*THIS deletes all previous users in the db*/
         dbs.insertUser(emp);
@@ -145,7 +145,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 employment_length: Math.floor(Math.random()*(4 - 1 + 1)+ 1),
                 skill: [],
                 current_projects: [],
-                past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
+                past_projects: []
             };
             emp_list[emp_count] = new_json_obj;
             employee_ids += 1;
@@ -366,7 +366,7 @@ exports.assign_past_Projects = function() {
     //we assign managers to a project with a function which uses the manager id with the project id
 };
 
-exports.create_test_project = function() {
+exports.create_test_projects = function() {
     var proj1 = {
         _id: "kpmg1",
         name: "First Crusade",
@@ -379,10 +379,31 @@ exports.create_test_project = function() {
         manager_id: "emp2",
         employees_assigned: [],
         employee_rates: [],
+        tasks: [],
         project_budget: 5,
-        status: "active"
+        status: "active",
+        milestones: []
     };
     dbs.insertProject(proj1) ;
+
+    var proj2 = {
+        _id: "kpmg2",
+        name: "Battle of Thermopylae",
+        description: "Fuck the Persians",
+        project_start_date: "2017-01-01",
+        project_end_date: "2017-09-09",
+        owner_name: "King Leonidas" ,
+        owner_contact: "666 6666 444",
+        owner_email: "someemail@vatican.vc",
+        manager_id: "emp3",
+        employees_assigned: [],
+        employee_rates: [],
+        tasks: [],
+        project_budget: 6,
+        status: "active",
+        milestones: []
+    };
+    dbs.insertProject(proj2) ;
 }
 
 exports.create_test_notifications = function() {
@@ -403,7 +424,28 @@ exports.create_test_notifications = function() {
         isRead: true
     };
     dbs.insertNotification(not2) ;
-}
+};
+
+exports.create_test_milestones = function() {
+    var mstone = {
+     _id: "mstone1",
+      description: "Issue 69",
+      end_date: "2017-09-17"
+    } ;
+    dbs.insertMilestone("kpmg1", mstone) ;
+    var mstone2 = {
+        _id: "mstone2",
+        description: "Issue 74",
+        end_date: "2017-05-05"
+    } ;
+    dbs.insertMilestone("kpmg1", mstone2) ;
+    var mstone3 = {
+        _id: "mstone3",
+        description: "Issue 11",
+        end_date: "2017-09-21"
+    } ;
+    dbs.insertMilestone("kpmg1", mstone3) ;
+};
 
 //A function to display all users in the terminal
 exports.view_users = function() {
@@ -435,7 +477,7 @@ exports.view_projects = function() {
         }
         else {
             console.log("Projects found");
-            return(JSON.stringify(result, null, 1));
+            console.log(JSON.stringify(result, null, 1));
         }
     });
 };

@@ -87,7 +87,7 @@ router.get('/store_emp',function (req,res,next) {
 
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
-    var project_id="kpmg_"+req.body.projectname+rand_id;
+    var project_id=("kpmg_"+req.body.projectname+rand_id).replace(/\s/g,'');
 
     var project={
         _id: project_id,
@@ -99,7 +99,8 @@ router.post("/project_creation",function (req,res,next) {
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
         manager_id: req.session.username,
-        project_budget:req.body.budget
+        project_budget:req.body.budget,
+        status:"active"
     };
 
 
@@ -108,7 +109,8 @@ router.post("/project_creation",function (req,res,next) {
     var e=employees.split(",");
     for(var x in e)
     {
-        dbs.assignProjectToUser(e[x], project_id) ;
+        dbs.assignProject(e[x], project_id) ;
+        dbs.assignProject(e[x], project_id) ;
         dbs.insertNotification({
             _id: e[x]+project_id,
             user_id: e[x],
@@ -135,8 +137,20 @@ router.post("/project_creation",function (req,res,next) {
 
 });
 
-
-
+router.get('/find_project_users', function(req, res, next)
+{
+    var id=req.param("id");
+    var docs = dbs.findUsers("current_projects", id, function(docs) {
+        res.send(JSON.parse(JSON.stringify(docs))) ;
+    });
+});
+router.get('/data_project_edit',function (req,res,next) {
+    var id=req.param("id");
+    var current_project=dbs.findProject(id,function (current_project) {
+        res.send(current_project);
+    }) ;
+   // res.render("admin");
+});
 router.get('/admin',function (req,res,next) {
     res.render("admin");
 });
@@ -183,40 +197,28 @@ router.post('/register_employee',function (req,res,next) {
     });
 });
 
-router.get("/all_projects",function (req,res,next) {
-  var p;
-  var i=0;
-    var all_projects=dbs.activeProjects(function (all_projects) {
-        i=0;
-        for(x in all_projects){
-            console.log(all_projects[x]);
-            // for(i=0;i<(all_projects[x].employees_assigned).length;i++){
-            //     console.log(i);
-            // }
-            console.log(all_projects[x].projwDFect_duration);
-            var dateCreated = (all_projects[x].project_duration).substring(0,10);
-            p=p+{projects_name:all_projects[x].name,num_emp:i,date_created:dateCreated,progress:50}
-        }
+router.get('/active_projects', function(req, res, next)
+{
+    var projects = dbs.findProjects("status", "active", function(projects) {
+        res.send(JSON.stringify(projects));
     });
 
-    // console.log(all_projects);
-    // var val={
-    //             projects:[
-    //                 {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
-    //                 {project_name:"test2",num_emp:4,date_created:"23/05/2017",progress:30},
-    //                 {project_name:"test3",num_emp:6,date_created:"23/06/2017",progress:40},
-    //                 {project_name:"test4",num_emp:8,date_created:"23/07/2017",progress:50},
-    //                 {project_name:"test5",num_emp:9,date_created:"24/06/2017",progress:80},
-    //                 {project_name:"test6",num_emp:4,date_created:"13/06/2017",progress:59},
-    //                 {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
-    //                 {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
-    //                 {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
-    //
-    //             ]
-    //         };
-    // var result = JSON.stringify(val);
-    // employees=JSON.parse(result);
-    // res.send(val);
+});
+
+router.get('/assign_projects', function(req, res, next)
+{
+    dbs.assignProject("emp7", "kpmg_NetBank7") ;
+    dbs.assignProject("emp8", "kpmg_NetBank7") ;
+    //res.render('');
+});
+
+router.get("/all_projects",function (req,res,next) {
+
+    var all_projects=dbs.findProjects("status", "active",function (all_projects) {
+        console.log(all_projects);
+        res.send(all_projects);
+
+    });
 });
 
 router.get("/projects",function (req,res,next) {
@@ -286,13 +288,7 @@ router.get('/create_test_notifications', function(req, res, next)
 });
 
 
-router.get('/active_projects', function(req, res, next)
-{
-    var projects = dbs.activeProjects(function(projects) {
-        console.log(projects) ;
-    });
-    res.render('login');
-});
+
 
 router.get('/unread_notifications', function(req, res, next)
 {
@@ -342,7 +338,9 @@ router.get('/view_test_employees', function(req, res, next)
 
 router.get('/view_test_projects', function(req, res, next)
 {
-    res.send( test_data.view_projects());
+    var s= test_data.view_projects();
+    console.log("s:"+JSON.parse(JSON.stringify(s)));
+    //res.send();
 });
 
 router.get('/refresh_project_status', function(req, res, next)

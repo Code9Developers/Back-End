@@ -160,12 +160,11 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
 };
 
 /*This Function creates past projects dating back from 2017
-* Parameters: num_years: the number of years it must go back in time from 2017
-* Result: it adds the projects to the database, places them all in the past_projects.txt and displays the amount of
-* projects created in the terminal
-* Note: it uses the amount of managers which it scales with waiting for each of the years specified by num_years*/
+ * Parameters: num_years: the number of years it must go back in time from 2017
+ * Result: it adds the projects to the database, places them all in the past_projects.txt and displays the amount of
+ * projects created in the terminal
+ * Note: it uses the amount of managers which it scales with waiting for each of the years specified by num_years*/
 exports.create_past_Projects = function(num_years) {
-    //we need to get the number of managers
     console.log("Creating past projects");
     var fileName = 'past_projects.txt';
     var creating = { 'flags': 'w'
@@ -180,179 +179,192 @@ exports.create_past_Projects = function(num_years) {
     file.write("");
     file.close();
     var file = fs.createWriteStream(fileName, appending);
-    var managers;
-    //dbs.findUsers("role", "Manager", 3000, managers);
-    console.log(managers);
-    var num_managers = 30;
-    var start_date = new Date();
-    var end_date = new Date();
-    var project_count = 0;
-    //we need to make a months array with 24 starting dates (1 every two weeks)
-    var months_array = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
-    var days_start_array = [1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16];
-    var days_end_array = [15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28];
+    dbs.findUsers("role", "Manager", function(managers) {
+        var num_managers = Object.keys(managers).length;
+        console.log("number of managers found : "+num_managers);
+        console.log("num_managers is now :"+num_managers);
+        var start_date = new Date();
+        var end_date = new Date();
+        var project_count = 0;
+        var months_array = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
+        var days_start_array = [1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16];
+        var days_end_array = [15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28];
 
-    var year_count = 1;
-    for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
-    {
-        start_date.setYear(2017-num_years+loop);
-        end_date.setYear(2017-num_years+loop);
-        //repeat this for every 25% of managers
-        for(var loop2 = 0; loop2 < Math.floor(num_managers*0.25); loop2++)
+        for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
         {
-            //for each manager create 24 projects
-            for(var loop3 = 0; loop3 < 24; loop3++)
+            start_date.setYear(2017-num_years+loop);
+            end_date.setYear(2017-num_years+loop);
+            for(var loop2 = 0; loop2 < Math.floor(num_managers*0.25); loop2++)
             {
-                //set the dates month to the month array
-                //set the dates day to the day array
-                start_date.setMonth(months_array[loop3]);
-                end_date.setMonth(months_array[loop3]);
-                start_date.setDate(days_start_array[loop3]);
-                end_date.setDate(days_end_array[loop3]);
-                file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
-                var json_project = {
-                    _id: project_count,
-                    name: "project "+project_count,
-                    description: null,
-                    project_start_date: start_date,
-                    project_end_date: end_date,
-                    owner_name: null, // i will assign this later
-                    owner_contact: null, // i will assign this later
-                    owner_email: null, // i will assign this later
-                    manager_name: null, // i will assign this later
-                    manager_contact: null, // i will assign this later
-                    manager_email: null, // i will assign this later
-                    employees_assigned: [{employee_id: String, role: String}],
-                    employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                    project_budget: 1 //we need to generate a random number here between two values
-                };
-                //actually push this new project to the db
-                project_count +=1;
+                for(var loop3 = 0; loop3 < 24; loop3++)
+                {
+                    start_date.setMonth(months_array[loop3]);
+                    end_date.setMonth(months_array[loop3]);
+                    start_date.setDate(days_start_array[loop3]);
+                    end_date.setDate(days_end_array[loop3]);
+                    file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
+                    var json_project = {
+                        _id: project_count,
+                        name: "project "+project_count,
+                        description: null,
+                        project_start_date: start_date,
+                        project_end_date: end_date,
+                        owner_name: null, // i will assign this later
+                        owner_contact: null, // i will assign this later
+                        owner_email: null, // i will assign this later
+                        manager_name: null, // i will assign this later
+                        manager_contact: null, // i will assign this later
+                        manager_email: null, // i will assign this later
+                        employees_assigned: [{employee_id: String, role: String}],
+                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                    };
+                    dbs.insertProject(json_project);
+                    project_count +=1;
+                }
             }
         }
-    }
-    //create 24 projects for 50% of the managers for 25% of num years
-    for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
-    {
-        start_date.setYear(2017-Math.floor(num_years*0.75)+loop);
-        end_date.setYear(2017- Math.floor(num_years*0.75)+loop);
-        //repeat this for every 50% of managers
-        for(var loop2 = 0; loop2 < Math.floor(num_managers*0.5); loop2++)
+        for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
         {
-            //for each manager create 24 projects
-            for(var loop3 = 0; loop3 < 24; loop3++)
+            start_date.setYear(2017-Math.floor(num_years*0.75)+loop);
+            end_date.setYear(2017- Math.floor(num_years*0.75)+loop);
+            for(var loop2 = 0; loop2 < Math.floor(num_managers*0.5); loop2++)
             {
-                //set the dates month to the month array
-                //set the dates day to the day array
-                start_date.setMonth(months_array[loop3]);
-                end_date.setMonth(months_array[loop3]);
-                start_date.setDate(days_start_array[loop3]);
-                end_date.setDate(days_end_array[loop3]);
-                //console.log("Start Date : "+start_date+" :: End Date : "+end_date);
-                file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
-                var json_project = {
-                    _id: project_count,
-                    name: "project "+project_count,
-                    description: null,
-                    project_start_date: start_date,
-                    project_end_date: end_date,
-                    owner_name: null, // i will assign this later
-                    owner_contact: null, // i will assign this later
-                    owner_email: null, // i will assign this later
-                    manager_name: null, // i will assign this later
-                    manager_contact: null, // i will assign this later
-                    manager_email: null, // i will assign this later
-                    employees_assigned: [{employee_id: String, role: String}],
-                    employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                    project_budget: 1 //we need to generate a random number here between two values
-                };
-                //actually push this new project to the db
-                project_count +=1;
+                for(var loop3 = 0; loop3 < 24; loop3++)
+                {
+                    start_date.setMonth(months_array[loop3]);
+                    end_date.setMonth(months_array[loop3]);
+                    start_date.setDate(days_start_array[loop3]);
+                    end_date.setDate(days_end_array[loop3]);
+                    file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
+                    var json_project = {
+                        _id: project_count,
+                        name: "project "+project_count,
+                        description: null,
+                        project_start_date: start_date,
+                        project_end_date: end_date,
+                        owner_name: null, // i will assign this later
+                        owner_contact: null, // i will assign this later
+                        owner_email: null, // i will assign this later
+                        manager_name: null, // i will assign this later
+                        manager_contact: null, // i will assign this later
+                        manager_email: null, // i will assign this later
+                        employees_assigned: [{employee_id: String, role: String}],
+                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                    };
+                    dbs.insertProject(json_project);
+                    project_count +=1;
+                }
             }
         }
-    }
-    //create 24 projects for 75% of the managers for 25% of num years
-    for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
-    {
-        start_date.setYear(2017- Math.floor(num_years*0.5)+loop);
-        end_date.setYear(2017- Math.floor(num_years*0.5)+loop);
-        //repeat this for every 75% of managers
-        for(var loop2 = 0; loop2 < Math.floor(num_managers*0.75); loop2++)
+        for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
         {
-            //for each manager create 24 projects
-            for(var loop3 = 0; loop3 < 24; loop3++)
+            start_date.setYear(2017- Math.floor(num_years*0.5)+loop);
+            end_date.setYear(2017- Math.floor(num_years*0.5)+loop);
+            for(var loop2 = 0; loop2 < Math.floor(num_managers*0.75); loop2++)
             {
-                //set the dates month to the month array
-                //set the dates day to the day array
-                start_date.setMonth(months_array[loop3]);
-                end_date.setMonth(months_array[loop3]);
-                start_date.setDate(days_start_array[loop3]);
-                end_date.setDate(days_end_array[loop3]);
-                file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
-                var json_project = {
-                    _id: project_count,
-                    name: "project "+project_count,
-                    description: null,
-                    project_start_date: start_date,
-                    project_end_date: end_date,
-                    owner_name: null, // i will assign this later
-                    owner_contact: null, // i will assign this later
-                    owner_email: null, // i will assign this later
-                    manager_name: null, // i will assign this later
-                    manager_contact: null, // i will assign this later
-                    manager_email: null, // i will assign this later
-                    employees_assigned: [{employee_id: String, role: String}],
-                    employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                    project_budget: 1 //we need to generate a random number here between two values
-                };
-                //actually push this new project to the db
-                project_count +=1;
+                for(var loop3 = 0; loop3 < 24; loop3++)
+                {
+                    start_date.setMonth(months_array[loop3]);
+                    end_date.setMonth(months_array[loop3]);
+                    start_date.setDate(days_start_array[loop3]);
+                    end_date.setDate(days_end_array[loop3]);
+                    file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
+                    var json_project = {
+                        _id: project_count,
+                        name: "project "+project_count,
+                        description: null,
+                        project_start_date: start_date,
+                        project_end_date: end_date,
+                        owner_name: null, // i will assign this later
+                        owner_contact: null, // i will assign this later
+                        owner_email: null, // i will assign this later
+                        manager_name: null, // i will assign this later
+                        manager_contact: null, // i will assign this later
+                        manager_email: null, // i will assign this later
+                        employees_assigned: [{employee_id: String, role: String}],
+                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                    };
+                    dbs.insertProject(json_project);
+                    project_count +=1;
+                }
             }
         }
-    }
-    //create 24 projects for 100% of the managers for 25% of num years
-    for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
-    {
-        start_date.setYear(2017-Math.floor(num_years*0.25)+loop);
-        end_date.setYear(2017-Math.floor(num_years*0.25)+loop);
-        //repeat this for every 100% of managers
-        for(var loop2 = 0; loop2 < Math.floor(num_managers); loop2++)
+        for(var loop = 0; loop <  Math.ceil(num_years*0.25); loop++)
         {
-            //for each manager create 24 projects
-            for(var loop3 = 0; loop3 < 24; loop3++)
+            start_date.setYear(2017-Math.floor(num_years*0.25)+loop);
+            end_date.setYear(2017-Math.floor(num_years*0.25)+loop);
+            for(var loop2 = 0; loop2 < Math.floor(num_managers); loop2++)
             {
-                //set the dates month to the month array
-                //set the dates day to the day array
-                start_date.setMonth(months_array[loop3]);
-                end_date.setMonth(months_array[loop3]);
-                start_date.setDate(days_start_array[loop3]);
-                end_date.setDate(days_end_array[loop3]);
-                file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
-                var json_project = {
-                    _id: project_count,
-                    name: "project "+project_count,
-                    description: null,
-                    project_start_date: start_date,
-                    project_end_date: end_date,
-                    owner_name: null, // i will assign this later
-                    owner_contact: null, // i will assign this later
-                    owner_email: null, // i will assign this later
-                    manager_name: null, // i will assign this later
-                    manager_contact: null, // i will assign this later
-                    manager_email: null, // i will assign this later
-                    employees_assigned: [{employee_id: String, role: String}],
-                    employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                    project_budget: 1 //we need to generate a random number here between two values
-                };
-                //actually push this new project to the db
-                project_count +=1;
+                for(var loop3 = 0; loop3 < 24; loop3++)
+                {
+                    start_date.setMonth(months_array[loop3]);
+                    end_date.setMonth(months_array[loop3]);
+                    start_date.setDate(days_start_array[loop3]);
+                    end_date.setDate(days_end_array[loop3]);
+                    file.write("Start Date : "+start_date+" :: End Date : "+end_date+"\n");
+                    var json_project = {
+                        _id: project_count,
+                        name: "project "+project_count,
+                        description: null,
+                        project_start_date: start_date,
+                        project_end_date: end_date,
+                        owner_name: null, // i will assign this later
+                        owner_contact: null, // i will assign this later
+                        owner_email: null, // i will assign this later
+                        manager_name: null, // i will assign this later
+                        manager_contact: null, // i will assign this later
+                        manager_email: null, // i will assign this later
+                        employees_assigned: [{employee_id: String, role: String}],
+                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                    };
+                    dbs.insertProject(json_project);
+                    project_count +=1;
+                }
             }
         }
-    }
-    console.log("created : "+project_count+" projects");
+        console.log("created : "+project_count+" projects");
+    });
 };
 
-//manually create some projects to use for testing functions
+//25% of managers have been working for 25% of the number of years
+//25% of managers have been working for 50% of the number of years
+//25% of managers have been working for 75% of the number of years
+//25% of managers have been working for 100% of the number of years
+
+//The amount of projects eaxh year grows with the amount of managers
+//so for the beggining years (25%) we had the fewest amount of projects per year only enough that 25% of managers could do
+//the next 25% of years (50% years complete) we had 25% more projects
+//this follows for the following two 25% of years
+exports.assign_past_Projects = function() {
+    //FIRST LETS HAVE A COUNT AND MAKE SURE IT DOES NOT GO ABOVE THE AMOUNT OF PROJECTS
+    var projects_list = [];
+    var project_count = length(projects_list);
+    console.log("Assigning managers to the past projects");
+    //we need to get the amount of projects and create a list with them in
+    var num_projects = 0;
+    dbs.findAllProjects("role", "Manager", function(projects) {
+        num_projects = Object.keys(projects).length;
+        console.log(num_projects);
+    });
+    console.log("current number of stored projects : "+num_projects)
+    //we need to get the amount of years
+    //we need to get the first 25% of managers and assign them to each project in the list
+    //we need to then get the next 25% of managers + the last 25% and assign them to projects too
+    //we do this again for 25% + 25% +25% of managers
+    //finally we do it one last time for all managers
+
+    //25% of managers have been working for 25% of the number of years
+    //25% of managers have been working for 50% of the number of years
+    //25% of managers have been working for 75% of the number of years
+    //25% of managers have been working for 100% of the number of years
+    //so distribute the projects as such
+
+    //we assign managers to a project with a function which uses the manager id with the project id
+};
 
 exports.create_test_project = function() {
     var proj1 = {
@@ -392,62 +404,6 @@ exports.create_test_notifications = function() {
     };
     dbs.insertNotification(not2) ;
 }
-
-
-//25% of managers have been working for 25% of the number of years
-//25% of managers have been working for 50% of the number of years
-//25% of managers have been working for 75% of the number of years
-//25% of managers have been working for 100% of the number of years
-
-//The amount of projects eaxh year grows with the amount of managers
-//so for the beggining years (25%) we had the fewest amount of projects per year only enough that 25% of managers could do
-//the next 25% of years (50% years complete) we had 25% more projects
-//this follows for the following two 25% of years
-exports.assign_past_Projects = function() {
-    //we need to get the amount of projects
-    //we need to get the amount of years
-    //we need to get the first 25% of managers and place them in a list
-    //t
-    console.log("creating dates array");
-    var d = new Date();
-    var year = d.getFullYear();
-    var month = d.getMonth();
-    var day = d.getDate();
-    var project_count = 0;
-    //25% of managers have been working for 25% of the number of years
-    //25% of managers have been working for 50% of the number of years
-    //25% of managers have been working for 75% of the number of years
-    //25% of managers have been working for 100% of the number of years
-    //so distribute the projects as such
-    for (var loop = 0; loop < num_managers; loop++)
-    {
-        //first 25%
-        if (loop<=num_managers*0.25)
-        {
-            for (var loop2 = 0; loop2 < (0.25*num_years); loop2++)
-            {
-                //assign these
-            }
-        }
-
-    }
-    var schema = mongoose.Schema({
-        _id: String,
-        name: String,
-        description: String,
-        project_start_date: Date,
-        project_end_date: Date,
-        owner_name: String,
-        owner_contact: String,
-        owner_email: String,
-        manager_name: String,
-        manager_contact: String,
-        manager_email: String,
-        employees_assigned: [{_id: String, role: String}],
-        employee_rates: [{_id: String, rate: Number}],
-        project_budget: Number
-    }) ;
-};
 
 //A function to display all users in the terminal
 exports.view_users = function() {

@@ -78,7 +78,6 @@ function create_project(db) {
 
     var project = mongoose.model('project', schema) ;
     exports.project = project ;
-
     console.log('Project schema created.') ;
 }
 

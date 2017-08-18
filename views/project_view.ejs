@@ -31,7 +31,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Project Detail <small> PROJECT NAME OR COMPANY</small></h3>
+                        <h3>Project Detail <small id="project_name"></small></h3>
                     </div>
                 </div>
 
@@ -66,15 +66,15 @@
                                     <ul class="stats-overview">
                                         <li>
                                             <span class="name"> Estimated budget </span>
-                                            <span class="value text-success"> 2300 </span>
+                                            <span id="budget" class="value text-success">  </span>
                                         </li>
                                         <li>
-                                            <span class="name"> Total amount spent </span>
-                                            <span class="value text-success"> 2000 </span>
+                                            <span class="name"> Project start date </span>
+                                            <span id="start_date" class="value text-success">  </span>
                                         </li>
                                         <li class="hidden-phone">
-                                            <span class="name"> Estimated project duration </span>
-                                            <span class="value text-success"> 20 </span>
+                                            <span class="name"> Project end date </span>
+                                            <span id="end_date" class="value text-success">  </span>
                                         </li>
                                     </ul>
                                     <br />
@@ -173,33 +173,35 @@
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="panel-body">
-                                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
+                                            <!--<img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">-->
 
-                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
+                                            <p id="description"> </p>
                                             <br />
 
                                             <div class="project_detail">
 
                                                 <p class="title">Client Company</p>
-                                                <p>Deveint Inc</p>
-                                                <p class="title">Project Leader</p>
-                                                <p>Tony Chicken</p>
+                                                <p id="project_owner"></p>
+                                                <p class="title">Client Email</p>
+                                                <p id="owner_email"></p>
+                                                <p class="title">Client Contact Number</p>
+                                                <p id="owner_contact"></p>
                                             </div>
 
                                             <br />
-                                            <h5>Project files</h5>
-                                            <ul class="list-unstyled project_files">
-                                                <li><a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>
-                                                </li>
-                                                <li><a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
-                                                </li>
-                                                <li><a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
-                                                </li>
-                                                <li><a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
-                                                </li>
-                                                <li><a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
-                                                </li>
-                                            </ul>
+                                            <!--<h5>Project files</h5>-->
+                                            <!--<ul class="list-unstyled project_files">-->
+                                                <!--<li><a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>-->
+                                                <!--</li>-->
+                                                <!--<li><a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>-->
+                                                <!--</li>-->
+                                                <!--<li><a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>-->
+                                                <!--</li>-->
+                                                <!--<li><a href=""><i class="fa fa-picture-o"></i> Logo.png</a>-->
+                                                <!--</li>-->
+                                                <!--<li><a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>-->
+                                                <!--</li>-->
+                                            <!--</ul>-->
                                             <br />
 
                                             <div class="text-center mtop20">
@@ -207,28 +209,6 @@
                                                 <!--<a href="#" class="btn btn-sm btn-warning">Report contact</a>-->
                                             </div>
                                         </div>
-                                        <!--<div class="row">-->
-                                        <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
-                                        <!--<div class="x_panel">-->
-                                        <!--<div class="x_title">-->
-                                        <!--<h2>files uploader</h2>-->
-                                        <!--<ul class="nav navbar-right panel_toolbox">-->
-                                        <!--<li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
-                                        <!--</li>-->
-                                        <!--</ul>-->
-                                        <!--<div class="clearfix"></div>-->
-                                        <!--</div>-->
-                                        <!--<div class="x_content">-->
-                                        <!--<form action="form_upload.html" class="dropzone"></form>-->
-                                        <!--<br />-->
-                                        <!--<br />-->
-                                        <!--<br />-->
-                                        <!--<br />-->
-                                        <!--</div>-->
-                                        <!--</div>-->
-                                        <!--</div>-->
-                                        <!--</div>-->
-
                                     </section>
 
                                 </div>
@@ -252,7 +232,7 @@
         <!-- /footer content -->
     </div>
 </div>
-
+<script src="/javascripts/views/project_view.js"></script>
 <!--Vendors js files-->
 <%- include('javascripts'); %>
 

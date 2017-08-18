@@ -51,10 +51,13 @@ router.post('/dashboard',function (req,res,next) {
             req.session.name=user.name;
             req.session.surname=user.surname;
             req.session.role=user.role;
-            res.render('project_creation',{role:user.role,name:user.name,surname:user.surname});
+            res.render('project_creation');
         }
         else if(user.role=="Admin"){
-            res.render('admin',{role:user.role,name:user.name,surname:user.surname});
+            res.render('admin');
+        }
+        else{
+            res.render('project_creation');
         }
     });
 });
@@ -63,33 +66,75 @@ router.get("/project_creation",function (req,res,next) {
     res.render('project_creation',{role:req.session.role,name:req.session.name,surname:req.session.surname});
 });
 
+router.get('/store_emp',function (req,res,next) {
+    var el=JSON.parse(req.param("emplArr"));
+    var num_empl=parseInt(JSON.parse(req.param("num_empl")));
+
+
+    employees="";
+    for(var key in el){
+
+        if(parseInt(key)==(num_empl-1)){
+            employees=employees+el[key]._id+"";
+        }
+        else{
+            employees=employees+el[key]._id+",";
+        }
+    }
+
+    console.log("EMP: "+employees);
+});
+
 router.post("/project_creation",function (req,res,next) {
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id="kpmg_"+req.body.projectname+rand_id;
-    var assigned_emp=[];
-    var duration=req.body.start_date+"-"+req.body.end_date;
+
     var project={
         _id: project_id,
         name: req.body.projectname,
         description: req.body.projectdescription,
-        project_duration: duration,
+        project_start_date: req.body.start_date,
+        project_end_date: req.body.end_date,
         owner_name: req.body.projectowner,
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
-        manager_name: req.body.projectmanager,
-        manager_contact: req.body.projectmanagercontact,
-        manager_email: req.body.projectmanageremail,
-        employees_assigned:[employees],
+        manager_id: req.session.username,
         project_budget:req.body.budget
     };
 
 
     dbs.insertProject(project);
-    var user=dbs.get_user(req.session.username, function(user) {
-        res.render('project_view',{name:user.name,surname:user.surname,owner_name:req.body.projectowner,manager_name:req.body.projectmanager,project_name:req.body.projectname,end_date:req.body.end_date,start_date:req.body.start_date,project_description:req.body.projectdescription,budget:req.body.budget});
+    var today = new Date();
+    var e=employees.split(",");
+    for(var x in e)
+    {
+        dbs.assignProjectToUser(e[x], project_id) ;
+        dbs.insertNotification({
+            _id: e[x]+project_id,
+            user_id: e[x],
+            message: "You have been assigned to a new project.\nProject name:"+req.body.projectname+"\n Project owner: "+req.body.projectowner,
+            date_created: today,
+            isRead: false
+        }) ;
+    }
+
+    var user=dbs.findUser(req.session.username, function(user) {
+         res.render('project_view'
+             // {
+        //     name:user.name,
+        //     surname:user.surname,
+        //     owner_name:req.body.projectowner,
+        //     manager_name:req.body.projectmanager,
+        //     project_name:req.body.projectname,
+        //     end_date:req.body.end_date,
+        //     start_date:req.body.start_date,
+        //     project_description:req.body.projectdescription,
+        //     budget:req.body.budget}
+       );
     });
 
 });
+
 
 
 router.get('/admin',function (req,res,next) {
@@ -103,6 +148,19 @@ router.post('/register_employee',function (req,res,next) {
         symbols: true,
         uppercase: true
     });
+    // var temp_past_projects=(req.body.pastprojects).split(",");
+    // var past_projects_length=parseInt(temp_past_projects.length);
+    // var past_projects="[";
+    // for(var i=0;i<past_projects_length;i++){
+    //     if(i==past_projects_length-1){
+    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"}]";
+    //     }
+    //     else{
+    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"},";
+    //     }
+    // }
+    // console.log(JSON.parse(JSON.stringify(past_projects)));
+    // console.log(past_projects);
 
     var today = new Date();
     dbs.encrypt("test",function (enc_pass) {
@@ -112,12 +170,13 @@ router.post('/register_employee',function (req,res,next) {
             surname: req.body.lastname,
             password:enc_pass ,
             password_date: today,
+            contact:req.body.contact,
             email: req.body.email,
             role: req.body.role,
             position:req.body.position,
             employment_length: req.body.emp_length,
             skill: [req.body.skills],
-            past_projects:[req.body.pastprojects]} ;
+            past_projects:req.body.pastprojects} ;
 
         dbs.insertUser(emp) ;
         res.render('index',{valu:JSON.stringify(emp)});
@@ -125,27 +184,53 @@ router.post('/register_employee',function (req,res,next) {
 });
 
 router.get("/all_projects",function (req,res,next) {
-    var val={
-                projects:[
-                    {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
-                    {project_name:"test2",num_emp:4,date_created:"23/05/2017",progress:30},
-                    {project_name:"test3",num_emp:6,date_created:"23/06/2017",progress:40},
-                    {project_name:"test4",num_emp:8,date_created:"23/07/2017",progress:50},
-                    {project_name:"test5",num_emp:9,date_created:"24/06/2017",progress:80},
-                    {project_name:"test6",num_emp:4,date_created:"13/06/2017",progress:59},
-                    {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
-                    {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
-                    {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
-                ]
-            };
-    var result = JSON.stringify(val);
-    employees=JSON.parse(result);
-    res.send(result);
+  var p;
+  var i=0;
+    var all_projects=dbs.activeProjects(function (all_projects) {
+        i=0;
+        for(x in all_projects){
+            console.log(all_projects[x]);
+            // for(i=0;i<(all_projects[x].employees_assigned).length;i++){
+            //     console.log(i);
+            // }
+            console.log(all_projects[x].projwDFect_duration);
+            var dateCreated = (all_projects[x].project_duration).substring(0,10);
+            p=p+{projects_name:all_projects[x].name,num_emp:i,date_created:dateCreated,progress:50}
+        }
+    });
+
+    // console.log(all_projects);
+    // var val={
+    //             projects:[
+    //                 {project_name:"test1",num_emp:2,date_created:"23/06/2017",progress:50},
+    //                 {project_name:"test2",num_emp:4,date_created:"23/05/2017",progress:30},
+    //                 {project_name:"test3",num_emp:6,date_created:"23/06/2017",progress:40},
+    //                 {project_name:"test4",num_emp:8,date_created:"23/07/2017",progress:50},
+    //                 {project_name:"test5",num_emp:9,date_created:"24/06/2017",progress:80},
+    //                 {project_name:"test6",num_emp:4,date_created:"13/06/2017",progress:59},
+    //                 {project_name:"test7",num_emp:3,date_created:"15/09/2017",progress:95},
+    //                 {project_name:"test8",num_emp:2,date_created:"20/08/2017",progress:55},
+    //                 {project_name:"test9",num_emp:5,date_created:"28/07/2017",progress:59}
+    //
+    //             ]
+    //         };
+    // var result = JSON.stringify(val);
+    // employees=JSON.parse(result);
+    // res.send(val);
 });
 
 router.get("/projects",function (req,res,next) {
-
     res.render('projects');
+});
+
+router.get("/username",function (req,res,next) {
+    res.send(req.session.username);
+});
+
+router.get("/role",function (req,res,next) {
+    var user=dbs.findUser(req.session.username, function(user) {
+        res.send(user.role);
+    });
 });
 
 router.get("/create_past_projects",function (req,res,next) {
@@ -160,13 +245,17 @@ router.get("/logout",function (req,res,next) {
     res.redirect('/');
 });
 
-
-// TEST EMPLOYEE FIND
-router.get('/test-find', function(req, res, next) {
-    dbs.findEmployee('emp_id_123') ;
+router.get("/project_milestone",function (req,res,next) {
+    res.render('project_milestones');
 });
 
+router.get("/project_edit",function (req,res,next) {
+    res.render('project_edit');
+});
 
+router.get("/project_detail",function (req,res,next) {
+    res.render('project_view');
+});
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 
 //Easy access to project creation page
@@ -183,6 +272,43 @@ router.get('/create_test_employees', function(req, res, next)
     res.render('login');
 });
 
+router.get('/create_test_project', function(req, res, next)
+{
+    //dbs.create_test_employees();
+    test_data.create_test_project();
+    res.render('login');
+});
+
+router.get('/create_test_notifications', function(req, res, next)
+{
+    test_data.create_test_notifications();
+    res.render('login');
+});
+
+
+router.get('/active_projects', function(req, res, next)
+{
+    var projects = dbs.activeProjects(function(projects) {
+        console.log(projects) ;
+    });
+    res.render('login');
+});
+
+router.get('/unread_notifications', function(req, res, next)
+{
+    var unread = dbs.unreadNotifications(req.param('_id'), function(unread) {
+        res.send(unread);
+    });
+
+});
+
+router.get('/assign_projects', function(req, res, next)
+{
+    res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
+    dbs.assignUsersToProject(("emp9"),"kpmg_bbbbbbbb20");
+
+});
+
 //Removes the 5 test employees from the database
 router.get('/remove_test_employees', function(req, res, next)
 {
@@ -190,9 +316,38 @@ router.get('/remove_test_employees', function(req, res, next)
     res.render('login');
 });
 
+router.get('/remove_test_projects', function(req, res, next)
+{
+    test_data.remove_projects();
+    res.render('login');
+});
+
+router.get('/remove_test_notifications', function(req, res, next)
+{
+    test_data.remove_notifications();
+    res.render('login');
+});
+
+router.get('/remove_test_tasks', function(req, res, next)
+{
+    test_data.remove_tasks();
+    res.render('login');
+});
+
 router.get('/view_test_employees', function(req, res, next)
 {
     test_data.view_users();
+    res.render('login');
+});
+
+router.get('/view_test_projects', function(req, res, next)
+{
+    res.send( test_data.view_projects());
+});
+
+router.get('/refresh_project_status', function(req, res, next)
+{
+    dbs.refreshProjectStatus();
     res.render('login');
 });
 

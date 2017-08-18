@@ -12,73 +12,78 @@ exports.create_test_employees = function() {
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
         var emp = {
-            _id: "emp1",
+            _id: "test_manager_12",
             name: "Sargon",
             surname: "test",
             password: enc_pass,
             password_date: today,
+            contact: "123 456 7890",
             email: "employee1@gmail.com",
-            role: "System test",
+            role: "Manager",
             employment_length: 1,
             skill: [],
-            current_projects: [],
-            past_projects: []
+            current_projects: [{_id:"kpmg_aaaas"}],
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp2 = {
-            _id: "emp2",
+            _id: "emp7",
             name: "Nebuchadnezzar",
             surname: "test",
             password: enc_pass,
             password_date: today,
+            contact: "123 456 7890",
             email: "employee2@gmail.com",
-            role: "Manager",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp3 = {
-            _id: "emp3",
+            _id: "emp8",
             name: "Xerxes",
             surname: "test",
             password: enc_pass,
             password_date: today,
+            contact: "123 456 7890",
             email: "employee3@gmail.com",
-            role: "Admin",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp4 = {
-            _id: "emp4",
+            _id: "emp9",
             name: "Chandragupta",
             surname: "test",
             password: enc_pass,
             password_date: today,
+            contact: "123 456 7890",
             email: "employee4@gmail.com",
-            role: "System test",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
 
         var emp5 = {
-            _id: "emp5",
+            _id: "emp11",
             name: "Ptolemy",
             surname: "test",
             password: enc_pass,
             password_date: today,
+            contact: "123 456 7890",
             email: "employee5@gmail.com",
-            role: "System test",
+            role: "Employee",
             employment_length: 1,
             skill: [],
             current_projects: [],
-            past_projects: []
+            past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
         };
         //dbs.remove({name: "Testy"});  /*THIS deletes all previous users in the db*/
         dbs.insertUser(emp);
@@ -111,6 +116,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 surname: roles[0] + " second_name " + manager_ids,
                 password: enc_pass,
                 password_date: today,
+                contact: "123 456 7890",
                 email: email,
                 role: "Manager",
                 position: roles[0],
@@ -132,13 +138,14 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 surname: roles[1] + " second_name " + employee_ids,
                 password: enc_pass,
                 password_date: today,
+                contact: "123 456 7890",
                 email: email,
                 role: "Employee",
                 position: roles[1],
                 employment_length: Math.floor(Math.random()*(4 - 1 + 1)+ 1),
                 skill: [],
                 current_projects: [],
-                past_projects: []
+                past_projects: ["FNB_auditing","Standard_Bank_Fraud","KPMG_Auditing"]
             };
             emp_list[emp_count] = new_json_obj;
             employee_ids += 1;
@@ -345,6 +352,47 @@ exports.create_past_Projects = function(num_years) {
     console.log("created : "+project_count+" projects");
 };
 
+//manually create some projects to use for testing functions
+
+exports.create_test_project = function() {
+    var proj1 = {
+        _id: "kpmg1",
+        name: "First Crusade",
+        description: "Deus Vult",
+        project_start_date: "2017-01-01",
+        project_end_date: "2017-05-05",
+        owner_name: "Pope Urban II" ,
+        owner_contact: "666 6666 666",
+        owner_email: "someemail@vatican.vc",
+        manager_id: "emp2",
+        employees_assigned: [],
+        employee_rates: [],
+        project_budget: 5,
+        status: "active"
+    };
+    dbs.insertProject(proj1) ;
+}
+
+exports.create_test_notifications = function() {
+    var not1 = {
+        _id: "not1",
+        user_id: "emp1",
+        message: "Shrek is love, Shrek is life.",
+        date_created: "2017-08-16",
+        isRead: false
+    };
+    dbs.insertNotification(not1) ;
+
+    var not2 = {
+        _id: "not2",
+        user_id: "emp1",
+        message: "Shrek is drek.",
+        date_created: "2017-08-16",
+        isRead: true
+    };
+    dbs.insertNotification(not2) ;
+}
+
 
 //25% of managers have been working for 25% of the number of years
 //25% of managers have been working for 50% of the number of years
@@ -395,8 +443,8 @@ exports.assign_past_Projects = function() {
         manager_name: String,
         manager_contact: String,
         manager_email: String,
-        employees_assigned: [{employee_id: String, role: String}],
-        employee_rates: [{employee_id: String, rate: Number}],
+        employees_assigned: [{_id: String, role: String}],
+        employee_rates: [{_id: String, rate: Number}],
         project_budget: Number
     }) ;
 };
@@ -419,6 +467,23 @@ exports.view_users = function() {
     });
 };
 
+exports.view_projects = function() {
+    console.log("viewing all projects");
+    var project = schemas.project;
+    project.find(function (err, result) {
+        if (err) {
+            console.log("Error displaying projects.");
+        }
+        else if (!result) {
+            console.log("Database is empty.");
+        }
+        else {
+            console.log("Projects found");
+            return(JSON.stringify(result, null, 1));
+        }
+    });
+};
+
 //A function to statically remove all users from the db
 exports.remove_users = function() {
     console.log("removing users");
@@ -432,6 +497,57 @@ exports.remove_users = function() {
         }
         else {
             console.log("Users removed");
+            console.log(JSON.stringify(result));
+        }
+    });
+};
+
+exports.remove_projects = function() {
+    console.log("removing projects");
+    var project = schemas.project;
+    project.remove({}, function (err, result) {
+        if (err) {
+            console.log("Error removing projects.");
+        }
+        else if (!result) {
+            console.log("database is empty.");
+        }
+        else {
+            console.log("Projects removed");
+            console.log(JSON.stringify(result));
+        }
+    });
+};
+
+exports.remove_notifications = function() {
+    console.log("removing notifications");
+    var notification = schemas.notification;
+    notification.remove({}, function (err, result) {
+        if (err) {
+            console.log("Error removing Notifications.");
+        }
+        else if (!result) {
+            console.log("database is empty.");
+        }
+        else {
+            console.log("Notifications removed");
+            console.log(JSON.stringify(result));
+        }
+    });
+};
+
+exports.remove_tasks = function() {
+    console.log("removing tasks");
+    var task = schemas.task;
+    task.remove({}, function (err, result) {
+        if (err) {
+            console.log("Error removing Tasks.");
+        }
+        else if (!result) {
+            console.log("database is empty.");
+        }
+        else {
+            console.log("Tasks removed");
             console.log(JSON.stringify(result));
         }
     });

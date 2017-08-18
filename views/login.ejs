@@ -1,4 +1,20 @@
-<%- include('header'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Login</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Stylesheets -->
+    <%- include('stylesheets'); %>
+</head>
 
 <body class="login">
 <div>
@@ -17,8 +33,8 @@
                         <input type="password" class="form-control" name="password" placeholder="Password" required="" />
                     </div>
                     <div>
-                        <button class="btn btn-default submit" type="submit">Login</button>
-                        <a class="reset_pass" href="#">Lost your password?</a>
+                        <input class="btn btn-default submit" type="submit" value="Submit">
+                        <!--<a class="reset_pass" href="#">Lost your password?</a>-->
                         <!--Maybe we can add a lost your password part in later on -->
                     </div>
 
@@ -29,7 +45,9 @@
                         <br />
 
                         <div>
-                            <h1><i class="fa fa-paw"></i> Gentelella Alela!</h1>
+                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
+                            <br/>
+                            <br/>
                             <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
                         </div>
                     </div>
@@ -60,7 +78,7 @@
                         </div>
                     </div>
                     <div>
-                        <a class="btn btn-default submit" href="index.html">Submit</a>
+                        <input class="btn btn-default submit" type="submit" value="Submit">
                     </div>
 
                     <div class="clearfix"></div>
@@ -86,5 +104,7 @@
     </div>
 </div>
 
-
-<%- include('footer'); %>
+</body>
+<!--Vendors js files-->
+<%- include('javascripts'); %>
+</html>

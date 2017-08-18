@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Milestone</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Stylesheets -->
+    <%- include('stylesheets'); %>
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <!--todo add project name to edit here-->
+            <h2>Project Milestones<small id="project-name">&nbsp;&nbsp;&nbsp; PROJECT NAME HERE</small></h2>
+            <hr/>
+            <!--<ul class="nav navbar-right panel_toolbox">-->
+            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+            <!--</li>-->
+            <!--<li class="dropdown">-->
+            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+            <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li><a href="#">Settings 1</a>-->
+            <!--</li>-->
+            <!--<li><a href="#">Settings 2</a>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <div class="clearfix"></div>
+            <!-- start form for validation -->
+            <form id="demo-form" data-parsley-validate action="milestone-creation" method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="milename">Milestone Name: *</label>
+                        <input type="text" id="milename" class="form-control" name="milename" required />
+                    </div>
+                    <div class="col-md-4">
+                        <label>End Date: </label>
+                        <input class="form-control" type="date" required/>
+                    </div>
+                    <div class="col-md-4">
+                        <button style="margin-top: 23px" id="createMile" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" title="Create Milestone">Create Milestone</button>
+                    </div>
+                </div>
+            </form>
+            <br/>
+            <!-- end form for validations -->
+            <div class="row">
+                <div class="col-md-8">
+                    <div id="echart_line" style="height:350px;"></div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Milestones</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+                            <div class="">
+                                <ul class="to_do">
+                                    <li>
+                                        <p>
+                                            Schedule meeting with new client
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Create email address for new intern
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Have IT fix the network printer
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Copy backups to offsite location
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!--Vendors js files-->
+<%- include('javascripts'); %>
+
+</body>
+</html>

@@ -10,216 +10,20 @@
     <title>KPMG | Project Details</title>
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.ico/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.ico/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.ico/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.ico/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.ico/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.ico/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.ico/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.ico/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ico/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon.ico/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.ico/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon.ico/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/favicon.ico/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <%- include('favicon'); %>
 
-    <!-- Bootstrap -->
-    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
-    <!-- Custom Theme Style -->
-    <link href="/stylesheets/custom.min.css" rel="stylesheet">
+    <!-- Stylesheets -->
+    <%- include('stylesheets'); %>
 </head>
 
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
-        <div class="col-md-3 left_col">
-            <div class="left_col scroll-view">
-                <!-- KPMG Logo Side Bar-->
-                <div class="navbar nav_title" style="border: 0;">
-                    <a href="/login" class="site_title"><img src="images/logo/KPMG_Square_White.png" width="55px" height="55px"></a>
-                </div>
-
-                <div class="clearfix"></div>
-
-                <!-- menu profile quick info -->
-                <div class="profile clearfix">
-                    <div class="profile_pic">
-                        <img src="images/default_user.png" alt="..." class="img-circle profile_img">
-                    </div>
-                    <div class="profile_info">
-                        <span>Welcome,</span>
-                        <%
-                        if((typeof name != 'undefined') && (typeof surname != 'undefined'))
-                        {
-                        %><h2><%=name%> <%=surname%></h2><%
-                        }
-                        else{
-                        %><h2>user</h2><%
-                        }
-                        %>
-                    </div>
-                </div>
-                <!-- /menu profile quick info -->
-
-                <br />
-
-                <!-- sidebar menu -->
-                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-                    <div class="menu_section">
-                        <h3>General</h3>
-                        <ul class="nav side-menu">
-                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li><a href="#">Inbox <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                    <li><a href="#">Calendar<span class="label label-success pull-right">Coming Soon</span></a></li>
-                                </ul>
-                            </li>
-                            <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
-                                <ul class="nav child_menu">
-                                    <li><a href="project_creation">Add Project</a></li>
-                                    <li><a href="#">Profile <span class="label label-success pull-right">Coming Soon</span></a></li>
-                                    <li><a href="#">Projects</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /sidebar menu -->
-
-                <!-- /menu footer buttons -->
-                <div class="sidebar-footer hidden-small">
-                    <a data-toggle="tooltip" data-placement="top" title="Settings">
-                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Lock">
-                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                    </a>
-                    <a data-toggle="tooltip" data-placement="top" title="Logout" href="/logout">
-                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                    </a>
-                </div>
-                <!-- /menu footer buttons -->
-            </div>
-        </div>
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
 
         <!-- top navigation -->
-        <div class="top_nav">
-            <div class="nav_menu">
-                <nav>
-                    <div class="nav toggle">
-                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                    </div>
-
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="">
-                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                <img src="images/default_user.png" alt="">
-                                <%if((typeof name != 'undefined') && (typeof surname != 'undefined'))
-                                {
-                                %><span><%=name%> <%=surname %></span><%}
-                                else{
-                                %><a>user</a><%
-                                }
-                                %>
-                                <span class=" fa fa-angle-down"></span>
-                            </a>
-                            <ul class="dropdown-menu dropdown-usermenu pull-right">
-                                <li><a href="javascript:;"> Profile</a></li>
-                                <li>
-                                    <a href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
-                                    </a>
-                                </li>
-                                <li><a href="javascript:;">Help</a></li>
-                                <li><a href="/logout"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                            </ul>
-                        </li>
-
-                        <li role="presentation" class="dropdown">
-                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                <i class="fa fa-envelope-o"></i>
-                                <span class="badge bg-green">6</span>
-                            </a>
-                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>
-                                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <div class="text-center">
-                                        <a>
-                                            <strong>See All Alerts</strong>
-                                            <i class="fa fa-angle-right"></i>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+        <%- include('top_nav'); %>
         <!-- /top navigation -->
 
         <!-- page content -->
@@ -227,18 +31,7 @@
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Project Detail <small> design</small></h3>
-                    </div>
-
-                    <div class="title_right">
-                        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search for...">
-                                <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">Go!</button>
-                    </span>
-                            </div>
-                        </div>
+                        <h3>Project Detail <small> PROJECT NAME OR COMPANY</small></h3>
                     </div>
                 </div>
 
@@ -248,20 +41,19 @@
                     <div class="col-md-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2><%=project_name %> Project</h2>
+                                <h2>New Partner Contracts Consultancy</h2>
                                 <ul class="nav navbar-right panel_toolbox">
-                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Settings 1</a>
-                                            </li>
-                                            <li><a href="#">Settings 2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    <!--<li class="dropdown">-->
+                                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                                    <!--&lt;!&ndash;<ul class="dropdown-menu" role="menu">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li><a href="#">Settings 1</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li><a href="#">Settings 2</a>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                                    <!--</li>-->
                                     </li>
                                 </ul>
                                 <div class="clearfix"></div>
@@ -274,15 +66,15 @@
                                     <ul class="stats-overview">
                                         <li>
                                             <span class="name"> Estimated budget </span>
-                                            <span class="value text-success"> <%=budget%> </span>
+                                            <span class="value text-success"> 2300 </span>
                                         </li>
                                         <li>
-                                            <span class="name"> Project Start Date </span>
-                                            <span class="value text-success"><%=start_date%> </span>
+                                            <span class="name"> Total amount spent </span>
+                                            <span class="value text-success"> 2000 </span>
                                         </li>
                                         <li class="hidden-phone">
-                                            <span class="name"> Estimated project end date </span>
-                                            <span class="value text-success"> <%=end_date%> </span>
+                                            <span class="name"> Estimated project duration </span>
+                                            <span class="value text-success"> 20 </span>
                                         </li>
                                     </ul>
                                     <br />
@@ -290,63 +82,82 @@
                                     <div id="mainb" style="height:350px;"></div>
 
                                     <div>
-
-                                        <h4>Recent Activity</h4>
-
+                                        <div class="panel">
+                                            <div class="col-md-6">
+                                                <div class="todolist not-done">
+                                                    <h1>Create Todos</h1>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <input type="text" class="form-control add-todo" placeholder="Add todo">
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                                            <select type="text" class="form-control">
+                                                                <optgroup label="Milestones">
+                                                                    <option disabled selected>Select Milestone</option>
+                                                                    <option>Choose option</option>
+                                                                </optgroup>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <hr/>
+                                                    <br/>
+                                                    <div class="form-group">
+                                                        <div class="col-md-12 col-sm-12">
+                                                            <select id="AllocateTask" class="multiselect-ui form-control" multiple="multiple">
+                                                                <option value="cheese">Cheese</option>
+                                                                <option value="tomatoes">Tomatoes</option>
+                                                                <option value="mozarella">Mozzarella</option>
+                                                                <option value="mushrooms">Mushrooms</option>
+                                                                <option value="pepperoni">Pepperoni</option>
+                                                                <option value="onions">Onions</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <button style="margin-left: 10px; margin-top: 10px" id="submit-task" class="btn btn-dark">Create Task</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="todolist not-done">
+                                                    <h1>Current Todos</h1>
+                                                    <ul id="sortable" class="list-unstyled">
+                                                        <li class="ui-state-default">
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="" />Take out the trash</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="ui-state-default">
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="" />Buy bread</label>
+                                                            </div>
+                                                        </li>
+                                                        <li class="ui-state-default">
+                                                            <div class="checkbox">
+                                                                <label>
+                                                                    <input type="checkbox" value="" />Teach penguins to fly</label>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="todo-footer">
+                                                        <strong><span class="count-todos"></span></strong> Items Left
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+                                            <hr/>
+                                            <div class="todolist" style="border-right: none">
+                                                <h1>Completed</h1>
+                                                <ul id="done-items" class="list-unstyled">
+                                                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                         <!-- end of user messages -->
-                                        <ul class="messages">
-                                            <li>
-                                                <img src="images/default_user.png" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-info">24</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Desmond Davison</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                                    <br />
-                                                    <p class="url">
-                                                        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                                        <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="images/default_user.png" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-error">21</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Brian Michaels</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                                    <br />
-                                                    <p class="url">
-                                                        <span class="fs1" aria-hidden="true" data-icon=""></span>
-                                                        <a href="#" data-original-title="">Download</a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <img src="images/default_user.png" class="avatar" alt="Avatar">
-                                                <div class="message_date">
-                                                    <h3 class="date text-info">24</h3>
-                                                    <p class="month">May</p>
-                                                </div>
-                                                <div class="message_wrapper">
-                                                    <h4 class="heading">Desmond Davison</h4>
-                                                    <blockquote class="message">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth.</blockquote>
-                                                    <br />
-                                                    <p class="url">
-                                                        <span class="fs1 text-info" aria-hidden="true" data-icon=""></span>
-                                                        <a href="#"><i class="fa fa-paperclip"></i> User Acceptance Test.doc </a>
-                                                    </p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <!-- end of user messages -->
-
-
                                     </div>
 
 
@@ -363,15 +174,16 @@
                                         </div>
                                         <div class="panel-body">
                                             <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
-                                            <p><%=project_description%></p>
+
+                                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. </p>
                                             <br />
 
                                             <div class="project_detail">
 
                                                 <p class="title">Client Company</p>
-                                                <p><%=owner_name%></p>
-                                                <p class="title">Project Manager</p>
-                                                <p><%=manager_name%></p>
+                                                <p>Deveint Inc</p>
+                                                <p class="title">Project Leader</p>
+                                                <p>Tony Chicken</p>
                                             </div>
 
                                             <br />
@@ -381,6 +193,10 @@
                                                 </li>
                                                 <li><a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
                                                 </li>
+                                                <li><a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
+                                                </li>
+                                                <li><a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
+                                                </li>
                                                 <li><a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
                                                 </li>
                                             </ul>
@@ -388,9 +204,30 @@
 
                                             <div class="text-center mtop20">
                                                 <a href="#" class="btn btn-sm btn-primary">Add files</a>
-                                                <a href="#" class="btn btn-sm btn-warning">Report contact</a>
+                                                <!--<a href="#" class="btn btn-sm btn-warning">Report contact</a>-->
                                             </div>
                                         </div>
+                                        <!--<div class="row">-->
+                                        <!--<div class="col-md-12 col-sm-12 col-xs-12">-->
+                                        <!--<div class="x_panel">-->
+                                        <!--<div class="x_title">-->
+                                        <!--<h2>files uploader</h2>-->
+                                        <!--<ul class="nav navbar-right panel_toolbox">-->
+                                        <!--<li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+                                        <!--</li>-->
+                                        <!--</ul>-->
+                                        <!--<div class="clearfix"></div>-->
+                                        <!--</div>-->
+                                        <!--<div class="x_content">-->
+                                        <!--<form action="form_upload.html" class="dropzone"></form>-->
+                                        <!--<br />-->
+                                        <!--<br />-->
+                                        <!--<br />-->
+                                        <!--<br />-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
+                                        <!--</div>-->
 
                                     </section>
 
@@ -416,19 +253,8 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src="vendors/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="vendors/fastclick/lib/fastclick.js"></script>
-<!-- NProgress -->
-<script src="vendors/nprogress/nprogress.js"></script>
-<!-- ECharts -->
-<script src="vendors/echarts/dist/echarts.min.js"></script>
-
-<!-- Custom Theme Scripts -->
-<script src="/javascripts/custom.min.js"></script>
+<!--Vendors js files-->
+<%- include('javascripts'); %>
 
 </body>
 </html>

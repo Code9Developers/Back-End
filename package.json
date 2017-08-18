@@ -6,9 +6,7 @@
     "dev": "nodemon ./bin/www",
     "test": "./node_modules/.bin/mocha"
   },
-  "dependencies": {
-
-  },
+  "dependencies": {},
   "devDependencies": {
     "nodemon": "^1.11.0",
     "browser-sync": "^2.12.10",

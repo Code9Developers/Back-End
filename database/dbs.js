@@ -6,6 +6,14 @@ var connection = require('.././database/connect.js') ;
 var bcrypt = require('bcrypt') ;
 var generator = require('generate-password');
 
+
+/*
+ ***********************************************************************************************************************
+ ALL USER-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+*/
+
+// inserts user defined in JSON string "_json"
 exports.insertUser = function(_json) {
 
     var user = schemas.user ;
@@ -23,33 +31,11 @@ exports.insertUser = function(_json) {
     }) ;
 };
 
-//other search templates could be added
-
-exports.findUser = function(Id, callback) {
-
-    var user = schemas.user;
-
-    user.findOne({_id: Id}, function (err, doc) {
-        if (err) {
-            console.log("Error finding User.");
-            console.log(err) ;
-        }
-        else if (doc == "[]") {
-            console.log("User not found.");
-        }
-        else {
-            console.log("User found.") ;
-            return callback(doc) ;
-        }
-    });
-};
-
-//returns all (max{number}) users where attributes 'attrib' have value of 'value'
+// returns all users where attributes 'attrib' have value of 'value'
 exports.findUsers = function(attrib, value, callback) {
 
     var user = schemas.user ;
-    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
-    console.log(query) ;
+    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
 
     user.find(query, function(err, docs) {
         if (err) {
@@ -66,17 +52,40 @@ exports.findUsers = function(attrib, value, callback) {
     });
 };
 
-//should we have a function like this for every attribute of each schema?
-exports.getUserRole = function(user_id, callback) {
-    module.exports.findUser(user_id, function(user) {
-        if (!user) {
-            console.log("User not found.") ;
+// finds all users with attribute "attrib" of value "value",
+// and sets their attribute of "attrib_to_edit" to "new_value"
+exports.editUsers = function(attrib, value, attrib_to_edit, new_value) {
+
+    var user = schemas.user ;
+    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+    var update = JSON.parse('{ ' + "\"" + attrib_to_edit + "\"" + ': ' + "\"" + new_value + "\"" + '}') ;
+
+    user.update( query, { $set: update}, function(err) {
+        if (!err) {
+            console.log("User " + attrib_to_edit + "\'s updated.") ;
         }
         else {
-            console.log(user.role + " found.") ;
-            return callback(user.role) ;
+            console.log("Error updating " + attrib_to_edit + "\'s of Users.") ;
+            console.log(err) ;
         }
-    })
+    });
+};
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+*/
+
+/*
+ ***********************************************************************************************************************
+ ALL USER+PROJECT-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+*/
+
+// assigns project to user and vice versa
+exports.assignProject = function(user_id, project_id) {
+    module.exports.assignProjectToUser(user_id, project_id) ;
+    module.exports.assignUserToProject(user_id, project_id) ;
 };
 
 exports.assignProjectToUser = function(user_id, project_id) {
@@ -111,17 +120,23 @@ exports.assignUserToProject = function(user_id, project_id) {
     //employee rates?
 };
 
-//assigns project to user and vice versa
-exports.assignProject = function(user_id, project_id) {
-    module.exports.assignProjectToUser(user_id, project_id) ;
-    module.exports.assignUserToProject(user_id, project_id) ;
-};
-
-//remove employee from project and vice versa
+// remove employee from project and vice versa
 exports.dismissProject = function(user_id, project_id) {
     //will be implemented later
 };
 
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+*/
+
+/*
+ ***********************************************************************************************************************
+ ALL PROJECT-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+*/
+
+// inserts project defined in JSON string "_json"
 exports.insertProject = function(_json) {
 
     var project = schemas.project ;
@@ -139,26 +154,7 @@ exports.insertProject = function(_json) {
     });
 };
 
-exports.findProject = function(Id, callback) {
-
-    var project = schemas.project;
-
-    project.findOne({_id: Id}, function (err, doc) {
-        if (err) {
-            console.log("Error finding Project.");
-            console.log(err) ;
-        }
-        else if (doc == "[]") {
-            console.log("Project not found.");
-        }
-        else {
-            console.log("Project found.") ;
-            return callback(doc) ;
-        }
-    });
-};
-
-//returns all projects where attributes 'attrib' have value of 'value'
+// returns all projects where attributes 'attrib' have value of 'value'
 exports.findProjects = function(attrib, value, callback) {
 
     var project = schemas.project ;
@@ -180,8 +176,9 @@ exports.findProjects = function(attrib, value, callback) {
     });
 };
 
-//returns all projects
+// returns all projects
 exports.findAllProjects = function(callback) {
+
     var project = schemas.project ;
 
     project.find({}, function(err, docs) {
@@ -189,7 +186,7 @@ exports.findAllProjects = function(callback) {
             console.log("Error finding Projects.") ;
             console.log(err) ;
         }
-        else if (!docs) {
+        else if (docs == "[]") {
             console.log("No Projects found.") ;
         }
         else {
@@ -199,7 +196,7 @@ exports.findAllProjects = function(callback) {
     });
 };
 
-//checks if projects are complete and updates status
+// checks if projects are complete and updates status
 exports.refreshProjectStatus = function() {
     var project = schemas.project ;
     var today = new Date() ;
@@ -215,7 +212,9 @@ exports.refreshProjectStatus = function() {
     });
 };
 
-exports.editProjectEndDate = function(project_id, new_project_end_date) {
+// finds all projects with attribute "attrib" of value "value",
+// and sets their attribute of "attrib_to_edit" to "new_value"
+exports.editProjects = function(attrib, value, attrib_to_edit, new_value) {
     var project = schemas.project ;
 
     project.findByIdAndUpdate( project_id , { $set: {project_end_date: new_project_end_date}}, function(err) {
@@ -229,17 +228,40 @@ exports.editProjectEndDate = function(project_id, new_project_end_date) {
     });
 };
 
-//insert milestone in project
-exports.insertMilestone = function(project_id, _json) {
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+*/
 
-    var project = schemas.project;
+/*
+ ***********************************************************************************************************************
+ ALL MILESTONE-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
 
-    project.findByIdAndUpdate( project_id , { $push:  {milestones: _json}}, function(err) {
-        if (!err) {
-            console.log("Milestone added to Project.") ;
+exports.insertMilestone = function(_json) {
+
+    var milestone = schemas.milestone ;
+    var project = schemas.project ;
+
+    var milestone1 = new milestone(_json) ;
+
+    milestone1.save(function (err) {
+        if (err) {
+            console.log("Milestone could not be inserted.") ;
+            console.log(err) ;
         }
         else {
-            console.log("Error adding Milestone to Project.") ;
+            console.log("Successfully inserted Project.") ;
+        }
+    });
+
+    project.findByIdAndUpdate( milestone1.project_id, { $push: {milestones: milestone1}}, function(err) {
+        if (!err) {
+            console.log("Milestone inserted into Project.") ;
+        }
+        else {
+            console.log("Error inserting Milestone into Project.") ;
             console.log(err) ;
         }
     });
@@ -248,13 +270,19 @@ exports.insertMilestone = function(project_id, _json) {
 //may need to compare doc.milestone to null for no milestones
 exports.findMilestones = function(project_id, callback) {
 
-    var doc = module.exports.findProject(project_id, function(doc) {
-        if (doc.milestones == "[]") {
-            console.log("No Milestones found.") ;
+    var milestone = schemas.milestone ;
+
+    project.find(query, function(err, docs) {
+        if (err) {
+            console.log("Error finding Projects.") ;
+            console.log(err) ;
+        }
+        else if (!docs) {
+            console.log("No Projects found.") ;
         }
         else {
-            console.log("Milestones found.") ;
-            return callback(doc.milestones) ;
+            console.log("Projects found.") ;
+            return callback(docs);
         }
     });
 };
@@ -275,19 +303,32 @@ exports.removeExpiredMilestones = function(project_id) {
     });
 };
 
-/*exports.editMilestoneEndDate = function(project_id, milestone_id, new_milestone_end_date) {
+exports.editMilestoneEndDate = function(project_id, milestone_id, new_milestone_end_date) {
     var project = schemas.project ;
 
-    project.findByIdAndUpdate( project_id , { $set: {milestones: {{_id: milestone_id}, {end_date: new_milestone_end_date}}}}, function(err) {
+    project.findByIdAndUpdate( project_id , { $pull: {milestones: {_id: milestone_id}}}, function(err, result) {
         if (!err) {
-            console.log("Project end date updated.") ;
+            console.log("Milestone found.") ;
+            result.end_date = new_milestone_end_date ;
+            module.exports.insertMilestone(project_id, result) ;
         }
         else {
             console.log("Error updating Project end date.") ;
             console.log(err) ;
         }
     });
-};*/
+};
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+
+/*
+ ***********************************************************************************************************************
+ ALL TASK-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
 
 exports.insertTask = function(_json) {
 
@@ -306,6 +347,17 @@ exports.insertTask = function(_json) {
     }) ;
 };
 
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+
+/*
+ ***********************************************************************************************************************
+ ALL NOTIFICATION-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
+
 exports.insertNotification = function(_json) {
 
     var notification = schemas.notification ;
@@ -323,6 +375,7 @@ exports.insertNotification = function(_json) {
     }) ;
 };
 
+//returns all unread notifications for specific user
 exports.unreadNotifications = function(user_id, callback) {
     var notification = schemas.notification ;
 
@@ -340,6 +393,17 @@ exports.unreadNotifications = function(user_id, callback) {
         }
     });
 };
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+
+/*
+ ***********************************************************************************************************************
+ ALL PASSWORD+ENCRYPTION-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
 
 exports.encrypt = function(value, callback) {
     bcrypt.hash(value, 10, function(err, hash) {
@@ -363,4 +427,9 @@ exports.authenticate = function(user_id, password, callback) {
         });
     });
 };
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
 

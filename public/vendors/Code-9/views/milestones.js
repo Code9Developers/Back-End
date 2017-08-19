@@ -3,22 +3,38 @@
  */
 
 $(document).ready(function() {
-    // <!--Dynamically check notifications-->
+    $.urlParam = function(name){
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+    }
 
-    var globEmployees = null;
-    // $("#employeeTable").empty();
-
+    $.get("get_milestones",{id:$.urlParam('id')},
+        function(data, status){
+        window.alert(data);
+    });
 
     $('#createMile').on('click', function (e) {
-        e.preventDefault(); // disable the default form submit event
+
+
+
         $.get("store_milestones",
             {
-                project_id: 1234,
-                m_name: $('#milename').val(),
+                id:$.urlParam('id'),
+                milestone_name: $('#milename').val(),
                 end_date: $('#end_date_mile').val()
             },function(data, status){
-                window.alert(data);
+                $(".to_do").append(
+                    " <li>"+
+                    "<p>"+
+                    $("#milename").val()+
+                    "</p>"+
+                    "<small>Deadline: " +
+                    $('#end_date_mile').val()+
+                    "</small>"+
+                    "</li>");
             });
+
+
     });
 
 });

@@ -45,12 +45,12 @@ router.post('/dashboard',function (req,res,next) {
     req.session.username=req.body.username;
     req.session.password=req.body.password;
 
-    var user=dbs.findUser(req.session.username, function(user) {
-        console.log(user.role);
+    var user=dbs.findUsers("_id",req.session.username, function(user) {
+
         if(user.role=="Manager"){
-            req.session.name=user.name;
-            req.session.surname=user.surname;
-            req.session.role=user.role;
+            req.session.name=user[0].name;
+            req.session.surname=user[0].surname;
+            req.session.role=user[0].role;
             res.render('project_creation');
         }
         else if(user.role=="Admin"){
@@ -120,20 +120,7 @@ router.post("/project_creation",function (req,res,next) {
         }) ;
     }
 
-    var user=dbs.findUser(req.session.username, function(user) {
-         res.render('project_view'
-             // {
-        //     name:user.name,
-        //     surname:user.surname,
-        //     owner_name:req.body.projectowner,
-        //     manager_name:req.body.projectmanager,
-        //     project_name:req.body.projectname,
-        //     end_date:req.body.end_date,
-        //     start_date:req.body.start_date,
-        //     project_description:req.body.projectdescription,
-        //     budget:req.body.budget}
-       );
-    });
+    res.render('project_detail');
 
 });
 
@@ -146,10 +133,11 @@ router.get('/find_project_users', function(req, res, next)
 });
 router.get('/data_project_edit',function (req,res,next) {
     var id=req.param("id");
-    var current_project=dbs.findProject(id,function (current_project) {
-        res.send(current_project);
+    var current_project=dbs.findProjects("_id",id,function (current_project) {
+        console.log(current_project[0]);
+        res.send(current_project[0]);
     }) ;
-   // res.render("admin");
+    // res.render("admin");
 });
 router.get('/admin',function (req,res,next) {
     res.render("admin");
@@ -226,12 +214,18 @@ router.get("/projects",function (req,res,next) {
 });
 
 router.get("/username",function (req,res,next) {
-    res.send(req.session.username);
+    var user=dbs.findUsers("_id",req.session.username, function(user) {
+        var fullname=user[0].name+" "+user[0].surname;
+        res.send({name:fullname,id:req.session.username});
+    });
 });
 
+
+
+
 router.get("/role",function (req,res,next) {
-    var user=dbs.findUser(req.session.username, function(user) {
-        res.send(user.role);
+    var user=dbs.findUsers("_id",req.session.username, function(user) {
+        res.send(user[0].role);
     });
 });
 
@@ -281,15 +275,53 @@ router.get('/create_test_project', function(req, res, next)
     res.render('login');
 });
 
-router.get('/create_test_notifications', function(req, res, next)
+
+
+/**
+ -----------------------------------------------------------------------------------------------------------------------
+ * Page: Milestone.ejs
+ * Author: Seonin David
+ -----------------------------------------------------------------------------------------------------------------------
+ * */
+router.get('/store_milestones', function(req, res, next)
 {
-    test_data.create_test_notifications();
-    res.render('login');
+    var project_id=req.param('id');
+    var milestone_name=req.param('milestone_name');
+    var end_date=req.param('end_date');
+
+    var rand_password = generator.generate({
+        length: 100,
+        numbers: true,
+        symbols: true,
+        uppercase: true
+    });
+
+    var milstone_id=milestone_name.substr(0,4)+project_id+rand_password;
+
+    var milestone_json={
+        _id: milstone_id,
+        project_id: project_id,
+        description: milestone_name,
+        milestone_end_date: end_date
+    };
+    dbs.insertMilestone(milestone_json);
+    res.send("Got it!!");
 });
 
+router.get('/get_milestones', function(req, res, next)
+{
+    var project_id=req.param('id');
+    var all_milestones=dbs.findMilestones("project_id",project_id,function (all_milestones) {
+        res.send(all_milestones);
+    });
+});
 
-
-
+/**
+ -----------------------------------------------------------------------------------------------------------------------
+ *Page: Notifications functionality
+ *Author: Jacques Smulders
+ -----------------------------------------------------------------------------------------------------------------------
+ * */
 router.get('/unread_notifications', function(req, res, next)
 {
     var unread = dbs.unreadNotifications(req.param('_id'), function(unread) {
@@ -298,14 +330,26 @@ router.get('/unread_notifications', function(req, res, next)
 
 });
 
+router.get('/create_test_notifications', function(req, res, next)
+{
+    test_data.create_test_notifications();
+    res.render('login');
+});
+
 router.get('/assign_projects', function(req, res, next)
 {
+    //res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
     res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
-    dbs.assignUsersToProject(("emp9"),"kpmg_bbbbbbbb20");
 
 });
 
 //Removes the 5 test employees from the database
+// router.get('/remove_test_employees', function(req, res, next)
+// {
+//     test_data.remove_users();
+//     res.render('login');
+// });
+
 router.get('/remove_test_employees', function(req, res, next)
 {
     test_data.remove_users();
@@ -336,12 +380,12 @@ router.get('/view_test_employees', function(req, res, next)
     res.render('login');
 });
 
-router.get('/view_test_projects', function(req, res, next)
-{
-    var s= test_data.view_projects();
-    console.log("s:"+JSON.parse(JSON.stringify(s)));
-    //res.send();
-});
+// router.get('/view_test_projects', function(req, res, next)
+// {
+//     var s= test_data.view_projects();
+//     console.log("s:"+JSON.parse(JSON.stringify(s)));
+//     //res.send();
+// });
 
 router.get('/refresh_project_status', function(req, res, next)
 {

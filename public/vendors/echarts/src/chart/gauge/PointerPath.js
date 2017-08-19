@@ -41,7 +41,7 @@ define(function (require) {
                 shape.y - mathSin(angle) * width
             );
             ctx.lineTo(x, y);
-            return;
+
         }
     });
 });

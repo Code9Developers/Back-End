@@ -96,7 +96,7 @@
                     compare1 = img1;
                     compare2 = img2;
                 } else if (STRATEGY === 'stack') {
-                    compare1 = ctx1.hash()
+                    compare1 = ctx1.hash();
                     compare2 = ctx2.hash();
                 } else {
                     console.error('Invalid equal canvas strategy!');
@@ -182,7 +182,7 @@
                 console.error('Invalid equal canvas strategy!');
             }
         });
-    }
+    };
 
     /**
      * preprocess option and set default values
@@ -194,7 +194,7 @@
             option.animation = false;
         }
         return option;
-    }
+    };
 
     /**
      * run test with setOption for whole spec
@@ -221,7 +221,7 @@
                 });
             })(suites[sid].name, suites[sid].cases);
         }
-    }
+    };
 
     /**
      * @param {string} name name of the test

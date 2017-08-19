@@ -14,6 +14,7 @@
 
 */
 
+// TODO edit tags
 (function($) {
 
 	var delimiter = new Array();

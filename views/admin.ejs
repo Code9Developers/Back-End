@@ -1,183 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Register</title>
+        <title>KPMG | Register</title>
 
-    <!-- Favicon -->
-    <%- include('favicon'); %>
+        <!-- Favicon -->
+        <%- include('favicon'); %>
 
-    <!-- Stylesheets -->
-    <%- include('stylesheets'); %>
-</head>
-<body class="nav-md">
-<div class="container body">
-    <div class="main_container">
-        <!-- Sidebar -->
-        <%- include('sidebar'); %>
+        <!-- Stylesheets -->
+        <!-- Bootstrap -->
+        <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- NProgress: Top load animation-->
+        <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+        <!-- Bootstrap Multi-select-->
+        <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css" rel="stylesheet"/>
+        <!-- Custom Theme Style -->
+        <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>
+    </head>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <!-- Sidebar -->
+                <%- include('sidebar'); %>
 
-        <!-- top navigation -->
-        <%- include('top_nav'); %>
-        <!-- /top navigation -->
+                <!-- top navigation -->
+                <%- include('top_nav'); %>
+                <!-- /top navigation -->
 
-            <!-- page content -->
-            <div class="right_col" role="main">
-                <h2>Registration Form <small>Register A New User</small></h2>
-                <hr/>
-                <ul class="nav navbar-right panel_toolbox">
-                    <li  style="float: right" class="dropdown">
-                        <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">Settings 1</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <div class="clearfix"></div>
-                <!-- start form for validation -->
-                <form id="demo-form" data-parsley-validate action="register_employee" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label for="empid">Employee ID: *</label>
-                            <input id="empid" name="empid" type="text" class="form-control" placeholder="Employee ID" required="" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="rolelist">Role: *</label>
-                            <select class="form-control" id="rolelist" name="role">
-                                <option>Employee</option>
-                                <option>Manager</option>
-                                <option>Admin</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 10px">
-                        <div class="col-md-6">
-                            <label for="firstname">First Name: *</label>
-                            <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Name" required="" />
-                        </div>
-                        <div class="col-md-6">
-                            <label for="lastname">Last Name: *</label>
-                            <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Surname" required="" />
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 10px">
-                        <div class="col-md-3">
-                            <label for="email">Email: *</label>
-                            <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="" />
-                        </div>
-                        <div class="col-md-3">
-                            <label class="control-label">Contact Number: *</label>
-                            <input type="text" name="contact" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >
-                        </div>
-                        <div class="col-md-3">
-                            <label for="emplength">Employment Length (in years): *</label>
-                            <input id="emplength" name="emplength" type="number" class="form-control" placeholder="Employment Length" required="" />
-                        </div>
-                        <div class="col-md-3">
-                            <label for="positionlist">Position: *</label>
-                            <select class="form-control" id="positionlist">
-                                <option>Senior Analyst</option>
-                                <option>Junior Analyst</option>
-                                <option>Senior Auditor</option>
-                                <option>Junior Auditor</option>
-                                <option>Web Developer</option>
-                                <option>Accountant</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 10px">
-                        <div class="form-group col-md-6">
-                            <label class="control-label">Past Projects: *</label>
-                            <select id="pastprojects" class="multiselect-ui form-control" multiple="multiple">
-                                <option value="cheese">Cheese</option>
-                                <option value="tomatoes">Tomatoes</option>
-                                <option value="mozarella">Mozzarella</option>
-                                <option value="mushrooms">Mushrooms</option>
-                                <option value="pepperoni">Pepperoni</option>
-                                <option value="onions">Onions</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="control-label">Skill Tags: *</label>
-                            <input id="tags_1" name="skills" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
-                        </div>
-                    </div>
-                    <div>
-                        <input class="btn btn-dark submit" type="submit" value="Submit">
-                    </div>
-
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <h2>Registration Form</h2>
+                    <hr/>
                     <div class="clearfix"></div>
-                </form>
-                <!-- end form for validations -->
-            </div>
-            <!-- /page content -->
-
-            <!-- footer content -->
-            <footer>
-                <div class="pull-right">
-                    Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    <!-- start form for validation -->
+                    <form id="demo-form" data-parsley-validate action="register_employee" method="post">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="empid">Employee ID: *</label>
+                                <input id="empid" name="empid" type="text" class="form-control" placeholder="Employee ID" required="" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="rolelist">Role: *</label>
+                                <select class="form-control" id="rolelist" name="role">
+                                    <option>Employee</option>
+                                    <option>Manager</option>
+                                    <option>Admin</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="emplength">Employment Length (in years): *</label>
+                                <input id="emplength" name="emplength" type="number" class="form-control" placeholder="Employment Length" required="" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px">
+                            <div class="col-md-6">
+                                <label for="firstname">First Name: *</label>
+                                <input id="firstname" name="firstname" type="text" class="form-control" placeholder="Name" required="" />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastname">Last Name: *</label>
+                                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="Surname" required="" />
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px">
+                            <div class="form-group col-md-3">
+                                <label for="email">Email: *</label>
+                                <input id="email" name="email" type="email" class="form-control" placeholder="Email" required="" />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Contact Number: *</label>
+                                <input type="text" name="contactnumber" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required />
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="positionlist">Position: *</label>
+                                <select class="form-control" id="positionlist" name="positionlist">
+                                    <option>Senior Analyst</option>
+                                    <option>Junior Analyst</option>
+                                    <option>Senior Auditor</option>
+                                    <option>Junior Auditor</option>
+                                    <option>Web Developer</option>
+                                    <option>Accountant</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label class="control-label">Past Projects: *</label><br/>
+                                <select id="pastprojects" name="pastprojects" class="multiselect-ui form-control" multiple="multiple">
+                                    <option value="cheese">Cheese</option>
+                                    <option value="tomatoes">Tomatoes</option>
+                                    <option value="mozarella">Mozzarella</option>
+                                    <option value="mushrooms">Mushrooms</option>
+                                    <option value="pepperoni">Pepperoni</option>
+                                    <option value="onions">Onions</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom: 10px">
+                            <div class="form-group col-md-6">
+                                <label class="control-label">Skill Tags: *</label>
+                                <input id="tags_1" name="skills" type="text" class="tags form-control" value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required  />
+                            </div>
+                        </div>
+                        <div>
+                            <input class="btn btn-dark submit" type="submit" value="Submit"/>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form>
+                    <!-- end form for validations -->
                 </div>
-                <div class="clearfix"></div>
-            </footer>
-            <!-- /footer content -->
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
         </div>
-    </div>
-    <!-- jQuery -->
-    <script src="vendors/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Bootstrap Tags -->
-    <script src="vendors/bootstrap-tagsinput-latest/dist/bootstrap-tagsinput.min.js"></script>
-    <!-- FastClick -->
-    <script src="vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="vendors/skycons/skycons.js"></script>
-    <!-- Parsley -->
-    <script src="vendors/parsleyjs/dist/parsley.min.js"></script>
-    <!-- Flot -->
-    <script src="vendors/Flot/jquery.flot.js"></script>
-    <script src="vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="vendors/Flot/jquery.flot.time.js"></script>
-    <script src="vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="vendors/flot.curvedlines/curvedLines.js"></script>
-    <!-- DateJS -->
-    <script src="vendors/DateJS/build/date.js"></script>
-    <!-- JQVMap -->
-    <script src="vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="vendors/moment/min/moment.min.js"></script>
-    <script src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- jQuery Tags Input -->
-    <script src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
-    <!-- jquery.inputmask -->
-    <script src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script src="vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
-    <!-- jQuery UI -->
-    <script src="vendors/jquery-ui-1.12.1/jquery-ui.min.js"></script>
-    <!-- Code 9 -->
-    <script src="vendors/Code-9/code9.js"></script>
-    <!-- Custom Theme Style -->
-    <link href="src/build/css/custom.min.css" rel="stylesheet"/>
-</body>
+
+        <!-- jQuery -->
+        <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+        <!-- jQuery UI -->
+        <script type="text/javascript" src="vendors/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+        <!-- jQuery Tags Input -->
+        <script type="text/javascript" src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+        <!-- jquery.inputmask -->
+        <script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Bootstrap Multi-Select-->
+        <script type="text/javascript" src="vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+        <!-- Code 9 -->
+        <script type="text/javascript" src="vendors/Code-9/code9.js"></script>
+        <script type="text/javascript" src="vendors/Code-9/fullscreen.js"></script>
+        <!-- FastClick: Increase load time-->
+        <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress: Top load animation-->
+        <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+        <!-- Parsley -->
+        <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script type="text/javascript" src="javascripts/custom.min.js"></script>
+    </body>
 </html>

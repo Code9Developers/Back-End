@@ -50,7 +50,7 @@
 
   function round(val, decimalPoints) {
     var power = Math.pow(10, decimalPoints);
-    return Math.round(val * power) / power; 
+    return Math.round(val * power) / power;
   }
 
   function roundArr(arr, decimalPoints) {
@@ -77,7 +77,7 @@
   function isNumber(val) {
     return typeof val === 'number';
   }
-  
+
   // ================================ Canteen Class ================================
 
   /**
@@ -100,23 +100,23 @@
           that._pushAttr(key, val);
           that.context[key] = val;
         }
-      }); 
+      });
     });
   };
 
-  // Canteen methods 
-  Canteen.prototype = { 
+  // Canteen methods
+  Canteen.prototype = {
     /**
      * get a stack of operations
      * @method stack
      * @param {Object} config
-     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names 
+     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names
      *  with values.  loose mode only returns method calls and property names
-     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is 
+     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is
      *  3, i.e. 1.23456 will round to 1.234
      * @returns {Array}
      * @public
-     */  
+     */
     stack: function(config) {
       var config = config || {},
           loose = config.loose,
@@ -127,7 +127,7 @@
         each(this._stack, function(el, n) {
           ret.push(el.method || el.attr);
         });
-      } 
+      }
       else {
         each(this._stack, function(el, n) {
           // if method instruction
@@ -153,13 +153,13 @@
      * serialize a stack into a string
      * @method json
      * @param {Object} config
-     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names 
+     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names
      *  with values.  loose mode only returns method calls and property names
-     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is 
+     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is
      *  3, i.e. 1.23456 will round to 1.234
      * @returns {String}
      * @public
-     */  
+     */
     json: function(config) {
       return JSON.stringify(this.stack(config));
     },
@@ -167,13 +167,13 @@
      * convert a stack into a small hash string for easy comparisons
      * @method hash
      * @param {Object} config
-     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names 
+     * @param {String} [config.loose=false] - strict mode returns method calls with arguments and property names
      *  with values.  loose mode only returns method calls and property names
-     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is 
+     * @param {Number} [config.decimalPoints=3] - number of decimal points to round numeric values to.  The default is
      *  3, i.e. 1.23456 will round to 1.234
      * @public
      * @returns {String}
-     */  
+     */
     hash: function(config) {
       return Canteen.md5(this.json(config));
     },
@@ -181,7 +181,7 @@
      * clear the stack
      * @method clear
      * @public
-     */  
+     */
     clear: function() {
       this._stack = [];
     },
@@ -196,7 +196,7 @@
       this._stack.push({
         method: method,
         arguments: Array.prototype.slice.call(args, 0)
-      }); 
+      });
 
       this._slice();
     },
@@ -211,7 +211,7 @@
       this._stack.push({
         attr: attr,
         val: val
-      }); 
+      });
 
       this._slice();
     },
@@ -229,7 +229,7 @@
         this._stack = stack.slice(exceded);
       }
     }
-  }; 
+  };
 
   // generate observable methods and add them to the Canteen prototype
   (function(){
@@ -256,10 +256,10 @@
   /**
    * global config.  You can directly change these values in order to configure Canteen
    * @static
-   * @example 
+   * @example
    *  // change stack size to 3000
    *  Canteen.globals.STACK_SIZE = 3000;
-   */ 
+   */
   Canteen.globals = {
     STACK_SIZE: 10000
   };
@@ -291,7 +291,7 @@
   // it via Canteen.globals, or override methods if desired
   window.Canteen = Canteen;
 })();
-;/*
+/*
  * JavaScript MD5 1.0.1
  * https://github.com/blueimp/JavaScript-MD5
  *
@@ -300,7 +300,7 @@
  *
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
- * 
+ *
  * Based on
  * A JavaScript implementation of the RSA Data Security, Inc. MD5 Message
  * Digest Algorithm, as defined in RFC 1321.

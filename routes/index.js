@@ -220,6 +220,9 @@ router.get("/username",function (req,res,next) {
     });
 });
 
+
+
+
 router.get("/role",function (req,res,next) {
     var user=dbs.findUsers("_id",req.session.username, function(user) {
         res.send(user[0].role);
@@ -335,12 +338,18 @@ router.get('/create_test_notifications', function(req, res, next)
 
 router.get('/assign_projects', function(req, res, next)
 {
+    //res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
     res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
-    dbs.assignUsersToProject(("emp9"),"kpmg_bbbbbbbb20");
 
 });
 
 //Removes the 5 test employees from the database
+// router.get('/remove_test_employees', function(req, res, next)
+// {
+//     test_data.remove_users();
+//     res.render('login');
+// });
+
 router.get('/remove_test_employees', function(req, res, next)
 {
     test_data.remove_users();
@@ -371,12 +380,12 @@ router.get('/view_test_employees', function(req, res, next)
     res.render('login');
 });
 
-router.get('/view_test_projects', function(req, res, next)
-{
-    var s= test_data.view_projects();
-    console.log("s:"+JSON.parse(JSON.stringify(s)));
-    //res.send();
-});
+// router.get('/view_test_projects', function(req, res, next)
+// {
+//     var s= test_data.view_projects();
+//     console.log("s:"+JSON.parse(JSON.stringify(s)));
+//     //res.send();
+// });
 
 router.get('/refresh_project_status', function(req, res, next)
 {

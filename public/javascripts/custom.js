@@ -5048,7 +5048,4 @@ function init_charts() {
 		init_CustomNotification();
 		init_autosize();
 		init_autocomplete();
-				
 	});	
-	
-

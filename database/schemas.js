@@ -12,6 +12,8 @@ exports.create_schemas = function() {
 
     create_project(db) ;
 
+    create_milestone(db) ;
+
     create_task(db) ;
 
     create_notification(db) ;
@@ -41,21 +43,12 @@ function create_user(db) {
         past_projects: [] //-> stores project id's
     }) ;
 
-    var user = mongoose.model('user', schema) ;
-    exports.user = user ;
+    exports.user = mongoose.model('user', schema) ;
 
     console.log('User schema created.') ;
 
 }
 
-//removed:
-//manager_name
-//manager_contact
-//manager_email
-
-//added:
-//manager_id
-//tasks
 function create_project(db) {
 
     var schema = mongoose.Schema({
@@ -73,12 +66,29 @@ function create_project(db) {
         project_budget: Number,
         tasks: [],//stores task id's
         status: String, //active, completed, pending
-        milestones: [{_id: String, description: String}]
+        project_rating: Number, //rating of project (1-10) on post-mortem analysis
+        milestones: [] //store milestone id's
     }) ;
 
-    var project = mongoose.model('project', schema) ;
-    exports.project = project ;
+
+    exports.project = mongoose.model('project', schema) ;
+
     console.log('Project schema created.') ;
+}
+
+function create_milestone(db) {
+
+    var schema = mongoose.Schema({
+        _id: String,
+        project_id: String, //project to which milestone belongs
+        description: String,
+        milestone_end_date: Date,
+        tasks: []
+    }) ;
+
+    exports.milestone = mongoose.model('milestone', schema) ;
+
+    console.log('Milestone schema created.') ;
 }
 
 function create_task(db) {
@@ -91,8 +101,7 @@ function create_task(db) {
         employees_assigned: []
     }) ;
 
-    var task = mongoose.model('task', schema) ;
-    exports.task = task ;
+    exports.task = mongoose.model('task', schema) ;
 
     console.log('Task schema created.') ;
 }
@@ -107,8 +116,7 @@ function create_notification(db) {
         isRead: Boolean
     }) ;
 
-    var notification = mongoose.model('notification', schema) ;
-    exports.notification = notification ;
+    exports.notification = mongoose.model('notification', schema) ;
 
     console.log('Notification schema created.') ;
 }

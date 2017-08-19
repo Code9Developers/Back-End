@@ -151,11 +151,13 @@ exports.dismissProject = function(user_id, project_id) {
 };
 
 // marks a project as completed, and moves project to past_project array of all employees_assigned and manager
-exports.completeProject = function(project_id) {
+exports.completeProject = function(project_id, rating) {
 
     module.exports.editProjects("_id", project_id, "status", "completed") ;
 
     module.exports.editProjects("_id", project_id, "project_end_date", new Date()) ;
+
+    module.exports.editProjects("_id", project_id, "project_rating", rating) ;
 
     var user = schemas.user ;
     var project = schemas.project ;

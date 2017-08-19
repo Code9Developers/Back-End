@@ -200,6 +200,7 @@ exports.completeProject = function(project_id, rating) {
 exports.insertProject = function(_json) {
 
     var project = schemas.project ;
+    var user = schemas.user ;
 
     var _project = new project(_json) ;
 
@@ -210,6 +211,16 @@ exports.insertProject = function(_json) {
         }
         else {
             console.log("Successfully inserted Project.") ;
+        }
+    });
+
+    user.findByIdAndUpdate(_project.manager_id, {$push: {current_projects: _project._id}}, function (err) {
+        if (!err) {
+            console.log("Project added to User (Manager).");
+        }
+        else {
+            console.log("Error adding Project to User (Manager).");
+            console.log(err) ;
         }
     });
 };

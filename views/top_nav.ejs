@@ -61,9 +61,9 @@
         $.get("username",
             {
             },function(data, status) {
-                $(".username").append(data);
+                $(".username").append(data.name);
                 $.get("unread_notifications", {
-                    _id:data
+                    _id:data.id
                 }, function (data, status) {
 
                     $('#unreadNotification').empty();

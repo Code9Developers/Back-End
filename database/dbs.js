@@ -42,7 +42,7 @@ exports.findUsers = function(attrib, value, callback) {
             console.log("Error finding Users.") ;
             console.log(err) ;
         }
-        else if (docs == "[]") {
+        else if (JSON.stringify(docs) === "[]") {
             console.log("No Users found.") ;
         }
         else {
@@ -57,16 +57,30 @@ exports.findUsers = function(attrib, value, callback) {
 exports.editUsers = function(attrib, value, attrib_to_edit, new_value) {
 
     var user = schemas.user ;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
-    var update = JSON.parse('{ ' + "\"" + attrib_to_edit + "\"" + ': ' + "\"" + new_value + "\"" + '}') ;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
 
-    user.update( query, { $set: update}, function(err) {
+    user.update( query, { $set: update}, {multi: true}, function(err) {
         if (!err) {
-            console.log("User " + attrib_to_edit + "\'s updated.") ;
+            console.log("Users " + attrib_to_edit + "\'s updated.") ;
         }
         else {
             console.log("Error updating " + attrib_to_edit + "\'s of Users.") ;
             console.log(err) ;
+        }
+    });
+};
+
+exports.deleteUser = function(user_id) {
+
+    var user = schemas.user ;
+
+    user.remove({ _id: user_id }, function(err) {
+        if (!err) {
+            console.log("User successfully deleted.") ;
+        }
+        else {
+            console.log("Error deleting User.") ;
         }
     });
 };
@@ -84,13 +98,9 @@ exports.editUsers = function(attrib, value, attrib_to_edit, new_value) {
 
 // assigns project to user and vice versa
 exports.assignProject = function(user_id, project_id) {
-    module.exports.assignProjectToUser(user_id, project_id) ;
-    module.exports.assignUserToProject(user_id, project_id) ;
-};
-
-exports.assignProjectToUser = function(user_id, project_id) {
 
     var user = schemas.user ;
+    var project = schemas.project;
 
     user.findByIdAndUpdate(user_id, {$push: {current_projects: project_id}}, function (err) {
         if (!err) {
@@ -101,11 +111,6 @@ exports.assignProjectToUser = function(user_id, project_id) {
             console.log(err) ;
         }
     });
-};
-
-exports.assignUserToProject = function(user_id, project_id) {
-
-    var project = schemas.project;
 
     project.findByIdAndUpdate( project_id , { $push:  {employees_assigned: user_id}}, function(err) {
         if (!err) {
@@ -116,13 +121,66 @@ exports.assignUserToProject = function(user_id, project_id) {
             console.log(err) ;
         }
     });
-
-    //employee rates?
 };
 
 // remove employee from project and vice versa
 exports.dismissProject = function(user_id, project_id) {
-    //will be implemented later
+
+    var project = schemas.project;
+    var user = schemas.user ;
+
+    project.findByIdAndUpdate( project_id , { $pull:  {employees_assigned: user_id}}, function(err) {
+        if (!err) {
+            console.log("User removed from Project.") ;
+        }
+        else {
+            console.log("Error removing User from Project.") ;
+            console.log(err) ;
+        }
+    });
+
+    user.findByIdAndUpdate( user_id , { $pull:  {current_projects: project_id}}, function(err) {
+        if (!err) {
+            console.log("Project removed from USer.") ;
+        }
+        else {
+            console.log("Error removing Project from User.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+// marks a project as completed, and moves project to past_project array of all employees_assigned and manager
+exports.completeProject = function(project_id) {
+
+    module.exports.editProjects("_id", project_id, "status", "completed") ;
+
+    module.exports.editProjects("_id", project_id, "project_end_date", new Date()) ;
+
+    var user = schemas.user ;
+    var project = schemas.project ;
+
+    user.update( { current_projects: project_id} , { $push: {past_projects: project_id}}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("Projects set as past projects for employees assigned.") ;
+        }
+        else {
+            console.log("Error setting Projects as past projects for employees assigned.") ;
+            console.log(err) ;
+        }
+    });
+
+    user.update( { current_projects: project_id} , { $pull: {current_projects: project_id}}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("Projects set as past projects for employees assigned.") ;
+        }
+        else {
+            console.log("Error setting Projects as past projects for employees assigned.") ;
+            console.log(err) ;
+        }
+    });
+
+    //delete all tasks to save space?
 };
 
 /*
@@ -141,9 +199,9 @@ exports.insertProject = function(_json) {
 
     var project = schemas.project ;
 
-    var project1 = new project(_json) ;
+    var _project = new project(_json) ;
 
-    project1.save(function (err) {
+    _project.save(function (err) {
         if (err) {
             console.log("Project could not be inserted.") ;
             console.log(err) ;
@@ -159,14 +217,13 @@ exports.findProjects = function(attrib, value, callback) {
 
     var project = schemas.project ;
     var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
-    console.log(query) ;
 
     project.find(query, function(err, docs) {
         if (err) {
             console.log("Error finding Projects.") ;
             console.log(err) ;
         }
-        else if (!docs) {
+        else if (JSON.stringify(docs) === "[]") {
             console.log("No Projects found.") ;
         }
         else {
@@ -186,7 +243,7 @@ exports.findAllProjects = function(callback) {
             console.log("Error finding Projects.") ;
             console.log(err) ;
         }
-        else if (docs == "[]") {
+        else if (JSON.stringify(docs) === "[]") {
             console.log("No Projects found.") ;
         }
         else {
@@ -196,33 +253,37 @@ exports.findAllProjects = function(callback) {
     });
 };
 
-// checks if projects are complete and updates status
-exports.refreshProjectStatus = function() {
-    var project = schemas.project ;
-    var today = new Date() ;
+// finds all projects with attribute "attrib" of value "value",
+// and sets their attribute of "attrib_to_edit" to "new_value"
+exports.editProjects = function(attrib, value, attrib_to_edit, new_value) {
 
-    project.update( { project_end_date: {$lt: today}} , { $set: {status: "completed"}}, function(err) {
+    var project = schemas.project ;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
+
+    project.update( query, { $set: update}, {multi: true}, function(err) {
         if (!err) {
-            console.log("Projects status updated.") ;
+            console.log("Projects " + attrib_to_edit + "\'s updated.") ;
         }
         else {
-            console.log("Error updating Projects status.") ;
+            console.log("Error updating " + attrib_to_edit + "\'s of Projects.") ;
             console.log(err) ;
         }
     });
 };
 
-// finds all projects with attribute "attrib" of value "value",
-// and sets their attribute of "attrib_to_edit" to "new_value"
-exports.editProjects = function(attrib, value, attrib_to_edit, new_value) {
-    var project = schemas.project ;
+// checks if projects are complete and updates status
+exports.refreshProjectStatus = function() {
 
-    project.findByIdAndUpdate( project_id , { $set: {project_end_date: new_project_end_date}}, function(err) {
+    var project = schemas.project ;
+    var today = String(new Date()) ;
+
+    project.update( { project_end_date: {$lt: today}} , { $set: {status: "completed"}}, {multi: true}, function(err) {
         if (!err) {
-            console.log("Project end date updated.") ;
+            console.log("Projects status updated.") ;
         }
         else {
-            console.log("Error updating Project end date.") ;
+            console.log("Error updating Projects status.") ;
             console.log(err) ;
         }
     });
@@ -239,24 +300,25 @@ exports.editProjects = function(attrib, value, attrib_to_edit, new_value) {
  ***********************************************************************************************************************
  */
 
+// inserts milestone, and inserts it into correspondig project
 exports.insertMilestone = function(_json) {
 
     var milestone = schemas.milestone ;
     var project = schemas.project ;
 
-    var milestone1 = new milestone(_json) ;
+    var _milestone = new milestone(_json) ;
 
-    milestone1.save(function (err) {
+    _milestone.save(function (err) {
         if (err) {
             console.log("Milestone could not be inserted.") ;
             console.log(err) ;
         }
         else {
-            console.log("Successfully inserted Project.") ;
+            console.log("Successfully inserted Milestone.") ;
         }
     });
 
-    project.findByIdAndUpdate( milestone1.project_id, { $push: {milestones: milestone1}}, function(err) {
+    project.findByIdAndUpdate( _milestone.project_id, { $push: {milestones: _milestone._id}}, function(err) {
         if (!err) {
             console.log("Milestone inserted into Project.") ;
         }
@@ -267,54 +329,98 @@ exports.insertMilestone = function(_json) {
     });
 };
 
-//may need to compare doc.milestone to null for no milestones
-exports.findMilestones = function(project_id, callback) {
+exports.findMilestones = function(attrib, value, callback) {
+
+    var milestone = schemas.milestone ;
+    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+
+    milestone.find(query, function(err, docs) {
+        if (err) {
+            console.log("Error finding Milestones.") ;
+            console.log(err) ;
+        }
+        else if (JSON.stringify(docs) === "[]") {
+            console.log("No Milestones found.") ;
+        }
+        else {
+            console.log("Milestones found.") ;
+            return callback(docs);
+        }
+    });
+};
+
+exports.editMilestones = function(attrib, value, attrib_to_edit, new_value) {
+
+    var milestone = schemas.milestone ;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
+
+    milestone.update( query, { $set: update}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("Milestones " + attrib_to_edit + "\'s updated.") ;
+        }
+        else {
+            console.log("Error updating " + attrib_to_edit + "\'s of Milestones.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+exports.deleteMilestone = function(milestone_id) {
 
     var milestone = schemas.milestone ;
 
-    project.find(query, function(err, docs) {
-        if (err) {
-            console.log("Error finding Projects.") ;
-            console.log(err) ;
-        }
-        else if (!docs) {
-            console.log("No Projects found.") ;
+    milestone.remove({ _id: milestone_id }, function(err) {
+        if (!err) {
+            console.log("Milestone successfully deleted.") ;
         }
         else {
-            console.log("Projects found.") ;
-            return callback(docs);
+            console.log("Error deleting Milestone.") ;
         }
     });
 };
 
 //removes all expired milestones from project
 exports.removeExpiredMilestones = function(project_id) {
-    var project = schemas.project;
+
+    var project = schemas.project ;
+    var milestone = schemas.milestone ;
     var today = new Date() ;
 
-    project.findByIdAndUpdate( project_id , { $pull:  {milestones: {end_date: {$lt: today}}}}, function(err) {
-        if (!err) {
-            console.log("Expired Milestone removed from Project.") ;
-        }
-        else {
-            console.log("Error removing expired Milestone from Project.") ;
+    milestone.find( { project_id: project_id, milestone_end_date: {$lt: today} }, function(err, results) {
+        if (err) {
+            console.log("Error finding expired Milestones.") ;
             console.log(err) ;
         }
-    });
-};
-
-exports.editMilestoneEndDate = function(project_id, milestone_id, new_milestone_end_date) {
-    var project = schemas.project ;
-
-    project.findByIdAndUpdate( project_id , { $pull: {milestones: {_id: milestone_id}}}, function(err, result) {
-        if (!err) {
-            console.log("Milestone found.") ;
-            result.end_date = new_milestone_end_date ;
-            module.exports.insertMilestone(project_id, result) ;
+        if (JSON.stringify(results) === "[]") {
+            console.log("No expired Milestones for project found.") ;
+            console.log(results);
         }
         else {
-            console.log("Error updating Project end date.") ;
-            console.log(err) ;
+            for (var x = 0 ; x < results.length ; x++) {
+                for (var y = 0 ; y < results[x].tasks.length ; y++) {
+                    module.exports.deleteTask(results[x].tasks[y]._id) ;
+                    project.update({tasks: results[x].tasks[y]._id}, { $pull: {tasks: results[x].tasks[y]._id}}, function(err, user){
+                        if (!err) {
+                            console.log("Task removed from Project.") ;
+                        }
+                        else {
+                            console.log("Error removing Task from Project.") ;
+                            console.log(err) ;
+                        }
+                    });
+                }
+                module.exports.deleteMilestone(results[x]._id) ;
+                project.update({milestones: results[x]._id}, { $pull: {milestones: results[x]._id}}, function(err, user){
+                    if (!err) {
+                        console.log("Milestone removed from Project.") ;
+                    }
+                    else {
+                        console.log("Error removing Milestone from Project.") ;
+                        console.log(err) ;
+                    }
+                });
+            }
         }
     });
 };
@@ -330,9 +436,12 @@ exports.editMilestoneEndDate = function(project_id, milestone_id, new_milestone_
  ***********************************************************************************************************************
  */
 
+// inserts task, and inserts it into corresponding milestone and project
 exports.insertTask = function(_json) {
 
     var task = schemas.task ;
+    var milestone = schemas.milestone ;
+    var project = schemas.project ;
 
     var _task = new task(_json) ;
 
@@ -344,7 +453,83 @@ exports.insertTask = function(_json) {
         else {
             console.log("Successfully inserted Task.") ;
         }
-    }) ;
+    });
+
+    if (_task.milestone_id === null) {
+        console.log("Task has no Milestone.") ;
+    }
+    else {
+        milestone.findByIdAndUpdate(_task.milestone_id, {$push: {tasks: _task._id}}, function (err) {
+            if (!err) {
+                console.log("Task inserted into Milestone.");
+            }
+            else {
+                console.log("Error inserting Task into Milestone.");
+                console.log(err);
+            }
+        });
+    }
+
+    project.findByIdAndUpdate( _task.project_id, { $push: {tasks: _task._id}}, function(err) {
+        if (!err) {
+            console.log("Task inserted into Project.") ;
+        }
+        else {
+            console.log("Error inserting Task into Project.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+exports.findTasks = function(attrib, value, callback) {
+
+    var task = schemas.task ;
+    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+
+    task.find(query, function(err, docs) {
+        if (err) {
+            console.log("Error finding Tasks.") ;
+            console.log(err) ;
+        }
+        else if (JSON.stringify(docs) === "[]") {
+            console.log("No Tasks found.") ;
+        }
+        else {
+            console.log("Tasks found.") ;
+            return callback(docs);
+        }
+    });
+};
+
+exports.editTasks = function(attrib, value, attrib_to_edit, new_value) {
+
+    var task = schemas.task ;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
+
+    task.update( query, { $set: update}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("Tasks " + attrib_to_edit + "\'s updated.") ;
+        }
+        else {
+            console.log("Error updating " + attrib_to_edit + "\'s of Tasks.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+exports.deleteTask = function(task_id) {
+
+    var task = schemas.task ;
+
+    task.remove({ _id: task_id }, function(err) {
+        if (!err) {
+            console.log("Task successfully deleted.") ;
+        }
+        else {
+            console.log("Error deleting Task.") ;
+        }
+    });
 };
 
 /*
@@ -375,6 +560,20 @@ exports.insertNotification = function(_json) {
     }) ;
 };
 
+exports.deleteNotification = function(notification_id) {
+
+    var notification = schemas.notification ;
+
+    notification.remove({ _id: notification_id }, function(err) {
+        if (!err) {
+            console.log("Notification successfully deleted.") ;
+        }
+        else {
+            console.log("Error deleting Notification.") ;
+        }
+    });
+};
+
 //returns all unread notifications for specific user
 exports.unreadNotifications = function(user_id, callback) {
     var notification = schemas.notification ;
@@ -384,7 +583,7 @@ exports.unreadNotifications = function(user_id, callback) {
             console.log("Error finding Notifications.") ;
             console.log(err) ;
         }
-        else if (docs == "[]") { //for some reason, all collections are stored as follows "[ <collections> ]'
+        else if (JSON.stringify(docs) === "[]") { //for some reason, all collections are stored as follows "[ <collections> ]'
             console.log("No Unread Notifications found.") ;
         }
         else {

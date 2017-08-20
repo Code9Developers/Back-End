@@ -217,7 +217,9 @@ exports.create_past_Projects = function(num_years) {
                         manager_email: null, // i will assign this later
                         employees_assigned: [{employee_id: String, role: String}],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
+                        status:"completed"
+                 //we need to generate a random number here between two values
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -251,7 +253,8 @@ exports.create_past_Projects = function(num_years) {
                         manager_email: null, // i will assign this later
                         employees_assigned: [{employee_id: String, role: String}],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
+                        status:"completed"//we need to generate a random number here between two values
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -285,7 +288,8 @@ exports.create_past_Projects = function(num_years) {
                         manager_email: null, // i will assign this later
                         employees_assigned: [{employee_id: String, role: String}],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
+                        status:"completed"//we need to generate a random number here between two values
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -319,7 +323,8 @@ exports.create_past_Projects = function(num_years) {
                         manager_email: null, // i will assign this later
                         employees_assigned: [{employee_id: String, role: String}],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2') //we need to generate a random number here between two values
+                        project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
+                        status:"completed"//we need to generate a random number here between two values
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;

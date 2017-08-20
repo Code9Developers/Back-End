@@ -13,7 +13,21 @@
     <%- include('favicon'); %>
 
     <!-- Stylesheets -->
-    <%- include('stylesheets'); %>
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- Code 9-->
+    <link href="vendors/Code-9/code9.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation -->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <!--<link href="vendors-sort/dropzone/dist/min/dropzone.min.css" rel="stylesheet">-->
+    <!-- Bootstrap Multi-select-->
+    <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="/stylesheets/custom.css" type="text/css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -88,14 +102,14 @@
                                                     <h1>Create Todos</h1>
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                                            <input type="text" class="form-control add-todo" placeholder="Add todo">
+                                                            <input type="text" id="task" class="form-control add-todo" placeholder="Add todo">
                                                         </div>
                                                     </div>
                                                     <hr/>
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                                            <select type="text" class="form-control">
-                                                                <optgroup label="Milestones">
+                                                            <select type="text" class="form-control" id="milestoneV">
+                                                                <optgroup label="Milestones" id="milestone">
                                                                     <option disabled selected>Select Milestone</option>
                                                                     <option>Choose option</option>
                                                                 </optgroup>
@@ -106,9 +120,8 @@
                                                     <br/>
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-sm-12">
-                                                            <select id="AllocateTask" class="multiselect-ui form-control" multiple="multiple">
-                                                                <option value="cheese">Cheese</option>
-                                                                <option value="tomatoes">Tomatoes</option>
+                                                            <select id="AllocateTask" multiple="multiple">
+
                                                                 <option value="mozarella">Mozzarella</option>
                                                                 <option value="mushrooms">Mushrooms</option>
                                                                 <option value="pepperoni">Pepperoni</option>
@@ -129,18 +142,7 @@
                                                                     <input type="checkbox" value="" />Take out the trash</label>
                                                             </div>
                                                         </li>
-                                                        <li class="ui-state-default">
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="" />Buy bread</label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ui-state-default">
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="" />Teach penguins to fly</label>
-                                                            </div>
-                                                        </li>
+
                                                     </ul>
                                                     <div class="todo-footer">
                                                         <strong><span class="count-todos"></span></strong> Items Left
@@ -232,9 +234,32 @@
         <!-- /footer content -->
     </div>
 </div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI -->
+<script type="text/javascript" src="vendors/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap multi-select -->
+<script src="vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+<!-- Code 9 -->
+<script src="vendors/Code-9/js/code9.js"></script>
+
+<script src="vendors/Code-9/js/fullscreen.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- ECharts -->
+<script type="text/javascript" src="vendors/echarts/dist/echarts.min.js"></script>
+<!-- Dropzone.js -->
+<script src="/javascripts/custom.js"></script>
+
+
 <script src="/vendors/Code-9/views/project_view.js"></script>
 <!--Vendors js files-->
-<%- include('javascripts'); %>
+
 
 </body>
 </html>

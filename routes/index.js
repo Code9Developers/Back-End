@@ -8,6 +8,16 @@ var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
 
 var employees;
+/**
+ *
+ * @param req
+ * @param res
+ * @param next
+ *
+ * Page: Login.ejs
+ * Author: Seonin David
+ *
+ */
 function login_check(req, res, next) {
     var result=dbs.authenticate(req.body.username,req.body.password,function (result) {
         console.log("result found");
@@ -134,7 +144,6 @@ router.get('/find_project_users', function(req, res, next)
 router.get('/data_project_edit',function (req,res,next) {
     var id=req.param("id");
     var current_project=dbs.findProjects("_id",id,function (current_project) {
-        console.log(current_project[0]);
         res.send(current_project[0]);
     }) ;
     // res.render("admin");
@@ -268,12 +277,27 @@ router.get('/create_test_employees', function(req, res, next)
     res.render('login');
 });
 
-router.get('/create_test_project', function(req, res, next)
+/**
+ * Page: admin.ejs
+ * Functionality: Display past projects on admin page
+ * Author: Seonin David
+ * Note: The past projects that are being displayed are test projects, eventually actual past projects
+ * will need to be displayed
+ */
+
+router.get('/get_past_projects', function(req, res, next)
 {
-    //dbs.create_test_employees();
-    test_data.create_test_project();
-    res.render('login');
+    var past_projects=dbs.findProjects("status","completed",function (past_projects) {
+        res.send(past_projects);
+    })
 });
+
+
+// router.get('/create_test_past_project', function(req, res, next)
+// {
+//     test_data.create_past_Projects(4);
+//    // res.render('login');
+// });
 
 
 
@@ -336,19 +360,53 @@ router.get('/create_test_notifications', function(req, res, next)
     res.render('login');
 });
 
-router.get('/assign_projects', function(req, res, next)
+/**
+ -----------------------------------------------------------------------------------------------------------------------
+ *Name: Task Functionality
+ *Author: Seonin David
+ *
+ -----------------------------------------------------------------------------------------------------------------------
+ * */
+router.get('/create_task', function(req, res, next)
 {
-    //res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
-    res.send(JSON.parse(JSON.stringify("emp9")),"kpmg_bbbbbbbb20");
+    var project_id=req.param('project_id');
+    var milestone_id=req.param('milestone_id');
+    var task=req.param('task');
+    var emp_assigned=req.param('emp_assigned');
+    var rand_password = generator.generate({
+        length: 10,
+        numbers: true,
+        symbols: true,
+        uppercase: true
+    });
+
+    var _id=milestone_id.substr(0,5)+project_id+rand_password;
+   var emp_json={ _id: _id,
+        description: task,
+    project_id: project_id,
+    milestone_id: milestone_id,
+    employees_assigned: emp_assigned}
+
+    dbs.insertTask(emp_json);
+
+});
+
+router.get('/get_tasks', function(req, res, next)
+{
+    var project_id=req.param('id');
+    var tasks=dbs.findTasks("project_id",project_id,function (tasks) {
+        console.log(tasks);
+        res.send(tasks);
+    });
 
 });
 
 //Removes the 5 test employees from the database
-// router.get('/remove_test_employees', function(req, res, next)
-// {
-//     test_data.remove_users();
-//     res.render('login');
-// });
+router.get('/remove_test_employees', function(req, res, next)
+{
+    test_data.remove_users();
+    res.render('login');
+});
 
 router.get('/remove_test_employees', function(req, res, next)
 {
@@ -380,12 +438,12 @@ router.get('/view_test_employees', function(req, res, next)
     res.render('login');
 });
 
-// router.get('/view_test_projects', function(req, res, next)
-// {
-//     var s= test_data.view_projects();
-//     console.log("s:"+JSON.parse(JSON.stringify(s)));
-//     //res.send();
-// });
+router.get('/view_test_projects', function(req, res, next)
+{
+    var s= test_data.view_projects();
+    console.log("s:"+JSON.parse(JSON.stringify(s)));
+    //res.send();
+});
 
 router.get('/refresh_project_status', function(req, res, next)
 {

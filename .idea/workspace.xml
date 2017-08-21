@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -22,7 +21,7 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="104">
               <caret line="218" column="30" lean-forward="false" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
               <folding />
             </state>
@@ -457,7 +456,7 @@
       <workItem from="1503302440699" duration="4738000" />
       <workItem from="1503308150606" duration="8719000" />
       <workItem from="1503318699536" duration="3231000" />
-      <workItem from="1503333601799" duration="6200000" />
+      <workItem from="1503333601799" duration="6258000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -697,11 +696,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503339579256</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="- Added SMTP server code to index.js">
+      <created>1503340030803</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1503340030803</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183625000" />
+    <option name="totallyTimeSpent" value="183683000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,7 +852,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Fixed 404 page. So now if the route does not exist it will go to that page" />
     <MESSAGE value="Added all vendors and project_creation page" />
     <MESSAGE value="Added registration page so employees can be registered&#10;Fixed some layout error on project creation page&#10;Created insert so employees can be inserted to the db (Still need to fix the encryption of passwords and double check if the format is right)" />
     <MESSAGE value="added login functionality" />
@@ -871,7 +876,8 @@
     <MESSAGE value="Re-indexed up to login page and added the error 403 page." />
     <MESSAGE value="- Updated views" />
     <MESSAGE value="- Finished off the view files" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Finished off the view files" />
+    <MESSAGE value="- Added SMTP server code to index.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added SMTP server code to index.js" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1209,7 +1215,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
+        <state relative-caret-position="104">
           <caret line="218" column="30" lean-forward="false" selection-start-line="218" selection-start-column="30" selection-end-line="218" selection-end-column="30" />
           <folding />
         </state>

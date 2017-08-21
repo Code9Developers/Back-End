@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | 404 </title>
+        <title>KPMG | 404 </title>
 
-    <!-- Favicon -->
-    <%- include('favicon'); %>
+        <!-- Favicon -->
+        <%- include('favicon'); %>
 
-    <!-- Stylesheets -->
-    <%- include('stylesheets'); %>
-</head>
+        <!-- Stylesheets -->
+        <!-- Bootstrap -->
+        <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- NProgress -->
+        <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
 
-<body class="nav-md">
-<div class="container body">
-    <div class="main_container">
-        <!-- page content -->
-        <div class="col-md-12">
-            <div class="col-middle">
-                <div class="text-center text-center">
-                    <h1 class="error-number">404</h1>
-                    <h2>Sorry but we couldn't find this page</h2>
-                    <p>This page you are looking for does not exist <a href="#">Report this?</a>
-                    </p>
-                    <div class="mid_center">
-                        <h3>Search</h3>
-                        <form>
-                            <div class="col-xs-12 form-group pull-right top_search">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                    <span class="input-group-btn">
-                              <button class="btn btn-default" type="button">Go!</button>
-                          </span>
-                                </div>
+        <!-- Custom Theme Style -->
+        <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet">
+    </head>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <!-- page content -->
+                <div class="col-md-12">
+                    <div class="col-middle">
+                        <div class="text-center text-center">
+                            <h1 class="error-number">404</h1>
+                            <h2>Sorry but we couldn't find this page</h2>
+                            <p>This page you are looking for does not exist <a href="#">Report this?</a>
+                            </p>
+                            <div class="mid_center">
+                                <a href="/"><img src="images/logo/KPMG_white_logo_Rec.svg.png" width="100px" height=40px"></a>
                             </div>
-                        </form>
-                        <a href="/"><img src="images/logo/KPMG_white_logo_Rec.svg.png" width="100px" height=40px"></a>
+                        </div>
                     </div>
                 </div>
+                <!-- /page content -->
             </div>
         </div>
-        <!-- /page content -->
-    </div>
-</div>
 
-<!--Vendors js files-->
-<%- include('javascripts'); %>
-</body>
+        <!--Vendors js files-->
+        <!-- jQuery -->
+        <script type="text/javascript" src="vendors-sort/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script type="text/javascript" src="javascripts/custom.min.js"></script>
+    </body>
 </html>

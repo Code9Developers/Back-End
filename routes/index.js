@@ -185,7 +185,7 @@ router.post('/register_employee',function (req,res,next) {
     // console.log(past_projects);
 
     var today = new Date();
-    dbs.encrypt("test",function (enc_pass) {
+    dbs.encrypt(rand_password, function (enc_pass) {
         var emp = {
             _id: req.body.empid,
             name: req.body.firstname,
@@ -216,11 +216,11 @@ router.post('/register_employee',function (req,res,next) {
         // setup email data with unicode symbols
         let mailOptions  =
         {
-                from: '"Boo 👻" <code9devs@gmail.com>', // sender address
+                from: '"Code 9" <code9devs@gmail.com>', // sender address
                 to: 'code9devs@gmail.com,' + emp.email, // list of receivers
                 subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
                 // plain text body
-                text: 'Welcome ' + emp.name + ' ' + emp.surname + '\n Your password is: ' + rand_password
+                text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
                 // html: '<b>Hello world ?</b>' // html body
         };
 

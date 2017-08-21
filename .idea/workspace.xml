@@ -5,23 +5,1033 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="- Fix hidden files">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/background.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/image/hs-2004-27-a-large-web.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-down.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-left.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-right.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-up.gif" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/GruntFile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/LICENSE" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-af-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-AE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-BH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-EG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-IQ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-JO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-KW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-LB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-LY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-MA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-OM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-QA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-SA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-TN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-YE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-az-Cyrl-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-az-Latn-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-be-BY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-bg-BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-bs-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ca-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-cs-CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-cy-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-da-DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-AT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-LI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-dv-MV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-el-GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-029.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-AU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-BZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-JM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-TT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-US.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-ZW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-AR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-DO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-HN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-MX.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-NI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-SV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-UY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-VE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-et-EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-eu-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fa-IR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fi-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fo-FO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-MC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-gl-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-gu-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-he-IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hi-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hr-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hr-HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hu-HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hy-AM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-id-ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-is-IS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-it-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-it-IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ja-JP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ka-GE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kk-KZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ko-KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kok-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ky-KG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-lt-LT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-lv-LV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mi-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mk-MK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mn-MN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mr-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ms-BN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ms-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mt-MT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nb-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nl-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nl-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nn-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ns-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pl-PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ro-RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ru-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sk-SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sl-SI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sma-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sma-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smj-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smj-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smn-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sms-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sq-AL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Cyrl-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Latn-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sv-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sv-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sw-KE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-syr-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ta-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-te-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-th-TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tn-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tr-TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tt-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uk-UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ur-PK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uz-Cyrl-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uz-Latn-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-vi-VN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-xh-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-HK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-MO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zu-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/date.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/af-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-AE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-BH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-EG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-IQ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-JO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-KW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-LB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-LY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-MA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-OM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-QA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-SA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-TN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-YE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/az-Cyrl-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/az-Latn-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/be-BY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/bg-BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/bs-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ca-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/cs-CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/cy-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/da-DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-AT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-LI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/dv-MV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/el-GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-029.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-AU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-BZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-JM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-TT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-ZW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-AR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-DO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-HN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-MX.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-NI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-SV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-UY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-VE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/et-EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/eu-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fa-IR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fi-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fo-FO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-MC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/gl-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/gu-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/he-IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hi-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hr-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hr-HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hu-HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hy-AM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/id-ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/is-IS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/it-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/it-IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ja-JP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ka-GE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kk-KZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ko-KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kok-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ky-KG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/lt-LT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/lv-LV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mi-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mk-MK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mn-MN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mr-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ms-BN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ms-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mt-MT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nb-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nl-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nl-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nn-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ns-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pl-PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ro-RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ru-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sk-SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sl-SI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sma-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sma-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smj-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smj-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smn-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sms-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sq-AL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Cyrl-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Latn-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sv-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sv-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sw-KE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/syr-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ta-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/te-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/th-TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tn-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tr-TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tt-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uk-UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ur-PK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uz-Cyrl-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uz-Latn-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/vi-VN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/xh-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-HK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-MO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zu-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-af-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-AE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-BH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-DZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-EG.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-IQ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-JO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-KW.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-LB.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-LY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-MA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-OM.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-QA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-SA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-SY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-TN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-YE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-az-Cyrl-AZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-az-Latn-AZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-be-BY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-bg-BG.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-bs-Latn-BA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ca-ES.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-cs-CZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-cy-GB.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-da-DK.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-AT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-CH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-DE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-LI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-LU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-dv-MV.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-el-GR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-029.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-AU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-BZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-CA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-GB.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-IE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-JM.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-NZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-PH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-TT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-US.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-ZW.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-AR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-BO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CL.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-DO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-EC.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-ES.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-GT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-HN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-MX.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-NI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-SV.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-UY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-VE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-et-EE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-eu-ES.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fa-IR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fi-FI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fo-FO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-BE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-CA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-CH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-FR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-LU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-MC.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-gl-ES.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-gu-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-he-IL.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hi-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hr-BA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hr-HR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hu-HU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hy-AM.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-id-ID.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-is-IS.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-it-CH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-it-IT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ja-JP.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ka-GE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kk-KZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kn-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ko-KR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kok-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ky-KG.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-lt-LT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-lv-LV.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mi-NZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mk-MK.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mn-MN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mr-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ms-BN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ms-MY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mt-MT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nb-NO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nl-BE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nl-NL.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nn-NO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ns-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pa-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pl-PL.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pt-BR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pt-PT.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-BO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-EC.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-PE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ro-RO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ru-RU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sa-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-FI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-NO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-SE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sk-SK.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sl-SI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sma-NO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sma-SE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smj-NO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smj-SE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smn-FI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sms-FI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sq-AL.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Cyrl-BA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Cyrl-CS.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Latn-BA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Latn-CS.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sv-FI.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sv-SE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sw-KE.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-syr-SY.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ta-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-te-IN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-th-TH.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tn-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tr-TR.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tt-RU.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uk-UA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ur-PK.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uz-Cyrl-UZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uz-Latn-UZ.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-vi-VN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-xh-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-CN.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-HK.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-MO.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-SG.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-TW.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zu-ZA.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/af-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-AE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-BH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-EG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-IQ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-JO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-KW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-LB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-LY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-MA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-OM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-QA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-SA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-TN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-YE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/az-Cyrl-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/az-Latn-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/be-BY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/bg-BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/bs-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ca-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/cs-CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/cy-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/da-DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-AT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-LI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/dv-MV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/el-GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-029.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-AU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-BZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-JM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-TT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-ZW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-AR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-DO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-HN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-MX.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-NI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-SV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-UY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-VE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/et-EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/eu-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fa-IR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fi-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fo-FO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-MC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/gl-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/gu-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/he-IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hi-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hr-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hr-HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hu-HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hy-AM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/id-ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/is-IS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/it-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/it-IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ja-JP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ka-GE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kk-KZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ko-KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kok-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ky-KG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/lt-LT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/lv-LV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mi-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mk-MK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mn-MN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mr-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ms-BN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ms-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mt-MT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nb-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nl-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nl-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nn-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ns-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pl-PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ro-RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ru-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sk-SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sl-SI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sma-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sma-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smj-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smj-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smn-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sms-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sq-AL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Cyrl-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Latn-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sv-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sv-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sw-KE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/syr-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ta-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/te-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/th-TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tn-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tr-TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tt-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uk-UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ur-PK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uz-Cyrl-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uz-Latn-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/vi-VN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/xh-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-HK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-MO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zu-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/coverage.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/core-prototypes.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/core.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/extras.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/format_parser.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/i18n.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parser.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_grammar.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_operators.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_translator.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/sugarpak.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/time_period.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/time_span.js.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/prettify.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/prettify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov.info" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/core-prototypes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/core.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/extras.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/format_parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/i18n.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parser.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_grammar.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_operators.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_translator.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/sugarpak.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/time_period.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/time_span.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n-template.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/af-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-AE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-BH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-DZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-EG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-IQ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-JO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-KW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-LB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-LY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-MA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-OM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-QA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-SA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-TN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-YE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/az-Cyrl-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/az-Latn-AZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/be-BY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/bg-BG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/bs-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ca-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/cs-CZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/cy-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/da-DK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-AT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-DE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-LI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/dv-MV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/el-GR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-029.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-AU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-BZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-GB.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-IE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-JM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-PH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-TT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-ZW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-AR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-DO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-GT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-HN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-MX.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-NI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-SV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-UY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-VE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/et-EE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/eu-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fa-IR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fi-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fo-FO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-CA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-FR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-LU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-MC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/gl-ES.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/gu-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/he-IL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hi-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hr-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hr-HR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hu-HU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hy-AM.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/id-ID.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/is-IS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/it-CH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/it-IT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ja-JP.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ka-GE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kk-KZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kn-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ko-KR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kok-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ky-KG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/lt-LT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/lv-LV.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mi-NZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mk-MK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mn-MN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mr-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ms-BN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ms-MY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mt-MT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nb-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nl-BE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nl-NL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nn-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ns-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pl-PL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pt-BR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pt-PT.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-BO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-EC.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-PE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ro-RO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ru-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sa-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sk-SK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sl-SI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sma-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sma-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smj-NO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smj-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smn-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sms-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sq-AL.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Cyrl-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Cyrl-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Latn-BA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Latn-CS.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sv-FI.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sv-SE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sw-KE.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/syr-SY.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ta-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/te-IN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/th-TH.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tn-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tr-TR.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tt-RU.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uk-UA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ur-PK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uz-Cyrl-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uz-Latn-UZ.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/vi-VN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/xh-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-CN.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-HK.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-MO.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-SG.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-TW.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zu-ZA.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/.bower.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/.travis.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/API.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/CONTRIBUTING.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/FAQ.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/LICENSE.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/Makefile" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/NEWS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/PLUGINS.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/component.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-1.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-2.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-3.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-4.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-5.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-japan-gdp-growth.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-usa-gdp-growth.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/annotating/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-interacting/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-multiple/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/date.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/africa" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/antarctica" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/asia" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/australasia" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/backward" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/etcetera" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/europe" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/factory" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/iso3166.tab" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/leapseconds" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/northamerica" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/pacificnew" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar87" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar88" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar89" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/southamerica" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/systemv" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/yearistype.sh" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/zone.tab" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/basic-options/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/basic-usage/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/canvas/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/categories/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/examples.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/image/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/interacting/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/percentiles/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/realtime/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/resize/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/selection/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-errorbars/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-pie/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-toggle/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-types/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/shared/jquery-ui/jquery-ui.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/stacking/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/symbols/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/threshold/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/tracking/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/visitors/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/examples/zooming/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/excanvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/excanvas.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/flot.jquery.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.colorhelpers.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.canvas.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.categories.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.crosshair.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.errorbars.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.fillbetween.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.image.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.navigate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.pie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.resize.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.selection.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.stack.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.symbol.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.threshold.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.time.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/jquery.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors-sort/Flot/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/admin.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/error403.ejs" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/index_dashboard.ejs" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/index.ejs" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/test_data.js" afterPath="$PROJECT_DIR$/database/test_data.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/custom.css" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/milestones.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/milestones.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/calendar.ejs" afterPath="$PROJECT_DIR$/views/calendar.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error404.ejs" afterPath="$PROJECT_DIR$/views/error404.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error500.ejs" afterPath="$PROJECT_DIR$/views/error500.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_milestones.ejs" afterPath="$PROJECT_DIR$/views/project_milestones.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_view.ejs" afterPath="$PROJECT_DIR$/views/project_view.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/sidebar.ejs" afterPath="$PROJECT_DIR$/views/sidebar.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/top_nav.ejs" afterPath="$PROJECT_DIR$/views/top_nav.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
+    <option name="SHOW_DIALOG" value="true" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calendar.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/admin.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
+            <state relative-caret-position="331">
+              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="34" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index_dashboard.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/index_dashboard.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="265">
               <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="409">
+              <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="code9.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/css/code9.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4035">
+              <caret line="269" column="22" lean-forward="false" selection-start-line="269" selection-start-column="13" selection-end-line="269" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -46,6 +1056,8 @@
       <find>numemp</find>
       <find>.html</find>
       <find>.css</find>
+      <find>bg-kpmg-bar</find>
+      <find>kpmg-</find>
     </findStrings>
     <dirStrings>
       <dir>H:\University study guides\YEAR 3\SEMESTER 1\SEMESTER 2\COS 301 PROJECT\Back end\Back-End</dir>
@@ -93,29 +1105,34 @@
         <option value="$PROJECT_DIR$/database/dbs.js" />
         <option value="$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
-        <option value="$PROJECT_DIR$/views/sidebar.ejs" />
         <option value="$PROJECT_DIR$/views/top_nav.ejs" />
         <option value="$PROJECT_DIR$/database/schemas.js" />
-        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/database/test_data.js" />
         <option value="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" />
         <option value="$PROJECT_DIR$/views/project_creation.ejs" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/code9.js" />
-        <option value="$PROJECT_DIR$/views/error404.ejs" />
-        <option value="$PROJECT_DIR$/views/error500.ejs" />
         <option value="$PROJECT_DIR$/views/stylesheets.ejs" />
         <option value="$PROJECT_DIR$/views/javascripts.ejs" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/project_edit.ejs" />
         <option value="$PROJECT_DIR$/views/project_milestones.ejs" />
         <option value="$PROJECT_DIR$/views/project_view.ejs" />
         <option value="$PROJECT_DIR$/views/projects.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/custom.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/views/error404.ejs" />
+        <option value="$PROJECT_DIR$/views/error500.ejs" />
+        <option value="$PROJECT_DIR$/views/sidebar.ejs" />
+        <option value="$PROJECT_DIR$/views/calendar.ejs" />
+        <option value="$PROJECT_DIR$/views/error403.ejs" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/admin.ejs" />
+        <option value="$PROJECT_DIR$/public/stylesheets/style.css" />
+        <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/views/index_dashboard.ejs" />
       </list>
     </option>
   </component>
@@ -162,8 +1179,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -174,23 +1193,21 @@
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="vcs.Perforce" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -199,14 +1216,17 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="ignore_missing_gitignore" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/stylesheets" />
+      <recent name="$PROJECT_DIR$/public/vendors-sort" />
       <recent name="$PROJECT_DIR$/public/javascripts" />
       <recent name="$PROJECT_DIR$/public/images/logo" />
       <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\public\vendors" />
-      <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\public\images" />
-      <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\public\javascripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/vendors/Code-9/views" />
@@ -215,825 +1235,6 @@
       <recent name="$PROJECT_DIR$/public/vendors/Code-9" />
       <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\test" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/views/milestones.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/javascripts.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_creation.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_edit.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_milestones.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/projects.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/stylesheets.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/top_nav.ejs</PATH>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-          <FILE-GROUP>
-            <option name="myUpdateName" />
-            <option name="myStatusName" />
-            <option name="mySupportsDeletion" value="false" />
-            <option name="myCanBeAbsent" value="false" />
-            <option name="myId" />
-          </FILE-GROUP>
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" />
-          <option name="myStatusName" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -1098,8 +1299,8 @@
     <configuration name="project_view.min.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/Cellar/node/8.1.2/bin/node" path-to-js-file="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" working-dir="$PROJECT_DIR$/public/vendors/Code-9/views" />
     <configuration name="www" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="www" working-dir="$PROJECT_DIR$/bin" />
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.www" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.project_view.min.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.project_view.min.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.www" />
     </list>
     <recent_temporary>
       <list size="1">
@@ -1111,7 +1312,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
-    <configuration />
+    <configuration>$USER_HOME$/.subversion</configuration>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -1147,6 +1348,9 @@
       <workItem from="1502992793274" duration="793000" />
       <workItem from="1503038974807" duration="1344000" />
       <workItem from="1503048396626" duration="13217000" />
+      <workItem from="1503248436880" duration="516000" />
+      <workItem from="1503302440699" duration="4738000" />
+      <workItem from="1503308150606" duration="2209000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -1362,7 +1566,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160221000" />
+    <option name="totallyTimeSpent" value="167684000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1382,51 +1586,36 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3259587" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18436578" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24483776" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27544427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5030534" order="13" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Websocket Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32300884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32743362" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18436578" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26332796" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1558,38 +1747,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/express.test.js" />
-    <entry file="file://$PROJECT_DIR$/test/index.test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/error.ejs" />
-    <entry file="file://$PROJECT_DIR$/database/connect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="71" lean-forward="false" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/public/vendors/parsleyjs/gulpfile.babel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-765">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/parsleyjs/LICENSE">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/mocha/Readme.md" />
     <entry file="file://$PROJECT_DIR$/public/vendors/skycons/skycons.js" />
     <entry file="file://$PROJECT_DIR$/public/images/favicon.ico/._manifest.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -1607,13 +1764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="368" column="0" lean-forward="false" selection-start-line="368" selection-start-column="0" selection-end-line="368" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1681,53 +1831,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="63" column="3" lean-forward="true" selection-start-line="63" selection-start-column="3" selection-end-line="63" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.ejs" />
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/js/code9.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="90" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/error404.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="35" column="66" lean-forward="true" selection-start-line="35" selection-start-column="66" selection-end-line="35" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/error500.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="42" column="26" lean-forward="true" selection-start-line="42" selection-start-column="26" selection-end-line="42" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/css/code9.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1738,25 +1846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/top_nav.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
           <caret line="56" column="28" lean-forward="true" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1783,13 +1876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_milestones.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="118" column="30" lean-forward="false" selection-start-line="118" selection-start-column="30" selection-end-line="118" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/projects.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1605">
@@ -1805,28 +1891,247 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/custom-new.js" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/custom.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2626">
           <caret line="3981" column="34" lean-forward="true" selection-start-line="3981" selection-start-column="34" selection-end-line="3981" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_milestones.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1335">
+          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/.bin/sshpk-sign">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="15" lean-forward="true" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="55" column="27" lean-forward="true" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/index.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="24" lean-forward="false" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error404.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="23" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-273">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error500.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="81" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="23" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error403.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="52" lean-forward="false" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-523">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4035">
+          <caret line="269" column="22" lean-forward="false" selection-start-line="269" selection-start-column="13" selection-end-line="269" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.js" />
+    <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/admin.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
+        <state relative-caret-position="331">
+          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="34" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/css/code9.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index_dashboard.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
           <caret line="36" column="37" lean-forward="true" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.10 (/usr/bin/python) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Back-End</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

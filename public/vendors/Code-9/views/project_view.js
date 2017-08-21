@@ -8,6 +8,21 @@ $(document).ready(function() {
         return results[1] || 0;
     }
 
+    $.get("get_tasks", {id: $.urlParam('id')},
+        function (data, status) {
+            $("#sortable").empty();
+            $.each(data, function (key, value) {
+                $("#sortable").append("<li class='ui-state-default'>" +
+                    "<div class='checkbox'>" +
+                    "<label>" +
+                    " <input type='checkbox' />"+value.description+"</label>" +
+                    " </div>" +
+                    "</li>")
+            });
+        });
+
+     var emp_ids=[]
+    var empr_names=[];
     $.get("data_project_edit", {id: $.urlParam('id')},
         function (data, status) {
 
@@ -20,4 +35,66 @@ $(document).ready(function() {
             $("#project_owner").append(data.owner_name);
             $("#description").append(data.description);
         });
+
+    $.get("get_milestones",{id:$.urlParam('id')},
+        function(data, status){
+            $("#milestone").empty();
+            $.each(data, function (key, value) {
+                $("#milestone").append(
+                    " <option value='"+value._id+"'>"+
+                    value.description+
+                    "</option>");
+            });
+        });
+
+    $.get("find_project_users", {id:$.urlParam('id')},
+        function (data, status) {
+            $("#AllocateTask").empty();
+            $.each(data, function (key, value) {
+                emp_ids[key]=value._id;
+                empr_names[key]=value.name;
+                $("#AllocateTask").append(
+                    "<option value='"+value.name+"'>"+
+                    value.name+
+                    "</option>");
+             });
+            $("#AllocateTask").multiselect('refresh');
+        });
+
+
+    $('#submit-task').on('click', function (e) {
+        var milestone = $("#milestoneV").val();
+        var task = $("#task").val();
+        var selected_emp = $("#AllocateTask").val();
+        var emp = [];
+        var x = 0;
+        for (var i = 0; i < emp_ids.length; i++) {
+            if (selected_emp.includes(empr_names[i])) {
+                emp[x] = emp_ids[i];
+                x++;
+            }
+        }
+
+        $.get("create_task", {
+            project_id:$.urlParam('id'),
+                milestone_id:milestone,
+                task:task,
+                emp_assigned:emp},
+            function (data, status) {
+
+            });
+
+        $.get("get_tasks", {id: $.urlParam('id')},
+            function (data, status) {
+                $("#sortable").empty();
+                $.each(data, function (key, value) {
+                    $("#sortable").append("<li class='ui-state-default'>" +
+                        "<div class='checkbox'>" +
+                        "<label>" +
+                        " <input type='checkbox' />"+value.description+"</label>" +
+                        " </div>" +
+                        "</li>")
+                });
+            });
+    });
 });

@@ -4,6 +4,11 @@ html , body{
  height:100%;
  
 }
+
+#removeEmployee
+{
+    background: red;
+}
  
 .full-width {
 	
@@ -62,7 +67,7 @@ html , body{
 }
 .daterangepicker th.available:hover {
     background: #eee;
-    color: #34495E
+    color: #342E37
 }
 .daterangepicker:before,
 .daterangepicker:after {
@@ -83,10 +88,10 @@ html , body{
 }
 .daterangepicker.picker_1 {
     color: #fff;
-    background: #34495E
+    background: #342E37
 }
 .daterangepicker.picker_1 .calendar-table {
-    background: #34495E
+    background: #342E37
 }
 .daterangepicker.picker_1 .calendar-table thead tr {
     background: #011f74
@@ -95,11 +100,11 @@ html , body{
     background: #011f74
 }
 .daterangepicker.picker_1 .calendar-table td.off {
-    background: #34495E;
+    background: #342E37;
     color: #999
 }
 .daterangepicker.picker_1 .calendar-table td.available:hover {
-    color: #34495E
+    color: #342E37
 }
 .daterangepicker.picker_2 .calendar-table thead tr {
     color: #011f74
@@ -113,7 +118,7 @@ html , body{
 }
 .daterangepicker.picker_4 .calendar-table thead tr:first-child {
     color: #fff;
-    background: #34495E
+    background: #342E37
 }
 .daterangepicker.picker_4 .calendar-table td,
 .daterangepicker.picker_4 .calendar-table td.off {
@@ -122,7 +127,7 @@ html , body{
     border-radius: 0
 }
 .daterangepicker.picker_4 .calendar-table td.active {
-    background: #34495E
+    background: #342E37
 }
 .calendar-exibit .show-calendar {
     float: none;
@@ -138,13 +143,13 @@ html , body{
     margin: 0 0 4px 0
 }
 .calendar-exibit .show-calendar.picker_1 {
-    background: #34495E
+    background: #342E37
 }
 .calendar-exibit .calendar-table {
     padding: 0 0 4px 0
 }
 .left_col {
-    background: #2A3F54
+    background: #342E37
 }
 .nav-sm .container.body .col-md-3.left_col {
     min-height: 100%;
@@ -405,7 +410,7 @@ body .container.body .right_col {
 .purple {
     color: #9B59B6
 }
-.green {
+.kpmg-blue {
     color: #011f74
 }
 .aero {
@@ -415,7 +420,7 @@ body .container.body .right_col {
     color: #E74C3C
 }
 .dark {
-    color: #34495E
+    color: #342E37
 }
 .border-blue {
     border-color: #3498DB !important
@@ -433,14 +438,14 @@ body .container.body .right_col {
     border-color: #E74C3C !important
 }
 .border-dark {
-    border-color: #34495E !important
+    border-color: #342E37 !important
 }
 .bg-white {
     background: #fff !important;
     border: 1px solid #fff !important;
     color: #73879C
 }
-.bg-green {
+.bg-kpmg-bar {
     background: #011f74 !important;
     border: 1px solid #011f74 !important;
     color: #fff
@@ -535,7 +540,7 @@ body {
     overflow: hidden
 }
 .progress-bar-dark {
-    background-color: #34495E !important
+    background-color: #342E37 !important
 }
 .progress-bar-gray {
     background-color: #BDC3C7 !important
@@ -673,7 +678,7 @@ a:focus {
     margin-bottom: 0
 }
 .navbar-header {
-    background: #34495E
+    background: #342E37
 }
 .navbar-right {
     margin-right: 0
@@ -833,7 +838,7 @@ a:focus {
     position: relative;
     display: block;
     padding: 10px 15px;
-    color: #34495E !important
+    color: #342E37 !important
 }
 .nav>li>a:hover,
 .nav>li>a:focus {
@@ -935,7 +940,7 @@ footer {
     text-align: center
 }
 .jqstooltip {
-    background: #34495E !important;
+    background: #342E37 !important;
     width: 30px !important;
     height: 22px !important;
     text-decoration: none
@@ -2114,7 +2119,7 @@ button,
 }
 .compose .compose-header {
     padding: 5px;
-    background: #169F85;
+    background: #011f74;
     color: #fff;
     border-top-left-radius: 5px
 }
@@ -2520,6 +2525,7 @@ span.tag a {
     color: #000;
     outline: 0px
 }
+
 .tagsinput div {
     display: block;
     float: left
@@ -2617,11 +2623,13 @@ ul.timeline li {
     white-space: nowrap;
     text-overflow: ellipsis
 }
+
 .tag {
     line-height: 1;
     background: #011f74;
     color: #fff !important
 }
+
 .tag:after {
     content: " ";
     height: 30px;
@@ -2827,7 +2835,7 @@ ul.widget_profile_box li a {
 }
 ul.widget_profile_box li a:hover {
     color: #011f74 !important;
-    border: 1px solid #26b99a
+    border: 1px solid #011f74
 }
 ul.widget_profile_box li .profile_img {
     width: 85px;
@@ -3552,9 +3560,9 @@ form:after {
 .login_content form input[type="password"]:focus {
     -ms-box-shadow: 0 0 2px #ed1c24 inset;
     -o-box-shadow: 0 0 2px #ed1c24 inset;
-    box-shadow: 0 0 2px #A97AAD inset;
+    box-shadow: 0 0 2px #011f74 inset;
     background-color: #fff;
-    border: 1px solid #A878AF;
+    border: 1px solid #011f74;
     outline: none
 }
 #username {
@@ -3883,7 +3891,7 @@ fieldset {
 }
 .wizard_horizontal ul.wizard_steps li a.selected:before,
 .step_no {
-    background: #34495E;
+    background: #342E37;
     color: #fff
 }
 .wizard_horizontal ul.wizard_steps li a.done:before,
@@ -3980,7 +3988,7 @@ fieldset {
 }
 .wizard_verticle ul.wizard_steps li a.selected:before,
 .step_no {
-    background: #34495E;
+    background: #342E37;
     color: #fff
 }
 .wizard_verticle ul.wizard_steps li a.done:before,
@@ -4009,7 +4017,7 @@ fieldset {
     background-color: #3498DB
 }
 .progress-bar-success {
-    background-color: #26B99A
+    background-color: #011f74
 }
 .progress_summary .progress {
     margin: 5px 0 12px !important
@@ -4121,6 +4129,12 @@ ul.notifications {
     text-transform: uppercase;
     padding: 9px 8px
 }
+
+/*#projectdescription textarea*/
+/*{*/
+    /*height: 600px;*/
+/*}*/
+
 .tabbed_notifications .text {
     padding: 5px 15px;
     height: 140px;

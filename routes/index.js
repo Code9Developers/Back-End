@@ -229,9 +229,6 @@ router.get("/username",function (req,res,next) {
     });
 });
 
-
-
-
 router.get("/role",function (req,res,next) {
     var user=dbs.findUsers("_id",req.session.username, function(user) {
         res.send(user[0].role);
@@ -260,6 +257,18 @@ router.get("/project_edit",function (req,res,next) {
 
 router.get("/project_detail",function (req,res,next) {
     res.render('project_view');
+});
+
+router.get("/calendar", function (req,res, next){
+    res.render('calendar');
+});
+
+router.get("/error403", function (req,res, next){
+    res.render('error403');
+});
+
+router.get("/dashboard", function (req,res, next){
+    res.render('index_dashboard');
 });
 //FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
 

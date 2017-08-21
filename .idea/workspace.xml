@@ -4,17 +4,19 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="- Fix hidden files">
+    <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/custom.css" afterPath="$PROJECT_DIR$/public/stylesheets/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/js/code9.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/js/code9.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/calendar.ejs" afterPath="$PROJECT_DIR$/views/calendar.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error403.ejs" afterPath="$PROJECT_DIR$/views/error403.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error404.ejs" afterPath="$PROJECT_DIR$/views/error404.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/error500.ejs" afterPath="$PROJECT_DIR$/views/error500.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/index_dashboard.ejs" afterPath="$PROJECT_DIR$/views/index_dashboard.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/sidebar.ejs" afterPath="$PROJECT_DIR$/views/sidebar.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_creation.ejs" afterPath="$PROJECT_DIR$/views/project_creation.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_edit.ejs" afterPath="$PROJECT_DIR$/views/project_edit.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_milestones.ejs" afterPath="$PROJECT_DIR$/views/project_milestones.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_view.ejs" afterPath="$PROJECT_DIR$/views/project_view.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/projects.ejs" afterPath="$PROJECT_DIR$/views/projects.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -30,78 +32,66 @@
       <file leaf-file-name="calendar.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="173" column="62" lean-forward="false" selection-start-line="173" selection-start-column="62" selection-end-line="173" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_milestones.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/project_milestones.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="108" column="8" lean-forward="false" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="37" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_view.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-165">
+              <caret line="178" column="81" lean-forward="true" selection-start-line="178" selection-start-column="81" selection-end-line="178" selection-end-column="81" />
+              <folding>
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projects.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/projects.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="236">
+              <caret line="25" column="81" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="projects.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/projects.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+              <folding>
+                <marker date="1503316890000" expanded="true" signature="375:383" ph="..." />
+                <marker date="1503316890000" expanded="true" signature="431:440" ph="..." />
+                <marker date="1503316890000" expanded="true" signature="648:658" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="past_projects.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/past_projects.txt">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/admin.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="34" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index_dashboard.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/index_dashboard.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/login.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="code9.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/css/code9.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidebar.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4035">
-              <caret line="269" column="22" lean-forward="false" selection-start-line="269" selection-start-column="13" selection-end-line="269" selection-end-column="22" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,6 +118,8 @@
       <find>.css</find>
       <find>bg-kpmg-bar</find>
       <find>kpmg-</find>
+      <find>kpmg-blue</find>
+      <find>&lt;hr/&gt;</find>
     </findStrings>
     <dirStrings>
       <dir>H:\University study guides\YEAR 3\SEMESTER 1\SEMESTER 2\COS 301 PROJECT\Back end\Back-End</dir>
@@ -138,7 +130,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Josh-FrontEnd-Merge" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <push-targets>
@@ -180,21 +172,14 @@
         <option value="$PROJECT_DIR$/database/schemas.js" />
         <option value="$PROJECT_DIR$/database/test_data.js" />
         <option value="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" />
-        <option value="$PROJECT_DIR$/views/project_creation.ejs" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/code9.js" />
         <option value="$PROJECT_DIR$/views/stylesheets.ejs" />
         <option value="$PROJECT_DIR$/views/javascripts.ejs" />
-        <option value="$PROJECT_DIR$/views/project_edit.ejs" />
-        <option value="$PROJECT_DIR$/views/project_milestones.ejs" />
-        <option value="$PROJECT_DIR$/views/project_view.ejs" />
-        <option value="$PROJECT_DIR$/views/projects.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/custom.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/views/error404.ejs" />
-        <option value="$PROJECT_DIR$/views/error500.ejs" />
         <option value="$PROJECT_DIR$/views/sidebar.ejs" />
-        <option value="$PROJECT_DIR$/views/calendar.ejs" />
         <option value="$PROJECT_DIR$/views/error403.ejs" />
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
@@ -203,6 +188,17 @@
         <option value="$PROJECT_DIR$/public/stylesheets/custom.css" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/index_dashboard.ejs" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js" />
+        <option value="$PROJECT_DIR$/views/project_creation.ejs" />
+        <option value="$PROJECT_DIR$/views/calendar.ejs" />
+        <option value="$PROJECT_DIR$/views/project_edit.ejs" />
+        <option value="$PROJECT_DIR$/views/project_milestones.ejs" />
+        <option value="$PROJECT_DIR$/views/error500.ejs" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/js/code9.js" />
+        <option value="$PROJECT_DIR$/views/project_view.ejs" />
+        <option value="$PROJECT_DIR$/views/projects.ejs" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" />
       </list>
     </option>
   </component>
@@ -268,6 +264,34 @@
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
+              <item name="Code-9" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
+              <item name="echarts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
+              <item name="echarts" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -305,6 +329,1180 @@
       <recent name="$PROJECT_DIR$/public/vendors/Code-9" />
       <recent name="C:\Users\Seonin David\Documents\University\2017\First Semester\COS 301\Final Project\Back-End\test" />
     </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/vcs.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/test_data.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/stylesheets/custom.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/views/milestones.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/calendar.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/error404.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/error500.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/login.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_milestones.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_view.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/sidebar.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/top_nav.ejs</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.codeclimate.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.editorconfig</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.eslintignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.eslintrc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.github/ISSUE_TEMPLATE.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.github/PULL_REQUEST_TEMPLATE.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/.travis.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/CONTRIBUTING.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/LICENSE.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/composer.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/config.jshintrc</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/dist/Chart.bundle.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/dist/Chart.bundle.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/dist/Chart.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/dist/Chart.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/00-Getting-Started.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/01-Chart-Configuration.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/02-Scales.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/03-Line-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/04-Bar-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/05-Radar-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/06-Polar-Area-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/07-Pie-Doughnut-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/08-Bubble-Chart.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/09-Advanced.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/docs/10-Notes.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/gulpfile.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/karma.conf.ci.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/karma.conf.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/karma.coverage.conf.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/AnimationCallbacks/progress-bar.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/bar-horizontal.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/bar-multi-axis.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/bar-stacked.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/bar.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/bubble.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/combo-bar-line.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/data_label_combo-bar-line.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/different-point-sizes.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/doughnut.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-customTooltips.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-legend.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-logarithmic.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-multi-axis.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-skip-points.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-stacked-area.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line-x-axis-filter.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/line.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/pie-customTooltips.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/pie.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/polar-area.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/radar-skip-points.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/radar.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/scatter-logX.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/scatter-multi-axis.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/scatter.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/timeScale/combo-time-scale.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/timeScale/line-time-point-data.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/timeScale/line-time-scale.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/samples/tooltip-hooks.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/chart.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Bar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Bubble.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Doughnut.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Line.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.PolarArea.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Radar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/charts/Chart.Scatter.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.bar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.bubble.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.doughnut.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.line.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.polarArea.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/controllers/controller.radar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.animation.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.controller.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.datasetController.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.element.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.helpers.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.layoutService.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.legend.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.plugin.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.scale.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.scaleService.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.title.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.tooltip.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/elements/element.arc.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/elements/element.line.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/elements/element.point.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/elements/element.rectangle.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/scales/scale.category.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/scales/scale.linear.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/scales/scale.logarithmic.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/scales/scale.radialLinear.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/src/scales/scale.time.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.bar.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.bubble.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.doughnut.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.line.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.polarArea.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/controller.radar.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.element.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.helpers.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.layoutService.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.legend.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.plugin.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.scaleService.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/core.title.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/defaultConfig.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/element.arc.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/element.line.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/element.point.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/element.rectangle.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/mockContext.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/scale.category.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/scale.linear.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/scale.logarithmic.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/scale.radialLinear.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Chart.js/test/scale.time.tests.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/.bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/GruntFile.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/LICENSE</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-af-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-AE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-BH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-DZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-EG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-IQ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-JO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-KW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-LB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-LY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-MA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-OM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-QA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-SA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-TN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ar-YE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-az-Cyrl-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-az-Latn-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-be-BY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-bg-BG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-bs-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ca-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-cs-CZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-cy-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-da-DK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-AT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-DE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-LI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-de-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-dv-MV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-el-GR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-029.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-AU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-BZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-IE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-JM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-PH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-TT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-US.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-en-ZW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-AR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-CR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-DO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-GT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-HN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-MX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-NI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-PY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-SV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-UY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-es-VE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-et-EE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-eu-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fa-IR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fi-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fo-FO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-FR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-fr-MC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-gl-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-gu-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-he-IL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hi-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hr-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hr-HR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hu-HU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-hy-AM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-id-ID.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-is-IS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-it-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-it-IT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ja-JP.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ka-GE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kk-KZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kn-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ko-KR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-kok-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ky-KG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-lt-LT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-lv-LV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mi-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mk-MK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mn-MN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mr-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ms-BN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ms-MY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-mt-MT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nb-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nl-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nl-NL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-nn-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ns-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pl-PL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pt-BR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-pt-PT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-quz-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ro-RO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ru-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-se-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sk-SK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sl-SI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sma-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sma-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smj-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smj-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-smn-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sms-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sq-AL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Cyrl-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Cyrl-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sr-Latn-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sv-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sv-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-sw-KE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-syr-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ta-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-te-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-th-TH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tn-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tr-TR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-tt-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uk-UA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-ur-PK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uz-Cyrl-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-uz-Latn-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-vi-VN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-xh-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-CN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-HK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-MO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-SG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zh-TW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date-zu-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/date.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/af-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-AE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-BH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-DZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-EG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-IQ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-JO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-KW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-LB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-LY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-MA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-OM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-QA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-SA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-TN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ar-YE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/az-Cyrl-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/az-Latn-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/be-BY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/bg-BG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/bs-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ca-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/cs-CZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/cy-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/da-DK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-AT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-DE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-LI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/de-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/dv-MV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/el-GR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-029.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-AU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-BZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-IE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-JM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-PH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-TT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/en-ZW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-AR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-CR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-DO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-GT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-HN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-MX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-NI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-PY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-SV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-UY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/es-VE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/et-EE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/eu-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fa-IR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fi-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fo-FO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-FR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/fr-MC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/gl-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/gu-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/he-IL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hi-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hr-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hr-HR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hu-HU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/hy-AM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/id-ID.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/is-IS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/it-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/it-IT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ja-JP.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ka-GE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kk-KZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kn-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ko-KR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/kok-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ky-KG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/lt-LT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/lv-LV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mi-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mk-MK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mn-MN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mr-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ms-BN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ms-MY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/mt-MT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nb-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nl-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nl-NL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/nn-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ns-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pl-PL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pt-BR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/pt-PT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/quz-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ro-RO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ru-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/se-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sk-SK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sl-SI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sma-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sma-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smj-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smj-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/smn-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sms-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sq-AL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Cyrl-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Cyrl-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sr-Latn-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sv-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sv-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/sw-KE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/syr-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ta-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/te-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/th-TH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tn-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tr-TR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/tt-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uk-UA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/ur-PK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uz-Cyrl-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/uz-Latn-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/vi-VN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/xh-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-CN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-HK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-MO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-SG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zh-TW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/i18n/zu-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-af-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-AE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-BH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-DZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-EG.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-IQ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-JO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-KW.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-LB.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-LY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-MA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-OM.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-QA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-SA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-SY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-TN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ar-YE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-az-Cyrl-AZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-az-Latn-AZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-be-BY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-bg-BG.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-bs-Latn-BA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ca-ES.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-cs-CZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-cy-GB.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-da-DK.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-AT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-CH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-DE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-LI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-de-LU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-dv-MV.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-el-GR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-029.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-AU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-BZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-CA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-GB.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-IE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-JM.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-NZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-PH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-TT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-US.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-en-ZW.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-AR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-BO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CL.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-CR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-DO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-EC.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-ES.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-GT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-HN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-MX.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-NI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-PY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-SV.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-UY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-es-VE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-et-EE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-eu-ES.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fa-IR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fi-FI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fo-FO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-BE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-CA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-CH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-FR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-LU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-fr-MC.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-gl-ES.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-gu-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-he-IL.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hi-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hr-BA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hr-HR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hu-HU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-hy-AM.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-id-ID.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-is-IS.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-it-CH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-it-IT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ja-JP.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ka-GE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kk-KZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kn-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ko-KR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-kok-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ky-KG.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-lt-LT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-lv-LV.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mi-NZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mk-MK.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mn-MN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mr-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ms-BN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ms-MY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-mt-MT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nb-NO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nl-BE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nl-NL.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-nn-NO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ns-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pa-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pl-PL.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pt-BR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-pt-PT.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-BO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-EC.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-quz-PE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ro-RO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ru-RU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sa-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-FI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-NO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-se-SE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sk-SK.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sl-SI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sma-NO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sma-SE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smj-NO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smj-SE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-smn-FI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sms-FI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sq-AL.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Cyrl-BA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Cyrl-CS.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Latn-BA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sr-Latn-CS.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sv-FI.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sv-SE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-sw-KE.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-syr-SY.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ta-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-te-IN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-th-TH.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tn-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tr-TR.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-tt-RU.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uk-UA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-ur-PK.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uz-Cyrl-UZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-uz-Latn-UZ.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-vi-VN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-xh-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-CN.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-HK.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-MO.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-SG.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zh-TW.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date-zu-ZA.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/date.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/af-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-AE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-BH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-DZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-EG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-IQ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-JO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-KW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-LB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-LY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-MA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-OM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-QA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-SA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-TN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ar-YE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/az-Cyrl-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/az-Latn-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/be-BY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/bg-BG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/bs-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ca-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/cs-CZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/cy-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/da-DK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-AT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-DE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-LI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/de-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/dv-MV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/el-GR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-029.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-AU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-BZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-IE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-JM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-PH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-TT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/en-ZW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-AR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-CR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-DO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-GT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-HN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-MX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-NI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-PY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-SV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-UY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/es-VE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/et-EE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/eu-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fa-IR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fi-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fo-FO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-FR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/fr-MC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/gl-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/gu-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/he-IL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hi-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hr-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hr-HR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hu-HU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/hy-AM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/id-ID.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/is-IS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/it-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/it-IT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ja-JP.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ka-GE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kk-KZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kn-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ko-KR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/kok-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ky-KG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/lt-LT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/lv-LV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mi-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mk-MK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mn-MN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mr-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ms-BN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ms-MY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/mt-MT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nb-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nl-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nl-NL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/nn-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ns-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pl-PL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pt-BR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/pt-PT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/quz-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ro-RO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ru-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/se-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sk-SK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sl-SI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sma-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sma-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smj-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smj-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/smn-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sms-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sq-AL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Cyrl-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Cyrl-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sr-Latn-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sv-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sv-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/sw-KE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/syr-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ta-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/te-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/th-TH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tn-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tr-TR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/tt-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uk-UA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/ur-PK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uz-Cyrl-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/uz-Latn-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/vi-VN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/xh-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-CN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-HK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-MO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-SG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zh-TW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/build/production/i18n/zu-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/index.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/coverage.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/core-prototypes.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/core.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/extras.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/format_parser.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/i18n.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parser.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_grammar.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_operators.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/parsing_translator.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/sugarpak.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/time_period.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/core/time_span.js.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/prettify.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov-report/prettify.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/reports/lcov.info</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/core-prototypes.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/core.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/extras.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/format_parser.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/i18n.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parser.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_grammar.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_operators.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/parsing_translator.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/sugarpak.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/time_period.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/core/time_span.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n-template.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/af-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-AE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-BH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-DZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-EG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-IQ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-JO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-KW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-LB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-LY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-MA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-OM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-QA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-SA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-TN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ar-YE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/az-Cyrl-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/az-Latn-AZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/be-BY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/bg-BG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/bs-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ca-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/cs-CZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/cy-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/da-DK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-AT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-DE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-LI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/de-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/dv-MV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/el-GR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-029.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-AU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-BZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-GB.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-IE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-JM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-PH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-TT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/en-ZW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-AR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-CR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-DO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-GT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-HN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-MX.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-NI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-PY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-SV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-UY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/es-VE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/et-EE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/eu-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fa-IR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fi-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fo-FO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-CA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-FR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-LU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/fr-MC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/gl-ES.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/gu-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/he-IL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hi-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hr-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hr-HR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hu-HU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/hy-AM.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/id-ID.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/is-IS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/it-CH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/it-IT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ja-JP.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ka-GE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kk-KZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kn-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ko-KR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/kok-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ky-KG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/lt-LT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/lv-LV.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mi-NZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mk-MK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mn-MN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mr-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ms-BN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ms-MY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/mt-MT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nb-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nl-BE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nl-NL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/nn-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ns-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pl-PL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pt-BR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/pt-PT.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-BO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-EC.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/quz-PE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ro-RO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ru-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sa-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/se-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sk-SK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sl-SI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sma-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sma-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smj-NO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smj-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/smn-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sms-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sq-AL.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Cyrl-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Cyrl-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Latn-BA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sr-Latn-CS.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sv-FI.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sv-SE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/sw-KE.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/syr-SY.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ta-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/te-IN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/th-TH.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tn-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tr-TR.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/tt-RU.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uk-UA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/ur-PK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uz-Cyrl-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/uz-Latn-UZ.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/vi-VN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/xh-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-CN.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-HK.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-MO.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-SG.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zh-TW.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/DateJS/src/i18n/zu-ZA.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/.bower.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/.travis.yml</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/API.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/CONTRIBUTING.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/FAQ.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/LICENSE.txt</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/Makefile</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/NEWS.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/PLUGINS.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/README.md</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/component.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-1.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-2.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-3.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-4.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth-5.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-eu-gdp-growth.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-japan-gdp-growth.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/data-usa-gdp-growth.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/ajax/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/annotating/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-interacting/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-multiple/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/date.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/africa</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/antarctica</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/asia</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/australasia</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/backward</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/etcetera</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/europe</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/factory</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/iso3166.tab</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/leapseconds</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/northamerica</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/pacificnew</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar87</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar88</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/solar89</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/southamerica</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/systemv</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/yearistype.sh</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time-zones/tz/zone.tab</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/axes-time/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/background.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/basic-options/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/basic-usage/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/canvas/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/categories/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/examples.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/image/hs-2004-27-a-large-web.jpg</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/image/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/interacting/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-down.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-left.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-right.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/arrow-up.gif</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/navigate/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/percentiles/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/realtime/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/resize/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/selection/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-errorbars/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-pie/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-toggle/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/series-types/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/shared/jquery-ui/jquery-ui.min.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/stacking/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/symbols/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/threshold/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/tracking/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/visitors/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/examples/zooming/index.html</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/excanvas.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/excanvas.min.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/flot.jquery.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.colorhelpers.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.canvas.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.categories.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.crosshair.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.errorbars.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.fillbetween.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.image.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.navigate.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.pie.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.resize.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.selection.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.stack.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.symbol.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.threshold.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.flot.time.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/jquery.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors-sort/Flot/package.json</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/views/admin.js</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/error403.ejs</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/index_dashboard.ejs</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/stylesheets/style.css</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/index.ejs</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -420,7 +1618,7 @@
       <workItem from="1503048396626" duration="13217000" />
       <workItem from="1503248436880" duration="516000" />
       <workItem from="1503302440699" duration="4738000" />
-      <workItem from="1503308150606" duration="2329000" />
+      <workItem from="1503308150606" duration="8353000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -639,11 +1837,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503310591694</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="- Updated views">
+      <created>1503310640750</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1503310640750</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167804000" />
+    <option name="totallyTimeSpent" value="173828000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -667,7 +1872,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24483776" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35840708" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27544427" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -812,7 +2017,8 @@
     <MESSAGE value="- Git ignore file added for intellij and mac" />
     <MESSAGE value="- Fix hidden files" />
     <MESSAGE value="Re-indexed up to login page and added the error 403 page." />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-indexed up to login page and added the error 403 page." />
+    <MESSAGE value="- Updated views" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Updated views" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -825,18 +2031,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/vendors/skycons/skycons.js" />
-    <entry file="file://$PROJECT_DIR$/public/images/favicon.ico/._manifest.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md" />
-    <entry file="file://$PROJECT_DIR$/public/vendors/DateJS/package.json" />
-    <entry file="file://$PROJECT_DIR$/public/vendors/DateJS/README.md" />
-    <entry file="file://$PROJECT_DIR$/views/project_detail.ejs" />
     <entry file="file://$PROJECT_DIR$/public/javascripts/code9Custom.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -910,13 +2104,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/footer.ejs" />
-    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/js/code9.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="84" column="0" lean-forward="false" selection-start-line="84" selection-start-column="0" selection-end-line="90" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -940,31 +2127,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="84" column="13" lean-forward="false" selection-start-line="84" selection-start-column="13" selection-end-line="84" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/javascripts.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="568">
           <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/projects.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="107" column="52" lean-forward="false" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="234" column="31" lean-forward="false" selection-start-line="234" selection-start-column="31" selection-end-line="234" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -973,13 +2139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2626">
           <caret line="3981" column="34" lean-forward="true" selection-start-line="3981" selection-start-column="34" selection-end-line="3981" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_milestones.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1012,13 +2171,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-273">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/admin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1026,14 +2178,6 @@
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/error500.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="81" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="23" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1045,27 +2189,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-523">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4035">
-          <caret line="269" column="22" lean-forward="false" selection-start-line="269" selection-start-column="13" selection-end-line="269" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="28" column="31" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="4080">
+          <caret line="272" column="22" lean-forward="false" selection-start-line="272" selection-start-column="22" selection-end-line="272" selection-end-column="22" />
+          <folding>
+            <marker date="1503310842000" expanded="true" signature="12672:12732" ph="{...}" />
+            <marker date="1503310842000" expanded="true" signature="12791:13474" ph="{...}" />
+            <marker date="1503310842000" expanded="true" signature="13316:13429" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1073,7 +2205,7 @@
     <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
-          <caret line="67" column="34" lean-forward="true" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1086,14 +2218,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="34" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/css/code9.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -1102,26 +2226,181 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
+          <folding>
+            <marker date="1503310840000" expanded="true" signature="81044:81160" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81189:81218" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81244:81422" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81452:81526" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81545:81592" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81626:81667" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81678:81734" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81736:81776" ph="/*...*/" />
+            <marker date="1503310840000" expanded="true" signature="81796:81843" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="81870:82046" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="82075:82116" ph="{...}" />
+            <marker date="1503310840000" expanded="true" signature="82141:82605" ph="/*...*/" />
+            <marker date="1503310840000" expanded="true" signature="82606:84113" ph="/*...*/" />
+            <marker date="1503310840000" expanded="true" signature="84188:84268" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="29" column="43" lean-forward="true" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
+        <state relative-caret-position="300">
+          <caret line="29" column="43" lean-forward="false" selection-start-line="29" selection-start-column="43" selection-end-line="29" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/custom.css">
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="10" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <marker date="1503312021000" expanded="true" signature="958:970" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/index_dashboard.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="-204">
           <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="173" column="62" lean-forward="false" selection-start-line="173" selection-start-column="62" selection-end-line="173" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="164" column="62" lean-forward="false" selection-start-line="164" selection-start-column="62" selection-end-line="164" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-287">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1503160220000" expanded="true" signature="748:760" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="100" column="74" lean-forward="true" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/error500.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="36" column="52" lean-forward="false" selection-start-line="36" selection-start-column="52" selection-end-line="36" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="1687" column="4" lean-forward="false" selection-start-line="1687" selection-start-column="4" selection-end-line="1687" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_milestones.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="108" column="8" lean-forward="false" selection-start-line="108" selection-start-column="8" selection-end-line="108" selection-end-column="37" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="178" column="81" lean-forward="true" selection-start-line="178" selection-start-column="81" selection-end-line="178" selection-end-column="81" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/milestones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-508">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/js/code9.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/projects.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="25" column="81" lean-forward="false" selection-start-line="25" selection-start-column="81" selection-end-line="25" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/projects.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="41" column="25" lean-forward="true" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+          <folding>
+            <marker date="1503316890000" expanded="true" signature="375:383" ph="..." />
+            <marker date="1503316890000" expanded="true" signature="431:440" ph="..." />
+            <marker date="1503316890000" expanded="true" signature="648:658" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/past_projects.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>

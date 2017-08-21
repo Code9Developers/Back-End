@@ -48,9 +48,9 @@ $(document).ready(function() {
                 "</td>" +
                 "<td class='project_progress'>" +
                 "<div class='progress progress_sm'>" +
-                "<div class='progress-bar bg-kpmg-bar' role='progressbar' data-transitiongoal='50'></div>" +
+                "<div class='progress-bar bg-kpmg-bar' role='progressbar' data-transitiongoal=\"51\"></div>" +
                 "</div>" +
-                "<small>" + 50 + "% Complete</small>" +
+                "<small>" + 51 + "% Complete</small>" +
                 "</td>" +
                 "<td>" +
                 "<button type='button' class='btn btn-kpmg btn-xs'>Ongoing</button>" +

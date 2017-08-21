@@ -6,7 +6,10 @@
     "dev": "nodemon ./bin/www",
     "test": "./node_modules/.bin/mocha"
   },
-  "dependencies": {},
+  "dependencies": {
+    "nodemailer": "^4.0.1",
+    "nodemailer-smtp-transport": "^2.7.4"
+  },
   "devDependencies": {
     "nodemon": "^1.11.0",
     "browser-sync": "^2.12.10",

@@ -15,13 +15,13 @@ $(document).ready(function() {
                 $("#sortable").append("<li class='ui-state-default'>" +
                     "<div class='checkbox'>" +
                     "<label>" +
-                    " <input type='checkbox' />"+value.description+"</label>" +
-                    " </div>" +
+                    "<input type='checkbox' />"+value.description+"</label>" +
+                    "</div>" +
                     "</li>")
             });
         });
 
-     var emp_ids=[];
+    var emp_ids=[];
     var empr_names=[];
     $.get("data_project_edit", {id: $.urlParam('id')},
         function (data, status) {

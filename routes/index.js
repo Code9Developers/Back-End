@@ -6,6 +6,8 @@ var dbs = require('.././database/dbs.js') ;
 var test_data = require('.././database/test_data.js') ;
 var algorithm = require('.././database/Resource-Alocation-Algorithm.js');
 var generator = require('generate-password');
+const nodemailer = require('nodemailer');
+
 
 var employees;
 /**
@@ -152,9 +154,18 @@ router.get('/admin',function (req,res,next) {
     res.render("admin");
 });
 
+
+/**
+ -----------------------------------------------------------------------------------------------------------------------
+ *  Name: SMTP
+ *  Author: Joshua Moodley
+ *  Date: 21 Aug 2017 R1
+ -----------------------------------------------------------------------------------------------------------------------
+ */
+// Register Emp
 router.post('/register_employee',function (req,res,next) {
     var rand_password = generator.generate({
-        length: 10,
+        length: 8,
         numbers: true,
         symbols: true,
         uppercase: true
@@ -174,7 +185,7 @@ router.post('/register_employee',function (req,res,next) {
     // console.log(past_projects);
 
     var today = new Date();
-    dbs.encrypt("test",function (enc_pass) {
+    dbs.encrypt(rand_password, function (enc_pass) {
         var emp = {
             _id: req.body.empid,
             name: req.body.firstname,
@@ -187,9 +198,41 @@ router.post('/register_employee',function (req,res,next) {
             position:req.body.position,
             employment_length: req.body.emp_length,
             skill: [req.body.skills],
-            past_projects:req.body.pastprojects} ;
+            past_projects:req.body.pastprojects};
 
-        dbs.insertUser(emp) ;
+        dbs.insertUser(emp);
+
+        // create reusable transporter object using the default SMTP transport
+        let transporter = nodemailer.createTransport({
+            host: 'smtp.gmail.com',
+            port: 465,
+            secure: true, // secure:true for port 465, secure:false for port 587
+            auth: {
+                user: 'code9devs@gmail.com',
+                pass: 'clarence420'
+            }
+        });
+
+        // setup email data with unicode symbols
+        let mailOptions  =
+        {
+                from: '"Code 9" <code9devs@gmail.com>', // sender address
+                to: 'code9devs@gmail.com,' + emp.email, // list of receivers
+                subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
+                // plain text body
+                text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
+                // html: '<b>Hello world ?</b>' // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error)
+            {
+                return console.log(error);
+            }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+        });
+
         res.render('index',{valu:JSON.stringify(emp)});
     });
 });
@@ -475,7 +518,6 @@ router.get('/test_algorithm', function(req, res, next) {
     });
     res.contentType('application/json');
 });
-
 
 
 module.exports = router;

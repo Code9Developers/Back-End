@@ -1,89 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- Meta, title, CSS, favicons, etc. -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Project Edit</title>
+        <title>KPMG | Project Edit</title>
 
-    <!-- Favicon -->
-    <%- include('favicon'); %>
+        <!-- Favicon -->
+        <%- include('favicon'); %>
 
-    <!-- Stylesheets -->
-    <%- include('stylesheets'); %>
-</head>
-<body class="nav-md">
-<div class="container body">
-    <div class="main_container">
-        <!-- Sidebar -->
-        <%- include('sidebar'); %>
+        <!-- Stylesheets -->
+        <!-- Bootstrap -->
+        <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- NProgress: Top load animation-->
+        <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+        <!-- Datatables -->
+        <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
+        <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css" rel="stylesheet">
 
-        <!-- top navigation -->
-        <%- include('top_nav'); %>
-        <!-- /top navigation -->
+        <!-- Custom Theme Style -->
+        <link href="stylesheets/custom.min.css" rel="stylesheet">
+    </head>
+    <body class="nav-md">
+        <div class="container body">
+            <div class="main_container">
+                <!-- Sidebar -->
+                <%- include('sidebar'); %>
 
-        <!-- page content -->
-        <div class="right_col" role="main">
-            <!--todo add project name to edit here-->
-            <h2>Edit Project<small id="project-name">&nbsp;&nbsp;&nbsp; PROJECT NAME HERE</small></h2>
-            <hr/>
-            <!--<ul class="nav navbar-right panel_toolbox">-->
-            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
-            <!--</li>-->
-            <!--<li class="dropdown">-->
-            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
-            <!--<ul class="dropdown-menu" role="menu">-->
-            <!--<li><a href="#">Settings 1</a>-->
-            <!--</li>-->
-            <!--<li><a href="#">Settings 2</a>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <div class="clearfix"></div>
-            <!-- start form for validation -->
-            <form id="demo-form" data-parsley-validate action="project_creation" method="post">
+                <!-- top navigation -->
+                <%- include('top_nav'); %>
+                <!-- /top navigation -->
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="CurrentDeadline">Current Deadline: *</label>
-                        <input readonly type="date" id="CurrentDeadline" class="form-control" name="CurrentDeadline"  />
-                    </div>
-                    <div class="col-md-6">
-                        <label for="ChangeDueDate">Change Deadline: *</label>
-                        <input type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required />
-                    </div>
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <!--todo add project name to edit here-->
+                    <h2>Edit Project<small id="project-name">&nbsp;&nbsp;&nbsp; PROJECT NAME HERE</small></h2>
+                    <hr/>
+                    <!--<ul class="nav navbar-right panel_toolbox">-->
+                    <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
+                    <!--</li>-->
+                    <!--<li class="dropdown">-->
+                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
+                    <!--<ul class="dropdown-menu" role="menu">-->
+                    <!--<li><a href="#">Settings 1</a>-->
+                    <!--</li>-->
+                    <!--<li><a href="#">Settings 2</a>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <!--</li>-->
+                    <!--</ul>-->
+                    <div class="clearfix"></div>
+                    <!-- start form for validation -->
+                    <form id="demo-form" data-parsley-validate action="project_creation" method="post">
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="CurrentDeadline">Current Deadline: *</label>
+                                <input readonly type="date" id="CurrentDeadline" class="form-control" name="CurrentDeadline"  />
+                            </div>
+                            <div class="col-md-6">
+                                <label for="ChangeDueDate">Change Deadline: *</label>
+                                <input type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required />
+                            </div>
+                        </div>
+                        <br/>
+                        <!-- TODO show this table once button is clicked-->
+                        <div class="">
+                            <div id="employeeTable" class="x_panel">
+                            </div>
+                        </div>
+                        <!-- TODO Table end-->
+
+                        <button id="updateProject" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" title="Update Project">Update Project</button>
+                    </form>
+                    <!-- end form for validations -->
                 </div>
-                <br/>
-                <!-- TODO show this table once button is clicked-->
-                <div class="">
-                    <div id="employeeTable" class="x_panel">
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
                     </div>
-                </div>
-                <!-- TODO Table end-->
-
-                <button id="updateProject" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" title="Update Project">Update Project</button>
-            </form>
-            <!-- end form for validations -->
-        </div>
-        <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-            <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
             </div>
-            <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-    </div>
-</div>
+        </div>
 
-<script src="/vendors/Code-9/views/projEdit.js"></script>
-<!--Vendors js files-->
-<%- include('javascripts'); %>
-</body>
+        <!--Vendors js files-->
+        <!-- jQuery -->
+        <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick: Increase load time-->
+        <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress: Top load animation-->
+        <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+        <!-- Code 9 -->
+        <script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+        <script type="text/javascript" src="vendors/Code-9/views/projEdit.js"></script>
+        <!-- Datatables -->
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+        <!-- Custom Theme Scripts -->
+        <script type="text/javascript" src="javascripts/custom.min.js"></script>
+    </body>
 </html>

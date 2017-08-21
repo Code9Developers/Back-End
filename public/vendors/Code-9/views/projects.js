@@ -7,19 +7,20 @@ $(document).ready(function() {
 
 
         $('#projectsPageTable').empty();
-        $('#projectsPageTable').append("<table class='table table-striped projects'>" +
-            "<thead>" +
-            "<tr>" +
-            "<th style='width: 1%'>#</th>" +
-            "<th style='width: 20%'>Project Name</th>" +
-            "<th>Team Members</th>" +
-            " <th>Project Progress</th>" +
-            "<th>Status</th>" +
-            "<th style='width: 20%'>#Edit</th>" +
-            " </tr>" +
-            " </thead>" +
-            "<tbody id='projViewTable'>" +
-            "</tbody>" +
+        $('#projectsPageTable').append(
+            "<table class='table table-striped projects'>" +
+                "<thead>" +
+                    "<tr>" +
+                        "<th style='width:1%'>#</th>" +
+                        "<th style='width:20%'>Project Name</th>" +
+                        "<th>Team Members</th>" +
+                        "<th>Project Progress</th>" +
+                        "<th>Status</th>" +
+                        "<th style=\"width: 20%\">Options</th>" +
+                    "</tr>" +
+                "</thead>" +
+                "<tbody id='projViewTable'>" +
+                "</tbody>" +
             "</table>"
         );
         //window.alert(data.projects);
@@ -47,7 +48,7 @@ $(document).ready(function() {
                 "</td>" +
                 "<td class='project_progress'>" +
                 "<div class='progress progress_sm'>" +
-                "<div class='progress-bar bg-green' role='progressbar' data-transitiongoal='50'></div>" +
+                "<div class='progress-bar bg-kpmg-bar' role='progressbar' data-transitiongoal='50'></div>" +
                 "</div>" +
                 "<small>" + 50 + "% Complete</small>" +
                 "</td>" +

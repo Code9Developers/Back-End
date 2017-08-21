@@ -79,13 +79,3 @@ function AllDone(){
 function removeItem(element){
     $(element).parent().remove();
 }
-
-
-// Multi select
-$(function()
-{
-    $('.multiselect-ui').multiselect({
-        includeSelectAllOption: true,
-        nonSelectedText: 'Allocate Task To'
-    });
-});

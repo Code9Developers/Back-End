@@ -34,7 +34,7 @@ $(document).ready(function() {
                     "<thead>"+
                     "<tr>"+
                     "<th>"+
-                    "<th><input type='checkbox' id='check-all' class='flat'></th>"+
+                        "<input type='checkbox' id='check-all' class='flat'>"+
                     "<th>"+
                     "<th>Name</th>"+
                     "<th>Surname</th>"+
@@ -48,15 +48,16 @@ $(document).ready(function() {
 
                 globEmployees = data;
                 $.each(data,function(key,value){
-                    $("#emptBody").append("<tr>"+
-                        "<td>"+
-                        "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
-                        "</td>"+
-                        "<td>"+value.name+"</td>"+
-                        "<td>"+value.surname+"</td>"+
-                        "<td>"+value.position+"</td>"+
-                        "<td>"+value.employment_length+"</td>"+
-                        "<td>"+value.past_projects+"</td>"+
+                    $("#emptBody").append(
+                        "<tr>"+
+                            "<td>"+
+                                "<th><input type='checkbox' id='check-all' class='flat'></th>"+
+                            "</td>"+
+                            "<td>"+value.name+"</td>"+
+                            "<td>"+value.surname+"</td>"+
+                            "<td>"+value.position+"</td>"+
+                            "<td>"+value.employment_length+"</td>"+
+                            "<td>"+value.past_projects+"</td>"+
                         "</tr>");
                 });
             });

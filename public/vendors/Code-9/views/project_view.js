@@ -6,7 +6,7 @@ $(document).ready(function() {
     $.urlParam = function (name) {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
-    }
+    };
 
     $.get("get_tasks", {id: $.urlParam('id')},
         function (data, status) {
@@ -21,7 +21,7 @@ $(document).ready(function() {
             });
         });
 
-     var emp_ids=[]
+     var emp_ids=[];
     var empr_names=[];
     $.get("data_project_edit", {id: $.urlParam('id')},
         function (data, status) {
@@ -41,7 +41,7 @@ $(document).ready(function() {
             $("#milestone").empty();
             $.each(data, function (key, value) {
                 $("#milestone").append(
-                    " <option value='"+value._id+"'>"+
+                    "<option value='"+value._id+"'>"+
                     value.description+
                     "</option>");
             });
@@ -58,6 +58,12 @@ $(document).ready(function() {
                     value.name+
                     "</option>");
              });
+
+            $('.multiselect-ui').multiselect({
+                includeSelectAllOption: true,
+                nonSelectedText: 'Allocate Task To'
+            });
+
             $("#AllocateTask").multiselect('refresh');
         });
 
@@ -91,8 +97,8 @@ $(document).ready(function() {
                     $("#sortable").append("<li class='ui-state-default'>" +
                         "<div class='checkbox'>" +
                         "<label>" +
-                        " <input type='checkbox' />"+value.description+"</label>" +
-                        " </div>" +
+                        "<input type='checkbox' />"+value.description+"</label>" +
+                        "</div>" +
                         "</li>")
                 });
             });

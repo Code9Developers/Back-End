@@ -11,7 +11,7 @@ var generator = require('generate-password');
  ***********************************************************************************************************************
  ALL USER-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
-*/
+ */
 
 // inserts user defined in JSON string "_json"
 exports.insertUser = function(_json) {
@@ -88,13 +88,105 @@ exports.deleteUser = function(user_id) {
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
-*/
+ */
+
+/*
+ ***********************************************************************************************************************
+ ALL EVENT-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
+
+exports.insertEvent = function(_json) {
+
+    var event = schemas.event ;
+    var user = schemas.event ;
+
+    var _event = new event(_json) ;
+
+    _event.save(function (err) {
+        if (err) {
+            console.log("Event could not be inserted.") ;
+            console.log(err) ;
+        }
+        else {
+            console.log("Successfully inserted Event.") ;
+        }
+    });
+
+    user.findByIdAndUpdate( _event.user_id, { $push: {events: _event._id}}, function(err) {
+        if (!err) {
+            console.log("Event inserted into User.") ;
+        }
+        else {
+            console.log("Error inserting Event into User.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+exports.findEvents = function(attrib, value, callback) {
+
+    var event = schemas.event ;
+    var query = JSON.parse('{ ' + "\"" +attrib + "\"" + ': ' + "\"" + value + "\"" + '}') ;
+
+    event.find(query, function(err, docs) {
+        if (err) {
+            console.log("Error finding Events.") ;
+            console.log(err) ;
+        }
+        else if (JSON.stringify(docs) === "[]") {
+            console.log("No Events found.") ;
+        }
+        else {
+            console.log("Events found.") ;
+            return callback(docs);
+        }
+    });
+};
+
+exports.editEvents = function(attrib, value, attrib_to_edit, new_value) {
+
+    var event = schemas.event ;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
+
+    event.update( query, { $set: update}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("Events " + attrib_to_edit + "\'s updated.") ;
+        }
+        else {
+            console.log("Error updating " + attrib_to_edit + "\'s of Events.") ;
+            console.log(err) ;
+        }
+    });
+};
+
+exports.deleteEvent = function(event_id) {
+
+    var event = schemas.event ;
+
+    event.remove({ _id: event_id }, function(err) {
+        if (!err) {
+            console.log("Event successfully deleted.") ;
+        }
+        else {
+            console.log("Error deleting Event.") ;
+        }
+    });
+
+    // de-reference events in corresponding users
+};
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
 
 /*
  ***********************************************************************************************************************
  ALL USER+PROJECT-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
-*/
+ */
 
 // assigns project to user and vice versa
 exports.assignProject = function(user_id, project_id) {
@@ -121,6 +213,21 @@ exports.assignProject = function(user_id, project_id) {
             console.log(err) ;
         }
     });
+};
+
+exports.insertAndAssignProject = function(_json, employees) {
+
+    var project = schemas.project ;
+
+    module.exports.insertProject(_json) ;
+
+    var _project = new project(_json) ;
+
+    for (var loop = 0; loop < employees.length; loop++)
+    {
+        module.exports.assignProject(employees[loop], _project._id) ;
+    }
+	module.exports.completeProject(_project._id, _project.project_rating) ;
 };
 
 // remove employee from project and vice versa
@@ -182,19 +289,21 @@ exports.completeProject = function(project_id, rating) {
         }
     });
 
-    //delete all tasks to save space?
+    //de-reference all tasks from employees assigned
+
+
 };
 
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
-*/
+ */
 
 /*
  ***********************************************************************************************************************
  ALL PROJECT-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
-*/
+ */
 
 // inserts project defined in JSON string "_json"
 exports.insertProject = function(_json) {
@@ -209,9 +318,9 @@ exports.insertProject = function(_json) {
             console.log("Project could not be inserted.") ;
             console.log(err) ;
         }
-        else {
-            console.log("Successfully inserted Project.") ;
-        }
+        /*else {
+         console.log("Successfully inserted Project.") ;
+         }*/
     });
 
     user.findByIdAndUpdate(_project.manager_id, {$push: {current_projects: _project._id}}, function (err) {
@@ -305,7 +414,7 @@ exports.refreshProjectStatus = function() {
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
-*/
+ */
 
 /*
  ***********************************************************************************************************************
@@ -644,4 +753,5 @@ exports.authenticate = function(user_id, password, callback) {
  ***********************************************************************************************************************
  ***********************************************************************************************************************
  */
+
 

@@ -10,6 +10,8 @@ exports.create_schemas = function() {
 
     create_user(db) ;
 
+    create_event(db) ;
+
     create_project(db) ;
 
     create_milestone(db) ;
@@ -40,13 +42,28 @@ function create_user(db) {
         employment_length: Number, //years? months?
         skill: [],
         current_projects: [], //-> stores project id's
-        past_projects: [] //-> stores project id's
+        past_projects: [], //-> stores project id's
+        events: []
     }) ;
 
     exports.user = mongoose.model('user', schema) ;
 
     console.log('User schema created.') ;
 
+}
+
+function create_event(db) {
+    var schema = mongoose.Schema({
+        _id: String,
+        user_id: String,
+        description: String,
+        event_start_date: Date,
+        event_end_date: Date
+    }) ;
+
+    exports.event = mongoose.model('event', schema) ;
+
+    console.log('Event schema created.') ;
 }
 
 function create_project(db) {

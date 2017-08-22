@@ -170,19 +170,6 @@ router.post('/register_employee',function (req,res,next) {
         symbols: true,
         uppercase: true
     });
-    // var temp_past_projects=(req.body.pastprojects).split(",");
-    // var past_projects_length=parseInt(temp_past_projects.length);
-    // var past_projects="[";
-    // for(var i=0;i<past_projects_length;i++){
-    //     if(i==past_projects_length-1){
-    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"}]";
-    //     }
-    //     else{
-    //         past_projects=past_projects+"{"+JSON.stringify("_id")+":"+JSON.stringify(temp_past_projects[i])+"},";
-    //     }
-    // }
-    // console.log(JSON.parse(JSON.stringify(past_projects)));
-    // console.log(past_projects);
 
     var today = new Date();
     dbs.encrypt(rand_password, function (enc_pass) {
@@ -216,12 +203,13 @@ router.post('/register_employee',function (req,res,next) {
         // setup email data with unicode symbols
         let mailOptions  =
         {
-                from: '"Code 9" <code9devs@gmail.com>', // sender address
+                from: '"Code 9 👻👻👻 BOO!!" <code9devs@gmail.com>', // sender address
                 to: 'code9devs@gmail.com,' + emp.email, // list of receivers
                 subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
                 // plain text body
-                text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
-                // html: '<b>Hello world ?</b>' // html body
+                // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
+                // html body
+                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/> Your password is: ' + '<b>' +rand_password + '</b>'
         };
 
         // send mail with defined transport object
@@ -233,7 +221,7 @@ router.post('/register_employee',function (req,res,next) {
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
 
-        res.render('index',{valu:JSON.stringify(emp)});
+        res.redirect('dashboard');
     });
 });
 
@@ -281,7 +269,7 @@ router.get("/role",function (req,res,next) {
 router.get("/create_past_projects",function (req,res,next) {
     //Because of the Math.floor() we get a less managers than planned
     //And and less years for projects than we give
-    test_data.create_past_Projects(15);
+    test_data.create_past_Projects(1);
     res.render('login');
 });
 
@@ -433,7 +421,7 @@ router.get('/create_task', function(req, res, next)
     });
 
     var _id=milestone_id.substr(0,5)+project_id+rand_password;
-   var emp_json={ _id: _id,
+    var emp_json={ _id: _id,
         description: task,
     project_id: project_id,
     milestone_id: milestone_id,

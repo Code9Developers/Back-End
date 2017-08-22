@@ -123,3 +123,12 @@ span.multiselect-native-select select {
     margin-left: -20px;
     margin-right: 0
 }
+
+.scrollable{
+    overflow: auto;
+    width: 100%;
+    height: 140px; /* adjust height depending on number of options to display */
+}
+.scrollable select{
+    border: none;
+}

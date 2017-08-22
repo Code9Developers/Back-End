@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
 
+    var employeeArr = [];
     $.urlParam = function(name){
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
@@ -45,7 +46,45 @@ $(document).ready(function() {
 
             globEmployees = data;
             $.each(data,function(key,value){
-                $("#emptBody").append("<tr>"+
+                if(value.role=="Employee"){
+                    employeeArr[key]=value._id;
+                    $("#emptBody").append("<tr id="+key+">"+
+                        "<td>"+
+                        "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
+                        "</td>"+
+                        "<td>"+value.name+"</td>"+
+                        "<td>"+value.surname+"</td>"+
+                        "<td>"+value.position+"</td>"+
+                        "<td>"+value.employment_length+"</td>"+
+                        "<td>"+value.past_projects+"</td>"+
+                        "</tr>");
+                }
+            });
+        });
+
+
+    var sendArr = [];
+    var c = 0;
+
+    $('#employeeTable').on('click',"#removeEmployee" ,function (e) {
+        e.preventDefault(); // disable the default form submit event
+
+        $('#datatable-checkbox').find('input[type="checkbox"]:checked').each(function () {
+            //this is the current checkbox
+            var ind = $(this).parent().parent().attr('id');
+            sendArr[c]=employeeArr[ind];
+
+            c++;
+            $(this).parent().parent().empty();
+            $(this).parent().parent().remove();
+
+        });
+
+ window.alert(sendArr);
+        $.get("project_edit_delete", {rem_ids:sendArr,id:$.urlParam('id')}, function (data, status) {
+            window.alert(data);
+            $.each(data,function(key,value){
+                $("#emptBody").prepend("<tr>"+
                     "<td>"+
                     "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
                     "</td>"+
@@ -56,28 +95,8 @@ $(document).ready(function() {
                     "<td>"+value.past_projects+"</td>"+
                     "</tr>");
             });
-        });
-    var employeeArr = [1, 2, 3, 4, 5];
-    var sendArr = "[";
-    var c = 0;
 
-    $('#removeEmployee').on('click', function (e) {
-        e.preventDefault(); // disable the default form submit event
-        $('#datatable-checkbox').find('input[type="checkbox"]:checked').each(function () {
-            //this is the current checkbox
-            var ind = $(this).parent().parent().attr('data-id');
-            sendArr += "{ employee_id:" + ind + "},";
 
-            c++;
-            $(this).parent().parent().empty();
-            $(this).parent().parent().remove();
-            window.alert(sendArr);
-        });
-        c++;
-        sendArr[sendArr.length - 1] = ']';
-
-        $.get("project_edit_delete", sendArr, function (data, status) {
-            window.alert("Employee Removed");
         });
 
 

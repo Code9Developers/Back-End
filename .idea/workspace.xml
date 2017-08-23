@@ -1234,14 +1234,13 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/license" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/package.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/readme.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/javascripts.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/views/stylesheets.ejs" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/connect.js" afterPath="$PROJECT_DIR$/database/connect.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_creation.ejs" afterPath="$PROJECT_DIR$/views/project_creation.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_view.ejs" afterPath="$PROJECT_DIR$/views/project_view.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_edit.ejs" afterPath="$PROJECT_DIR$/views/project_edit.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1257,8 +1256,8 @@
       <file leaf-file-name="dbs.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database/dbs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="233" column="22" lean-forward="false" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="22" />
+            <state relative-caret-position="137">
+              <caret line="379" column="0" lean-forward="false" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1267,8 +1266,18 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="154" column="35" lean-forward="true" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
+            <state relative-caret-position="246">
+              <caret line="255" column="3" lean-forward="false" selection-start-line="255" selection-start-column="3" selection-end-line="256" selection-end-column="98" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -1277,7 +1286,7 @@
       <file leaf-file-name="calendar.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="565">
+            <state relative-caret-position="3060">
               <caret line="180" column="77" lean-forward="false" selection-start-line="180" selection-start-column="68" selection-end-line="180" selection-end-column="77" />
               <folding />
             </state>
@@ -1287,7 +1296,7 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
+            <state relative-caret-position="459">
               <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
@@ -1297,8 +1306,8 @@
       <file leaf-file-name="project_edit.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/project_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="65" column="68" lean-forward="false" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
               <folding />
             </state>
           </provider>
@@ -1307,10 +1316,10 @@
       <file leaf-file-name="projEdit.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+            <state relative-caret-position="340">
+              <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
               <folding>
-                <marker date="1503432528668" expanded="true" signature="774:786" ph="..." />
+                <marker date="1503490701094" expanded="true" signature="1120:1132" ph="..." />
               </folding>
             </state>
           </provider>
@@ -1350,7 +1359,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="fixed-projects-view-page" />
       </map>
     </option>
     <push-targets>
@@ -1388,7 +1397,6 @@
         <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/views/sidebar.ejs" />
-        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/code9.js" />
@@ -1396,7 +1404,6 @@
         <option value="$PROJECT_DIR$/views/error500.ejs" />
         <option value="$PROJECT_DIR$/views/stylesheets.ejs" />
         <option value="$PROJECT_DIR$/views/javascripts.ejs" />
-        <option value="$PROJECT_DIR$/views/project_edit.ejs" />
         <option value="$PROJECT_DIR$/views/projects.ejs" />
         <option value="$PROJECT_DIR$/views/admin.ejs" />
         <option value="$PROJECT_DIR$/public/javascripts/custom.js" />
@@ -1413,6 +1420,8 @@
         <option value="$PROJECT_DIR$/public/vendors/Code-9/views/projects.js" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
         <option value="$PROJECT_DIR$/views/project_view.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/views/project_edit.ejs" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js" />
       </list>
@@ -1461,8 +1470,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1571,7 +1579,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -1603,344 +1612,6 @@
       <recent name="$PROJECT_DIR$/public/vendors/Code-9/css" />
       <recent name="$PROJECT_DIR$/public/vendors/Code-9/js" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/dbs.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/database/schemas.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/abbrev/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/accepts/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ansi-regex/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ansi-styles/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/anymatch/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arr-diff/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arr-diff/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arr-flatten/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arr-flatten/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arr-flatten/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/array-flatten/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/array-unique/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/array-unique/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/array-unique/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/array-unique/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/arrify/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/async-each/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/balanced-match/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/basic-auth/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/binary-extensions/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/body-parser/node_modules/debug/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/brace-expansion/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/braces/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/bytes/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/chalk/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/chokidar/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/concat-map/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/configstore/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/content-disposition/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/content-type/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/cookie-signature/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/cookie/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/core-util-is/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/deep-extend/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/depd/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/destroy/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/duplexer/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/duplexify/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ee-first/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/encodeurl/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/end-of-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/es6-promise/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/escape-html/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/escape-string-regexp/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/etag/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/event-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/expand-brackets/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/expand-range/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/express/node_modules/debug/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/extglob/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/filename-regex/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/fill-range/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/fill-range/README.md</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/fill-range/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/finalhandler/node_modules/debug/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/finalhandler/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/for-in/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/for-own/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/forwarded/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/fresh/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/from/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/glob-base/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/glob-parent/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/got/node_modules/object-assign/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/got/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/graceful-fs/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/has-ansi/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/http-errors/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/iconv-lite/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ignore-by-default/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/imurmurhash/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/infinity-agent/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/inherits/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ini/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ipaddr.js/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-binary-path/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-buffer/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-dotfile/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-equal-shallow/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-extendable/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-extglob/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-finite/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-glob/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-npm/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-number/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-posix-bracket/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-primitive/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-redirect/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/is-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/isarray/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/isobject/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/kind-of/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/latest-version/cli.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/latest-version/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._baseassign/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._basecopy/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._bindcallback/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._createassigner/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._getnative/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash._isiterateecall/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.assign/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.defaults/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.isarguments/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.isarray/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.keys/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lodash.restparam/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/lowercase-keys/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/map-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/media-typer/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/merge-descriptors/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/methods/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/micromatch/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/micromatch/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/micromatch/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mime-db/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mime-types/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mime/cli.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mime/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/minimatch/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/minimist/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mkdirp/bin/cmd.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/mkdirp/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ms/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/negotiator/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nested-error-stacks/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nopt/bin/nopt.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nopt/examples/my-program.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/nopt/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/normalize-path/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/number-is-nan/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/object-assign/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/object.omit/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/on-finished/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/on-headers/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/once/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/os-homedir/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/os-tmpdir/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/osenv/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/package-json/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/parse-glob/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/parseurl/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/path-is-absolute/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/path-to-regexp/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/pause-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/pinkie-promise/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/pinkie/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/prepend-http/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/preserve/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/process-nextick-args/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/proxy-addr/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ps-tree/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/ps-tree/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/qs/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/randomatic/LICENSE</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/randomatic/node_modules/is-number/node_modules/kind-of/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/randomatic/node_modules/is-number/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/randomatic/node_modules/kind-of/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/randomatic/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/range-parser/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/raw-body/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/rc/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/rc/node_modules/minimist/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/rc/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/read-all-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/readable-stream/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/readdirp/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/regex-cache/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/registry-url/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/remove-trailing-separator/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/repeat-element/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/repeat-string/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/repeating/cli.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/repeating/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/safe-buffer/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/semver-diff/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/semver/bin/semver</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/semver/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/send/node_modules/debug/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/send/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/serve-favicon/node_modules/safe-buffer/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/serve-static/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/set-immediate-shim/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/setprototypeof/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/slide/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/split/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/statuses/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/stream-combiner/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/stream-shift/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/string-length/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/string_decoder/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/strip-ansi/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/strip-json-comments/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/supports-color/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/through/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/timed-out/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/touch/bin/touch.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/touch/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/type-is/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/undefsafe/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/unpipe/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/update-notifier/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/util-deprecate/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/utils-merge/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/uuid/benchmark/bench.sh</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/uuid/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/vary/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/wrappy/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/write-file-atomic/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/xdg-basedir/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package-lock.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/package.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/css/code9.css</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/public/vendors/Code-9/views/admin.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/routes/index.js</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/admin.ejs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/views/project_view.ejs</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/latest-version.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/mime.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/mkdirp.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/nodemon.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/nopt.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/rc.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/repeating.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/semver.cmd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/node_modules/.bin/touch.cmd</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2486,7 +2157,8 @@
       <workItem from="1503302336186" duration="15894000" />
       <workItem from="1503320044306" duration="210000" />
       <workItem from="1503320814487" duration="565000" />
-      <workItem from="1503338015014" duration="21865000" />
+      <workItem from="1503338015014" duration="22234000" />
+      <workItem from="1503470066813" duration="7441000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -2705,11 +2377,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503417111838</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Fixed all display on projects view page.&#10;Tasks work&#10;Milestones work&#10;Employees assigned to projects&#10;Project contains employee ID(Works but can be better implemented)&#10;&#10;BUG:&#10;Still working on project edit page to remove employee( So far you can select employees to remove and it will send a request to remove employees--Route is up to remove employees--Just need to make DB call to take employees out, call algorithm to assign new employees )">
+      <created>1503433279573</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1503433279573</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214734000" />
+    <option name="totallyTimeSpent" value="222544000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2745,7 +2424,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28477904" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2831424" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28290468" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28744328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="SimpleHttpClient" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -2848,7 +2527,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Basic server layout" />
     <MESSAGE value="Fixed 404 page. So now if the route does not exist it will go to that page" />
     <MESSAGE value="Added all vendors and project_creation page" />
     <MESSAGE value="Added registration page so employees can be registered&#10;Fixed some layout error on project creation page&#10;Created insert so employees can be inserted to the db (Still need to fix the encryption of passwords and double check if the format is right)" />
@@ -2873,7 +2551,8 @@
     <MESSAGE value="- Fix hidden files" />
     <MESSAGE value="- Fix Milestone page&#10;- Fix Tasks" />
     <MESSAGE value="Fixed Storing dates in Mongo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Storing dates in Mongo" />
+    <MESSAGE value="Fixed all display on projects view page.&#10;Tasks work&#10;Milestones work&#10;Employees assigned to projects&#10;Project contains employee ID(Works but can be better implemented)&#10;&#10;BUG:&#10;Still working on project edit page to remove employee( So far you can select employees to remove and it will send a request to remove employees--Route is up to remove employees--Just need to make DB call to take employees out, call algorithm to assign new employees )" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed all display on projects view page.&#10;Tasks work&#10;Milestones work&#10;Employees assigned to projects&#10;Project contains employee ID(Works but can be better implemented)&#10;&#10;BUG:&#10;Still working on project edit page to remove employee( So far you can select employees to remove and it will send a request to remove employees--Route is up to remove employees--Just need to make DB call to take employees out, call algorithm to assign new employees )" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3059,7 +2738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1598">
           <caret line="94" column="41" lean-forward="false" selection-start-line="94" selection-start-column="41" selection-end-line="94" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3067,41 +2745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="30" column="31" lean-forward="false" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding>
-            <marker date="1503341189752" expanded="true" signature="0:45" ph="/** Created by Nicaedin on 08/17/2017. ...*/" />
-            <marker date="1503341189752" expanded="true" signature="76:1550" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="134:264" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="353:414" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="500:930" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="583:922" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="980:1545" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="1028:1186" ph="{...}" />
-            <marker date="1503341189752" expanded="true" signature="1209:1537" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1819">
-          <caret line="107" column="0" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="565">
-          <caret line="180" column="77" lean-forward="false" selection-start-line="180" selection-start-column="68" selection-end-line="180" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3109,7 +2752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="34" lean-forward="false" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3117,7 +2759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
           <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3125,10 +2766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="80" column="26" lean-forward="false" selection-start-line="80" selection-start-column="8" selection-end-line="80" selection-end-column="26" />
-          <folding>
-            <marker date="1503417333664" expanded="true" signature="203:270" ph="{...}" />
-            <marker date="1503417333664" expanded="true" signature="1454:1456" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3136,7 +2773,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-29">
           <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3152,11 +2788,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="107">
           <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
-          <folding>
-            <marker date="1503427099862" expanded="true" signature="375:383" ph="..." />
-            <marker date="1503427099862" expanded="true" signature="431:440" ph="..." />
-            <marker date="1503427099862" expanded="true" signature="648:658" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3164,7 +2795,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="94" column="64" lean-forward="true" selection-start-line="94" selection-start-column="64" selection-end-line="94" selection-end-column="64" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3172,42 +2802,63 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="46" selection-end-line="129" selection-end-column="46" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3060">
+          <caret line="180" column="77" lean-forward="false" selection-start-line="180" selection-start-column="68" selection-end-line="180" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="36" column="39" lean-forward="true" selection-start-line="36" selection-start-column="39" selection-end-line="36" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/project_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="56" column="32" lean-forward="false" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        <state relative-caret-position="221">
+          <caret line="65" column="68" lean-forward="false" selection-start-line="65" selection-start-column="68" selection-end-line="65" selection-end-column="68" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/database/dbs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="233" column="22" lean-forward="false" selection-start-line="233" selection-start-column="8" selection-end-line="233" selection-end-column="22" />
+        <state relative-caret-position="137">
+          <caret line="379" column="0" lean-forward="false" selection-start-line="379" selection-start-column="0" selection-end-line="379" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="154" column="35" lean-forward="true" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
+        <state relative-caret-position="246">
+          <caret line="255" column="3" lean-forward="false" selection-start-line="255" selection-start-column="3" selection-end-line="256" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/projEdit.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="82" column="23" lean-forward="true" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+        <state relative-caret-position="340">
+          <caret line="20" column="51" lean-forward="true" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
           <folding>
-            <marker date="1503432528668" expanded="true" signature="774:786" ph="..." />
+            <marker date="1503490701094" expanded="true" signature="1120:1132" ph="..." />
           </folding>
         </state>
       </provider>

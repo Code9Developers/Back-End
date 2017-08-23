@@ -47,9 +47,19 @@ router.get("/error403", function (req,res, next){
     res.render('error403');
 });
 
+//Employees Dashboard
+router.get("/user_dashboard", function (req,res, next){
+    res.render('index_dashboard');
+});
+
 //Admin/Register Employee page
 router.get('/admin',function (req,res,next) {
     res.render("admin");
+});
+
+//Employees page(display all employees)
+router.get('/employees',function (req,res,next) {
+    res.render("employees");
 });
 
 /**
@@ -101,10 +111,10 @@ router.post('/login',function (req,res,next) {
             res.redirect('project_creation');
         }
         else if(user.role=="Admin"){
-            res.redirect('admin');
+            res.redirect('employees');
         }
         else{
-            res.redirect('project_creation');
+            res.redirect('user_dashboard');
         }
     });
 });
@@ -127,6 +137,8 @@ router.get('/store_emp',function (req,res,next) {
     var el=JSON.parse(req.param("emplArr"));
     var num_empl=parseInt(JSON.parse(req.param("num_empl")));
 
+    console.log(el);
+    console.log(num_empl);
 
     employees="";
     for(var key in el){
@@ -357,6 +369,13 @@ router.get("/all_projects",function (req,res,next) {
     });
 });
 
+router.get("/all_employees",function (req,res,next) {
+
+    var all_users=dbs.findUsers("role", "Employee",function (all_users) {
+        res.send(all_users);
+    });
+});
+
 router.get("/projects",function (req,res,next) {
     res.render('projects');
 });
@@ -374,12 +393,7 @@ router.get("/role",function (req,res,next) {
     });
 });
 
-router.get("/create_past_projects",function (req,res,next) {
-    //Because of the Math.floor() we get a less managers than planned
-    //And and less years for projects than we give
-    test_data.create_past_Projects(1);
-    res.render('login');
-});
+
 
 router.get("/logout",function (req,res,next) {
     req.session.reset();
@@ -388,24 +402,12 @@ router.get("/logout",function (req,res,next) {
 
 
 
-router.get("/dashboard", function (req,res, next){
-    res.render('index_dashboard');
-});
-//FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
-
-//Easy access to project creation page
-router.get('/test_project_creation', function(req, res, next)
-{
-    res.render('project_creation');
-});
-
-//Creates 5 test emplyees into the database
-router.get('/create_test_employees', function(req, res, next)
-{
-    //dbs.create_test_employees();
-    test_data.create_All_test_employees(1, 30);
+router.get("/create_test_data", function (req,res, next){
     res.render('login');
+    test_data.create_test_employees();
+    //test_data.create_test_projects();
 });
+
 
 /**
  * Page: admin.ejs
@@ -422,12 +424,6 @@ router.get('/get_past_projects', function(req, res, next)
     })
 });
 
-
-// router.get('/create_test_past_project', function(req, res, next)
-// {
-//     test_data.create_past_Projects(4);
-//    // res.render('login');
-// });
 
 
 
@@ -515,7 +511,7 @@ router.get('/create_task', function(req, res, next)
         description: task,
     project_id: project_id,
     milestone_id: milestone_id,
-    employees_assigned: emp_assigned}
+    employees_assigned: emp_assigned};
 
     dbs.insertTask(emp_json);
 
@@ -533,53 +529,90 @@ router.get('/get_tasks', function(req, res, next)
 
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//FUNCTIONS CREATED FOR TESTING OR TO BYPASS SESSION MANAGEMENT
+
+//Easy access to project creation page
+router.get('/test_project_creation', function(req, res, next)
+{
+    res.render('project_creation');
+});
+
+//Creates 5 test emplyees into the database
+router.get('/create_test_employees', function(req, res, next)
+{
+    //dbs.create_test_employees();
+    test_data.create_All_test_employees(1, 30);
+    res.render('login');
+});
+
 //Removes the 5 test employees from the database
-router.get('/remove_test_employees', function(req, res, next)
-{
-    test_data.remove_users();
-    res.render('login');
-});
+// router.get('/remove_test_employees', function(req, res, next)
+// {
+//     test_data.remove_users();
+//     res.render('login');
+// });
+//
+//
+// router.get('/remove_test_projects', function(req, res, next)
+// {
+//     test_data.remove_projects();
+//     res.render('login');
+// });
 
-router.get('/remove_test_employees', function(req, res, next)
-{
-    test_data.remove_users();
-    res.render('login');
-});
+// router.get('/remove_test_notifications', function(req, res, next)
+// {
+//     test_data.remove_notifications();
+//     res.render('login');
+// });
+//
+// router.get('/remove_test_tasks', function(req, res, next)
+// {
+//     test_data.remove_tasks();
+//     res.render('login');
+// });
 
-router.get('/remove_test_projects', function(req, res, next)
-{
-    test_data.remove_projects();
-    res.render('login');
-});
+// router.get('/view_test_employees', function(req, res, next)
+// {
+//     test_data.view_users();
+//     res.render('login');
+// });
 
-router.get('/remove_test_notifications', function(req, res, next)
-{
-    test_data.remove_notifications();
-    res.render('login');
-});
-
-router.get('/remove_test_tasks', function(req, res, next)
-{
-    test_data.remove_tasks();
-    res.render('login');
-});
-
-router.get('/view_test_employees', function(req, res, next)
-{
-    test_data.view_users();
-    res.render('login');
-});
-
-router.get('/view_test_projects', function(req, res, next)
-{
-    var s= test_data.view_projects();
-    console.log("s:"+JSON.parse(JSON.stringify(s)));
-    //res.send();
-});
+// router.get('/view_test_projects', function(req, res, next)
+// {
+//     var s= test_data.view_projects();
+//     console.log("s:"+JSON.parse(JSON.stringify(s)));
+//     //res.send();
+// });
 
 router.get('/refresh_project_status', function(req, res, next)
 {
     dbs.refreshProjectStatus();
+    res.render('login');
+});
+
+router.get("/create_past_projects",function (req,res,next) {
+    //Because of the Math.floor() we get a less managers than planned
+    //And and less years for projects than we give
+    test_data.create_past_Projects(1);
     res.render('login');
 });
 

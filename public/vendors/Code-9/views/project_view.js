@@ -51,12 +51,14 @@ $(document).ready(function() {
         function (data, status) {
             $("#AllocateTask").empty();
             $.each(data, function (key, value) {
-                emp_ids[key]=value._id;
-                empr_names[key]=value.name;
-                $("#AllocateTask").append(
-                    "<option value='"+value.name+"'>"+
-                    value.name+
-                    "</option>");
+                if(value.role=="Employee"){
+                    emp_ids[key]=value._id;
+                    empr_names[key]=value.name;
+                    $("#AllocateTask").append(
+                        "<option value='"+value.name+"'>"+
+                        value.name+
+                        "</option>");
+                }
              });
 
             $('.multiselect-ui').multiselect({

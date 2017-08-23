@@ -17,6 +17,8 @@
         <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <!-- Font Awesome -->
         <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+        <!-- jQuery dim background-->
+        <link href="vendors/jquery.dim-background/css/dim-background.css" type="text/css" rel="stylesheet">
         <!-- NProgress: Top load animation-->
         <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
         <!--Code 9-->
@@ -69,14 +71,13 @@
                                         <div class="clearfix"></div>
                                     </div>
                                     <div class="x_content">
-
                                         <div id='calendar'></div>
-
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <a id="back-to-top" href="#" class="btn back-to-top" role="button" title="Click here to create an event" data-toggle="tooltip" data-placement="left"><span class="fa fa-tasks"></span> Create Task </a>
                 </div>
                 <!-- /page content -->
 
@@ -89,6 +90,39 @@
                 </footer>
                 <!-- /footer content -->
             </div>
+        </div>
+
+        <div id="contactForm">
+            <h3>Contact Us</h3>
+            <medium>We'll get back to you as quickly as possible</medium><hr/>
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage">Please make sure all fields are filled in.</div>
+
+            <form action="php/mailer.php" method="post" role="form" class="form contactForm" id="contactFormMail">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name & Surname" required/>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button class="btn btn-default" type="submit">Send Now <span class="fa fa-send"></span></button>
+                </div>
+            </form>
         </div>
 
         <!-- calendar modal -->
@@ -168,6 +202,9 @@
         <!--Vendors js files-->
         <!-- jQuery -->
         <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+        <!-- jQuery dim background-->
+        <script type="text/javascript" src="vendors/jquery.dim-background/js/jquery.dim-background.min.js"></script>
+        <script type="text/javascript" src="vendors/jquery.dim-background/js/dim-background.js"></script>
         <!-- Bootstrap -->
         <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
         <!-- Code 9 -->

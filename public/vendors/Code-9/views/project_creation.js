@@ -18,8 +18,14 @@ $(document).ready(function() {
                 skills: [$('#tags_1').val()],
                 duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
-            },function(data, status){
+            },
+            function(data, status)
+            {
                 $("#employeeTable").empty();
+
+
+
+
                 $("#employeeTable").append("<div class='x_title'>"+
                     " <h2>Allocated Employees</h2>"+
                     "<ul class='nav navbar-right panel_toolbox'>"+
@@ -47,6 +53,7 @@ $(document).ready(function() {
                 "<button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
 
                 globEmployees = data;
+
                 $.each(data,function(key,value){
                     $("#emptBody").append(
                         "<tr>"+
@@ -60,7 +67,7 @@ $(document).ready(function() {
                             "<td>"+value.past_projects+"</td>"+
                         "</tr>");
                 });
-            });
+            })
     });
 
     $('#approveEmployee').on('click', function (e) {
@@ -79,7 +86,7 @@ $(document).ready(function() {
         ///e.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
 
-        if(globEmployees == null){
+        if(globEmployees === null){
 
             window.alert("Employees not assigned");
             $("#demo-form").submit(function(e){

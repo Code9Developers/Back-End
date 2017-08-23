@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/employees.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/.bin/latest-version" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/.bin/mime" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/.bin/mkdirp" afterPath="" />
@@ -1234,14 +1233,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/license" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/package.json" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/xdg-basedir/readme.md" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/node_modules/mime/.npmignore" afterPath="$PROJECT_DIR$/views/employees.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js" afterPath="$PROJECT_DIR$/database/Resource-Alocation-Algorithm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/test_data.js" afterPath="$PROJECT_DIR$/database/test_data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" afterPath="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/login.ejs" afterPath="$PROJECT_DIR$/views/login.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/project_view.ejs" afterPath="$PROJECT_DIR$/views/project_view.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1299,8 +1291,8 @@
       <file leaf-file-name="project_view.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+            <state relative-caret-position="204">
+              <caret line="54" column="45" lean-forward="true" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -2217,7 +2209,7 @@
       <workItem from="1503320044306" duration="210000" />
       <workItem from="1503320814487" duration="565000" />
       <workItem from="1503338015014" duration="22234000" />
-      <workItem from="1503470066813" duration="17084000" />
+      <workItem from="1503470066813" duration="17147000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -2450,11 +2442,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503491016601</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="All projects working">
+      <created>1503502059003</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1503502059003</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232187000" />
+    <option name="totallyTimeSpent" value="232250000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2594,7 +2593,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Added all vendors and project_creation page" />
     <MESSAGE value="Added registration page so employees can be registered&#10;Fixed some layout error on project creation page&#10;Created insert so employees can be inserted to the db (Still need to fix the encryption of passwords and double check if the format is right)" />
     <MESSAGE value="added login functionality" />
     <MESSAGE value="Added Project Creation" />
@@ -2619,7 +2617,8 @@
     <MESSAGE value="Fixed Storing dates in Mongo" />
     <MESSAGE value="Fixed all display on projects view page.&#10;Tasks work&#10;Milestones work&#10;Employees assigned to projects&#10;Project contains employee ID(Works but can be better implemented)&#10;&#10;BUG:&#10;Still working on project edit page to remove employee( So far you can select employees to remove and it will send a request to remove employees--Route is up to remove employees--Just need to make DB call to take employees out, call algorithm to assign new employees )" />
     <MESSAGE value="-Added documentation(code comments) to index.js&#10;-Project Edit page is fully functional&#10;-Deleted javascripts.ejs and stylesheets.ejs&#10;- changed login post route from dashboard to login(because there is also going to be a dashboard page)" />
-    <option name="LAST_COMMIT_MESSAGE" value="-Added documentation(code comments) to index.js&#10;-Project Edit page is fully functional&#10;-Deleted javascripts.ejs and stylesheets.ejs&#10;- changed login post route from dashboard to login(because there is also going to be a dashboard page)" />
+    <MESSAGE value="All projects working" />
+    <option name="LAST_COMMIT_MESSAGE" value="All projects working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2969,8 +2968,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="55" column="49" lean-forward="true" selection-start-line="55" selection-start-column="49" selection-end-line="55" selection-end-column="49" />
+        <state relative-caret-position="204">
+          <caret line="54" column="45" lean-forward="true" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
           <folding />
         </state>
       </provider>

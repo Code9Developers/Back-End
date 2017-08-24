@@ -39,9 +39,54 @@ router.get("/project_detail",function (req,res,next) {
 });
 
 // Calendar Page
-router.get("/calendar", function (req,res, next){
-    res.render('calendar');
+router.get("/calendar", function (req,res, next) {
+        res.render('calendar');
 });
+
+router.get("/calendar_events", function (req,res, next){
+        //res.render('calendar');
+    var project_id;
+    dbs.findUsers("_id",req.session.username,function (user) {
+        project_id=user[0].current_projects[0];
+        console.log("Test")
+        console.log(project_id);
+        var project=dbs.findProjects("_id",project_id,function (project) {
+            res.send(project);
+        });
+
+    })
+  //  console.log(project_id);
+
+        //     console.log("Calendar events called");
+        // res.send(
+        //         [{
+        //             "_id" : "916",
+        //             "name" : "project 916",
+        //             "description" : null,
+        //             "project_start_date" : "2017-08-12",//ISODate("2017-12-16T12:05:02.074Z"),
+        //             "project_end_date" : "2017-08-16",//ISODate("2017-12-28T12:05:02.074Z"),
+        //             "owner_name" : null,
+        //             "owner_contact" : null,
+        //             "owner_email" : null,
+        //             "project_budget" : 315318.35,
+        //             "status" : "completed",
+        //             "milestones" : [ ],
+        //             "tasks" : [ ],
+        //             "employee_rates" : [
+        //                 {
+        //                     "rate" : null,
+        //                     "employee_id" : null
+        //             }
+        //         ],
+        //         "employees_assigned" : [
+        //                 {
+        //
+        //                 }
+        //         ],
+        //         "__v" : 0
+        //     }]
+        // );
+    });
 
 router.get("/error403", function (req,res, next){
     res.render('error403');

@@ -3,8 +3,6 @@
  */
 
 $(document).ready(function() {
-    // <!--Dynamically check notifications-->
-
     var globEmployees = null;
     // $("#employeeTable").empty();
 

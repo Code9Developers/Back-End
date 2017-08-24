@@ -733,11 +733,9 @@ exports.encrypt = function(value, callback) {
 };
 
 exports.authenticate = function(user_id, password, callback) {
-    console.log("Authenticate Running with user_id: "+user_id+" and password : "+password); //must remove
-    module.exports.findUser(user_id, function(user) {
-        console.log("User details "+user);  //must remove
+
+    module.exports.findUsers("_id",user_id, function(user) {
         var hash = user.password;
-        console.log("Hashed password found is : "+hash);
         bcrypt.compare(password, hash, function (err, res) {
             if (err) {
                 console.log("Authentication error.") ;

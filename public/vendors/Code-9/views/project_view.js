@@ -7,7 +7,7 @@ $(document).ready(function() {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
-
+var i=0;
     $.get("get_tasks", {id: $.urlParam('id')},
         function (data, status) {
             $("#sortable").empty();
@@ -18,7 +18,10 @@ $(document).ready(function() {
                     "<input type='checkbox' />"+value.description+"</label>" +
                     "</div>" +
                     "</li>")
+                i++;
             });
+            $("#count_task").append(i+" Tasks left");
+            i=0;
         });
 
     var emp_ids=[];

@@ -55,42 +55,7 @@ router.get("/calendar_events", function (req,res, next){
         });
 
     })
-  //  console.log(project_id);
-
-        //     console.log("Calendar events called");
-        // res.send(
-        //         [{
-        //             "_id" : "916",
-        //             "name" : "project 916",
-        //             "description" : null,
-        //             "project_start_date" : "2017-08-12",//ISODate("2017-12-16T12:05:02.074Z"),
-        //             "project_end_date" : "2017-08-16",//ISODate("2017-12-28T12:05:02.074Z"),
-        //             "owner_name" : null,
-        //             "owner_contact" : null,
-        //             "owner_email" : null,
-        //             "project_budget" : 315318.35,
-        //             "status" : "completed",
-        //             "milestones" : [ ],
-        //             "tasks" : [ ],
-        //             "employee_rates" : [
-        //                 {
-        //                     "rate" : null,
-        //                     "employee_id" : null
-        //             }
-        //         ],
-        //         "employees_assigned" : [
-        //                 {
-        //
-        //                 }
-        //         ],
-        //         "__v" : 0
-        //     }]
-        // );
     });
-
-router.get("/error403", function (req,res, next){
-    res.render('error403');
-});
 
 //Employees Dashboard
 router.get("/user_dashboard", function (req,res, next){
@@ -148,14 +113,15 @@ router.post('/login',function (req,res,next) {
     req.session.password=req.body.password;
 
     var user=dbs.findUsers("_id",req.session.username, function(user) {
-
-        if(user.role=="Manager"){
+        console.log(user[0]);
+        console.log(user[0].role);
+        if(user[0].role=="Manager"){
             req.session.name=user[0].name;
             req.session.surname=user[0].surname;
             req.session.role=user[0].role;
             res.redirect('project_creation');
         }
-        else if(user.role=="Admin"){
+        else if(user[0].role=="Admin"){
             res.redirect('employees');
         }
         else{
@@ -484,6 +450,8 @@ router.get('/store_milestones', function(req, res, next)
     var milestone_name=req.param('milestone_name');
     var end_date=req.param('end_date');
 
+    var temp_end_date=end_date.split("/");
+    var new_end_date=new Date((temp_end_date[2]+"-"+temp_end_date[1]+"-"+temp_end_date[0]).toString());
     var rand_password = generator.generate({
         length: 100,
         numbers: true,
@@ -497,7 +465,7 @@ router.get('/store_milestones', function(req, res, next)
         _id: milstone_id,
         project_id: project_id,
         description: milestone_name,
-        milestone_end_date: end_date
+        milestone_end_date: new_end_date
     };
     dbs.insertMilestone(milestone_json);
     res.send("Got it!!");
@@ -528,7 +496,7 @@ router.get('/unread_notifications', function(req, res, next)
 router.get('/create_test_notifications', function(req, res, next)
 {
     test_data.create_test_notifications();
-    res.render('login');
+    res.redirect('/');
 });
 
 /**

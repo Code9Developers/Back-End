@@ -166,7 +166,7 @@ router.get('/store_emp',function (req,res,next) {
 });
 
 router.post("/project_creation",function (req,res,next) {
-    var moment = require('moment');
+
 
     var rand_id=Math.floor((Math.random() * 100) + 1).toString();
     var project_id=("kpmg_"+req.body.projectname+rand_id).replace(/\s/g,'');

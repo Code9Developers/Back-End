@@ -6,10 +6,15 @@ $(document).ready(function() {
     var globEmployees = null;
     // $("#employeeTable").empty();
 
+    $('#holder').hide();
+    $('#empTableHide').hide();
+
     $('#assignEmployees').on('click', function (e) {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
 
+        // $('#demo-form').hide();
+        $('#holder').show();
         $.get("test_algorithm",
             {
                 num_empl: parseInt(num_employees[1]),
@@ -17,12 +22,16 @@ $(document).ready(function() {
                 duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
             },
-            function(data, status)
+            function test(data, status)
             {
+                setTimeout(function ()
+                {
+                    // $('#demo-form').show();
+                    $('#holder').hide();
+                }, 10000);
+
                 $("#employeeTable").empty();
-
-
-
+                $('#empTableHide').show();
 
                 $("#employeeTable").append("<div class='x_title'>"+
                     " <h2>Allocated Employees</h2>"+
@@ -65,7 +74,7 @@ $(document).ready(function() {
                             "<td>"+value.past_projects+"</td>"+
                         "</tr>");
                 });
-            })
+            });
     });
 
     $('#approveEmployee').on('click', function (e) {

@@ -257,7 +257,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	            cursor: "default",
 	            cx: 0,
 	            cy: 0,
-	            fill: "#fff",
+	            fill: "#011f74",
 	            "fill-opacity": 1,
 	            font: '10px "Arial"',
 	            "font-family": '"Arial"',

@@ -5,9 +5,9 @@ window.eve = [];
 function getCalendarEvents() {
 var item;
     $.get("calendar_events",
-        {id: "Kek"},
+        {},
         function (data, status) {
-             window.alert(data[0].name);
+
             $.each(data, function (key, value) {
                 // window.alert(value.name);
 
@@ -16,11 +16,11 @@ var item;
                 item["start"] = value.project_start_date.substr(0,10);
                 item["end"] = value.project_end_date.substr(0,10);
                 item["url"] = "https://localhost:4000/user_project_detail?id="+value._id;
-                window.alert(JSON.stringify(item));
+
                 eve.push(item);
 
             });
-            window.alert("ssss");
+
             // eve[eve.length - 1] = ']';
             //window.alert(eve[eve.length - 1]);
             init_calendar();
@@ -67,7 +67,7 @@ var calendar = $('#calendar').fullCalendar({
             categoryClass = $("#event_type").val();
 
             if (title) {
-                window.alert("d");
+
                 calendar.fullCalendar('renderEvent', {
                         title: title,
                         start: started,

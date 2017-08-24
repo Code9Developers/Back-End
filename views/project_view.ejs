@@ -47,9 +47,6 @@
                         <h3>Project Details</h3>
                     </div>
                 </div>
-                <!--<div>-->
-                    <!--<p id="projDescrip"></p>-->
-                <!--</div>-->
 
                 <div class="clearfix"></div>
 
@@ -59,6 +56,7 @@
                             <div class="x_title">
                                 <h2 id="project_name"></h2>
                                 <div class="clearfix"></div>
+                                <h6 id="description"></h6>
                             </div>
 
                             <div class="x_content">
@@ -87,18 +85,18 @@
                                         <div class="panel">
                                             <div class="col-md-6">
                                                 <div class="todolist not-done">
-                                                    <h1>Create Todos</h1>
+                                                    <h1>Create Task</h1>
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                                            <input type="text" class="form-control add-todo" placeholder="Add todo">
+                                                            <input type="text" id="task" class="form-control add-todo" placeholder="Add task">
                                                         </div>
                                                     </div>
                                                     <br/>
                                                     <br/>
                                                     <div class="form-group">
                                                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                                            <select type="text" class="form-control">
-                                                                <optgroup label="Milestones">
+                                                            <select type="text" id="milestone_select" class="form-control">
+                                                                <optgroup label="Milestones" id="milestone">
                                                                     <option disabled selected>Select Milestone</option>
                                                                 </optgroup>
                                                             </select>
@@ -116,31 +114,14 @@
                                                     </div>
                                                     <br/>
                                                     <br/>
-                                                    <button style="margin-left: 10px; margin-top: 10px" id="submit-task" class="btn btn-dark">Create Task</button>
+                                                    <input style="margin-left: 10px; margin-top: 10px" id="submit-task" class="btn btn-dark" value="Create Task">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="todolist not-done">
-                                                    <h1>Current Todos</h1>
+                                                    <h1>Current Tasks</h1>
                                                     <ul id="sortable" class="list-unstyled">
-                                                        <li class="ui-state-default">
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="" />Take out the trash</label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ui-state-default">
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="" />Buy bread</label>
-                                                            </div>
-                                                        </li>
-                                                        <li class="ui-state-default">
-                                                            <div class="checkbox">
-                                                                <label>
-                                                                    <input type="checkbox" value="" />Teach penguins to fly</label>
-                                                            </div>
-                                                        </li>
+
                                                     </ul>
                                                     <div class="todo-footer">
                                                         <strong><span class="count-todos"></span></strong> Items Left
@@ -153,7 +134,6 @@
                                             <div class="todolist" style="border-right: none">
                                                 <h1>Completed</h1>
                                                 <ul id="done-items" class="list-unstyled">
-                                                    <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -168,14 +148,12 @@
 
                                         <div class="x_title">
                                             <h2>Project Description</h2>
-                                            <div class="clearfix"></div>
                                         </div>
                                         <div class="panel-body">
-
-                                            <p align="left" id="description"> </p>
                                             <br />
 
                                             <div class="project_detail">
+
                                                 <p class="title">Client Company</p>
                                                 <p id="project_owner"></p>
                                                 <p class="title">Client Email</p>

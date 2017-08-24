@@ -43,7 +43,7 @@ $(document).ready(function() {
                 "<small>Date created: " + value.project_start_date.substr(0,10) + "</small>" +
                 "</td>" +
                 "<td>"+
-                "<ul class='list-inline'>"+
+                "<ul class='list-inline' id="+value._id+">"+
                 "</ul>"+
                 "</td>" +
                 "<td class='project_progress'>" +
@@ -62,15 +62,18 @@ $(document).ready(function() {
                 "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>"+
                 "</td>"+
                 "</tr>");
-
-            for(var y=0;y<(value.employees_assigned).length;y++)
-            {
-                $(".list-inline").append(
-                "<li>"+
-                "<img src='images/user.png' class='avatar' alt='Avatar'>"+
-                "</li>"
-                );
+            var len=(value.employees_assigned).length;
+            if(len>0){
+                for(var y=0;y<len;y++)
+                {
+                    $("#"+value._id).append(
+                        "<li>"+
+                        "<img src='images/user.png' class='avatar' alt='Avatar'>"+
+                        "</li>"
+                    );
+                }
             }
+
 
         });
 

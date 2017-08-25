@@ -84,7 +84,8 @@ function create_project(db) {
         tasks: [],//stores task id's
         status: String, //active, completed, pending
         project_rating: Number, //rating of project (1-10) on post-mortem analysis
-        milestones: [] //store milestone id's
+        milestones: [],
+        past_projects:[]//store milestone id's
     }) ;
 
 

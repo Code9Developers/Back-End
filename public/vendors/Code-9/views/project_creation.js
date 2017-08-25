@@ -4,7 +4,7 @@
 
 $(document).ready(function() {
     var globEmployees = null;
-    // $("#employeeTable").empty();
+    $("#employeeTable").empty();
 
     $('#holder').hide();
     $('#empTableHide').hide();
@@ -101,7 +101,7 @@ $(document).ready(function() {
             });
         }else {
             var num_employees=($('#range_31').val()).split(";");
-            window.alert(JSON.stringify(globEmployees));
+
             $.get("store_emp", {
                     num_empl:num_employees[1],
                     duration: 2,

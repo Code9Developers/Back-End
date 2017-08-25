@@ -13,7 +13,7 @@ $(document).ready(function() {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
 
-        // $('#demo-form').hide();
+        $('#demo-form').hide();
         $('#holder').show();
         $.get("test_algorithm",
             {
@@ -26,9 +26,9 @@ $(document).ready(function() {
             {
                 setTimeout(function ()
                 {
-                    // $('#demo-form').show();
+                    $('#demo-form').show();
                     $('#holder').hide();
-                }, 10000);
+                }, 4500);
 
                 $("#employeeTable").empty();
                 $('#empTableHide').show();

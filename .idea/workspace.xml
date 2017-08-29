@@ -504,7 +504,7 @@
       <workItem from="1503584288836" duration="640000" />
       <workItem from="1503635404702" duration="1674000" />
       <workItem from="1503638950078" duration="5097000" />
-      <workItem from="1504006365378" duration="326000" />
+      <workItem from="1504006365378" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -814,11 +814,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503656287459</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)">
+      <created>1504006715731</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1504006715732</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212930000" />
+    <option name="totallyTimeSpent" value="213060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">

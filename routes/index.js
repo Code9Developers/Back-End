@@ -314,10 +314,10 @@ router.post('/register_employee',function (req,res,next) {
             contact:req.body.contact,
             email: req.body.email,
             role: req.body.role,
-            position:req.body.position,
-            employment_length: req.body.emp_length,
+            position:req.body.positionlist,
+            employment_length: req.body.emplength,
             skill: [req.body.skills],
-            past_projects:req.body.pastprojects};
+            past_projects:[req.body.pastprojects]};
 
         dbs.insertUser(emp);
 
@@ -341,7 +341,7 @@ router.post('/register_employee',function (req,res,next) {
                 // plain text body
                 // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
                 // html body
-                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/> Your password is: ' + '<b>' +rand_password + '</b>'
+                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/>User name is: '+ emp._id +'<br/>Your password is: ' + '<b>' +rand_password + '</b>'
         };
 
         // send mail with defined transport object
@@ -353,7 +353,7 @@ router.post('/register_employee',function (req,res,next) {
             console.log('Message %s sent: %s', info.messageId, info.response);
         });
 
-        res.redirect('dashboard');
+        res.redirect('employees');
     });
 });
 

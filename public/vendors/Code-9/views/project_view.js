@@ -11,17 +11,17 @@ var i=0;
     $.get("get_tasks", {id: $.urlParam('id')},
         function (data, status) {
             $("#sortable").empty();
+            i=0;
             $.each(data, function (key, value) {
                 $("#sortable").append("<li class='ui-state-default'>" +
                     "<div class='checkbox'>" +
                     "<label>" +
                     "<input type='checkbox' />"+value.description+"</label>" +
                     "</div>" +
-                    "</li>")
+                    "</li>");
                 i++;
             });
             $("#count_task").append(i+" Tasks left");
-            i=0;
         });
 
     var emp_ids=[];
@@ -104,6 +104,23 @@ var i=0;
                                 "</div>" +
                                 "</li>")
                         });
+                    });
+
+                $.get("get_tasks", {id: $.urlParam('id')},
+                    function (data, status) {
+                        $("#sortable").empty();
+                        i=0;
+
+                        $.each(data, function (key, value) {
+                            $("#sortable").append("<li class='ui-state-default'>" +
+                                "<div class='checkbox'>" +
+                                "<label>" +
+                                "<input type='checkbox' />"+value.description+"</label>" +
+                                "</div>" +
+                                "</li>");
+                            i++;
+                        });
+                        $("#count_task").empty().append(i+" Tasks left");
                     });
             });
 

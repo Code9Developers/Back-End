@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e0771441-dbf0-4dbc-8704-af615c9d47cf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/sidebar.ejs" afterPath="$PROJECT_DIR$/views/sidebar.ejs" />
-
-      
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
@@ -22,14 +18,108 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="project_creation.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2550">
+              <caret line="170" column="30" lean-forward="false" selection-start-line="170" selection-start-column="30" selection-end-line="170" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="calendar.ejs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2220">
+              <caret line="148" column="114" lean-forward="false" selection-start-line="148" selection-start-column="109" selection-end-line="148" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/admin.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="112" column="30" lean-forward="false" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_creation.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1545">
+              <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
-                <marker date="1503636579000" expanded="true" signature="1273:1285" ph="..." />
+                <marker date="1503647850000" expanded="true" signature="1270:1282" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/test_data.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="project_view.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schemas.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/schemas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1185">
+              <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="345" column="0" lean-forward="false" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidebar.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1005">
+              <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -72,7 +162,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <push-targets>
@@ -101,8 +191,6 @@
         <option value="$PROJECT_DIR$/bin/www" />
         <option value="$PROJECT_DIR$/views/header.ejs" />
         <option value="$PROJECT_DIR$/views/top_nav.ejs" />
-        <option value="$PROJECT_DIR$/database/schemas.js" />
-        <option value="$PROJECT_DIR$/database/test_data.js" />
         <option value="$PROJECT_DIR$/public/javascripts/code9/code9Custom.js" />
         <option value="$PROJECT_DIR$/views/footer.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/code9.js" />
@@ -127,7 +215,6 @@
         <option value="$PROJECT_DIR$/routes/testSMTP.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/css/code9.css" />
-        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/admin.js" />
         <option value="$PROJECT_DIR$/views/admin.ejs" />
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/jquery.dim-background/dim-background.js" />
@@ -135,14 +222,17 @@
         <option value="$PROJECT_DIR$/public/vendors/jquery.dim-background/css/dim-background.css" />
         <option value="$PROJECT_DIR$/views/calendar.ejs" />
         <option value="$PROJECT_DIR$/public/vendors/fullcalendar/dist/fullcalendar.js" />
-        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
         <option value="$PROJECT_DIR$/views/project_view.ejs" />
-        <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/raphael.js" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/demo.css" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/demo-print.css" />
         <option value="$PROJECT_DIR$/views/project_creation.ejs" />
+        <option value="$PROJECT_DIR$/database/test_data.js" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/admin.js" />
+        <option value="$PROJECT_DIR$/database/schemas.js" />
         <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js" />
+        <option value="$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js" />
+        <option value="$PROJECT_DIR$/routes/index.js" />
       </list>
     </option>
   </component>
@@ -167,7 +257,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-
+    <option name="y" value="23" />
+    <option name="width" value="1280" />
+    <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -187,15 +279,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
@@ -219,12 +313,19 @@
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="vendors-sort" type="462c0819:PsiDirectoryNode" />
+              <item name="vendors" type="462c0819:PsiDirectoryNode" />
+              <item name="Code-9" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
               <item name="Back-End" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Back-End" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Back-End" type="b2602c69:ProjectViewProjectNode" />
@@ -235,7 +336,10 @@
           <select />
         </subPane>
       </pane>
-
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -381,7 +485,26 @@
       <workItem from="1502992098180" duration="520000" />
       <workItem from="1502992793274" duration="793000" />
       <workItem from="1503038974807" duration="1344000" />
-
+      <workItem from="1503048396626" duration="13217000" />
+      <workItem from="1503248436880" duration="516000" />
+      <workItem from="1503302440699" duration="4738000" />
+      <workItem from="1503308150606" duration="8719000" />
+      <workItem from="1503318699536" duration="3231000" />
+      <workItem from="1503333601799" duration="6258000" />
+      <workItem from="1503340112853" duration="375000" />
+      <workItem from="1503341955212" duration="124000" />
+      <workItem from="1503376917808" duration="6130000" />
+      <workItem from="1503396326451" duration="703000" />
+      <workItem from="1503414524955" duration="4001000" />
+      <workItem from="1503494328401" duration="624000" />
+      <workItem from="1503500729504" duration="1925000" />
+      <workItem from="1503566387501" duration="537000" />
+      <workItem from="1503567390020" duration="896000" />
+      <workItem from="1503571085654" duration="5801000" />
+      <workItem from="1503584288836" duration="640000" />
+      <workItem from="1503635404702" duration="1674000" />
+      <workItem from="1503638950078" duration="5097000" />
+      <workItem from="1504006365378" duration="456000" />
     </task>
     <task id="LOCAL-00001" summary="Basic server layout">
       <created>1499200989718</created>
@@ -656,7 +779,53 @@
       <option name="project" value="LOCAL" />
       <updated>1503566795069</updated>
     </task>
-
+    <task id="LOCAL-00040" summary="Backup">
+      <created>1503566912569</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1503566912569</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Making the animation for the allocation AI.">
+      <created>1503586738724</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1503586738725</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Making the animation for the allocation AI. Added CSS and JS files">
+      <created>1503586770578</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1503586770578</updated>
+    </task>
+    <task id="LOCAL-00043" summary="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)">
+      <created>1503656244016</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1503656244016</updated>
+    </task>
+    <task id="LOCAL-00044" summary="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)">
+      <created>1503656287459</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1503656287459</updated>
+    </task>
+    <task id="LOCAL-00045" summary="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)">
+      <created>1504006715731</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1504006715732</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="213060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -668,7 +837,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32300884" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -677,19 +847,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23746313" sideWeight="0.509693" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890856" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29351032" sideWeight="0.49030694" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2861357" sideWeight="0.49694657" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29351032" sideWeight="0.49030694" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28029078" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28836834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -800,8 +970,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-
-    <MESSAGE value="Merge branch 'master' of https://github.com/Code9Developers/Back-End into jordan-version-4&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Updated:&#10;custom.js&#10;index.js&#10;added one line to code9Custom.js" />
     <MESSAGE value="Added:&#10;project edit page&#10;milestone page&#10;&#10;Updated:&#10;project detail page&#10;project creation&#10;register &#10;projects &#10;index.js" />
     <MESSAGE value="- admin.ejs, footer.ejs edited." />
@@ -817,7 +985,17 @@
     <MESSAGE value="- Added git ignore file to intellij" />
     <MESSAGE value="- Git ignore file added for intellij and mac" />
     <MESSAGE value="- Fix hidden files" />
-
+    <MESSAGE value="Re-indexed up to login page and added the error 403 page." />
+    <MESSAGE value="- Updated views" />
+    <MESSAGE value="- Finished off the view files" />
+    <MESSAGE value="- Added SMTP server code to index.js" />
+    <MESSAGE value="admin update" />
+    <MESSAGE value="Fixed admin page dropdown menu. Also it now send an email with the random password." />
+    <MESSAGE value="Backup" />
+    <MESSAGE value="Making the animation for the allocation AI." />
+    <MESSAGE value="Making the animation for the allocation AI. Added CSS and JS files" />
+    <MESSAGE value="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Back-End Version. This version is the one we used for demo 3. Please use this version from now on. :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -830,14 +1008,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/footer.ejs" />
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="30" lean-forward="true" selection-start-line="1" selection-start-column="30" selection-end-line="1" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/top_nav.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="840">
@@ -886,13 +1056,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors-sort/Chart.js/src/core/core.js" />
-    <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="67" column="34" lean-forward="false" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/style.css" />
     <entry file="file://$PROJECT_DIR$/views/index_dashboard.ejs">
       <provider selected="true" editor-type-id="text-editor">
@@ -964,13 +1127,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/test_data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/testSMTP.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -983,13 +1139,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="466">
           <caret line="128" column="15" lean-forward="false" selection-start-line="128" selection-start-column="15" selection-end-line="128" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" column="52" lean-forward="false" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -1009,19 +1158,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/custom.js">
       <provider selected="true" editor-type-id="text-editor">
-
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="-18">
+          <caret line="3981" column="34" lean-forward="false" selection-start-line="3981" selection-start-column="34" selection-end-line="3981" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="-811">
+          <caret line="44" column="98" lean-forward="false" selection-start-line="44" selection-start-column="98" selection-end-line="44" selection-end-column="98" />
         </state>
       </provider>
     </entry>
@@ -1041,80 +1186,145 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/fullcalendar/dist/gcal.js">
       <provider selected="true" editor-type-id="text-editor">
-
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/fullcalendar/dist/fullcalendar.js">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="15">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/jquery.dim-background/js/dim-background.js">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="481">
+          <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/jquery.dim-background/css/dim-background.css">
       <provider selected="true" editor-type-id="text-editor">
-
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="15">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/project_view.ejs">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="402">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/raphael.js">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="-3731">
+          <caret line="251" column="38" lean-forward="true" selection-start-line="251" selection-start-column="38" selection-end-line="251" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/demo.css">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="0">
+          <caret line="0" column="3" lean-forward="false" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/demo-print.css">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sidebar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1005">
+          <caret line="67" column="21" lean-forward="false" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/test_data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/employees.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-536">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2550">
+          <caret line="170" column="30" lean-forward="false" selection-start-line="170" selection-start-column="30" selection-end-line="170" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/admin.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="112" column="30" lean-forward="false" selection-start-line="112" selection-start-column="30" selection-end-line="112" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/schemas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_creation.js">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="1545">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <marker date="1503647850000" expanded="true" signature="1270:1282" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/project_creation.ejs">
+    <entry file="file://$PROJECT_DIR$/public/vendors/Code-9/views/project_view.js">
       <provider selected="true" editor-type-id="text-editor">
-
+        <state relative-caret-position="150">
+          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="345" column="0" lean-forward="false" selection-start-line="345" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/calendar.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="114" lean-forward="false" selection-start-line="148" selection-start-column="109" selection-end-line="148" selection-end-column="114" />
           <folding />
         </state>
       </provider>

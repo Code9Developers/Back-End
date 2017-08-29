@@ -26,16 +26,20 @@ $(document).ready(function(){
      $.get("get_past_projects", function (data, status) {
 
         $("#pastprojects").empty();
+
         $.each(data, function (key, value) {
-           // window.alert(value.name);
-            // emp_ids[key]=value._id;
-            // empr_names[key]=value.name;
-            $("#pastprojects").append(
-                 "<option value='"+value.id+"'>"+
-                 value.name+
-                "</option>");
+        $("#pastprojects").append(
+            "<option value='"+value.name+"'>"+
+                value.name+
+            "</option>");
         });
-         $("#pastprojects").multiselect('refresh');
+
+         $('#pastprojects').multiselect({
+             includeSelectAllOption: true,
+             nonSelectedText: 'Select Past Projects '
+         });
+
+        $("#pastprojects").multiselect('refresh');
      });
 
 

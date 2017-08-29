@@ -12,76 +12,81 @@ exports.create_test_employees = function() {
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
         var emp = {
-            _id: "emp1",
+            _id: "test_manager_12",
             name: "Sargon",
-            surname: "test",
+            surname: "David",
             password: enc_pass,
             password_date: today,
-            contact: "123 456 7890",
+            contact: "(076)-234-9458",
             email: "employee1@gmail.com",
-            role: "System test",
+            role: "Manager",
+            position: "Senior Analyst",
             employment_length: 1,
-            skill: [],
+            skill: ["MS Office"," Accounting Skills", "Auditor"],
             current_projects: [],
             past_projects: []
         };
 
         var emp2 = {
-            _id: "emp2",
+            _id: "emp1",
             name: "Nebuchadnezzar",
-            surname: "test",
+            surname: "Shnebly",
             password: enc_pass,
             password_date: today,
-            contact: "123 456 7890",
-            email: "employee2@gmail.com",
-            role: "Manager",
+            contact: "(076)-234-9458",
+            email: "Nebuchadnezzar@gmail.com",
+            role: "Employee",
+            position: "Junior Analyst",
             employment_length: 1,
-            skill: [],
+            skill: ["MS Office"," Accounting Skills", "Auditor"],
             current_projects: [],
             past_projects: []
         };
 
         var emp3 = {
-            _id: "emp3",
+            _id: "test_admin_1",
             name: "Xerxes",
-            surname: "test",
+            surname: "Xenon",
             password: enc_pass,
             password_date: today,
-            contact: "123 456 7890",
-            email: "employee3@gmail.com",
+            contact: "(076)-234-9458",
+            email: "Xerxes@gmail.com",
             role: "Admin",
+            position: "Junior Analyst",
             employment_length: 1,
-            skill: [],
+            skill: ["MS Office"," Accounting Skills", "Auditor"],
             current_projects: [],
             past_projects: []
         };
 
         var emp4 = {
-            _id: "emp4",
+            _id: "emp2",
             name: "Chandragupta",
-            surname: "test",
+            surname: "Indian",
             password: enc_pass,
             password_date: today,
-            contact: "123 456 7890",
-            email: "employee4@gmail.com",
-            role: "System test",
+            contact: "(076)-234-9458",
+            email: "Chandragupta@gmail.com",
+            role: "Employee",
+            position: "Junior Analyst",
             employment_length: 1,
-            skill: [],
+            skill: ["MS Office"," Accounting Skills", "Auditor"],
             current_projects: [],
             past_projects: []
         };
 
         var emp5 = {
-            _id: "emp5",
+            _id: "emp3",
             name: "Ptolemy",
-            surname: "test",
+            surname: "Smith",
             password: enc_pass,
             password_date: today,
-            contact: "123 456 7890",
-            email: "employee5@gmail.com",
-            role: "System test",
+            contact: "(076)-234-9458",
+            email: "Ptolemy@gmail.com",
+            role: "Employee",
+            position: "Junior Analyst",
             employment_length: 1,
-            skill: [],
+            skill: ["MS Office"," Accounting Skills", "Auditor"],
             current_projects: [],
             past_projects: []
         };
@@ -94,6 +99,46 @@ exports.create_test_employees = function() {
         console.log("Test employees added to data base")
     });
 };
+
+exports.create_test_projects = function() {
+    var proj1 = {
+        _id: "kpmg1",
+        name: "First Crusade",
+        description: "Deus Vult",
+        project_start_date: "2017-01-01",
+        project_end_date: "2017-05-05",
+        owner_name: "Pope Urban II" ,
+        owner_contact: "666 6666 666",
+        owner_email: "someemail@vatican.vc",
+        manager_id: "test_manager_12",
+        employees_assigned: ["emp1"],
+        employee_rates: [],
+        tasks: [],
+        project_budget: 5,
+        status: "active",
+        milestones: []
+    };
+    dbs.insertProject(proj1) ;
+
+    var proj2 = {
+        _id: "kpmg2",
+        name: "Battle of Thermopylae",
+        description: "War",
+        project_start_date: "2017-01-01",
+        project_end_date: "2017-09-09",
+        owner_name: "King Leonidas" ,
+        owner_contact: "666 6666 444",
+        owner_email: "someemail@vatican.vc",
+        manager_id: "emp3",
+        employees_assigned: ["emp2","emp3"],
+        employee_rates: [],
+        tasks: [],
+        project_budget: 6,
+        status: "active",
+        milestones: []
+    };
+    dbs.insertProject(proj2) ;
+}
 
 //A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file
@@ -371,45 +416,7 @@ exports.assign_past_Projects = function() {
     //we assign managers to a project with a function which uses the manager id with the project id
 };
 
-exports.create_test_projects = function() {
-    var proj1 = {
-        _id: "kpmg1",
-        name: "First Crusade",
-        description: "Deus Vult",
-        project_start_date: "2017-01-01",
-        project_end_date: "2017-05-05",
-        owner_name: "Pope Urban II" ,
-        owner_contact: "666 6666 666",
-        owner_email: "someemail@vatican.vc",
-        manager_id: "emp2",
-        employees_assigned: [],
-        employee_rates: [],
-        tasks: [],
-        project_budget: 5,
-        status: "active",
-        milestones: []
-    };
-    dbs.insertProject(proj1) ;
 
-    var proj2 = {
-        _id: "kpmg2",
-        name: "Battle of Thermopylae",
-        description: "Fuck the Persians",
-        project_start_date: "2017-01-01",
-        project_end_date: "2017-09-09",
-        owner_name: "King Leonidas" ,
-        owner_contact: "666 6666 444",
-        owner_email: "someemail@vatican.vc",
-        manager_id: "emp3",
-        employees_assigned: [],
-        employee_rates: [],
-        tasks: [],
-        project_budget: 6,
-        status: "active",
-        milestones: []
-    };
-    dbs.insertProject(proj2) ;
-}
 
 exports.create_test_notifications = function() {
     var not1 = {

@@ -27,10 +27,9 @@
                 <h3>General</h3>
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
-                            <li><a href="#">Dashboard<span class="label label-success pull-right">Coming Soon</span></a></li>
+                        <ul id="home" class="nav child_menu">
                             <li><a href="#">Inbox <span class="label label-success pull-right">Coming Soon</span></a></li>
-                            <li><a href="calendar">Calendar<span class="label label-success pull-right">Coming Soon</span></a></li>
+
                         </ul>
                     </li>
                     <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
@@ -72,18 +71,19 @@
                 if(data=="Manager"){
                     $("#menu").append(
                     "<li><a href='project_creation'>Add Project</a></li>"+
-                    "<li><a href='project_milestone'>Add Milestone</a></li>"+
                     "<li><a href='projects'>View All Projects</a></li>"
                     );
                 }
-                else if(data="Admin"){
+                else if(data=="Admin"){
                     $("#menu").append(
-                        "<li><a href='admin'>Register Employee</a></li>"
+                        "<li><a href='admin'>Register Employee</a></li>"+
+                        "<li><a href='employees'>Show All Employees</a></li>"
                     );
                 }
                 else{
-                    $("#menu").append(
-                        "<li><a href='#'>Profile</a></li>"
+                    $("#home").append(
+                        " <li><a href='user_dashboard'>Dashboard</a></li>"+
+                        " <li><a href='calendar'>Calendar</a></li>"
                     );
                 }
             });

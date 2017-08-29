@@ -7,18 +7,21 @@ $(document).ready(function() {
         var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
-
+var i=0;
     $.get("get_tasks", {id: $.urlParam('id')},
         function (data, status) {
             $("#sortable").empty();
+            i=0;
             $.each(data, function (key, value) {
                 $("#sortable").append("<li class='ui-state-default'>" +
                     "<div class='checkbox'>" +
                     "<label>" +
                     "<input type='checkbox' />"+value.description+"</label>" +
                     "</div>" +
-                    "</li>")
+                    "</li>");
+                i++;
             });
+            $("#count_task").append(i+" Tasks left");
         });
 
     var emp_ids=[];
@@ -51,12 +54,14 @@ $(document).ready(function() {
         function (data, status) {
             $("#AllocateTask").empty();
             $.each(data, function (key, value) {
-                emp_ids[key]=value._id;
-                empr_names[key]=value.name;
-                $("#AllocateTask").append(
-                    "<option value='"+value.name+"'>"+
-                    value.name+
-                    "</option>");
+                if(value.role=="Employee"){
+                    emp_ids[key]=value._id;
+                    empr_names[key]=value.name;
+                    $("#AllocateTask").append(
+                        "<option value='"+value.name+"'>"+
+                        value.name+
+                        "</option>");
+                }
              });
 
             $('.multiselect-ui').multiselect({
@@ -69,11 +74,12 @@ $(document).ready(function() {
 
 
     $('#submit-task').on('click', function (e) {
-        var milestone = $("#milestoneV").val();
+        var milestone = $("#milestone_select").val();
         var task = $("#task").val();
         var selected_emp = $("#AllocateTask").val();
         var emp = [];
         var x = 0;
+
         for (var i = 0; i < emp_ids.length; i++) {
             if (selected_emp.includes(empr_names[i])) {
                 emp[x] = emp_ids[i];
@@ -87,20 +93,37 @@ $(document).ready(function() {
                 task:task,
                 emp_assigned:emp},
             function (data, status) {
+                $.get("get_tasks", {id: $.urlParam('id')},
+                    function (data, status) {
+                        $("#sortable").empty();
+                        $.each(data, function (key, value) {
+                            $("#sortable").append("<li class='ui-state-default'>" +
+                                "<div class='checkbox'>" +
+                                "<label>" +
+                                "<input type='checkbox' />"+value.description+"</label>" +
+                                "</div>" +
+                                "</li>")
+                        });
+                    });
 
+                $.get("get_tasks", {id: $.urlParam('id')},
+                    function (data, status) {
+                        $("#sortable").empty();
+                        i=0;
+
+                        $.each(data, function (key, value) {
+                            $("#sortable").append("<li class='ui-state-default'>" +
+                                "<div class='checkbox'>" +
+                                "<label>" +
+                                "<input type='checkbox' />"+value.description+"</label>" +
+                                "</div>" +
+                                "</li>");
+                            i++;
+                        });
+                        $("#count_task").empty().append(i+" Tasks left");
+                    });
             });
 
-        $.get("get_tasks", {id: $.urlParam('id')},
-            function (data, status) {
-                $("#sortable").empty();
-                $.each(data, function (key, value) {
-                    $("#sortable").append("<li class='ui-state-default'>" +
-                        "<div class='checkbox'>" +
-                        "<label>" +
-                        "<input type='checkbox' />"+value.description+"</label>" +
-                        "</div>" +
-                        "</li>")
-                });
-            });
+
     });
 });

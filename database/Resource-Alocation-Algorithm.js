@@ -25,12 +25,19 @@ exports.get_unallocated_users = function(num_emp, skills, duration, budget, call
             console.log("employees found.");
             //console.log(JSON.stringify(result));
             var return_json = {};
-            for (var loop=0; loop<result.length; loop++){
-                var new_json_obj = {_id:result[loop]._id,name: result[loop].name,surname:result[loop].surname ,position: result[loop].position, employment_length: result[loop].employment_length,past_projects:result[loop].past_projects};
-                return_json[loop] = new_json_obj;
+            var limit_amount=parseInt(num_emp);
+            var loop=0;
+            var i=0;
+            while(i<limit_amount){
+                if(result[loop].role=="Employee"){
+                    var new_json_obj = {_id:result[loop]._id,name: result[loop].name,surname:result[loop].surname ,position: result[loop].position, employment_length: result[loop].employment_length,past_projects:result[loop].past_projects};
+                    return_json[i] = new_json_obj;
+                    i++;
+                }
+                loop++;
             }
             console.log(return_json);
             return callback(return_json);
         }
-    }).limit(parseInt(num_emp));
+    });
 };

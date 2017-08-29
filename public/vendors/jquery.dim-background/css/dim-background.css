@@ -1,0 +1,104 @@
+
+/* Back to top - Contact Us */
+.back-to-top
+{
+    cursor: pointer;
+    position: fixed;
+    bottom: 5px;
+    right: 20px;
+    /*display:none;*/
+    background-color: rgba(1, 31, 116, 0.8);
+    z-index: 1;
+}
+
+/*CONTACT US*/
+* { box-sizing: border-box; }
+
+#contact-us-form .btn-default
+{
+    background-color: rgba(4, 54, 123, 0.8);
+    color: #fff;
+}
+
+#contact-us-form .btn-default:hover
+{
+    background-color: rgba(21, 120, 0, 0.8);
+    color: #fff;
+}
+
+#contactForm
+{
+    display: none;
+    border: 2px solid rgba(4, 54, 123, 0.8);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    width: 800px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    margin-top: 15px;
+    top:54%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    z-index:1000;
+}
+
+#sendmessage {
+    color: green;
+    border:1px solid green;
+    display:none;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+#errormessage {
+    color: red;
+    display:none;
+    border:1px solid red;
+    text-align:center;
+    padding:15px;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+#sendmessage.show, #errormessage.show, .show {
+    display:block;
+}
+
+
+#registrationForm
+{
+    display: none;
+    border: 2px solid rgba(4, 54, 123, 0.8);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    width: 450px;
+    text-align: center;
+    background: #fff;
+    position: fixed;
+    margin-top: 15px;
+    top:54%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    z-index:1000;
+}
+
+input, textarea {
+    margin: auto;
+    font-family: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    display: block;
+    width: 280px;
+    padding: .4em;
+}
+textarea { height: 80px; resize: none; }
+
+
+/* Contact Us - End*/

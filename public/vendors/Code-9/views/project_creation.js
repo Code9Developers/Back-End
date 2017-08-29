@@ -3,23 +3,36 @@
  */
 
 $(document).ready(function() {
-    // <!--Dynamically check notifications-->
-
     var globEmployees = null;
-    // $("#employeeTable").empty();
+    $("#employeeTable").empty();
+
+    $('#holder').hide();
+    $('#empTableHide').hide();
 
     $('#assignEmployees').on('click', function (e) {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
 
+        $('#demo-form').hide();
+        $('#holder').show();
         $.get("test_algorithm",
             {
                 num_empl: parseInt(num_employees[1]),
                 skills: [$('#tags_1').val()],
                 duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
-            },function(data, status){
+            },
+            function test(data, status)
+            {
+                setTimeout(function ()
+                {
+                    $('#demo-form').show();
+                    $('#holder').hide();
+                }, 4500);
+
                 $("#employeeTable").empty();
+                $('#empTableHide').show();
+
                 $("#employeeTable").append("<div class='x_title'>"+
                     " <h2>Allocated Employees</h2>"+
                     "<ul class='nav navbar-right panel_toolbox'>"+
@@ -47,6 +60,7 @@ $(document).ready(function() {
                 "<button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
 
                 globEmployees = data;
+
                 $.each(data,function(key,value){
                     $("#emptBody").append(
                         "<tr>"+
@@ -79,7 +93,7 @@ $(document).ready(function() {
         ///e.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
 
-        if(globEmployees == null){
+        if(globEmployees === null){
 
             window.alert("Employees not assigned");
             $("#demo-form").submit(function(e){
@@ -87,7 +101,7 @@ $(document).ready(function() {
             });
         }else {
             var num_employees=($('#range_31').val()).split(";");
-            window.alert(JSON.stringify(globEmployees));
+
             $.get("store_emp", {
                     num_empl:num_employees[1],
                     duration: 2,

@@ -43,12 +43,19 @@ router.get("/calendar", function (req,res, next) {
         res.render('calendar');
 });
 
+// Profile
+router.get("/profile", function (req,res, next) {
+    res.render('profile');
+});
+
+
+
 router.get("/calendar_events", function (req,res, next){
         //res.render('calendar');
     var project_id;
     dbs.findUsers("_id",req.session.username,function (user) {
         project_id=user[0].current_projects[0];
-        console.log("Test")
+        console.log("Test");
         console.log(project_id);
         var project=dbs.findProjects("_id",project_id,function (project) {
             res.send(project);

@@ -1,3 +1,7 @@
+![](https://reposs.herokuapp.com/?path=Code9Developers/Back-End&style=flat)
+[![npm](https://img.shields.io/npm/v/npm.svg)]()
+[![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)]()
+[![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)]()
 # Back-End
 >Back-End: Server & Database for Capstone Project
 
@@ -52,6 +56,6 @@ Let me <i>(Joshua)</i> know if you have any issues.
 #### Important Packages
  * `helmet` which proctects the app from well-known web vulnerabilities
  * `nsp` which can be used to check for vulnerabilities
- * 
+
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

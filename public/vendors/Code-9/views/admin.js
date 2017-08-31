@@ -29,7 +29,7 @@ $(document).ready(function(){
 
         $.each(data, function (key, value) {
         $("#pastprojects").append(
-            "<option value='"+value.name+"'>"+
+            "<option value='"+value._id+"'>"+
                 value.name+
             "</option>");
         });

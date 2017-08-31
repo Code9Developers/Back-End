@@ -3,7 +3,7 @@ var exports = module.exports = {} ;
 var mongoose = require('mongoose') ;
 var schemas = require('.././database/schemas.js') ;
 var connection = require('.././database/connect.js') ;
-var bcrypt = require('bcrypt') ;
+var bcrypt = require('bcryptjs') ;
 var generator = require('generate-password');
 
 

@@ -9,7 +9,7 @@ Note: <some directory> is the parent directory of /Back-End/.
 Note: if mongo.log already exists, delete it before completing step (3)
 
 3) Enter in cmd (Admin):
-	"mongod --directoryperdb --dbpath <some directory>/Back-End/database/data/ --logpath <some directory>/Back-End/database/mongo.log --rest --install"
+	mongod --directoryperdb --dbpath "C:\Users\Admin\Documents\COS301\Project_Final\Back-End\database\data\" --logpath "C:\Users\Admin\Documents\COS301\Project_Final\Back-End\database\mongo.log" --rest --install
 
 4) Enter in cmd (Admin):
 	"net start MongoDB"

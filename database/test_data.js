@@ -143,64 +143,82 @@ exports.create_test_projects = function() {
 //A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file
 exports.create_All_test_employees = function(num_manager, num_employees) {
-    //var enc_pass;
+    //list of roles and rates
+    var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
+        "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
+    var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
-        console.log("creating roles array");
         var roles = ["project manager", "employee"];
         var email = "employee1@gmail.com";
         var manager_ids = 1;
         var employee_ids = 1;
         var emp_list = {};
         var emp_count = 0;
-        console.log("creating managers");
-        for (var loop = 0; loop < num_manager; loop++) {
-            var new_json_obj = {
-                _id: roles[0] + " " + manager_ids,
-                name: roles[0] + " first_name " + manager_ids,
-                surname: roles[0] + " second_name " + manager_ids,
-                password: enc_pass,
-                password_date: today,
-                contact: "123 456 7890",
-                email: email,
-                role: "Manager",
-                position: roles[0],
-                employment_length: 5,
-                skill: [],
-                current_projects: [],
-                past_projects: []
-            };
-            emp_list[emp_count] = new_json_obj;
-            manager_ids += 1;
-            emp_count ++;
-        }
+        filename_first_names = "./database/data/500_first_names.txt";
+        filename_second_names = "./database/data/500_second_names.txt";
+        fs.readFile(filename_first_names, 'utf8', function (err, data) {
+            if (err) throw err;
+            console.log('OK: ' + filename_first_names);
+            var name_index = 0;
+            var lines = data.split(/\r?\n/);
+            fs.readFile(filename_second_names, 'utf8', function (err, data) {
+                if (err) throw err;
+                console.log('OK: ' + filename_second_names);
+                var name_index = 0;
+                var lines2 = data.split(/\r?\n/);
+                console.log("creating managers");
+                for (var loop = 0; loop < num_manager; loop++) {
+                    var new_json_obj = {
+                        _id: roles[0] + " " + manager_ids,
+                        name: lines[name_index].trim(),
+                        surname: lines2[name_index].trim(),
+                        password: enc_pass,
+                        password_date: today,
+                        contact: "123 456 7890",
+                        email: email,
+                        role: "Manager",
+                        position: manager_roles[Math.floor(Math.random() * (7 - 4 + 4) + 4)],
+                        employment_length: 5,
+                        skill: [],
+                        current_projects: [],
+                        past_projects: [],
+                        events: []
+                    };
+                    emp_list[emp_count] = new_json_obj;
+                    manager_ids += 1;
+                    emp_count++;
+                    name_index++;
+                }
 
-        console.log("creating employees");
-        for (var loop = 0; loop < num_employees; loop++) {
-            var new_json_obj = {
-                _id: roles[1] + " " + employee_ids,
-                name: roles[1] + " first_name " + employee_ids,
-                surname: roles[1] + " second_name " + employee_ids,
-                password: enc_pass,
-                password_date: today,
-                contact: "123 456 7890",
-                email: email,
-                role: "Employee",
-                position: roles[1],
-                employment_length: Math.floor(Math.random()*(4 - 1 + 1)+ 1),
-                skill: [],
-                current_projects: [],
-                past_projects: []
-            };
-            emp_list[emp_count] = new_json_obj;
-            employee_ids += 1;
-            emp_count++;
-        }
-        for (var loop = 0; loop < emp_count; loop++)
-        {
-            dbs.insertUser(emp_list[loop]);
-        }
-        console.log("Test employees added to data base");
+                console.log("creating employees");
+                for (var loop = 0; loop < num_employees; loop++) {
+                    var new_json_obj = {
+                        _id: roles[1] + " " + employee_ids,
+                        name: lines[name_index].trim(),
+                        surname: lines2[name_index].trim(),
+                        password: enc_pass,
+                        password_date: today,
+                        contact: "123 456 7890",
+                        email: email,
+                        role: "Employee",
+                        position: positions[Math.floor(Math.random() * (3 - 0 + 0) + 0)],
+                        employment_length: Math.floor(Math.random() * (4 - 1 + 1) + 1),
+                        skill: [],
+                        current_projects: [],
+                        past_projects: []
+                    };
+                    emp_list[emp_count] = new_json_obj;
+                    employee_ids += 1;
+                    emp_count++;
+                    name_index++;
+                }
+                for (var loop = 0; loop < emp_count; loop++) {
+                    dbs.insertUser(emp_list[loop]);
+                }
+                console.log("Test employees added to data base");
+            });
+        });
     });
 };
 
@@ -257,13 +275,14 @@ exports.create_past_Projects = function(num_years) {
                         owner_name: null, // i will assign this later
                         owner_contact: null, // i will assign this later
                         owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
+                        manager_id: null,
+                        employees_assigned: [],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
                         project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
-                        status:"completed"
+                        tasks: [],
+                        status:"completed",
+                        project_rating: Math.floor(Math.random()*(10 - 1 + 1)+ 1),
+                        milestones: []
                  //we need to generate a random number here between two values
                     };
                     dbs.insertProject(json_project);
@@ -293,13 +312,14 @@ exports.create_past_Projects = function(num_years) {
                         owner_name: null, // i will assign this later
                         owner_contact: null, // i will assign this later
                         owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
+                        manager_id: null,
+                        employees_assigned: [],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
                         project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
-                        status:"completed"//we need to generate a random number here between two values
+                        tasks: [],
+                        status:"completed",
+                        project_rating: Math.floor(Math.random()*(10 - 1 + 1)+ 1),
+                        milestones: []
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -328,13 +348,14 @@ exports.create_past_Projects = function(num_years) {
                         owner_name: null, // i will assign this later
                         owner_contact: null, // i will assign this later
                         owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
+                        manager_id: null,
+                        employees_assigned: [],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
                         project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
-                        status:"completed"//we need to generate a random number here between two values
+                        tasks: [],
+                        status:"completed",
+                        project_rating: Math.floor(Math.random()*(10 - 1 + 1)+ 1),
+                        milestones: []
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -363,13 +384,14 @@ exports.create_past_Projects = function(num_years) {
                         owner_name: null, // i will assign this later
                         owner_contact: null, // i will assign this later
                         owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
+                        manager_id: null,
+                        employees_assigned: [],
                         employee_rates: [{employee_id: null, rate: null}], //we will assign this later
                         project_budget: (Math.round((Math.random()*(500000 - 30000) + 30000)+'e2')+'e-2'),
-                        status:"completed"//we need to generate a random number here between two values
+                        tasks: [],
+                        status:"completed",
+                        project_rating: Math.floor(Math.random()*(10 - 1 + 1)+ 1),
+                        milestones: []
                     };
                     dbs.insertProject(json_project);
                     project_count +=1;
@@ -389,34 +411,6 @@ exports.create_past_Projects = function(num_years) {
 //so for the beggining years (25%) we had the fewest amount of projects per year only enough that 25% of managers could do
 //the next 25% of years (50% years complete) we had 25% more projects
 //this follows for the following two 25% of years
-exports.assign_past_Projects = function() {
-    //FIRST LETS HAVE A COUNT AND MAKE SURE IT DOES NOT GO ABOVE THE AMOUNT OF PROJECTS
-    var projects_list = [];
-    var project_count = length(projects_list);
-    console.log("Assigning managers to the past projects");
-    //we need to get the amount of projects and create a list with them in
-    var num_projects = 0;
-    dbs.findAllProjects("role", "Manager", function(projects) {
-        num_projects = Object.keys(projects).length;
-        console.log(num_projects);
-    });
-    console.log("current number of stored projects : "+num_projects)
-    //we need to get the amount of years
-    //we need to get the first 25% of managers and assign them to each project in the list
-    //we need to then get the next 25% of managers + the last 25% and assign them to projects too
-    //we do this again for 25% + 25% +25% of managers
-    //finally we do it one last time for all managers
-
-    //25% of managers have been working for 25% of the number of years
-    //25% of managers have been working for 50% of the number of years
-    //25% of managers have been working for 75% of the number of years
-    //25% of managers have been working for 100% of the number of years
-    //so distribute the projects as such
-
-    //we assign managers to a project with a function which uses the manager id with the project id
-};
-
-
 
 exports.create_test_notifications = function() {
     var not1 = {

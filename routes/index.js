@@ -426,6 +426,12 @@ router.get("/create_test_data", function (req,res, next){
     //test_data.create_test_projects();
 });
 
+router.get("/create_all_test_employees", function (req,res, next){
+    res.render('login');
+    test_data.create_All_test_employees(10, 100);
+    //test_data.create_test_projects();
+});
+
 
 /**
  * Page: admin.ejs
@@ -584,19 +590,24 @@ router.get('/create_test_employees', function(req, res, next)
     res.render('login');
 });
 
-//Removes the 5 test employees from the database
-// router.get('/remove_test_employees', function(req, res, next)
-// {
-//     test_data.remove_users();
-//     res.render('login');
-// });
+ router.get('/remove_test_employees', function(req, res, next)
+ {
+     test_data.remove_users();
+     res.render('login');
+ });
+
+router.get('/remove_all_test_employees', function(req, res, next)
+{
+    test_data.remove_users();
+    res.render('login');
+});
 //
 //
-// router.get('/remove_test_projects', function(req, res, next)
-// {
-//     test_data.remove_projects();
-//     res.render('login');
-// });
+router.get('/remove_test_projects', function(req, res, next)
+ {
+     test_data.remove_projects();
+     res.render('login');
+ });
 
 // router.get('/remove_test_notifications', function(req, res, next)
 // {
@@ -610,11 +621,11 @@ router.get('/create_test_employees', function(req, res, next)
 //     res.render('login');
 // });
 
-// router.get('/view_test_employees', function(req, res, next)
-// {
-//     test_data.view_users();
-//     res.render('login');
-// });
+router.get('/view_all_test_employees', function(req, res, next)
+{
+     test_data.view_users();
+     res.render('login');
+ });
 
 // router.get('/view_test_projects', function(req, res, next)
 // {

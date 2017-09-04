@@ -34,7 +34,6 @@
                     </li>
                     <li><a><i class="fa fa-user"></i> Admin <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" id="menu">
-                            <li><a href="#">Profile <span class="label label-success pull-right">Coming Soon</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -84,6 +83,9 @@
                     $("#home").append(
                         " <li><a href='user_dashboard'>Dashboard</a></li>"+
                         " <li><a href='calendar'>Calendar</a></li>"
+                    );
+                    $("#menu").append(
+                        "<li><a href='profile'>Profile</a></li>"
                     );
                 }
             });

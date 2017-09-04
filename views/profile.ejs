@@ -280,7 +280,6 @@
                                                     </div>
                                                     <!-- Profile Bio-->
                                                     <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                                                        <form id="demo-form" data-parsley-validate action="profile_update" method="post">
                                                             <div class="row">
                                                                 <div class="col-md-12">
                                                                     <div class="input-group image-preview">
@@ -294,7 +293,7 @@
                                                                         <div class="btn btn-default image-preview-input">
                                                                             <span class="glyphicon glyphicon-folder-open"></span>
                                                                             <span class="image-preview-input-title">Choose Profile Picture</span>
-                                                                            <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                                                            <input id="pic" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
                                                                         </div>
                                                                     </span>
                                                                     </div><!-- /input-group image-preview [TO HERE]-->
@@ -312,7 +311,7 @@
                                                                 <br/>
                                                                 <input id="updateProfile" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Update Profile" type="submit" value="Update Profile"/>
                                                             </div>
-                                                        </form>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -358,4 +357,23 @@
         <!-- Custom Theme Scripts -->
         <script type="text/javascript" src="javascripts/custom.min.js"></script>
     </body>
+<script>
+    $(document).ready(function() {
+        $('#updateProfile').on('click' ,function (e) {
+            alert("ckick");
+            $.get("store_image",
+                {
+                    pic:$("#pic").val()
+                }
+                ,
+                function(data, status) {
+
+
+
+                });
+
+        });
+    });
+
+</script>
 </html>

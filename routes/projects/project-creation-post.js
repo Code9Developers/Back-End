@@ -6,6 +6,7 @@ const router = express.Router();
 const dbs = require('../../database/dbs') ;
 const algorithm = require('../../database/Resource-Alocation-Algorithm');
 const generator = require('generate-password');
+const async=require("async");
 
 
 var employees;
@@ -79,8 +80,6 @@ router.post("/project_creation",function (req,res,next) {
         status:"active"
     };
 
-
-    dbs.insertProject(project);
     for(var x in e)
     {
         dbs.assignProject(e[x], project_id) ;

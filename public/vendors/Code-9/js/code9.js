@@ -79,3 +79,10 @@ function AllDone(){
 function removeItem(element){
     $(element).parent().remove();
 }
+
+// profile activate for edit passsword
+
+$('#editbutton').click(function ()
+{
+    $('#tab_content3').addClass('fade active in');
+});

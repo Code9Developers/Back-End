@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs') ;
-
+const generator = require('generate-password');
 /**
  -----------------------------------------------------------------------------------------------------------------------
  *Name: Task Functionality
@@ -33,6 +33,32 @@ router.get('/create_task', function(req, res, next)
         employees_assigned: emp_assigned};
 
     dbs.insertTask(emp_json);
+    var rand = generator.generate({
+        length: 10,
+        numbers: true,
+        symbols: true,
+        uppercase: true
+    });
+    var emp=req.param('emp_assigned');
+    dbs.findMilestones("_id",milestone_id,function (milestone) {
+        for(var x in emp){
+            rand = generator.generate({
+                length: 10,
+                numbers: true,
+                symbols: true,
+                uppercase: true
+            });
+            dbs.insertNotification({
+                _id: project_id+milestone_id+rand,
+                user_id: emp[x],
+                message: "You have been assigned to a new task.\nTask name:"+task+"\n Deadline date:                   "+milestone_date[0]. milestone_end_date,
+                date_created: today,
+                isRead: false
+            }) ;
+        }
+    });
+
+
 
     res.send("Succuess");
 

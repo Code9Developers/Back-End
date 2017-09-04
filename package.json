@@ -12,7 +12,7 @@
     "nodemailer-smtp-transport": "^2.7.4"
   },
   "devDependencies": {
-    "bcrypt": "^1.0.3",
+    "async": "^2.5.0",
     "body-parser": "~1.17.1",
     "browser-sync": "^2.18.13",
     "client-sessions": "^0.8.0",

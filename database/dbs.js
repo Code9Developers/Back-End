@@ -5,6 +5,7 @@ var schemas = require('.././database/schemas.js') ;
 var connection = require('.././database/connect.js') ;
 var bcrypt = require('bcryptjs') ;
 var generator = require('generate-password');
+var fs = require('fs') ;
 
 
 /*
@@ -70,6 +71,57 @@ exports.editUsers = function(attrib, value, attrib_to_edit, new_value) {
         }
     });
 };
+
+
+//edits the object stored in an array of objects for all users with attrib value
+exports.editUserObject = function(attrib, value, object, object_attrib, object_value, attrib_to_edit, new_value) {
+	
+	var user = schemas.user ;
+	var query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}') ;
+    var update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}') ;
+
+    user.update( query, { $set: update}, {multi: true}, function(err) {
+        if (!err) {
+            console.log("User " + object + " updated.") ;
+        }
+        else {
+            console.log("Error updating " + object + " of User.") ;
+            console.log(err) ;
+        }
+    });
+}
+
+
+//edits the profile image of a user
+exports.editProfileImage = function(user_id, filename) {
+	
+	var user = schemas.user ;
+	
+	var precount ;
+    var count = 0 ; 
+    while (count != -1) {
+    	precount = count ;
+    	count = filename.indexOf("\\", count+1) ;
+    }
+    filename = filename.substring(precount+1, filename.length) ;
+	
+	var _data = fs.readFileSync(filename) ;
+	
+	var _content = "image/" + filename.substring(filename.indexOf(".")+1, filename.length) ;
+	
+	
+	user.update( {_id: user_id}, { $set: {image: {data: _data, contentType: _content}}}, function(err) {
+        if (!err) {
+            console.log("User Image updated.") ;
+        }
+        else {
+            console.log("Error updating Image of Users.") ;
+            console.log(err) ;
+        }
+    });
+	
+	console.log("Image successfully saved.") ;
+}
 
 exports.deleteUser = function(user_id) {
 

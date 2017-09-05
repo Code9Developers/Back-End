@@ -3,14 +3,14 @@
 /**
  * Module dependencies.
  */
-
-var app = require('../app');
-var debug = require('debug')('back-end:server');
-var fs = require('fs');
-var http = require('http');
-var mongoose = require('mongoose') ;
-var connection = require('.././database/connect.js') ;
-var schemas = require('.././database/schemas.js') ;
+const app = require('../app');
+const debug = require('debug')('back-end:server');
+// const fs = require('fs'); Causes server to crash bug fix
+const http = require('http');
+const mongoose = require('mongoose') ;
+const connection = require('.././database/connect.js');
+const schemas = require('.././database/schemas.js');
+const dotenv = require('dotenv/config');
 
 /**
  * Get port from environment and store in Express.
@@ -19,7 +19,7 @@ var schemas = require('.././database/schemas.js') ;
 //create schemas for database
 schemas.create_schemas() ;
 
-var port = normalizePort(process.env.PORT || '4000');
+let port = normalizePort(process.env.PORT || '4000');
 app.set('port', port);
 
 //create connection to dbs
@@ -32,15 +32,15 @@ connection.connect() ;
  * Create HTTPS server.
  */
 
-var https =require("https");
-var fs = require("fs");
+let https =require("https");
+let fs = require("fs");
 
-var options={
+let options={
   key: fs.readFileSync("./bin/key.pem"),
   cert: fs.readFileSync("./bin/cert.pem")
 };
 
-var server= https.createServer(options,app);
+let server= https.createServer(options,app);
 // var server = http.createServer(app);
 
 /**
@@ -58,7 +58,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  let port = parseInt(val, 10);
 
   if (isNaN(port)) {
     // named pipe
@@ -82,7 +82,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string'
+  let bind = typeof port === 'string'
     ? 'Pipe ' + port
     : 'Port ' + port;
 
@@ -106,8 +106,8 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
-  var bind = typeof addr === 'string'
+  let addr = server.address();
+  let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);

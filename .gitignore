@@ -10,7 +10,7 @@ past_projects.txt
 Back-End.iml
 
 # Env file
-.env
+/.env
 
 # Node modules
 /node_modules

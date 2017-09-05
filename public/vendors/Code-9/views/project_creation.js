@@ -92,13 +92,12 @@ $(document).ready(function() {
     $('#createProjectbtn').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
        // window.alert("Employees not assigned");
-
+        $("#demo-form").submit(function(e){
+           e.preventDefault();
         if(globEmployees === null){
 
             window.alert("Employees not assigned");
-            $("#demo-form").submit(function(e){
-                e.preventDefault();
-            });
+
         }else {
             var num_employees=($('#range_31').val()).split(";");
 
@@ -108,10 +107,10 @@ $(document).ready(function() {
                     budget: $('#budget').val(),
                     emplArr: JSON.stringify(globEmployees)
                 }, function (data, status) {
-                     //e.submit();
-                    $("#demo-form").submit();
-                }
-            )
+
+                });
+            this.submit();
         }
+    });
     });
 });

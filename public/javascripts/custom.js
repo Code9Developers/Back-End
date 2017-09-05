@@ -655,31 +655,9 @@ function init_JQVmap(){
     }
 
 }
-function init_skycons(){
 
-    if( typeof (Skycons) === 'undefined'){ return; }
-    console.log('init_skycons');
-
-    var icons = new Skycons({
-            "color": "#73879C"
-        }),
-        list = [
-            "clear-day", "clear-night", "partly-cloudy-day",
-            "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
-            "fog"
-        ],
-        i;
-
-    for (i = list.length; i--;)
-        icons.set(list[i], list[i]);
-
-    icons.play();
-
-}
-
-
-function init_chart_doughnut(){
-
+function init_chart_doughnut()
+{
     if( typeof (Chart) === 'undefined'){ return; }
 
     console.log('init_chart_doughnut');
@@ -1102,8 +1080,8 @@ function init_wysiwyg() {
         } else {
             console.log("error uploading file", reason, detail);
         }
-        $('<div class="alert"> <button type="button" class="close" data-dismiss="alert">&times;</button>' +
-            '<strong>File upload error</strong> ' + msg + ' </div>').prependTo('#alerts');
+        $('<div class="alert"><button type="button" class="close" data-dismiss="alert">&times;</button>' +
+            '<strong>File upload error</strong> ' + msg + '</div>').prependTo('#alerts');
     }
 
     $('.editor-wrapper').each(function(){
@@ -1123,7 +1101,6 @@ function init_wysiwyg() {
 /* CROPPER */
 
 function init_cropper() {
-
 
     if( typeof ($.fn.cropper) === 'undefined'){ return; }
     console.log('init_cropper');
@@ -1579,7 +1556,7 @@ function init_daterangepicker() {
         startDate: moment().subtract(29, 'days'),
         endDate: moment(),
         minDate: '01/01/2012',
-        maxDate: '12/31/2015',
+        maxDate: '12/31/2100',
         dateLimit: {
             days: 60
         },
@@ -1828,36 +1805,22 @@ function init_validator () {
 
 }
 
-// TODO more notifications
+// TODO Notifications 05 Sep 2017
 /* PNotify */
+function CallError()
+{
+    new PNotify({
+        title: 'Oh No!',
+        text: 'Something terrible happened.',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+}
 
 function init_PNotify() {
 
     if( typeof (PNotify) === 'undefined'){ return; }
     console.log('init_PNotify');
-
-    new PNotify({
-        title: "PNotify",
-        type: "info",
-        text: "Welcome. Try hovering over me. You can click things behind me, because I'm non-blocking.",
-        nonblock: {
-            nonblock: true
-        },
-        addclass: 'dark',
-        styling: 'bootstrap3',
-        hide: false,
-        before_close: function(PNotify) {
-            PNotify.update({
-                title: PNotify.options.title + " - Enjoy your Stay",
-                before_close: null
-            });
-
-            PNotify.queueRemove();
-
-            return false;
-        }
-    });
-
 }
 
 // TODO notifications start

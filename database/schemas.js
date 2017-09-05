@@ -34,15 +34,16 @@ function create_user(db) {
         surname: String,
         password: String,
         password_date: Date, //could be countdown integer
-        //profile_pic: Document,
+        image: { data: Buffer, contentType: String },
         contact: String,
         email : String,
         role: String,
         position: String,
         employment_length: Number, //years? months?
-        skill: [],
-        current_projects: [], //-> stores project id's
-        past_projects: [], //-> stores project id's
+		rate: Number, //Jordan explain
+        skill: [{name: String, rating: Number, counter: Number}], //counter = how many times has the user been rated for this skill
+        current_projects: [{_id: String, skill: String}], //-> stores project id's, and the skill to which the user is assigned for the project
+        past_projects: [{_id: String, skill: String}], 
         events: []
     }) ;
 
@@ -78,14 +79,13 @@ function create_project(db) {
         owner_contact: String,
         owner_email: String,
         manager_id: String,
-        employees_assigned: [],
-        employee_rates: [], //corresponding index with employees_assigned
+        employees_assigned: [{_id: String, skill: String}],
+        //employee_rates: [], //corresponding index with employees_assigned
         project_budget: Number,
         tasks: [],//stores task id's
         status: String, //active, completed, pending
         project_rating: Number, //rating of project (1-10) on post-mortem analysis
-        milestones: [],
-        past_projects:[]//store milestone id's
+        milestones: [], //store milestone id's
     }) ;
 
 

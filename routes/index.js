@@ -37,17 +37,50 @@ router.get('/test_project_creation', function(req, res, next)
 //Creates 5 test emplyees into the database
 router.get('/create_test_employees', function(req, res, next)
 {
-    //dbs.create_test_employees();
-    test_data.create_All_test_employees(1, 30);
+    test_data.create_test_employees();
+    //test_data.create_All_test_employees(1, 30);
+    res.render('login');
+});
+
+router.get('/get_test_employees', function(req, res, next)
+{
+    dbs.findUsers("_id", "emp1", function(res) {
+		console.log(res[0]) ;
+	});
+	
+    res.render('login');
+});
+
+router.get('/display_image', function(req, res, next)
+{
+    dbs.findUsers("_id", "emp1", function(doc) {
+		//console.log(doc[0]) ;
+		res.contentType(doc[0].image.contentType);
+        res.send(doc[0].image.data);
+	});
+});
+
+router.get('/store_image', function(req, res, next)
+{
+	console.log("user: " + req.session.username) ;
+	console.log("pic: " + req.query.pic) ;
+	dbs.editProfileImage(req.session.username, req.query.pic) ;
+    res.render('profile');
+});
+
+router.get('/edit_test_employees', function(req, res, next)
+{
+	dbs.editUserObject("_id", "emp2", "skill", "rating", "10", "rating", 1) ;
+	
     res.render('login');
 });
 
 //Removes the 5 test employees from the database
-// router.get('/remove_test_employees', function(req, res, next)
-// {
-//     test_data.remove_users();
-//     res.render('login');
-// });
+ router.get('/remove_test_employees', function(req, res, next)
+ {
+     test_data.remove_users();
+     res.render('login');
+ });
 //
 //
 // router.get('/remove_test_projects', function(req, res, next)
@@ -74,12 +107,13 @@ router.get('/create_test_employees', function(req, res, next)
 //     res.render('login');
 // });
 
-// router.get('/view_test_projects', function(req, res, next)
-// {
-//     var s= test_data.view_projects();
-//     console.log("s:"+JSON.parse(JSON.stringify(s)));
-//     //res.send();
-// });
+router.get('/view_test_projects', function(req, res, next)
+{
+    dbs.findMilestones("__v", 0, function(res) {
+		console.log(res) ;
+	});
+	res.render('login') ;
+});
 
 router.get('/refresh_project_status', function(req, res, next)
 {

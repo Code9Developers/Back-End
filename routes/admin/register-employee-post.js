@@ -8,13 +8,11 @@
  *  Date: 21 Aug 2017 R1
  -----------------------------------------------------------------------------------------------------------------------
  */
-
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs') ;
 const generator = require('generate-password');
 const nodemailer = require('nodemailer');
-
 
 
 router.post('/register_employee',function (req,res,next) {
@@ -50,14 +48,14 @@ router.post('/register_employee',function (req,res,next) {
             secure: true, // secure:true for port 465, secure:false for port 587
             auth: {
                 user: 'code9devs@gmail.com',
-                pass: 'askforpassword'
+                pass: process.env.SMTP_PASSWORD
             }
         });
 
         // setup email data with unicode symbols
         let mailOptions  =
             {
-                from: '"Code 9 👻👻👻 BOO!!" <code9devs@gmail.com>', // sender address
+                from: '"Code 9 👻👻👻 BOO!!" < code9devs@gmail.com >', // sender address
                 to: 'code9devs@gmail.com,' + emp.email, // list of receivers
                 subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
                 // plain text body

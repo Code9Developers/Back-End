@@ -9,6 +9,9 @@
 past_projects.txt
 Back-End.iml
 
+# Env file
+/.env
+
 # Node modules
 /node_modules
 .idea/jsLibraryMappings.xml

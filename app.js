@@ -25,6 +25,7 @@ var project_creation=require("./routes/projects/project-creation-post");
 //employee routes
 var employee_calendar=require("./routes/employee/employee-calendar");
 var employee_routing=require("./routes/employee/employee-routing");
+var employee_profile=require("./routes/employee/employee-profile");
 
 //all-page-components-routes
 var login=require("./routes/all-page-components/login");
@@ -76,6 +77,7 @@ app.use( project_routing);
 
 app.use(employee_calendar);
 app.use(employee_routing);
+app.use(employee_profile);
 
 app.use('/users', users);
 app.use(index);

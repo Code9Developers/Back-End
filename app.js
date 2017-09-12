@@ -11,28 +11,28 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 //admin routes
-var register_employee_post=require("./routes/admin/register-employee-post");
-var admin_get=require("./routes/admin/admin-get");
-var display_employees_get=require("./routes/admin/display-employees-get");
+var register_employee_post = require("./routes/admin/register-employee-post");
+var admin_get = require("./routes/admin/admin-get");
+var display_employees_get = require("./routes/admin/display-employees-get");
 
 //project routes
-var display_all_projects=require("./routes/projects/display-all-projects-get");
-var milestone=require("./routes/projects/milestone-get");
-var project_edit=require("./routes/projects/project-edit");
-var project_routing=require("./routes/projects/projects-routing");
-var project_creation=require("./routes/projects/project-creation-post");
+var display_all_projects = require("./routes/projects/display-all-projects-get");
+var milestone = require("./routes/projects/milestone-get");
+var project_edit = require("./routes/projects/project-edit");
+var project_routing = require("./routes/projects/projects-routing");
+var project_creation = require("./routes/projects/project-creation-post");
 
 //employee routes
-var employee_calendar=require("./routes/employee/employee-calendar");
-var employee_routing=require("./routes/employee/employee-routing");
-var employee_profile=require("./routes/employee/employee-profile");
+var employee_calendar = require("./routes/employee/employee-calendar");
+var employee_routing = require("./routes/employee/employee-routing");
+var employee_profile = require("./routes/employee/employee-profile");
 
 //all-page-components-routes
-var login=require("./routes/all-page-components/login");
-var logout=require("./routes/all-page-components/logout");
-var notifications=require("./routes/all-page-components/notifications");
-var tasks=require("./routes/all-page-components/tasks");
-var user_info=require("./routes/all-page-components/user-info");
+var login = require("./routes/all-page-components/login");
+var logout = require("./routes/all-page-components/logout");
+var notifications = require("./routes/all-page-components/notifications");
+var tasks = require("./routes/all-page-components/tasks");
+var user_info = require("./routes/all-page-components/user-info");
 
 
 var app = express();
@@ -43,7 +43,7 @@ app.set('view engine', 'ejs');
 app.use(helmet());
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -65,15 +65,15 @@ app.use(tasks);
 app.use(notifications);
 app.use(user_info);
 
-app.use( register_employee_post);
-app.use( admin_get);
-app.use( display_employees_get);
+app.use(register_employee_post);
+app.use(admin_get);
+app.use(display_employees_get);
 
-app.use( project_creation);
-app.use( display_all_projects);
-app.use( milestone);
-app.use( project_edit);
-app.use( project_routing);
+app.use(project_creation);
+app.use(display_all_projects);
+app.use(milestone);
+app.use(project_edit);
+app.use(project_routing);
 
 app.use(employee_calendar);
 app.use(employee_routing);
@@ -84,21 +84,21 @@ app.use(index);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  res.render('error404');
+app.use(function (req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    res.render('error404');
 });
 
 // error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-  console.log(err.message);
-  console.log(err.status);
-  res.status(err.status || 500);
-  res.render('error500');
+app.use(function (err, req, res, next) {
+    // set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
+    console.log(err.message);
+    console.log(err.status);
+    res.status(err.status || 500);
+    res.render('error500');
 });
 
 module.exports = app;

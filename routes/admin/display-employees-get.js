@@ -3,15 +3,15 @@
  */
 const express = require('express');
 const router = express.Router();
-const dbs = require('../../database/dbs') ;
+const dbs = require('../../database/dbs');
 
-router.get("/employees",function (req,res,next) {
+router.get("/employees", function (req, res, next) {
     res.render("employees")
 });
 
-router.get("/all_employees",function (req,res,next) {
+router.get("/all_employees", function (req, res, next) {
 
-    var all_users=dbs.findUsers("role", "Employee",function (all_users) {
+    var all_users = dbs.findUsers("role", "Employee", function (all_users) {
         res.send(all_users);
     });
 });

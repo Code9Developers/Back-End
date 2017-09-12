@@ -1,319 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- Meta, title, CSS, favicons, etc. -->
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>KPMG | Profile </title>
+    <title>KPMG | Profile </title>
 
-        <!-- Favicon -->
-        <%- include('favicon'); %>
+    <!-- Favicon -->
+    <%- include('favicon'); %>
 
-        <!-- Bootstrap -->
-        <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
-        <!-- Font Awesome -->
-        <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
-        <!-- NProgress: Top load animation-->
-        <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
-        <!-- Bootstrap daterangepicker-->
-        <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" type="text/css" rel="stylesheet">
-        <!--bootstrap-progressbar -->
-        <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" type="text/css" rel="stylesheet">
-        <!--Code 9-->
-        <link href="vendors/Code-9/css/code9.css" type="text/css" rel="stylesheet">
-        <!-- Custom Theme Style -->
-        <link href="stylesheets/custom.css" rel="stylesheet">
-        <link href="stylesheets/custom.min.css" rel="stylesheet">
-    </head>
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation-->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!-- Bootstrap daterangepicker-->
+    <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" type="text/css" rel="stylesheet">
+    <!--bootstrap-progressbar -->
+    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" type="text/css" rel="stylesheet">
+    <!--Code 9-->
+    <link href="vendors/Code-9/css/code9.css" type="text/css" rel="stylesheet">
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.css" rel="stylesheet">
+    <link href="stylesheets/custom.min.css" rel="stylesheet">
+</head>
 
-    <body class="nav-md">
-        <div class="container body">
-            <div class="main_container">
-                <!-- Sidebar -->
-                <%- include('sidebar'); %>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
 
-                <!-- top navigation -->
-                <%- include('top_nav'); %>
-                <!-- /top navigation -->
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
 
-                <!-- page content -->
-                <div class="right_col" role="main">
-                    <div class="">
-                        <div class="page-title">
-                            <div class="title_left">
-                                <h3>User Profile</h3>
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>User Profile</h3>
+                    </div>
+
+                    <div class="title_right">
+
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Welcome Back
+                                    <small></small>
+                                </h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float:right"><a class="collapse-link"><i
+                                                    class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
                             </div>
+                            <div class="x_content">
+                                <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+                                    <div class="profile_img">
+                                        <div id="crop-avatar">
+                                            <!-- Current avatar -->
+                                            <img class="img-responsive avatar-view" src="images/picture.jpg"
+                                                 alt="Avatar" title="Change the avatar">
+                                        </div>
+                                    </div>
+                                    <h3>Samuel Doe</h3>
 
-                            <div class="title_right">
+                                    <ul class="list-unstyled user_data">
+                                        <li>
+                                            <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-phone user-profile-icon"></i> (011) 233 5739
+                                        </li>
+                                        <li>
+                                            <i class="fa fa-envelope user-profile-icon"></i> kpmg@kpmg.co.za
+                                        </li>
+                                        <li class="m-top-xs">
+                                            <i class="fa fa-linkedin-square user-profile-icon"></i>
+                                            <a href="http://www.kimlabs.com/profile/"
+                                               target="_blank">www.kimlabs.com</a>
+                                        </li>
+                                    </ul>
 
-                            </div>
-                        </div>
+                                    <!-- EDIT PROFILE BUTTON-->
+                                    <a aria-labelledby="profile-tab" id="editbutton" href="#tab_content3"
+                                       aria-expanded="false" data-toggle="tab" class="btn btn-kpmg"><i
+                                                class="fa fa-edit m-right-xs"></i> Edit Profile</a>
+                                    <br/>
 
-                        <div class="clearfix"></div>
-
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Welcome Back <small></small></h2>
-                                        <ul class="nav navbar-right panel_toolbox">
-                                            <li style="float:right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    <!-- start skills -->
+                                    <div id="user-skills">
+                                        <h4>Skills</h4>
+                                        <ul class="list-unstyled user_data">
+                                            <li>
+                                                <p>Web Applications</p>
+                                                <div class="progress progress_sm">
+                                                    <div class="progress-bar bg-kpmg-bar" role="progressbar"
+                                                         data-transitiongoal="50"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>Website Design</p>
+                                                <div class="progress progress_sm">
+                                                    <div class="progress-bar bg-kpmg-bar" role="progressbar"
+                                                         data-transitiongoal="70"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>Automation & Testing</p>
+                                                <div class="progress progress_sm">
+                                                    <div class="progress-bar bg-kpmg-bar" role="progressbar"
+                                                         data-transitiongoal="30"></div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <p>UI / UX</p>
+                                                <div class="progress progress_sm">
+                                                    <div class="progress-bar bg-kpmg-bar" role="progressbar"
+                                                         data-transitiongoal="50"></div>
+                                                </div>
                                             </li>
                                         </ul>
-                                        <div class="clearfix"></div>
                                     </div>
-                                    <div class="x_content">
-                                        <div class="col-md-3 col-sm-3 col-xs-12 profile_left">
-                                            <div class="profile_img">
-                                                <div id="crop-avatar">
-                                                    <!-- Current avatar -->
-                                                    <img class="img-responsive avatar-view" src="images/picture.jpg" alt="Avatar" title="Change the avatar">
-                                                </div>
-                                            </div>
-                                            <h3>Samuel Doe</h3>
+                                    <!-- end of skills -->
+                                </div>
 
-                                            <ul class="list-unstyled user_data">
-                                                <li>
-                                                    <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-phone user-profile-icon"></i> (011) 233 5739
-                                                </li>
-                                                <li>
-                                                    <i class="fa fa-envelope user-profile-icon"></i> kpmg@kpmg.co.za
-                                                </li>
-                                                <li class="m-top-xs">
-                                                    <i class="fa fa-linkedin-square user-profile-icon"></i>
-                                                    <a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>
-                                                </li>
-                                            </ul>
-
-                                            <!-- EDIT PROFILE BUTTON-->
-                                            <a aria-labelledby="profile-tab" id="editbutton" href="#tab_content3" aria-expanded="false" data-toggle="tab" class="btn btn-kpmg"><i class="fa fa-edit m-right-xs"></i> Edit Profile</a aria-labelledby="profile-tab" id="editbutton" href="#tab_content3" aria-expanded="false" data-toggle="tab" class=>
-                                            <br />
-
-                                            <!-- start skills -->
-                                            <div id="user-skills">
-                                                <h4>Skills</h4>
-                                                <ul class="list-unstyled user_data">
-                                                    <li>
-                                                        <p>Web Applications</p>
-                                                        <div class="progress progress_sm">
-                                                            <div class="progress-bar bg-kpmg-bar" role="progressbar" data-transitiongoal="50"></div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <p>Website Design</p>
-                                                        <div class="progress progress_sm">
-                                                            <div class="progress-bar bg-kpmg-bar" role="progressbar" data-transitiongoal="70"></div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <p>Automation & Testing</p>
-                                                        <div class="progress progress_sm">
-                                                            <div class="progress-bar bg-kpmg-bar" role="progressbar" data-transitiongoal="30"></div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <p>UI / UX</p>
-                                                        <div class="progress progress_sm">
-                                                            <div class="progress-bar bg-kpmg-bar" role="progressbar" data-transitiongoal="50"></div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <!-- end of skills -->
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="profile_title">
+                                        <div class="col-md-6">
+                                            <h2>User Activity Report</h2>
                                         </div>
-
-                                        <div class="col-md-9 col-sm-9 col-xs-12">
-                                            <div class="profile_title">
-                                                <div class="col-md-6">
-                                                    <h2>User Activity Report</h2>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <!-- May remove this-->
-                                                    <div id="reportrange" class="pull-right" style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
-                                                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
-                                                        <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
-                                                    </div>
-                                                </div>
+                                        <div class="col-md-6">
+                                            <!-- May remove this-->
+                                            <div id="reportrange" class="pull-right"
+                                                 style="margin-top: 5px; background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #E6E9ED">
+                                                <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                                                <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
                                             </div>
-                                            <!-- start of user-activity-graph -->
-                                            <div id="graph_bar" style="width:100%; height:280px;"></div>
-                                            <!-- end of user-activity-graph -->
+                                        </div>
+                                    </div>
+                                    <!-- start of user-activity-graph -->
+                                    <div id="graph_bar" style="width:100%; height:280px;"></div>
+                                    <!-- end of user-activity-graph -->
 
-                                            <div class="" role="tabpanel" data-example-id="togglable-tabs">
-                                                <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-                                                    <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Tasks Todo</a></li>
-                                                    <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projects Worked on</a></li>
-                                                    <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Edit Profile</a></li>
+                                    <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#tab_content1" id="home-tab"
+                                                                                      role="tab" data-toggle="tab"
+                                                                                      aria-expanded="true">Tasks
+                                                    Todo</a></li>
+                                            <li role="presentation" class=""><a href="#tab_content2" role="tab"
+                                                                                id="profile-tab" data-toggle="tab"
+                                                                                aria-expanded="false">Projects Worked
+                                                    on</a></li>
+                                            <li role="presentation" class=""><a href="#tab_content3" role="tab"
+                                                                                id="profile-tab2" data-toggle="tab"
+                                                                                aria-expanded="false">Edit Profile</a>
+                                            </li>
+                                        </ul>
+
+                                        <div id="myTabContent" class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="tab_content1"
+                                                 aria-labelledby="home-tab">
+                                                <!-- start Tasks to do -->
+                                                <!-- TODO START jquery-->
+                                                <ul class="messages">
+                                                    <li>
+                                                        <i class="fa fa-tasks"></i>
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">24</h3>
+                                                            <p class="month">Sep</p>
+                                                        </div>
+
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Milestone Name</h4>
+                                                            <blockquote class="message">
+                                                                <div class="profile_page_task_list">
+                                                                    <ul class="to_do">
+                                                                        <li>
+                                                                            <p>Schedule meeting with new client <span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">30/08/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>Create email address for new intern<span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">31/08/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>Have IT fix the network printer<span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">02/09/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>Copy backups to offsite location<span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">10/09/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </blockquote>
+                                                        </div>
+                                                    </li>
+
+                                                    <li>
+                                                        <i class="fa fa-tasks"></i>
+                                                        <div class="message_date">
+                                                            <h3 class="date text-info">21</h3>
+                                                            <p class="month">Oct</p>
+                                                        </div>
+
+                                                        <div class="message_wrapper">
+                                                            <h4 class="heading">Milestone Name</h4>
+                                                            <blockquote class="message">
+                                                                <div class="profile_page_task_list">
+                                                                    <ul class="to_do">
+                                                                        <li>
+                                                                            <p>Schedule meeting with new client <span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">11/09/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>Have IT fix the network printer<span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">15/09/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                        <li>
+                                                                            <p>Copy backups to offsite location<span
+                                                                                        class="right task_date"><b>Due: </b><b
+                                                                                            class="t_date">17/09/2017</b></span>
+                                                                            </p>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </blockquote>
+                                                        </div>
+                                                    </li>
+
                                                 </ul>
-
-                                                <div id="myTabContent" class="tab-content">
-                                                    <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
-                                                        <!-- start Tasks to do -->
-                                                        <!-- TODO START jquery-->
-                                                        <ul class="messages">
-                                                            <li>
-                                                                <i class="fa fa-tasks"></i>
-                                                                <div class="message_date">
-                                                                    <h3 class="date text-info">24</h3>
-                                                                    <p class="month">Sep</p>
-                                                                </div>
-
-                                                                <div class="message_wrapper">
-                                                                    <h4 class="heading">Milestone Name</h4>
-                                                                    <blockquote class="message">
-                                                                        <div class="profile_page_task_list">
-                                                                            <ul class="to_do">
-                                                                                <li>
-                                                                                    <p>Schedule meeting with new client <span class="right task_date"><b>Due: </b><b class="t_date">30/08/2017</b></span></p>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <p>Create email address for new intern<span class="right task_date"><b>Due: </b><b class="t_date">31/08/2017</b></span></p>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <p>Have IT fix the network printer<span class="right task_date"><b>Due: </b><b class="t_date">02/09/2017</b></span></p>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <p>Copy backups to offsite location<span class="right task_date"><b>Due: </b><b class="t_date">10/09/2017</b></span></p>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </blockquote>
-                                                                </div>
-                                                            </li>
-
-                                                            <li>
-                                                                <i class="fa fa-tasks"></i>
-                                                                <div class="message_date">
-                                                                    <h3 class="date text-info">21</h3>
-                                                                    <p class="month">Oct</p>
-                                                                </div>
-
-                                                                <div class="message_wrapper">
-                                                                    <h4 class="heading">Milestone Name</h4>
-                                                                    <blockquote class="message">
-                                                                        <div class="profile_page_task_list">
-                                                                            <ul class="to_do">
-                                                                                <li>
-                                                                                    <p>Schedule meeting with new client <span class="right task_date"><b>Due: </b><b class="t_date">11/09/2017</b></span></p>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <p>Have IT fix the network printer<span class="right task_date"><b>Due: </b><b class="t_date">15/09/2017</b></span></p>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <p>Copy backups to offsite location<span class="right task_date"><b>Due: </b><b class="t_date">17/09/2017</b></span></p>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </blockquote>
-                                                                </div>
-                                                            </li>
-
-                                                        </ul>
-                                                        <!-- end recent activity -->
-                                                    </div>
-                                                    <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
-                                                        <!-- start user projects -->
-                                                        <table class="data table table-striped no-margin">
-                                                            <thead>
-                                                            <tr>
-                                                                <th>#</th>
-                                                                <th>Project Name</th>
-                                                                <th>Client Company</th>
-                                                                <th class="hidden-phone">Hours Spent</th>
-                                                                <th>Contribution</th>
-                                                            </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                            <tr>
-                                                                <td>1</td>
-                                                                <td>New Company Takeover Review</td>
-                                                                <td>Deveint Inc</td>
-                                                                <td class="hidden-phone">18</td>
-                                                                <td class="vertical-align-mid">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar progress-bar-success" data-transitiongoal="35"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>2</td>
-                                                                <td>New Partner Contracts Consultanci</td>
-                                                                <td>Deveint Inc</td>
-                                                                <td class="hidden-phone">13</td>
-                                                                <td class="vertical-align-mid">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar progress-bar-danger" data-transitiongoal="15"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>3</td>
-                                                                <td>Partners and Inverstors report</td>
-                                                                <td>Deveint Inc</td>
-                                                                <td class="hidden-phone">30</td>
-                                                                <td class="vertical-align-mid">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar progress-bar-success" data-transitiongoal="45"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>4</td>
-                                                                <td>New Company Takeover Review</td>
-                                                                <td>Deveint Inc</td>
-                                                                <td class="hidden-phone">28</td>
-                                                                <td class="vertical-align-mid">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar progress-bar-success" data-transitiongoal="75"></div>
-                                                                    </div>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                        <!-- end user projects -->
-                                                    </div>
-                                                    <!-- Profile Bio-->
-                                                    <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
-                                                            <div class="row">
-                                                                <div class="col-md-12">
-                                                                    <div class="input-group image-preview">
-                                                                        <input type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
-                                                                        <span class="input-group-btn">
+                                                <!-- end recent activity -->
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="tab_content2"
+                                                 aria-labelledby="profile-tab">
+                                                <!-- start user projects -->
+                                                <table class="data table table-striped no-margin">
+                                                    <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Project Name</th>
+                                                        <th>Client Company</th>
+                                                        <th class="hidden-phone">Hours Spent</th>
+                                                        <th>Contribution</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>New Company Takeover Review</td>
+                                                        <td>Deveint Inc</td>
+                                                        <td class="hidden-phone">18</td>
+                                                        <td class="vertical-align-mid">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success"
+                                                                     data-transitiongoal="35"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>New Partner Contracts Consultanci</td>
+                                                        <td>Deveint Inc</td>
+                                                        <td class="hidden-phone">13</td>
+                                                        <td class="vertical-align-mid">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-danger"
+                                                                     data-transitiongoal="15"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3</td>
+                                                        <td>Partners and Inverstors report</td>
+                                                        <td>Deveint Inc</td>
+                                                        <td class="hidden-phone">30</td>
+                                                        <td class="vertical-align-mid">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success"
+                                                                     data-transitiongoal="45"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4</td>
+                                                        <td>New Company Takeover Review</td>
+                                                        <td>Deveint Inc</td>
+                                                        <td class="hidden-phone">28</td>
+                                                        <td class="vertical-align-mid">
+                                                            <div class="progress">
+                                                                <div class="progress-bar progress-bar-success"
+                                                                     data-transitiongoal="75"></div>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!-- end user projects -->
+                                            </div>
+                                            <!-- Profile Bio-->
+                                            <div role="tabpanel" class="tab-pane fade" id="tab_content3"
+                                                 aria-labelledby="profile-tab">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="input-group image-preview">
+                                                            <input type="text"
+                                                                   class="form-control image-preview-filename"
+                                                                   disabled="disabled">
+                                                            <!-- don't give a name === doesn't send on POST/GET -->
+                                                            <span class="input-group-btn">
                                                                         <!-- image-preview-clear button -->
-                                                                        <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                                                                        <button type="button"
+                                                                                class="btn btn-default image-preview-clear"
+                                                                                style="display:none;">
                                                                             <span class="glyphicon glyphicon-remove"></span> Clear
                                                                         </button>
-                                                                            <!-- image-preview-input -->
+                                                                <!-- image-preview-input -->
                                                                         <div class="btn btn-default image-preview-input">
                                                                             <span class="glyphicon glyphicon-folder-open"></span>
                                                                             <span class="image-preview-input-title">Choose Profile Picture</span>
-                                                                            <input id="pic" type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/> <!-- rename it -->
+                                                                            <input id="pic" type="file"
+                                                                                   accept="image/png, image/jpeg, image/gif"
+                                                                                   name="input-file-preview"/>
+                                                                            <!-- rename it -->
                                                                         </div>
                                                                     </span>
-                                                                    </div><!-- /input-group image-preview [TO HERE]-->
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="oldpassword">Old Password: *</label>
-                                                                    <input type="password" id="oldpassword" name="oldpassword" class="form-control"  placeholder="Old Password" required />
-                                                                </div>
-                                                                <div class="col-md-6">
-                                                                    <label for="newpassword">New Password: *</label>
-                                                                    <input type="password" id="newpassword" name="newpassword"  class="form-control" placeholder="New Password" required="" />
-                                                                </div>
-                                                            </div>
-                                                            <div>
-                                                                <br/>
-                                                                <input id="updateProfile" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Update Profile" type="submit" value="Update Profile"/>
-                                                            </div>
-
+                                                        </div><!-- /input-group image-preview [TO HERE]-->
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="oldpassword">Old Password: *</label>
+                                                        <input type="password" id="oldpassword" name="oldpassword"
+                                                               class="form-control" placeholder="Old Password"
+                                                               required/>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label for="newpassword">New Password: *</label>
+                                                        <input type="password" id="newpassword" name="newpassword"
+                                                               class="form-control" placeholder="New Password"
+                                                               required=""/>
                                                     </div>
                                                 </div>
+                                                <div>
+                                                    <br/>
+                                                    <input id="updateProfile" class="btn btn-dark docs-tooltip"
+                                                           data-toggle="tooltip" title="Update Profile" type="submit"
+                                                           value="Update Profile"/>
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -322,55 +383,58 @@
                         </div>
                     </div>
                 </div>
-                <!-- /page content -->
-
-                <!-- footer content -->
-                <footer>
-                    <div class="pull-right">Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a></div>
-                    <div class="clearfix"></div>
-                </footer>
-                <!-- /footer content -->
-
             </div>
         </div>
+        <!-- /page content -->
 
-        <!-- jQuery -->
-        <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
-        <!-- Bootstrap -->
-        <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-        <!-- Code 9-->
-        <script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
-        <script type="text/javascript" src="vendors/Code-9/js/image-upload.js"></script>
-        <!-- FastClick: Increase load time-->
-        <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
-        <!-- NProgress: Top load animation-->
-        <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
-        <!-- morris.js: Graphs-->
-        <script type="text/javascript" src="vendors/raphael/raphael.min.js"></script>
-        <script type="text/javascript" src="vendors/morris.js/morris.min.js"></script>
-        <!-- bootstrap-progressbar -->
-        <script type="text/javascript" src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-        <!-- bootstrap-daterangepicker -->
-        <script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
-        <script type="text/javascript" src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
 
-        <!-- Custom Theme Scripts -->
-        <script type="text/javascript" src="javascripts/custom.min.js"></script>
-    </body>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Code 9-->
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/image-upload.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- morris.js: Graphs-->
+<script type="text/javascript" src="vendors/raphael/raphael.min.js"></script>
+<script type="text/javascript" src="vendors/morris.js/morris.min.js"></script>
+<!-- bootstrap-progressbar -->
+<script type="text/javascript" src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- bootstrap-daterangepicker -->
+<script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
+<script type="text/javascript" src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.min.js"></script>
+</body>
 <script>
-    $(document).ready(function() {
-        $('#updateProfile').on('click' ,function (e) {
-            alert("ckick");
-            $.get("store_image",
-                {
-                    pic:$("#pic").val()
-                }
-                ,
-                function(data, status) {
-
-
-
-                });
+    $(document).ready(function () {
+        $('#updateProfile').on('click', function (e) {
+            alert(document.getElementById("pic").files[0].name);
+//            $.get("store_image",
+//                {
+//                    pic:$("#pic").val()
+//                }
+//                ,
+//                function(data, status) {
+//
+//
+//
+//                });
 
         });
     });

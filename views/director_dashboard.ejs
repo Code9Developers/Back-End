@@ -60,33 +60,22 @@
         <div class="right_col" role="main">
             <!-- top tiles -->
             <div class="row tile_count">
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-spinner"></i> Current Project Progress</span>
-                    <div class="count kpmg-blue">65%</div>
-                    <span class="count_bottom"><i class="red"><i
-                                    class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i> Your Tasks Todo</span>
-                    <div class="count kpmg-blue">10</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i>  Your Completed Projects</span>
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-tasks"></i> Your Ongoing Projects</span>
                     <div class="count kpmg-blue">5</div>
                     <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i> Ongoing Projects</span>
-                    <div class="count kpmg-blue">437</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-tasks"></i> Completed Projects</span>
                     <div class="count kpmg-blue">437</div>
                     <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-tasks"></i> All Ongoing Projects</span>
+                    <div class="count kpmg-blue">437</div>
+                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Employees</span>
                     <div class="count kpmg-blue">2500</div>
                     <span class="count_bottom"><i class="kpmg-blue">4% </i> From last Week</span>
@@ -95,140 +84,75 @@
             <!-- /top tiles -->
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="dashboard_graph">
-
-                        <div class="row x_title">
-                            <div class="col-md-6">
-                                <h3>Current Project Progress
-                                    <small>Graph title sub-title</small>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                            <div id="chart_plot_01" class="demo-placeholder"></div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
                             <div class="x_title">
-                                <h2>On Going Projects</h2>
+                                <h2>Bar graph One<small>Sessions</small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
                                 <div class="clearfix"></div>
                             </div>
-
-                            <div class="col-md-12 col-sm-12 col-xs-6">
-                                <div>
-                                    <p>Facebook Campaign</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="80"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Twitter Campaign</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="60"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-6">
-                                <div>
-                                    <p>Conventional Media</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="40"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Bill boards</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="50"></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="x_content">
+                                <canvas id="mybarChartOne"></canvas>
                             </div>
                         </div>
-
-                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Bar graph Two<small>Sessions</small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <canvas id="mybarChartTwo"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Bar graph Three<small>Sessions</small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <canvas id="mybarChartThree"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Bar graph Four<small>Sessions</small></h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <canvas id="mybarChartFour"></canvas>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <br/>
             <div class="row">
-                <div class="col-md-6 col-sm-4 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Todo</h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="">
-                                <ul class="to_do">
-                                    <li>
-                                        <p>
-                                            Schedule meeting with new client
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Create email address for new intern
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Have IT fix the network printer
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Copy backups to offsite location
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-4 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>Milestones</h2>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <div class="">
-                                <ul class="to_do">
-                                    <li>
-                                        <p>
-                                            Schedule meeting with new client
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Create email address for new intern
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Have IT fix the network printer
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p>
-                                            Copy backups to offsite location
-                                        </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <!-- TODO Button ERROR-->
             <button class="btn btn-default source" onclick="CallError();">Error</button>
@@ -263,23 +187,11 @@
 <script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
 <script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
 <script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
-
-
-<!-- TODO SEE WHAT CHARTS WE ARE USING-->
 <!-- Chart.js -->
 <script type="text/javascript" src="vendors/Chart.js/dist/Chart.js"></script>
-<!-- Flot -->
-<script type="text/javascript" src="vendors/Flot/jquery.flot.js"></script>
-<script type="text/javascript" src="vendors/Flot/jquery.flot.pie.js"></script>
-<script type="text/javascript" src="vendors/Flot/jquery.flot.time.js"></script>
-<script type="text/javascript" src="vendors/Flot/jquery.flot.stack.js"></script>
-<script type="text/javascript" src="vendors/Flot/jquery.flot.resize.js"></script>
-<!-- Flot plugins -->
-<script type="text/javascript" src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-<script type="text/javascript" src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-<script type="text/javascript" src="vendors/flot.curvedlines/curvedLines.js"></script>
-<!-- DateJS -->
-<script type="text/javascript" src="vendors-sort/DateJS/build/date.js"></script>
+
+<!--&lt;!&ndash; DateJS &ndash;&gt;-->
+<!--<script type="text/javascript" src="vendors-sort/DateJS/build/date.js"></script>-->
 
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.js"></script>

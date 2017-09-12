@@ -35,6 +35,29 @@ router.get('/create_test_employees', function (req, res, next) {
     res.render('login');
 });
 
+router.get('/create_all_test_employees', function (req, res, next) {
+    test_data.create_All_test_employees(10, 90);
+    res.render('login');
+});
+
+router.get('/remove_all_test_employees', function (req, res, next) {
+    test_data.remove_users();
+    res.render('login');
+});
+
+router.get("/view_all_test_employees", function (req, res, next) {
+
+    var all_users = dbs.findUsers("role", "Employee", function (all_users) {
+        res.send(all_users);
+    });
+});
+
+router.get('/view_test_employees', function(req, res, next)
+{
+    test_data.view_users();
+    res.render('login');
+});
+
 router.get('/get_test_employees', function (req, res, next) {
     dbs.findUsers("_id", "emp1", function (res) {
         console.log(res[0]);
@@ -86,12 +109,6 @@ router.get('/remove_test_employees', function (req, res, next) {
 // router.get('/remove_test_tasks', function(req, res, next)
 // {
 //     test_data.remove_tasks();
-//     res.render('login');
-// });
-
-// router.get('/view_test_employees', function(req, res, next)
-// {
-//     test_data.view_users();
 //     res.render('login');
 // });
 

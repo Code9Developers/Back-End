@@ -1,19 +1,8 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
-/**
- -----------------------------------------------------------------------------------------------------------------------
- *  Name: SMTP
- *  Author: Joshua Moodley
- *  Date: 21 Aug 2017 R1
- -----------------------------------------------------------------------------------------------------------------------
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const generator = require('generate-password');
-const nodemailer = require('nodemailer');
-const email_function = require('../email_functions');
+const email_functions = require('../email_functions');
 
 
 router.post('/register_employee', function (req, res, next) {
@@ -61,38 +50,11 @@ router.post('/register_employee', function (req, res, next) {
             past_projects: [req.body.pastprojects]
         };
 
+        // Insert User into DB
         dbs.insertUser(emp);
 
-        // create reusable transporter object using the default SMTP transport
-        let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true, // secure:true for port 465, secure:false for port 587
-            auth: {
-                user: 'code9devs@gmail.com',
-                pass: process.env.SMTP_PASSWORD
-            }
-        });
-
-        // setup email data with unicode symbols
-        let mailOptions  =
-            {
-                from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
-                to: 'code9devs@gmail.com,' + emp.email, // list of receivers
-                subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
-                // plain text body
-                // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
-                // html body
-                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/>User name is: '+ '<b>' + emp._id + '</b>' + '<br/>Your password is: ' + '<b>' +rand_password + '</b>'
-            };
-
-        // send mail with defined transport object
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message %s sent: %s', info.messageId, info.response);
-        });
+        // Send email
+        email_functions.NewEmployeeMailer(emp.email, emp.name, emp.surname, emp._id, rand_password);
 
         res.redirect('employees');
     });

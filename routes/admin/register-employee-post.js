@@ -74,15 +74,15 @@ router.post('/register_employee', function (req, res, next) {
         });
 
         // setup email data with unicode symbols
-        let mailOptions =
+        let mailOptions  =
             {
-                from: '"Code 9 👻👻👻 BOO!!" < code9devs@gmail.com >', // sender address
+                from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
                 to: 'code9devs@gmail.com,' + emp.email, // list of receivers
                 subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
                 // plain text body
                 // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
                 // html body
-                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/>User name is: ' + emp._id + '<br/>Your password is: ' + '<b>' + rand_password + '</b>'
+                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/>User name is: '+ '<b>' + emp._id + '</b>' + '<br/>Your password is: ' + '<b>' +rand_password + '</b>'
             };
 
         // send mail with defined transport object

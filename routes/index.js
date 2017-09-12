@@ -116,5 +116,10 @@ router.get("/create_past_projects", function (req, res, next) {
     res.render('login');
 });
 
+router.get("/director_dashboard", function (req, res, next) {
+    res.render('director_dashboard');
+});
+
+
 
 module.exports = router;

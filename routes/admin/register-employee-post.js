@@ -13,6 +13,7 @@ const router = express.Router();
 const dbs = require('../../database/dbs');
 const generator = require('generate-password');
 const nodemailer = require('nodemailer');
+const email_function = require('../email_functions');
 
 
 router.post('/register_employee', function (req, res, next) {

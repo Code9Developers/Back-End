@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get("/logout",function (req,res,next) {
+router.get("/logout", function (req, res, next) {
     req.session.reset();
     res.redirect('/');
 });

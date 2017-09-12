@@ -100,14 +100,14 @@ $(document).ready(function() {
 
         }else {
             var num_employees=($('#range_31').val()).split(";");
-
+            alert("send");
             $.get("store_emp", {
                     num_empl:num_employees[1],
                     duration: 2,
                     budget: $('#budget').val(),
-                    emplArr: JSON.stringify(globEmployees)
+                    emplArr: JSON.stringify(globEmployees)//algortithm should send skill each employee was chosen for or maybe an index
                 }, function (data, status) {
-
+                alert("sesdfsnd");
                 });
             this.submit();
         }

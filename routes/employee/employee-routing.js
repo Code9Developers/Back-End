@@ -6,17 +6,17 @@ const express = require('express');
 const router = express.Router();
 
 // Calendar Page
-router.get("/calendar", function (req,res, next) {
+router.get("/calendar", function (req, res, next) {
     res.render('calendar');
 });
 
 // Profile
-router.get("/profile", function (req,res, next) {
+router.get("/profile", function (req, res, next) {
     res.render('profile');
 });
 
 //Employees Dashboard
-router.get("/user_dashboard", function (req,res, next){
+router.get("/user_dashboard", function (req, res, next) {
     res.render('index_dashboard');
 });
 

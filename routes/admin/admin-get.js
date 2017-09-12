@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 //Admin/Register Employee page
-router.get('/admin',function (req,res,next) {
+router.get('/admin', function (req, res, next) {
     res.render("admin");
 });
 

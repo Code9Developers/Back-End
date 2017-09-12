@@ -3,17 +3,17 @@
  */
 const exports = module.exports = {};
 
-module.exports.select_json =function (_json,arr){
+module.exports.select_json = function (_json, arr) {
     const conv_data = JSON.parse(_json);
     var data, output, i;
     var final_output = "[";
 
 
-    for(var x in conv_data){
-        data=conv_data[x];
-        output="{";
-        i=0;
-        for(var y in data) {
+    for (var x in conv_data) {
+        data = conv_data[x];
+        output = "{";
+        i = 0;
+        for (var y in data) {
             if (y == arr[i]) {
                 if (i == arr.length - 1) {
                     output += '"' + y + '":"' + data[y] + '"';
@@ -24,17 +24,17 @@ module.exports.select_json =function (_json,arr){
                 i++;
             }
         }
-        output+="}";
-        if(x===conv_data.length-1){
-            final_output+=output;
+        output += "}";
+        if (x === conv_data.length - 1) {
+            final_output += output;
         }
-        else{
-            final_output+=output+",";
+        else {
+            final_output += output + ",";
         }
 
     }
 
-    final_output+="]";
+    final_output += "]";
 
     var out = JSON.parse(JSON.stringify(final_output));
     var out1;

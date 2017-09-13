@@ -9,10 +9,6 @@ $(document).ready(function() {
     $('#holder').hide();
     $('#empTableHide').hide();
 
-
-    function hell(){
-        window.alert("sdeeazfgsdg");
-    }
     $('#assignEmployees').on('click', function (e) {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event

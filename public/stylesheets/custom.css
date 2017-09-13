@@ -5,6 +5,13 @@ html, body {
 
 }
 
+h5
+{
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline
+}
+
 #removeEmployee {
     background: red;
 }
@@ -520,7 +527,7 @@ body .container.body .right_col {
 }
 
 .border-green {
-    border-color: #011f74 !important
+    border-color: #157800 !important
 }
 
 .border-aero {
@@ -1560,8 +1567,8 @@ table.countries_list td {
 }
 
 .paging_full_numbers a.paginate_active {
-    background-color: rgba(38, 185, 154, 0.59) !important;
-    border-color: rgba(38, 185, 154, 0.59) !important
+    background-color: rgb(1, 31, 116) !important;
+    border-color: rgb(1, 31, 116) !important
 }
 
 button.DTTT_button,
@@ -2813,8 +2820,8 @@ a.btn-danger {
 }
 
 .btn-success {
-    background: #26B99A;
-    border: 1px solid #169F85
+    background: #157800;
+    border: 1px solid #198c00
 }
 
 .btn-success:hover,
@@ -2822,7 +2829,7 @@ a.btn-danger {
 .btn-success:active,
 .btn-success.active,
 .open .dropdown-toggle.btn-success {
-    background: #169F85
+    background: #157800
 }
 
 .btn-dark {
@@ -4893,7 +4900,7 @@ ul.verticle_bars li {
 .alert-danger,
 .alert-error {
     color: #E9EDEF;
-    background-color: rgba(231, 76, 60, 0.88);
+    background-color: rgba(193, 58, 40, 0.99);
     border-color: rgba(231, 76, 60, 0.88)
 }
 

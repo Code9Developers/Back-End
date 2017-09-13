@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Employee Swap</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Stylesheets -->
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation-->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.css" rel="stylesheet">
+    <link href="stylesheets/custom.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <!--todo add project name to edit here-->
+            <h2>Swap Employees
+                <small id="project-name"> PROJECT NAME HERE</small>
+            </h2>
+            <hr/>
+            <div class="clearfix"></div>
+            <div class="row">
+                <h2>Reason/s for removing employee</h2>
+                <div id="employeeRemoveReason">
+                    <div class="col-md-offset-3 col-md-6">
+                        <textarea style="max-width: 100%; position: relative" readonly class="form-control" id="empRemoval" required="required" name="empRemovalReason"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+            <!-- TODO show this table once button is clicked-->
+            <form id="demo-form" data-parsley-validate action="employee_update" method="post">
+                <div class="row">
+                    <h2>Employees To Be Removed</h2>
+                    <div class="">
+                        <div id="employeeTableRemoveList" class="x_panel"></div>
+                    </div>
+
+                    <h2>Employees To Be Added</h2>
+                    <div class="">
+                        <div id="employeeTableAddList" class="x_panel"></div>
+                    </div>
+                    <!-- TODO Table end-->
+
+                    <input type="button" id="acceptChange" class="btn btn-conf btn-success docs-tooltip" data-toggle="tooltip" value="Approve Change"/>
+                    <input type="button" id="denyChange" class="btn btn-conf btn-danger docs-tooltip" data-toggle="tooltip" value="Deny Change"/>
+                </div>
+            </form>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!--Vendors js files-->
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- Code 9 -->
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/projEdit.js"></script>
+<!-- Datatables -->
+<script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.min.js"></script>
+</body>
+</html>

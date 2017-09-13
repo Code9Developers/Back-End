@@ -19,9 +19,8 @@ router.get('/unread_notifications', function (req, res, next) {
 });
 
 router.get('/delete_notification', function (req, res, next) {
-
-    var unread = dbs.deleteNotification(req.param('_id'), function (unread) {
-        res.send("deleted");
+    dbs.deleteNotification(req.query._id, function (unread) {
+        res.send(unread);
     });
 
 });

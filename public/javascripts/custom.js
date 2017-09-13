@@ -1811,6 +1811,70 @@ function init_IonRangeSlider() {
         to: 50,
         from_fixed: true
     });
+    // EXTRA SLIDERS
+    $("#overallProjRating").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingOne").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingTwo").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingThree").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingFour").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingFive").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
+    $("#ratingSix").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+
     $(".range_min_max").ionRangeSlider({
         type: "double",
         min: 0,

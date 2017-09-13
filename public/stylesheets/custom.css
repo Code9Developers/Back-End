@@ -5,6 +5,13 @@ html, body {
 
 }
 
+h5
+{
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline
+}
+
 #removeEmployee {
     background: red;
 }

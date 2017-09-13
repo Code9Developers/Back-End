@@ -28,7 +28,7 @@ exports.get_unallocated_users = function (num_emp, skills, duration, budget, cal
             var limit_amount = parseInt(num_emp);
             var loop = 0;
             var i = 0;
-            while (i < limit_amount) {
+            while (i < limit_amount && i<=result.length) {
                 if (result[loop].role == "Employee") {
                     var new_json_obj = {
                         _id: result[loop]._id,

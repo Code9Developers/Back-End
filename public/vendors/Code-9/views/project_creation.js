@@ -9,6 +9,10 @@ $(document).ready(function() {
     $('#holder').hide();
     $('#empTableHide').hide();
 
+
+    function hell(){
+        window.alert("sdeeazfgsdg");
+    }
     $('#assignEmployees').on('click', function (e) {
         var num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
@@ -17,7 +21,8 @@ $(document).ready(function() {
         $('#holder').show();
         $.get("test_algorithm",
             {
-                num_empl: parseInt(num_employees[1]),
+                // num_empl: parseInt(num_employees[1]),
+                num_empl: 1,
                 skills: [$('#tags_1').val()],
                 duration: 2,//either to calculation to get number in days or put end date
                 budget: $('#budget').val()
@@ -57,7 +62,7 @@ $(document).ready(function() {
                     "</tr>"+
                     "</thead>"+
                     "<tbody id='emptBody'></tbody></table>"+
-                "<button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
+                "<input type='button' onclick='h()' class='btn docs-tooltip btn-danger btn-round'  id='removeEmployee'  value='Remove Selection'>");
 
                 globEmployees = data;
 
@@ -77,17 +82,13 @@ $(document).ready(function() {
             });
     });
 
-    $('#approveEmployee').on('click', function (e) {
-        e.preventDefault(); // disable the default form submit event
-        window.alert("Employee Improved");
-
-    });
 
     $('#removeEmployee').on('click', function (e) {
-        e.preventDefault(); // disable the default form submit event
-        window.alert("Employee Removed");
+        //e.preventDefault(); // disable the default form submit event
 
+        window.alert("Employee Removed");
     });
+
 
     $('#createProjectbtn').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
@@ -102,7 +103,8 @@ $(document).ready(function() {
             var num_employees=($('#range_31').val()).split(";");
             alert("send");
             $.get("store_emp", {
-                    num_empl:num_employees[1],
+                    //num_empl:num_employees[1],
+                    num_empl:1,
                     duration: 2,
                     budget: $('#budget').val(),
                     emplArr: JSON.stringify(globEmployees)//algortithm should send skill each employee was chosen for or maybe an index

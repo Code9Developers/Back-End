@@ -26,27 +26,27 @@ var employees;
 
 router.get('/store_emp', function (req, res, next) {
     console.log("hello");
-    var el = JSON.parse(req.param("emplArr"));
-    var num_empl = parseInt(JSON.parse(req.param("num_empl")));
-
-    console.log(el);
-    console.log(num_empl);
-    var temp_skill;
-    employees = "[";
-    for (var key in el) {
-        temp_skill = el[key].skill.split(",");
-        if (parseInt(key) == (num_empl - 1)) {
-            employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '}';
-        }
-        else {
-            employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '},';
-        }
-    }
-    employees += "]";
-    var out = JSON.parse(JSON.stringify(employees));
-    var employees = JSON.parse(out);
-    console.log("EMP: " + employees);
-    console.log("EMP: " + out);
+    // var el = JSON.parse(req.param("emplArr"));
+    // var num_empl = parseInt(JSON.parse(req.param("num_empl")));
+    //
+    // console.log(el);
+    // console.log(num_empl);
+    // var temp_skill;
+    // employees = "[";
+    // for (var key in el) {
+    //     temp_skill = el[key].skill.split(",");
+    //     if (parseInt(key) == (num_empl - 1)) {
+    //         employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '}';
+    //     }
+    //     else {
+    //         employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '},';
+    //     }
+    // }
+    // employees += "]";
+    // var out = JSON.parse(JSON.stringify(employees));
+    // var employees = JSON.parse(out);
+    // console.log("EMP: " + employees);
+    // console.log("EMP: " + out);
 });
 
 router.post("/project_creation", function (req, res, next) {

@@ -5391,7 +5391,7 @@ $(document).ready(function () {
     init_sparklines();
     init_flot_chart();
     init_sidebar();
-    init_wysiwyg();
+    // init_wysiwyg();
     init_InputMask();
     init_JQVmap();
     init_cropper();
@@ -5399,7 +5399,7 @@ $(document).ready(function () {
     init_IonRangeSlider();
     init_ColorPicker();
     init_TagsInput();
-    init_parsley();
+    // init_parsley();
     init_daterangepicker();
     init_daterangepicker_right();
     init_daterangepicker_single_call();
@@ -5409,7 +5409,6 @@ $(document).ready(function () {
     init_charts();
     init_echarts();
     init_morris_charts();
-    init_skycons();
     init_select2();
     init_validator();
     init_DataTables();

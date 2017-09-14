@@ -8,7 +8,6 @@ const dbs = require('../../database/dbs');
 router.get("/all_projects", function (req, res, next) {
 
     var all_projects = dbs.findProjects("status", "active", function (all_projects) {
-        console.log(all_projects);
         res.send(all_projects);
 
     });

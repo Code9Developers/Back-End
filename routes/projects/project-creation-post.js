@@ -10,6 +10,7 @@ const async = require("async");
 
 
 var employees;
+var employee_id_arrray;
 
 /**
  *
@@ -25,30 +26,67 @@ var employees;
  */
 
 router.get('/store_emp', function (req, res, next) {
-    console.log("hello");
-    // var el = JSON.parse(req.param("emplArr"));
-    // var num_empl = parseInt(JSON.parse(req.param("num_empl")));
-    //
-    // console.log(el);
-    // console.log(num_empl);
-    // var temp_skill;
-    // employees = "[";
-    // for (var key in el) {
-    //     temp_skill = el[key].skill.split(",");
-    //     if (parseInt(key) == (num_empl - 1)) {
-    //         employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '}';
-    //     }
-    //     else {
-    //         employees += '{"_id":' + el[key]._id + ',"skill":' + temp_skill[0] + '},';
-    //     }
-    // }
-    // employees += "]";
-    // var out = JSON.parse(JSON.stringify(employees));
-    // var employees = JSON.parse(out);
-    // console.log("EMP: " + employees);
-    // console.log("EMP: " + out);
-});
+    var el = JSON.parse(req.param("emplArr"));
 
+    var num_empl = parseInt(JSON.parse(req.param("num_empl")));
+
+employee_id_arrray="";
+    for (var key in el) {
+        if (parseInt(key) == (num_empl - 1)) {
+            employee_id_arrray += el[key]._id ;
+        }
+        else {
+            employee_id_arrray += el[key]._id+"," ;
+        }
+    }
+
+    var temp_employees = "[";
+    for (var key in el) {
+        if (parseInt(key) == (num_empl - 1)) {
+            temp_employees += '{"_id":"' + el[key]._id + '","skill":' + JSON.stringify(el[key].skill[0]) + '}';
+        }
+        else {
+            temp_employees += '{"_id":"' + el[key]._id + '","skill":' +  JSON.stringify(el[key].skill[0]) + '},';
+        }
+    }
+    temp_employees += "]";
+    // console.log(employee_id_arrray);
+     var out = JSON.parse(JSON.stringify(temp_employees));
+    // console.log("1");
+    //console.log("EMP: " + out);
+     employees =  JSON.parse(out);
+    console.log("EMP: " + JSON.stringify(employees));
+
+});
+var status="active";
+router.get('/replacement_store', function (req, res, next) {
+    status="pending";
+    var rand_id = Math.floor((Math.random() * 100) + 1).toString();
+    var director_id=req.query.director;
+    var ap_id=director_id+rand_id;
+    var remove_emps=req.query.emp_removed;
+    var replace=req.query.emp_replace;
+    var reason_for_removal=req.query.reason;
+
+    var _aprroval_json={
+        _id:ap_id,
+        director_id: director_id,
+        reason: reason_for_removal,
+        employees_removed: [remove_emps],
+        employees_replaced: [replace]
+    }
+
+    dbs.insert_approval(_aprroval_json);
+    var today = new Date();
+    dbs.insertNotification({
+        _id: "noti_"+ap_id+director_id,
+        user_id: director_id,
+        message: "You have been requested to approve employee changes for a project",
+        date_created: today,
+        isRead: false
+    });
+
+});
 router.post("/project_creation", function (req, res, next) {
 
 
@@ -66,9 +104,9 @@ router.post("/project_creation", function (req, res, next) {
     var new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
 
     var today = new Date();
-//    var e=employees.split(",");
-    // var tts=JSON.parse(JSON.stringify(e));
-
+   var dis_emp=employee_id_arrray.split(",");
+    //var tts=JSON.parse(JSON.stringify(e));
+console.log(JSON.stringify(employees));
     var project = {
         _id: project_id,
         name: req.body.projectname,
@@ -81,11 +119,13 @@ router.post("/project_creation", function (req, res, next) {
         manager_id: req.session.username,
         employees_assigned: employees,
         project_budget: req.body.budget,
-        status: "active"
+        status: status
     };
         dbs.insertProject(project);
+       // var emp_obj=JSON.parse(employee_id_arrray);
     for (var x in employees) {
-        //  console.log(employees[x]);
+        console.log(employees[x]);
+        console.log(x);
         dbs.assignProject(employees[x], project_id);
 
         dbs.insertNotification({
@@ -116,4 +156,25 @@ router.get('/test_algorithm', function (req, res, next) {
     res.contentType('application/json');
 });
 
+router.get('/get_replacement', function (req, res, next) {
+
+
+    algorithm.get_unallocated_replacement_users( function (val) {
+        console.log("sgsdgffds");
+        console.log(val);
+        var result = JSON.stringify(val);
+        employees = JSON.parse(result);
+        res.send(result);
+    });
+    res.contentType('application/json');
+});
+
+
+
+router.get('/get_directors', function (req, res, next) {
+    var all_users = dbs.findUsers("role", "Director", function (all_users) {
+        res.send(all_users);
+    });
+
+});
 module.exports = router;

@@ -159,6 +159,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
     var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
         "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
     var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
+    var skills = ["skill 1", "skill 2", "skill 3", "skill 4", "skill 5", "skill 6", "skill 7", "skill 8", "skill 9", "skill 10"];
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
         var roles = ["project manager", "employee"];
@@ -181,6 +182,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 var lines2 = data.split(/\r?\n/);
                 console.log("creating managers");
                 for (var loop = 0; loop < num_manager; loop++) {
+                    var employee_index = Math.floor(Math.random() * (7 - 4 + 1) + 4);
                     var new_json_obj = {
                         _id: roles[0] + " " + manager_ids,
                         name: lines[name_index].trim(),
@@ -190,8 +192,9 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                         contact: "123 456 7890",
                         email: lines[name_index].trim()+"."+lines2[name_index].trim()+email,
                         role: "Manager",
-                        position: positions[Math.floor(Math.random() * (7 - 4 + 4) + 4)],
-                        employment_length: 5,
+                        position: positions[employee_index],
+                        employment_length: Math.floor(Math.random() * (10 - 5 + 1) + 5),
+                        rate: rates[employee_index],
                         skill: [],
                         current_projects: [],
                         past_projects: [],
@@ -205,6 +208,10 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
 
                 console.log("creating employees");
                 for (var loop = 0; loop < num_employees; loop++) {
+                    var employee_index = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+                    var skills_index_1 = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+                    var skills_index_2 = Math.floor(Math.random() * (6 - 4 + 1) + 4);
+                    var skills_index_3 = Math.floor(Math.random() * (9 - 7 + 1) + 7);
                     var new_json_obj = {
                         _id: roles[1] + " " + employee_ids,
                         name: lines[name_index].trim(),
@@ -214,9 +221,26 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                         contact: "123 456 7890",
                         email: lines[name_index].trim()+"."+lines2[name_index].trim()+email,
                         role: "Employee",
-                        position: positions[Math.floor(Math.random() * (3 - 0 + 0) + 0)],
+                        position: positions[employee_index],
+                        rate: rates[employee_index],
                         employment_length: Math.floor(Math.random() * (4 - 1 + 1) + 1),
-                        skill: [],
+                        skill: [
+                            {
+                                name: skills[skills_index_1],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            },
+                            {
+                                name: skills[skills_index_2],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            },
+                            {
+                                name: skills[skills_index_3],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            }
+                        ],
                         current_projects: [],
                         past_projects: []
                     };
@@ -238,7 +262,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
  * Parameters: num_years: the number of years it must go back in time from 2017
  * Result: it adds the projects to the database, places them all in the past_projects.txt and displays the amount of
  * projects created in the terminal
- * Note: it uses the amount of managers which it scales with waiting for each of the years specified by num_years*/
+ * Note: it uses the amount of managers specified in create_All_test_employees*/
 exports.create_past_Projects = function (num_years) {
     console.log("Creating past projects");
     var fileName = 'past_projects.txt';

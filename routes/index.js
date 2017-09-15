@@ -52,6 +52,24 @@ router.get("/view_all_test_employees", function (req, res, next) {
     });
 });
 
+/* TODO: create a duration variable for testing */
+/* TODO: create a skills list for testing */
+router.get("/view_all_assigned_test_employees", function (req, res, next) {
+
+    var start_date = new Date();
+    start_date.setYear(2017);
+    start_date.setMonth(0);
+    start_date.setDate(1);
+
+    var end_date = new Date();
+    end_date.setYear(2017);
+    end_date.setMonth(0);
+    end_date.setDate(28);
+    algorithm.get_unallocated_users(["skill 1", "skill 2", "skill 3"], start_date, end_date, 30000, function (all_users) {
+        res.send(JSON.stringify(all_users, 0, 2));
+    });
+});
+
 router.get('/view_test_employees', function(req, res, next)
 {
     test_data.view_users();

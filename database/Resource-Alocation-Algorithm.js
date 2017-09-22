@@ -5,6 +5,7 @@ var exports = module.exports = {};
 
 var schemas = require('.././database/schemas.js');
 var dbs = require('.././database/dbs.js');
+var PythonShell = require('python-shell');
 
 /* TODO : find employees which are free for the current duration */
 /* TODO : find employees which have the correct skills */
@@ -45,7 +46,7 @@ exports.get_unallocated_users = function (skills, start_date, end_date, budget, 
                     position: result[loop].position,
                     employment_length: result[loop].employment_length,
                     rate: result[loop].rate,
-                    skill: result[loop].skill,
+                    skill: [],
                     past_projects: result[loop].past_projects
                 };
                 //for every skill tag
@@ -58,28 +59,46 @@ exports.get_unallocated_users = function (skills, start_date, end_date, budget, 
                         if(result[loop].skill[loop3].name == skills[loop2])
                         {
                             //add them to that skills list
+                            //possibly remove the skill from the list
+                            new_json_obj.skill.push(skills[loop2]);
                             employee_lists[loop2][skills_count[loop2]] = new_json_obj;
                             skills_count[loop2]+=1;
                         }
                     }
                 }
             }
-            //console.log(return_json);
+
             console.log("Evaluating relevant employees");
             /* We evaluate each employee in each skill list */
-
             /* NOTE The employees with the highest scores, have the highest chance to get
-            *  chosen for the team */
-            //for each employee
-            /*for(var loop = 0; loop < Object.keys(employee_list).length; loop++)
+             *  chosen for the team */
+            //for each list
+            for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
-                //Add an employee_value attribute to each employee in the list
-                employee_list[loop].value = 0;
+                //for each employee
+                console.log("employee skill list size : "+Object.keys(employee_lists[loop]).length);
+                for(var loop2 = 0; loop2 < Object.keys(employee_lists[loop]).length; loop2++)
+                {
+                    //Add an employee_value attribute to each employee in the list
+                    employee_lists[loop][loop2].value = 0;
+                    //console.log(employee_lists[loop][loop2]);
+                    //give scores to how many years they have been working
+                    employee_lists[loop][loop2].value += parseInt(employee_lists[loop][loop2].employment_length);
+                    //give a score to how long they have not been working for HIGH WEIGHTING APPLIED
 
-                //give a score to how long they have not been working for HIGH WEIGHTING APPLIED
+                    //give a score to employees who have worked on past projects with the same skill tag
+                }
+            }
 
-                //give a score to employees who have worked on past projects with
-            }*/
+            for(var loop = 0; loop < Object.keys(skills).length; loop++)
+            {
+                console.log("displaying list for skill : "+skills[loop]);
+                console.log(employee_lists[loop]);
+            }
+
+            var pythonFile = 'bare_bones_PSO.py';
+            var shell = new PythonShell(pythonFile);
+            shell.send('hello world!');
             return callback(employee_lists);
         }
     });

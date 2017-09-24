@@ -18,9 +18,9 @@ router.get('/create_task', function (req, res, next) {
     var task = req.param('task');
     var emp_assigned = req.param('emp_assigned');
     var rand_password = generator.generate({
-        length: 10,
+        length: 5,
         numbers: true,
-        symbols: true,
+        symbols: false,
         uppercase: true
     });
 
@@ -35,18 +35,18 @@ router.get('/create_task', function (req, res, next) {
 
     dbs.insertTask(emp_json);
     var rand = generator.generate({
-        length: 10,
+        length: 5,
         numbers: true,
-        symbols: true,
+        symbols: false,
         uppercase: true
     });
     var emp = req.param('emp_assigned');
     dbs.findMilestones("_id", milestone_id, function (milestone) {
         for (var x in emp) {
             rand = generator.generate({
-                length: 10,
+                length: 5,
                 numbers: true,
-                symbols: true,
+                symbols: false,
                 uppercase: true
             });
             dbs.insertNotification({

@@ -35,6 +35,46 @@ exports.get_unallocated_users = function (num_emp, skills, duration, budget, cal
                         name: result[loop].name,
                         surname: result[loop].surname,
                         position: result[loop].position,
+                        skill:result[loop].skill,
+                        employment_length: result[loop].employment_length,
+                        past_projects: result[loop].past_projects
+                    };
+                    return_json[i] = new_json_obj;
+                    i++;
+                }
+                loop++;
+            }
+            console.log(return_json);
+            return callback(return_json);
+        }
+    });
+};
+
+exports.get_unallocated_replacement_users = function (callback) {
+    var user = schemas.user;
+
+
+    user.find({current_projects: []}, function (err, result) {
+        if (err) {
+            console.log("Error finding employees.");
+        }
+        else if (!result) {
+            console.log("employees not found.");
+        }
+        else {
+            console.log("employees found.");
+            var return_json = {};
+            var loop = 0;
+            var i = 0;
+            while (loop<result.length) {
+                if (result[loop].role == "Employee") {
+                    console.log("yes");
+                    var new_json_obj = {
+                        _id: result[loop]._id,
+                        name: result[loop].name,
+                        surname: result[loop].surname,
+                        position: result[loop].position,
+                        skill:result[loop].skill,
                         employment_length: result[loop].employment_length,
                         past_projects: result[loop].past_projects
                     };

@@ -247,12 +247,7 @@ exports.assignProject = function (user_obj, project_id) {
     var project = schemas.project;
 
     user.findByIdAndUpdate(user_obj._id, {
-        $push: {
-            current_projects: {
-                _id: project_id,
-                skill: user_obj.skill
-            }
-        }
+        $push: {current_projects: project_id}
     }, function (err) {
         if (!err) {
             console.log("Project added to User.");
@@ -263,22 +258,22 @@ exports.assignProject = function (user_obj, project_id) {
         }
     });
 
-    project.findByIdAndUpdate(project_id, {
-        $push: {
-            employees_assigned: {
-                _id: user_obj._id,
-                skill: user_obj.skill
-            }
-        }
-    }, function (err) {
-        if (!err) {
-            console.log("User added to Project.");
-        }
-        else {
-            console.log("Error adding User to Project.");
-            console.log(err);
-        }
-    });
+    // project.findByIdAndUpdate(project_id, {
+    //     $push: {
+    //         employees_assigned: {
+    //             _id: user_obj._id,
+    //             // skill: user_obj.skill
+    //         }
+    //     }
+    // }, function (err) {
+    //     if (!err) {
+    //         console.log("User added to Project.");
+    //     }
+    //     else {
+    //         console.log("Error adding User to Project.");
+    //         console.log(err);
+    //     }
+    // });
 };
 
 exports.insertAndAssignProject = function (_json, employees) {
@@ -785,6 +780,46 @@ exports.unreadNotifications = function (user_id, callback) {
         }
     });
 };
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+exports.insert_approval = function (_json) {
+
+    var approval = schemas.approval;
+
+    var _approval = new approval(_json);
+
+    _approval.save(function (err) {
+        if (err) {
+            console.log("Approval could not be inserted.");
+            console.log(err);
+        }
+        else {
+            console.log("Approval inserted Notification.");
+        }
+    });
+};
+
+exports.remove_approval = function (approval_id) {
+
+    var approval = schemas.approval;
+
+    approval.remove({_id: approval_id}, function (err) {
+        if (!err) {
+            console.log("Approval successfully deleted.");
+        }
+        else {
+            console.log("Error deleting Approval.");
+        }
+    });
+};
+/*
+ ***********************************************************************************************************************
+ ALL APPROVAL FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
 
 /*
  ***********************************************************************************************************************

@@ -20,12 +20,26 @@ exports.create_schemas = function () {
 
     create_notification(db);
 
+    create_approval(db);
+
     console.log("Schemas successfully created.");
 
 };
 
 
 //all schema initialser functions are below -->
+function create_approval(db) {
+    var schema = mongoose.Schema({
+        _id: String,
+        director_id: String,
+        reason: String,
+        employees_removed: [],
+        employees_replaced: []
+    });
+
+    exports.approval = mongoose.model('approval', schema);
+    console.log('Approval schema created.');
+}
 
 function create_user(db) {
     var schema = mongoose.Schema({
@@ -42,7 +56,7 @@ function create_user(db) {
         employment_length: Number, //years? months?
         rate: Number, //Jordan explain
         skill: [{name: String, rating: Number, counter: Number}], //counter = how many times has the user been rated for this skill
-        current_projects: [{_id: String, skill: String}], //-> stores project id's, and the skill to which the user is assigned for the project
+        current_projects: [], //-> stores project id's, and the skill to which the user is assigned for the project
         past_projects: [{_id: String, skill: String}],
         events: []
     });
@@ -79,7 +93,7 @@ function create_project(db) {
         owner_contact: String,
         owner_email: String,
         manager_id: String,
-        employees_assigned: [{_id: String, skill: String}],
+        employees_assigned: [],
         //employee_rates: [], //corresponding index with employees_assigned
         project_budget: Number,
         tasks: [],//stores task id's

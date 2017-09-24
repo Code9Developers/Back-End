@@ -23,10 +23,10 @@ router.post('/register_employee', function (req, res, next) {
     result = "[";
     for (let i = 0; i < _json.length; i++) {
         if (i == _json.length - 1) {
-            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"count":' + 0 + '}';
+            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"counter":' + 0 + '}';
         }
         else {
-            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"count":' + 0 + '},';
+            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"counter":' + 0 + '},';
         }
     }
 

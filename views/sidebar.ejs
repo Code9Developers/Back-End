@@ -67,25 +67,35 @@
     $(document).ready(function () {
         $.get("role",
             {}, function (data, status) {
-                if (data == "Manager") {
+
+                if (data === "Manager") {
                     $("#menu").append(
                         "<li><a href='project_creation'>Add Project</a></li>" +
                         "<li><a href='projects'>View All Projects</a></li>"
                     );
                 }
-                else if (data == "Admin") {
+                else if (data === "Admin") {
                     $("#menu").append(
                         "<li><a href='admin'>Register Employee</a></li>" +
                         "<li><a href='employees'>Show All Employees</a></li>"
                     );
                 }
-                else {
+                else if(data==="Employee"){
                     $("#home").append(
-                        " <li><a href='user_dashboard'>Dashboard</a></li>" +
-                        " <li><a href='calendar'>Calendar</a></li>"
+                        "<li><a href='user_dashboard'>Dashboard</a></li>" +
+                        "<li><a href='calendar'>Calendar</a></li>"
                     );
                     $("#menu").append(
                         "<li><a href='profile'>Profile</a></li>"
+                    );
+                }
+                else{
+                    $("#home").append(
+                        "<li><a href='director_dashboard'>Dashboard</a></li>"
+                    );
+                    $("#menu").append(
+                        "<li><a href='profile'>Profile</a></li>"+
+                        "<li><a href='employee_swap'>Approval Page</a></li>"
                     );
                 }
             });

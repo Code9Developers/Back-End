@@ -92,6 +92,39 @@ exports.editUserObject = function (attrib, value, object, object_attrib, object_
 }
 
 
+//adds object to array of objects of user with specific id
+exports.insertUserObject = function (user_id, object, _json) {
+	
+	var user = schemas.user ;
+	
+	user.findByIdAndUpdate(user_id, {$push: {object: _json}}, function (err) {
+        if (!err) {
+            console.log(object + " inserted into User.");
+        }
+        else {
+            console.log("Error inserting " + object + " into User.");
+            console.log(err);
+        }
+    });
+}
+
+//removes object with attrib of value from array of objects of user with specific id
+exports.removeUserObject = function (user_id, object, attrib, value) {
+	
+	var user = schemas.user ;
+	
+	user.update({_id: user_id}, {$pull: {object: {attrib: value}}}, function (err) {
+        if (!err) {
+            console.log(object + " removed from User.");
+        }
+        else {
+            console.log("Error removing " + object + " from User.");
+            console.log(err);
+        }
+    });
+}
+
+
 //edits the profile image of a user
 exports.editProfileImage = function (user_id, filename) {
 
@@ -246,9 +279,7 @@ exports.assignProject = function (user_obj, project_id) {
     var user = schemas.user;
     var project = schemas.project;
 
-    user.findByIdAndUpdate(user_obj._id, {
-        $push: {current_projects: project_id}
-    }, function (err) {
+    user.findByIdAndUpdate(user_obj._id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
         }
@@ -258,14 +289,7 @@ exports.assignProject = function (user_obj, project_id) {
         }
     });
 
-    project.findByIdAndUpdate(project_id, {
-        $push: {
-            employees_assigned: {
-                _id: user_obj._id,
-                skill: user_obj.skill
-            }
-        }
-    }, function (err) {
+    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_obj._id, skill: user_obj.skill}}}, function (err) {
         if (!err) {
             console.log("User added to Project.");
         }
@@ -276,6 +300,7 @@ exports.assignProject = function (user_obj, project_id) {
     });
 };
 
+// WARNING: Race Conditions
 exports.insertAndAssignProject = function (_json, employees) {
 
     var project = schemas.project;
@@ -296,15 +321,7 @@ exports.dismissProject = function (user_id, project_id) {
     var project = schemas.project;
     var user = schemas.user;
 
-    project.findByIdAndUpdate(project_id, {$pull: {employees_assigned: user_id}}, function (err) {
-        if (!err) {
-            console.log("User removed from Project.");
-        }
-        else {
-            console.log("Error removing User from Project.");
-            console.log(err);
-        }
-    });
+    module.exports.removeProjectObject(project_id, employees_assigned, _id, user_id) ;
 
     user.findByIdAndUpdate(user_id, {$pull: {current_projects: project_id}}, function (err) {
         if (!err) {
@@ -315,6 +332,7 @@ exports.dismissProject = function (user_id, project_id) {
             console.log(err);
         }
     });
+	
 };
 
 // marks a project as completed, and moves project to past_project array of all employees_assigned and manager
@@ -459,6 +477,55 @@ exports.editProjects = function (attrib, value, attrib_to_edit, new_value) {
         }
     });
 };
+
+//adds object to array of objects of project with specific id
+exports.insertUserObject = function (user_id, object, _json) {
+	
+	var project = schemas.project ;
+	
+	project.findByIdAndUpdate(user_id, {$push: {object: _json}}, function (err) {
+        if (!err) {
+            console.log(object + " inserted into Project.");
+        }
+        else {
+            console.log("Error inserting " + object + " into Project.");
+            console.log(err);
+        }
+    });
+}
+
+//removes object with attrib of value from array of objects of project with specific id
+exports.removeUserObject = function (user_id, object, attrib, value) {
+	
+	var project = schemas.project ;
+	
+	project.update({_id: user_id}, {$pull: {object: {attrib: value}}}, function (err) {
+        if (!err) {
+            console.log(object + " removed from Project.");
+        }
+        else {
+            console.log("Error removing " + object + " from Project.");
+            console.log(err);
+        }
+    });
+}
+
+exports.editProjectObject = function (attrib, value, object, object_attrib, object_value, attrib_to_edit, new_value) {
+
+    var project = schemas.project;
+    var query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}');
+    var update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+
+    project.update(query, {$set: update}, {multi: true}, function (err) {
+        if (!err) {
+            console.log("Project " + object + " updated.");
+        }
+        else {
+            console.log("Error updating " + object + " of Project.");
+            console.log(err);
+        }
+    });
+}
 
 // checks if projects are complete and updates status
 exports.refreshProjectStatus = function () {

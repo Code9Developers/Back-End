@@ -95,10 +95,10 @@ router.get('/approved_replacement', function (req, res, next) {
     })
 });
 
-router.get('/a', function (req, res, next) {
-    dbs.findProjects("_id","kpmg_rdr4",(project_data)=>{
-        dbs.dismissProject("emp2","kpmg_rdr4")
-        res.send(project_data);
-    })
-})
+// router.get('/a', function (req, res, next) {
+//     dbs.findProjects("_id","kpmg_rdr4",(project_data)=>{
+//         dbs.dismissProject("emp2","kpmg_rdr4")
+//         res.send(project_data);
+//     })
+// })
 module.exports = router;

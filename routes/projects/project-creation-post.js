@@ -1,12 +1,10 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const algorithm = require('../../database/Resource-Alocation-Algorithm');
 const generator = require('generate-password');
 const async = require("async");
+const email_functions = require('../email_functions');
 
 
 var employees;
@@ -26,12 +24,13 @@ let el;
  *
  */
 
-router.get('/store_emp', function (req, res, next) {
+router.get('/store_emp', function (req, res, next)
+{
     el = JSON.parse(req.param("emplArr"));
 
     var num_empl = parseInt(JSON.parse(req.param("num_empl")));
 
-employee_id_arrray="";
+    employee_id_arrray="";
     for (var key in el) {
         if (parseInt(key) == (num_empl - 1)) {
             employee_id_arrray += el[key]._id ;
@@ -54,20 +53,18 @@ employee_id_arrray="";
     // console.log(employee_id_arrray);
      var out = JSON.parse(JSON.stringify(temp_employees));
     // console.log("1");
-    console.log("EMP: " + out);
-     employees = JSON.parse(out);
-    console.log("EMP: " + JSON.stringify(employees));
+    //console.log("EMP: " + out);
+     employees =  JSON.parse(out);
+     console.log("EMP: " + JSON.stringify(employees));
 
 });
-let status="active";
-let isReplacement=false;
-let ap_id;
+
+var status="active";
 router.get('/replacement_store', function (req, res, next) {
     status="pending";
-    isReplacement=true;
-    let rand_id = Math.floor((Math.random() * 100) + 1).toString();
-    let director_id=req.query.director;
-    ap_id=director_id+rand_id;
+    var rand_id = Math.floor((Math.random() * 100) + 1).toString();
+    var director_id=req.query.director;
+    var ap_id=director_id+rand_id;
     var remove_emps=req.query.emp_removed;
     var replace=req.query.emp_replace;
     var reason_for_removal=req.query.reason;
@@ -76,9 +73,9 @@ router.get('/replacement_store', function (req, res, next) {
         _id:ap_id,
         director_id: director_id,
         reason: reason_for_removal,
-        employees_removed: remove_emps,
-        employees_replaced: replace
-    }
+        employees_removed: [remove_emps],
+        employees_replaced: [replace]
+    };
 
     dbs.insert_approval(_aprroval_json);
     var today = new Date();
@@ -92,11 +89,10 @@ router.get('/replacement_store', function (req, res, next) {
 
 });
 router.post("/project_creation", function (req, res, next) {
-    var rand_id = Math.floor((Math.random() * 10) + 1).toString();
+
+
+    var rand_id = Math.floor((Math.random() * 100) + 1).toString();
     var project_id = ("kpmg_" + req.body.projectname + rand_id).replace(/\s/g, '');
-    if(isReplacement===true){
-        dbs.editApproval("_id",ap_id,"project_id",project_id);
-    }
 
 
     //var start_date=(req.body.start_date).replace(/\//g,'-');
@@ -138,14 +134,16 @@ console.log(JSON.stringify(employees));
             date_created: today,
             isRead: false
         });
-//You can use the following function to send emails, it gets all the users names
-        dbs.findUsers("_id",employees[x]._id,function (user_info) {
+
+        //You can use the following function to send emails, it gets all the users names
+        dbs.findUsers("_id",employees[x]._id,function (user_info)
+        {
             console.log(user_info[0].name);
             console.log(user_info[0].surname);
             console.log(user_info[0].email);
-        })
 
-
+            email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
+        });
     }
     res.redirect('projects');
 
@@ -171,6 +169,8 @@ router.get('/get_replacement', function (req, res, next) {
 
 
     algorithm.get_unallocated_replacement_users( function (val) {
+        console.log("sgsdgffds");
+        console.log(val);
         var result = JSON.stringify(val);
         employees = JSON.parse(result);
         res.send(result);

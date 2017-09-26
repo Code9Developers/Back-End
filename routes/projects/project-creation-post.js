@@ -129,8 +129,6 @@ console.log(JSON.stringify(employees));
         dbs.insertProject(project);
        // var emp_obj=JSON.parse(employee_id_arrray);
     for (var x in employees) {
-        console.log(employees[x]);
-        console.log(x);
         dbs.assignProject(employees[x], project_id);
 
         dbs.insertNotification({
@@ -140,6 +138,12 @@ console.log(JSON.stringify(employees));
             date_created: today,
             isRead: false
         });
+//You can use the following function to send emails, it gets all the users names
+        dbs.findUsers("_id",employees[x]._id,function (user_info) {
+            console.log(user_info[0].name);
+            console.log(user_info[0].surname);
+            console.log(user_info[0].email);
+        })
 
 
     }

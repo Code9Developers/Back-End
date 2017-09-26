@@ -57,25 +57,24 @@
                     <input type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required/>
                 </div>
             </div>
+            <div  class="x_panel" id="director1">
+
+            </div>
+
             <br/>
             <!-- TODO show this table once button is clicked-->
-            <form id="demo-form" data-parsley-validate action="employee_update" method="post">
+            <form id="demo-form" data-parsley-validate >
                 <div class="row">
                     <div class="">
                         <div id="employeeTable" class="x_panel">
                         </div>
+                        <div id="employeeTable1" class="x_panel"></div>
                     </div>
                     <!-- TODO Table end-->
 
-                    <div id="employeeRemoveReason">
-                        <div class="col-md-offset-3 col-md-6">
-                            <label for="empRemoval">Reason/s for removing employee: *</label>
-                            <textarea class="form-control" id="empRemoval" required="required" name="empRemoval"></textarea>
-                        </div>
-                    </div>
                 </div>
 
-                <input id="updateProject" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip" value="Update Project"/>
+
             </form>
         </div>
         <!-- /page content -->

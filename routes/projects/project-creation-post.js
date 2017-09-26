@@ -134,14 +134,16 @@ console.log(JSON.stringify(employees));
             date_created: today,
             isRead: false
         });
-//You can use the following function to send emails, it gets all the users names
-        dbs.findUsers("_id",employees[x]._id,function (user_info) {
+
+        //You can use the following function to send emails, it gets all the users names
+        dbs.findUsers("_id",employees[x]._id,function (user_info)
+        {
             console.log(user_info[0].name);
             console.log(user_info[0].surname);
             console.log(user_info[0].email);
-        })
 
-        email_functions.NewProjectAllocation(el[x].email, el[x].name, el[x].surname, project.name);
+            email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
+        });
     }
     res.redirect('projects');
 

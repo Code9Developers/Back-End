@@ -39,6 +39,7 @@ function create_approval(db) {
     });
 
     exports.approval = mongoose.model('approval', schema);
+    
     console.log('Approval schema created.');
 }
 
@@ -57,8 +58,8 @@ function create_user(db) {
         employment_length: Number, //years? months?
         rate: Number, //Jordan explain
         skill: [{name: String, rating: Number, counter: Number}], //counter = how many times has the user been rated for this skill
-        current_projects: [], //-> stores project id's, and the skill to which the user is assigned for the project
-        past_projects: [{_id: String, skill: String}],
+        current_projects: [], //-> stores project id's
+        past_projects: [],
         events: []
     });
 
@@ -94,7 +95,7 @@ function create_project(db) {
         owner_contact: String,
         owner_email: String,
         manager_id: String,
-        employees_assigned: [],
+        employees_assigned: [{_id: String, skill: String}],
         //employee_rates: [], //corresponding index with employees_assigned
         project_budget: Number,
         tasks: [],//stores task id's

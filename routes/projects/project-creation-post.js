@@ -1,16 +1,15 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const algorithm = require('../../database/Resource-Alocation-Algorithm');
 const generator = require('generate-password');
 const async = require("async");
+const email_functions = require('../email_functions');
 
 
 var employees;
 var employee_id_arrray;
+let el;
 
 /**
  *
@@ -25,12 +24,13 @@ var employee_id_arrray;
  *
  */
 
-router.get('/store_emp', function (req, res, next) {
-    var el = JSON.parse(req.param("emplArr"));
+router.get('/store_emp', function (req, res, next)
+{
+    el = JSON.parse(req.param("emplArr"));
 
     var num_empl = parseInt(JSON.parse(req.param("num_empl")));
 
-employee_id_arrray="";
+    employee_id_arrray="";
     for (var key in el) {
         if (parseInt(key) == (num_empl - 1)) {
             employee_id_arrray += el[key]._id ;
@@ -55,9 +55,10 @@ employee_id_arrray="";
     // console.log("1");
     //console.log("EMP: " + out);
      employees =  JSON.parse(out);
-    console.log("EMP: " + JSON.stringify(employees));
+     console.log("EMP: " + JSON.stringify(employees));
 
 });
+
 var status="active";
 router.get('/replacement_store', function (req, res, next) {
     status="pending";
@@ -74,7 +75,7 @@ router.get('/replacement_store', function (req, res, next) {
         reason: reason_for_removal,
         employees_removed: [remove_emps],
         employees_replaced: [replace]
-    }
+    };
 
     dbs.insert_approval(_aprroval_json);
     var today = new Date();
@@ -104,7 +105,7 @@ router.post("/project_creation", function (req, res, next) {
     var new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
 
     var today = new Date();
-   var dis_emp=employee_id_arrray.split(",");
+    var dis_emp=employee_id_arrray.split(",");
     //var tts=JSON.parse(JSON.stringify(e));
 console.log(JSON.stringify(employees));
     var project = {
@@ -135,6 +136,8 @@ console.log(JSON.stringify(employees));
             date_created: today,
             isRead: false
         });
+
+        email_functions.NewProjectAllocation(el[x].email, el[x].name, el[x].surname, project.name);
     }
     res.redirect('projects');
 

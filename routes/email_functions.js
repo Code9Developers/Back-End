@@ -30,14 +30,13 @@ exports.NewEmployeeMailer = function (toEmail, empName, empSurname, empId, randP
             from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
             to: 'code9devs@gmail.com,' + toEmail, // list of receivers
             subject: 'NO REPLY - KPMG Employee Registration Details', // Subject line
-            // plain text body
-            // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
-            // html body
+            // text:
             html: 'Welcome ' + empName + ' ' + empSurname + '<br/>User name is: '+ '<b>' + empId + '</b>' + '<br/>Your password is: ' + '<b>' + randPass + '</b>'
         };
 
     // send mail with defined transport object
-    transporter.sendMail(NewEmployeeMail, (error, info) => {
+    transporter.sendMail(NewEmployeeMail, (error, info) =>
+    {
         if (error) {
             return console.log(error);
         }
@@ -49,19 +48,18 @@ exports.NewEmployeeMailer = function (toEmail, empName, empSurname, empId, randP
  * SEND EMAIL TO EMPLOYEE ASSIGNED TO A PROJECT
  */
 
-exports.NewProjectAllocation = function (toEmails, empName, empSurname, projectName)
+exports.NewProjectAllocation = function (toEmail, empName, empSurname, projectName)
 {
+    console.log(toEmail + " " + empName + " " + empSurname );
     // setup email data with unicode symbols
-    // TODO Email Structure
     let NewEmployeeMail  =
         {
             from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
             to: 'code9devs@gmail.com,' + toEmail, // list of receivers
             subject: 'NO REPLY - KPMG Project Allocation', // Subject line
-            // plain text body
-            // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
+            // text:
             // html body
-            html: 'Welcome ' + empName + ' ' + empSurname + '<br/>User name is: '+ '<b>' + empId + '</b>' + '<br/>Your password is: ' + '<b>' + randPass + '</b>'
+            html: '<b>' + empName + ' '  + empSurname +  '</b> you have been assigned to the <b>' + projectName + '</b> project.'
         };
 
     // send mail with defined transport object

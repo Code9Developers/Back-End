@@ -49,17 +49,20 @@ router.post('/login', function (req, res, next) {
     var user = dbs.findUsers("_id", req.session.username, function (user) {
         console.log(user[0]);
         console.log(user[0].role);
-        if (user[0].role == "Manager") {
+        if (user[0].role === "Manager") {
             req.session.name = user[0].name;
             req.session.surname = user[0].surname;
             req.session.role = user[0].role;
             res.redirect('project_creation');
         }
-        else if (user[0].role == "Admin") {
+        else if (user[0].role === "Admin") {
             res.redirect('employees');
         }
-        else {
+        else if(user[0].role === "Employee"){
             res.redirect('user_dashboard');
+        }
+        else{
+            res.redirect('director_dashboard');
         }
     });
 });

@@ -31,6 +31,7 @@ exports.create_schemas = function () {
 function create_approval(db) {
     var schema = mongoose.Schema({
         _id: String,
+        project_id:String,
         director_id: String,
         reason: String,
         employees_removed: [],

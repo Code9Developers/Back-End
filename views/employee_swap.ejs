@@ -48,22 +48,19 @@
             </h2>
             <hr/>
             <div class="clearfix"></div>
-            <div class="row">
-                <h2>Reason/s for removing employee</h2>
-                <div id="employeeRemoveReason">
-                    <div class="col-md-offset-3 col-md-6">
-                        <textarea style="max-width: 100%; position: relative" readonly class="form-control" id="empRemoval" required="required" name="empRemovalReason"></textarea>
-                    </div>
-                </div>
-            </div>
+
 
             <br/>
             <!-- TODO show this table once button is clicked-->
-            <form id="demo-form" data-parsley-validate action="employee_update" method="post">
+            <form id="demo-form" data-parsley-validate >
                 <div class="row">
                     <h2>Employees To Be Removed</h2>
                     <div class="">
                         <div id="employeeTableRemoveList" class="x_panel"></div>
+                    </div>
+                    <h2>Reason/s for removing employee</h2>
+                    <div id="employeeRemoveReason">
+                        <textarea style="max-width: 100%; position: relative" readonly class="form-control" id="empRemoval" required="required" name="empRemovalReason"></textarea>
                     </div>
 
                     <h2>Employees To Be Added</h2>
@@ -118,6 +115,8 @@
 <script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+
+<script type="text/javascript" src="vendors/Code-9/views/employee_swap.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.min.js"></script>

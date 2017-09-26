@@ -258,22 +258,22 @@ exports.assignProject = function (user_obj, project_id) {
         }
     });
 
-    // project.findByIdAndUpdate(project_id, {
-    //     $push: {
-    //         employees_assigned: {
-    //             _id: user_obj._id,
-    //             // skill: user_obj.skill
-    //         }
-    //     }
-    // }, function (err) {
-    //     if (!err) {
-    //         console.log("User added to Project.");
-    //     }
-    //     else {
-    //         console.log("Error adding User to Project.");
-    //         console.log(err);
-    //     }
-    // });
+    project.findByIdAndUpdate(project_id, {
+        $push: {
+            employees_assigned: {
+                _id: user_obj._id,
+                skill: user_obj.skill
+            }
+        }
+    }, function (err) {
+        if (!err) {
+            console.log("User added to Project.");
+        }
+        else {
+            console.log("Error adding User to Project.");
+            console.log(err);
+        }
+    });
 };
 
 exports.insertAndAssignProject = function (_json, employees) {
@@ -798,6 +798,43 @@ exports.insert_approval = function (_json) {
         }
         else {
             console.log("Approval inserted Notification.");
+        }
+    });
+};
+
+exports.editApproval = function (attrib, value, attrib_to_edit, new_value) {
+
+    var ap = schemas.approval;
+    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+
+    ap.update(query, {$set: update}, {multi: true}, function (err) {
+        if (!err) {
+            console.log("Approval " + attrib_to_edit + "\'s updated.");
+        }
+        else {
+            console.log("Error updating " + attrib_to_edit + "\'s of Approvals.");
+            console.log(err);
+        }
+    });
+};
+
+exports.find_approval = function (attrib, value, callback) {
+
+    var approval = schemas.approval;
+    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+
+    approval.find(query, function (err, docs) {
+        if (err) {
+            console.log("Error finding approval.");
+            console.log(err);
+        }
+        else if (JSON.stringify(docs) === "[]") {
+            console.log("No approval found.");
+        }
+        else {
+            console.log("approval found.");
+            return callback(docs);
         }
     });
 };

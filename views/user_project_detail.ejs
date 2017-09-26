@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Project Details</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- Code 9-->
+    <link href="vendors/Code-9/css/code9.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation -->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!-- Dropzone.js -->
+    <!--<link href="vendors-sort/dropzone/dist/min/dropzone.min.css" rel="stylesheet">-->
+    <!-- Bootstrap Multi-select-->
+    <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet">
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>Project Details</h3>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2 id="project_name"></h2>
+                                <div class="clearfix"></div>
+                                <h6 id="description"></h6>
+                            </div>
+
+                            <div class="x_content">
+
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+
+                                    <ul class="stats-overview">
+                                        <li>
+                                            <span class="name"> Estimated budget </span>
+                                            <span id="budget" class="value text-success">  </span>
+                                        </li>
+                                        <li>
+                                            <span class="name"> Project start date </span>
+                                            <span id="start_date" class="value text-success">  </span>
+                                        </li>
+                                        <li class="hidden-phone">
+                                            <span class="name"> Project end date </span>
+                                            <span id="end_date" class="value text-success">  </span>
+                                        </li>
+                                    </ul>
+                                    <br/>
+
+                                    <div id="mainb" style="height:350px;"></div>
+
+                                    <div>
+                                        <div class="panel">
+                                        </div>
+                                        <div class="col-md-12 col-sm-12">
+
+                                        </div>
+                                        <!-- end of user messages -->
+                                    </div>
+                                </div>
+
+                                <!-- start project-detail sidebar -->
+                                <div class="col-md-3 col-sm-3 col-xs-12">
+
+                                    <section class="panel">
+
+                                        <div class="x_title">
+                                            <h2>Project Description</h2>
+                                        </div>
+                                        <div class="panel-body">
+                                            <br/>
+
+                                            <div class="project_detail">
+
+                                                <p class="title">Client Company</p>
+                                                <p id="project_owner"></p>
+                                                <p class="title">Client Email</p>
+                                                <p id="owner_email"></p>
+                                                <p class="title">Client Contact Number</p>
+                                                <p id="owner_contact"></p>
+                                            </div>
+
+                                            <br/>
+
+                                            <br/>
+
+                                        </div>
+                                    </section>
+
+                                </div>
+                                <!-- end project-detail sidebar -->
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- jQuery UI -->
+<script type="text/javascript" src="vendors/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- Bootstrap multi-select -->
+<script type="text/javascript" src="vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
+<!-- Code 9 -->
+<script type="text/javascript" src="vendors/Code-9/js/code9.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/user_project_detail.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- ECharts -->
+<script type="text/javascript" src="vendors/echarts/dist/echarts.min.js"></script>
+<!-- Dropzone.js -->
+<!--<script src="vendors-sort/dropzone/dist/min/dropzone.min.js"></script>-->
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.js"></script>
+</body>
+</html>

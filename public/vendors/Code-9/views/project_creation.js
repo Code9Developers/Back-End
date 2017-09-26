@@ -6,6 +6,7 @@ $(document).ready(function() {
     var employeeArr = [];
     var employee_array_replacements = [];
     var globEmployees = null;
+    var emp_store=null;
     $("#employeeTable").empty();
 
     $('#holder').hide();
@@ -61,8 +62,8 @@ $(document).ready(function() {
                     "<tbody id='emptBody'></tbody></table>"+
                     "<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
 
-                globEmployees = data;
-                // $("#removeEmployee").hide();
+                emp_store = data;
+
                 $.each(data,function(key,value){
                     employeeArr[key]=value._id;
                     $("#emptBody").append("<tr id="+key+">"+
@@ -172,7 +173,7 @@ $(document).ready(function() {
     });
 
 
-    var replacemenr_array=[];
+    var replacement_array=[];
     var replacement_array_count=0;
 
 
@@ -181,13 +182,13 @@ $(document).ready(function() {
 
         $('#datatable-checkbox1').find('input[type="checkbox"]:checked').each(function () {
             var ind = $(this).parent().parent().attr('id');
-            replacemenr_array[c]=employee_array_replacements[ind];
+            replacement_array[c]=employee_array_replacements[ind];
             replacement_array_count++;
         });
         replacement_array_count=0;
 
 
-        $.get("replacement_store", {emp_removed:sendArr,emp_replace:replacemenr_array,reason:$("#empRemoval").val(),director:$("#director_select").val()});
+        $.get("replacement_store", {emp_removed:sendArr,emp_replace:replacement_array,reason:$("#empRemoval").val(),director:$("#director_select").val()});
 
 
     });
@@ -197,12 +198,12 @@ $(document).ready(function() {
     $('#storeEmp').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
         var num_employees=($('#range_31').val()).split(";");
-        window.alert(JSON.stringify(globEmployees));
+        window.alert(JSON.stringify(emp_store));
         $.get("store_emp", {
             num_empl:num_employees[1],
             duration: 2,
             budget: $('#budget').val(),
-            emplArr: JSON.stringify(globEmployees)
+            emplArr: JSON.stringify(emp_store)
         });
         //
         // if(globEmployees == null){

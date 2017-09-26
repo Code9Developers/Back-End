@@ -15,6 +15,9 @@ router.get("/calendar_events", function (req, res, next) {
     })
 });
 
+router.get("/user_project_detail", function (req, res, next) {
+    res.render("user_project_detail");
+});
 //Add code to store new calendar events
 
 module.exports = router;

@@ -54,13 +54,13 @@ $(document).ready(function() {
                 "</td>" +
                 "<td>");
             if(value.status=="pending"){
-                $("#projViewTable").prepend("<button type='button' class='btn btn-warning btn-xs'>Pending</button>" );
+                $("#projViewTable").append("<button type='button' class='btn btn-warning btn-xs'>Pending</button>" );
             }
             else
             {
-                $("#projViewTable").prepend("<button type='button' class='btn btn-kpmg btn-xs'>Ongoing</button>");
+                $("#projViewTable").append("<button type='button' class='btn btn-kpmg btn-xs'>Ongoing</button>");
             }
-            $("#projViewTable").prepend( "</td>" +
+            $("#projViewTable").append( "</td>" +
                 "<td>"+
                 "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
                 "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+

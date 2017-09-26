@@ -34,6 +34,9 @@ var notifications = require("./routes/all-page-components/notifications");
 var tasks = require("./routes/all-page-components/tasks");
 var user_info = require("./routes/all-page-components/user-info");
 
+//director routes
+var replacement_functionality=require("./routes/director_functionality/replacement_functionality");
+
 
 var app = express();
 
@@ -57,7 +60,7 @@ app.use(session({
 //routes
 /**
  * Date Created:31/08/24
- * Bug: might need to set routes in priority to avoid conflicts
+ * Bug: Might need to set routes in priority to avoid conflicts
  */
 app.use('/', login);
 app.use(logout);
@@ -78,6 +81,8 @@ app.use(project_routing);
 app.use(employee_calendar);
 app.use(employee_routing);
 app.use(employee_profile);
+
+app.use(replacement_functionality);
 
 app.use('/users', users);
 app.use(index);

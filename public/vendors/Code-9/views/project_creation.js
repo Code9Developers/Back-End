@@ -188,7 +188,13 @@ $(document).ready(function() {
         replacement_array_count=0;
 
 
-        $.get("replacement_store", {emp_removed:sendArr,emp_replace:replacement_array,reason:$("#empRemoval").val(),director:$("#director_select").val()});
+        $.get("replacement_store", {
+            emp_removed:sendArr,
+            emp_replace:replacement_array,
+            reason:$("#empRemoval").val(),
+            director:$("#director_select").val(),
+            project_name:$("#projectname").val()
+        });
 
 
     });

@@ -12,16 +12,16 @@ const dbs = require('../../database/dbs');
  -----------------------------------------------------------------------------------------------------------------------
  * */
 router.get('/unread_notifications', function (req, res, next) {
-    var unread = dbs.unreadNotifications(req.param('_id'), function (unread) {
+   dbs.unreadNotifications(req.param('_id'), function (unread) {
         res.send(unread);
     });
 
 });
 
 router.get('/delete_notification', function (req, res, next) {
-    dbs.deleteNotification(req.query._id, function (unread) {
+    dbs.deleteNotification(req.query.notification_id);
+    dbs.unreadNotifications(req.query.user_id, function (unread) {
         res.send(unread);
     });
-
 });
 module.exports = router;

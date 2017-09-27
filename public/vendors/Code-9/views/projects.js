@@ -26,12 +26,13 @@ $(document).ready(function() {
         //window.alert(data.projects);
         //data = JSON.parse(data);
         var i=0;
-        var edit_id,view_id,milestone_pid;
+        var edit_id,view_id,milestone_pid,remove_pid;
         $.each(data, function (key, value) {
             // console.log(value.name);
             edit_id="project_edit?id="+value._id;
             view_id="project_detail?id="+value._id;
             milestone_pid="project_milestone?id="+value._id;
+            remove_pid="project_remove?id="+value._id;
 
             $("#projViewTable").append("<tr>" +
                 "<td>" +
@@ -65,7 +66,7 @@ $(document).ready(function() {
                 "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
                 "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+
                 "<a href="+edit_id+" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
-                "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>"+
+                "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Remove </a>"+
                 "</td>"+
                 "</tr>");
             var len=(value.employees_assigned).length;
@@ -81,7 +82,14 @@ $(document).ready(function() {
             }
 
 
-        });
 
+
+        });
+        $(".remove").on("click",function () {
+            $.get("remove_project",{
+                project_id:$(this).attr("id")
+            });
+
+        });
     });
 });

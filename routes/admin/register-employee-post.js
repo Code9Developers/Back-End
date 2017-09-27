@@ -47,7 +47,7 @@ router.post('/register_employee', function (req, res, next) {
             position: req.body.positionlist,
             employment_length: req.body.emplength,
             skill: formatted_skills,
-            past_projects: [req.body.pastprojects]
+            past_projects: req.body.pastprojects
         };
 
         // Insert User into DB

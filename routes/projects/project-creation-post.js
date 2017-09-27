@@ -68,6 +68,7 @@ router.get('/replacement_store', function (req, res, next) {
     var remove_emps=req.query.emp_removed;
     var replace=req.query.emp_replace;
     var reason_for_removal=req.query.reason;
+    var project_name=req.query.project_name;
 
     var _aprroval_json={
         _id:ap_id,
@@ -78,6 +79,14 @@ router.get('/replacement_store', function (req, res, next) {
     };
 
     dbs.insert_approval(_aprroval_json);
+    dbs.findUsers("_id",director_id,function (director_details) {
+       console.log("director email: "+director_details[0].email);
+       console.log("Manager Name: "+req.session.name);
+       console.log("Manager surname: "+req.session.surname);
+       console.log("project name: "+project_name);
+       //send email in here
+    });
+
     var today = new Date();
     dbs.insertNotification({
         _id: "noti_"+ap_id+director_id,
@@ -138,10 +147,6 @@ console.log(JSON.stringify(employees));
         //You can use the following function to send emails, it gets all the users names
         dbs.findUsers("_id",employees[x]._id,function (user_info)
         {
-            console.log(user_info[0].name);
-            console.log(user_info[0].surname);
-            console.log(user_info[0].email);
-
             email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
         });
     }

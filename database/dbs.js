@@ -340,6 +340,9 @@ exports.dismissProject = function (user_id, project_id) {
 	
 };
 
+
+//giving bug where project is pulled for all employees, but isn't pushing for all employees
+
 // marks a project as completed, and moves project to past_project array of all employees_assigned and manager
 exports.completeProject = function (project_id, rating) {
 
@@ -355,16 +358,16 @@ exports.completeProject = function (project_id, rating) {
     user.update({current_projects: project_id}, {$push: {past_projects: project_id}}, {multi: true}, function (err) {
         if (!err) {
             console.log("Projects set as past projects for employees assigned.");
-        }
-        else {
-            console.log("Error setting Projects as past projects for employees assigned.");
-            console.log(err);
-        }
+			
+			user.update({current_projects: project_id}, {$pull: {current_projects: project_id}}, {multi: true}, function (err) {
+			if (!err) {
+				console.log("Projects removed from current projects for employees assigned.");
+			}
+			else {
+				console.log("Error removing Projects from current projects for employees assigned.");
+				console.log(err);
+			}
     });
-
-    user.update({current_projects: project_id}, {$pull: {current_projects: project_id}}, {multi: true}, function (err) {
-        if (!err) {
-            console.log("Projects set as past projects for employees assigned.");
         }
         else {
             console.log("Error setting Projects as past projects for employees assigned.");

@@ -10,6 +10,8 @@ exports.create_schemas = function () {
 
     create_user(db);
 
+	create_ghost(db) ;	
+		
     create_event(db);
 
     create_project(db);
@@ -39,7 +41,6 @@ function create_approval(db) {
     });
 
     exports.approval = mongoose.model('approval', schema);
-    
     console.log('Approval schema created.');
 }
 
@@ -66,6 +67,32 @@ function create_user(db) {
     exports.user = mongoose.model('user', schema);
 
     console.log('User schema created.');
+
+}
+
+function create_ghost(db) {
+    var schema = mongoose.Schema({
+        _id: String,
+        name: String,
+        surname: String,
+        password: String,
+        password_date: Date,
+        image: {data: Buffer, contentType: String},
+        contact: String,
+        email: String,
+        role: String,
+        position: String,
+        employment_length: Number,
+        rate: Number,
+        skill: [{name: String, rating: Number, counter: Number}],
+        current_projects: [],
+        past_projects: [],
+        events: []
+    });
+
+    exports.ghost = mongoose.model('ghost', schema);
+
+    console.log('Ghost schema created.');
 
 }
 

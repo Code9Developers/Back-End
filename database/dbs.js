@@ -96,8 +96,9 @@ exports.editUserObject = function (attrib, value, object, object_attrib, object_
 exports.insertUserObject = function (user_id, object, _json) {
 	
 	var user = schemas.user ;
+	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
 	
-	user.findByIdAndUpdate(user_id, {$push: {object: _json}}, function (err) {
+	user.findByIdAndUpdate(user_id, {$push: update}, function (err) {
         if (!err) {
             console.log(object + " inserted into User.");
         }
@@ -112,8 +113,9 @@ exports.insertUserObject = function (user_id, object, _json) {
 exports.removeUserObject = function (user_id, object, attrib, value) {
 	
 	var user = schemas.user ;
+	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
 	
-	user.update({_id: user_id}, {$pull: {object: {attrib: value}}}, function (err) {
+	user.update({_id: user_id}, {$pull: update}, function (err) {
         if (!err) {
             console.log(object + " removed from User.");
         }
@@ -274,12 +276,15 @@ exports.deleteEvent = function (event_id) {
  */
 
 // assigns project to user and vice versa
-exports.assignProject = function (user_obj, project_id) {
+
+// Note: You need to specify for which skill the user is being assigned to the project, BECAUSE THE SKILL ATTRIBUTE IS AN ARRAY!!
+
+exports.assignProject = function (user_id, project_id, _skill) {
 
     var user = schemas.user;
     var project = schemas.project;
 
-    user.findByIdAndUpdate(user_obj._id, { $push: {current_projects: project_id}}, function (err) {
+    user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
         }
@@ -289,7 +294,7 @@ exports.assignProject = function (user_obj, project_id) {
         }
     });
 
-    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_obj._id, skill: user_obj.skill}}}, function (err) {
+    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
         if (!err) {
             console.log("User added to Project.");
         }
@@ -300,7 +305,7 @@ exports.assignProject = function (user_obj, project_id) {
     });
 };
 
-// WARNING: Race Conditions
+// WARNING! AUTISM ALERT: Race Conditions
 exports.insertAndAssignProject = function (_json, employees) {
 
     var project = schemas.project;
@@ -321,11 +326,11 @@ exports.dismissProject = function (user_id, project_id) {
     var project = schemas.project;
     var user = schemas.user;
 
-    module.exports.removeProjectObject(project_id, employees_assigned, _id, user_id) ;
+    module.exports.removeProjectObject(project_id, "employees_assigned", "_id", user_id) ;
 
     user.findByIdAndUpdate(user_id, {$pull: {current_projects: project_id}}, function (err) {
         if (!err) {
-            console.log("Project removed from USer.");
+            console.log("Project removed from User.");
         }
         else {
             console.log("Error removing Project from User.");
@@ -439,24 +444,12 @@ exports.findProjects = function (attrib, value, callback) {
     });
 };
 
-// returns all projects
+// returns all projects  --- Is this function even necessary? Like c'mon bruh
 exports.findAllProjects = function (callback) {
 
-    var project = schemas.project;
-
-    project.find({}, function (err, docs) {
-        if (err) {
-            console.log("Error finding Projects.");
-            console.log(err);
-        }
-        else if (JSON.stringify(docs) === "[]") {
-            console.log("No Projects found.");
-        }
-        else {
-            console.log("All Projects found.");
-            return callback(docs);
-        }
-    });
+    module.exports.findProjects("__v", 0, function(res) {
+		return callback(res) ;
+	});
 };
 
 // finds all projects with attribute "attrib" of value "value",
@@ -479,11 +472,12 @@ exports.editProjects = function (attrib, value, attrib_to_edit, new_value) {
 };
 
 //adds object to array of objects of project with specific id
-exports.insertUserObject = function (user_id, object, _json) {
+exports.insertProjectObject = function (project_id, object, _json) {
 	
 	var project = schemas.project ;
+	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
 	
-	project.findByIdAndUpdate(user_id, {$push: {object: _json}}, function (err) {
+	project.findByIdAndUpdate(project_id, {$push: update}, function (err) {
         if (!err) {
             console.log(object + " inserted into Project.");
         }
@@ -495,11 +489,12 @@ exports.insertUserObject = function (user_id, object, _json) {
 }
 
 //removes object with attrib of value from array of objects of project with specific id
-exports.removeUserObject = function (user_id, object, attrib, value) {
+exports.removeProjectObject = function (project_id, object, attrib, value) {
 	
 	var project = schemas.project ;
+	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
 	
-	project.update({_id: user_id}, {$pull: {object: {attrib: value}}}, function (err) {
+	project.update({_id: project_id}, {$pull: update}, function (err) {
         if (!err) {
             console.log(object + " removed from Project.");
         }

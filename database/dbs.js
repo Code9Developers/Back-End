@@ -161,7 +161,11 @@ exports.editProfileImage = function (user_id, filename) {
 exports.deleteUser = function (user_id) {
 
     var user = schemas.user;
-
+	
+	module.exports.findUsers("_id", user_id, function(res) {
+		module.exports.insertGhost(res) ;
+	});
+	
     user.remove({_id: user_id}, function (err) {
         if (!err) {
             console.log("User successfully deleted.");
@@ -172,7 +176,37 @@ exports.deleteUser = function (user_id) {
     });
 };
 
-/*
+ /*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+ 
+ /*
+ ***********************************************************************************************************************
+ ALL GHOST-RELATED FUNCTIONS BELOW --->>
+ ***********************************************************************************************************************
+ */
+ 
+exports.insertGhost = function (_json) {
+
+    var ghost = schemas.ghost;
+
+    var _ghost = new ghost(_json);
+
+    _ghost.save(function (err) {
+        if (err) {
+            console.log("Ghost could not be inserted.");
+            console.log(err);
+        }
+        else {
+            console.log("Successfully inserted Ghost");
+        }
+    });
+};
+
+//I'll add view/resurrect functions later
+ 
+ /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
  */

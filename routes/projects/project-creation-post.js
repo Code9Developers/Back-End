@@ -60,11 +60,12 @@ router.get('/store_emp', function (req, res, next)
 });
 
 let status="active";
+let ap_id="";
 router.get('/replacement_store', function (req, res, next) {
     status="pending";
-    let rand_id = Math.floor((Math.random() * 100) + 1).toString();
+    let rand_id = Math.floor((Math.random() * 1000) + 1).toString();
     let director_id=req.query.director;
-    let ap_id=director_id+rand_id;
+    ap_id=director_id+rand_id;
     let remove_emps=req.query.emp_removed;
     let replace=req.query.emp_replace;
     let reason_for_removal=req.query.reason;
@@ -74,17 +75,12 @@ router.get('/replacement_store', function (req, res, next) {
         _id:ap_id,
         director_id: director_id,
         reason: reason_for_removal,
-        employees_removed: [remove_emps],
-        employees_replaced: [replace]
+        employees_removed: remove_emps,
+        employees_replaced: replace
     };
 
     dbs.insert_approval(_aprroval_json);
     dbs.findUsers("_id",director_id,function (director_details) {
-       console.log("director email: "+director_details[0].email);
-       console.log("Manager Name: "+req.session.name);
-       console.log("Manager surname: "+req.session.surname);
-       console.log("project name: "+project_name);
-
        let dirEmail = director_details[0].email;
        let manName = req.session.name;
        let manSur = req.session.surname;
@@ -110,7 +106,7 @@ router.post("/project_creation", function (req, res, next) {
 
     let rand_id = Math.floor((Math.random() * 100) + 1).toString();
     let project_id = ("kpmg_" + req.body.projectname + rand_id).replace(/\s/g, '');
-
+    dbs.editApproval("_id",ap_id,"project_id",project_id);
 
     //var start_date=(req.body.start_date).replace(/\//g,'-');
     let start_date = (req.body.start_date);

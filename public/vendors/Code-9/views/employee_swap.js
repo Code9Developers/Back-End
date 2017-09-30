@@ -1,7 +1,13 @@
 /**
  * Created by Seonin David on 2017/09/23.
  */
-$.get("get_deleted_employees", {},function (data, status) {
+$.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+};
+
+$.get("get_deleted_employees", {id: $.urlParam('id')},function (data, status) {
+    window.alert(data);
     $("#employeeTableRemoveList").empty();
     $("#employeeTableRemoveList").append(
         "<div class='x_title'>" +
@@ -34,10 +40,10 @@ $.get("get_deleted_employees", {},function (data, status) {
             "</tr>");
     });
 });
-$.get("replacement_reason", {},function (data, status) {
+$.get("replacement_reason", {id: $.urlParam('id')},function (data, status) {
     $("#empRemoval").val(data);
 });
-$.get("get_replacement_employees", {},function (data, status) {
+$.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status) {
     $("#employeeTableAddList").empty();
     $("#employeeTableAddList").append(
         "<div class='x_title'>" +
@@ -72,5 +78,5 @@ $.get("get_replacement_employees", {},function (data, status) {
 });
 
 $("#acceptChange").on("click",function (e) {
-    $.get("approved_replacement");
+    $.get("approved_replacement", {id: $.urlParam('id')});
 });

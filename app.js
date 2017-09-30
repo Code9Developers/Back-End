@@ -36,6 +36,7 @@ var user_info = require("./routes/all-page-components/user-info");
 
 //director routes
 var replacement_functionality=require("./routes/director_functionality/replacement_functionality");
+var display_approvals=require("./routes/director_functionality/display-approvals");
 
 
 var app = express();
@@ -83,6 +84,7 @@ app.use(employee_routing);
 app.use(employee_profile);
 
 app.use(replacement_functionality);
+app.use(display_approvals);
 
 app.use('/users', users);
 app.use(index);

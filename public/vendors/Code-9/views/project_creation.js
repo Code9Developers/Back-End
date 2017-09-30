@@ -173,16 +173,15 @@ $(document).ready(function() {
     });
 
 
-    var replacement_array=[];
-    var replacement_array_count=0;
-
+    let replacement_array=[];
+    let replacement_array_count=0;
 
     $('#employeeTable1').on('click','#removeEmployee',function (e) {
         e.preventDefault(); // disable the default form submit event
 
         $('#datatable-checkbox1').find('input[type="checkbox"]:checked').each(function () {
-            var ind = $(this).parent().parent().attr('id');
-            replacement_array[c]=employee_array_replacements[ind];
+            let ind = $(this).parent().parent().attr('id');
+            replacement_array[replacement_array_count]=employee_array_replacements[ind];
             replacement_array_count++;
         });
         replacement_array_count=0;

@@ -34,9 +34,10 @@ router.post('/register_employee', function (req, res, next) {
 
     let out = JSON.parse(JSON.stringify(result));
     let formatted_skills = JSON.parse(out);
+    let employee_id= (req.body.empid).replace(/\s/g, '');
     dbs.encrypt(rand_password, function (enc_pass) {
         var emp = {
-            _id: req.body.empid,
+            _id:employee_id,
             name: req.body.firstname,
             surname: req.body.lastname,
             password: enc_pass,

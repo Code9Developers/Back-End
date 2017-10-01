@@ -126,5 +126,8 @@ router.get("/employee_swap", function (req, res, next) {
     res.render('employee_swap');
 });
 
+router.get("/training", function (req, res, next) {
+    res.render('training');
+});
 
 module.exports = router;

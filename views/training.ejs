@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Project Edit</title>
+    <title>KPMG | Training</title>
 
     <!-- Favicon -->
     <%- include('favicon'); %>
@@ -42,39 +42,42 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <!--todo add project name to edit here-->
-            <h2>Edit Project
-                <small id="project-name"> PROJECT NAME HERE</small>
+            <h2>Training
+                <small id="project-name"> </small>
             </h2>
             <hr/>
             <div class="clearfix"></div>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="CurrentDeadline">Current Deadline: *</label>
-                    <input readonly type="date" id="CurrentDeadline" class="form-control" name="CurrentDeadline"/>
-                </div>
-                <div class="col-md-6">
-                    <label for="ChangeDueDate">Change Deadline: *</label>
-                    <input type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required/>
-                </div>
-            </div>
-            <div id="director1">
-
-            </div>
-
-            <br/>
-            <!-- TODO show this table once button is clicked-->
             <form id="demo-form" data-parsley-validate >
                 <div class="row">
+                    <div class="col-md-6">
+                        <label for="trainerName">Trainer's Name: *</label>
+                        <input type="text" id="trainerName" class="form-control" name="trainerName"/>
+
+                        <label for="trainerEmail">Trainer's Email: *</label>
+                        <input type="email" id="trainerEmail" class="form-control" name="trainerEmail"/>
+
+                        <label for="trainerPhoneNumber">Trainer's Phone Number: *</label>
+                        <input type="text" class="form-control" id="trainerPhoneNumber" name="trainerPhoneNumber" data-inputmask="'mask' : '(999) 999 - 9999'"
+                               data-parsley-trigger="change" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="startDate">Start Date: *</label>
+                        <input type="date" id="startDate" class="form-control" name="startDate"/>
+
+                        <label for="endDate">End Date: *</label>
+                        <input type="date" id="endDate" class="form-control" name="endDate" required/>
+                    </div>
+                </div>
+
+                <br/>
+                <!-- TODO show this table once button is clicked-->
+
                     <div class="">
                         <div id="employeeTable" class="x_panel">
                         </div>
-                        <div id="employeeTable1" class="x_panel"></div>
                     </div>
-                    <!-- TODO Table end-->
-
-                </div>
-
-
+                <!-- TODO Table end-->
+                <input id="addTraining"  class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Add Training" type="submit"  value="Add Training"/>
             </form>
         </div>
         <!-- /page content -->
@@ -102,6 +105,8 @@
 <!-- Code 9 -->
 <script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/projEdit.js"></script>
+<!-- jquery.inputmask -->
+<script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 <!-- Datatables -->
 <script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>

@@ -10,6 +10,11 @@
  */
 
 $(document).ready(function() {
+
+    $(".select-test").select2({
+        tags: false
+    });
+
     let  employeeArr = [];
     let  employee_array_replacements = [];
     let  globEmployees = null;

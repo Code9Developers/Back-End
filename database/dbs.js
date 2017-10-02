@@ -1,5 +1,3 @@
-let exports = module.exports = {};
-
 const mongoose = require('mongoose');
 const schemas = require('.././database/schemas.js');
 const connection = require('.././database/connect.js');
@@ -941,10 +939,9 @@ exports.remove_approval = function (approval_id) {
  ***********************************************************************************************************************
  */
 
-<<<<<<<<< Temporary merge branch 1
+
 /*********************************************************************************************************************************************************************************************************************************************
  **/
-=========
 exports.get_completed_projects = function (project_ids,callback) {
     var projects = schemas.project;
     projects.aggregate([
@@ -1000,8 +997,6 @@ exports.get_specific_user_skill = function (user_id,callback) {
  ***********************************************************************************************************************
  ***********************************************************************************************************************
  */
->>>>>>>>> Temporary merge branch 2
-
 /**
  ***********************************************************************************************************************
  ALL PASSWORD+ENCRYPTION-RELATED FUNCTIONS BELOW --->>

@@ -1,13 +1,23 @@
 /**
- * Created by Seonin David on 2017/08/18.
+ * Page: N/A
+ * Functionality: Project View
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 18/08/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
+
 $(document).ready(function() {
 
     $.urlParam = function (name) {
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
-var i=0;
+
+    let  i = 0;
+
     $.get("get_tasks", {id: $.urlParam('id')},
         function (data, status) {
             $("#sortable").empty();
@@ -24,8 +34,9 @@ var i=0;
             $("#count_task").append(i+" Tasks left");
         });
 
-    var emp_ids=[];
-    var empr_names=[];
+    let  emp_ids = [];
+    let  empr_names = [];
+
     $.get("data_project_edit", {id: $.urlParam('id')},
         function (data, status) {
 
@@ -74,13 +85,13 @@ var i=0;
 
 
     $('#submit-task').on('click', function (e) {
-        var milestone = $("#milestone_select").val();
-        var task = $("#task").val();
-        var selected_emp = $("#AllocateTask").val();
-        var emp = [];
-        var x = 0;
+        let  milestone = $("#milestone_select").val();
+        let  task = $("#task").val();
+        let  selected_emp = $("#AllocateTask").val();
+        let  emp = [];
+        let  x = 0;
 
-        for (var i = 0; i < emp_ids.length; i++) {
+        for (let  i = 0; i < emp_ids.length; i++) {
             if (selected_emp.includes(empr_names[i])) {
                 emp[x] = emp_ids[i];
                 x++;
@@ -91,7 +102,8 @@ var i=0;
             project_id:$.urlParam('id'),
                 milestone_id:milestone,
                 task:task,
-                emp_assigned:emp},
+                emp_assigned:emp
+            },
             function (data, status) {
                 $.get("get_tasks", {id: $.urlParam('id')},
                     function (data, status) {
@@ -123,7 +135,5 @@ var i=0;
                         $("#count_task").empty().append(i+" Tasks left");
                     });
             });
-
-
     });
 });

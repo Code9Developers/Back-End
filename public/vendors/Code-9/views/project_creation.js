@@ -1,19 +1,26 @@
 /**
- * Created by Nicaedin on 2017/07/24.
+ * Page: N/A
+ * Functionality: Project Creation
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Nicaedin Suklal
+ * Date Revised: 24/07/2017 by Nicaedin Suklal
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
 $(document).ready(function() {
-    var employeeArr = [];
-    var employee_array_replacements = [];
-    var globEmployees = null;
-    var emp_store=null;
+    let  employeeArr = [];
+    let  employee_array_replacements = [];
+    let  globEmployees = null;
+    let  emp_store=null;
     $("#employeeTable").empty();
 
     $('#holder').hide();
     $('#empTableHide').hide();
 
     $('#assignEmployees').on('click', function (e) {
-        var num_employees=($('#range_31').val()).split(";");
+        let  num_employees=($('#range_31').val()).split(";");
         e.preventDefault(); // disable the default form submit event
 
         $('#demo-form').hide();
@@ -81,11 +88,11 @@ $(document).ready(function() {
     });
 
 
-    var sendArr = [];
-    var c = 0;
+    let  sendArr = [];
+    let  c = 0;
     $('#employeeTable').on('click','#replaceEmployee',function (e) {
         $('#datatable-checkbox').find('input[type="checkbox"]:checked').each(function () {
-            var ind = $(this).parent().parent().attr('id');
+            let  ind = $(this).parent().parent().attr('id');
             sendArr[c]=employeeArr[ind];
             c++;
         });
@@ -146,9 +153,9 @@ $(document).ready(function() {
                     });
                 });
             globEmployees = data;
-            var contains=false;
+            let  contains=false;
             $.each(data,function(key,value){
-                for(var x=0;x<sendArr.length;x++){
+                for(let  x=0;x<sendArr.length;x++){
                     if(sendArr[x]==value._id){
                         contains=true;
                     }
@@ -202,7 +209,7 @@ $(document).ready(function() {
 
     $('#storeEmp').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
-        var num_employees=($('#range_31').val()).split(";");
+        let  num_employees=($('#range_31').val()).split(";");
         window.alert(JSON.stringify(emp_store));
         $.get("store_emp", {
             num_empl:num_employees[1],
@@ -218,7 +225,7 @@ $(document).ready(function() {
         //         e.preventDefault();
         //     });
         // }else {
-        //     var num_employees=($('#range_31').val()).split(";");
+        //     let  num_employees=($('#range_31').val()).split(";");
         //     window.alert(JSON.stringify(globEmployees));
         //     $.get("store_emp", {
         //             num_empl:num_employees[1],

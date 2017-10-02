@@ -4,10 +4,19 @@ const dbs = require('../../database/dbs');
 const generator = require('generate-password');
 const email_functions = require('../email_functions');
 
-
+/**
+ * Page:
+ * Functionality: GET Request
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.post('/register_employee', function (req, res, next) {
     let rand_password = generator.generate({
-        length: 8,
+        length: 4,
         numbers: true,
         symbols: true,
         uppercase: true
@@ -16,10 +25,10 @@ router.post('/register_employee', function (req, res, next) {
     let today = new Date();
 
 
-    var _json = req.body.skills;
+    let _json = req.body.skills;
     _json = _json.split(",");
 
-    var result;
+    let result;
     result = "[";
     for (let i = 0; i < _json.length; i++) {
         if (i == _json.length - 1) {
@@ -36,7 +45,7 @@ router.post('/register_employee', function (req, res, next) {
     let formatted_skills = JSON.parse(out);
     let employee_id= (req.body.empid).replace(/\s/g, '');
     dbs.encrypt(rand_password, function (enc_pass) {
-        var emp = {
+        let emp = {
             _id:employee_id,
             name: req.body.firstname,
             surname: req.body.lastname,
@@ -64,13 +73,16 @@ router.post('/register_employee', function (req, res, next) {
 /**
  * Page: admin.ejs
  * Functionality: Display past projects on admin page
- * Author: Seonin David
- * Note: The past projects that are being displayed are test projects, eventually actual past projects
- * will need to be displayed
+ * Note: The past projects that are being displayed are test projects, eventually actual past projects will need to be displayed
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
 router.get('/get_past_projects', function (req, res, next) {
-    var past_projects = dbs.findProjects("status", "completed", function (past_projects) {
+    let  past_projects = dbs.findProjects("status", "completed", function (past_projects) {
         res.send(past_projects);
     })
 });

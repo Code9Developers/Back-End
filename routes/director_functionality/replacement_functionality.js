@@ -1,6 +1,3 @@
-/**
- * Created by Seonin David on 2017/09/22.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
@@ -9,6 +6,16 @@ const generator = require('generate-password');
 const Promise = require('promise');
 const async = require("async");
 
+/**
+ * Page:
+ * Functionality: Replacement Functions
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): author
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.get('/get_deleted_employees', function (req, res, next) {
 
     dbs.find_approval("_id",  req.query.id,(data) =>  {

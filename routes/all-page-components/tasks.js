@@ -1,31 +1,32 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const generator = require('generate-password');
+
 /**
- -----------------------------------------------------------------------------------------------------------------------
- *Name: Task Functionality
- *Author: Seonin David
+ * Page:
+ * Functionality: Task Functionality
+ * Note:
+ * Bug(s): N/A
  *
- -----------------------------------------------------------------------------------------------------------------------
- * */
+ * Author(s): author
+ * Date Revised: DD/MM/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.get('/create_task', function (req, res, next) {
-    var project_id = req.param('project_id');
-    var milestone_id = req.param('milestone_id');
-    var task = req.param('task');
-    var emp_assigned = req.param('emp_assigned');
-    var rand_password = generator.generate({
+    let  project_id = req.param('project_id');
+    let  milestone_id = req.param('milestone_id');
+    let  task = req.param('task');
+    let  emp_assigned = req.param('emp_assigned');
+    let  rand_password = generator.generate({
         length: 5,
         numbers: true,
         symbols: false,
         uppercase: true
     });
 
-    var _id = milestone_id.substr(0, 5) + project_id + rand_password;
-    var emp_json = {
+    let  _id = milestone_id.substr(0, 5) + project_id + rand_password;
+    let  emp_json = {
         _id: _id,
         description: task,
         project_id: project_id,
@@ -34,15 +35,15 @@ router.get('/create_task', function (req, res, next) {
     };
 
     dbs.insertTask(emp_json);
-    var rand = generator.generate({
+    let  rand = generator.generate({
         length: 5,
         numbers: true,
         symbols: false,
         uppercase: true
     });
-    var emp = req.param('emp_assigned');
+    let  emp = req.param('emp_assigned');
     dbs.findMilestones("_id", milestone_id, function (milestone) {
-        for (var x in emp) {
+        for (let  x in emp) {
             rand = generator.generate({
                 length: 5,
                 numbers: true,
@@ -60,13 +61,13 @@ router.get('/create_task', function (req, res, next) {
     });
 
 
-    res.send("Succuess");
+    res.send("Success");
 
 });
 
 router.get('/get_tasks', function (req, res, next) {
-    var project_id = req.param('id');
-    var tasks = dbs.findTasks("project_id", project_id, function (tasks) {
+    let  project_id = req.param('id');
+    let  tasks = dbs.findTasks("project_id", project_id, function (tasks) {
         console.log(tasks);
         res.send(tasks);
     });

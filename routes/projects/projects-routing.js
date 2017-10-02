@@ -2,6 +2,17 @@ const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 
+/**
+ * Page:
+ * Functionality: Project Edit Routes
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): author
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
+
 //Project Creation Page
 router.get("/project_creation", function (req, res, next) {
     res.render('project_creation');

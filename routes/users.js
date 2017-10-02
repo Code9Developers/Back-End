@@ -1,7 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
+/**
+ * Page: N/A
+ * Functionality: GET users listing
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 24/09/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.get('/', function (req, res, next) {
     res.send('respond with a resource');
 });

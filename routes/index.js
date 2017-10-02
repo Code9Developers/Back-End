@@ -9,6 +9,15 @@ const generator = require('generate-password');
 const nodemailer = require('nodemailer');
 
 
+/**
+ * Page: N/A
+ * Functionality:
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.get("/create_test_data", function (req, res, next) {
     res.render('login');
     test_data.create_test_employees();
@@ -28,7 +37,7 @@ router.get('/test_project_creation', function (req, res, next) {
     res.render('project_creation');
 });
 
-//Creates 5 test emplyees into the database
+//Creates 5 test employees into the database
 router.get('/create_test_employees', function (req, res, next) {
     test_data.create_test_employees();
     //test_data.create_All_test_employees(1, 30);

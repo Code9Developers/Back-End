@@ -1,13 +1,20 @@
 /**
- * Created by Nicaedin on 08/17/2017.
+ * Page: N/A
+ * Functionality: Milestones
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Nicaedin Suklal
+ * Date Revised: 17/08/2017 by Nicaedin Suklal
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
 $(document).ready(function() {
     $(".to_do").empty();
     $.urlParam = function(name){
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
-    }
+    };
 
     $.get("data_project_edit", {id: $.urlParam('id')},
         function (data, status) {
@@ -51,6 +58,5 @@ $(document).ready(function() {
                     "</li>");
             });
     });
-
 });
 

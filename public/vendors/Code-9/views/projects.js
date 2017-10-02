@@ -1,5 +1,12 @@
 /**
- * Created by Seonin David on 2017/08/16.
+ * Page: N/A
+ * Functionality: Projects
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 16/08/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
 
@@ -25,8 +32,8 @@ $(document).ready(function() {
         );
         //window.alert(data.projects);
         //data = JSON.parse(data);
-        var i=0;
-        var edit_id,view_id,milestone_pid,remove_pid;
+        let  i=0;
+        let  edit_id,view_id,milestone_pid,remove_pid;
         $.each(data, function (key, value) {
             // console.log(value.name);
             edit_id="project_edit?id="+value._id;
@@ -69,9 +76,9 @@ $(document).ready(function() {
                 "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Remove </a>"+
                 "</td>"+
                 "</tr>");
-            var len=(value.employees_assigned).length;
+            let  len=(value.employees_assigned).length;
             if(len>0){
-                for(var y=0;y<len;y++)
+                for(let  y=0;y<len;y++)
                 {
                     $("#"+value._id).append(
                         "<li>"+
@@ -80,9 +87,6 @@ $(document).ready(function() {
                     );
                 }
             }
-
-
-
 
         });
         $(".remove").on("click",function () {

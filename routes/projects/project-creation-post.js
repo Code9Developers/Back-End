@@ -12,18 +12,19 @@ let employee_id_array;
 let employee_info_array;
 
 /**
- *
  * Page: project_creation.ejs
- * Author(s): Seonin David
  * Functionality:   - Gets all the data for the specific project
  *                  - Creates the project (Calling @insertProject)
  *                  - Assigns employees to projects and projects to employees
  *                  - Sends each employee that has been assigned a notification
  *
- * Bug:             - Make the date changer a function
+ * Note:
+ * Bug(s): Make the date changer a function
  *
+ * Author(s): author
+ * Date Revised: DD/MM/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
-
 router.get('/store_emp', function (req, res, next)
 {
     employee_info_array = JSON.parse(req.param("emplArr"));

@@ -1,13 +1,18 @@
 /**
- * Created by Seonin David on 2017/09/25.
- */
-/**
- * Created by Seonin David on 2017/08/18.
+ * Page: N/A
+ * Functionality: User Project Details
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 18/08/2017 by Seonin David
+ * Date Revised: 25/09/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
 
     $.urlParam = function (name) {
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        let results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
 
@@ -23,5 +28,4 @@ $(document).ready(function() {
             $("#project_owner").append(data.owner_name);
             $("#description").append(data.description);
         });
-
 });

@@ -1,6 +1,3 @@
-/**
- * Created by Seonin David on 2017/08/20.
- */
 // $.get("find_project_users", {id:$.urlParam('id')},
 //     function (data, status) {
 //         $("#AllocateTask").empty();
@@ -18,9 +15,19 @@
 /**
  * Use the above as a guideline to display past projects on this page.
  * Make sure it is like above the only thing you will bw changing is the data sent through
- * Route:get_past_projects
+ * Route: get_past_projects
  */
 
+/**
+ * Page: N/A
+ * Functionality: Admin
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 20/08/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 $(document).ready(function(){
 
      $.get("get_past_projects", function (data, status) {

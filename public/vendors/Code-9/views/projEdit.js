@@ -1,13 +1,20 @@
 /**
- * Created by Nicaedin on 08/17/2017.
+ * Page: N/A
+ * Functionality: Project Edit
+ * Note: TODO Change file name to project_edit and check the duplicate employeeArr deceleration
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 17/08/2017 by Nicaedin Suklal
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
-    var employeeArr = [];
+    let  employeeArr = [];
 
     $.urlParam = function(name){
-        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
-    }
+    };
 
     $( window ).load(function() {
         getDate();
@@ -17,8 +24,8 @@ $(document).ready(function() {
 
         $.get("data_project_edit", {id:$.urlParam('id')},
             function (data, status) {
-                var tempDateArray=(data.project_end_date.substr(0,10)).split("-");
-                var newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
+                let  tempDateArray=(data.project_end_date.substr(0,10)).split("-");
+                let  newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
                 $("#CurrentDeadline").val(newDate);
             });
 
@@ -59,10 +66,10 @@ $(document).ready(function() {
     }
 
 
-    var employeeArr = [];
-    var employee_array_replacements = [];
-    var globEmployees = null;
-    var emp_store=null;
+    let  employeeArr = [];
+    let  employee_array_replacements = [];
+    let  globEmployees = null;
+    let  emp_store=null;
 
     function getUsers() {
         $.get("find_project_users", {id:$.urlParam('id')},
@@ -116,11 +123,11 @@ $(document).ready(function() {
     }
 
 
-    var sendArr = [];
-    var c = 0;
+    let  sendArr = [];
+    let  c = 0;
     $('#employeeTable').on('click','#replaceEmployee',function (e) {
         $('#datatable-checkbox').find('input[type="checkbox"]:checked').each(function () {
-            var ind = $(this).parent().parent().attr('id');
+            let  ind = $(this).parent().parent().attr('id');
             sendArr[c]=employeeArr[ind];
             c++;
         });
@@ -181,9 +188,9 @@ $(document).ready(function() {
                     });
                 });
             globEmployees = data;
-            var contains=false;
+            let  contains=false;
             $.each(data,function(key,value){
-                for(var x=0;x<sendArr.length;x++){
+                for(let  x=0;x<sendArr.length;x++){
                     if(sendArr[x]==value._id){
                         contains=true;
                     }
@@ -208,15 +215,15 @@ $(document).ready(function() {
     });
 
 
-    var replacement_array=[];
-    var replacement_array_count=0;
+    let  replacement_array=[];
+    let  replacement_array_count=0;
 
 
     $('#employeeTable1').on('click','#removeEmployee',function (e) {
         e.preventDefault(); // disable the default form submit event
 
         $('#datatable-checkbox1').find('input[type="checkbox"]:checked').each(function () {
-            var ind = $(this).parent().parent().attr('id');
+            let  ind = $(this).parent().parent().attr('id');
             replacement_array[c]=employee_array_replacements[ind];
             replacement_array_count++;
         });
@@ -235,8 +242,4 @@ $(document).ready(function() {
         });
 
     });
-
-
-
-
 });

@@ -1,11 +1,16 @@
-var exports = module.exports = {};
+let exports = module.exports = {};
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv/config');
 
-
 /**
- * Email set-up
- * create reusable transporter object using the default SMTP transport
+ * Page: N/A
+ * Functionality: Email set-up: Create reusable transporter object using the default SMTP transport
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 12/09/2017 by Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
 let transporter = nodemailer.createTransport({
@@ -18,10 +23,16 @@ let transporter = nodemailer.createTransport({
     }
 });
 
-/**
- * SEND EMAIL TO NEW EMPLOYEE
+ /**
+ * Page: N/A
+ * Functionality: Send email to new employee
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 12/09/2017 by Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
-
 exports.NewEmployeeMailer = function (toEmail, empName, empSurname, empId, randPass)
 {
     // setup email data with unicode symbols
@@ -45,9 +56,16 @@ exports.NewEmployeeMailer = function (toEmail, empName, empSurname, empId, randP
 };
 
 /**
- * SEND EMAIL TO EMPLOYEE ASSIGNED TO A PROJECT
+ * Page: N/A
+ * Functionality: Send email to employee assigned to a project
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 12/09/2017 by Joshua Moodley
+ * Date Revised: 24/09/2017 by Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
-
 exports.NewProjectAllocation = function (toEmail, empName, empSurname, projectName)
 {
     // setup email data with unicode symbols
@@ -71,9 +89,15 @@ exports.NewProjectAllocation = function (toEmail, empName, empSurname, projectNa
 };
 
 /**
- * SEND EMAIL TO DIRECTOR FOR EMPLOYEE REPLACEMENT
+ * Page: N/A
+ * Functionality: Send email to director for employee replacement approval
+ * Note:
+ * Bug(s): Possible formatting bug - need the db filled with vaild data to test
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 25/09/2017 by Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
-
 exports.EmployeeReplacement = function (toEmail, managerName, managerSurname, projectName)
 {
     // setup email data with unicode symbols

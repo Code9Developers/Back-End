@@ -127,13 +127,9 @@ router.get("/create_past_projects", function (req, res, next) {
 
 
 // TEST ROUTES
-// router.get("/director_dashboard", function (req, res, next) {
-//     res.render('director_dashboard');
-// });
+
 //
-// router.get("/employee_swap", function (req, res, next) {
-//     res.render('employee_swap');
-// });
+
 
 router.get("/training", function (req, res, next) {
     res.render('training');

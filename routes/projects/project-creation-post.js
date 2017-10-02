@@ -62,8 +62,10 @@ router.get('/store_emp', function (req, res, next)
 
 let status="active";
 let ap_id="";
+let needs_approval=false;
 router.get('/replacement_store', function (req, res, next) {
     status="pending";
+    needs_approval=true;
     let rand_id = Math.floor((Math.random() * 1000) + 1).toString();
     let director_id=req.query.director;
 
@@ -109,8 +111,9 @@ router.post("/project_creation", function (req, res, next) {
 
     let rand_id = Math.floor((Math.random() * 100) + 1).toString();
     let project_id = ("kpmg_" + req.body.projectname + rand_id).replace(/\s/g, '');
-    dbs.editApproval("_id",ap_id,"project_id",project_id);
-
+    if(needs_approval==true){
+        dbs.editApproval("_id",ap_id,"project_id",project_id);
+    }
     //var start_date=(req.body.start_date).replace(/\//g,'-');
     let start_date = (req.body.start_date);
     let s = start_date.split("/");
@@ -122,8 +125,6 @@ router.post("/project_creation", function (req, res, next) {
 
     let today = new Date();
     let dis_emp=employee_id_array.split(",");
-    //var tts=JSON.parse(JSON.stringify(e));
-console.log(JSON.stringify(employees));
     let project = {
         _id: project_id,
         name: req.body.projectname,

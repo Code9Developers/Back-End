@@ -9,6 +9,7 @@
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
+    window.alert("sdf");
     let  employeeArr = [];
 
     $.urlParam = function(name){
@@ -16,11 +17,7 @@ $(document).ready(function() {
         return results[1] || 0;
     };
 
-    $( window ).load(function() {
-        getDate();
-        getUsers();
-    });
-    function getDate() {
+
 
         $.get("data_project_edit", {id:$.urlParam('id')},
             function (data, status) {
@@ -63,15 +60,12 @@ $(document).ready(function() {
                 });
             });
 
-    }
 
-
-    let  employeeArr = [];
+    // let  employeeArr = [];
     let  employee_array_replacements = [];
     let  globEmployees = null;
     let  emp_store=null;
 
-    function getUsers() {
         $.get("find_project_users", {id:$.urlParam('id')},
             function (data, status) {
                 $("#employeeTable").empty();
@@ -120,7 +114,6 @@ $(document).ready(function() {
                 });
             })
 
-    }
 
 
     let  sendArr = [];

@@ -21,7 +21,7 @@ const nodemailer = require('nodemailer');
 router.get("/create_test_data", function (req, res, next) {
     res.render('login');
     test_data.create_test_employees();
-    //test_data.create_test_projects();
+    test_data.create_test_projects();
 });
 
 

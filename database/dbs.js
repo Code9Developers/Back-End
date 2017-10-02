@@ -436,10 +436,8 @@ exports.insertProject = function (_json) {
     });
     user.findByIdAndUpdate(_project.manager_id, {
         $push: {
-            current_projects: {
-                _id: _project._id,
-                skill: "Manager"
-            }
+            current_projects:_project._id
+
         }
     }, function (err) {
         if (!err) {
@@ -943,8 +941,66 @@ exports.remove_approval = function (approval_id) {
  ***********************************************************************************************************************
  */
 
+<<<<<<<<< Temporary merge branch 1
 /*********************************************************************************************************************************************************************************************************************************************
  **/
+=========
+exports.get_completed_projects = function (project_ids,callback) {
+    var projects = schemas.project;
+    projects.aggregate([
+        {$match:{$and:[{_id:{$in:project_ids}},{status:"completed"},{reviewed:"No"}]}},
+        {$group:{_id:{id:"$_id",name:"$name",employees_assigned:"$employees_assigned",project_start_date:"$project_start_date"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
+exports.get_specific_user_data = function (user_ids,callback) {
+    var user = schemas.user;
+    user.aggregate([
+        {$match:{_id:{$in:user_ids}}},
+        {$group:{_id:{id:"$_id",name:"$name",surname:"$surname",contact:"$contact",position:"$position",email:"$email"}}}//possibly add image if working
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
+exports.get_specific_user_skill = function (user_id,callback) {
+    var user = schemas.user;
+    user.aggregate([
+       {$match:{_id:user_id}},
+        {$group:{_id:{skill:"$skill"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
+/*
+ ***********************************************************************************************************************
+ ***********************************************************************************************************************
+ */
+>>>>>>>>> Temporary merge branch 2
 
 /**
  ***********************************************************************************************************************

@@ -49,7 +49,7 @@ router.get("/remove_project", function (req, res, next) {
         dbs.insertNotification({
             _id: "noti_"+rand_id+project_data[0]._id+req.session.username,
             user_id: req.session.username,
-            message: project_data[0].name+" has been completed, please review how the project went.",
+            message: project_data[0].name+" has been completed, please review hpw the project did.",
             date_created: today,
             isRead: false
         });

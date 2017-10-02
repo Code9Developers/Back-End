@@ -14,8 +14,8 @@
   },
   "devDependencies": {
     "async": "^2.5.0",
-    "body-parser": "~1.17.1",
     "bcryptjs": "^2.4.3",
+    "body-parser": "~1.17.1",
     "browser-sync": "^2.18.13",
     "client-sessions": "^0.8.0",
     "cookie-parser": "~1.4.3",

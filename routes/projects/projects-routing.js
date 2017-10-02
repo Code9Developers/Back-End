@@ -38,6 +38,12 @@ router.get("/projects", function (req, res, next) {
     res.render('projects');
 });
 
+//View all project reviews page(displays all projects to review)
+router.get("/display_reviews", function (req, res, next) {
+    res.render('display_reviews');
+});
+
+//Projects review page
 router.get("/project_review", function (req, res, next) {
     res.render('project_review');
 });
@@ -49,7 +55,7 @@ router.get("/remove_project", function (req, res, next) {
         dbs.insertNotification({
             _id: "noti_"+rand_id+project_data[0]._id+req.session.username,
             user_id: req.session.username,
-            message: project_data[0].name+" has been completed, please review how the project went.",
+            message: project_data[0].name+" has been completed, please review hpw the project did.",
             date_created: today,
             isRead: false
         });

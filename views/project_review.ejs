@@ -73,19 +73,13 @@
             <div class="title">
                 <h5>Overall Project Review</h5>
             </div>
-            <form id="demo-form" data-parsley-validate action="project_review" method="post">
+            <form id="demo-form" data-parsley-validate action="send_review" method="post">
                 <div class="row">
                     <div class="col-md-offset-1 col-md-4">
                         <label for="overallProjRating">Overall project rating: *</label>
                         <input type="text" id="overallProjRating" value="" name="overallProjRating"/>
                     </div>
 
-                    <div class="col-md-offset-1 col-md-6">
-                        <div id="projectreviewdescript">
-                            <label for="projectreviewdescript">Short Project Review: *</label>
-                            <textarea class="form-control" id="empRemoval" required="required" name="projectreviewdescript"></textarea>
-                        </div>
-                    </div>
                 </div>
                 <hr/>
                 <div class="title">
@@ -93,100 +87,13 @@
                 </div>
 
                  <!--ONE EMPLOYEEE START-->
-                <div class="col-md-6 col-sm-6 col-xs-12 profile_details">
-                    <div class="well profile_view">
-                        <div class="col-sm-12">
-                            <h4 class="brief"><i>Digital Strategist</i></h4>
-                            <div class="left col-xs-7">
-                                <h2>Nicole Pearson</h2>
-                                <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-building"></i> Address: </li>
-                                    <li><i class="fa fa-phone"></i> Phone #: </li>
-                                </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <p class="ratings">
-                                    <a>4.0</a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star-o"></span></a>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <button type="button" class="btn btn-primary btn-xs">
-                                    <i class="fa fa-user"> </i> View Profile
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-offset-1 col-sm-offset-1 col-md-4 col-sm-4 col-xs-12">
-                    <h5>Skills</h5>
-                    <label for="ratingOne">Rating: *</label>
-                    <input type="text" id="ratingOne" value="" name="ratingOne"/>
-
+                <div id="all_user_info">
 
                 </div>
-                <!-- ONE EMPLOYEE END-->
 
-                <div class="col-md-6 col-sm-6 col-xs-12 profile_details">
-                    <div class="well profile_view">
-                        <div class="col-sm-12">
-                            <h4 class="brief"><i>Digital Strategist</i></h4>
-                            <div class="left col-xs-7">
-                                <h2>Nicole Pearson</h2>
-                                <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                                <ul class="list-unstyled">
-                                    <li><i class="fa fa-building"></i> Address: </li>
-                                    <li><i class="fa fa-phone"></i> Phone #: </li>
-                                </ul>
-                            </div>
-                            <div class="right col-xs-5 text-center">
-                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
-                            </div>
-                        </div>
-                        <div class="col-xs-12 bottom text-center">
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <p class="ratings">
-                                    <a>4.0</a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star"></span></a>
-                                    <a href="#"><span class="fa fa-star-o"></span></a>
-                                </p>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 emphasis">
-                                <button type="button" class="btn btn-primary btn-xs">
-                                    <i class="fa fa-user"> </i> View Profile
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-offset-1 col-sm-offset-1 col-md-4 col-sm-4 col-xs-12">
-                    <h5>Skills</h5>
-                    <label for="ratingFour">Rating: *</label>
-                    <input type="text" id="ratingFour" value="" name="ratingFour"/>
 
-                    <label for="ratingFive">Rating: *</label>
-                    <input type="text" id="ratingFive" value="" name="ratingFive"/>
-
-                    <label for="ratingSix">Rating: *</label>
-                    <input type="text" id="ratingSix" value="" name="ratingSix"/>
-                </div>
-                <br/>
-                <hr/>
                 <div class="col-md-12">
-                    <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Submit Review" type="submit" value="Complete Review">
+                    <input id="submit_review" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Submit Review" type="submit" value="Complete Review">
                 </div>
             </form>
             <!-- end form for validations -->
@@ -219,7 +126,7 @@
 <!-- Code 9 -->
 <script type="text/javascript" src="js/code9/js/code9Custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
-<script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/project_review.js"></script>
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
 <!-- Moment for some reason is needed for the tags in this one  -->

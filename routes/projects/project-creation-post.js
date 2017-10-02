@@ -136,7 +136,9 @@ console.log(JSON.stringify(employees));
         manager_id: req.session.username,
         employees_assigned: employees,
         project_budget: req.body.budget,
-        status: status
+        status: status,
+        project_rating:0,
+        reviewed:"No"
     };
         dbs.insertProject(project);
        // var emp_obj=JSON.parse(employee_id_array);

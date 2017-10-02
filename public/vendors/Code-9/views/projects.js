@@ -33,10 +33,11 @@ $(document).ready(function() {
             view_id="project_detail?id="+value._id;
             milestone_pid="project_milestone?id="+value._id;
             remove_pid="project_remove?id="+value._id;
-
+            value.status[0]=(value.status[0]).toUpperCase();
+            let index=parseInt(key)+1;
             $("#projViewTable").append("<tr>" +
                 "<td>" +
-                "#" +
+                index+
                 "</td>" +
                 "<td>" +
                 "<a>" + value.name + "</a>" +
@@ -52,16 +53,8 @@ $(document).ready(function() {
                 "<div class='progress-bar bg-kpmg-bar' role='progressbar' data-transitiongoal=\"51\"></div>" +
                 "</div>" +
                 "<small>" + 51 + "% Complete</small>" +
-                "</td>" +
-                "<td>");
-            if(value.status=="pending"){
-                $("#projViewTable").append("<button type='button' class='btn btn-warning btn-xs'>Pending</button>" );
-            }
-            else
-            {
-                $("#projViewTable").append("<button type='button' class='btn btn-kpmg btn-xs'>Ongoing</button>");
-            }
-            $("#projViewTable").append( "</td>" +
+                "</td>"+
+                "<td><button type='button' class='btn btn-kpmg btn-xs'>"+value.status+"</button></td>"+
                 "<td>"+
                 "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
                 "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+

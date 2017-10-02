@@ -90,13 +90,14 @@ router.get('/approved_replacement', function (req, res, next) {
             dbs.dismissProject(employees_to_be_removed[x],data[0].project_id)
         }
         for(let x=0;x<employees_to_add.length;x++){
-            dbs.assignProject(employees_to_add[x],data[0].project_id,data[0].skill);
+            dbs.assignProject(employees_to_add[x],data[0].project_id);
             //Need to change or make function to also add skill to current employees
         }
-        dbs.editProjects("_id",data[0].project_id,"status","active");
-        dbs.remove_approval(req.query.id);
-    })
 
+        dbs.findProjects("_id",data[0].project_id,(project_data)=>{
+            res.send(project_data);
+        })
+    })
 });
 
 module.exports = router;

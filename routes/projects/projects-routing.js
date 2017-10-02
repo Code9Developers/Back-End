@@ -38,12 +38,6 @@ router.get("/projects", function (req, res, next) {
     res.render('projects');
 });
 
-//View all project reviews page(displays all projects to review)
-router.get("/display_reviews", function (req, res, next) {
-    res.render('display_reviews');
-});
-
-//Projects review page
 router.get("/project_review", function (req, res, next) {
     res.render('project_review');
 });

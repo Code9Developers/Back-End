@@ -46,7 +46,7 @@ exports.create_test_employees = function () {
                 rating: 0,
                 counter: 0
             }, {name: "Auditor", rating: 0, counter: 0}],
-            current_projects: ["kpmg1"],
+            current_projects: [],
             past_projects: []
         };
 

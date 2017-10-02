@@ -10,10 +10,16 @@
  */
 
 $(document).ready(function() {
+
+    $(".select-test").select2({
+        tags: false
+    });
+
     let  employeeArr = [];
     let  employee_array_replacements = [];
     let  globEmployees = null;
     let  emp_store=null;
+
     $("#employeeTable").empty();
 
     $('#holder').hide();
@@ -44,7 +50,7 @@ $(document).ready(function() {
                 $('#empTableHide').show();
 
                 $("#employeeTable").append("<div class='x_title'>"+
-                    " <h2>Allocated Employees</h2>"+
+                    "<h2>Allocated Employees</h2>"+
                     "<ul class='nav navbar-right panel_toolbox'>"+
                     "<li style='float: right'><a class='collapse-link'><i class='fa fa-chevron-up'></i></a></li>"+
                     "</ul>"+

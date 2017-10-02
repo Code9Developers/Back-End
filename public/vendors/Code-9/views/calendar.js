@@ -1,9 +1,17 @@
 /**
- * Created by Nicaedin on 08/22/2017.
+ * Page: N/A
+ * Functionality: User Calendar
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Nicaedin Suklal
+ * Date Revised: 22/08/2017 by Nicaedin Suklal
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
+
 window.eve = [];
 function getCalendarEvents() {
-var item;
+let  item;
     $.get("calendar_events",
         {},
         function (data, status) {
@@ -37,14 +45,14 @@ console.log('init_calendar');
 // nEv = JSON.stringify();
 
 // window.alert(JSON.parse(eve));
-var date = new Date(),
+let  date = new Date(),
     d = date.getDate(),
     m = date.getMonth(),
     y = date.getFullYear(),
     started,
     categoryClass;
 
-var calendar = $('#calendar').fullCalendar({
+let  calendar = $('#calendar').fullCalendar({
     header: {
         left: 'prev,next today',
         center: 'title',
@@ -59,7 +67,7 @@ var calendar = $('#calendar').fullCalendar({
         ended = end;
 
         $(".antosubmit").on("click", function() {
-            var title = $("#title").val();
+            let  title = $("#title").val();
             if (end) {
                 ended = end;
             }

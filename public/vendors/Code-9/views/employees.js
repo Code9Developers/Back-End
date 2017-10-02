@@ -1,8 +1,13 @@
 /**
- * Created by Seonin David on 2017/08/23.
- */
-/**
- * Created by Seonin David on 2017/08/16.
+ * Page: N/A
+ * Functionality: Employees
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 16/08/2017 by Seonin David
+ * Date Revised: 23/08/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
 
@@ -60,6 +65,5 @@ $(document).ready(function() {
                 "</tr>");
 
         });
-
     });
 });

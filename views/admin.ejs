@@ -19,10 +19,10 @@
     <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- NProgress: Top load animation-->
     <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
-    <!-- Bootstrap Multi-select-->
-    <link href="vendors/bootstrap-multiselect/dist/css/bootstrap-multiselect.css" type="text/css" rel="stylesheet"/>
     <!-- Code 9-->
     <link href="vendors/Code-9/css/code9.css" type="text/css" rel="stylesheet"/>
+    <!-- Select2-->
+    <link href="vendors/select2/dist/css/select2.css" type="text/css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>
 
@@ -110,15 +110,109 @@
                     <div class="form-group col-md-6">
                         <div class="scrollable">
                             <label class="control-label">Past Projects: *</label><br/>
-                            <select id="pastprojects" name="pastprojects" class="multiselect-ui form-control"
-                                    multiple="multiple">
+                            <select id="pastprojects" name="pastprojects" class="form-control select-test" style="width: 100%;" multiple>
                             </select>
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Skill Tags: *</label>
-                        <input id="tags_1" name="skills" type="text" class="tags form-control"
-                               value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required/>
+                        <select name="skills" class="form-control select-test" style="width: 100%;" multiple>
+                            <optgroup label="Cyber Security">
+                                <option value="Penetration Testing &amp; Vulnerability">Penetration Testing &amp; Vulnerability</option>
+                                <option value="Scanning (Nesus & Qualys)">Scanning (Nesus & Qualys)</option>
+                                <option value="Windows / Linux Security">Windows / Linux Security </option>
+                                <option value="Database Security">Database Security</option>
+                                <option value="Security Gap Assessments">Security Gap Assessments</option>
+                                <option value="Cyber Threat Detection And Root Cause ">Cyber Threat Detection And Root Cause</option>
+                                <option value="Analysis">Analysis</option>
+                                <option value="Virtualisation Technologies">Virtualisation Technologies</option>
+                                <option value="Strategic Management">Strategic Management</option>
+                                <option value="Regulatory Compliance">Regulatory Compliance</option>
+                                <option value="Risk Management">Risk Management</option>
+                                <option value="IT Corporate Governance">IT Corporate Governance</option>
+                                <option value="Data Centre Security">Data Centre Security</option>
+                                <option value="Report Writing">Report Writing</option>
+                                <option value="Policies, Procedures and Standards Writing skills">Policies, Procedures & Standards Writing skills</option>
+                                <option value="Policies, Procedures and Standards Compliance Measurement"> Policies, Procedures and Standards Compliance Measurement</option>
+                                <option value="IT Legislation Compliance Gap Assessments">IT Legislation Compliance Gap Assessments</option>
+                            </optgroup>
+
+                            <optgroup label="CIO Advisory">
+                                <option value="IT Procurement & Bid Management">IT Procurement & Bid Management</option>
+                                <option value="IT Governance & Service Management">IT Governance & Service Management</option>
+                                <option value="IT Strategy and Performance Management">IT Strategy and Performance Management</option>
+                                <option value="Enterprise Architecture and Design">Enterprise Architecture and Design</option>
+                                <option value="Digitisation">Digitisation</option>
+                            </optgroup>
+
+                            <optgroup label="IT External Audit">
+                                <option value="Specialist Supporting the Audit training">Specialist Supporting the Audit training</option>
+                                <option value="Eaudit skills">Eaudit skills</option>
+                                <option value="External Audit basics">External Audit basics</option>
+                                <option value="General IT controls">General IT controls</option>
+                            </optgroup>
+
+                            <optgroup label="IT Internal Audit">
+                                <option value="IT risk profiling">IT Risk Profiling</option>
+                                <option value="Risk and compliance assessment">Risk & Compliance Assessment</option>
+                                <option value="Application controls">Application Controls</option>
+                                <option value="General IT controls">General IT Controls</option>
+                                <option value="Report writing">Report Writing</option>
+                                <option value="IT fraud investigation">IT Fraud Investigation</option>
+                                <option value="Audit plan development">Audit Plan Development</option>
+                                <option value="Eaudit skills">Eaudit skills</option>
+                                <option value="ITIA basics">ITIA Basics</option>
+                                <option value="SAP basics">SAP Basics</option>
+                                <option value="IT assurance">IT Assurance</option>
+                                <option value="King 3 Assessments">King 3 Assessments</option>
+                                <option value="Data Migration Reviews">Data Migration Reviews</option>
+                                <option value="User Account Testing">User Account Testing</option>
+                            </optgroup>
+
+                            <optgroup label="Data Analytics">
+                                <option value="Data Analysis">Data Analysis</option>
+                                <option value="Data Visualization">Data Visualization</option>
+                                <option value="IDEA Skills">IDEA Skills</option>
+                                <option value="Qlikview Skills">Qlikview Skills</option>
+                                <option value="CAATS Basics Skills">CAATS Basics Skills</option>
+                                <option value="Data Insight Detection">Data Insight Detection</option>
+                                <option value="Report Writing">Report Writing</option>
+                            </optgroup>
+
+                            <optgroup label="TA Management">
+                                <option value="Vendor Sourcing & RFP Development">Vendor Sourcing & RFP Development</option>
+                                <option value="Vendor Contract Review">Vendor Contract Review</option>
+                                <option value="Business Case Review">Business Case Review</option>
+                                <option value="Project Assurance & Auditing">Project Assurance & Auditing</option>
+                                <option value="Project Risk Management">Project Risk Management</option>
+                                <option value="IT Strategy Development & Master Systems Plan">IT Strategy Development & Master Systems Plan</option>
+                                <option value="IT Governance & Maturity Assessment">IT Governance & Maturity Assessment</option>
+                                <option value="Data Migration">Data Migration</option>
+                                <option value="Business Process Risk & Control Analysis In Erp Environments">Business Process Risk & Control Analysis In Erp Environments</option>
+                                <option value="Automated Controls Testing">Automated Controls Testing</option>
+                                <option value="Requirements Management">Requirements Management</option>
+                                <option value="Blueprint / Process Design">Blueprint / Process Design</option>
+                                <option value="Controls Integration">Controls Integration</option>
+                                <option value="Master Data Management">Master Data Management</option>
+                                <option value="Security & Sod">Security & Sod</option>
+                                <option value="User Account Testing">User Account Testing</option>
+                                <option value="Support Management">Support Management</option>
+                                <option value="IT Service Management">IT Service Management</option>
+                                <option value="Develop It Governance Frameworks">Develop IT Governance Frameworks</option>
+                                <option value="IT Risks & Controls Assessments & Benchmarking">IT Risks & Controls Assessments & Benchmarking</option>
+                                <option value="Review It Policies & Procedures">Review It Policies & Procedures</option>
+                                <option value="Development of IT Strategies">Development of IT Strategies</option>
+                                <option value="Value IT Analysis & Reviews">Value IT Analysis & Reviews</option>
+                                <option value="It Governance Audits">IT Governance Audits</option>
+                                <option value="King 3 Assessments">King 3 Assessments</option>
+                                <option value="It Governance Maturity Reviews">IT Governance Maturity Reviews</option>
+                                <option value="Vendor Selection Assistance">Vendor Selection Assistance</option>
+                                <option value="It Project Assurance & Business Req Review">IT Project Assurance & Business Req Review</option>
+                                <option value="Disaster Recovery Test Assist & Reviews">Disaster Recovery Test Assist & Reviews</option>
+                                <option value="Project Management">Project Management</option>
+                            </optgroup>
+
+                        </select>
                     </div>
                 </div>
                 <div class="clearfix"></div>
@@ -151,18 +245,19 @@
 <script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 <!-- Bootstrap -->
 <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Bootstrap Multi-Select-->
-<script type="text/javascript" src="vendors/bootstrap-multiselect/dist/js/bootstrap-multiselect.js"></script>
 <!-- Code 9 -->
 <script type="text/javascript" src="vendors/Code-9/js/code9.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/admin.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress: Top load animation-->
 <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- Select2 -->
+<script type="text/javascript" src="vendors/select2/dist/js/select2.full.js"></script>
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.js"></script>
 </body>

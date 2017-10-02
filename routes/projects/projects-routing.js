@@ -43,13 +43,14 @@ router.get("/project_review", function (req, res, next) {
 });
 
 router.get("/remove_project", function (req, res, next) {
+    let today = new Date();
     let rand_id = Math.floor((Math.random() * 10) + 1).toString();
     dbs.editProjects("_id",req.query.project_id,"status","completed");
     dbs.findProjects("_id",req.query.project_id,function (project_data) {
         dbs.insertNotification({
             _id: "noti_"+rand_id+project_data[0]._id+req.session.username,
             user_id: req.session.username,
-            message: project_data[0].name+" has been completed, please review hpw the project did.",
+            message: project_data[0].name+" has been completed, please review how the project went.",
             date_created: today,
             isRead: false
         });

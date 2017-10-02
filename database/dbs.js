@@ -959,6 +959,23 @@ exports.get_completed_projects = function (project_ids,callback) {
     });
 };
 
+exports.get_past_projects = function (project_ids,callback) {
+    var projects = schemas.project;
+    projects.aggregate([
+        {$match:{_id:{$in:project_ids}}},
+        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
 exports.get_specific_user_data = function (user_ids,callback) {
     var user = schemas.user;
     user.aggregate([
@@ -989,7 +1006,6 @@ exports.get_specific_user_skill = function (user_id,callback) {
         else {
             return callback(result);
         }
-
     });
 };
 

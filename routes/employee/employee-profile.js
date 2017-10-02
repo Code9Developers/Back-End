@@ -49,9 +49,12 @@ router.get("/get_emp", function (req, res, next) {
 // });
 
 router.get("/get_user_past_projects", function (req, res, next) {
-        dbs.findProjects("_id",req.query.project_id,function (project_data) {
-            res.send(project_data);
-        })
+        dbs.findUsers("_id","emp1",function (user_data) {
+            let past_project_ids=user_data[0].past_projects;
+            dbs.get_past_projects(past_project_ids,function (past_projects) {
+                res.send(past_projects);
+            })
+        });
 });
 
 router.get("/get_emp_task", function (req, res, next) {

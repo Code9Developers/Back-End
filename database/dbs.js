@@ -1077,6 +1077,23 @@ exports.get_specific_user_skill = function (user_id,callback) {
     });
 };
 
+exports.get_past_projects = function (project_ids,callback) {
+ -    var projects = schemas.project;
+ -    projects.aggregate([
+ -        {$match:{_id:{$in:project_ids}}},
+ -        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date"}}}
+ -    ], function (err, result) {
+ -        if (err) {
+ -            console.log(err);
+ -            return;
+ -        }
+ -        else {
+ -            return callback(result);
+ -        }
+ -
+ -    });
+ -};
+
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************

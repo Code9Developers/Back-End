@@ -1760,7 +1760,6 @@ function init_ColorPicker() {
     $('.demo-auto').colorpicker();
 
 }
-// TODO slider style change start - SEO
 /* ION RANGE SLIDER */
 
 function init_IonRangeSlider() {

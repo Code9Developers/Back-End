@@ -1,14 +1,14 @@
-var exports = module.exports = {};
+let exports = module.exports = {};
 
-var mongoose = require('mongoose');
-var schemas = require('.././database/schemas.js');
-var connection = require('.././database/connect.js');
-var bcrypt = require('bcryptjs');
-var generator = require('generate-password');
-var fs = require('fs');
+const mongoose = require('mongoose');
+const schemas = require('.././database/schemas.js');
+const connection = require('.././database/connect.js');
+const bcrypt = require('bcryptjs');
+const generator = require('generate-password');
+const fs = require('fs');
 
 
-/*
+/**
  ***********************************************************************************************************************
  ALL USER-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -17,9 +17,9 @@ var fs = require('fs');
 // inserts user defined in JSON string "_json"
 exports.insertUser = function (_json) {
 
-    var user = schemas.user;
+    let  user = schemas.user;
 
-    var _user = new user(_json);
+    let  _user = new user(_json);
 
     _user.save(function (err) {
         if (err) {
@@ -35,8 +35,8 @@ exports.insertUser = function (_json) {
 // returns all users where attributes 'attrib' have value of 'value'
 exports.findUsers = function (attrib, value, callback) {
 
-    var user = schemas.user;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  user = schemas.user;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     user.find(query, function (err, docs) {
         if (err) {
@@ -57,9 +57,9 @@ exports.findUsers = function (attrib, value, callback) {
 // and sets their attribute of "attrib_to_edit" to "new_value"
 exports.editUsers = function (attrib, value, attrib_to_edit, new_value) {
 
-    var user = schemas.user;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  user = schemas.user;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     user.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -76,9 +76,9 @@ exports.editUsers = function (attrib, value, attrib_to_edit, new_value) {
 //edits the object stored in an array of objects for all users with attrib value
 exports.editUserObject = function (attrib, value, object, object_attrib, object_value, attrib_to_edit, new_value) {
 
-    var user = schemas.user;
-    var query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  user = schemas.user;
+    let  query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     user.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -89,14 +89,14 @@ exports.editUserObject = function (attrib, value, object, object_attrib, object_
             console.log(err);
         }
     });
-}
+};
 
 
 //adds object to array of objects of user with specific id
 exports.insertUserObject = function (user_id, object, _json) {
 	
-	var user = schemas.user ;
-	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
+	let  user = schemas.user ;
+	let  update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
 	
 	user.findByIdAndUpdate(user_id, {$push: update}, function (err) {
         if (!err) {
@@ -107,13 +107,13 @@ exports.insertUserObject = function (user_id, object, _json) {
             console.log(err);
         }
     });
-}
+};
 
 //removes object with attrib of value from array of objects of user with specific id
 exports.removeUserObject = function (user_id, object, attrib, value) {
 	
-	var user = schemas.user ;
-	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
+	let  user = schemas.user ;
+	let  update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
 	
 	user.update({_id: user_id}, {$pull: update}, function (err) {
         if (!err) {
@@ -124,25 +124,25 @@ exports.removeUserObject = function (user_id, object, attrib, value) {
             console.log(err);
         }
     });
-}
+};
 
 
 //edits the profile image of a user
 exports.editProfileImage = function (user_id, filename) {
 
-    var user = schemas.user;
+    let  user = schemas.user;
 
-    var precount;
-    var count = 0;
+    let  precount;
+    let  count = 0;
     while (count != -1) {
         precount = count;
         count = filename.indexOf("\\", count + 1);
     }
     filename = filename.substring(precount + 1, filename.length);
 
-    var _data = fs.readFileSync(filename);
+    let  _data = fs.readFileSync(filename);
 
-    var _content = "image/" + filename.substring(filename.indexOf(".") + 1, filename.length);
+    let  _content = "image/" + filename.substring(filename.indexOf(".") + 1, filename.length);
 
 
     user.update({_id: user_id}, {$set: {image: {data: _data, contentType: _content}}}, function (err) {
@@ -156,11 +156,11 @@ exports.editProfileImage = function (user_id, filename) {
     });
 
     console.log("Image successfully saved.");
-}
+};
 
 exports.deleteUser = function (user_id) {
 
-    var user = schemas.user;
+    let  user = schemas.user;
 	
 	module.exports.findUsers("_id", user_id, function(res) {
 		module.exports.insertGhost(res) ;
@@ -176,22 +176,20 @@ exports.deleteUser = function (user_id) {
     });
 };
 
- /*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+ /*********************************************************************************************************************************************************************************************************************************************
+  **/
  
- /*
- ***********************************************************************************************************************
+ /**
+ **************************************************************************************************************************
  ALL GHOST-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
  */
  
 exports.insertGhost = function (_json) {
 
-    var ghost = schemas.ghost;
+    let  ghost = schemas.ghost;
 
-    var _ghost = new ghost(_json);
+    let  _ghost = new ghost(_json);
 
     _ghost.save(function (err) {
         if (err) {
@@ -205,13 +203,11 @@ exports.insertGhost = function (_json) {
 };
 
 //I'll add view/resurrect functions later
- 
- /*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
 
-/*
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
+
+/**
  ***********************************************************************************************************************
  ALL EVENT-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -219,10 +215,10 @@ exports.insertGhost = function (_json) {
 
 exports.insertEvent = function (_json) {
 
-    var event = schemas.event;
-    var user = schemas.event;
+    let  event = schemas.event;
+    let  user = schemas.event;
 
-    var _event = new event(_json);
+    let  _event = new event(_json);
 
     _event.save(function (err) {
         if (err) {
@@ -247,8 +243,8 @@ exports.insertEvent = function (_json) {
 
 exports.findEvents = function (attrib, value, callback) {
 
-    var event = schemas.event;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  event = schemas.event;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     event.find(query, function (err, docs) {
         if (err) {
@@ -267,9 +263,9 @@ exports.findEvents = function (attrib, value, callback) {
 
 exports.editEvents = function (attrib, value, attrib_to_edit, new_value) {
 
-    var event = schemas.event;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  event = schemas.event;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     event.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -284,7 +280,7 @@ exports.editEvents = function (attrib, value, attrib_to_edit, new_value) {
 
 exports.deleteEvent = function (event_id) {
 
-    var event = schemas.event;
+    let  event = schemas.event;
 
     event.remove({_id: event_id}, function (err) {
         if (!err) {
@@ -298,12 +294,10 @@ exports.deleteEvent = function (event_id) {
     // de-reference events in corresponding users
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL USER+PROJECT-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -315,8 +309,8 @@ exports.deleteEvent = function (event_id) {
 
 exports.assignProject = function (user_id, project_id, _skill) {
 
-    var user = schemas.user;
-    var project = schemas.project;
+    let  user = schemas.user;
+    let  project = schemas.project;
 
     user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
@@ -342,13 +336,13 @@ exports.assignProject = function (user_id, project_id, _skill) {
 // WARNING! AUTISM ALERT: Race Conditions
 exports.insertAndAssignProject = function (_json, employees) {
 
-    var project = schemas.project;
+    let  project = schemas.project;
 
     module.exports.insertProject(_json);
 
-    var _project = new project(_json);
+    let  _project = new project(_json);
 
-    for (var loop = 0; loop < employees.length; loop++) {
+    for (let  loop = 0; loop < employees.length; loop++) {
         module.exports.assignProject(employees[loop], _project._id);
     }
     module.exports.completeProject(_project._id, _project.project_rating);
@@ -357,8 +351,8 @@ exports.insertAndAssignProject = function (_json, employees) {
 // remove employee from project and vice versa
 exports.dismissProject = function (user_id, project_id) {
 
-    var project = schemas.project;
-    var user = schemas.user;
+    let  project = schemas.project;
+    let  user = schemas.user;
 
     module.exports.removeProjectObject(project_id, "employees_assigned", "_id", user_id) ;
 
@@ -386,8 +380,8 @@ exports.completeProject = function (project_id, rating) {
 
     module.exports.editProjects("_id", project_id, "project_rating", rating);
 
-    var user = schemas.user;
-    var project = schemas.project;
+    let  user = schemas.user;
+    let  project = schemas.project;
 
     user.update({current_projects: project_id}, {$push: {past_projects: project_id}}, {multi: true}, function (err) {
         if (!err) {
@@ -414,12 +408,10 @@ exports.completeProject = function (project_id, rating) {
 
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL PROJECT-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -428,10 +420,10 @@ exports.completeProject = function (project_id, rating) {
 // inserts project defined in JSON string "_json"
 exports.insertProject = function (_json) {
 
-    var project = schemas.project;
-    var user = schemas.user;
+    let  project = schemas.project;
+    let  user = schemas.user;
 
-    var _project = new project(_json);
+    let  _project = new project(_json);
 
     _project.save(function (err) {
         if (err) {
@@ -463,8 +455,8 @@ exports.insertProject = function (_json) {
 // returns all projects where attributes 'attrib' have value of 'value'
 exports.findProjects = function (attrib, value, callback) {
 
-    var project = schemas.project;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  project = schemas.project;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     project.find(query, function (err, docs) {
         if (err) {
@@ -493,9 +485,9 @@ exports.findAllProjects = function (callback) {
 // and sets their attribute of "attrib_to_edit" to "new_value"
 exports.editProjects = function (attrib, value, attrib_to_edit, new_value) {
 
-    var project = schemas.project;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  project = schemas.project;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     project.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -511,8 +503,8 @@ exports.editProjects = function (attrib, value, attrib_to_edit, new_value) {
 //adds object to array of objects of project with specific id
 exports.insertProjectObject = function (project_id, object, _json) {
 	
-	var project = schemas.project ;
-	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
+	let  project = schemas.project ;
+	let  update = JSON.parse('{ ' + '"' + object + '"' + ': ' + JSON.stringify(_json) + '}');
 	
 	project.findByIdAndUpdate(project_id, {$push: update}, function (err) {
         if (!err) {
@@ -523,13 +515,13 @@ exports.insertProjectObject = function (project_id, object, _json) {
             console.log(err);
         }
     });
-}
+};
 
 //removes object with attrib of value from array of objects of project with specific id
 exports.removeProjectObject = function (project_id, object, attrib, value) {
 	
-	var project = schemas.project ;
-	var update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
+	let  project = schemas.project ;
+	let  update = JSON.parse('{ ' + '"' + object + '"' + ': ' + '{' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}' + '}');
 	
 	project.update({_id: project_id}, {$pull: update}, function (err) {
         if (!err) {
@@ -540,13 +532,13 @@ exports.removeProjectObject = function (project_id, object, attrib, value) {
             console.log(err);
         }
     });
-}
+};
 
 exports.editProjectObject = function (attrib, value, object, object_attrib, object_value, attrib_to_edit, new_value) {
 
-    var project = schemas.project;
-    var query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  project = schemas.project;
+    let  query = JSON.parse('{ ' + '"' + attrib + '":' + '"' + value + '"' + ', ' + '"' + object + '.' + object_attrib + '"' + ': ' + '"' + object_value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + object + '.$.' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     project.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -557,13 +549,13 @@ exports.editProjectObject = function (attrib, value, object, object_attrib, obje
             console.log(err);
         }
     });
-}
+};
 
 // checks if projects are complete and updates status
 exports.refreshProjectStatus = function () {
 
-    var project = schemas.project;
-    var today = String(new Date());
+    let  project = schemas.project;
+    let  today = String(new Date());
 
     project.update({project_end_date: {$lt: today}}, {$set: {status: "completed"}}, {multi: true}, function (err) {
         if (!err) {
@@ -576,12 +568,10 @@ exports.refreshProjectStatus = function () {
     });
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL MILESTONE-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -590,10 +580,10 @@ exports.refreshProjectStatus = function () {
 // inserts milestone, and inserts it into correspondig project
 exports.insertMilestone = function (_json) {
 
-    var milestone = schemas.milestone;
-    var project = schemas.project;
+    let  milestone = schemas.milestone;
+    let  project = schemas.project;
 
-    var _milestone = new milestone(_json);
+    let  _milestone = new milestone(_json);
 
     _milestone.save(function (err) {
         if (err) {
@@ -618,8 +608,8 @@ exports.insertMilestone = function (_json) {
 
 exports.findMilestones = function (attrib, value, callback) {
 
-    var milestone = schemas.milestone;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  milestone = schemas.milestone;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     milestone.find(query, function (err, docs) {
         if (err) {
@@ -638,9 +628,9 @@ exports.findMilestones = function (attrib, value, callback) {
 
 exports.editMilestones = function (attrib, value, attrib_to_edit, new_value) {
 
-    var milestone = schemas.milestone;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  milestone = schemas.milestone;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     milestone.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -655,7 +645,7 @@ exports.editMilestones = function (attrib, value, attrib_to_edit, new_value) {
 
 exports.deleteMilestone = function (milestone_id) {
 
-    var milestone = schemas.milestone;
+    let  milestone = schemas.milestone;
 
     milestone.remove({_id: milestone_id}, function (err) {
         if (!err) {
@@ -670,9 +660,9 @@ exports.deleteMilestone = function (milestone_id) {
 //removes all expired milestones from project
 exports.removeExpiredMilestones = function (project_id) {
 
-    var project = schemas.project;
-    var milestone = schemas.milestone;
-    var today = new Date();
+    let  project = schemas.project;
+    let  milestone = schemas.milestone;
+    let  today = new Date();
 
     milestone.find({project_id: project_id, milestone_end_date: {$lt: today}}, function (err, results) {
         if (err) {
@@ -684,8 +674,8 @@ exports.removeExpiredMilestones = function (project_id) {
             console.log(results);
         }
         else {
-            for (var x = 0; x < results.length; x++) {
-                for (var y = 0; y < results[x].tasks.length; y++) {
+            for (let  x = 0; x < results.length; x++) {
+                for (let  y = 0; y < results[x].tasks.length; y++) {
                     module.exports.deleteTask(results[x].tasks[y]._id);
                     project.update({tasks: results[x].tasks[y]._id}, {$pull: {tasks: results[x].tasks[y]._id}}, function (err, user) {
                         if (!err) {
@@ -712,12 +702,10 @@ exports.removeExpiredMilestones = function (project_id) {
     });
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL TASK-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -726,11 +714,11 @@ exports.removeExpiredMilestones = function (project_id) {
 // inserts task, and inserts it into corresponding milestone and project
 exports.insertTask = function (_json) {
 
-    var task = schemas.task;
-    var milestone = schemas.milestone;
-    var project = schemas.project;
+    let  task = schemas.task;
+    let  milestone = schemas.milestone;
+    let  project = schemas.project;
 
-    var _task = new task(_json);
+    let  _task = new task(_json);
 
     _task.save(function (err) {
         if (err) {
@@ -770,8 +758,8 @@ exports.insertTask = function (_json) {
 
 exports.findTasks = function (attrib, value, callback) {
 
-    var task = schemas.task;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  task = schemas.task;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     task.find(query, function (err, docs) {
         if (err) {
@@ -790,9 +778,9 @@ exports.findTasks = function (attrib, value, callback) {
 
 exports.editTasks = function (attrib, value, attrib_to_edit, new_value) {
 
-    var task = schemas.task;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  task = schemas.task;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     task.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -807,7 +795,7 @@ exports.editTasks = function (attrib, value, attrib_to_edit, new_value) {
 
 exports.deleteTask = function (task_id) {
 
-    var task = schemas.task;
+    let  task = schemas.task;
 
     task.remove({_id: task_id}, function (err) {
         if (!err) {
@@ -819,12 +807,10 @@ exports.deleteTask = function (task_id) {
     });
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL NOTIFICATION-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -832,9 +818,9 @@ exports.deleteTask = function (task_id) {
 
 exports.insertNotification = function (_json) {
 
-    var notification = schemas.notification;
+    let  notification = schemas.notification;
 
-    var _notification = new notification(_json);
+    let  _notification = new notification(_json);
 
     _notification.save(function (err) {
         if (err) {
@@ -849,7 +835,7 @@ exports.insertNotification = function (_json) {
 
 exports.deleteNotification = function (notification_id) {
 
-    var notification = schemas.notification;
+    let  notification = schemas.notification;
 
     notification.remove({_id: notification_id}, function (err) {
         if (!err) {
@@ -863,7 +849,7 @@ exports.deleteNotification = function (notification_id) {
 
 //returns all unread notifications for specific user
 exports.unreadNotifications = function (user_id, callback) {
-    var notification = schemas.notification;
+    let  notification = schemas.notification;
 
     notification.find({user_id: user_id, isRead: false}, function (err, docs) {
         if (err) {
@@ -880,15 +866,14 @@ exports.unreadNotifications = function (user_id, callback) {
     });
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
+
 exports.insert_approval = function (_json) {
 
-    var approval = schemas.approval;
+    let  approval = schemas.approval;
 
-    var _approval = new approval(_json);
+    let  _approval = new approval(_json);
 
     _approval.save(function (err) {
         if (err) {
@@ -903,9 +888,9 @@ exports.insert_approval = function (_json) {
 
 exports.editApproval = function (attrib, value, attrib_to_edit, new_value) {
 
-    var ap = schemas.approval;
-    var query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
-    var update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
+    let  ap = schemas.approval;
+    let  query = JSON.parse('{ ' + '"' + attrib + '"' + ': ' + '"' + value + '"' + '}');
+    let  update = JSON.parse('{ ' + '"' + attrib_to_edit + '"' + ': ' + '"' + new_value + '"' + '}');
 
     ap.update(query, {$set: update}, {multi: true}, function (err) {
         if (!err) {
@@ -920,8 +905,8 @@ exports.editApproval = function (attrib, value, attrib_to_edit, new_value) {
 
 exports.find_approval = function (attrib, value, callback) {
 
-    var approval = schemas.approval;
-    var query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
+    let  approval = schemas.approval;
+    let  query = JSON.parse('{ ' + "\"" + attrib + "\"" + ': ' + "\"" + value + "\"" + '}');
 
     approval.find(query, function (err, docs) {
         if (err) {
@@ -940,7 +925,7 @@ exports.find_approval = function (attrib, value, callback) {
 
 exports.remove_approval = function (approval_id) {
 
-    var approval = schemas.approval;
+    let  approval = schemas.approval;
 
     approval.remove({_id: approval_id}, function (err) {
         if (!err) {
@@ -951,18 +936,17 @@ exports.remove_approval = function (approval_id) {
         }
     });
 };
-/*
+
+/**
  ***********************************************************************************************************************
  ALL APPROVAL FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
  */
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
-/*
+/**
  ***********************************************************************************************************************
  ALL PASSWORD+ENCRYPTION-RELATED FUNCTIONS BELOW --->>
  ***********************************************************************************************************************
@@ -977,7 +961,7 @@ exports.encrypt = function (value, callback) {
 exports.authenticate = function (user_id, password, callback) {
 
     module.exports.findUsers("_id", user_id, function (user) {
-        var hash = user.password;
+        let  hash = user.password;
         bcrypt.compare(password, hash, function (err, res) {
             if (err) {
                 console.log("Authentication error.");
@@ -989,9 +973,7 @@ exports.authenticate = function (user_id, password, callback) {
     });
 };
 
-/*
- ***********************************************************************************************************************
- ***********************************************************************************************************************
- */
+/*********************************************************************************************************************************************************************************************************************************************
+ **/
 
 

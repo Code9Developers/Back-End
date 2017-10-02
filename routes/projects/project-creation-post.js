@@ -20,7 +20,7 @@ let employee_info_array;
  *                  - Assigns employees to projects and projects to employees
  *                  - Sends each employee that has been assigned a notification
  *
- * Bug:             -Make the date changer a function
+ * Bug:             - Make the date changer a function
  *
  */
 
@@ -65,13 +65,15 @@ router.get('/replacement_store', function (req, res, next) {
     status="pending";
     let rand_id = Math.floor((Math.random() * 1000) + 1).toString();
     let director_id=req.query.director;
-    ap_id=director_id+rand_id;
-    let remove_emps=req.query.emp_removed;
-    let replace=req.query.emp_replace;
-    let reason_for_removal=req.query.reason;
-    let project_name=req.query.project_name;
 
-    let _aprroval_json={
+    ap_id = director_id + rand_id;
+
+    let remove_emps = req.query.emp_removed;
+    let replace = req.query.emp_replace;
+    let reason_for_removal = req.query.reason;
+    let project_name = req.query.project_name;
+
+    let _approval_json = {
         _id:ap_id,
         director_id: director_id,
         reason: reason_for_removal,
@@ -79,7 +81,7 @@ router.get('/replacement_store', function (req, res, next) {
         employees_replaced: replace
     };
 
-    dbs.insert_approval(_aprroval_json);
+    dbs.insert_approval(_approval_json);
     dbs.findUsers("_id",director_id,function (director_details) {
        let dirEmail = director_details[0].email;
        let manName = req.session.name;
@@ -195,4 +197,5 @@ router.get('/get_directors', function (req, res, next) {
     });
 
 });
+
 module.exports = router;

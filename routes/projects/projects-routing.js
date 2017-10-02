@@ -1,9 +1,7 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
+
 //Project Creation Page
 router.get("/project_creation", function (req, res, next) {
     res.render('project_creation');
@@ -40,7 +38,7 @@ router.get("/remove_project", function (req, res, next) {
         dbs.insertNotification({
             _id: "noti_"+rand_id+project_data[0]._id+req.session.username,
             user_id: req.session.username,
-            message: project_data[0].name+" has been completed, please review hpw the project did.",
+            message: project_data[0].name+" has been completed, please review how the project went.",
             date_created: today,
             isRead: false
         });

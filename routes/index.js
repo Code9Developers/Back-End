@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const schemas = require('.././database/schemas.js');
 const dbs = require('.././database/dbs.js');
 const test_data = require('.././database/test_data.js');
-const algorithm = require('.././database/Resource-Alocation-Algorithm.js');
+const algorithm = require('../database/employee-evaluations.js');
 const generator = require('generate-password');
 const nodemailer = require('nodemailer');
 
@@ -36,7 +36,7 @@ router.get('/create_test_employees', function (req, res, next) {
 });
 
 router.get('/create_all_test_employees', function (req, res, next) {
-    test_data.create_All_test_employees(10, 90);
+    test_data.create_All_test_employees(30, 300);
     res.render('login');
 });
 

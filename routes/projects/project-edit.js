@@ -4,7 +4,7 @@
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
-const algorithm = require('../../database/Resource-Alocation-Algorithm');
+const algorithm = require('../../database/employee-evaluations');
 
 
 /**

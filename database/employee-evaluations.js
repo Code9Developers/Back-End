@@ -10,7 +10,7 @@ var Algorithm = require('.././database/Algorithm.js');
 /* TODO : find employees which are free for the current duration */
 /* TODO : find employees which have the correct skills */
 /* TODO : add how long an employee has not been working to employee_list */
-exports.get_unallocated_users = function (skills, start_date, end_date, budget, callback) {
+exports.get_unallocated_users = function (skills, start_date, end_date, callback) {
     console.log("unallocated users requested");
     console.log("skills : " + skills);
     console.log("start date : " + start_date);
@@ -78,13 +78,22 @@ exports.get_unallocated_users = function (skills, start_date, end_date, budget, 
                 {
                     //Add an employee_value attribute to each employee in the list
                     employee_lists[loop][loop2].value = 0;
-                    //give scores to how many years they have been working
+                    //give scores to how many years they have been working from employement length (higher = better)
                     employee_lists[loop][loop2].value += parseInt(employee_lists[loop][loop2].employment_length);
+
+                    //give a score to there rank, based off cost to company (Higher = better)
+                    employee_lists[loop][loop2].value += parseInt(employee_lists[loop][loop2].rate)/100;
+
+                    //give a score to the number of skills they have
+                    employee_lists[loop][loop2].value += parseInt(employee_lists[loop][loop2].skill.length);
+
                     //give a score to how long they have not been working for HIGH WEIGHTING APPLIED
 
                     //give a score to employees who have worked on past projects with the same skill tag
 
-                    //give score for their rate
+                    //weights for employees who have experience working on projects before with the same skill tag applied to their past project score
+
+                    //how many previous projects the employee has had
                 }
             }
 

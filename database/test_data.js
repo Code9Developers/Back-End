@@ -204,7 +204,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 for (var loop = 0; loop < num_manager; loop++) {
                     var employee_index = Math.floor(Math.random() * (7 - 4 + 1) + 4);
                     var new_json_obj = {
-                        _id: roles[0] + " " + manager_ids,
+                        _id: "mp_" + manager_ids,
                         name: lines[name_index].trim(),
                         surname: lines2[name_index].trim(),
                         password: enc_pass,
@@ -233,7 +233,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                     var skills_index_2 = Math.floor(Math.random() * (6 - 4 + 1) + 4);
                     var skills_index_3 = Math.floor(Math.random() * (9 - 7 + 1) + 7);
                     var new_json_obj = {
-                        _id: roles[1] + " " + employee_ids,
+                        _id: "emp_" + employee_ids,
                         name: lines[name_index].trim(),
                         surname: lines2[name_index].trim(),
                         password: enc_pass,

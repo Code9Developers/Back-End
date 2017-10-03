@@ -7,7 +7,7 @@ var method = Algorithm.prototype;
 /*Store all lists of employees*/
 function Algorithm(employee_lists, swarm_size)
     {
-        this.swarm_size = swarm_size
+        this.swarm_size = swarm_size;
         this.employee_lists = employee_lists;
         this.particles = [swarm_size];
         this.gbest_list = [];
@@ -65,6 +65,10 @@ function Algorithm(employee_lists, swarm_size)
             /*Check the standard deviation for the particle's sum of employment length for each employee
                 higher standard deviation, better score
              */
+
+            //	cost of project (as low as possible)
+
+            //	weights for employees who have worked together applied to their past projects scores
 
             /*Check if the same employee is used for different positions in the team*/
         }

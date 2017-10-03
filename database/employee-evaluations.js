@@ -112,8 +112,17 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
 
             for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
-                console.log("best employee in list : "+loop+" is at position "
-                    +employee_lists[loop][(employee_lists[loop].length-1)].position+" with value : "+employee_lists[loop][(employee_lists[loop].length-1)].value);
+                for(var loop2 = 0; loop2 < Object.keys(employee_lists[loop]).length; loop2++)
+                {
+                    console.log(employee_lists[loop][loop2]);
+                }
+            }
+
+            for(var loop = 0; loop < Object.keys(skills).length; loop++)
+            {
+                console.log(loop);
+                /*console.log("best employee in list : "+loop+" is at position "
+                    +employee_lists[loop][(employee_lists[loop].length-1)].position+" with value : "+employee_lists[loop][(employee_lists[loop].length-1)].value);*/
             }
 
             var pso = new Algorithm(employee_lists, 20);

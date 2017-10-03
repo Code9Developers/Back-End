@@ -33,10 +33,10 @@ $(document).ready(function() {
         $('#holder').show();
         $.get("test_algorithm",
             {
-                num_empl: parseInt(num_employees[1]),
-                skills: [$('#tags_1').val()],
-                duration: 2,//either to calculation to get number in days or put end date
-                budget: $('#budget').val()
+                // num_empl: parseInt(num_employees[1]),
+                skills: $('#skills').val(),
+                start_end: $('#start_date').val(),//either to calculation to get number in days or put end date
+                end_date: $('#end_date').val()
             },
             function test(data, status)
             {

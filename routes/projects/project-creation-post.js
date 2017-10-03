@@ -170,7 +170,7 @@ router.get('/test_algorithm', function (req, res, next) {
     console.log("the request budget of project is " + req.param('budget'));
 
     //dbs.view_employees();
-    algorithm.get_unallocated_users(req.param('num_empl'), req.param('skills'), req.param('duration'), req.param('budget'), function (val) {
+    algorithm.get_unallocated_users(req.query.skills,req.query.start_end,req.query.end_date, function (val) {
         let result = JSON.stringify(val);
         employees = JSON.parse(result);
         res.send(result);

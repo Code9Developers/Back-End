@@ -15,7 +15,6 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
     console.log("skills : " + skills);
     console.log("start date : " + start_date);
     console.log("end date : " + end_date);
-    console.log("budget : " + budget);
     var user = schemas.user;
 
     console.log("Finding relevant employees");

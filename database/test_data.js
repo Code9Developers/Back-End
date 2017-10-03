@@ -179,7 +179,28 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
     var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
         "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
     var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
-    var skills = ["skill 1", "skill 2", "skill 3", "skill 4", "skill 5", "skill 6", "skill 7", "skill 8", "skill 9", "skill 10"];
+    var skills = ["Penetration Testing Vulnerability", "Windows / Linux Security", "Database Security",
+    "Security Gap Assessments", "Cyber Threat Detection And Root Cause", "Analysis", "Virtualisation Technologies",
+    "Strategic Management", "Regulatory Compliance", "Risk Management", "IT Corporate Governance",
+    "Data Centre Security", "Report Writing", "Policies, Procedures & Standards Writing skills",
+    "Policies, Procedures and Standards Compliance Measurement", "IT Legislation Compliance Gap Assessments," +
+    "IT Procurement & Bid Management", "IT Governance & Service Management", "IT Strategy and Performance Management",
+    "Enterprise Architecture and Design", "Digitisation",
+    "Specialist Supporting the Audit training", "Eaudit skills", "External Audit basics", "General IT controls",
+    "IT Risk Profiling", "Risk & Compliance Assessment", "Application Controls", "General IT Controls",
+    "Report Writing", "IT Fraud Investigation", "Audit Plan Development", "Eaudit skills",
+    "ITIA Basics", "SAP Basics", "IT Assurance", "King 3 Assessments", "Data Migration Reviews," +
+    "User Account Testing", "Data Analysis", "Data Visualization", "IDEA Skills", "CAATS Basics Skills",
+    "Data Insight Detection", "Report Writing", "Vendor Sourcing & RFP Development", "Vendor Contract Review",
+    "Business Case Review", "Project Assurance & Auditing", "Project Risk Management",
+    "IT Strategy Development & Master Systems Plan", "IT Governance & Maturity Assessment",
+    "Data Migration", "Business Process Risk & Control Analysis In Erp Environments", "Automated Controls Testing",
+    "Requirements Management", "Blueprint / Process Design", "Controls Integration", "Master Data Management",
+    "Security & Sod", "User Account Testing", "Support Management", "IT Service Management",
+    "Develop IT Governance Frameworks", "IT Risks & Controls Assessments & Benchmarking", "Review It Policies & Procedures",
+    "Development of IT Strategies", "Value IT Analysis & Reviews", "IT Governance Audits",
+    "IT Governance Maturity Reviews", "Vendor Selection Assistance", 'IT Project Assurance & Business Req Review",' +
+    "Disaster Recovery Test Assist & Reviews", "Project Management"];
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
         var roles = ["project manager", "employee"];
@@ -229,9 +250,9 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 console.log("creating employees");
                 for (var loop = 0; loop < num_employees; loop++) {
                     var employee_index = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-                    var skills_index_1 = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-                    var skills_index_2 = Math.floor(Math.random() * (6 - 4 + 1) + 4);
-                    var skills_index_3 = Math.floor(Math.random() * (9 - 7 + 1) + 7);
+                    var skills_index_1 = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+                    var skills_index_2 = Math.floor(Math.random() * (50 - 25 + 1) + 25);
+                    var skills_index_3 = Math.floor(Math.random() * (75 -51 + 1) + 51);
                     var new_json_obj = {
                         _id: "emp_" + employee_ids,
                         name: lines[name_index].trim(),

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KPMG | Review</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Stylesheets -->
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="vendors/animate.css/animate.min.css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css"
+          rel="stylesheet">
+    <!-- Ion.RangeSlider -->
+    <link href="vendors/normalize-css/normalize.css" type="text/css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css" rel="stylesheet">
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" type="text/css" rel="stylesheet">
+
+    <link rel="stylesheet" href="vendors/Code-9/demo.css" media="screen">
+    <link rel="stylesheet" href="vendors/Code-9/demo-print.css" media="print">
+
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.css" rel="stylesheet">
+    <link href="stylesheets/custom.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="title_left">
+                <h3>Project Review
+                    <small> PROJECT NAME</small>
+                </h3>
+                <h4>
+                    Manger Name
+                </h4>
+            </div>
+
+            <hr/>
+
+            <div class="clearfix"></div>
+
+            <!-- start form for validation -->
+            <div class="title">
+                <h5>Overall Project Review</h5>
+            </div>
+            <form id="demo-form" data-parsley-validate action="project_review" method="post">
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-4">
+                        <label for="overallProjRating">Overall project rating: *</label>
+                        <input type="text" id="overallProjRating" value="" name="overallProjRating"/>
+                    </div>
+
+                    <div class="col-md-offset-1 col-md-6">
+                        <div id="projectreviewdescript">
+                            <label for="projectreviewdescript">Short Project Review: *</label>
+                            <textarea class="form-control" id="empRemoval" required="required" name="projectreviewdescript"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr/>
+                <div class="title">
+                    <h5>Employee Review</h5>
+                </div>
+
+                 <!--ONE EMPLOYEEE START-->
+                <div class="col-md-6 col-sm-6 col-xs-12 profile_details">
+                    <div class="well profile_view">
+                        <div class="col-sm-12">
+                            <h4 class="brief"><i>Digital Strategist</i></h4>
+                            <div class="left col-xs-7">
+                                <h2>Nicole Pearson</h2>
+                                <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-building"></i> Address: </li>
+                                    <li><i class="fa fa-phone"></i> Phone #: </li>
+                                </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                                <p class="ratings">
+                                    <a>4.0</a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star-o"></span></a>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                                <button type="button" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-user"> </i> View Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-sm-offset-1 col-md-4 col-sm-4 col-xs-12">
+                    <h5>Skills</h5>
+                    <label for="ratingOne">Rating: *</label>
+                    <input type="text" id="ratingOne" value="" name="ratingOne"/>
+
+
+                </div>
+                <!-- ONE EMPLOYEE END-->
+
+                <div class="col-md-6 col-sm-6 col-xs-12 profile_details">
+                    <div class="well profile_view">
+                        <div class="col-sm-12">
+                            <h4 class="brief"><i>Digital Strategist</i></h4>
+                            <div class="left col-xs-7">
+                                <h2>Nicole Pearson</h2>
+                                <p><strong>About: </strong> Web Designer / UX / Graphic Artist / Coffee Lover </p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa fa-building"></i> Address: </li>
+                                    <li><i class="fa fa-phone"></i> Phone #: </li>
+                                </ul>
+                            </div>
+                            <div class="right col-xs-5 text-center">
+                                <img src="images/img.jpg" alt="" class="img-circle img-responsive">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 bottom text-center">
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                                <p class="ratings">
+                                    <a>4.0</a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star"></span></a>
+                                    <a href="#"><span class="fa fa-star-o"></span></a>
+                                </p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 emphasis">
+                                <button type="button" class="btn btn-primary btn-xs">
+                                    <i class="fa fa-user"> </i> View Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-offset-1 col-sm-offset-1 col-md-4 col-sm-4 col-xs-12">
+                    <h5>Skills</h5>
+                    <label for="ratingFour">Rating: *</label>
+                    <input type="text" id="ratingFour" value="" name="ratingFour"/>
+
+                    <label for="ratingFive">Rating: *</label>
+                    <input type="text" id="ratingFive" value="" name="ratingFive"/>
+
+                    <label for="ratingSix">Rating: *</label>
+                    <input type="text" id="ratingSix" value="" name="ratingSix"/>
+                </div>
+                <br/>
+                <hr/>
+                <div class="col-md-12">
+                    <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Submit Review" type="submit" value="Complete Review">
+                </div>
+            </form>
+            <!-- end form for validations -->
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- jquery.inputmask -->
+<script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<!-- jQuery Tags Input -->
+<script type="text/javascript" src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
+<!-- Code 9 -->
+<script type="text/javascript" src="js/code9/js/code9Custom.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
+<!-- Parsley -->
+<script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
+<!-- Moment for some reason is needed for the tags in this one  -->
+<script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
+<!-- Datatables -->
+<script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+<!-- Ion.RangeSlider -->
+<script type="text/javascript" src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.js"></script>
+</body>
+</html>

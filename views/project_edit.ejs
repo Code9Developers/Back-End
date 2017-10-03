@@ -20,16 +20,11 @@
     <!-- NProgress: Top load animation-->
     <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
     <!-- Datatables -->
-    <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css"
-          rel="stylesheet">
-    <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css"
-          rel="stylesheet">
-    <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css"
-          rel="stylesheet">
-    <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css"
-          rel="stylesheet">
-    <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css"
-          rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" rel="stylesheet">
@@ -48,26 +43,10 @@
         <div class="right_col" role="main">
             <!--todo add project name to edit here-->
             <h2>Edit Project
-                <small id="project-name">&nbsp;&nbsp;&nbsp; PROJECT NAME HERE</small>
+                <small id="project-name"> PROJECT NAME HERE</small>
             </h2>
             <hr/>
-            <!--<ul class="nav navbar-right panel_toolbox">-->
-            <!--<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>-->
-            <!--</li>-->
-            <!--<li class="dropdown">-->
-            <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
-            <!--<ul class="dropdown-menu" role="menu">-->
-            <!--<li><a href="#">Settings 1</a>-->
-            <!--</li>-->
-            <!--<li><a href="#">Settings 2</a>-->
-            <!--</li>-->
-            <!--</ul>-->
-            <!--</li>-->
-            <!--</ul>-->
             <div class="clearfix"></div>
-            <!-- start form for validation -->
-
-
             <div class="row">
                 <div class="col-md-6">
                     <label for="CurrentDeadline">Current Deadline: *</label>
@@ -78,18 +57,25 @@
                     <input type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required/>
                 </div>
             </div>
+            <div id="director1">
+
+            </div>
+
             <br/>
             <!-- TODO show this table once button is clicked-->
-            <div class="">
-                <div id="employeeTable" class="x_panel">
+            <form id="demo-form" data-parsley-validate >
+                <div class="row">
+                    <div class="">
+                        <div id="employeeTable" class="x_panel">
+                        </div>
+                        <div id="employeeTable1" class="x_panel"></div>
+                    </div>
+                    <!-- TODO Table end-->
+
                 </div>
-            </div>
-            <!-- TODO Table end-->
 
-            <input id="updateProject" class="btn btn-conf btn-dark docs-tooltip" data-toggle="tooltip"
-                   value="Update Project">
 
-            <!-- end form for validations -->
+            </form>
         </div>
         <!-- /page content -->
 
@@ -119,26 +105,20 @@
 <!-- Datatables -->
 <script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.min.js"></script>
 </body>

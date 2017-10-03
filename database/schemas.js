@@ -1,24 +1,30 @@
-var exports = module.exports = {};
+//let exports = module.exports = {};
 
-var mongoose = require('mongoose');
-var connection = require('.././database/connect.js');
-var mongoose = require('mongoose');
+let mongoose = require('mongoose');
+let connection = require('.././database/connect.js') ;
 
 exports.create_schemas = function () {
 
-    var db = connection.db;
+    let db = connection.db;
 
     create_user(db);
 
+	create_ghost(db) ;	
+		
     create_event(db);
 
     create_project(db);
+	
+	create_training(db) ;
 
     create_milestone(db);
 
     create_task(db);
 
     create_notification(db);
+
+    create_approval(db);
+
 
     console.log("Schemas successfully created.");
 
@@ -27,8 +33,9 @@ exports.create_schemas = function () {
 
 //all schema initialser functions are below -->
 
+
 function create_user(db) {
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         name: String,
         surname: String,
@@ -42,8 +49,8 @@ function create_user(db) {
         employment_length: Number, //years? months?
         rate: Number, //Jordan explain
         skill: [{name: String, rating: Number, counter: Number}], //counter = how many times has the user been rated for this skill
-        current_projects: [{_id: String, skill: String}], //-> stores project id's, and the skill to which the user is assigned for the project
-        past_projects: [{_id: String, skill: String}],
+        current_projects: [], //-> stores project id's
+        past_projects: [],
         events: []
     });
 
@@ -53,8 +60,34 @@ function create_user(db) {
 
 }
 
+function create_ghost(db) {
+    let schema = mongoose.Schema({
+        _id: String,
+        name: String,
+        surname: String,
+        password: String,
+        password_date: Date,
+        image: {data: Buffer, contentType: String},
+        contact: String,
+        email: String,
+        role: String,
+        position: String,
+        employment_length: Number,
+        rate: Number,
+        skill: [{name: String, rating: Number, counter: Number}],
+        current_projects: [],
+        past_projects: [],
+        events: []
+    });
+
+    exports.ghost = mongoose.model('ghost', schema);
+
+    console.log('Ghost schema created.');
+
+}
+
 function create_event(db) {
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         user_id: String,
         description: String,
@@ -69,7 +102,7 @@ function create_event(db) {
 
 function create_project(db) {
 
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         name: String,
         description: String,
@@ -86,6 +119,7 @@ function create_project(db) {
         status: String, //active, completed, pending
         project_rating: Number, //rating of project (1-10) on post-mortem analysis
         milestones: [], //store milestone id's
+        reviewed:String
     });
 
 
@@ -94,9 +128,26 @@ function create_project(db) {
     console.log('Project schema created.');
 }
 
+function create_training(db) {
+
+    let schema = mongoose.Schema({
+        _id: String,
+        training_start_date: Date,
+        training_end_date: Date,
+		trainer_name: String,
+		training_contact: String,
+		trainer_email: String,
+        employees_assigned: []
+    });
+
+    exports.training = mongoose.model('training', schema);
+
+    console.log('Training schema created.');
+}
+
 function create_milestone(db) {
 
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         project_id: String, //project to which milestone belongs
         description: String,
@@ -111,7 +162,7 @@ function create_milestone(db) {
 
 function create_task(db) {
 
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         description: String,
         project_id: String, //project that the task is part of
@@ -126,7 +177,7 @@ function create_task(db) {
 
 function create_notification(db) {
 
-    var schema = mongoose.Schema({
+    let schema = mongoose.Schema({
         _id: String,
         user_id: String, //id of user that notification is intended for
         message: String,
@@ -137,4 +188,18 @@ function create_notification(db) {
     exports.notification = mongoose.model('notification', schema);
 
     console.log('Notification schema created.');
+}
+
+function create_approval(db) {
+    let schema = mongoose.Schema({
+        _id: String,
+		reason: String,
+        project_id:String,
+        director_id: String,
+        employees_removed: [],
+        employees_replaced: []
+    });
+
+    exports.approval = mongoose.model('approval', schema);
+    console.log('Approval schema created.');
 }

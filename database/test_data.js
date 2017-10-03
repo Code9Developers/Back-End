@@ -11,6 +11,25 @@ exports.create_test_employees = function () {
 
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
+        var dir = {
+            _id: "33",
+            name: "Bob",
+            surname: "Naidoo",
+            password: enc_pass,
+            password_date: today,
+            contact: "(076)-234-9458",
+            email: "employee1@gmail.com",
+            role: "Director",
+            position: "Director",
+            employment_length: 6,
+            skill: [{name: "MS Office", rating: 0, counter: 0}, {
+                name: " Accounting Skills",
+                rating: 0,
+                counter: 0
+            }, {name: "Auditor", rating: 0, counter: 0}],
+            current_projects: [],
+            past_projects: []
+        };
         var emp = {
             _id: "test_manager_12",
             name: "Sargon",
@@ -116,6 +135,7 @@ exports.create_test_employees = function () {
         dbs.insertUser(emp3);
         dbs.insertUser(emp4);
         dbs.insertUser(emp5);
+        dbs.insertUser(dir);
         console.log("Test employees added to data base")
     });
 };

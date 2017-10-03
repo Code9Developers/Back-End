@@ -56,6 +56,9 @@ Let me <i>(Joshua)</i> know if you have any issues.
 #### Important Packages
  * `helmet` which proctects the app from well-known web vulnerabilities
  * `nsp` which can be used to check for vulnerabilities
+ 
+#### Software Versions
+* ECMAScript 6 (Javascript Version)
 
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

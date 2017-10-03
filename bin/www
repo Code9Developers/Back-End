@@ -10,7 +10,7 @@ const http = require('http');
 const mongoose = require('mongoose');
 const connection = require('.././database/connect.js');
 const schemas = require('.././database/schemas.js');
-const dotenv = require('dotenv/config');
+// const dotenv = require('dotenv/config');
 
 /**
  * Get port from environment and store in Express.

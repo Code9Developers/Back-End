@@ -375,7 +375,7 @@ exports.completeProject = function (project_id, rating) {
 
     module.exports.editProjects("_id", project_id, "status", "completed");
 
-    module.exports.editProjects("_id", project_id, "project_end_date", new Date());
+    //module.exports.editProjects("_id", project_id, "project_end_date", new Date());
 
     module.exports.editProjects("_id", project_id, "project_rating", rating);
 
@@ -1027,8 +1027,8 @@ exports.remove_approval = function (approval_id) {
  */
 
 exports.get_completed_projects = function (project_ids,callback) {
-    var projects = schemas.project;
-    projects.aggregate([
+    let project = schemas.project;
+    project.aggregate([
         {$match:{$and:[{_id:{$in:project_ids}},{status:"completed"},{reviewed:"No"}]}},
         {$group:{_id:{id:"$_id",name:"$name",employees_assigned:"$employees_assigned",project_start_date:"$project_start_date"}}}
     ], function (err, result) {
@@ -1044,7 +1044,7 @@ exports.get_completed_projects = function (project_ids,callback) {
 };
 
 exports.get_specific_user_data = function (user_ids,callback) {
-    var user = schemas.user;
+    let user = schemas.user;
     user.aggregate([
         {$match:{_id:{$in:user_ids}}},
         {$group:{_id:{id:"$_id",name:"$name",surname:"$surname",contact:"$contact",position:"$position",email:"$email"}}}//possibly add image if working
@@ -1061,7 +1061,7 @@ exports.get_specific_user_data = function (user_ids,callback) {
 };
 
 exports.get_specific_user_skill = function (user_id,callback) {
-    var user = schemas.user;
+    let user = schemas.user;
     user.aggregate([
        {$match:{_id:user_id}},
         {$group:{_id:{skill:"$skill"}}}
@@ -1078,21 +1078,21 @@ exports.get_specific_user_skill = function (user_id,callback) {
 };
 
 exports.get_past_projects = function (project_ids,callback) {
- -    var projects = schemas.project;
- -    projects.aggregate([
- -        {$match:{_id:{$in:project_ids}}},
- -        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date"}}}
- -    ], function (err, result) {
- -        if (err) {
- -            console.log(err);
- -            return;
- -        }
- -        else {
- -            return callback(result);
- -        }
- -
- -    });
- -};
+    let project = schemas.project;
+    project.aggregate([
+        {$match:{_id:{$in:project_ids}}},
+        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+ 
+    });
+ };
 
 /*
  ***********************************************************************************************************************
@@ -1109,19 +1109,20 @@ exports.get_past_projects = function (project_ids,callback) {
  //more info @: https://github.com/Code9Developers/Integration/wiki/Analytics
  
  
-/*exports.managerEmployeeCorrelation = function(callback) {
+exports.managerEmployeeCorrelation = function(callback) {
+	
+	let hours_per_day = 1 ; //define the number of hours that employees work per day ;
 	
 	let managerArray = [] ; //stores each manager id
 	let employeeArray = [[]] ; //stores all employees and their hours for each manager in the corresponding index
 	let hourArray = [[]] ; //stores the hours worked for each employee in the correspodnign index
 	
-	Eg:
-				  [man1],					   [[emp1, emp2, emp3]],						[[32, 12, 10]],
-	managerArray: [man3],		employeeArray: [],								 hourArray: [],
-				  [man2]					   [[emp1, emp3, emp4, emp5]]					[[20, 10, 10, 10]]
 	
-	
-	let managerCount = 0 ;
+	/*Eg:
+				  manager1,					   [emp1, emp2, emp3],						    [32, 12, 10],
+	managerArray: manager3,		employeeArray: [],								 hourArray: [],
+				  manager2					   [emp1, emp3, emp4, emp5]					    [20, 10, 10, 10]
+	*/
 	
 	module.exports.findProjects("status", "completed", function(res) {
 		for (let x = 0 ; x < res.length ; x++) {
@@ -1130,12 +1131,53 @@ exports.get_past_projects = function (project_ids,callback) {
 				i = managerArray.length ;
 				managerArray[i] = res[x].manager_id ;
 			}
+			let days = (res[x].project_end_date - res[x].project_start_date) / (1000*60*60*24) ;
+			let hours = days * hours_per_day ;
 			
+			if (employeeArray[i] == null) {
+					employeeArray[i] = [] ;
+			}
+			if (hourArray[i] == null) {
+				hourArray[i] = [] ;
+			}
+			
+			for (let y = 0 ; y < res[x].employees_assigned.length ; y++) {
+				let j = employeeArray[i].indexOf(res[x].employees_assigned[y]._id) ;
+				
+				if (j == -1) {
+					j = employeeArray[i].length ;
+					employeeArray[i][j] = res[x].employees_assigned[y]._id ;
+					hourArray[i][j] = hours ;
+				}
+				else hourArray[i][j] += hours ;
+			}
 		}
+		
+		let out = '' ;
+		for (let x = 0 ; x < managerArray.length ; x++) {
+			out += '{ "manager_id": ' + '"' + managerArray[x] + '"' + ', [ ' ;
+			for (let y = 0 ; y < employeeArray[x].length ; y++) {
+				out += '{ "employee_id": ' + '"' + employeeArray[x][y] + '"' + ', "hours_worked": ' + hourArray[x][y] + ' }, ' ;
+			}
+			out = out.substring(0, out.length-2) + ' ] }, ' ;
+		}
+		out = out.substring(0, out.length-2) ;
+		
+		
+		let obj = { data: [] } ;
+		for (let x = 0 ; x < managerArray.length ; x++) {
+			let subobj = { "manager_id": managerArray[x], employees_worked_with: [] } ;
+			for (let y = 0 ; y < employeeArray[x].length ; y++) {
+				subobj.employees_worked_with.push({ "employee_id": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
+			}
+			obj.data.push(subobj) ;
+		}
+		
+		return callback(obj.data) ;
 		
 	});
 	
-};*/
+};
 
 /*********************************************************************************************************************************************************************************************************************************************
  **/

@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const schemas = require('.././database/schemas.js');
 const dbs = require('.././database/dbs.js');
 const test_data = require('.././database/test_data.js');
-const algorithm = require('.././database/Resource-Alocation-Algorithm.js');
+const algorithm = require('../database/employee-evaluations.js');
 const generator = require('generate-password');
 const nodemailer = require('nodemailer');
 
@@ -41,6 +41,47 @@ router.get('/test_project_creation', function (req, res, next) {
 router.get('/create_test_employees', function (req, res, next) {
     test_data.create_test_employees();
     //test_data.create_All_test_employees(1, 30);
+    res.render('login');
+});
+
+router.get('/create_all_test_employees', function (req, res, next) {
+    test_data.create_All_test_employees(30, 300);
+    res.render('login');
+});
+
+router.get('/remove_all_test_employees', function (req, res, next) {
+    test_data.remove_users();
+    res.render('login');
+});
+
+router.get("/view_all_test_employees", function (req, res, next) {
+
+    var all_users = dbs.findUsers("role", "Employee", function (all_users) {
+        res.send(all_users);
+    });
+});
+
+/* TODO: create a duration variable for testing */
+/* TODO: create a skills list for testing */
+router.get("/view_all_assigned_test_employees", function (req, res, next) {
+
+    var start_date = new Date();
+    start_date.setYear(2017);
+    start_date.setMonth(0);
+    start_date.setDate(1);
+
+    var end_date = new Date();
+    end_date.setYear(2017);
+    end_date.setMonth(0);
+    end_date.setDate(28);
+    algorithm.get_unallocated_users(["Penetration Testing Vulnerability", "Windows / Linux Security", "Database Security"], start_date, end_date, function (all_users) {
+        res.send(JSON.stringify(all_users, 0, 2));
+    });
+});
+
+router.get('/view_test_employees', function(req, res, next)
+{
+    test_data.view_users();
     res.render('login');
 });
 
@@ -95,12 +136,6 @@ router.get('/remove_test_employees', function (req, res, next) {
 // router.get('/remove_test_tasks', function(req, res, next)
 // {
 //     test_data.remove_tasks();
-//     res.render('login');
-// });
-
-// router.get('/view_test_employees', function(req, res, next)
-// {
-//     test_data.view_users();
 //     res.render('login');
 // });
 

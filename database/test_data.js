@@ -174,64 +174,128 @@ exports.create_test_projects = function () {
 
 //A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file
-exports.create_All_test_employees = function (num_manager, num_employees) {
-    //var enc_pass;
+exports.create_All_test_employees = function(num_manager, num_employees) {
+    //list of roles and rates
+    var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
+        "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
+    var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
+    var skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus and Qualys)", "Windows / Linux Security", "Database Security",
+        "Security Gap Assessments", "Cyber Threat Detection And Root Cause", "Analysis", "Virtualisation Technologies",
+        "Strategic Management", "Regulatory Compliance", "Risk Management", "IT Corporate Governance",
+        "Data Centre Security", "Report Writing", "Policies, Procedures and Standards Writing skills",
+        "Policies, Procedures and Standards Compliance Measurement", "IT Legislation Compliance Gap Assessments," +
+        "IT Procurement and Bid Management", "IT Governance and Service Management", "IT Strategy and Performance Management",
+        "Enterprise Architecture and Design", "Digitisation",
+        "Specialist Supporting the Audit training", "Eaudit skills", "External Audit basics", "General IT controls",
+        "IT Risk Profiling", "Risk and Compliance Assessment", "Application Controls", "General IT Controls",
+        "Report Writing", "IT Fraud Investigation", "Audit Plan Development", "Eaudit skills",
+        "ITIA Basics", "SAP Basics", "IT Assurance", "King 3 Assessments", "Data Migration Reviews," +
+        "User Account Testing", "Data Analysis", "Data Visualization", "IDEA Skills", "CAATS Basics Skills",
+        "Data Insight Detection", "Report Writing", "Vendor Sourcing and RFP Development", "Vendor Contract Review",
+        "Business Case Review", "Project Assurance and Auditing", "Project Risk Management",
+        "IT Strategy Development and Master Systems Plan", "IT Governance and Maturity Assessment",
+        "Data Migration", "Business Process Risk and Control Analysis In Erp Environments", "Automated Controls Testing",
+        "Requirements Management", "Blueprint / Process Design", "Controls Integration", "Master Data Management",
+        "Security and Sod", "User Account Testing", "Support Management", "IT Service Management",
+        "Develop IT Governance Frameworks", "IT Risks and Controls Assessments and Benchmarking", "Review It Policies and Procedures",
+        "Development of IT Strategies", "Value IT Analysis and Reviews", "IT Governance Audits",
+        "IT Governance Maturity Reviews", "Vendor Selection Assistance", 'IT Project Assurance and Business Req Review",' +
+        "Disaster Recovery Test Assist and Reviews", "Project Management"];
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
-        console.log("creating roles array");
         var roles = ["project manager", "employee"];
-        var email = "employee1@gmail.com";
+        var email = "@gmail.com";
         var manager_ids = 1;
         var employee_ids = 1;
         var emp_list = {};
         var emp_count = 0;
-        console.log("creating managers");
-        for (var loop = 0; loop < num_manager; loop++) {
-            var new_json_obj = {
-                _id: roles[0] + " " + manager_ids,
-                name: roles[0] + " first_name " + manager_ids,
-                surname: roles[0] + " second_name " + manager_ids,
-                password: enc_pass,
-                password_date: today,
-                contact: "123 456 7890",
-                email: email,
-                role: "Manager",
-                position: roles[0],
-                employment_length: 5,
-                skill: [],
-                current_projects: [],
-                past_projects: []
-            };
-            emp_list[emp_count] = new_json_obj;
-            manager_ids += 1;
-            emp_count++;
-        }
+        filename_first_names = "./database/data/500_first_names.txt";
+        filename_second_names = "./database/data/500_second_names.txt";
+        fs.readFile(filename_first_names, 'utf8', function (err, data) {
+            if (err) throw err;
+            console.log('OK: ' + filename_first_names);
+            var name_index = 0;
+            var lines = data.split(/\r?\n/);
+            fs.readFile(filename_second_names, 'utf8', function (err, data) {
+                if (err) throw err;
+                console.log('OK: ' + filename_second_names);
+                var name_index = 0;
+                var lines2 = data.split(/\r?\n/);
+                console.log("creating managers");
+                for (var loop = 0; loop < num_manager; loop++) {
+                    var employee_index = Math.floor(Math.random() * (7 - 4 + 1) + 4);
+                    var new_json_obj = {
+                        _id: "mp_" + manager_ids,
+                        name: lines[name_index].trim(),
+                        surname: lines2[name_index].trim(),
+                        password: enc_pass,
+                        password_date: today,
+                        contact: "123 456 7890",
+                        email: lines[name_index].trim()+"."+lines2[name_index].trim()+email,
+                        role: "Manager",
+                        position: positions[employee_index],
+                        employment_length: Math.floor(Math.random() * (10 - 5 + 1) + 5),
+                        rate: rates[employee_index],
+                        skill: [],
+                        current_projects: [],
+                        past_projects: [],
+                        events: []
+                    };
+                    emp_list[emp_count] = new_json_obj;
+                    manager_ids += 1;
+                    emp_count++;
+                    name_index++;
+                }
 
-        console.log("creating employees");
-        for (var loop = 0; loop < num_employees; loop++) {
-            var new_json_obj = {
-                _id: roles[1] + " " + employee_ids,
-                name: roles[1] + " first_name " + employee_ids,
-                surname: roles[1] + " second_name " + employee_ids,
-                password: enc_pass,
-                password_date: today,
-                contact: "123 456 7890",
-                email: email,
-                role: "Employee",
-                position: roles[1],
-                employment_length: Math.floor(Math.random() * (4 - 1 + 1) + 1),
-                skill: [],
-                current_projects: [],
-                past_projects: []
-            };
-            emp_list[emp_count] = new_json_obj;
-            employee_ids += 1;
-            emp_count++;
-        }
-        for (var loop = 0; loop < emp_count; loop++) {
-            dbs.insertUser(emp_list[loop]);
-        }
-        console.log("Test employees added to data base");
+                console.log("creating employees");
+                for (var loop = 0; loop < num_employees; loop++) {
+                    var employee_index = Math.floor(Math.random() * (3 - 0 + 1) + 0);
+                    var skills_index_1 = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+                    var skills_index_2 = Math.floor(Math.random() * (50 - 25 + 1) + 25);
+                    var skills_index_3 = Math.floor(Math.random() * (75 -51 + 1) + 51);
+                    var new_json_obj = {
+                        _id: "emp_" + employee_ids,
+                        name: lines[name_index].trim(),
+                        surname: lines2[name_index].trim(),
+                        password: enc_pass,
+                        password_date: today,
+                        contact: "123 456 7890",
+                        email: lines[name_index].trim()+"."+lines2[name_index].trim()+email,
+                        role: "Employee",
+                        position: positions[employee_index],
+                        rate: rates[employee_index],
+                        employment_length: Math.floor(Math.random() * (4 - 1 + 1) + 1),
+                        skill: [
+                            {
+                                name: skills[skills_index_1],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            },
+                            {
+                                name: skills[skills_index_2],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            },
+                            {
+                                name: skills[skills_index_3],
+                                rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
+                                counter: 1
+                            }
+                        ],
+                        current_projects: [],
+                        past_projects: []
+                    };
+                    emp_list[emp_count] = new_json_obj;
+                    employee_ids += 1;
+                    emp_count++;
+                    name_index++;
+                }
+                for (var loop = 0; loop < emp_count; loop++) {
+                    dbs.insertUser(emp_list[loop]);
+                }
+                console.log("Test employees added to data base");
+            });
+        });
     });
 };
 
@@ -239,14 +303,14 @@ exports.create_All_test_employees = function (num_manager, num_employees) {
  * Parameters: num_years: the number of years it must go back in time from 2017
  * Result: it adds the projects to the database, places them all in the past_projects.txt and displays the amount of
  * projects created in the terminal
- * Note: it uses the amount of managers which it scales with waiting for each of the years specified by num_years*/
+ * Note: it uses the amount of managers specified in create_All_test_employees*/
 exports.create_past_Projects = function (num_years) {
     console.log("Creating past projects");
     var fileName = 'past_projects.txt';
     var creating = {
-        'flags': 'w'
-        , 'encoding': null
-        , 'mode': 0666
+        'flags': 'w',
+        'encoding': null,
+        'mode': 0666
     };
     var appending = {
         'flags': 'a'

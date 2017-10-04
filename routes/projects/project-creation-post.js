@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
-const algorithm = require('../../database/Resource-Alocation-Algorithm');
+const algorithm = require('../../database/employee-evaluations');
 const generator = require('generate-password');
 const async = require("async");
 const email_functions = require('../email_functions');
@@ -55,8 +55,8 @@ router.get('/store_emp', function (req, res, next)
     let out = JSON.parse(JSON.stringify(temp_employees));
     // console.log("1");
     //console.log("EMP: " + out);
-     employees =  JSON.parse(out);
-     console.log("EMP: " + JSON.stringify(employees));
+    employees =  JSON.parse(out);
+    console.log("EMP: " + JSON.stringify(employees));
 
 });
 
@@ -86,13 +86,13 @@ router.get('/replacement_store', function (req, res, next) {
 
     dbs.insert_approval(_approval_json);
     dbs.findUsers("_id",director_id,function (director_details) {
-       let dirEmail = director_details[0].email;
-       let manName = req.session.name;
-       let manSur = req.session.surname;
-       let proj = project_name;
-       //send email in here
+        let dirEmail = director_details[0].email;
+        let manName = req.session.name;
+        let manSur = req.session.surname;
+        let proj = project_name;
+        //send email in here
 
-    email_functions.EmployeeReplacement(dirEmail, manName, manSur, proj);
+        email_functions.EmployeeReplacement(dirEmail, manName, manSur, proj);
 
     });
 
@@ -139,8 +139,8 @@ router.post("/project_creation", function (req, res, next) {
         project_budget: req.body.budget,
         status: status
     };
-        dbs.insertProject(project);
-       // var emp_obj=JSON.parse(employee_id_array);
+    dbs.insertProject(project);
+    // var emp_obj=JSON.parse(employee_id_array);
     for (let x in employees) {
         dbs.assignProject(employees[x], project_id);
 
@@ -170,7 +170,7 @@ router.get('/test_algorithm', function (req, res, next) {
     console.log("the request budget of project is " + req.param('budget'));
 
     //dbs.view_employees();
-    algorithm.get_unallocated_users(req.param('num_empl'), req.param('skills'), req.param('duration'), req.param('budget'), function (val) {
+    algorithm.get_unallocated_users(req.param('num_empl'), req.param('skills'), function (val) {
         let result = JSON.stringify(val);
         employees = JSON.parse(result);
         res.send(result);
@@ -181,12 +181,17 @@ router.get('/test_algorithm', function (req, res, next) {
 router.get('/get_replacement', function (req, res, next) {
 
 
-    algorithm.get_unallocated_replacement_users( function (val) {
-        console.log("sgsdgffds");
-        console.log(val);
-        let result = JSON.stringify(val);
-        employees = JSON.parse(result);
-        res.send(result);
+    algorithm.get_unallocated_replacement_users( function (data) {
+        let result = JSON.stringify(data);
+        let _obj = JSON.parse(result);
+        console.log(_obj.length);
+        let emp_data=[];
+        for(let j=0;j<parseInt(req.query.num_empl);j++){
+            emp_data[j]=_obj[j];
+        }
+        let _json = {data:emp_data};
+        res.send(_json);
+
     });
     res.contentType('application/json');
 });
@@ -197,6 +202,31 @@ router.get('/get_directors', function (req, res, next) {
     let all_users = dbs.findUsers("role", "Director", function (all_users) {
         res.send(all_users);
     });
+
+});
+
+
+
+router.get('/get_json_data', function (req, res, next) {
+
+    let all_skills=(req.query.skills).split(",");
+    let arr_skills=[];
+    for(let x in all_skills){
+        arr_skills[x]=all_skills[x]
+    }
+
+    console.log(arr_skills);
+    algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
+        let result = JSON.stringify(data);
+        let _obj = JSON.parse(result);
+        let emp_data=[];
+        for(let j=0;j<3;j++){
+            emp_data[j]=_obj[j];
+        }
+        let _json = {data:emp_data};
+        res.send(_json);
+    });
+    res.contentType('application/json');
 
 });
 

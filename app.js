@@ -22,6 +22,7 @@ var milestone = require("./routes/projects/milestone-get");
 var project_edit = require("./routes/projects/project-edit");
 var project_routing = require("./routes/projects/projects-routing");
 var project_creation = require("./routes/projects/project-creation-post");
+var project_review = require("./routes/projects/project-review");
 
 //employee routes
 var employee_calendar = require("./routes/employee/employee-calendar");
@@ -80,6 +81,7 @@ app.use(display_all_projects);
 app.use(milestone);
 app.use(project_edit);
 app.use(project_routing);
+app.use(project_review);
 
 app.use(employee_calendar);
 app.use(employee_routing);

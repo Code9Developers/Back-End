@@ -7,6 +7,10 @@ var schemas = require('.././database/schemas.js');
 var dbs = require('.././database/dbs.js');
 var Algorithm = require('.././database/Algorithm.js');
 
+/*FUNCTION get_unallocated_user
+*   RETURNS : A json array: index 0 is the list of allocated employees for the project, index 1 is all other employees
+*           which have the skills required by the project and are free for the duration, index 2 is the cost of the
+*           project as per the rates of assigned employees*/
 /* TODO : find employees which are free for the current duration */
 /* TODO : find employees which have the correct skills */
 /* TODO : add how long an employee has not been working to employee_list */
@@ -27,8 +31,7 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
         }
         else {
             console.log("Creating employee lists");
-            //we make 1 list for each skill
-            //all employees who have that skill are added to the list
+
             var employee_lists = [];
             var skills_count = [skills.length];
             for(var loop = 0; loop < skills.length; loop++)
@@ -106,28 +109,60 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
             {
                 for(var loop2 = 0; loop2 < Object.keys(employee_lists[loop]).length; loop2++)
                 {
-                    employee_lists[loop][loop2].position = loop2;
+                    employee_lists[loop][loop2].pos = loop2;
                 }
             }
 
-            for(var loop = 0; loop < Object.keys(skills).length; loop++)
+            /*for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
                 for(var loop2 = 0; loop2 < Object.keys(employee_lists[loop]).length; loop2++)
                 {
                     console.log(employee_lists[loop][loop2]);
                 }
-            }
+            }*/
 
-            for(var loop = 0; loop < Object.keys(skills).length; loop++)
+            /*for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
-                console.log(loop);
-                /*console.log("best employee in list : "+loop+" is at position "
-                    +employee_lists[loop][(employee_lists[loop].length-1)].position+" with value : "+employee_lists[loop][(employee_lists[loop].length-1)].value);*/
-            }
+                console.log("best employee in list : "+loop+" is at position "
+                    +employee_lists[loop][(employee_lists[loop].length-1)].position+" with value : "+employee_lists[loop][(employee_lists[loop].length-1)].value);
+            }*/
 
             var pso = new Algorithm(employee_lists, 20);
-            var return_list = pso.runAlgorithm();
+            var allocated_list = pso.runAlgorithm();
 
+            /*create a return list */
+            var return_list = {};
+            return_list[0] = allocated_list;
+            return_list[1] = [];
+            var unallocated_count = 0;
+            /*check if the employee is not in the allocated list*/
+                /*if not, add it to the return list index 2*/
+            for(var loop = 0; loop < Object.keys(employee_lists).length; loop++) {
+                var test = true;
+                for (var loop2 = 0; loop2 < allocated_list.length; loop2++) {
+                    if(allocated_list[loop2] == employee_lists[loop])
+                        test = false;
+                }
+                if (test == true)
+                {
+                    return_list[1][unallocated_count] = employee_lists[loop];
+                    unallocated_count ++;
+                }
+            }
+
+            /*for(var loop = 0; loop < Object.keys(employee_lists).length; loop++)
+            {
+                console.log(employee_lists[loop]);
+            }*/
+
+            /*work out budget*/
+            var budget = 0;
+            for(var loop = 0; loop < allocated_list.length; loop++)
+            {
+                budget += allocated_list[loop].rate;
+            }
+
+            console.log("the budget for the project is : R"+budget);
             return callback(return_list);
         }
     });

@@ -69,12 +69,12 @@ function Particle()
         var new_position = [];
         for(var loop = 0; loop < this.employee_list.length; loop++)
         {
-            mean = (this.pBest[loop].position+gbest_list[loop].position)/2;
-            std_dev = Math.abs(this.pBest[loop].position-gbest_list[loop].position);
+            mean = (this.pBest[loop].pos+gbest_list[loop].pos)/2;
+            std_dev = Math.abs(this.pBest[loop].pos-gbest_list[loop].pos);
             if(std_dev !=0)
                 new_position.push(this.getGaussianRandom(mean, std_dev));
             else
-                new_position.push(this.pBest[loop].position);
+                new_position.push(this.pBest[loop].pos);
             if(new_position[loop] >= employees_lists[loop].length)
                 new_position[loop] = (employees_lists[loop].length-1);
         }

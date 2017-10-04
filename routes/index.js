@@ -74,7 +74,7 @@ router.get("/view_all_assigned_test_employees", function (req, res, next) {
     end_date.setYear(2017);
     end_date.setMonth(0);
     end_date.setDate(28);
-    algorithm.get_unallocated_users(["Penetration Testing Vulnerability", "Windows / Linux Security", "Database Security"], start_date, end_date, function (all_users) {
+    algorithm.get_unallocated_users(["Penetration Testing & Vulnerability", "Scanning (Nesus & Qualys)", "Windows / Linux Security"], start_date, end_date, function (all_users) {
         res.send(JSON.stringify(all_users, 0, 2));
     });
 });

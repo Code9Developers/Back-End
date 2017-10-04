@@ -185,7 +185,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
     "Data Centre Security", "Report Writing", "Policies, Procedures & Standards Writing skills",
     "Policies, Procedures and Standards Compliance Measurement", "IT Legislation Compliance Gap Assessments," +
     "IT Procurement & Bid Management", "IT Governance & Service Management", "IT Strategy and Performance Management",
-    "Enterprise Architecture and Design", "Digitisation",
+    "Enterprise Architecture and Design", "Digitisation","Scanning (Nesus & Qualys)",
     "Specialist Supporting the Audit training", "Eaudit skills", "External Audit basics", "General IT controls",
     "IT Risk Profiling", "Risk & Compliance Assessment", "Application Controls", "General IT Controls",
     "Report Writing", "IT Fraud Investigation", "Audit Plan Development", "Eaudit skills",

@@ -17,6 +17,8 @@ exports.create_schemas = function () {
 	
 	create_training(db) ;
 
+	create_training(db) ;
+
     create_milestone(db);
 
     create_task(db);

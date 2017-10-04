@@ -67,7 +67,7 @@ exports.create_test_employees = function () {
                 counter: 0
             }, {name: "Auditor", rating: 0, counter: 0}],
             current_projects: [],
-            past_projects: []
+            past_projects: ["kpmg1","kpmg2"]
         };
 
         var emp3 = {

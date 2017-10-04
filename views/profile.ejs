@@ -77,22 +77,17 @@
                                                  alt="Avatar" title="Change the avatar">
                                         </div>
                                     </div>
-                                    <h3>Samuel Doe</h3>
+                                    <h3 id="empName"></h3>
 
                                     <ul class="list-unstyled user_data">
-                                        <li>
-                                            <i class="fa fa-briefcase user-profile-icon"></i> Software Engineer
+                                        <li id="empRole">
+                                            <i class="fa fa-briefcase user-profile-icon"></i>
                                         </li>
-                                        <li>
-                                            <i class="fa fa-phone user-profile-icon"></i> (011) 233 5739
+                                        <li id="empPhoneNum">
+                                            <i class="fa fa-phone user-profile-icon"></i>
                                         </li>
-                                        <li>
-                                            <i class="fa fa-envelope user-profile-icon"></i> kpmg@kpmg.co.za
-                                        </li>
-                                        <li class="m-top-xs">
-                                            <i class="fa fa-linkedin-square user-profile-icon"></i>
-                                            <a href="http://www.kimlabs.com/profile/"
-                                               target="_blank">www.kimlabs.com</a>
+                                        <li id="empEmail">
+                                            <i class="fa fa-envelope user-profile-icon"></i>
                                         </li>
                                     </ul>
 
@@ -178,7 +173,7 @@
                                                  aria-labelledby="home-tab">
                                                 <!-- start Tasks to do -->
                                                 <!-- TODO START jquery-->
-                                                <ul class="messages">
+                                                <ul id="empMilestones" class="messages">
                                                     <li>
                                                         <i class="fa fa-tasks"></i>
                                                         <div class="message_date">
@@ -420,24 +415,6 @@
 
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.min.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/profile.js"></script>
 </body>
-<script>
-    $(document).ready(function () {
-        $('#updateProfile').on('click', function (e) {
-            alert(document.getElementById("pic").files[0].name);
-//            $.get("store_image",
-//                {
-//                    pic:$("#pic").val()
-//                }
-//                ,
-//                function(data, status) {
-//
-//
-//
-//                });
-
-        });
-    });
-
-</script>
 </html>

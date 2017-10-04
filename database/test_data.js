@@ -110,12 +110,33 @@ exports.create_test_employees = function () {
             current_projects: [],
             past_projects: []
         };
+
+        var emp6 = {
+            _id: "emp6",
+            name: "Ptolemy",
+            surname: "Smith",
+            password: enc_pass,
+            password_date: today,
+            contact: "(076)-234-9458",
+            email: "Ptolemy@gmail.com",
+            role: "Employee",
+            position: "Junior Analyst",
+            employment_length: 1,
+            skill: [{name: "MS Office", rating: 0, counter: 0}, {
+                name: " Accounting Skills",
+                rating: 0,
+                counter: 0
+            }, {name: "Auditor", rating: 0, counter: 0}],
+            current_projects: [],
+            past_projects: []
+        };
         //dbs.remove({name: "Testy"});  /*THIS deletes all previous users in the db*/
         dbs.insertUser(emp);
         dbs.insertUser(emp2);
         dbs.insertUser(emp3);
         dbs.insertUser(emp4);
         dbs.insertUser(emp5);
+        dbs.insertUser(emp6);
         console.log("Test employees added to data base")
     });
 };

@@ -63,7 +63,7 @@ $(document).ready(function() {
                     "<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
 
                 emp_store = data;
-
+                globEmployees = data;
                 $.each(data,function(key,value){
                     employeeArr[key]=value._id;
                     $("#emptBody").append("<tr id="+key+">"+
@@ -197,34 +197,39 @@ $(document).ready(function() {
 
     $('#storeEmp').on('click', function (e) {
         ///e.preventDefault(); // disable the default form submit event
-        var num_employees=($('#range_31').val()).split(";");
+
+
+
+         if(globEmployees == null){
+
+             window.alert("Employees not assigned");
+             $("#demo-form").submit(function(e){
+                 e.preventDefault();
+             });
+         }else {
+             var num_employees=($('#range_31').val()).split(";");
+             window.alert(JSON.stringify(globEmployees));
+             $.get("store_emp", {
+                     num_empl:num_employees[1],
+                     duration: 2,
+                     budget: $('#budget').val(),
+                     emplArr: JSON.stringify(globEmployees)
+                 }, function (data, status) {
+                     //e.submit();
+                    alert("yeeeet")
+                     $("#demo-form").submit();
+                 }
+             )
+         }
+
+       /* var num_employees=($('#range_31').val()).split(";");
         window.alert(JSON.stringify(emp_store));
         $.get("store_emp", {
             num_empl:num_employees[1],
             duration: 2,
             budget: $('#budget').val(),
             emplArr: JSON.stringify(emp_store)
-        });
-        //
-        // if(globEmployees == null){
-        //
-        //     window.alert("Employees not assigned");
-        //     $("#demo-form").submit(function(e){
-        //         e.preventDefault();
-        //     });
-        // }else {
-        //     var num_employees=($('#range_31').val()).split(";");
-        //     window.alert(JSON.stringify(globEmployees));
-        //     $.get("store_emp", {
-        //             num_empl:num_employees[1],
-        //             duration: 2,
-        //             budget: $('#budget').val(),
-        //             emplArr: JSON.stringify(globEmployees)
-        //         }, function (data, status) {
-        //             //e.submit();
-        //             $("#demo-form").submit();
-        //         }
-        //     )
-        // }
+        });*/
+
     });
 });

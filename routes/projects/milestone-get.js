@@ -3,6 +3,7 @@
  */
 const express = require('express');
 const router = express.Router();
+const generator = require('generate-password');
 const dbs = require('../../database/dbs');
 /**
  -----------------------------------------------------------------------------------------------------------------------

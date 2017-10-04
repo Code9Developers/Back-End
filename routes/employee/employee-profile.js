@@ -19,7 +19,7 @@ router.get("/get_emp_task", function (req, res, next) {
 });
 
 router.get("/get_emp_milestone", function (req, res, next) {
-    dbs.findUsers("_id", "emp1", function (user_id) {
+    dbs.findUsers("_id", req.session.username, function (user_id) {
         dbs.findMilestones("project_id", user_id[0].current_projects[0], function (milestones) {
             res.send(milestones);
         });

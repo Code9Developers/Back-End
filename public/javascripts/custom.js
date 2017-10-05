@@ -5474,7 +5474,7 @@ $(document).ready(function () {
     init_morris_charts();
     init_select2();
     init_validator();
-    init_DataTables();
+    // init_DataTables();
     init_chart_doughnut();
     init_gauge();
     init_PNotify();

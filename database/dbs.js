@@ -1111,6 +1111,22 @@ exports.get_past_projects = function (project_ids,callback) {
     });
  };
 
+exports.get_all_users_names = function (user_ids,callback) {
+    let user = schemas.user;
+    user.aggregate([
+        {$match:{_id:{$in:user_ids}}},
+        {$group:{_id:{_id:"$_id",name:"$name",surname:"$surname"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
@@ -1174,7 +1190,10 @@ exports.managerEmployeeCorrelation = function(callback) {
 		for (let x = 0 ; x < managerArray.length ; x++) {
 			out += '{ "manager_id": ' + '"' + managerArray[x] + '"' + ', [ ' ;
 			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				out += '{ "employee_id": ' + '"' + employeeArray[x][y] + '"' + ', "hours_worked": ' + hourArray[x][y] + ' }, ' ;
+                module.exports.findUsers("_id", employeeArray[x][y], function (all_users) {
+                    out += '{ "employee_id": ' + '"' + all_users.name + '"' + ', "hours_worked": ' + hourArray[x][y] + ' }, ' ;
+                });
+
 			}
 			out = out.substring(0, out.length-2) + ' ] }, ' ;
 		}
@@ -1185,7 +1204,12 @@ exports.managerEmployeeCorrelation = function(callback) {
 		for (let x = 0 ; x < managerArray.length ; x++) {
 			let subobj = { "manager_id": managerArray[x], employees_worked_with: [] } ;
 			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				subobj.employees_worked_with.push({ "employee_id": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
+                module.exports.findUsers("_id", employeeArray[x][y], function (all_users) {
+                    subobj.employees_worked_with.push({
+                        "employee_id": all_users.name,
+                        "hours_worked": hourArray[x][y]
+                    });
+                });
 			}
 			obj.data.push(subobj) ;
 		}

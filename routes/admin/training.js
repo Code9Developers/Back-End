@@ -43,4 +43,34 @@ router.get('/get_all_employees', function (req, res, next) {
     });
 });
 
+router.post('/add_training', function (req, res, next) {
+    let start_date = (req.body.start_date);
+    let s = start_date.split("/");
+    let newStartDate = new Date((s[2] + "-" + s[1] + "-" + s[0]).toString());
+
+    let end_date = ((req.body.end_date));
+    let temp_end_date = end_date.split("/");
+    let new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
+
+    let rand_id = Math.floor((Math.random() * 1000) + 1).toString();
+    let rand_id_1 = Math.floor((Math.random() * 1000) + 1).toString();
+    let id=rand_id+req.body.trainer_name+rand_id_1;
+    let training_obj={
+        _id: id,
+        training_start_date: newStartDate,
+        training_end_date: new_end_date,
+        trainer_name: req.body.trainer_name,
+        training_contact: req.body.trainer_contact,
+        trainer_email: req.body.trainer_email,
+        employees_assigned:JSON.parse(req.body.emp_ids)
+    }
+
+    dbs.insertTraining(training_obj);
+    let ids=JSON.parse(req.body.emp_ids);
+    for(let i in ids){
+        dbs.findUsers("_id",ids[i],function (user_data) {
+           console.log(user_data[0].email);//Works
+        });
+    }
+});
 module.exports = router;

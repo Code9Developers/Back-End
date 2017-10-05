@@ -1,5 +1,3 @@
-const dbs = require('.././database/dbs.js');
-
 /**
  * Page:
  * Functionality:
@@ -22,19 +20,19 @@ window.onload = function()
      *    Date Revised: 05/10/2017 by Joshua Moodley
      */
 
-    let configProgressGraph = {
-        type: 'line',
-        data: {
-            labels: [newDate(2017, 1, 1), newDate(2017, 1, 2), newDate(2017, 1, 3), newDate(2017, 1, 4), newDate(2017, 1, 5), newDate(2017, 1, 6)],
-            datasets: [{
-                label: "My First dataset",
-                data: [0, 20, 30, 45, 50, 55],
-            }]
-        }
-    };
-
-    let pc = document.getElementById('progressChart').getContext('2d');
-    let chartOne = new Chart(pc, configProgressGraph);
+    // let configProgressGraph = {
+    //     type: 'line',
+    //     data: {
+    //         labels: [newDate(2017, 1, 1), newDate(2017, 1, 2), newDate(2017, 1, 3), newDate(2017, 1, 4), newDate(2017, 1, 5), newDate(2017, 1, 6)],
+    //         datasets: [{
+    //             label: "My First dataset",
+    //             data: [0, 20, 30, 45, 50, 55],
+    //         }]
+    //     }
+    // };
+    //
+    // let pc = document.getElementById('progressChart').getContext('2d');
+    // let chartOne = new Chart(pc, configProgressGraph);
 
     /**
      *    director_dashboard.ejs analytics graph
@@ -44,7 +42,10 @@ window.onload = function()
 
     let configAnalyGraph = {
         type: 'bar',
-        data: [20, 10]
+        datasets: [{
+                        label: "My First dataset",
+                        data: [0, 20, 30, 45, 50, 55],
+                    }]
     };
 
     let aOne = document.getElementById('analyticsOne').getContext('2d');

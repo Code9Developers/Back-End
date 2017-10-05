@@ -1,12 +1,10 @@
 /**
  * Created by Seonin David on 2017/10/04.
  */
+$(document).ready(function (){
 
-$(window).load(function () {
-   init_EmployeeTrainingAllocationDT();
-});
-function init_EmployeeTrainingAllocationDT() {
-
+    let rows_selected = [];
+   // let table;
     console.log('run_datatables');
 
     if (typeof ($.fn.DataTable) === 'undefined') {
@@ -56,45 +54,89 @@ function init_EmployeeTrainingAllocationDT() {
 
     let $EmployeeTrainingAllocationDT = $('#EmployeeTrainingAllocationDT');
 
-    $EmployeeTrainingAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
-    {
-        this.inline( this );
-    });
+    /* $EmployeeTrainingAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
+     {
+         this.inline( this );
+     });*/
 
-    $EmployeeTrainingAllocationDT.dataTable({
-        order: [[ 1, 'asc' ]],
+    $('#EmployeeTrainingAllocationDT').dataTable({
         ajax: "get_all_employees",
-        columns: [
-            {
-                data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",
-                defaultContent: '<th><div class="text-center"><input name="" type="checkbox" id="check-all" class="flat"></div></th>',
-                className: 'select-checkbox',
-                orderable: false
-            },
+        columnDefs: [{
+            'targets': 0,
+            'searchable':false,
+            'orderable':false,
+            'width':'1%',
+            'className': 'dt-body-center',
+            'render': function (data, type, full, meta){
+                return '<input type="checkbox">';
+            }
+        }],
+        columns:[
+            { data: "id"},
             { data: "name" },
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
             { data: "past_projects" }
         ],
-        select: {
-            style:    'os',
-            selector: 'td:first-child'
-        },
+        order: [1, 'asc'],
+        rowCallback: function(row, data, dataIndex){
+            // Get row ID
+            var rowId = data[0];
+
+            // If row ID is in the list of selected row IDs
+            if($.inArray(rowId, rows_selected) !== -1){
+                $(row).find('input[type="checkbox"]').prop('checked', true);
+                $(row).addClass('selected');
+            }
+        }
 
     });
 
     TableManageButtons.init();
-}
+    var table = $('#EmployeeTrainingAllocationDT').DataTable();
 
-$('#addTraining').on('click',function (e) {
-    let  sendArr = [];
-    let  c = 0;
-    $('#EmployeeTrainingAllocationDT').find('input[type="checkbox"]:checked').each(function () {
-        let ind = $(this).parent();//parent().parent().attr('id');
-        // sendArr[c] = employeeArr[ind];
-        // c++;
-        window.alert(JSON.stringify(ind));
+    /*TODO add variable*/
+        // Handle click on checkbox
+    $('#EmployeeTrainingAllocationDT').on('click', 'input[type="checkbox"]', function(e){
+
+
+
+        let $row = $(this).closest('tr');
+        //Alert for employee data
+        window.alert(JSON.stringify(table.row($row).data()))
+        let data = table.row($row).data();
+
+        if(this.checked){
+            $row.addClass('selected');
+        } else {
+            $row.removeClass('selected');
+        }
+
+
+        // Update state of "Select all" control
+        // updateDataTableSelectAllCtrl(table);
+
+        // Prevent click event from propagating to parent
+        e.stopPropagation();
     });
-    c = 0;
+
+    $('#EmployeeTrainingAllocationDT').on('click', 'tbody td, thead th:first-child', function(e){
+        $(this).parent().find('input[type="checkbox"]').trigger('click');
+    });
+
+    $('#addTraining').on('click',function (e) {
+
+    });
+
 });
+/*$(window).load(function () {
+   init_EmployeeTrainingAllocationDT();
+});*/
+
+
+/*unction init_EmployeeTrainingAllocationDT() {
+
+}*/
+
+//let table = $('#EmployeeTrainingAllocationDT').dataTable();

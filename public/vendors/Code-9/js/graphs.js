@@ -1,3 +1,5 @@
+const dbs = require('.././database/dbs.js');
+
 /**
  * Page:
  * Functionality:
@@ -7,28 +9,38 @@
  * Author(s): Joshua Moodley
  * Date Revised: 05/10/2017 by Joshua Moodley
  */
+function newDate(yyyy, mm, dd)
+{
+    return new Date(yyyy, mm, dd);
+}
+
 window.onload = function()
 {
-    let pc = document.getElementById('progressChart').getContext('2d');
-    let xaxis = '["Task 1", "Task 2", "Task 3", "Task 4", "Task 5", "Task 6", "Task 7"]';
 
-    let chart = new Chart(pc,
-    {
-        // The type of chart we want to create
+    /**
+     *    index_dashboard.ejs progress graph
+     *    Date Revised: 05/10/2017 by Joshua Moodley
+     */
+
+    let configProgressGraph = {
         type: 'line',
-        // The data for our dataset
-        data:
-        {
-            // x-axis
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets:
-            [{
-                label: "Task",
-                backgroundColor: 'rgb(231, 234, 242)',
-                borderColor: 'rgb(1, 31, 116)',
-            // y-axis
-                data: [0, 10, 5, 2, 20, 30, 45],
+        data: {
+            labels: [newDate(2017, 1, 1), newDate(2017, 1, 2), newDate(2017, 1, 3), newDate(2017, 1, 4), newDate(2017, 1, 5), newDate(2017, 1, 6)],
+            datasets: [{
+                label: "My First dataset",
+                data: [0, 20, 30, 45, 50, 55],
             }]
         }
-    });
+    };
+
+    let pc = document.getElementById('progressChart').getContext('2d');
+    let chart = new Chart(pc, configProgressGraph);
+
+    /**
+     *    director_dashboard.ejs analytics graph
+     *    Date Revised: 05/10/2017 by Joshua Moodley
+     *    Date Revised: 05/10/2017 by
+     */
+
+
 };

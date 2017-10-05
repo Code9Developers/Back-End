@@ -1125,19 +1125,15 @@ exports.managerEmployeeCorrelation = function(callback) {
 	*/
 	
 	module.exports.findProjects("status", "completed", function(res) {
-		
-		function rename(i, array, name) {
-			array[i] = name ;
-		}
-		
+			
 		function getManagerNames(array, callback) {
 			let user = schemas.user ;
+			let updated = 0 ;
 			for (let x = 0 ; x < array.length ; x++) {
 				user.findOne({_id: array[x]}).exec().then(function(res) {
-					rename(x, array, res.name + " " + res.surname) ;
-					if (x == array.length-1) {
-						//return here
-						//console.log(array) ;
+					array[x] = res.name + " " + res.surname ;
+					if (++updated == array.length) {
+						console.log(array) ;
 						return callback(array) ;
 					}
 				});
@@ -1146,13 +1142,20 @@ exports.managerEmployeeCorrelation = function(callback) {
 		
 		function getEmployeeNames(array, callback) {
 			let user = schemas.user ;
+			let updated = 0 ;
+			let size = 0  ;
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					size++ ;
+				}
+			}
+			
 			for (let x = 0 ; x < array.length ; x++) {
 				for (let y = 0 ; y < array[x].length ; y++) {
 					user.findOne({_id: array[x][y]}).exec().then(function(res) {
-						rename(y, array[x], res.name + " " + res.surname) ;
-						if (x == array.length-1 && y == array[x].length-1) {
-							//return here
-							//console.log(array) ;
+						array[x][y] = res.name + " " + res.surname ;
+						if (++updated == size) {
+							console.log(array) ;
 							return callback(array) ;
 						}
 					});

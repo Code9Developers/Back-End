@@ -44,7 +44,7 @@ window.onload = function()
 
     let configAnalyGraph = {
         type: 'bar',
-        data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}]
+        data: [20, 10]
     };
 
     let aOne = document.getElementById('analyticsOne').getContext('2d');

@@ -34,7 +34,7 @@ window.onload = function()
     };
 
     let pc = document.getElementById('progressChart').getContext('2d');
-    let chart = new Chart(pc, configProgressGraph);
+    let chartOne = new Chart(pc, configProgressGraph);
 
     /**
      *    director_dashboard.ejs analytics graph
@@ -42,5 +42,12 @@ window.onload = function()
      *    Date Revised: 05/10/2017 by
      */
 
+    let configAnalyGraph = {
+        type: 'bar',
+        data: [{x:'2016-12-25', y:20}, {x:'2016-12-26', y:10}]
+    };
+
+    let aOne = document.getElementById('analyticsOne').getContext('2d');
+    let chartTwo = new Chart(aOne, configAnalyGraph);
 
 };

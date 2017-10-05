@@ -14,7 +14,6 @@ function newDate(yyyy, mm, dd)
 
 window.onload = function()
 {
-
     /**
      *    index_dashboard.ejs progress graph
      *    Date Revised: 05/10/2017 by Joshua Moodley
@@ -39,13 +38,15 @@ window.onload = function()
      *    Date Revised: 05/10/2017 by Joshua Moodley
      *    Date Revised: 05/10/2017 by
      */
+	 
+	let colours = ["Sargon Akkad", "Julius Caesar", "Ptolemy Seleucid", "Alexander Hyksos", "Elyssa Tyre", "Enrico Dandalo"] ;
 
     let configAnalyGraph = {
         type: 'bar',
         data: {
-            labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+            labels: colours,
             datasets: [{
-                label: '# of Votes',
+                label: 'No. of hours worked with.',
                 data: [12, 19, 3, 5, 2, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',

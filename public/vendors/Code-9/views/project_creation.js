@@ -59,10 +59,10 @@ function init_EmployeeAllocationDT() {
 
     let $EmployeeAllocationDT = $('#EmployeeAllocationDT');
 
-    $EmployeeAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
+    /*$EmployeeAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
     {
         this.inline( this );
-    });
+    });*/
 
     let num_employees=($('#range_31').val()).split(";");
     let num_emp= parseInt(num_employees[1]);
@@ -220,6 +220,28 @@ $(document).ready(function() {
     });
 
 
+    $('#EmployeeAllocationDT').on('click', 'input[type="checkbox"]', function(e){
+
+        var table = $('#EmployeeAllocationDT').DataTable();
+
+        let $row = $(this).closest('tr');
+        //Alert for employee data
+        window.alert(JSON.stringify(table.row($row).data()))
+        let data = table.row($row).data();
+
+        if(this.checked){
+            $row.addClass('selected');
+        } else {
+            $row.removeClass('selected');
+        }
+
+
+        // Update state of "Select all" control
+        // updateDataTableSelectAllCtrl(table);
+
+        // Prevent click event from propagating to parent
+        e.stopPropagation();
+    });
     let  sendArr = [];
     let  c = 0;
     $('#EmpAllocationDT').on('click','#replaceEmployee',function (e) {

@@ -31,7 +31,7 @@ exports.create_schemas = function () {
 };
 
 
-//all schema initialser functions are below -->
+//all schema initializer functions are below -->
 
 
 function create_user(db) {

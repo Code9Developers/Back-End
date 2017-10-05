@@ -190,7 +190,6 @@ $(document).ready(function() {
         tags: false
     });
 
-
     $('#holder').hide();
     $('#EmpAllocationTableHide').hide();
     $('#EmpReplacementTableHide').hide();
@@ -200,13 +199,16 @@ $(document).ready(function() {
         // Create datatable for employees allocated
         init_EmployeeAllocationDT();
 
+        $('#demo-form').hide();
+        $('#holder').show();
+
         /*Animation*/
-        // setTimeout(function ()
-        // {
-        //     $('#demo-form').show();
-        //     $('#holder').hide();
-        // }, 4500);
-        //
+        setTimeout(function ()
+        {
+            $('#demo-form').show();
+            $('#holder').hide();
+        }, 4500);
+
         $('#EmpAllocationTableHide').show();
         $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
 

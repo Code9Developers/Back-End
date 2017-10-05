@@ -1,13 +1,10 @@
 /**
  * Created by Seonin David on 2017/10/04.
  */
+$(document).ready(function (){
 
-$(window).load(function () {
-   init_EmployeeTrainingAllocationDT();
-
-});
-function init_EmployeeTrainingAllocationDT() {
-
+    let rows_selected = [];
+    // let table;
     console.log('run_datatables');
 
     if (typeof ($.fn.DataTable) === 'undefined') {
@@ -57,85 +54,110 @@ function init_EmployeeTrainingAllocationDT() {
 
     let $EmployeeTrainingAllocationDT = $('#EmployeeTrainingAllocationDT');
 
-    $EmployeeTrainingAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
-    {
-        this.inline( this );
-    });
+    /* $EmployeeTrainingAllocationDT.on( 'click', 'tbody td:not(:first-child)', function (e)
+     {
+     this.inline( this );
+     });*/
 
-    $EmployeeTrainingAllocationDT.dataTable({
-        order: [[ 1, 'asc' ]],
+    $('#EmployeeTrainingAllocationDT').dataTable({
         ajax: "get_all_employees",
-        columns: [
-            {
-                data: "<tr><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"check_box\"></div></tr>",
-                defaultContent: '<tr><div class="text-center"><input name="" type="checkbox" id="check-all" class="check_box"></div></tr>',
-                className: 'select-checkbox',
-                orderable: false
-            },
+        columnDefs: [{
+            'targets': 0,
+            'searchable':false,
+            'orderable':false,
+            'width':'1%',
+            'className': 'dt-body-center',
+            'render': function (data, type, full, meta){
+                return '<input type="checkbox">';
+            }
+        }],
+        columns:[
+            { data: "id"},
             { data: "name" },
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
             { data: "past_projects" }
         ],
-        select: {
-            style:    'os',
-            selector: 'td:first-child'
-        },
+        order: [1, 'asc'],
+        rowCallback: function(row, data, dataIndex){
+            // Get row ID
+            var rowId = data[0];
+
+            // If row ID is in the list of selected row IDs
+            if($.inArray(rowId, rows_selected) !== -1){
+                $(row).find('input[type="checkbox"]').prop('checked', true);
+                $(row).addClass('selected');
+            }
+        }
 
     });
-
-
 
     TableManageButtons.init();
-}
-
-// $('#addTraining').on('click',function (e) {
-//     //e.preventDefault();
-//     // window.alert(table.columns(0).checkboxs.selected());
-//     // var rows_selected = table.column(0).checkboxes.selected();
-//     // $.each(rows_selected, function(index, rowId){
-//     //     // Create a hidden element
-//     //   window.alert(rowId);
-//     // });
-//     alert("hello")
-//
-//
-// });
-
-// $('#addTraining').click(function(){
-//     var values = $("#EmployeeTrainingAllocationDT table input[name='sport']:checked").map(function() {
-//         row = $(this).closest("tr");
-//         return {
-//             checkbox_id : $(this).val(),
-//             hidden_id   : $(row).find("input[name=id]").val(),
-//             address     : $(row).find("input[name=address]").val(),
-//             radio       : $(row).find('input[type=radio]:checked').val() || "not selected"
-//         }
-//     }).get();
-//     window.alert(values);
-// });
-
-$("#addTraining").click(function(){
     var table = $('#EmployeeTrainingAllocationDT').DataTable();
 
-    var data = table
-        .rows()
-        .data();
-    var count=0;
-    $.each($("input[class='check_box']"), function() {
-        $(this).attr("id", data[count]._id);
-        count++;
+    /*TODO add variable*/
+    let emp_selected_ids=[];
+    let count=0;
+    // Handle click on checkbox
+    $('#EmployeeTrainingAllocationDT').on('click', 'input[type="checkbox"]', function(e){
+
+
+
+        let $row = $(this).closest('tr');
+        //Alert for employee data
+
+        let data = table.row($row).data();
+
+
+        if(this.checked){
+            $row.addClass('selected');
+            emp_selected_ids[count]=data._id;
+            count++;
+        } else {
+            $row.removeClass('selected');
+            count--;
+            emp_selected_ids.length--;
+
+        }
+
+
+        // Update state of "Select all" control
+        // updateDataTableSelectAllCtrl(table);
+
+        // Prevent click event from propagating to parent
+        e.stopPropagation();
     });
-    var favorite = [];
 
-    $.each($("input[class='check_box']:checked"), function(){
-
-        alert("hello");
-        alert($(this).attr("id"));
-
+    $('#EmployeeTrainingAllocationDT').on('click', 'tbody td, thead th:first-child', function(e){
+        $(this).parent().find('input[type="checkbox"]').trigger('click');
     });
 
-    // alert("My favourite sports are: " + favorite.join(", "));
+    $('#addTraining').on('click',function (e) {
+        e.preventDefault();
+
+        $.post("add_training",
+            {
+                trainer_name: $("#trainerName").val(),
+                trainer_email: $("#trainerEmail").val(),
+                trainer_contact: $("#trainerPhoneNumber").val(),
+                start_date:$("#startDate").val(),
+                end_date:$("#endDate").val(),
+                emp_ids:JSON.stringify(emp_selected_ids)
+            },
+            function(data, status){
+                alert("Data: " + data + "\nStatus: " + status);
+            });
+    });
 
 });
+/*$(window).load(function () {
+ init_EmployeeTrainingAllocationDT();
+ });*/
+
+
+/*unction init_EmployeeTrainingAllocationDT() {
+
+ }*/
+
+//let table = $('#EmployeeTrainingAllocationDT').dataTable();

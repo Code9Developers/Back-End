@@ -13,28 +13,9 @@ $(document).ready(function() {
 
     $.get("all_projects", {}, function (data, status) {
 
-
-        $('#projectsPageTable').empty();
-        $('#projectsPageTable').append(
-            "<table class='table table-striped projects'>" +
-            "<thead>" +
-            "<tr>" +
-            "<th style='width:1%'>#</th>" +
-            "<th style='width:20%'>Project Name</th>" +
-            "<th>Team Members</th>" +
-            "<th>Project Progress</th>" +
-            "<th>Status</th>" +
-            "<th style=\"width: 20%\">Options</th>" +
-            "</tr>" +
-            "</thead>" +
-            "<tbody id='projViewTable'>" +
-            "</tbody>" +
-            "</table>"
-        );
-        //window.alert(data.projects);
-        //data = JSON.parse(data);
         var i=0;
         var edit_id,view_id,milestone_pid,remove_pid;
+        $("#projViewTable").empty();
         $.each(data, function (key, value) {
             // console.log(value.name);
             edit_id="project_edit?id="+value._id;
@@ -43,6 +24,7 @@ $(document).ready(function() {
             remove_pid="project_remove?id="+value._id;
             value.status[0]=(value.status[0]).toUpperCase();
             let index=parseInt(key)+1;
+
             $("#projViewTable").append("<tr>" +
                 "<td>" +
                 index+
@@ -87,6 +69,7 @@ $(document).ready(function() {
 
         });
         $(".remove").on("click",function () {
+            $(this).parent().parent().hide();
             $.get("remove_project",{
                 project_id:$(this).attr("id")
             });

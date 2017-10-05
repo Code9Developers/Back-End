@@ -37,4 +37,36 @@ router.get("/employee_swap", function (req, res, next) {
     res.render('employee_swap');
 });
 
+router.get("/analytics", function (req, res, next) {
+
+    dbs.managerEmployeeCorrelation(function (data) {
+        res.send(data);
+        // var reformed_data=[];
+        // for(count in data){
+        //     let emps=data[count].employees_worked_with;
+        //     let manager=data[count].manager_id;
+        //     let emp_ids=[];
+        //     let hours=[];
+        //     for(let x in emps){
+        //         emp_ids[x]=emps[x].employee_id;
+        //         hours[x]=emps[x].hours_worked;
+        //     }
+        //     let final_output=[]
+        //     dbs.get_all_users_names(emp_ids,function (d) {
+        //
+        //         for(let y in emp_ids){
+        //             for(let i in emp_ids){
+        //                 let one_user=d[i]._id;
+        //                 if(one_user._id==emp_ids[y]){
+        //                     final_output[y]={_id:emp_ids[y],name:one_user.name,surname:one_user.surname,hours:hours[y]}
+        //                 }
+        //             }
+        //         }
+        //     });
+        //     reformed_data[count]={manager_id:manager,employees:final_output};
+        //
+        // }
+        // res.send(reformed_data);
+    })
+});
 module.exports = router;

@@ -62,7 +62,7 @@
                     </div>
                     <div class="col-md-6">
                         <label for="startDate">Start Date: *</label>
-                        <input type="date" id="startDate" class="form-control" name="startDate"/>
+                        <input type="date" id="startDate" class="form-control" name="startDate" required/>
 
                         <label for="endDate">End Date: *</label>
                         <input type="date" id="endDate" class="form-control" name="endDate" required/>
@@ -84,12 +84,12 @@
                             </div>
                             <div id="table_content"class="x_content">
                                 <!--<p class="text-muted font-13 m-b-30">-->
-                                    <!--Below are the pre-selected employees that would best fit this project. Please select the employees you wish to replace and provide a reason for the replacement.-->
+                                <!--Below are the pre-selected employees that would best fit this project. Please select the employees you wish to replace and provide a reason for the replacement.-->
                                 <!--</p>-->
                                 <table id="EmployeeTrainingAllocationDT" class="table table-striped table-bordered bulk_action">
                                     <thead>
                                     <tr>
-                                        <th><input name="select_all" value="1" id="example-select-all" type="checkbox" /></th>
+                                        <th><input name="select_all" value="1" type="checkbox"></th>
                                         <th>Name</th>
                                         <th>Surname</th>
                                         <th>Position</th>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
                 <!-- TODO Table end-->
-                <input id="addTraining"  class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Add Training" type="button"  value="Add Training"/>
+                <input id="addTraining"  class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Add Training" type="submit"  value="Add Training"/>
             </form>
         </div>
         <!-- /page content -->
@@ -120,6 +120,8 @@
 </div>
 
 <!--Vendors js files-->
+
+
 <!-- jQuery -->
 <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -128,9 +130,8 @@
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress: Top load animation-->
 <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
-<!-- Code 9 -->
-<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
-<script type="text/javascript" src="vendors/Code-9/views/training.js"></script>
+
+
 <!-- jquery.inputmask -->
 <script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
 <!-- Datatables -->
@@ -150,7 +151,13 @@
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
 
+
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.min.js"></script>
+
+<!-- Code 9 -->
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/training.js"></script>
+
 </body>
 </html>

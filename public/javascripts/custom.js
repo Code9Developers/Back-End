@@ -2176,15 +2176,32 @@ function init_validator() {
 
 // TODO Notifications 05 Sep 2017
 /* PNotify */
-function CallError() {
+function SendApproval() {
     new PNotify({
-        title: 'Oh No!',
-        text: 'Something terrible happened.',
-        type: 'error',
+        title: 'Sent',
+        text: 'Approval request successfully send to director',
+        type: 'success',
         styling: 'bootstrap3'
     });
 }
 
+function ApproveApproval() {
+    new PNotify({
+        title: 'Approved',
+        text: 'Approval request successfully approved',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
+function RejectApproval() {
+    new PNotify({
+        title: 'Rejected',
+        text: 'Approval request rejected',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+}
 function init_PNotify() {
 
     if (typeof (PNotify) === 'undefined') {

@@ -53,37 +53,37 @@
 
             $.get("username",
                 {}, function (data, status) {
-                    userID=data.id;
+                    userID = data.id;
                     $(".username").append(data.name);
                     $.get("unread_notifications", {
                         _id: userID
                     }, function (data, status) {
 
                         $('#notification_count').empty();
-                        $('#notification_count').append( data.length);
-                        $('#notification_count').attr('name',data.length);
+                        $('#notification_count').append(data.length);
+                        $('#notification_count').attr('name', data.length);
                         $.each(data, function (key, value) {
 
                             // window.alert(value.project_name);
                             let new_date = value.date_created.substr(0, 10);
                             $("#menu1").prepend("<li>" +
                                 "<a >" +
-                                "<span  id="+value._id+" class='message noti'>" +
+                                "<span  id=" + value._id + " class='message noti'>" +
                                 value.message +
                                 "</span>" +
                                 "<span class='message'>Date Created:  " + new_date + "</span>" +
                                 "</a>" +
                                 "</li>");
                         });
-                        $('.message').on('click',function(e) {
+                        $('.message').on('click', function (e) {
                             $(this).parent().parent().hide();
-                            let notification_count=parseInt($('#notification_count').attr("name"));
+                            let notification_count = parseInt($('#notification_count').attr("name"));
                             $('#notification_count').empty();
-                            $('#notification_count').append( notification_count-1);
-                            $('#notification_count').attr('name',notification_count-1);
+                            $('#notification_count').append(notification_count - 1);
+                            $('#notification_count').attr('name', notification_count - 1);
                             $.get("delete_notification", {
-                                notification_id:  $(this).attr("id"),
-                                user_id:userID
+                                    notification_id: $(this).attr("id"),
+                                    user_id: userID
                                 }
                             );
                         });
@@ -91,5 +91,7 @@
                     });
                 });
         }
+
+    });
 
 </script>

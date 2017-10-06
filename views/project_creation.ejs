@@ -42,6 +42,11 @@
     <link rel="stylesheet" href="vendors/Code-9/demo.css" media="screen">
     <link rel="stylesheet" href="vendors/Code-9/demo-print.css" media="print">
 
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
+
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" rel="stylesheet">
 
@@ -265,12 +270,20 @@
                                     </thead>
                                 </table>
                             </div>
+
                         </div>
                     </div>
                 </div>
+
                 <div id="EmpReplacementTableHide">
                     <div id="EmpReplacementDT">
                         <div class="x_panel">
+                            <div id='employeeRemoveReason'>
+                                <div>
+                                    <label for='empRemoval'>Reason/s for removing employee: *</label>
+                                    <textarea class='form-control' id='empRemoval' required='required' name='empRemoval'></textarea>
+                                </div>
+                            </div>
                             <div class="x_title">
                                 <h2>Possible Replacement Employees</h2>
                                 <ul class="nav navbar-right panel_toolbox">
@@ -294,6 +307,17 @@
                                     </tr>
                                     </thead>
                                 </table>
+                                <div class='form-group'>
+                                    <div>
+                                        <select type='text' id='director_select' class='form-control'>
+                                            <optgroup label='Director' id='director'>
+                                                <option disabled selected>Select Director</option>
+                                                </optgroup>
+                                            </select>
+                                    </div>
+                                </div>
+                                <br/>
+                                <button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>
                             </div>
                         </div>
                     </div>
@@ -312,7 +336,7 @@
                                data-parsley-trigger="change" required/>
 
                         <label class="control-label">Contact Number: *</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
+                        <input type="text" id="ownercontact" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
                                data-parsley-trigger="change" required>
                     </div>
                     <!-- Project Manger Details-->
@@ -369,7 +393,6 @@
 <!-- jQuery Tags Input -->
 <script type="text/javascript" src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
 <!-- Code 9 -->
-<script type="text/javascript" src="js/code9/js/code9Custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/animation.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
@@ -397,7 +420,10 @@
 <script type="text/javascript" src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 <!-- Select2 -->
 <script type="text/javascript" src="vendors/select2/dist/js/select2.full.js"></script>
-
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/raphael.js"></script>

@@ -160,7 +160,7 @@ function init_EmployeeReplacementDT() {
     let    end_date=$('#end_date').val();
     $EmployeeReplacementDT.dataTable({
         order: [[ 1, 'asc' ]],
-        ajax: "get_replacement",
+        ajax: "get_replacement?num_empl="+num_emp+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
         columns: [
             {
                 data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",
@@ -193,26 +193,105 @@ $(document).ready(function() {
     $('#holder').hide();
     $('#EmpAllocationTableHide').hide();
     $('#EmpReplacementTableHide').hide();
+    $('#removeEmployee').hide();
+    $('#employeeRemoveReason').hide();
+    $('#director_select').hide();
 
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
         // Create datatable for employees allocated
         init_EmployeeAllocationDT();
 
-        $('#demo-form').hide();
-        $('#holder').show();
-
-        /*Animation*/
-        setTimeout(function ()
-        {
-            $('#demo-form').show();
-            $('#holder').hide();
-        }, 4500);
+        // $('#demo-form').hide();
+        // $('#holder').show();
+        //
+        // /*Animation*/
+        // setTimeout(function ()
+        // {
+        //     $('#demo-form').show();
+        //     $('#holder').hide();
+        // }, 4500);
 
         $('#EmpAllocationTableHide').show();
         $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
 
 
+    });
+
+    let emp_selected_ids = [];
+    let count = 0;
+    $('#EmployeeAllocationDT').on('click', 'input[type="checkbox"]', function (e) {
+
+        var table = $('#EmployeeAllocationDT').DataTable();
+        let $row = $(this).closest('tr');
+        let data = table.row($row).data();
+
+        if (this.checked) {
+            $row.addClass('selected');
+            emp_selected_ids[count] = data._id;
+            count++;
+        } else {
+            $row.removeClass('selected');
+            count--;
+            emp_selected_ids.length--;
+        }
+        e.stopPropagation();
+    });
+    $('#EmpAllocationDT').on('click', 'tbody td, thead th:first-child', function (e) {
+        $(this).parent().find('input[type="checkbox"]').trigger('click');
+    });
+
+    let replacement_ids = [];
+    let rep_count = 0;
+    $('#EmpAllocationDT').on('click', '#replaceEmployee', function (e) {
+        init_EmployeeReplacementDT();
+        $('#EmpReplacementTableHide').show();
+        $('#removeEmployee').show();
+        $('#employeeRemoveReason').show();
+        $('#director_select').show();
+
+        $.get("get_directors", {},
+                function (data, status) {
+                    $("#director").empty();
+                    $.each(data, function (key, value) {
+                        $("#director").append(
+                            "<option value='" + value._id + "'>" +
+                            value.name + " " + value.surname +
+                            "</option>");
+                    });
+                });
+    });
+
+    $('#EmployeeReplacementDT').on('click', 'input[type="checkbox"]', function (e) {
+        let table = $('#EmployeeReplacementDT').DataTable();
+        let $row = $(this).closest('tr');
+        let data = table.row($row).data();
+        if (this.checked) {
+            $row.addClass('selected');
+            replacement_ids[rep_count] = data._id;
+            rep_count++;
+        } else {
+            $row.removeClass('selected');
+            rep_count--;
+            replacement_ids.length--;
+
+        }
+        e.stopPropagation();
+    });
+
+    $('#EmployeeReplacementDT').on('click', 'tbody td, thead th:first-child', function (e) {
+        $(this).parent().find('input[type="checkbox"]').trigger('click');
+    });
+
+    $('#removeEmployee').on('click', function (e) {
+        $.get("replacement_store", {
+            emp_removed:emp_selected_ids,
+            emp_replace:replacement_ids,
+            reason:$("#empRemoval").val(),
+            director:$("#director_select").val(),
+            project_name:$("#projectname").val()
+         });
+        SendApproval();
     });
 
     $('#createProjectbtn').on('click', function (e) {
@@ -221,9 +300,9 @@ $(document).ready(function() {
         globEmployees = table
             .rows()
             .data();
-        let emp_data=[];
-        for(let j in globEmployees){
-            emp_data[j]=globEmployees[j];
+        let emp_data = [];
+        for (let j in globEmployees) {
+            emp_data[j] = globEmployees[j];
         }
         if (globEmployees == null) {
 
@@ -237,141 +316,21 @@ $(document).ready(function() {
                     num_empl: num_employees[1],
                     emplArr: JSON.stringify(emp_data)
                 }, function (data, status) {
-                    //e.submit();
-                    alert(data);
-                    $("#demo-form").submit();
+                    $.post("project_creation",{
+                        projectname:$("#projectname").val(),
+                        projectdescription:$("#projectdescription").val(),
+                        start_date:$("#start_date").val(),
+                        end_date:$("#end_date").val(),
+                        projectowner:$("#projectowner").val(),
+                        projectownercontact:$("#ownercontact").val(),
+                        projectowneremail:$("#projectowneremail").val(),
+                        budget:$("#budget").val()
+                        },function (data, status) {
+                        $( location ).attr("href", data);
+                    });
+                  //  $("#demo-form").submit();
                 }
             )
         }
     });
 });
-
-//
-//         let  employeeArr = [];
-//     let  employee_array_replacements = [];
-//
-//     let  emp_store=null;
-//
-//
-//
-//
-//     let  sendArr = [];
-//     let  c = 0;
-//     $('#EmpAllocationDT').on('click','#replaceEmployee',function (e) {
-//         $('#datatable-checkbox').find('input[type="checkbox"]:checked').each(function ()
-//         {
-//             let  ind = $(this).parent().parent().attr('id');
-//             sendArr[c]=employeeArr[ind];
-//             c++;
-//         });
-//         c=0;
-//
-//         // Show replacement table when button is clicked
-//         $('#EmpReplacementTableHide').show();
-//
-//         $.get("get_replacement", {},function (data, status) {
-//
-//             // Create datatable for replacement employees
-//             init_EmployeeReplacementDT();
-//
-//             $("#table_content_Rep").append("<button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>");
-//
-//             $.get("get_directors",{},
-//                 function(data, status){
-//                     $("#director").empty();
-//                     $.each(data, function (key, value) {
-//                         $("#director").append(
-//                             "<option value='"+value._id+"'>"+
-//                             value.name+" "+value.surname+
-//                             "</option>");
-//                     });
-//                 });
-//
-//             globEmployees = data;
-//             let  contains=false;
-//             $.each(data,function(key,value){
-//                 for(let  x=0;x<sendArr.length;x++){
-//                     if(sendArr[x]==value._id){
-//                         contains=true;
-//                     }
-//                 }
-//                 if(contains==false){
-//                     employee_array_replacements[key]=value._id;
-//                     $("#emptBody1").append("<tr id="+key+">"+
-//                         "<td>"+
-//                         "<td><th><input type='checkbox' id='check-all' class='flat'></th>"+
-//                         "</td>"+
-//                         "<td>"+value.name+"</td>"+
-//                         "<td>"+value.surname+"</td>"+
-//                         "<td>"+value.position+"</td>"+
-//                         "<td>"+value.employment_length+"</td>"+
-//                         "<td>"+value.past_projects+"</td>"+
-//                         "</tr>");
-//                 }
-//
-//                 contains=false;
-//             });
-//         });
-//     });
-//
-//
-//     let replacement_array=[];
-//     let replacement_array_count=0;
-//
-//     $('#employeeTable1').on('click','#removeEmployee',function (e) {
-//         e.preventDefault(); // disable the default form submit event
-//
-//         $('#datatable-checkbox1').find('input[type="checkbox"]:checked').each(function () {
-//             let ind = $(this).parent().parent().attr('id');
-//             replacement_array[replacement_array_count]=employee_array_replacements[ind];
-//             replacement_array_count++;
-//         });
-//         replacement_array_count=0;
-//
-//
-//         $.get("replacement_store", {
-//             emp_removed:sendArr,
-//             emp_replace:replacement_array,
-//             reason:$("#empRemoval").val(),
-//             director:$("#director_select").val(),
-//             project_name:$("#projectname").val()
-//         });
-//
-//
-//     });
-//
-//
-//
-//     $('#storeEmp').on('click', function (e) {
-//         ///e.preventDefault(); // disable the default form submit event
-//         let  num_employees=($('#range_31').val()).split(";");
-//         window.alert(JSON.stringify(emp_store));
-//         $.get("store_emp", {
-//             num_empl:num_employees[1],
-//             duration: 2,
-//             budget: $('#budget').val(),
-//             emplArr: JSON.stringify(emp_store)
-//         });
-//         //
-//         // if(globEmployees == null){
-//         //
-//         //     window.alert("Employees not assigned");
-//         //     $("#demo-form").submit(function(e){
-//         //         e.preventDefault();
-//         //     });
-//         // }else {
-//         //     let  num_employees=($('#range_31').val()).split(";");
-//         //     window.alert(JSON.stringify(globEmployees));
-//         //     $.get("store_emp", {
-//         //             num_empl:num_employees[1],
-//         //             duration: 2,
-//         //             budget: $('#budget').val(),
-//         //             emplArr: JSON.stringify(globEmployees)
-//         //         }, function (data, status) {
-//         //             //e.submit();
-//         //             $("#demo-form").submit();
-//         //         }
-//         //     )
-//         // }
-//     });
-// });

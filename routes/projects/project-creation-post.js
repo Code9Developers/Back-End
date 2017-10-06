@@ -26,6 +26,8 @@ let employee_info_array;
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
+let rep_data;
+let budget;
 router.get('/get_json_data', function (req, res, next) {
 
     let all_skills=(req.query.skills).split(",");
@@ -36,6 +38,7 @@ router.get('/get_json_data', function (req, res, next) {
 
     algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
         let result = JSON.stringify(data[0]);
+         rep_data = JSON.stringify(data[1]);
         let _obj = JSON.parse(result);
         let emp_data=[];
         for(let j in _obj){
@@ -49,22 +52,22 @@ router.get('/get_json_data', function (req, res, next) {
 
 router.get('/get_replacement', function (req, res, next) {
 
-    let all_skills=(req.query.skills).split(",");
-    let arr_skills=[];
-    for(let x in all_skills){
-        arr_skills[x]=all_skills[x]
-    }
-    algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
-        let result = JSON.stringify(data[1]);
-        let _obj = JSON.parse(result);
-        let emp_data=[];
-        for(let j in _obj){
-            emp_data[j]=_obj[j];
+    // console.log(rep_data);
+    // let result = JSON.stringify(rep_data);
+    let _obj = JSON.parse(rep_data);
+    let emp_data=[];
+    let c=0;
+    for(let j in _obj){
+        let single_obj=_obj[j];
+        for(let i in single_obj){
+            emp_data[c]=single_obj[i];
+            c++
         }
-        let _json = {data:emp_data};
-        res.send(_json);
-    });
-    res.contentType('application/json');
+    }
+    let _json = {data:emp_data};
+    console.log(_json);
+    res.send(_json);
+    //res.contentType('application/json');
 });
 
 
@@ -91,14 +94,10 @@ router.get('/store_emp', function (req, res, next)
                     }
                 }
             }
-            console.log(JSON.stringify(temp_emp));
+            console.log(temp_emp);
             employees=temp_emp;
             res.send(JSON.stringify(employees));
         });
-
-
-
-
 
 });
 
@@ -117,6 +116,7 @@ router.get('/replacement_store', function (req, res, next) {
     let replace = req.query.emp_replace;
     let reason_for_removal = req.query.reason;
     let project_name = req.query.project_name;
+
 
     let _approval_json = {
         _id:ap_id,
@@ -156,7 +156,6 @@ router.post("/project_creation", function (req, res, next) {
     if(needs_approval==true){
         dbs.editApproval("_id",ap_id,"project_id",project_id);
     }
-    //var start_date=(req.body.start_date).replace(/\//g,'-');
     let start_date = (req.body.start_date);
     let s = start_date.split("/");
     let newStartDate = new Date((s[2] + "-" + s[1] + "-" + s[0]).toString());
@@ -196,12 +195,13 @@ router.post("/project_creation", function (req, res, next) {
         });
 
         //You can use the following function to send emails, it gets all the users names
-        dbs.findUsers("_id",employees[x]._id,function (user_info)
-        {
-            email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
-        });
+        // dbs.findUsers("_id",employees[x]._id,function (user_info)
+        // {
+        //     email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
+        // });
     }
-    res.redirect('projects');
+
+    res.send('projects');
 
 });
 

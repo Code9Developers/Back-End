@@ -150,19 +150,16 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
                 }
             }
 
-            /*for(var loop = 0; loop < Object.keys(employee_lists).length; loop++)
-            {
-                console.log(employee_lists[loop]);
-            }*/
-
             /*work out budget*/
             var budget = 0;
             for(var loop = 0; loop < allocated_list.length; loop++)
             {
                 budget += allocated_list[loop].rate;
             }
-
-            console.log("the budget for the project is : R"+budget);
+            var timeDiff = Math.abs(start_date - end_date);
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+            return_list[2] = budget*diffDays;
+            console.log("the budget for the project is : R"+return_list[2]);
             return callback(return_list);
         }
     });

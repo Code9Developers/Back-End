@@ -1115,7 +1115,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 	
 	let managerArray = [] ; //stores each manager id
 	let employeeArray = [[]] ; //stores all employees and their hours for each manager in the corresponding index
-	let hourArray = [[]] ; //stores the hours worked for each employee in the correspodnign index
+	let hourArray = [[]] ; //stores the hours worked for each employee in the corresponding index
 	
 	
 	/*Eg:
@@ -1125,6 +1125,41 @@ exports.managerEmployeeCorrelation = function(callback) {
 	*/
 	
 	module.exports.findProjects("status", "completed", function(res) {
+		
+		function rename(i, array, name) {
+			array[i] = name ;
+		}
+		
+		function getManagerNames(array, callback) {
+			let user = schemas.user ;
+			for (let x = 0 ; x < array.length ; x++) {
+				user.findOne({_id: array[x]}).exec().then(function(res) {
+					rename(x, array, res.name + " " + res.surname) ;
+					if (x == array.length-1) {
+						//return here
+						//console.log(array) ;
+						return callback(array) ;
+					}
+				});
+			}
+		}
+		
+		function getEmployeeNames(array, callback) {
+			let user = schemas.user ;
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					user.findOne({_id: array[x][y]}).exec().then(function(res) {
+						rename(y, array[x], res.name + " " + res.surname) ;
+						if (x == array.length-1 && y == array[x].length-1) {
+							//return here
+							//console.log(array) ;
+							return callback(array) ;
+						}
+					});
+				}
+			}
+		}
+		
 		for (let x = 0 ; x < res.length ; x++) {
 			let i = managerArray.indexOf(res[x].manager_id) ;
 			if (i == -1) {
@@ -1153,30 +1188,26 @@ exports.managerEmployeeCorrelation = function(callback) {
 			}
 		}
 		
-		let out = '' ;
-		for (let x = 0 ; x < managerArray.length ; x++) {
-			out += '{ "manager_id": ' + '"' + managerArray[x] + '"' + ', [ ' ;
-			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				out += '{ "employee_id": ' + '"' + employeeArray[x][y] + '"' + ', "hours_worked": ' + hourArray[x][y] + ' }, ' ;
-			}
-			out = out.substring(0, out.length-2) + ' ] }, ' ;
-		}
-		out = out.substring(0, out.length-2) ;
 		
-		
-		let obj = { data: [] } ;
-		for (let x = 0 ; x < managerArray.length ; x++) {
-			let subobj = { "manager_id": managerArray[x], employees_worked_with: [] } ;
-			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				subobj.employees_worked_with.push({ "employee_id": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
-			}
-			obj.data.push(subobj) ;
-		}
-		
-		return callback(obj.data) ;
-		
+		getManagerNames(managerArray, function(res) {
+			managerArray = res ;
+			getEmployeeNames(employeeArray, function(res) {
+				employeeArray = res ;
+				
+				let obj = { data: [] } ;
+				for (let x = 0 ; x < managerArray.length ; x++) {
+					let subobj = { "manager_name": managerArray[x], employees_worked_with: [] } ;
+					for (let y = 0 ; y < employeeArray[x].length ; y++) {
+						subobj.employees_worked_with.push({ "employee_name": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
+					}
+					obj.data.push(subobj) ;
+				}
+				
+				return callback(obj.data) ;
+			});
+		});
+			
 	});
-	
 };
 
 /*********************************************************************************************************************************************************************************************************************************************

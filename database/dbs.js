@@ -1077,23 +1077,6 @@ exports.get_specific_user_skill = function (user_id,callback) {
     });
 };
 
-exports.get_all_users_skill = function (user_ids,callback) {
-    let user = schemas.user;
-    user.aggregate([
-        {$match:{_id:{$in:user_ids}}},
-        {$group:{_id:{_id:"$_id",skill:"$skill"}}}
-    ], function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        else {
-            return callback(result);
-        }
-
-    });
-};
-
 exports.get_past_projects = function (project_ids,callback) {
     let project = schemas.project;
     project.aggregate([
@@ -1111,22 +1094,6 @@ exports.get_past_projects = function (project_ids,callback) {
     });
  };
 
-exports.get_all_users_names = function (user_ids,callback) {
-    let user = schemas.user;
-    user.aggregate([
-        {$match:{_id:{$in:user_ids}}},
-        {$group:{_id:{_id:"$_id",name:"$name",surname:"$surname"}}}
-    ], function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        else {
-            return callback(result);
-        }
-
-    });
-};
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************
@@ -1140,107 +1107,110 @@ exports.get_all_users_names = function (user_ids,callback) {
 
  //returns an array indicating how long each manager worked with employees in past projects
  //more info @: https://github.com/Code9Developers/Integration/wiki/Analytics
-
-
+ 
+ 
 exports.managerEmployeeCorrelation = function(callback) {
-
-    let hours_per_day = 1 ; //define the number of hours that employees work per day ;
-
-    let managerArray = [] ; //stores each manager id
-    let employeeArray = [[]] ; //stores all employees and their hours for each manager in the corresponding index
-    let hourArray = [[]] ; //stores the hours worked for each employee in the corresponding index
-
-
-    /*Eg:
-     manager1,					   [emp1, emp2, emp3],						    [32, 12, 10],
-     managerArray: manager3,		employeeArray: [],								 hourArray: [],
-     manager2					   [emp1, emp3, emp4, emp5]					    [20, 10, 10, 10]
-     */
-
-    module.exports.findProjects("status", "completed", function(res) {
-
-        function rename(i, array, name) {
-            array[i] = name ;
-        }
-
-        function getManagerNames(array, callback) {
-            let user = schemas.user ;
-            for (let x = 0 ; x < array.length ; x++) {
-                user.findOne({_id: array[x]}).exec().then(function(res) {
-                    rename(x, array, res.name + " " + res.surname) ;
-                    if (x == array.length-1) {
-                        //return here
-                        //console.log(array) ;
-                        return callback(array) ;
-                    }
-                });
-            }
-        }
-
-        function getEmployeeNames(array, callback) {
-            let user = schemas.user ;
-            for (let x = 0 ; x < array.length ; x++) {
-                for (let y = 0 ; y < array[x].length ; y++) {
-                    user.findOne({_id: array[x][y]}).exec().then(function(res) {
-                        rename(y, array[x], res.name + " " + res.surname) ;
-                        if (x == array.length-1 && y == array[x].length-1) {
-                            //return here
-                            //console.log(array) ;
-                            return callback(array) ;
-                        }
-                    });
-                }
-            }
-        }
-
-        for (let x = 0 ; x < res.length ; x++) {
-            let i = managerArray.indexOf(res[x].manager_id) ;
-            if (i == -1) {
-                i = managerArray.length ;
-                managerArray[i] = res[x].manager_id ;
-            }
-            let days = (res[x].project_end_date - res[x].project_start_date) / (1000*60*60*24) ;
-            let hours = days * hours_per_day ;
-
-            if (employeeArray[i] == null) {
-                employeeArray[i] = [] ;
-            }
-            if (hourArray[i] == null) {
-                hourArray[i] = [] ;
-            }
-
-            for (let y = 0 ; y < res[x].employees_assigned.length ; y++) {
-                let j = employeeArray[i].indexOf(res[x].employees_assigned[y]._id) ;
-
-                if (j == -1) {
-                    j = employeeArray[i].length ;
-                    employeeArray[i][j] = res[x].employees_assigned[y]._id ;
-                    hourArray[i][j] = hours ;
-                }
-                else hourArray[i][j] += hours ;
-            }
-        }
-
-
-        getManagerNames(managerArray, function(res) {
-            managerArray = res ;
-            getEmployeeNames(employeeArray, function(res) {
-                employeeArray = res ;
-
-                let obj = { data: [] } ;
-                for (let x = 0 ; x < managerArray.length ; x++) {
-                    let subobj = { "manager_name": managerArray[x], employees_worked_with: [] } ;
-                    for (let y = 0 ; y < employeeArray[x].length ; y++) {
-                        subobj.employees_worked_with.push({ "employee_name": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
-                    }
-                    obj.data.push(subobj) ;
-                }
-
-                return callback(obj.data) ;
-            });
-        });
-
-    });
+	
+	let hours_per_day = 1 ; //define the number of hours that employees work per day ;
+	
+	let managerArray = [] ; //stores each manager id
+	let employeeArray = [[]] ; //stores all employees and their hours for each manager in the corresponding index
+	let hourArray = [[]] ; //stores the hours worked for each employee in the corresponding index
+	
+	
+	/*Eg:
+				  manager1,					   [emp1, emp2, emp3],						    [32, 12, 10],
+	managerArray: manager3,		employeeArray: [],								 hourArray: [],
+				  manager2					   [emp1, emp3, emp4, emp5]					    [20, 10, 10, 10]
+	*/
+	
+	module.exports.findProjects("status", "completed", function(res) {
+			
+		function getManagerNames(array, callback) {
+			let user = schemas.user ;
+			let updated = 0 ;
+			for (let x = 0 ; x < array.length ; x++) {
+				user.findOne({_id: array[x]}).exec().then(function(res) {
+					array[x] = res.name + " " + res.surname ;
+					if (++updated == array.length) {
+						console.log(array) ;
+						return callback(array) ;
+					}
+				});
+			}
+		}
+		
+		function getEmployeeNames(array, callback) {
+			let user = schemas.user ;
+			let updated = 0 ;
+			let size = 0  ;
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					size++ ;
+				}
+			}
+			
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					user.findOne({_id: array[x][y]}).exec().then(function(res) {
+						array[x][y] = res.name + " " + res.surname ;
+						if (++updated == size) {
+							console.log(array) ;
+							return callback(array) ;
+						}
+					});
+				}
+			}
+		}
+		
+		for (let x = 0 ; x < res.length ; x++) {
+			let i = managerArray.indexOf(res[x].manager_id) ;
+			if (i == -1) {
+				i = managerArray.length ;
+				managerArray[i] = res[x].manager_id ;
+			}
+			let days = (res[x].project_end_date - res[x].project_start_date) / (1000*60*60*24) ;
+			let hours = days * hours_per_day ;
+			
+			if (employeeArray[i] == null) {
+					employeeArray[i] = [] ;
+			}
+			if (hourArray[i] == null) {
+				hourArray[i] = [] ;
+			}
+			
+			for (let y = 0 ; y < res[x].employees_assigned.length ; y++) {
+				let j = employeeArray[i].indexOf(res[x].employees_assigned[y]._id) ;
+				
+				if (j == -1) {
+					j = employeeArray[i].length ;
+					employeeArray[i][j] = res[x].employees_assigned[y]._id ;
+					hourArray[i][j] = hours ;
+				}
+				else hourArray[i][j] += hours ;
+			}
+		}
+		
+		
+		getManagerNames(managerArray, function(res) {
+			managerArray = res ;
+			getEmployeeNames(employeeArray, function(res) {
+				employeeArray = res ;
+				
+				let obj = { data: [] } ;
+				for (let x = 0 ; x < managerArray.length ; x++) {
+					let subobj = { "manager_name": managerArray[x], employees_worked_with: [] } ;
+					for (let y = 0 ; y < employeeArray[x].length ; y++) {
+						subobj.employees_worked_with.push({ "employee_name": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
+					}
+					obj.data.push(subobj) ;
+				}
+				
+				return callback(obj.data) ;
+			});
+		});
+			
+	});
 };
 
 /*********************************************************************************************************************************************************************************************************************************************

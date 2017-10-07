@@ -67,7 +67,7 @@ router.post('/add_training', function (req, res, next) {
 
     dbs.insertTraining(training_obj);
 
-    //For email functionality
+
     let ids=JSON.parse(req.body.emp_ids);
     for(let i in ids){
         dbs.findUsers("_id",ids[i],function (user_data) {

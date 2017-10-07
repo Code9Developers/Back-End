@@ -214,8 +214,6 @@ $(document).ready(function() {
 
         $('#EmpAllocationTableHide').show();
         $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
-
-
     });
 
     let emp_selected_ids = [];

@@ -1,6 +1,3 @@
-/**
- * Created by Seonin David on 2017/10/04.
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
@@ -63,15 +60,19 @@ router.post('/add_training', function (req, res, next) {
         training_contact: req.body.trainer_contact,
         trainer_email: req.body.trainer_email,
         employees_assigned:JSON.parse(req.body.emp_ids)
-    }
+    };
 
     dbs.insertTraining(training_obj);
 
 
     let ids=JSON.parse(req.body.emp_ids);
     for(let i in ids){
-        dbs.findUsers("_id",ids[i],function (user_data) {
+        dbs.findUsers("_id",ids[i],function (user_data)
+        {
            console.log(user_data[0].email);//Works
+
+            // email the employee
+            email_functions.TraningNotification(user_data[0].email, user_data[0].name, user_data[0].surname, training_obj.training_start_date, training_obj.training_end_date, training_obj.trainer_name, training_obj.trainer_email);
         });
     }
 });

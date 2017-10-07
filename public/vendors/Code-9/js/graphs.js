@@ -36,7 +36,7 @@ window.onload = function()
     /**
      *    director_dashboard.ejs analytics graph
      *    Date Revised: 05/10/2017 by Joshua Moodley
-     *    Date Revised: 05/10/2017 by
+     *    Date Revised: 05/10/2017 by Jacques
      */
 
     defaultBackgroundColor = [

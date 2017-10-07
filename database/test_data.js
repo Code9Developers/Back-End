@@ -209,6 +209,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
         var employee_ids = 1;
         var emp_list = {};
         var emp_count = 0;
+        var skill_count = 0;
         filename_first_names = "./database/data/500_first_names.txt";
         filename_second_names = "./database/data/500_second_names.txt";
         fs.readFile(filename_first_names, 'utf8', function (err, data) {
@@ -250,9 +251,9 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 console.log("creating employees");
                 for (var loop = 0; loop < num_employees; loop++) {
                     var employee_index = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-                    var skills_index_1 = Math.floor(Math.random() * (24 - 0 + 1) + 0);
-                    var skills_index_2 = Math.floor(Math.random() * (50 - 25 + 1) + 25);
-                    var skills_index_3 = Math.floor(Math.random() * (75 -51 + 1) + 51);
+                    //var skills_index_1 = Math.floor(Math.random() * (24 - 0 + 1) + 0);
+                    //var skills_index_2 = Math.floor(Math.random() * (50 - 25 + 1) + 25);
+                    //var skills_index_3 = Math.floor(Math.random() * (75 -51 + 1) + 51);
                     var new_json_obj = {
                         _id: "emp_" + employee_ids,
                         name: lines[name_index].trim(),
@@ -267,17 +268,17 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                         employment_length: Math.floor(Math.random() * (4 - 1 + 1) + 1),
                         skill: [
                             {
-                                name: skills[skills_index_1],
+                                name: skills[(skill_count%skills.length-1)],
                                 rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
                                 counter: 1
                             },
                             {
-                                name: skills[skills_index_2],
+                                name: skills[(skill_count+1%skills.length-1)],
                                 rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
                                 counter: 1
                             },
                             {
-                                name: skills[skills_index_3],
+                                name: skills[(skill_count+2%skills.length-1)],
                                 rating: Math.floor(Math.random() * (10 - 4 + 1) + 4),
                                 counter: 1
                             }
@@ -289,6 +290,8 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                     employee_ids += 1;
                     emp_count++;
                     name_index++;
+                    skill_count++;
+                    console.log(skill_count);
                 }
                 for (var loop = 0; loop < emp_count; loop++) {
                     dbs.insertUser(emp_list[loop]);
@@ -297,6 +300,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
             });
         });
     });
+    console.log("hello : "+skills[72]);
 };
 
 /*This Function creates past projects dating back from 2017

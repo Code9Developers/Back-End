@@ -163,6 +163,7 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
             }
 
             console.log("the budget for the project is : R"+budget);
+            return_list[2]=budget;
             return callback(return_list);
         }
     });

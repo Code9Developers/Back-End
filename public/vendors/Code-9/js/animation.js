@@ -1,13 +1,21 @@
 function alg_animate()
 {
     //lets get the number of employers being assigned
+    //var canvas = document.getElementById('holder');
+    //var context = canvas.getContext("2d");
+    //context.clearRect(0, 0, canvas.width, canvas.height);
     var paper = Raphael("holder");
+    paper.canvas.style.backgroundColor = '#F00';
     console.log("animation log : "+$('#skills').val().length);
-    var angle = 360/($('#skills').val().length-1);
+    var angle = 90;
+    if($('#skills').val()>2)
+    {
+        angle = 360/($('#skills').val().length-1);
+    }
     var angle_add = 0;
     var origin_x = 200;
     var origin_y = 200;
-    var radius = 40;
+    var radius = 100;
     var x_coord = origin_x;
     var y_coord = origin_y;
     var circle_size = 8;
@@ -16,12 +24,15 @@ function alg_animate()
     paper.circle(origin_x, origin_y, circle_size).attr({stroke: "none", fill: "#011f74"});
     for (var loop = 0; loop < ($('#skills').val().length-1); loop++)
     {
-        x_coord = origin_x*radius*Math.sin(angle_add);
-        y_coord = origin_y*radius*Math.cos(angle_add);
+        angle_add-=angle;
+        console.log("angle is : "+angle);
+        console.log("cos("+angle_add+") = "+Math.round(Math.cos(toRadians(angle_add))));
+        console.log("sin("+angle_add+") = "+Math.round(Math.sin(toRadians(angle_add))));
+        x_coord = origin_x+(radius*Math.cos(toRadians(angle_add)));
+        y_coord = origin_y+(radius*Math.sin(toRadians(angle_add)));
         //for each skill, draw a circle at the given angle
         paper.circle(x_coord, y_coord, circle_size).attr({stroke: "none", fill: "#011f74"});
         console.log("x : "+x_coord+" , y : "+y_coord);
-        angle_add+=angle_add;
         //x = rcos@+x0
         //y = rsign@+y0
     }
@@ -57,4 +68,8 @@ function alg_animate()
             "100%": {cx: 200, easing: ex}
         }, 5000);
     };*/
+};
+
+var toRadians = function (degree) {
+    return degree * (Math.PI / 180);
 };

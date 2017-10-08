@@ -113,13 +113,13 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
                 }
             }
 
-            /*for(var loop = 0; loop < Object.keys(skills).length; loop++)
+            for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
                 for(var loop2 = 0; loop2 < Object.keys(employee_lists[loop]).length; loop2++)
                 {
                     console.log(employee_lists[loop][loop2]);
                 }
-            }*/
+            }
 
             /*for(var loop = 0; loop < Object.keys(skills).length; loop++)
             {
@@ -146,7 +146,7 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
                 if (test == true)
                 {
                     return_list[1][unallocated_count] = employee_lists[loop];
-                    unallocated_count ++;
+                    unallocated_count++;
                 }
             }
 

@@ -179,7 +179,7 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
     var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
         "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
     var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
-    var skills = ["Penetration Testing & Vulnerability", "Scanning (Nesus & Qualys)", "Windows / Linux Security", "Database Security",
+    var skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus & Qualys)", "Windows / Linux Security", "Database Security",
     "Security Gap Assessments", "Cyber Threat Detection And Root Cause", "Analysis", "Virtualisation Technologies",
     "Strategic Management", "Regulatory Compliance", "Risk Management", "IT Corporate Governance",
     "Data Centre Security", "Report Writing", "Policies, Procedures & Standards Writing skills",

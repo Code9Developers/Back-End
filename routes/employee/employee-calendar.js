@@ -44,8 +44,8 @@ router.get("/store_event", function (req, res, next) {
         _id: event_id,
         user_id: req.session.username,
         description: req.query.description,
-        // event_start_date:                        Need to see how date is sent before I see how to store it
-        // event_end_date: Date
+         event_start_date:req.query.start_date,                        //Need to see how date is sent before I see how to store it
+         event_end_date: req.query.end_date
     };
 });
 

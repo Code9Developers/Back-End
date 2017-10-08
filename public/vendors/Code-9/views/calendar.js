@@ -12,14 +12,34 @@
 window.eve = [];
 function getCalendarEvents() {
 let  item;
+
     $.get("calendar_events",
         {},
         function (data, status) {
+        window.alert(JSON.stringify(data));
+            $.get("get_all_event_data",{}
+           ,function(data,status){
 
+                   $.each(data, function (key, value) {
+                       // window.alert(value.name);
+
+                       item = {};
+                       item["id"] = value._id;
+                       item["title"] = value.description;
+                       item["start"] = value.event_start_date.substr(0,10);
+                       item["end"] = value.event_end_date.substr(0,10);
+                       item["url"] = "#";
+
+                       eve.push(item);
+
+                   });
+
+           });
             $.each(data, function (key, value) {
                 // window.alert(value.name);
 
                 item = {};
+                item["id"] = value._id;
                 item["title"] = value.name;
                 item["start"] = value.project_start_date.substr(0,10);
                 item["end"] = value.project_end_date.substr(0,10);
@@ -29,9 +49,10 @@ let  item;
 
             });
 
+            init_calendar();
             // eve[eve.length - 1] = ']';
             //window.alert(eve[eve.length - 1]);
-            init_calendar();
+
 
             // window.alert(eve.length);
         });
@@ -65,18 +86,35 @@ let  calendar = $('#calendar').fullCalendar({
 
         started = start;
         ended = end;
+        window.alert(eve[0]["end"]);
+        window.alert(start.format());
+        for(var i =0; i < eve.size;i++){
+            if(eve[i]["start"] <= start.format()){
+                alert.window("true");
+            }
+        }
 
         $(".antosubmit").on("click", function() {
+            window.alert("submitted");
             let  title = $("#title").val();
             if (end) {
                 ended = end;
             }
 
+
+
             categoryClass = $("#event_type").val();
 
             if (title) {
 
+                $.get("store_event",{
+                   description:title,
+                   start_date:start.format(),
+                   end_date:end.format()
+                });
+
                 calendar.fullCalendar('renderEvent', {
+                        id:title,
                         title: title,
                         start: started,
                         end: end,
@@ -98,13 +136,22 @@ let  calendar = $('#calendar').fullCalendar({
     eventClick: function(calEvent, jsEvent, view) {
         $('#fc_edit').click();
         $('#title2').val(calEvent.title);
-
+        $('.modal-footer').append("<button type=\"button\" class=\"btn btn-primary delSub\">Delete Event</button>");
         categoryClass = $("#event_type").val();
 
         $(".antosubmit2").on("click", function() {
             calEvent.title = $("#title2").val();
 
             calendar.fullCalendar('updateEvent', calEvent);
+            $('.antoclose2').click();
+        });
+
+        $(".delSub").on("click", function() {
+            //calEvent.title = $("#title2").val();
+            $.get("delete_event",{
+               event_id:calEvent.id
+            });
+            calendar.fullCalendar('removeEvents', calEvent.id);
             $('.antoclose2').click();
         });
 
@@ -121,6 +168,7 @@ $(document).ready(function() {
 
     getCalendarEvents();
 
+
     /**
      *  The route /get_all_event_data will return all the data for that user as an array of objects
      *
@@ -132,7 +180,6 @@ $(document).ready(function() {
      *          only requires the event ID to be sent though, with the following name:event_id
      *
      */
-
 
 
 });

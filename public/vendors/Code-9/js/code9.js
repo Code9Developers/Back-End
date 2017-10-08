@@ -35,12 +35,15 @@ $('.add-todo').on('keypress',function (e) {
 // mark task as done
 $('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
     if($(this).prop('checked')){
+        $.get("remove_task", {task_id:$(".cbx").attr("id")});
         var doneItem = $(this).parent().parent().find('label').text();
         $(this).parent().parent().parent().addClass('remove');
         done(doneItem);
         countTodos();
     }
 });
+
+
 
 //delete done task from "already done"
 $('.todolist').on('click','.remove-item',function(){

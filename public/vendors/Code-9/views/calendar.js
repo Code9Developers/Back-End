@@ -121,4 +121,18 @@ $(document).ready(function() {
 
     getCalendarEvents();
 
+    /**
+     *  The route /get_all_event_data will return all the data for that user as an array of objects
+     *
+     *  The route /store_event
+     *          requires the data that is send though to be named description,start_date,end_date
+     *          don't test this function, just implement it because I still need to see how the date is stored
+     *
+     *  The route /delete_event
+     *          only requires the event ID to be sent though, with the following name:event_id
+     *
+     */
+
+
+
 });

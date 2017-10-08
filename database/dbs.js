@@ -1094,6 +1094,22 @@ exports.get_past_projects = function (project_ids,callback) {
     });
  };
 
+exports.get_all_users_skill = function (user_ids,callback) {
+    let user = schemas.user;
+    user.aggregate([
+        {$match:{_id:{$in:user_ids}}},
+        {$group:{_id:{_id:"$_id",skill:"$skill"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
 /*
  ***********************************************************************************************************************
  ***********************************************************************************************************************

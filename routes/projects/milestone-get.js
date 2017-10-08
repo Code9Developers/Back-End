@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
-
+const generator = require('generate-password');
 /**
  * Page: Milestone.ejs
  * Functionality: Milestone functions

@@ -60,10 +60,18 @@ $(document).ready(function() {
                 "</td>" +
                 "<td>"+
                 "<a href='#'  class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
-                "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>"+
+                "<a id="+value._id+" class='btn btn-danger btn-xs emp'><i class='fa fa-trash-o'></i> Delete </a>"+
                 "</td>"+
                 "</tr>");
 
         });
+        $(".emp").on("click",function () {
+            $(this).parent().parent().hide();
+            $.get("remove_emp",{
+                user_id:$(this).attr("id")
+            });
+        });
     });
+
+
 });

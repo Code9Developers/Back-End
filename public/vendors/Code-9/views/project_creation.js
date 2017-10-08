@@ -31,6 +31,7 @@ $(document).ready(function() {
 
         $('#demo-form').hide();
         $('#holder').show();
+        alg_animate();
         $.get("test_algorithm",
             {
                 // num_empl: parseInt(num_employees[1]),

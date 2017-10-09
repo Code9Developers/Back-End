@@ -26,6 +26,18 @@ router.get("/get_emp_milestone", function (req, res, next) {
     });
 });
 
+router.get("/get_user_past_projects",function(req,res,next){
+    dbs.findUsers("_id",req.session.username,function(user_data){
+
+        let past_project_ids = user_data[0].past_projects;
+        dbs.get_past_projects(past_project_ids,function (past_projects) {
+            res.send(past_projects);
+        });
+
+    });
+
+});
+
 router.get("/store_image", function (req, res, next) {
     res.send(req.param("pic"));
 });

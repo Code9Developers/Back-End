@@ -24,51 +24,102 @@ $(document).ready(function() {
 
                 $('#empEmail').append(value["email"]);
 
+               // alert(value["skill"]);
+                $.each(value["skill"],function(key,value){
+
+                    $("#empSkill").append(
+                    "<li>"+
+                    "<p>"+value.name+"</p>"+
+                    "<div class='progress progress_sm'>"+
+                        "<div class='progress-bar bg-kpmg-bar' role='progressbar' data-transitiongoal='"+value.rating+"'></div>"+
+                        "</div>"+
+                        "</li>"
+                    );
+                });
+
 
             });
         });
 
     $.get("get_emp_milestone", {id: "test"},
         function (data, status) {
-            //alert(JSON.stringify(data));
+        //    alert(JSON.stringify(data));
             $.each(data, function (key, mValue) {
                 $("#empMilestones").append(
                 "<li>"+
                     "<i class='fa fa-tasks'></i>"+
                         "<div class='message_date'>"+
-                        "<h3 class='date text-info'>"+mValue.milestone_end_date+"</h3>"+
+                        "<h3 class='date text-info'>"+mValue.milestone_end_date.substr(0,10)+"</h3>"+
                         "</div>"+
 
                         "<div class='message_wrapper'>"+
                         "<h4 class='heading'>"+mValue.description+"</h4>"+
                     "<blockquote class='message'>"+
                         "<div class='profile_page_task_list'>"+
-                        "<ul id='empTask' class='to_do'></ul>"+
+                        "<ul id='"+mValue._id+"' class='to_do'></ul>"+
                     "</div>"+
                     "</blockquote>"+
                     "</div>"+
                     "</li>"
                 );
+
+               /* mValue.tasks.forEach(function(curVal,ind,ini){
+                    $('#'+mValue._id).append(
+                        "<li>"+
+                        "<p>"+curVal+"<span class='right task_date'><b>Due: </b>"+
+                        "<b class='t_date'>30/08/2017</b></span>"+
+                        "</p>"+
+                        "</li>"
+                    );
+
+                });*/
+
             });
+            $.get("get_emp_task", {id: "test"},
+                function (data, status) {
+                  //  alert(JSON.stringify(data));
+
+                    $.each(data, function (key, value) {
+                        let des = "#"+value.milestone_id;
+
+                        $(des).append(
+                            "<li>"+
+                            "<p>"+value.description+"<span class='right task_date'><b>Due: </b>"+
+                            "<b class='t_date'>30/08/2017</b></span>"+
+                            "</p>"+
+                            "</li>"
+                        );
+
+
+                    });
+                });
+
         });
 
-    $.get("get_emp_task", {id: "test"},
+    $.get("get_user_past_projects", {id: "test"},
         function (data, status) {
-            alert(JSON.stringify(data));
-
+            // alert(JSON.stringify(data));
+             let c = 1;
             $.each(data, function (key, value) {
-                $('#empTask').append(
-                "<li>"+
-                "<p><span class='right task_date'><b>Due: </b>"+
-                "<b class='t_date'>30/08/2017</b></span>"+
-                "</p>"+
-                "</li>"
+                //  alert(value["name"]);
+
+                $("#emp_past_proj").append(
+                "<tr>"
+                +"<td>"+c+"</td>"
+                +"<td>"+value.name+"</td>"
+                +"<td>"+value.owner_name+"</td>"
+                +"<td class='hidden-phone'>"+value.project_start_date+"</td>"
+                    +"<td class='vertical-align-mid'>"
+                    +"<div class='progress'>"
+                    +"<div class='progress-bar progress-bar-success' data-transitiongoal='35'></div>"
+                    +"</div>"
+                    +"</td>"
+                    +"</tr>"
                 );
+                c++;
+
             });
         });
-
-
-
 
     $('#updateProfile').on('click', function (e) {
         alert(document.getElementById("pic").files[0].name);

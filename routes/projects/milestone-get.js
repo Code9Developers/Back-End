@@ -25,7 +25,8 @@ router.get('/store_milestones', function (req, res, next) {
         uppercase: true
     });
 
-    var milstone_id = milestone_name.substr(0, 4) + project_id + rand_password;
+    let rand_id = Math.floor((Math.random()*100)+1).toString();
+    var milstone_id = milestone_name.substr(0, 4) + project_id + rand_id;
 
     var milestone_json = {
         _id: milstone_id,

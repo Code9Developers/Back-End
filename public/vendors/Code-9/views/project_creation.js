@@ -91,9 +91,7 @@ function init_EmployeeAllocationDT() {
             style:    'os',
             selector: 'td:first-child'
         },
-
     });
-
     TableManageButtons.init();
 }
 
@@ -202,15 +200,12 @@ $(document).ready(function() {
         // Create datatable for employees allocated
         init_EmployeeAllocationDT();
 
-        // $('#demo-form').hide();
-        // $('#holder').show();
+        $('#demo-form').hide();
+        $('#holder').show();
+        alg_animate();
         //
         // /*Animation*/
-        // setTimeout(function ()
-        // {
-        //     $('#demo-form').show();
-        //     $('#holder').hide();
-        // }, 4500);
+
 
         $('#EmpAllocationTableHide').show();
         $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");

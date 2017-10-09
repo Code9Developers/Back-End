@@ -14,6 +14,8 @@ var Algorithm = require('.././database/Algorithm.js');
 /* TODO : find employees which are free for the current duration */
 /* TODO : find employees which have the correct skills */
 /* TODO : add how long an employee has not been working to employee_list */
+/* TODO : check if skills list is empty
+ * TODO : check if no employees found for skill and return them in return_list[3] */
 exports.get_unallocated_users = function (skills, start_date, end_date, callback) {
     console.log("unallocated users requested");
     console.log("skills : " + skills);

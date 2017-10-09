@@ -9,13 +9,13 @@ exports.create_schemas = function () {
 
     create_user(db);
 
-	create_ghost(db) ;	
+    create_ghost(db) ;	
 		
     create_event(db);
 
     create_project(db);
 	
-	create_training(db) ;
+    create_training(db) ;
 
     create_milestone(db);
 
@@ -31,7 +31,7 @@ exports.create_schemas = function () {
 };
 
 
-//all schema initialser functions are below -->
+//all schema initializer functions are below -->
 
 
 function create_user(db) {

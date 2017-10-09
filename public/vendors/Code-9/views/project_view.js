@@ -64,7 +64,7 @@ $(document).ready(function() {
     $.get("find_project_users", {id:$.urlParam('id')},
         function (data, status) {
             $("#AllocateTask").empty();
-            $.each(data, function (key, value) {
+            $.each(data.data, function (key, value) {
                 if(value.role=="Employee"){
                     emp_ids[key]=value._id;
                     empr_names[key]=value.name;

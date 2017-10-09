@@ -30,25 +30,11 @@
                     <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown"
                        aria-expanded="false">
                         <i class="fa fa-envelope-o"></i>
-                        <span class="badge bg-green">0</span>
+                        <span id="notification_count" class="badge bg-green">0</span>
                     </a>
                     <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                        <!--<li>-->
-                        <!--<a>-->
-                        <!--<span class="image"><img src="images/default_user.png" alt="Profile Image" /></span>-->
-                        <!--<span>-->
-                        <!--<span>-->
-                        <!--<span class="username"></span>-->
-                        <!--</span>-->
-                        <!--<span class="time">3 mins ago</span>-->
-                        <!--</span>-->
-                        <!--<span class="message">-->
-                        <!--Welcome to the KPMG employee registration page-->
-                        <!--</span>-->
-                        <!--</a>-->
-                        <!--</li>-->
+
                     </ul>
-                    <!--TODO: Add nicadins code to display unread notifications-->
                 </li>
             </ul>
 
@@ -62,114 +48,50 @@
 <script>
     $(document).ready(function () {
         var userID = "";
-          getUserAndNotification();
+        getUserAndNotification();
         function getUserAndNotification() {
 
             $.get("username",
                 {}, function (data, status) {
-                    userID=data.id;
+                    userID = data.id;
                     $(".username").append(data.name);
                     $.get("unread_notifications", {
                         _id: userID
                     }, function (data, status) {
 
-                        $('#unreadNotification').empty();
-                        $('#unreadNotification').append("<a class='dropdown-toggle info-number' data-toggle='dropdown' aria-expanded='false'>" +
-                            "<i class='fa fa-envelope-o'></i>" +
-                            "<span class='badge bg-green'>" + data.length + "</span>" +
-                            "</a>" +
-                            "<ul id='menu1' class='dropdown-menu list-unstyled msg_list' role='menu'>" +
-                            "<li>" +
-                            "<div class='text-center'>" +
-                            "<a>" +
-                            "<strong>See All Alerts</strong>" +
-                            "<i class='fa fa-angle-right'></i>" +
-                            "</a>" +
-                            "</div>" +
-                            "</li>" +
-                            "</ul>"
-                        );
-                        //window.alert(data.projects);
-                        //data = JSON.parse(data);
+                        $('#notification_count').empty();
+                        $('#notification_count').append(data.length);
+                        $('#notification_count').attr('name', data.length);
                         $.each(data, function (key, value) {
 
                             // window.alert(value.project_name);
-                            var new_date = value.date_created.substr(0, 10);
+                            let new_date = value.date_created.substr(0, 10);
                             $("#menu1").prepend("<li>" +
                                 "<a >" +
-                                "<span  id="+value._id+" class='message noti'>" +
+                                "<span  id=" + value._id + " class='message noti'>" +
                                 value.message +
                                 "</span>" +
                                 "<span class='message'>Date Created:  " + new_date + "</span>" +
                                 "</a>" +
                                 "</li>");
                         });
-                        $('.message').on('click',function(e) {
-                            window.alert("clicked inside");
+                        $('.message').on('click', function (e) {
+                            $(this).parent().parent().hide();
+                            let notification_count = parseInt($('#notification_count').attr("name"));
+                            $('#notification_count').empty();
+                            $('#notification_count').append(notification_count - 1);
+                            $('#notification_count').attr('name', notification_count - 1);
                             $.get("delete_notification", {
-                                notification_id:  $(this).attr("id"),
-                                user_id:userID
-                                },
-                                function (data,status) {
-                                    $('#unreadNotification').empty();
-                                    $('#unreadNotification').append(
-                                        "<a class='dropdown-toggle info-number' data-toggle='dropdown' aria-expanded='false'>" +
-                                        "<i class='fa fa-envelope-o'></i>" +
-                                        "<span class='badge bg-green'>" + data.length + "</span>" +
-                                        "</a>" +
-                                        "<ul id='menu1' class='dropdown-menu list-unstyled msg_list' role='menu'>" +
-                                        "<li>" +
-                                        "<div class='text-center'>" +
-                                        "<a>" +
-                                        "<strong>See All Alerts</strong>" +
-                                        "<i class='fa fa-angle-right'></i>" +
-                                        "</a>" +
-                                        "</div>" +
-                                        "</li>" +
-                                        "</ul>"
-                                    );
-                                    $.each(data, function (key, value) {
-
-                                        // window.alert(value.project_name);
-                                        var new_date = value.date_created.substr(0, 10);
-                                        $("#menu1").prepend("<li>" +
-                                            "<a >" +
-                                            "<span  id="+value._id+" class='message'>" +
-                                            value.message +
-                                            "</span>" +
-                                            "<span class='message'>Date Created:  " + new_date + "</span>" +
-                                            "</a>" +
-                                            "</li>");
-                                    });
-                                   // $(window).load("top_nav.ejs");
-                                });
+                                    notification_id: $(this).attr("id"),
+                                    user_id: userID
+                                }
+                            );
                         });
 
                     });
                 });
         }
 
-
-//        $('.message').on('click',function(e) {
-//            window.alert("clicked");
-//            $.get("delete_notification", {
-//                    notification_id:  $(this).attr("id"),
-//                    user_id:userID
-//                },
-//                function (data,status) {
-//
-//                    $.each(data, function (key, value) {
-//                        var new_date = value.date_created.substr(0, 10);
-//                        $("#menu1").prepend("<li>" +
-//                            "<a >" +
-//                            "<span  id="+value._id+" class='message noti'>" +
-//                            value.message +
-//                            "</span>" +
-//                            "<span class='message'>Date Created:  " + new_date + "</span>" +
-//                            "</a>" +
-//                            "</li>");
-//                    });
-//                });
-//        });
     });
+
 </script>

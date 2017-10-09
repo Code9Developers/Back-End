@@ -67,7 +67,7 @@ exports.create_test_employees = function () {
                 counter: 0
             }, {name: "Auditor", rating: 0, counter: 0}],
             current_projects: [],
-            past_projects: []
+            past_projects: ["kpmg1","kpmg2"]
         };
 
         var emp3 = {
@@ -179,28 +179,28 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
     var positions = ["Junior Analyst 1", "Junior Analyst 2","Analyst", "Senior Analyst",
         "Supervisor", "Assistant Manager", "Manager", "Senior Manager", "Associate Director", "Director"];
     var rates  = [250, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500];
-    var skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus & Qualys)", "Windows / Linux Security", "Database Security",
-    "Security Gap Assessments", "Cyber Threat Detection And Root Cause", "Analysis", "Virtualisation Technologies",
-    "Strategic Management", "Regulatory Compliance", "Risk Management", "IT Corporate Governance",
-    "Data Centre Security", "Report Writing", "Policies, Procedures & Standards Writing skills",
-    "Policies, Procedures and Standards Compliance Measurement", "IT Legislation Compliance Gap Assessments," +
-    "IT Procurement & Bid Management", "IT Governance & Service Management", "IT Strategy and Performance Management",
-    "Enterprise Architecture and Design", "Digitisation","Scanning (Nesus & Qualys)",
-    "Specialist Supporting the Audit training", "Eaudit skills", "External Audit basics", "General IT controls",
-    "IT Risk Profiling", "Risk & Compliance Assessment", "Application Controls", "General IT Controls",
-    "Report Writing", "IT Fraud Investigation", "Audit Plan Development", "Eaudit skills",
-    "ITIA Basics", "SAP Basics", "IT Assurance", "King 3 Assessments", "Data Migration Reviews," +
-    "User Account Testing", "Data Analysis", "Data Visualization", "IDEA Skills", "CAATS Basics Skills",
-    "Data Insight Detection", "Report Writing", "Vendor Sourcing & RFP Development", "Vendor Contract Review",
-    "Business Case Review", "Project Assurance & Auditing", "Project Risk Management",
-    "IT Strategy Development & Master Systems Plan", "IT Governance & Maturity Assessment",
-    "Data Migration", "Business Process Risk & Control Analysis In Erp Environments", "Automated Controls Testing",
-    "Requirements Management", "Blueprint / Process Design", "Controls Integration", "Master Data Management",
-    "Security & Sod", "User Account Testing", "Support Management", "IT Service Management",
-    "Develop IT Governance Frameworks", "IT Risks & Controls Assessments & Benchmarking", "Review It Policies & Procedures",
-    "Development of IT Strategies", "Value IT Analysis & Reviews", "IT Governance Audits",
-    "IT Governance Maturity Reviews", "Vendor Selection Assistance", 'IT Project Assurance & Business Req Review",' +
-    "Disaster Recovery Test Assist & Reviews", "Project Management"];
+    var skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus and Qualys)", "Windows / Linux Security", "Database Security",
+        "Security Gap Assessments", "Cyber Threat Detection And Root Cause", "Analysis", "Virtualisation Technologies",
+        "Strategic Management", "Regulatory Compliance", "Risk Management", "IT Corporate Governance",
+        "Data Centre Security", "Report Writing", "Policies, Procedures and Standards Writing skills",
+        "Policies, Procedures and Standards Compliance Measurement", "IT Legislation Compliance Gap Assessments," +
+        "IT Procurement and Bid Management", "IT Governance and Service Management", "IT Strategy and Performance Management",
+        "Enterprise Architecture and Design", "Digitisation",
+        "Specialist Supporting the Audit training", "Eaudit skills", "External Audit basics", "General IT controls",
+        "IT Risk Profiling", "Risk and Compliance Assessment", "Application Controls", "General IT Controls",
+        "Report Writing", "IT Fraud Investigation", "Audit Plan Development", "Eaudit skills",
+        "ITIA Basics", "SAP Basics", "IT Assurance", "King 3 Assessments", "Data Migration Reviews," +
+        "User Account Testing", "Data Analysis", "Data Visualization", "IDEA Skills", "CAATS Basics Skills",
+        "Data Insight Detection", "Report Writing", "Vendor Sourcing and RFP Development", "Vendor Contract Review",
+        "Business Case Review", "Project Assurance and Auditing", "Project Risk Management",
+        "IT Strategy Development and Master Systems Plan", "IT Governance and Maturity Assessment",
+        "Data Migration", "Business Process Risk and Control Analysis In Erp Environments", "Automated Controls Testing",
+        "Requirements Management", "Blueprint / Process Design", "Controls Integration", "Master Data Management",
+        "Security and Sod", "User Account Testing", "Support Management", "IT Service Management",
+        "Develop IT Governance Frameworks", "IT Risks and Controls Assessments and Benchmarking", "Review It Policies and Procedures",
+        "Development of IT Strategies", "Value IT Analysis and Reviews", "IT Governance Audits",
+        "IT Governance Maturity Reviews", "Vendor Selection Assistance", 'IT Project Assurance and Business Req Review",' +
+        "Disaster Recovery Test Assist and Reviews", "Project Management"];
     dbs.encrypt("test", function (enc_pass) {
         var today = new Date();
         var roles = ["project manager", "employee"];
@@ -300,7 +300,6 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
             });
         });
     });
-    console.log("hello : "+skills[72]);
 };
 
 /*This Function creates past projects dating back from 2017

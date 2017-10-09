@@ -49,7 +49,6 @@ $(document).ready(function() {
                     "</td>"+
                     "</tr>");
                 $.get("data_project_edit", {id:value.project_id}, function (data, status) {
-                    window.alert(data.name);
                     $("#project_name").append(data.name);
                 });
             });

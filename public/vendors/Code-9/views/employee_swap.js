@@ -14,7 +14,6 @@ $.urlParam = function (name) {
 };
 
 $.get("get_deleted_employees", {id: $.urlParam('id')},function (data, status) {
-    window.alert(data);
     $("#employeeTableRemoveList").empty();
     $("#employeeTableRemoveList").append(
         "<div class='x_title'>" +
@@ -85,5 +84,11 @@ $.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status
 });
 
 $("#acceptChange").on("click",function (e) {
+    ApproveApproval();
     $.get("approved_replacement", {id: $.urlParam('id')});
+});
+
+$("#denyChange").on("click",function (e) {
+    RejectApproval();
+    $.get("rejected_replacement", {id: $.urlParam('id')});
 });

@@ -42,6 +42,11 @@
     <link rel="stylesheet" href="vendors/Code-9/demo.css" media="screen">
     <link rel="stylesheet" href="vendors/Code-9/demo-print.css" media="print">
 
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
+
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" rel="stylesheet">
 
@@ -76,7 +81,6 @@
             <div class="clearfix"></div>
             <!-- start form for validation -->
             <form id="demo-form" data-parsley-validate action="project_creation" method="post">
-
                 <div class="row">
                     <div class="col-md-6">
                         <label for="projectname">Project Name: *</label>
@@ -115,8 +119,8 @@
                         <select id="skills" class="form-control select-test" style="width: 100%;" multiple>
                             <optgroup label="Cyber Security">
                                 <option value="Penetration Testing and Vulnerability">Penetration Testing and Vulnerability</option>
-                                <option value="Scanning (Nesus & Qualys)">Scanning (Nesus & Qualys)</option>
-                                <option value="Windows / Linux Security">Windows / Linux Security</option>
+                                <option value="Scanning (Nesus and Qualys)">Scanning (Nesus and Qualys)</option>
+                                <option value="Windows / Linux Security">Windows / Linux Security </option>
                                 <option value="Database Security">Database Security</option>
                                 <option value="Security Gap Assessments">Security Gap Assessments</option>
                                 <option value="Cyber Threat Detection And Root Cause ">Cyber Threat Detection And Root Cause</option>
@@ -128,14 +132,14 @@
                                 <option value="IT Corporate Governance">IT Corporate Governance</option>
                                 <option value="Data Centre Security">Data Centre Security</option>
                                 <option value="Report Writing">Report Writing</option>
-                                <option value="Policies, Procedures and Standards Writing skills">Policies, Procedures & Standards Writing skills</option>
+                                <option value="Policies, Procedures and Standards Writing skills">Policies, Procedures and Standards Writing skills</option>
                                 <option value="Policies, Procedures and Standards Compliance Measurement"> Policies, Procedures and Standards Compliance Measurement</option>
                                 <option value="IT Legislation Compliance Gap Assessments">IT Legislation Compliance Gap Assessments</option>
                             </optgroup>
 
                             <optgroup label="CIO Advisory">
-                                <option value="IT Procurement & Bid Management">IT Procurement & Bid Management</option>
-                                <option value="IT Governance & Service Management">IT Governance & Service Management</option>
+                                <option value="IT Procurement and Bid Management">IT Procurement and Bid Management</option>
+                                <option value="IT Governance and Service Management">IT Governance and Service Management</option>
                                 <option value="IT Strategy and Performance Management">IT Strategy and Performance Management</option>
                                 <option value="Enterprise Architecture and Design">Enterprise Architecture and Design</option>
                                 <option value="Digitisation">Digitisation</option>
@@ -150,7 +154,7 @@
 
                             <optgroup label="IT Internal Audit">
                                 <option value="IT risk profiling">IT Risk Profiling</option>
-                                <option value="Risk and compliance assessment">Risk & Compliance Assessment</option>
+                                <option value="Risk and compliance assessment">Risk and Compliance Assessment</option>
                                 <option value="Application controls">Application Controls</option>
                                 <option value="General IT controls">General IT Controls</option>
                                 <option value="Report writing">Report Writing</option>
@@ -169,42 +173,42 @@
                                 <option value="Data Analysis">Data Analysis</option>
                                 <option value="Data Visualization">Data Visualization</option>
                                 <option value="IDEA Skills">IDEA Skills</option>
-                                <option value="Qlikview Skills">IDEA Skills</option>
+                                <option value="Qlikview Skills">Qlikview Skills</option>
                                 <option value="CAATS Basics Skills">CAATS Basics Skills</option>
                                 <option value="Data Insight Detection">Data Insight Detection</option>
                                 <option value="Report Writing">Report Writing</option>
                             </optgroup>
 
                             <optgroup label="TA Management">
-                                <option value="Vendor Sourcing & RFP Development">Vendor Sourcing & RFP Development</option>
+                                <option value="Vendor Sourcing and RFP Development">Vendor Sourcing and RFP Development</option>
                                 <option value="Vendor Contract Review">Vendor Contract Review</option>
                                 <option value="Business Case Review">Business Case Review</option>
-                                <option value="Project Assurance & Auditing">Project Assurance & Auditing</option>
+                                <option value="Project Assurance and Auditing">Project Assurance and Auditing</option>
                                 <option value="Project Risk Management">Project Risk Management</option>
-                                <option value="IT Strategy Development & Master Systems Plan">IT Strategy Development & Master Systems Plan</option>
-                                <option value="IT Governance & Maturity Assessment">IT Governance & Maturity Assessment</option>
+                                <option value="IT Strategy Development and Master Systems Plan">IT Strategy Development and Master Systems Plan</option>
+                                <option value="IT Governance and Maturity Assessment">IT Governance and Maturity Assessment</option>
                                 <option value="Data Migration">Data Migration</option>
-                                <option value="Business Process Risk & Control Analysis In Erp Environments">Business Process Risk & Control Analysis In Erp Environments</option>
+                                <option value="Business Process Risk and Control Analysis In Erp Environments">Business Process Risk and Control Analysis In Erp Environments</option>
                                 <option value="Automated Controls Testing">Automated Controls Testing</option>
                                 <option value="Requirements Management">Requirements Management</option>
                                 <option value="Blueprint / Process Design">Blueprint / Process Design</option>
                                 <option value="Controls Integration">Controls Integration</option>
                                 <option value="Master Data Management">Master Data Management</option>
-                                <option value="Security & Sod">Security & Sod</option>
+                                <option value="Security and Sod">Security and Sod</option>
                                 <option value="User Account Testing">User Account Testing</option>
                                 <option value="Support Management">Support Management</option>
                                 <option value="IT Service Management">IT Service Management</option>
                                 <option value="Develop It Governance Frameworks">Develop IT Governance Frameworks</option>
-                                <option value="IT Risks & Controls Assessments & Benchmarking">IT Risks & Controls Assessments & Benchmarking</option>
-                                <option value="Review It Policies & Procedures">Review It Policies & Procedures</option>
+                                <option value="IT Risks and Controls Assessments and Benchmarking">IT Risks and Controls Assessments and Benchmarking</option>
+                                <option value="Review It Policies and Procedures">Review It Policies and Procedures</option>
                                 <option value="Development of IT Strategies">Development of IT Strategies</option>
-                                <option value="Value IT Analysis & Reviews">Value IT Analysis & Reviews</option>
+                                <option value="Value IT Analysis and Reviews">Value IT Analysis and Reviews</option>
                                 <option value="It Governance Audits">IT Governance Audits</option>
                                 <option value="King 3 Assessments">King 3 Assessments</option>
                                 <option value="It Governance Maturity Reviews">IT Governance Maturity Reviews</option>
                                 <option value="Vendor Selection Assistance">Vendor Selection Assistance</option>
-                                <option value="It Project Assurance & Business Req Review">IT Project Assurance & Business Req Review</option>
-                                <option value="Disaster Recovery Test Assist & Reviews">Disaster Recovery Test Assist & Reviews</option>
+                                <option value="It Project Assurance and Business Req Review">IT Project Assurance and Business Req Review</option>
+                                <option value="Disaster Recovery Test Assist and Reviews">Disaster Recovery Test Assist and Reviews</option>
                                 <option value="Project Management">Project Management</option>
                             </optgroup>
 
@@ -231,17 +235,92 @@
                         <input id="budget" name="budget" type="number" min="0.00" step="1" placeholder="0.00"/>
                     </div>
                     <div class="col-md-3">
-                            <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
-                                <button id="assignEmployees" type="button" class="btn btn-dark "><span
-                                            class="fa fa-users"></span> Allocate Employees</button>
-                            </span>
+                        <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
+                            <button id="assignEmployees" type="button" class="btn btn-dark "><span
+                                        class="fa fa-users"></span> Allocate Employees</button>
+                        </span>
                     </div>
                 </div>
 
                 <!-- TODO show this table once button is clicked, hide div first-->
-                <div id="empTableHide">
-                    <div id="employeeTable" class="x_panel"></div>
-                    <div id="employeeTable1" class="x_panel"></div>
+                <div id="EmpAllocationTableHide">
+                    <div id="EmpAllocationDT">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Allocated Employees</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="table_content" class="x_content">
+                                <p class="text-muted font-13 m-b-30">
+                                 Below are the pre-selected employees that would best fit this project. Please select the employees you wish to replace and provide a reason for the replacement.
+                                </p>
+                                <table id="EmployeeAllocationDT" class="table table-striped table-bordered bulk_action">
+                                    <thead>
+                                    <tr>
+                                        <th><div class="text-center"><i class="fa fa-times" aria-hidden="true"></i></div></th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Position</th>
+                                        <th>Employment Length</th>
+                                        <th>Projects Completed</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="EmpReplacementTableHide">
+                    <div id="EmpReplacementDT">
+                        <div class="x_panel">
+                            <div id='employeeRemoveReason'>
+                                <div>
+                                    <label for='empRemoval'>Reason/s for removing employee: *</label>
+                                    <textarea class='form-control' id='empRemoval' required='required' name='empRemoval'></textarea>
+                                </div>
+                            </div>
+                            <div class="x_title">
+                                <h2>Possible Replacement Employees</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="table_content_Rep" class="x_content">
+                                <p class="text-muted font-13 m-b-30">
+                                    Below are the pre-selected employee replacements that would best fit this project. Please select the employee(s) you wish to add and provide a reason for the replacement.
+                                </p>
+                                <table id="EmployeeReplacementDT" class="table table-striped table-bordered bulk_action">
+                                    <thead>
+                                    <tr>
+                                        <th><div class="text-center"><i class="fa fa-times" aria-hidden="true"></i></div></th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Position</th>
+                                        <th>Employment Length</th>
+                                        <th>Projects Completed</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                                <div class='form-group'>
+                                    <div>
+                                        <select type='text' id='director_select' class='form-control'>
+                                            <optgroup label='Director' id='director'>
+                                                <option disabled selected>Select Director</option>
+                                                </optgroup>
+                                            </select>
+                                    </div>
+                                </div>
+                                <br/>
+                                <button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br/>
 
@@ -257,7 +336,7 @@
                                data-parsley-trigger="change" required/>
 
                         <label class="control-label">Contact Number: *</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
+                        <input type="text" id="ownercontact" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
                                data-parsley-trigger="change" required>
                     </div>
                     <!-- Project Manger Details-->
@@ -275,10 +354,8 @@
                 <br/>
                 <hr/>
                 <br/>
-                <input id="storeEmp" class="btn btn-dark docs-tooltip" data-toggle="tooltip"
-                        value="Store Employees">
                 <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip"
-                       title="Confirm new project creation" type="submit" value="Create Project">
+                       title="Confirm new project creation" value="Create Project">
             </form>
             <div class="row">
                 <div style="margin-top: 300px" class="col-md-offset-4 col-md-4">
@@ -301,11 +378,7 @@
         <!-- /footer content -->
     </div>
 </div>
-<script>
-    function h() {
-        $.get("helpme",{id:"friend"});
-    }
-</script>
+
 
 <!-- jQuery -->
 <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
@@ -320,9 +393,8 @@
 <!-- jQuery Tags Input -->
 <script type="text/javascript" src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
 <!-- Code 9 -->
-<script type="text/javascript" src="js/code9/js/code9Custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/animation.js"></script>
-<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
@@ -348,7 +420,10 @@
 <script type="text/javascript" src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
 <!-- Select2 -->
 <script type="text/javascript" src="vendors/select2/dist/js/select2.full.js"></script>
-
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/raphael.js"></script>

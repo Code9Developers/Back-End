@@ -59,7 +59,7 @@ router.get("/get_chosen_skills",(req, res, next)=> {
                 dbs.get_specific_user_skill(req.query.user_id,function (data) {
                     let el=data[0]._id.skill;
                     for(let x=0;x<el.length;x++){
-                        if(el[x]._id==users[i].skill){
+                        if(el[x]._id==JSON.parse(users[i].skill)._id){
                             user_skill_array[count]=el[x].name;
                             user_rating_array[count]=parseInt(el[x].rating);
                             user_counter_array[count]=parseInt(el[x].counter);
@@ -81,7 +81,7 @@ router.get("/send_review",(req, res, next)=> {
         let skill_data=_data[x].value.split(";");
         let value=parseInt(skill_data[1]);
         let new_rating=(parseInt(user_rating_array[x-1])+value)/(parseInt(user_counter_array[x-1]+1));
-       // dbs.editUsers("_id",_data[x].name,"past_projects",req.query.id);
+        // dbs.editUsers("_id",_data[x].name,"past_projects",req.query.id);
         dbs.editUserObject("_id",_data[x].name,"skill","name",user_skill_array[x-1],"rating",new_rating);
         dbs.editUserObject("_id",_data[x].name,"skill","name",user_skill_array[x-1],"counter",(user_counter_array[x-1]+1));
     }

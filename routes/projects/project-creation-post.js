@@ -25,38 +25,79 @@ let employee_info_array;
  * Date Revised: DD/MM/2017 by Seonin David
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
+
+let rep_data;
+let budget;
+router.get('/get_json_data', function (req, res, next) {
+
+    let all_skills=(req.query.skills).split(",");
+    let arr_skills=[];
+    for(let x in all_skills){
+        arr_skills[x]=all_skills[x]
+    }
+
+    algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
+        let result = JSON.stringify(data[0]);
+         rep_data = JSON.stringify(data[1]);
+        let _obj = JSON.parse(result);
+        let emp_data=[];
+        for(let j in _obj){
+            emp_data[j]=_obj[j];
+        }
+        let _json = {data:emp_data};
+        res.send(_json);
+    });
+    res.contentType('application/json');
+});
+
+router.get('/get_replacement', function (req, res, next) {
+
+    // console.log(rep_data);
+    // let result = JSON.stringify(rep_data);
+    let _obj = JSON.parse(rep_data);
+    let emp_data=[];
+    let c=0;
+    for(let j in _obj){
+        let single_obj=_obj[j];
+        for(let i in single_obj){
+            emp_data[c]=single_obj[i];
+            c++
+        }
+    }
+    let _json = {data:emp_data};
+    console.log(_json);
+    res.send(_json);
+    //res.contentType('application/json');
+});
+
+
 router.get('/store_emp', function (req, res, next)
 {
-    employee_info_array = JSON.parse(req.param("emplArr"));
-
-    let num_empl = parseInt(JSON.parse(req.param("num_empl")));
-
-    employee_id_array="";
+    employee_info_array = JSON.parse(req.query.emplArr);
+    employee_id_array=[];
     for (let key in employee_info_array) {
-        if (parseInt(key) == (num_empl - 1)) {
-            employee_id_array += employee_info_array[key]._id ;
-        }
-        else {
-            employee_id_array += employee_info_array[key]._id+"," ;
-        }
+        employee_id_array[key]=employee_info_array[key]._id;
     }
-
-    let temp_employees = "[";
-    for (let key in employee_info_array) {
-        if (parseInt(key) == (num_empl - 1)) {
-            temp_employees += '{"_id":"' + employee_info_array[key]._id + '","skill":' + JSON.stringify(employee_info_array[key].skill[0]) + '}';
-        }
-        else {
-            temp_employees += '{"_id":"' + employee_info_array[key]._id + '","skill":' +  JSON.stringify(employee_info_array[key].skill[0]) + '},';
-        }
-    }
-    temp_employees += "]";
-    // console.log(employee_id_array);
-    let out = JSON.parse(JSON.stringify(temp_employees));
-    // console.log("1");
-    //console.log("EMP: " + out);
-     employees =  JSON.parse(out);
-     console.log("EMP: " + JSON.stringify(employees));
+    let temp_emp=[];
+        dbs.get_all_users_skill(employee_id_array,function (skills) {
+            for(let x in skills){
+                for(let y in skills)
+                {
+                    let user_id=skills[y]._id._id;
+                    let user_skill=skills[y]._id.skill;
+                    if(user_id==employee_info_array[x]._id){
+                        for(let i in user_skill){
+                            if(user_skill[i].name==employee_info_array[x].skill[0]){
+                                temp_emp[x]={_id:user_id,skill:JSON.stringify(user_skill[i])};
+                            }
+                        }
+                    }
+                }
+            }
+            console.log(temp_emp);
+            employees=temp_emp;
+            res.send(JSON.stringify(employees));
+        });
 
 });
 
@@ -76,6 +117,7 @@ router.get('/replacement_store', function (req, res, next) {
     let reason_for_removal = req.query.reason;
     let project_name = req.query.project_name;
 
+
     let _approval_json = {
         _id:ap_id,
         director_id: director_id,
@@ -86,13 +128,13 @@ router.get('/replacement_store', function (req, res, next) {
 
     dbs.insert_approval(_approval_json);
     dbs.findUsers("_id",director_id,function (director_details) {
-       let dirEmail = director_details[0].email;
-       let manName = req.session.name;
-       let manSur = req.session.surname;
-       let proj = project_name;
-       //send email in here
+        let dirEmail = director_details[0].email;
+        let manName = req.session.name;
+        let manSur = req.session.surname;
+        let proj = project_name;
+        //send email in here
 
-    email_functions.EmployeeReplacement(dirEmail, manName, manSur, proj);
+        email_functions.EmployeeReplacement(dirEmail, manName, manSur, proj);
 
     });
 
@@ -114,7 +156,6 @@ router.post("/project_creation", function (req, res, next) {
     if(needs_approval==true){
         dbs.editApproval("_id",ap_id,"project_id",project_id);
     }
-    //var start_date=(req.body.start_date).replace(/\//g,'-');
     let start_date = (req.body.start_date);
     let s = start_date.split("/");
     let newStartDate = new Date((s[2] + "-" + s[1] + "-" + s[0]).toString());
@@ -124,7 +165,6 @@ router.post("/project_creation", function (req, res, next) {
     let new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
 
     let today = new Date();
-    let dis_emp=employee_id_array.split(",");
     let project = {
         _id: project_id,
         name: req.body.projectname,
@@ -137,10 +177,12 @@ router.post("/project_creation", function (req, res, next) {
         manager_id: req.session.username,
         employees_assigned: employees,
         project_budget: req.body.budget,
-        status: status
+        status: status,
+        project_rating:0,
+        reviewed:"No"
     };
-        dbs.insertProject(project);
-       // var emp_obj=JSON.parse(employee_id_array);
+    dbs.insertProject(project);
+    // var emp_obj=JSON.parse(employee_id_array);
     for (let x in employees) {
         dbs.assignProject(employees[x], project_id);
 
@@ -153,45 +195,15 @@ router.post("/project_creation", function (req, res, next) {
         });
 
         //You can use the following function to send emails, it gets all the users names
-        dbs.findUsers("_id",employees[x]._id,function (user_info)
-        {
-            email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
-        });
+        // dbs.findUsers("_id",employees[x]._id,function (user_info)
+        // {
+        //     email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
+        // });
     }
-    res.redirect('projects');
+
+    res.send('projects');
 
 });
-
-router.get('/test_algorithm', function (req, res, next) {
-    console.log("employee allocation requested");
-    console.log("the request number of employees is " + req.param('num_empl'));
-    console.log("the request skills of employees is " + req.param('skills'));
-    console.log("the request duration of project is " + req.param('duration'));
-    console.log("the request budget of project is " + req.param('budget'));
-
-    //dbs.view_employees();
-    algorithm.get_unallocated_users(req.query.skills,req.query.start_end,req.query.end_date, function (val) {
-        let result = JSON.stringify(val);
-        employees = JSON.parse(result);
-        res.send(result);
-    });
-    res.contentType('application/json');
-});
-
-router.get('/get_replacement', function (req, res, next) {
-
-
-    algorithm.get_unallocated_replacement_users( function (val) {
-        console.log("sgsdgffds");
-        console.log(val);
-        let result = JSON.stringify(val);
-        employees = JSON.parse(result);
-        res.send(result);
-    });
-    res.contentType('application/json');
-});
-
-
 
 router.get('/get_directors', function (req, res, next) {
     let all_users = dbs.findUsers("role", "Director", function (all_users) {
@@ -199,5 +211,6 @@ router.get('/get_directors', function (req, res, next) {
     });
 
 });
+
 
 module.exports = router;

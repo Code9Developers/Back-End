@@ -1,3 +1,14 @@
+/**
+ * Page: project_view
+ * Functionality: Adds extra functions to the website for the task allocation etc
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 03/08/2017 by Joshua Moodley
+ * Date Revised: 05/10/2017 by Joshua Moodley
+ */
+
 $("#sortable").sortable();
 $("#sortable").disableSelection();
 
@@ -80,8 +91,7 @@ function removeItem(element){
     $(element).parent().remove();
 }
 
-// profile activate for edit passsword
-
+// profile activate for edit password
 $('#editbutton').click(function ()
 {
     $('#tab_content3').addClass('fade active in');

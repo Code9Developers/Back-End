@@ -80,6 +80,7 @@ router.get('/replacement_reason', function (req, res, next) {
 });
 
 router.get('/approved_replacement', function (req, res, next) {
+
     dbs.find_approval("_id",req.query.id, function (data) {
         let employees_to_be_removed=data[0].employees_removed;
         let employees_to_add=data[0].employees_replaced;
@@ -93,10 +94,18 @@ router.get('/approved_replacement', function (req, res, next) {
             //Need to change or make function to also add skill to current employees
         }
 
-        dbs.findProjects("_id",data[0].project_id,(project_data)=>{
-            res.send(project_data);
-        })
+        dbs.editProjects("_id",data[0].project_id,"status","active");
+        dbs.remove_approval(req.query.id);
+
     })
+
+
+    router.get('/rejected_replacement', function (req, res, next) {
+        dbs.find_approval("_id",req.query.id, function (data) {
+            dbs.editProjects("_id", data[0].project_id, "status", "active");
+            dbs.remove_approval(req.query.id);
+        });
+    });
 });
 
 module.exports = router;

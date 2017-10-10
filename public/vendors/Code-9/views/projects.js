@@ -68,14 +68,15 @@ $(document).ready(function() {
                     }
                 }
                 $('.proj_progress .progress-bar').progressbar({display_text: 'fill'});
-            });
-        });
-        $(".remove").on("click",function () {
-            $(this).parent().parent().hide();
-            $.get("remove_project",{
-                project_id:$(this).attr("id")
-            });
+                $(".remove").on("click",function () {
+                    $(this).parent().parent().hide();
+                    $.get("remove_project",{
+                        project_id:$(this).attr("id")
+                    });
 
+                });
+            });
         });
+
     });
 });

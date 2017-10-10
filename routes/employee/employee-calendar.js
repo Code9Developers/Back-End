@@ -27,5 +27,31 @@ router.get("/user_project_detail", function (req, res, next) {
 });
 //Add code to store new calendar events
 
+router.get("/get_all_event_data", function (req, res, next) {
+    dbs.findEvents("user_id",req.session.username,function (event_data) {
+        res.send(event_data);
+    })
+});
+
+
+router.get("/store_event", function (req, res, next) {
+    let rand_id = Math.floor((Math.random() * 1000) + 1).toString();
+    let rand_id_1 = Math.floor((Math.random() * 2000) + 1).toString();
+    let event_id=rand_id+req.session.username+rand_id_1;
+    let start_date=req.query.start_date;
+    let end_date=req.query.end_date;
+    let _obj ={
+        _id: event_id,
+        user_id: req.session.username,
+        description: req.query.description,
+         event_start_date:req.query.start_date,                        //Need to see how date is sent before I see how to store it
+         event_end_date: req.query.end_date
+    };
+});
+
+router.get("/delete_event", function (req, res, next) {
+    dbs.deleteEvent(req.query.event_id);
+});
+
 module.exports = router;
 

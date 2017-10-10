@@ -307,7 +307,7 @@ exports.deleteEvent = function (event_id) {
 
 // Note: You need to specify for which skill the user is being assigned to the project, BECAUSE THE SKILL ATTRIBUTE IS AN ARRAY!!
 
-exports.assignProject = function (user_id, project_id, _skill) {
+exports.assignProject = function (user_id, project_id, _skill, callback) {
 
     let user = schemas.user;
     let project = schemas.project;
@@ -315,37 +315,48 @@ exports.assignProject = function (user_id, project_id, _skill) {
     user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
+			project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
+				if (!err) {
+					console.log("User added to Project.");
+					return callback(true) ;
+				}
+				else {
+					console.log("Error adding User to Project.");
+					console.log(err);
+				}
+			});
         }
         else {
             console.log("Error adding Project to User.");
             console.log(err);
         }
     });
-
-    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
-        if (!err) {
-            console.log("User added to Project.");
-        }
-        else {
-            console.log("Error adding User to Project.");
-            console.log(err);
-        }
-    });
 };
 
-// WARNING! AUTISM ALERT: Race Conditions
-exports.insertAndAssignProject = function (_json, employees) {
+/*
+_employeesAndSkills = {[
+	{employee_id: "emp1", skill_name: "skill1"},
+	{employee_id: "emp2", skill_name: "skill2"}
+]};
+*/
+//the parameter needs to be in this format since I need to know the skill for which the employee is being assigned to the project
+//if you disagreee with this, remember that we need to keep track of the skill an employee was assigned to a project for, so that upon project review, we can increase the skill rating approppriately.
 
-    let project = schemas.project;
+
+exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating) {
 
     module.exports.insertProject(_json);
-
-    let _project = new project(_json);
-
-    for (let loop = 0; loop < employees.length; loop++) {
-        module.exports.assignProject(employees[loop], _project._id);
+	
+	let updated = 0 ;
+	let size = _employeesAndSkills.length ;
+	
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop].employee_id, _json._id, _employeesAndSkills[loop].skill_name, function(res) {
+			if (++updated == size) {
+				module.exports.completeProject(_json._id, rating);
+			}
+		});
     }
-    module.exports.completeProject(_project._id, _project.project_rating);
 };
 
 // remove employee from project and vice versa
@@ -1115,7 +1126,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 	
 	let managerArray = [] ; //stores each manager id
 	let employeeArray = [[]] ; //stores all employees and their hours for each manager in the corresponding index
-	let hourArray = [[]] ; //stores the hours worked for each employee in the correspodnign index
+	let hourArray = [[]] ; //stores the hours worked for each employee in the corresponding index
 	
 	
 	/*Eg:
@@ -1125,6 +1136,44 @@ exports.managerEmployeeCorrelation = function(callback) {
 	*/
 	
 	module.exports.findProjects("status", "completed", function(res) {
+			
+		function getManagerNames(array, callback) {
+			let user = schemas.user ;
+			let updated = 0 ;
+			for (let x = 0 ; x < array.length ; x++) {
+				user.findOne({_id: array[x]}).exec().then(function(res) {
+					array[x] = res.name + " " + res.surname ;
+					if (++updated == array.length) {
+						//console.log(array) ;
+						return callback(array) ;
+					}
+				});
+			}
+		}
+		
+		function getEmployeeNames(array, callback) {
+			let user = schemas.user ;
+			let updated = 0 ;
+			let size = 0  ;
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					size++ ;
+				}
+			}
+			
+			for (let x = 0 ; x < array.length ; x++) {
+				for (let y = 0 ; y < array[x].length ; y++) {
+					user.findOne({_id: array[x][y]}).exec().then(function(res) {
+						array[x][y] = res.name + " " + res.surname ;
+						if (++updated == size) {
+							//console.log(array) ;
+							return callback(array) ;
+						}
+					});
+				}
+			}
+		}
+		
 		for (let x = 0 ; x < res.length ; x++) {
 			let i = managerArray.indexOf(res[x].manager_id) ;
 			if (i == -1) {
@@ -1153,30 +1202,26 @@ exports.managerEmployeeCorrelation = function(callback) {
 			}
 		}
 		
-		let out = '' ;
-		for (let x = 0 ; x < managerArray.length ; x++) {
-			out += '{ "manager_id": ' + '"' + managerArray[x] + '"' + ', [ ' ;
-			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				out += '{ "employee_id": ' + '"' + employeeArray[x][y] + '"' + ', "hours_worked": ' + hourArray[x][y] + ' }, ' ;
-			}
-			out = out.substring(0, out.length-2) + ' ] }, ' ;
-		}
-		out = out.substring(0, out.length-2) ;
 		
-		
-		let obj = { data: [] } ;
-		for (let x = 0 ; x < managerArray.length ; x++) {
-			let subobj = { "manager_id": managerArray[x], employees_worked_with: [] } ;
-			for (let y = 0 ; y < employeeArray[x].length ; y++) {
-				subobj.employees_worked_with.push({ "employee_id": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
-			}
-			obj.data.push(subobj) ;
-		}
-		
-		return callback(obj.data) ;
-		
+		getManagerNames(managerArray, function(res) {
+			managerArray = res ;
+			getEmployeeNames(employeeArray, function(res) {
+				employeeArray = res ;
+				
+				let obj = { data: [] } ;
+				for (let x = 0 ; x < managerArray.length ; x++) {
+					let subobj = { "manager_name": managerArray[x], employees_worked_with: [] } ;
+					for (let y = 0 ; y < employeeArray[x].length ; y++) {
+						subobj.employees_worked_with.push({ "employee_name": employeeArray[x][y], "hours_worked": hourArray[x][y] }) ;
+					}
+					obj.data.push(subobj) ;
+				}
+				console.log(JSON.stringify(obj.data)) ;
+				return callback(obj.data) ;
+			});
+		});
+			
 	});
-	
 };
 
 /*********************************************************************************************************************************************************************************************************************************************

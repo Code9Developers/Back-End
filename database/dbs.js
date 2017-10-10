@@ -132,13 +132,13 @@ exports.editProfileImage = function (user_id, filename) {
 
     let user = schemas.user;
 
-    let precount;
+    /*let precount;
     let count = 0;
     while (count != -1) {
         precount = count;
         count = filename.indexOf("\\", count + 1);
     }
-    filename = filename.substring(precount + 1, filename.length);
+    filename = filename.substring(precount + 1, filename.length);*/
 
     let _data = fs.readFileSync(filename);
 
@@ -307,7 +307,7 @@ exports.deleteEvent = function (event_id) {
 
 // Note: You need to specify for which skill the user is being assigned to the project, BECAUSE THE SKILL ATTRIBUTE IS AN ARRAY!!
 
-exports.assignProject = function (user_id, project_id, _skill) {
+exports.assignProject = function (user_id, project_id, _skill, callback) {
 
     let user = schemas.user;
     let project = schemas.project;
@@ -315,37 +315,48 @@ exports.assignProject = function (user_id, project_id, _skill) {
     user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
+			project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
+				if (!err) {
+					console.log("User added to Project.");
+					return callback(true) ;
+				}
+				else {
+					console.log("Error adding User to Project.");
+					console.log(err);
+				}
+			});
         }
         else {
             console.log("Error adding Project to User.");
             console.log(err);
         }
     });
-
-    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
-        if (!err) {
-            console.log("User added to Project.");
-        }
-        else {
-            console.log("Error adding User to Project.");
-            console.log(err);
-        }
-    });
 };
 
-// WARNING! AUTISM ALERT: Race Conditions
-exports.insertAndAssignProject = function (_json, employees) {
+/*
+_employeesAndSkills = {[
+	{employee_id: "emp1", skill_name: "skill1"},
+	{employee_id: "emp2", skill_name: "skill2"}
+]};
+*/
+//the parameter needs to be in this format since I need to know the skill for which the employee is being assigned to the project
+//if you disagreee with this, remember that we need to keep track of the skill an employee was assigned to a project for, so that upon project review, we can increase the skill rating approppriately.
 
-    let project = schemas.project;
+
+exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating) {
 
     module.exports.insertProject(_json);
-
-    let _project = new project(_json);
-
-    for (let loop = 0; loop < employees.length; loop++) {
-        module.exports.assignProject(employees[loop], _project._id);
+	
+	let updated = 0 ;
+	let size = _employeesAndSkills.length ;
+	
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop].employee_id, _json._id, _employeesAndSkills[loop].skill_name, function(res) {
+			if (++updated == size) {
+				module.exports.completeProject(_json._id, rating);
+			}
+		});
     }
-    module.exports.completeProject(_project._id, _project.project_rating);
 };
 
 // remove employee from project and vice versa
@@ -731,33 +742,6 @@ exports.deleteMilestone = function (milestone_id) {
     });
 };
 
-exports.remove_task_from_milestone = function (milestone_id,task_id) {
-
-    let milestone = schemas.milestone;
-
-    milestone.update( { _id: milestone_id }, { $pull: { tasks:task_id} }, function (err) {
-        if (!err) {
-            console.log("Task successfully deleted from milestone.");
-        }
-        else {
-            console.log("Error deleting task from milestone.");
-        }
-    });
-};
-
-exports.remove_task_from_prject = function (project_id,task_id) {
-
-    let project= schemas.project;
-
-    project.update( { _id: project_id }, { $pull: { tasks:task_id} }, function (err) {
-        if (!err) {
-            console.log("Task successfully deleted from milestone.");
-        }
-        else {
-            console.log("Error deleting task from milestone.");
-        }
-    });
-};
 //removes all expired milestones from project
 exports.removeExpiredMilestones = function (project_id) {
 
@@ -1058,23 +1042,6 @@ exports.get_completed_projects = function (project_ids,callback) {
     project.aggregate([
         {$match:{$and:[{_id:{$in:project_ids}},{status:"completed"},{reviewed:"No"}]}},
         {$group:{_id:{id:"$_id",name:"$name",employees_assigned:"$employees_assigned",project_start_date:"$project_start_date"}}}
-    ], function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        }
-        else {
-            return callback(result);
-        }
-
-    });
-};
-
-exports.get_finished_tasks = function (task_ids,callback) {
-    let task = schemas.task;
-    task.aggregate([
-        {$match:{$and:[{_id:{$in:task_ids}},{status:"completed"}]}},
-        {$group:{_id:{_id:"$_id"}}}
     ], function (err, result) {
         if (err) {
             console.log(err);

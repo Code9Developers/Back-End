@@ -130,7 +130,7 @@ exports.EmployeeReplacement = function (toEmail, managerName, managerSurname, pr
  * Date Revised: 02/10/2017 by Joshua Moodley
  * Date Revised: 07/10/2017 by Joshua Moodley
  */
-exports.TraningNotification = function (toEmail, empName, empSurname, startDate, endDate, trainer, trainerEmail)
+exports.TraningNotification = function (toEmail, empName, empSurname, startDate, endDate, trainer, trainerEmail, trainerNumber)
 {
 // setup email data with unicode symbols
     let NewEmployeeMail  =
@@ -141,7 +141,7 @@ exports.TraningNotification = function (toEmail, empName, empSurname, startDate,
             // text:
             // html body
             html: 'Dear <b>' + empName + ' '  + empSurname +  '</b> please note you have training from the <b>' + startDate + '</b> to the <b>' + endDate + '</b>. ' +
-                  'If you haev any questions please contact <b>' + trainer + '</b>: ' + trainerEmail
+                  'If you have any questions please contact <b>' + trainer + '</b>: ' + trainerEmail + ' or ' +trainerNumber;
         };
 
     // send mail with defined transport object

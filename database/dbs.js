@@ -307,7 +307,7 @@ exports.deleteEvent = function (event_id) {
 
 // Note: You need to specify for which skill the user is being assigned to the project, BECAUSE THE SKILL ATTRIBUTE IS AN ARRAY!!
 
-exports.assignProject = function (user_id, project_id, _skill) {
+exports.assignProject = function (user_id, project_id, _skill, callback) {
 
     let user = schemas.user;
     let project = schemas.project;
@@ -315,37 +315,48 @@ exports.assignProject = function (user_id, project_id, _skill) {
     user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
+			project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
+				if (!err) {
+					console.log("User added to Project.");
+					return callback(true) ;
+				}
+				else {
+					console.log("Error adding User to Project.");
+					console.log(err);
+				}
+			});
         }
         else {
             console.log("Error adding Project to User.");
             console.log(err);
         }
     });
-
-    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
-        if (!err) {
-            console.log("User added to Project.");
-        }
-        else {
-            console.log("Error adding User to Project.");
-            console.log(err);
-        }
-    });
 };
 
-// WARNING! AUTISM ALERT: Race Conditions
-exports.insertAndAssignProject = function (_json, employees) {
+/*
+_employeesAndSkills = {[
+	{employee_id: "emp1", skill_name: "skill1"},
+	{employee_id: "emp2", skill_name: "skill2"}
+]};
+*/
+//the parameter needs to be in this format since I need to know the skill for which the employee is being assigned to the project
+//if you disagreee with this, remember that we need to keep track of the skill an employee was assigned to a project for, so that upon project review, we can increase the skill rating approppriately.
 
-    let project = schemas.project;
+
+exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating) {
 
     module.exports.insertProject(_json);
-
-    let _project = new project(_json);
-
-    for (let loop = 0; loop < employees.length; loop++) {
-        module.exports.assignProject(employees[loop], _project._id);
+	
+	let updated = 0 ;
+	let size = _employeesAndSkills.length ;
+	
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop].employee_id, _json._id, _employeesAndSkills[loop].skill_name, function(res) {
+			if (++updated == size) {
+				module.exports.completeProject(_json._id, rating);
+			}
+		});
     }
-    module.exports.completeProject(_project._id, _project.project_rating);
 };
 
 // remove employee from project and vice versa
@@ -1133,7 +1144,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 				user.findOne({_id: array[x]}).exec().then(function(res) {
 					array[x] = res.name + " " + res.surname ;
 					if (++updated == array.length) {
-						console.log(array) ;
+						//console.log(array) ;
 						return callback(array) ;
 					}
 				});
@@ -1155,7 +1166,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 					user.findOne({_id: array[x][y]}).exec().then(function(res) {
 						array[x][y] = res.name + " " + res.surname ;
 						if (++updated == size) {
-							console.log(array) ;
+							//console.log(array) ;
 							return callback(array) ;
 						}
 					});
@@ -1205,7 +1216,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 					}
 					obj.data.push(subobj) ;
 				}
-				
+				console.log(JSON.stringify(obj.data)) ;
 				return callback(obj.data) ;
 			});
 		});

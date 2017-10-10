@@ -731,6 +731,33 @@ exports.deleteMilestone = function (milestone_id) {
     });
 };
 
+exports.remove_task_from_milestone = function (milestone_id,task_id) {
+
+    let milestone = schemas.milestone;
+
+    milestone.update( { _id: milestone_id }, { $pull: { tasks:task_id} }, function (err) {
+        if (!err) {
+            console.log("Task successfully deleted from milestone.");
+        }
+        else {
+            console.log("Error deleting task from milestone.");
+        }
+    });
+};
+
+exports.remove_task_from_prject = function (project_id,task_id) {
+
+    let project= schemas.project;
+
+    project.update( { _id: project_id }, { $pull: { tasks:task_id} }, function (err) {
+        if (!err) {
+            console.log("Task successfully deleted from milestone.");
+        }
+        else {
+            console.log("Error deleting task from milestone.");
+        }
+    });
+};
 //removes all expired milestones from project
 exports.removeExpiredMilestones = function (project_id) {
 
@@ -1031,6 +1058,23 @@ exports.get_completed_projects = function (project_ids,callback) {
     project.aggregate([
         {$match:{$and:[{_id:{$in:project_ids}},{status:"completed"},{reviewed:"No"}]}},
         {$group:{_id:{id:"$_id",name:"$name",employees_assigned:"$employees_assigned",project_start_date:"$project_start_date"}}}
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
+exports.get_finished_tasks = function (task_ids,callback) {
+    let task = schemas.task;
+    task.aggregate([
+        {$match:{$and:[{_id:{$in:task_ids}},{status:"completed"}]}},
+        {$group:{_id:{_id:"$_id"}}}
     ], function (err, result) {
         if (err) {
             console.log(err);

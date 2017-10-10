@@ -49,12 +49,12 @@ router.get("/get_emp", function (req, res, next) {
 // });
 
 router.get("/get_user_past_projects", function (req, res, next) {
-        dbs.findUsers("_id","emp1",function (user_data) {
-            let past_project_ids=user_data[0].past_projects;
-            dbs.get_past_projects(past_project_ids,function (past_projects) {
-                res.send(past_projects);
-            })
-        });
+    dbs.findUsers("_id","emp_135",function (user_data) {
+        let past_project_ids=user_data[0].past_projects;
+        dbs.get_past_projects(past_project_ids,function (past_projects) {
+            res.send(past_projects);
+        })
+    });
 });
 
 router.get("/get_emp_task", function (req, res, next) {
@@ -64,7 +64,7 @@ router.get("/get_emp_task", function (req, res, next) {
 });
 
 router.get("/get_emp_milestone", function (req, res, next) {
-    dbs.findUsers("_id", "emp1", function (user_id) {
+    dbs.findUsers("_id", req.session.username, function (user_id) {
         dbs.findMilestones("project_id", user_id[0].current_projects[0], function (milestones) {
             res.send(milestones);
         });

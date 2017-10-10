@@ -169,7 +169,8 @@ function create_task(db) {
         description: String,
         project_id: String, //project that the task is part of
         milestone_id: String, //milestone in project to which task belongs
-        employees_assigned: []
+        employees_assigned: [],
+        status:String,
     });
 
     exports.task = mongoose.model('task', schema);

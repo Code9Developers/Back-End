@@ -27,5 +27,14 @@ router.get('/active_projects', function (req, res, next) {
 
 });
 
+router.get('/get_finished_tasks', function (req, res, next) {
+    dbs.get_finished_tasks(req.query.ids, function (task_data) {
+        res.send(task_data);
+    });
+
+});
+
+
+
 module.exports = router;
 

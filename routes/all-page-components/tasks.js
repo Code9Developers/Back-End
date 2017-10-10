@@ -31,7 +31,8 @@ router.get('/create_task', function (req, res, next) {
         description: task,
         project_id: project_id,
         milestone_id: milestone_id,
-        employees_assigned: emp_assigned
+        employees_assigned: emp_assigned,
+        status:"active"
     };
 
     dbs.insertTask(emp_json);
@@ -50,10 +51,11 @@ router.get('/create_task', function (req, res, next) {
                 symbols: false,
                 uppercase: true
             });
+            let today = new Date();
             dbs.insertNotification({
                 _id: project_id + milestone_id + rand,
                 user_id: emp[x],
-                message: "You have been assigned to a new task.\nTask name:" + task + "\n Deadline date:                   " + milestone_date[0].milestone_end_date,
+                message: "You have been assigned to a new task.\nTask name:" + task + "\n Deadline date:                   " + milestone[0].milestone_end_date,
                 date_created: today,
                 isRead: false
             });
@@ -70,6 +72,17 @@ router.get('/get_tasks', function (req, res, next) {
     let  tasks = dbs.findTasks("project_id", project_id, function (tasks) {
         console.log(tasks);
         res.send(tasks);
+    });
+
+});
+
+router.get('/remove_task', function (req, res, next) {
+    let task_id=req.query.task_id;
+   dbs.editTasks("_id",task_id,"status","completed");
+    dbs.findTasks("_id",task_id,function (task) {
+        dbs.remove_task_from_milestone(task[0].milestone_id,task_id);
+        dbs.remove_task_from_milestone(task[0].project_id,task_id);
+
     });
 
 });

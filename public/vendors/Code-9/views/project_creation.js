@@ -65,15 +65,35 @@ function init_EmployeeAllocationDT() {
         this.inline( this );
     });
 
-    // let num_employees=($('#range_31').val()).split(";");
-    // let num_emp= parseInt(num_employees[1]);
+    let assistant_manager_slider=($('#Assistant_Manager').val()).split(";");
+    let assistant_manager= parseInt(assistant_manager_slider[1]);
+
+    let supervisor_slider=($('#Supervisor').val()).split(";");
+    let supervisor= parseInt(supervisor_slider[1]);
+
+    let senior_analyst_slider=($('#Senior_Analyst').val()).split(";");
+    let senior_analyst= parseInt(senior_analyst_slider[1]);
+
+    let analyst_slider=($('#Analyst').val()).split(";");
+    let analyst= parseInt(analyst_slider[1]);
+
+    let junior_analyst_1_slider=($('#Junior_Analyst_1').val()).split(";");
+    let junior_analyst_1= parseInt(junior_analyst_1_slider[1]);
+
+    let junior_analyst_2_slider=($('#Junior_Analyst_2').val()).split(";");
+    let junior_analyst_2= parseInt(junior_analyst_2_slider[1]);
+
+    let position_array=["Assistant Manager"," Supervisor","Senior Analyst","Analyst","Junior Analyst 2","Junior Analyst 1"];
+    let amount_array=[assistant_manager,supervisor,senior_analyst,analyst,junior_analyst_2,junior_analyst_1];
+
+
     let skills=$('#skills').val();
     let start_date= $('#start_date').val();//either to calculation to get number in days or put end date
     let end_date=$('#end_date').val();
 
     $EmployeeAllocationDT.dataTable({
         order: [[ 1, 'asc' ]],
-        ajax: "get_json_data?start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
+        ajax: "get_json_data?position_arr="+position_array+"&amount_arr="+amount_array+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
         columns: [
             {
                 data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",
@@ -85,7 +105,7 @@ function init_EmployeeAllocationDT() {
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
-            { data: "past_projects" }
+            { data: "skill" }
         ],
         select: {
             style:    'os',
@@ -153,8 +173,7 @@ function init_EmployeeReplacementDT() {
         this.inline( this );
     });
 
-    // let num_employees=($('#range_31').val()).split(";");
-    // let num_emp= parseInt(num_employees[1]);
+
     let skills=$('#skills').val();
     let start_date= $('#start_date').val();//either to calculation to get number in days or put end date
     let    end_date=$('#end_date').val();
@@ -172,7 +191,7 @@ function init_EmployeeReplacementDT() {
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
-            { data: "past_projects" }
+            { data: "skill" }
         ],
         select: {
             style:    'os',
@@ -200,6 +219,7 @@ $(document).ready(function() {
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
         // Create datatable for employees allocated
+       //position_array=["Assistant Manager"," Supervisor","Senior Analyst","Analyst","Junior Analyst 2","Junior Analyst 1"];
 
 
         $('#demo-form').hide();

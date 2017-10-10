@@ -77,7 +77,7 @@ $(document).ready(function (){
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
-            { data: "past_projects" }
+            { data: "email" }
         ],
         order: [1, 'asc'],
         rowCallback: function(row, data, dataIndex){

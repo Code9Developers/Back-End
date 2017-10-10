@@ -81,7 +81,13 @@
                                     </ul>
                                     <br/>
 
-                                    <div id="mainb" style="height:350px;"></div>
+                                    <div class="row x_title">
+                                        <div class="col-md-6">
+                                            <h3>Current Project Progress</h3>
+                                        </div>
+                                    </div>
+
+                                    <canvas id="progressBarGraph"></canvas>
 
                                     <div>
                                         <div class="panel">
@@ -226,12 +232,13 @@
 <script type="text/javascript" src="vendors/Code-9/views/project_view.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/graphs.js"></script>
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress: Top load animation-->
 <script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
-<!-- ECharts -->
-<script type="text/javascript" src="vendors/echarts/dist/echarts.min.js"></script>
+<!-- Chart.js -->
+<script type="text/javascript" src="vendors/Chart.js/dist/Chart.js"></script>
 <!-- Dropzone.js -->
 <!--<script src="vendors-sort/dropzone/dist/min/dropzone.min.js"></script>-->
 <!-- Select2 -->

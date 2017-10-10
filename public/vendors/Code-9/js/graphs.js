@@ -106,7 +106,7 @@ window.onload = function()
                 data: {
                     labels: employees,
                     datasets: [{
-                        label: 'No. of hours worked with.',
+                        label: 'No. of hours worked ',
                         data: hours,
                         backgroundColor: myBackground,
                         borderColor: myBorder,

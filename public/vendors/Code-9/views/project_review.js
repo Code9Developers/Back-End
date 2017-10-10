@@ -73,8 +73,12 @@ $(document).ready(function() {
     });
 
     $( "#submit_review" ).on("click",function( event ) {
-        $.get("send_review", {data:$("form").serializeArray(),id:$.urlParam('id')});
+        ReviewSuccessful();
+        $.get("send_review", {data:$("form").serializeArray(),id:$.urlParam('id')},function (data, status) {rs
+            $( location ).attr("href", data);
+        });
         event.preventDefault();
+
     });
 
 });

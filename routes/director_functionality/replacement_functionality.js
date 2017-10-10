@@ -32,7 +32,7 @@ router.get('/get_deleted_employees', function (req, res, next) {
                         position: user[i].position,
                         employment_length: user[i].employment_length,
                         past_projects: user[i].past_projects,
-                        skill:user[i].skill[0]
+                        skill:user[i].skill[0].name
                     };
                     return_json[x] = new_json_obj;
                     x++;
@@ -62,7 +62,7 @@ router.get('/get_replacement_employees', function (req, res, next) {
                         position: user[i].position,
                         employment_length: user[i].employment_length,
                         past_projects: user[i].past_projects,
-                        skill:user[i].skill[0]
+                        skill:user[i].skill[0].name
                     };
                     added_user_json[x] = new_json_obj;
                     x++;

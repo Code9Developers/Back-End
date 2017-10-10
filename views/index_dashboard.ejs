@@ -96,16 +96,13 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="dashboard_graph">
-
                         <div class="row x_title">
                             <div class="col-md-6">
-                                <h3>Current Project Progress
-                                    <small>Graph title sub-title</small>
-                                </h3>
+                                <h3>Current Project Progress</h3>
                             </div>
                         </div>
                         <div class="col-md-9 col-sm-9 col-xs-12">
-                            <div id="chart_plot_01" class="demo-placeholder"></div>
+                            <canvas id="progressBarGraph"></canvas>
                         </div>
                         <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
                             <div class="x_title">
@@ -213,7 +210,8 @@
 <!-- Bootstrap -->
 <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Code 9 -->
-<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/graphs.js"></script>
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress: Top load animation-->

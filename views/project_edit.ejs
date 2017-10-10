@@ -46,24 +46,27 @@
         <div class="right_col" role="main">
             <!--todo add project name to edit here-->
             <h2>Edit Project
-                <small id="project-name"> PROJECT NAME HERE</small>
+                <!--<small id="project-name"> PROJECT NAME HERE</small>-->
             </h2>
             <hr/>
             <div class="clearfix"></div>
             <div class="row">
-                <div class="col-md-4">
-                    <label for="Director">Select Director: *</label>
-                    <div id="director1"></div>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="CurrentDeadline">Current Deadline: *</label>
                     <input style="margin-top: 10px" readonly type="date" id="CurrentDeadline" class="form-control" name="CurrentDeadline"/>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <label for="ChangeDueDate">Change Deadline: *</label>
                     <input style="margin-top: 10px" type="date" id="ChangeDueDate" class="form-control" name="ChangeDueDate" required/>
                 </div>
+
+
             </div>
+            <br/>
+            <div class="col-md-3">
+                <input style="margin-bottom: 10px" id='updateProject' type='submit' class='btn btn-conf btn-dark docs-tooltip' data-toggle='tooltip' value='Extend Deadline'/>
+            </div>
+
 
                 <br/>
                 <!-- TODO show this table once button is clicked-->

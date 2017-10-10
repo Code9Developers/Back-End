@@ -37,6 +37,7 @@ router.get("/get_project_employees", function (req, res, next) {
     dbs.findProjects("_id",req.query.id,(project_data)=> {
 
         let users=project_data[0].employees_assigned;
+
         let user_array=[];
         for(let i=0;i<users.length;i++){
             user_array[i]=users[i]._id;
@@ -87,8 +88,9 @@ router.get("/send_review",(req, res, next)=> {
     }
     let project_skill_data=_data[0].value.split(";");
     let project_rating=parseInt(project_skill_data[1]);
-    dbs.editProjects("_id",req.query.id,"reviewed","Yes")
+    dbs.editProjects("_id",req.query.id,"reviewed","Yes");
     dbs.completeProject(req.query.id,project_rating);
+    res.send("display_reviews");
 
 });
 

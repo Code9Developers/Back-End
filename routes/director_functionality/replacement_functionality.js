@@ -90,7 +90,13 @@ router.get('/approved_replacement', function (req, res, next) {
             dbs.dismissProject(employees_to_be_removed[x],data[0].project_id)
         }
         for(let x=0;x<employees_to_add.length;x++){
-            dbs.assignProject(employees_to_add[x],data[0].project_id);
+            dbs.findUsers("_id",employees_to_add[x],function (emp_data) {
+                let choosen_skill=emp_data[0].skill[0];
+                dbs.assignProject(employees_to_add[x],data[0].project_id,JSON.stringify(choosen_skill));
+               // dbs.editProjectObject("_id",req.query.id,"employees_assigned","_id",employees_to_add[x],"skill",)
+                //dbs.editUserObject("_id",_data[x].name,"skill","name",user_skill_array[x-1],"rating",new_rating);
+               // dbs.editProjectObject("_id",req.query.id,"employees_assigned",);
+            })
             //Need to change or make function to also add skill to current employees
         }
 

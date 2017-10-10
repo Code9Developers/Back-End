@@ -80,34 +80,9 @@ router.get('/remove_task', function (req, res, next) {
     let task_id=req.query.task_id;
    dbs.editTasks("_id",task_id,"status","completed");
     dbs.findTasks("_id",task_id,function (task) {
-        dbs.findMilestones("_id",task[0].milestone_id,function (milestone) {
-            let task_ids=milestone[0].tasks;
-            let new_task_ids=[];
-            let new_task_ids_count=0;
-            for(let x=0;x<task_ids.length;x++){
-                if(task_ids[x]!==task_id){
-                    new_task_ids[new_task_ids_count]=task_ids[x];
-                    new_task_ids_count++;
-                }
-            }
-            console.log(new_task_ids);
-            dbs.editMilestones("_id",task[0].milestone_id,"tasks",new_task_ids);
+        dbs.remove_task_from_milestone(task[0].milestone_id,task_id);
+        dbs.remove_task_from_milestone(task[0].project_id,task_id);
 
-        })
-        // dbs.findProjects("_id",task[0].project_id,function (project) {
-        //     let p_task_ids=project[0].tasks;
-        //     console.log(p_task_ids.length);
-        //     let p_new_task_ids=[];
-        //     let p_new_task_ids_count=0;
-        //     for(let y=0;p_task_ids.length;y++){
-        //         if(p_task_ids[y]!=task_id){
-        //             p_new_task_ids[p_new_task_ids_count]=p_task_ids[y];
-        //             p_new_task_ids_count++;
-        //         }
-        //     }
-        //     console.log(p_new_task_ids);
-        //     dbs.editProjects("_id",project[0].project_id,"tasks",p_new_task_ids);
-        // });
     });
 
 });

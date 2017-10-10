@@ -185,40 +185,45 @@ $(document).ready(function() {
                 project_name=data.name;
                 project_id=data._id;
                 $("#CurrentDeadline").val(newDate);
-            });
 
-        $.get("get_directors",{},
-            function(data, status){
-                $("#director1").empty();
-                $("#director1").append(
-                    "<div class='form-group'>"+
-                    "<div class='col-md-12 col-sm-12 col-xs-12'>"+
-                    "<select type='text' id='director_select1' class='form-control'>"+
-                    "<optgroup label='Director' id='director2'>"+
-                    "<option disabled selected>Select Director</option>"+
-                    "</optgroup>"+
-                    "</select>"+
-                    "<br/><input id='updateProject' type='submit' class='btn btn-conf btn-dark docs-tooltip' data-toggle='tooltip' value='Update Project'/>"+
-                    "</div>"
-                );
-                $.each(data, function (key, value) {
-                    $("#director2").append(
-                        "<option value='"+value._id+"'>"+
-                        value.name+" "+value.surname+
-                        "</option>");
-                });
                 $('#updateProject').on('click', function (e) {
+                    $("#CurrentDeadline").empty();
+                    $("#CurrentDeadline").val( $("#ChangeDueDate").val());
+                    DeadlineChanged();
                     $.ajax({
                         url: 'change_project_date',
                         type: "GET",
                         data: {
                             new_date: $("#ChangeDueDate").val(),
-                            id:$.urlParam('id'),
-                            director:$("#director_select1").val()
+                            id:$.urlParam('id')
+                            // director:$("#director_select1").val()
                         }
                     });
                 });
             });
+
+        // $.get("get_directors",{},
+        //     function(data, status){
+        //         $("#director1").empty();
+        //         $("#director1").append(
+        //             "<div class='form-group'>"+
+        //             "<div class='col-md-12 col-sm-12 col-xs-12'>"+
+        //             "<select type='text' id='director_select1' class='form-control'>"+
+        //             "<optgroup label='Director' id='director2'>"+
+        //             "<option disabled selected>Select Director</option>"+
+        //             "</optgroup>"+
+        //             "</select>"+
+        //             "<br/><input id='updateProject' type='submit' class='btn btn-conf btn-dark docs-tooltip' data-toggle='tooltip' value='Update Project'/>"+
+        //             "</div>"
+        //         );
+        //         $.each(data, function (key, value) {
+        //             $("#director2").append(
+        //                 "<option value='"+value._id+"'>"+
+        //                 value.name+" "+value.surname+
+        //                 "</option>");
+        //         });
+
+          //  });
 
     init_EmployeeAllocationDTEdit();
     init_EmployeeReplacementDTEdit();

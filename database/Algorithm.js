@@ -66,11 +66,13 @@ function Algorithm(employee_lists, swarm_size)
                 higher standard deviation, better score
              */
 
-            //	cost of project (as low as possible)
+            //cost of project (as low as possible)
 
-            //	weights for employees who have worked together applied to their past projects scores
+            //weights for employees who have worked together applied to their past projects scores (Not used for demo)
 
             /*Check if the same employee is used for different positions in the team*/
+
+            //Check if we have the required positions
         }
         return value;
     };

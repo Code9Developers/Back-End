@@ -93,11 +93,11 @@ exports.get_unallocated_users = function (skills, start_date, end_date, callback
 
                     //give a score to how long they have not been working for HIGH WEIGHTING APPLIED
 
-                    //give a score to employees who have worked on past projects with the same skill tag
+                    //give a score to employees who have worked on past projects with the same skill tag (Not used for demo)
 
-                    //weights for employees who have experience working on projects before with the same skill tag applied to their past project score
+                    //weights for employees who have experience working on projects before with the same skill tag applied to their past project score (Not used for demo)
 
-                    //how many previous projects the employee has had
+                    //how many previous projects the employee has had (Not used for demo)
                 }
             }
 

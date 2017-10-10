@@ -1864,8 +1864,47 @@ function init_IonRangeSlider() {
         to: 10,
         from_fixed: true
     });
-
-    $("#ratingSix").ionRangeSlider({
+    $("#Assistant_Manager").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+    $("#Supervisor").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+    $("#Senior_Analyst").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+    $("#Analyst").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+    $("#Junior_Analyst_2").ionRangeSlider({
+        type: "double",
+        min: 0,
+        max: 10,
+        from: 0,
+        to: 10,
+        from_fixed: true
+    });
+    $("#Junior_Analyst_1").ionRangeSlider({
         type: "double",
         min: 0,
         max: 10,

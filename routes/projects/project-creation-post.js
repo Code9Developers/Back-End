@@ -176,7 +176,7 @@ router.post("/project_creation", function (req, res, next) {
         owner_email: req.body.projectowneremail,
         manager_id: req.session.username,
         employees_assigned: employees,
-        project_budget: req.body.budget,
+        project_budget: 0,
         status: status,
         project_rating:0,
         reviewed:"No"
@@ -195,10 +195,10 @@ router.post("/project_creation", function (req, res, next) {
         });
 
         //You can use the following function to send emails, it gets all the users names
-        // dbs.findUsers("_id",employees[x]._id,function (user_info)
-        // {
-        //     email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
-        // });
+        dbs.findUsers("_id",employees[x]._id,function (user_info)
+        {
+            email_functions.NewProjectAllocation(user_info[0].email, user_info[0].name, user_info[0].surname, project.name);
+        });
     }
 
     res.send('projects');

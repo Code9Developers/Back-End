@@ -11,30 +11,30 @@
 
 window.eve = [];
 function getCalendarEvents() {
-let  item;
+    let  item;
 
     $.get("calendar_events",
         {},
         function (data, status) {
-        window.alert(JSON.stringify(data));
+            //window.alert(JSON.stringify(data));
             $.get("get_all_event_data",{}
-           ,function(data,status){
+                ,function(data,status){
 
-                   $.each(data, function (key, value) {
-                       // window.alert(value.name);
+                    $.each(data, function (key, value) {
+                        //window.alert(value);
 
-                       item = {};
-                       item["id"] = value._id;
-                       item["title"] = value.description;
-                       item["start"] = value.event_start_date.substr(0,10);
-                       item["end"] = value.event_end_date.substr(0,10);
-                       item["url"] = "#";
+                        item = {};
+                        item["id"] = value._id;
+                        item["title"] = value.description;
+                        item["start"] = value.event_start_date.substr(0,10);
+                        item["end"] = value.event_end_date.substr(0,10);
+                        item["url"] = "#";
+                        //window.alert(JSON.stringify(item));
+                        eve.push(item);
 
-                       eve.push(item);
+                    });
 
-                   });
-
-           });
+                });
             $.each(data, function (key, value) {
                 // window.alert(value.name);
 
@@ -50,116 +50,111 @@ let  item;
             });
 
             init_calendar();
-            // eve[eve.length - 1] = ']';
-            //window.alert(eve[eve.length - 1]);
-
-
-            // window.alert(eve.length);
         });
 
 }
 
 
 function  init_calendar() {
-           if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
-console.log('init_calendar');
+    if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
+    console.log('init_calendar');
 // nEv = JSON.stringify();
 
 // window.alert(JSON.parse(eve));
-let  date = new Date(),
-    d = date.getDate(),
-    m = date.getMonth(),
-    y = date.getFullYear(),
-    started,
-    categoryClass;
+    let  date = new Date(),
+        d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear(),
+        started,
+        categoryClass;
 
-let  calendar = $('#calendar').fullCalendar({
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listMonth'
-    },
-    selectable: true,
-    selectHelper: true,
-    select: function(start, end, allDay) {
-        $('#fc_create').click();
+    let  calendar = $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listMonth'
+        },
+        selectable: true,
+        selectHelper: true,
+        select: function(start, end, allDay) {
+            $('#fc_create').click();
 
-        started = start;
-        ended = end;
-        window.alert(eve[0]["end"]);
-        window.alert(start.format());
-        for(var i =0; i < eve.size;i++){
-            if(eve[i]["start"] <= start.format()){
-                alert.window("true");
-            }
-        }
-
-        $(".antosubmit").on("click", function() {
-            window.alert("submitted");
-            let  title = $("#title").val();
-            if (end) {
-                ended = end;
+            started = start;
+            ended = end;
+            window.alert(eve[0]["end"]);
+            window.alert(start.format());
+            for(var i =0; i < eve.size;i++){
+                if(eve[i]["start"] <= start.format()){
+                    alert.window("true");
+                }
             }
 
+            $(".antosubmit").on("click", function() {
+                window.alert("submitted");
+                let  title = $("#title").val();
+                if (end) {
+                    ended = end;
+                }
 
 
+
+                categoryClass = $("#event_type").val();
+
+                if (title) {
+
+                    $.get("store_event",{
+                        description:title,
+                        start_date:start.format(),
+                        end_date:end.format()
+                    });
+
+                    calendar.fullCalendar('renderEvent', {
+                            id:title,
+                            title: title,
+                            start: started,
+                            end: end,
+                            allDay: allDay
+                        },
+                        true // make the event "stick"
+                    );
+                }
+
+                $('#title').val('');
+
+                calendar.fullCalendar('unselect');
+
+                $('.antoclose').click();
+
+                return false;
+            });
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+            $('#fc_edit').click();
+            $('#title2').val(calEvent.title);
+            $('.modal-footer').append("<button type=\"button\" class=\"btn btn-primary delSub\">Delete Event</button>");
             categoryClass = $("#event_type").val();
 
-            if (title) {
+            $(".antosubmit2").on("click", function() {
+                calEvent.title = $("#title2").val();
 
-                $.get("store_event",{
-                   description:title,
-                   start_date:start.format(),
-                   end_date:end.format()
+                calendar.fullCalendar('updateEvent', calEvent);
+                $('.antoclose2').click();
+            });
+
+            $(".delSub").on("click", function() {
+                //calEvent.title = $("#title2").val();
+                $.get("delete_event",{
+                    event_id:calEvent.id
                 });
-
-                calendar.fullCalendar('renderEvent', {
-                        id:title,
-                        title: title,
-                        start: started,
-                        end: end,
-                        allDay: allDay
-                    },
-                    true // make the event "stick"
-                );
-            }
-
-            $('#title').val('');
+                calendar.fullCalendar('removeEvents', calEvent.id);
+                $('.antoclose2').click();
+            });
 
             calendar.fullCalendar('unselect');
-
-            $('.antoclose').click();
-
-            return false;
-        });
-    },
-    eventClick: function(calEvent, jsEvent, view) {
-        $('#fc_edit').click();
-        $('#title2').val(calEvent.title);
-        $('.modal-footer').append("<button type=\"button\" class=\"btn btn-primary delSub\">Delete Event</button>");
-        categoryClass = $("#event_type").val();
-
-        $(".antosubmit2").on("click", function() {
-            calEvent.title = $("#title2").val();
-
-            calendar.fullCalendar('updateEvent', calEvent);
-            $('.antoclose2').click();
-        });
-
-        $(".delSub").on("click", function() {
-            //calEvent.title = $("#title2").val();
-            $.get("delete_event",{
-               event_id:calEvent.id
-            });
-            calendar.fullCalendar('removeEvents', calEvent.id);
-            $('.antoclose2').click();
-        });
-
-        calendar.fullCalendar('unselect');
-    },
-    editable: false,
-    events: eve
-});
+        },
+        editable: false,
+        events: eve
+    });
 
 }
 

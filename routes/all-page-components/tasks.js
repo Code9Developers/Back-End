@@ -84,7 +84,24 @@ router.get('/remove_task', function (req, res, next) {
         dbs.remove_task_from_milestone(task[0].project_id,task_id);
 
     });
-
 });
 
+router.get('/progress_analytics', function (req, res, next) {
+    let project_id=req.query.id;
+    dbs.findProjects("_id",project_id,function (project_data) {
+        let task_ids=project_data[0].tasks;
+        let completed
+        if(task_ids.length!=0) {
+            dbs.get_finished_tasks(task_ids, function (task_data) {
+                let counter=0;
+                for(let count in task_data){
+                    counter=counter+1;
+                }
+                completed=task_data.length;
+                let to_complete=task_ids.length-completed;
+                res.send([counter,to_complete]);
+            });
+        }
+    });
+});
 module.exports = router;

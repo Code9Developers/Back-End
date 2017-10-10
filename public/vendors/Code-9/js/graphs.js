@@ -14,24 +14,58 @@ function newDate(yyyy, mm, dd)
 
 window.onload = function()
 {
+
     /**
      *    index_dashboard.ejs progress graph
      *    Date Revised: 05/10/2017 by Joshua Moodley
+     *    Date Revised: 10/10/2017 by Joshua Moodley
      */
-
-    // let configProgressGraph = {
-    //     type: 'line',
-    //     data: {
-    //         labels: [newDate(2017, 1, 1), newDate(2017, 1, 2), newDate(2017, 1, 3), newDate(2017, 1, 4), newDate(2017, 1, 5), newDate(2017, 1, 6)],
-    //         datasets: [{
-    //             label: "My First dataset",
-    //             data: [0, 20, 30, 45, 50, 55],
-    //         }]
-    //     }
-    // };
+    // $.get("/analytics", function (data, status) {
+    //     let pc = document.getElementById('progressBarGraph').getContext('2d');
+    //     let myChart = new Chart(pc, {
+    //         type: 'bar',
+    //         data: {
+    //             labels: ["Completed", "Uncompleted"],
+    //             datasets: [{
+    //                 label: '# of Tasks',
+    //                 data: [12, 19],
+    //                 backgroundColor: [
+    //                     'rgba(75, 192, 192, 0.2)', // GREEN
+    //                     'rgba(255, 99, 132, 0.2)', // RED
     //
-    // let pc = document.getElementById('progressChart').getContext('2d');
-    // let chartOne = new Chart(pc, configProgressGraph);
+    //                     // 'rgba(54, 162, 235, 0.2)', // BLUE
+    //                     // 'rgba(255, 206, 86, 0.2)', // YELLOW
+    //                     // 'rgba(153, 102, 255, 0.2)', // PURPLE
+    //                     // 'rgba(255, 159, 64, 0.2)' // Orange
+    //                 ],
+    //                 borderColor: [
+    //                     'rgba(75, 192, 192, 1)',
+    //                     'rgba(255,99,132,1)',
+    //                     //
+    //                     // 'rgba(54, 162, 235, 1)',
+    //                     // 'rgba(255, 206, 86, 1)',
+    //                     // 'rgba(153, 102, 255, 1)',
+    //                     // 'rgba(255, 159, 64, 1)'
+    //                 ],
+    //                 borderWidth: 1
+    //             }]
+    //         },
+    //         options: {
+    //             scales: {
+    //                 yAxes: [{
+    //                     ticks: {
+    //                         beginAtZero:true
+    //                     }
+    //                 }]
+    //             },
+    //             title: {
+    //                 display: true,
+    //                 text: 'Overall Project Progress Based On Tasks Completed To Tasks Uncompleted'
+    //             }
+    //         }
+    //     });
+    // });
+
 
     /**
      *    director_dashboard.ejs analytics graph
@@ -120,6 +154,9 @@ window.onload = function()
                                 beginAtZero:true
                             }
                         }]
+                    }, title: {
+                        display: true,
+                        text: 'Number of Hours That A Manager Worked With A Specific Employee'
                     }
                 }
             };

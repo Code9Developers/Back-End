@@ -2176,10 +2176,18 @@ function init_validator() {
 
 // TODO Notifications 05 Sep 2017
 /* PNotify */
+function ReviewSuccessful() {
+    new PNotify({
+        title: 'Sent',
+        text: 'Project review successfully sent',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
 function SendApproval() {
     new PNotify({
         title: 'Sent',
-        text: 'Approval request successfully send to director',
+        text: 'Approval request successfully sent to director',
         type: 'success',
         styling: 'bootstrap3'
     });
@@ -2189,6 +2197,15 @@ function ApproveApproval() {
     new PNotify({
         title: 'Approved',
         text: 'Approval request successfully approved',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
+function DeadlineChanged() {
+    new PNotify({
+        title: 'Successful',
+        text: 'Project deadline successfully changed',
         type: 'success',
         styling: 'bootstrap3'
     });

@@ -200,19 +200,19 @@ $(document).ready(function() {
     $('#assignEmployees').on('click', function (e) {
         e.preventDefault(); // disable the default form submit event
         // Create datatable for employees allocated
-        init_EmployeeAllocationDT();
 
-        // $('#demo-form').hide();
-        // $('#holder').show();
-        //
-        // /*Animation*/
-        // setTimeout(function ()
-        // {
-        //     $('#demo-form').show();
-        //     $('#holder').hide();
-        // }, 4500);
 
+        $('#demo-form').hide();
+        $('#holder').show();
+        alg_animate();
+
+
+
+        /*Animation*/
+
+        //$('#holder').hide();
         $('#EmpAllocationTableHide').show();
+
         $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
 
 

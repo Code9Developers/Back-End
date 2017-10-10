@@ -3,6 +3,7 @@
  */
 $(document).ready(function() {
     $.get("all_projects_to_review", {}, function (data, status) {
+
         $('#projectsPageTable').empty();
         $('#projectsPageTable').append(
             "<table class='table table-striped projects'>" +
@@ -34,18 +35,19 @@ $(document).ready(function() {
                 "<small>Date created: " + value._id.project_start_date.substr(0,10) + "</small>" +
                 "</td>" +
                 "<td>"+
-                "<ul class='list-inline'>"+
+                "<ul class='list-inline' id="+value._id.id+">"+
                 "</ul>"+
                 "</td>" +
                 "<td>"+
                 "<a href="+review_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> Review </a>"+
                 "</td>"+
                 "</tr>");
-            var len=(value._id.employees_assigned).length;
+           // alert(value._id.employees_assigned.length)
+             var len=value._id.employees_assigned.length;
             if(len>0){
                 for(var y=0;y<len;y++)
                 {
-                    $("#"+value._id).append(
+                    $("#"+value._id.id).append(
                         "<li>"+
                         "<img src='images/user.png' class='avatar' alt='Avatar'>"+
                         "</li>"

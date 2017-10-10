@@ -85,8 +85,8 @@ router.get('/find_project_users', function (req, res, next) {
  */
 router.get('/change_project_date', function (req, res, next) {
     let  p_id = req.query.id;
-    let director_id=req.query.director;
-    let rand_id = Math.floor((Math.random() * 10) + 1).toString();
+    // let director_id=req.query.director;
+    // let rand_id = Math.floor((Math.random() * 10) + 1).toString();
     let  oldDate = "";
     let p_name="";
     dbs.findProjects("_id", p_id, function (current_project) {
@@ -96,19 +96,17 @@ router.get('/change_project_date', function (req, res, next) {
         let  tempDate = req.param("new_date");
         let  tempDateArray = tempDate.split("/");
         let  newDate = new Date((tempDateArray[2] + "-" + tempDateArray[1] + "-" + tempDateArray[0]).toString());
-        let  today = new Date();
-
-        dbs.insertNotification({
-            _id: "noti_"+rand_id+p_id+director_id,
-            user_id: director_id,
-            message: "You have been requested to approve date change for project "+p_name+" from "+oldDate.toDateString()+" to "+newDate.toDateString(),
-            date_created: today,
-            isRead: false
-        });
+        dbs.editProjects("_id", p_id, "project_end_date", newDate);
+     //   let  today = new Date();
+    //
+    //     dbs.insertNotification({
+    //         _id: "noti_"+rand_id+p_id+director_id,
+    //         user_id: director_id,
+    //         message: "You have been requested to approve date change for project "+p_name+" from "+oldDate.toDateString()+" to "+newDate.toDateString(),
+    //         date_created: today,
+    //         isRead: false
+    //     });
     });
-
-
-    //dbs.editProjects("_id", id, "project_end_date", newDate);
     res.send("Done");
 });
 

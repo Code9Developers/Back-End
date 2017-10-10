@@ -45,7 +45,7 @@ router.get('/create_test_employees', function (req, res, next) {
 });
 
 router.get('/create_all_test_employees', function (req, res, next) {
-    test_data.create_All_test_employees(10, 90);
+    test_data.create_All_test_employees(4, 40);
     res.render('login');
 });
 
@@ -58,6 +58,13 @@ router.get("/view_all_test_employees", function (req, res, next) {
 
     var all_users = dbs.findUsers("role", "Employee", function (all_users) {
         res.send(all_users);
+    });
+});
+
+router.get("/view_all_projects", function (req, res, next) {
+
+    var all_projects = dbs.findAllProjects(function (all_projects) {
+        res.send(all_projects);
     });
 });
 
@@ -152,7 +159,7 @@ router.get('/refresh_project_status', function (req, res, next) {
 });
 
 router.get("/create_past_projects", function (req, res, next) {
-    test_data.create_past_Projects(5);
+    test_data.create_past_Projects(10);
     res.render('login');
 });
 

@@ -320,10 +320,11 @@ exports.create_past_Projects = function (num_years) {
             var days_end_array = [15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28];
 
 
-            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+            for (var loop = 0; loop < num_years; loop++) {
                 start_date.setYear(2017 - num_years + loop);
                 end_date.setYear(2017 - num_years + loop);
-                for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.25); loop2++) {
+                for (var loop2 = 0; loop2 < num_managers; loop2++)
+                {
                     for (var loop3 = 0; loop3 < 24; loop3++)
                     {
                         start_date.setMonth(months_array[loop3]);
@@ -348,34 +349,22 @@ exports.create_past_Projects = function (num_years) {
                             milestones: [],
                             reviewed: null
                         };
-                        var emp_insert = {
-                            emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
-                        };
-                        emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
-                        emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
-                        emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
-                        emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
-                        emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
-                        emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
-                        emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
-                        emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
-                        emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
-                        emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+
+                        var emp1 = [{"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name}];
+                        var emp2 = [{"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name}];
+                        var emp3 = [{"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name}];
+                        var emp4 = [{"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name}];
+                        var emp5 = [{"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name}];
+                        dbs.insertAndAssignPastProject(json_project, emp1, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp2, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp3, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp4, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp5, Math.floor(Math.random()*(10-4+1))+4);
                         project_count += 1;
                     }
                 }
             }
-            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+            /*for (var loop = 0; loop < Math.ceil(num_years * 0.2); loop++) {
                 start_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
                 end_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
                 for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.5); loop2++) {
@@ -430,10 +419,10 @@ exports.create_past_Projects = function (num_years) {
                     }
                 }
             }
-            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+            for (var loop = 0; loop < Math.ceil(num_years * 0.2); loop++) {
                 start_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
                 end_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
-                for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.75); loop2++) {
+                //for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.75); loop2++) {
                     for (var loop3 = 0; loop3 < 24; loop3++) {
                         start_date.setMonth(months_array[loop3]);
                         end_date.setMonth(months_array[loop3]);
@@ -483,12 +472,12 @@ exports.create_past_Projects = function (num_years) {
                         dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
                         project_count += 1;
                     }
-                }
+                //}
             }
-            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+            for (var loop = 0; loop < Math.ceil(num_years * 0.2); loop++) {
                 start_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
                 end_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
-                for (var loop2 = 0; loop2 < Math.floor(num_managers); loop2++) {
+                //for (var loop2 = 0; loop2 < Math.floor(num_managers); loop2++) {
                     for (var loop3 = 0; loop3 < 24; loop3++) {
                         start_date.setMonth(months_array[loop3]);
                         end_date.setMonth(months_array[loop3]);
@@ -538,12 +527,73 @@ exports.create_past_Projects = function (num_years) {
                         dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
                         project_count += 1;
                     }
-                }
+                //}
             }
+            for (var loop = 0; loop < Math.ceil(num_years * 0.2); loop++) {
+                start_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
+                end_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
+                //for (var loop2 = 0; loop2 < Math.floor(num_managers); loop2++) {
+                for (var loop3 = 0; loop3 < 24; loop3++) {
+                    start_date.setMonth(months_array[loop3]);
+                    end_date.setMonth(months_array[loop3]);
+                    start_date.setDate(days_start_array[loop3]);
+                    end_date.setDate(days_end_array[loop3]);
+                    var json_project = {
+                        _id: project_count,
+                        name: "project " + project_count,
+                        description: null,
+                        project_start_date: start_date,
+                        project_end_date: end_date,
+                        owner_name: null, // i will assign this later
+                        owner_contact: null, // i will assign this later
+                        owner_email: null, // i will assign this later
+                        manager_id: managers[(project_count%num_managers)]._id,
+                        employees_assigned: [null],
+                        project_budget: null,
+                        tasks: [],
+                        status: "completed",
+                        project_rating: null,
+                        milestones: [],
+                        reviewed: null
+                    };
+                    var emp_insert = {
+                        emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
+                    };
+                    emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
+                    emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
+                    emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
+                    emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
+                    emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
+                    emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
+                    emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
+                    emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
+                    emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
+                    emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
+
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
+                    dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+                    project_count += 1;
+                }
+                //}
+            }*/
             console.log("created : " + project_count + " projects");
         });
     });
 };
+
+exports.create_past_Projects2 = function (num_years)
+{
+
+}
+
 
 //25% of managers have been working for 25% of the number of years
 //25% of managers have been working for 50% of the number of years

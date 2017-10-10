@@ -16,8 +16,10 @@ var Algorithm = require('.././database/Algorithm.js');
 /* TODO : add how long an employee has not been working to employee_list */
 /* TODO : check if skills list is empty
  * TODO : check if no employees found for skill and return them in return_list[3] */
-exports.get_unallocated_users = function (skills, start_date, end_date, callback) {
+exports.get_unallocated_users = function (positions, position_counts, skills, start_date, end_date, callback) {
     console.log("unallocated users requested");
+    console.log("positions : "+positions);
+    console.log("number of each position : "+position_counts);
     console.log("skills : " + skills);
     console.log("start date : " + start_date);
     console.log("end date : " + end_date);

@@ -65,15 +65,15 @@ function init_EmployeeAllocationDT() {
         this.inline( this );
     });
 
-    let num_employees=($('#range_31').val()).split(";");
-    let num_emp= parseInt(num_employees[1]);
+    // let num_employees=($('#range_31').val()).split(";");
+    // let num_emp= parseInt(num_employees[1]);
     let skills=$('#skills').val();
     let start_date= $('#start_date').val();//either to calculation to get number in days or put end date
     let end_date=$('#end_date').val();
 
     $EmployeeAllocationDT.dataTable({
         order: [[ 1, 'asc' ]],
-        ajax: "get_json_data?num_empl="+num_emp+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
+        ajax: "get_json_data?start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
         columns: [
             {
                 data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",
@@ -153,14 +153,14 @@ function init_EmployeeReplacementDT() {
         this.inline( this );
     });
 
-    let num_employees=($('#range_31').val()).split(";");
-    let num_emp= parseInt(num_employees[1]);
+    // let num_employees=($('#range_31').val()).split(";");
+    // let num_emp= parseInt(num_employees[1]);
     let skills=$('#skills').val();
     let start_date= $('#start_date').val();//either to calculation to get number in days or put end date
     let    end_date=$('#end_date').val();
     $EmployeeReplacementDT.dataTable({
         order: [[ 1, 'asc' ]],
-        ajax: "get_replacement?num_empl="+num_emp+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
+        ajax: "get_replacement?start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
         columns: [
             {
                 data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",
@@ -309,9 +309,8 @@ $(document).ready(function() {
                 e.preventDefault();
             });
         } else {
-            var num_employees = ($('#range_31').val()).split(";");
+            //var num_employees = ($('#range_31').val()).split(";");
             $.get("store_emp", {
-                    num_empl: num_employees[1],
                     emplArr: JSON.stringify(emp_data)
                 }, function (data, status) {
                     $.post("project_creation",{
@@ -322,7 +321,6 @@ $(document).ready(function() {
                         projectowner:$("#projectowner").val(),
                         projectownercontact:$("#ownercontact").val(),
                         projectowneremail:$("#projectowneremail").val(),
-                        budget:$("#budget").val()
                         },function (data, status) {
                         $( location ).attr("href", data);
                     });

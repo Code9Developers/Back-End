@@ -4,8 +4,10 @@
 
 var method = Particle.prototype;
 
-function Particle()
+function Particle(positions, positions_count)
 {
+    this.positions = positions;
+    this.positions_count = positions_count;
     this.employee_list = [];
     this.pBest = [];
 }
@@ -36,6 +38,24 @@ method.getValue = function()
     for(var loop = 0; loop < this.employee_list.length; loop++)
     {
         value+= this.employee_list[loop].value;
+
+        //Check for the positions and the number of positions
+        value += positions_evaluation();
+
+        //check if there are repeats
+        value += repeats_evaluation();
+
+        /*Check the standard deviation for the particle's sum of employment length for each employee
+         higher standard deviation, better score
+         */
+
+        //cost of project (as low as possible)
+
+        //weights for employees who have worked together applied to their past projects scores (Not used for demo)
+
+        /*Check if the same employee is used for different positions in the team*/
+
+        //Check if we have the required positions
     }
     return value;
 };
@@ -115,6 +135,49 @@ method.getGaussianRandom = function (mean, standardDeviation) {
     return Math.floor(Math.abs(mean + standardDeviation * u * p));
 };
 
+/*Evaluation functions*/
+method.positions_evaluation = function()
+{
+    var check = true;
+    for(var loop = 0; loop < this.positions; loop++)
+    {
+        var count = 0;
+        //run through the employee list and get a count of how many per each position
+        for(var loop2 = 0; loop2 < this.employee_list; loop2++)
+        {
+            if(this.employee_list[loop2].position == this.positions[loop])
+                count++;
+        }
+        if(count != this.positions_count[loop])
+            check = false;
+    }
+    var return_value = 0;
+    if(check)
+        return_value = employee_list.length*10;
+    return return_value;
+};
+
+method.positions_evaluation = function()
+{
+    //check the employee lists twic
+    var check = true;
+    var return_value = 0;
+
+    for(var loop = 0; loop < this.employee_list; loop++)
+    {
+        var count = 0;
+        for(var loop2 = 0; loop2 < this.employee_list; loop2++)
+        {
+            if(this.employee_list[loop] == this.employee_list[loop2])
+                count +=1;
+        }
+        if(count>1)
+            check = false
+    }
+    if(check)
+        return_value += employee_list.length*30;
+    return return_value;
+};
 
 module.exports = Particle;
 

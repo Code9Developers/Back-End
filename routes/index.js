@@ -81,7 +81,10 @@ router.get("/view_all_assigned_test_employees", function (req, res, next) {
     end_date.setYear(2017);
     end_date.setMonth(0);
     end_date.setDate(28);
-    algorithm.get_unallocated_users(["Cyber Threat Detection And Root Cause"], start_date, end_date, function (all_users) {
+    positions = ["Assistant Manager", "Junior Analyst 1", "Junior Analyst 2"];
+    positions_count = [1, 3, 1];
+    skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus and Qualys)", "Windows / Linux Security", "Regulatory Compliance"];
+    algorithm.get_unallocated_users(positions, positions_count, skills, start_date, end_date, function (all_users) {
         res.send(JSON.stringify(all_users, 0, 2));
     });
 });

@@ -5,19 +5,15 @@ var Particle = require('.././database/Particle.js');
 var method = Algorithm.prototype;
 
 /*Store all lists of employees*/
-function Algorithm(employee_lists, swarm_size)
+function Algorithm(employee_lists, swarm_size, positions, position_counts)
     {
+        this.positions = positions;
+        this.position_counts = position_counts;
         this.swarm_size = swarm_size;
         this.employee_lists = employee_lists;
         this.particles = [swarm_size];
         this.gbest_list = [];
         this.gbest_value = -1;
-
-        /*for(var loop = 0; loop < Object.keys(this.employee_lists).length; loop++)
-         {
-             console.log("displaying list for skill : "+loop);
-             console.log(employee_lists[loop]);
-         }*/
     }
 
     /*Create and initialize all particles*/
@@ -26,12 +22,10 @@ function Algorithm(employee_lists, swarm_size)
         console.log("swarm size : "+this.swarm_size);
         for(var loop = 0; loop < this.swarm_size; loop++)
         {
-            var particle = new Particle();
-            //store a list of employee id's
+            var particle = new Particle(this.positions, this.position_counts);
             var temp_emps = [Object.keys(this.employee_lists).length];
             for(var loop2 = 0; loop2 < Object.keys(this.employee_lists).length; loop2++)
             {
-                //need to make sure a particle does not have a repeated employee
                 var rand_pos = Math.floor(Math.random()*((Object.keys(this.employee_lists[loop2]).length-1) - 0 + 1) + 0);
                 while(this.sameID(temp_emps, this.employee_lists[loop2][rand_pos].id))
                     rand_pos = Math.floor(Math.random()*((Object.keys(this.employee_lists[loop2]).length-1) - 0 + 1) + 0);
@@ -51,30 +45,6 @@ function Algorithm(employee_lists, swarm_size)
             console.log("Displaying particle : "+(loop+1)+"'s employees");
             console.log(this.particles[loop].getEmployees());
         }
-    };
-
-    /*This function defines our team evaluation*/
-    //TODO Add team evaluation criteria from notes
-    method.evaluateParticle = function(particle)
-    {
-        team_value = 0;
-        for(var loop = 0; loop < this.particle.length; loop++)
-        {
-            team_value += particle.getEmployees[loop].value;
-
-            /*Check the standard deviation for the particle's sum of employment length for each employee
-                higher standard deviation, better score
-             */
-
-            //cost of project (as low as possible)
-
-            //weights for employees who have worked together applied to their past projects scores (Not used for demo)
-
-            /*Check if the same employee is used for different positions in the team*/
-
-            //Check if we have the required positions
-        }
-        return value;
     };
 
     method.runAlgorithm = function()

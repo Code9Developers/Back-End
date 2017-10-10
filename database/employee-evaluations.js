@@ -131,7 +131,7 @@ exports.get_unallocated_users = function (positions, position_counts, skills, st
              +employee_lists[loop][(employee_lists[loop].length-1)].position+" with value : "+employee_lists[loop][(employee_lists[loop].length-1)].value);
              }*/
 
-            var pso = new Algorithm(employee_lists, 20);
+            var pso = new Algorithm(employee_lists, positions, position_counts, 20);
             var allocated_list = pso.runAlgorithm();
 
             /*create a return list */

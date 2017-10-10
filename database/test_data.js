@@ -589,12 +589,6 @@ exports.create_past_Projects = function (num_years) {
     });
 };
 
-exports.create_past_Projects2 = function (num_years)
-{
-
-}
-
-
 //25% of managers have been working for 25% of the number of years
 //25% of managers have been working for 50% of the number of years
 //25% of managers have been working for 75% of the number of years

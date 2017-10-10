@@ -18,10 +18,8 @@ $(document).ready(function() {
         $("#projViewTable").empty();
         $.each(data, function (key, value) {
             let all_tasks=value.tasks;
-            let progress;
-            $.get("get_finished_tasks", {ids:all_tasks}, function (data, status) {
-                let completed_tasks=JSON.parse(data);
-                progress=all_tasks.length/completed_tasks.length*100;
+            let progress=0;
+            if(all_tasks.length==0){
                 edit_id="project_edit?id="+value._id;
                 view_id="project_detail?id="+value._id;
                 milestone_pid="project_milestone?id="+value._id;
@@ -75,7 +73,67 @@ $(document).ready(function() {
                     });
 
                 });
-            });
+            }
+            else{
+                $.get("get_finished_tasks", {ids:all_tasks}, function (data, status) {
+                    let completed_tasks=data;
+                    progress=(completed_tasks.length/all_tasks.length)*100;
+                    edit_id="project_edit?id="+value._id;
+                    view_id="project_detail?id="+value._id;
+                    milestone_pid="project_milestone?id="+value._id;
+                    remove_pid="project_remove?id="+value._id;
+                    value.status[0]=(value.status[0]).toUpperCase();
+                    let index=parseInt(key)+1;
+                    let  tempDateArray=(value.project_start_date.substr(0,10)).split("-");
+                    let  newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
+                    $("#projViewTable").append("<tr>" +
+                        "<td>" +
+                        index+
+                        "</td>" +
+                        "<td>" +
+                        "<a>" + value.name + "</a>" +
+                        "<br/>" +
+                        "<small>Date created: " + newDate + "</small>" +
+                        "</td>" +
+                        "<td>"+
+                        "<ul class='list-inline' id="+value._id+">"+
+                        "</ul>"+
+                        "</td>" +
+                        "<td class='project_progress'>" +
+                        "<div class='progress progress-striped proj_progress'>" +
+                        "<div class='progress-bar ' role='progressbar' data-transitiongoal="+progress+"></div>" +
+                        "</div>" +
+                        "</td>"+
+                        "<td><button type='button' class='btn btn-kpmg btn-xs'>"+value.status+"</button></td>"+
+                        "<td>"+
+                        "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
+                        "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+
+                        "<a href="+edit_id+" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
+                        "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Remove </a>"+
+                        "</td>"+
+                        "</tr>");
+                    var len=(value.employees_assigned).length;
+                    if(len>0){
+                        for(var y=0;y<len;y++)
+                        {
+                            $("#"+value._id).append(
+                                "<li>"+
+                                "<img src='images/user.png' class='avatar' alt='Avatar'>"+
+                                "</li>"
+                            );
+                        }
+                    }
+                    $('.proj_progress .progress-bar').progressbar({display_text: 'fill'});
+                    $(".remove").on("click",function () {
+                        $(this).parent().parent().hide();
+                        $.get("remove_project",{
+                            project_id:$(this).attr("id")
+                        });
+
+                    });
+                });
+            }
+
         });
 
     });

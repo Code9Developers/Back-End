@@ -83,7 +83,7 @@ function init_EmployeeAllocationDTEdit() {
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
-            { data: "past_projects" }
+            { data: "email" }
         ],
         select: {
             style:    'os',
@@ -164,7 +164,7 @@ function init_EmployeeReplacementDTEdit() {
             { data: "surname" },
             { data: "position" },
             { data: "employment_length" },
-            { data: "past_projects" }
+            { data: "email" }
         ],
         select: {
             style:    'os',

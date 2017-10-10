@@ -31,7 +31,7 @@ $.get("get_deleted_employees", {id: $.urlParam('id')},function (data, status) {
         "<th>Surname</th>" +
         "<th>Position</th>" +
         "<th>Employment Length</th>" +
-        "<th>Projects Completed</th>" +
+        "<th>Skill</th>" +
         "</tr>" +
         "</thead>" +
         "<tbody id='emptBody'></tbody></table>" +
@@ -42,7 +42,7 @@ $.get("get_deleted_employees", {id: $.urlParam('id')},function (data, status) {
             "<td>"+value.surname+"</td>"+
             "<td>"+value.position+"</td>"+
             "<td>"+value.employment_length+"</td>"+
-            "<td>"+value.past_projects+"</td>"+
+            "<td>"+value.skill+"</td>"+
             "</tr>");
     });
 });
@@ -67,7 +67,7 @@ $.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status
         "<th>Surname</th>" +
         "<th>Position</th>" +
         "<th>Employment Length</th>" +
-        "<th>Projects Completed</th>" +
+        "<th>Skill</th>" +
         "</tr>" +
         "</thead>" +
         "<tbody id='emptBody1'></tbody></table>" +
@@ -78,7 +78,7 @@ $.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status
             "<td>"+value.surname+"</td>"+
             "<td>"+value.position+"</td>"+
             "<td>"+value.employment_length+"</td>"+
-            "<td>"+value.past_projects+"</td>"+
+            "<td>"+value.skill+"</td>"+
             "</tr>");
     });
 });

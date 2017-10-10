@@ -29,11 +29,14 @@ let employee_info_array;
 let rep_data;
 let budget;
 router.get('/get_json_data', function (req, res, next) {
-
+    let position_array=req.query.position_arr;
+    let amount_array=req.query.amount_arr;
+    console.log(position_array);
+    console.log(amount_array);
     let all_skills=(req.query.skills).split(",");
     let arr_skills=[];
     for(let x in all_skills){
-        arr_skills[x]=all_skills[x]
+        arr_skills[x]=all_skills[x];
     }
 
     algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {

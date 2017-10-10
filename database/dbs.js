@@ -346,7 +346,7 @@ _employeesAndSkills = {[
 exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating) {
 
     module.exports.insertProject(_json);
-	
+
 	let updated = 0 ;
 	let size = _employeesAndSkills.length ;
 	

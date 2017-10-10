@@ -45,7 +45,7 @@ router.get('/create_test_employees', function (req, res, next) {
 });
 
 router.get('/create_all_test_employees', function (req, res, next) {
-    test_data.create_All_test_employees(30, 300);
+    test_data.create_All_test_employees(10, 90);
     res.render('login');
 });
 
@@ -152,19 +152,14 @@ router.get('/refresh_project_status', function (req, res, next) {
 });
 
 router.get("/create_past_projects", function (req, res, next) {
-    //Because of the Math.floor() we get a less managers than planned
-    //And and less years for projects than we give
-    // test_data.create_past_Projects(1); changed for now
-
-    test_data.create_test_projects();
+    test_data.create_past_Projects(5);
     res.render('login');
 });
 
-
-// TEST ROUTES
-
-//
-
+router.get("/remove_past_projects", function (req, res, next) {
+    test_data.remove_projects();
+    res.render('login');
+});
 
 router.get("/training", function (req, res, next) {
     res.render('training');

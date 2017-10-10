@@ -219,7 +219,6 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
             var lines = data.split(/\r?\n/);
             fs.readFile(filename_second_names, 'utf8', function (err, data) {
                 if (err) throw err;
-                console.log('OK: ' + filename_second_names);
                 var name_index = 0;
                 var lines2 = data.split(/\r?\n/);
                 console.log("creating managers");
@@ -251,9 +250,6 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                 console.log("creating employees");
                 for (var loop = 0; loop < num_employees; loop++) {
                     var employee_index = Math.floor(Math.random() * (3 - 0 + 1) + 0);
-                    //var skills_index_1 = Math.floor(Math.random() * (24 - 0 + 1) + 0);
-                    //var skills_index_2 = Math.floor(Math.random() * (50 - 25 + 1) + 25);
-                    //var skills_index_3 = Math.floor(Math.random() * (75 -51 + 1) + 51);
                     var new_json_obj = {
                         _id: "emp_" + employee_ids,
                         name: lines[name_index].trim(),
@@ -291,7 +287,6 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
                     emp_count++;
                     name_index++;
                     skill_count++;
-                    console.log(skill_count);
                 }
                 for (var loop = 0; loop < emp_count; loop++) {
                     dbs.insertUser(emp_list[loop]);
@@ -309,162 +304,244 @@ exports.create_All_test_employees = function(num_manager, num_employees) {
  * Note: it uses the amount of managers specified in create_All_test_employees*/
 exports.create_past_Projects = function (num_years) {
     console.log("Creating past projects");
-    var fileName = 'past_projects.txt';
-    var creating = {
-        'flags': 'w',
-        'encoding': null,
-        'mode': 0666
-    };
-    var appending = {
-        'flags': 'a'
-        , 'encoding': null
-        , 'mode': 0666
-    };
-    var file = fs.createWriteStream(fileName, creating);
-    file.write("");
-    file.close();
-    var file = fs.createWriteStream(fileName, appending);
     dbs.findUsers("role", "Manager", function (managers) {
         var num_managers = Object.keys(managers).length;
         console.log("number of managers found : " + num_managers);
-        console.log("num_managers is now :" + num_managers);
-        var start_date = new Date();
-        var end_date = new Date();
-        var project_count = 0;
-        var months_array = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
-        var days_start_array = [1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16];
-        var days_end_array = [15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28];
+        dbs.findUsers("role", "Employee", function(employees) {
+            var num_employees = Object.keys(employees).length;
+            console.log("The number of stored employees is : "+num_employees);
+            console.log("number of managers found : " + num_managers);
 
-        for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
-            start_date.setYear(2017 - num_years + loop);
-            end_date.setYear(2017 - num_years + loop);
-            for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.25); loop2++) {
-                for (var loop3 = 0; loop3 < 24; loop3++) {
-                    start_date.setMonth(months_array[loop3]);
-                    end_date.setMonth(months_array[loop3]);
-                    start_date.setDate(days_start_array[loop3]);
-                    end_date.setDate(days_end_array[loop3]);
-                    file.write("Start Date : " + start_date + " :: End Date : " + end_date + "\n");
-                    var json_project = {
-                        _id: project_count,
-                        name: "project " + project_count,
-                        description: null,
-                        project_start_date: start_date,
-                        project_end_date: end_date,
-                        owner_name: null, // i will assign this later
-                        owner_contact: null, // i will assign this later
-                        owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
-                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random() * (500000 - 30000) + 30000) + 'e2') + 'e-2'),
-                        status: "completed"
-                        //we need to generate a random number here between two values
-                    };
-                    dbs.insertProject(json_project);
-                    project_count += 1;
+            var start_date = new Date();
+            var end_date = new Date();
+            var project_count = 0;
+            var months_array = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11];
+            var days_start_array = [1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16, 1, 16];
+            var days_end_array = [15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28, 15, 28];
+
+
+            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+                start_date.setYear(2017 - num_years + loop);
+                end_date.setYear(2017 - num_years + loop);
+                for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.25); loop2++) {
+                    for (var loop3 = 0; loop3 < 24; loop3++)
+                    {
+                        start_date.setMonth(months_array[loop3]);
+                        end_date.setMonth(months_array[loop3]);
+                        start_date.setDate(days_start_array[loop3]);
+                        end_date.setDate(days_end_array[loop3]);
+                        var json_project = {
+                            _id: project_count,
+                            name: "project " + project_count,
+                            description: null,
+                            project_start_date: start_date,
+                            project_end_date: end_date,
+                            owner_name: null, // i will assign this later
+                            owner_contact: null, // i will assign this later
+                            owner_email: null, // i will assign this later
+                            manager_id: managers[(project_count%num_managers)]._id,
+                            employees_assigned: [null],
+                            project_budget: null,
+                            tasks: [],
+                            status: "completed",
+                            project_rating: null,
+                            milestones: [],
+                            reviewed: null
+                        };
+                        var emp_insert = {
+                            emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
+                        };
+                        emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
+                        emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
+                        emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
+                        emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
+                        emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
+                        emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
+                        emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
+                        emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
+                        emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
+                        emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+                        project_count += 1;
+                    }
                 }
             }
-        }
-        for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
-            start_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
-            end_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
-            for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.5); loop2++) {
-                for (var loop3 = 0; loop3 < 24; loop3++) {
-                    start_date.setMonth(months_array[loop3]);
-                    end_date.setMonth(months_array[loop3]);
-                    start_date.setDate(days_start_array[loop3]);
-                    end_date.setDate(days_end_array[loop3]);
-                    file.write("Start Date : " + start_date + " :: End Date : " + end_date + "\n");
-                    var json_project = {
-                        _id: project_count,
-                        name: "project " + project_count,
-                        description: null,
-                        project_start_date: start_date,
-                        project_end_date: end_date,
-                        owner_name: null, // i will assign this later
-                        owner_contact: null, // i will assign this later
-                        owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
-                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random() * (500000 - 30000) + 30000) + 'e2') + 'e-2'),
-                        status: "completed"//we need to generate a random number here between two values
-                    };
-                    dbs.insertProject(json_project);
-                    project_count += 1;
+            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+                start_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
+                end_date.setYear(2017 - Math.floor(num_years * 0.75) + loop);
+                for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.5); loop2++) {
+                    for (var loop3 = 0; loop3 < 24; loop3++) {
+                        start_date.setMonth(months_array[loop3]);
+                        end_date.setMonth(months_array[loop3]);
+                        start_date.setDate(days_start_array[loop3]);
+                        end_date.setDate(days_end_array[loop3]);
+                        var json_project = {
+                            _id: project_count,
+                            name: "project " + project_count,
+                            description: null,
+                            project_start_date: start_date,
+                            project_end_date: end_date,
+                            owner_name: null, // i will assign this later
+                            owner_contact: null, // i will assign this later
+                            owner_email: null, // i will assign this later
+                            manager_id: managers[(project_count%num_managers)]._id,
+                            employees_assigned: [null],
+                            project_budget: null,
+                            tasks: [],
+                            status: "completed",
+                            project_rating: null,
+                            milestones: [],
+                            reviewed: null
+                        };
+                        var emp_insert = {
+                            emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
+                        };
+                        emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
+                        emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
+                        emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
+                        emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
+                        emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
+                        emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
+                        emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
+                        emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
+                        emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
+                        emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
+
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+                        project_count += 1;
+                    }
                 }
             }
-        }
-        for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
-            start_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
-            end_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
-            for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.75); loop2++) {
-                for (var loop3 = 0; loop3 < 24; loop3++) {
-                    start_date.setMonth(months_array[loop3]);
-                    end_date.setMonth(months_array[loop3]);
-                    start_date.setDate(days_start_array[loop3]);
-                    end_date.setDate(days_end_array[loop3]);
-                    file.write("Start Date : " + start_date + " :: End Date : " + end_date + "\n");
-                    var json_project = {
-                        _id: project_count,
-                        name: "project " + project_count,
-                        description: null,
-                        project_start_date: start_date,
-                        project_end_date: end_date,
-                        owner_name: null, // i will assign this later
-                        owner_contact: null, // i will assign this later
-                        owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
-                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random() * (500000 - 30000) + 30000) + 'e2') + 'e-2'),
-                        status: "completed"//we need to generate a random number here between two values
-                    };
-                    dbs.insertProject(json_project);
-                    project_count += 1;
+            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+                start_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
+                end_date.setYear(2017 - Math.floor(num_years * 0.5) + loop);
+                for (var loop2 = 0; loop2 < Math.floor(num_managers * 0.75); loop2++) {
+                    for (var loop3 = 0; loop3 < 24; loop3++) {
+                        start_date.setMonth(months_array[loop3]);
+                        end_date.setMonth(months_array[loop3]);
+                        start_date.setDate(days_start_array[loop3]);
+                        end_date.setDate(days_end_array[loop3]);
+                        var json_project = {
+                            _id: project_count,
+                            name: "project " + project_count,
+                            description: null,
+                            project_start_date: start_date,
+                            project_end_date: end_date,
+                            owner_name: null, // i will assign this later
+                            owner_contact: null, // i will assign this later
+                            owner_email: null, // i will assign this later
+                            manager_id: managers[(project_count%num_managers)]._id,
+                            employees_assigned: [null],
+                            project_budget: null,
+                            tasks: [],
+                            status: "completed",
+                            project_rating: null,
+                            milestones: [],
+                            reviewed: null
+                        };
+                        var emp_insert = {
+                            emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
+                        };
+                        emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
+                        emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
+                        emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
+                        emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
+                        emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
+                        emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
+                        emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
+                        emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
+                        emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
+                        emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
+
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+                        project_count += 1;
+                    }
                 }
             }
-        }
-        for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
-            start_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
-            end_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
-            for (var loop2 = 0; loop2 < Math.floor(num_managers); loop2++) {
-                for (var loop3 = 0; loop3 < 24; loop3++) {
-                    start_date.setMonth(months_array[loop3]);
-                    end_date.setMonth(months_array[loop3]);
-                    start_date.setDate(days_start_array[loop3]);
-                    end_date.setDate(days_end_array[loop3]);
-                    file.write("Start Date : " + start_date + " :: End Date : " + end_date + "\n");
-                    var json_project = {
-                        _id: project_count,
-                        name: "project " + project_count,
-                        description: null,
-                        project_start_date: start_date,
-                        project_end_date: end_date,
-                        owner_name: null, // i will assign this later
-                        owner_contact: null, // i will assign this later
-                        owner_email: null, // i will assign this later
-                        manager_name: null, // i will assign this later
-                        manager_contact: null, // i will assign this later
-                        manager_email: null, // i will assign this later
-                        employees_assigned: [{employee_id: String, role: String}],
-                        employee_rates: [{employee_id: null, rate: null}], //we will assign this later
-                        project_budget: (Math.round((Math.random() * (500000 - 30000) + 30000) + 'e2') + 'e-2'),
-                        status: "completed"//we need to generate a random number here between two values
-                    };
-                    dbs.insertProject(json_project);
-                    project_count += 1;
+            for (var loop = 0; loop < Math.ceil(num_years * 0.25); loop++) {
+                start_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
+                end_date.setYear(2017 - Math.floor(num_years * 0.25) + loop);
+                for (var loop2 = 0; loop2 < Math.floor(num_managers); loop2++) {
+                    for (var loop3 = 0; loop3 < 24; loop3++) {
+                        start_date.setMonth(months_array[loop3]);
+                        end_date.setMonth(months_array[loop3]);
+                        start_date.setDate(days_start_array[loop3]);
+                        end_date.setDate(days_end_array[loop3]);
+                        var json_project = {
+                            _id: project_count,
+                            name: "project " + project_count,
+                            description: null,
+                            project_start_date: start_date,
+                            project_end_date: end_date,
+                            owner_name: null, // i will assign this later
+                            owner_contact: null, // i will assign this later
+                            owner_email: null, // i will assign this later
+                            manager_id: managers[(project_count%num_managers)]._id,
+                            employees_assigned: [null],
+                            project_budget: null,
+                            tasks: [],
+                            status: "completed",
+                            project_rating: null,
+                            milestones: [],
+                            reviewed: null
+                        };
+                        var emp_insert = {
+                            emp1: [], emp2: [], emp3: [], emp4: [], emp5: [], emp6: [], emp7: [], emp8: [], emp9: [], emp10: []
+                        };
+                        emp_insert.emp1.push({"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name});
+                        emp_insert.emp2.push({"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name});
+                        emp_insert.emp3.push({"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name});
+                        emp_insert.emp4.push({"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name});
+                        emp_insert.emp5.push({"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name});
+                        emp_insert.emp6.push({"employee_id": employees[(project_count+5)%num_employees]._id, "skill_name": employees[(project_count+5)%num_employees].skill[0].name});
+                        emp_insert.emp7.push({"employee_id": employees[(project_count+6)%num_employees]._id, "skill_name": employees[(project_count+6)%num_employees].skill[0].name});
+                        emp_insert.emp8.push({"employee_id": employees[(project_count+7)%num_employees]._id, "skill_name": employees[(project_count+7)%num_employees].skill[0].name});
+                        emp_insert.emp9.push({"employee_id": employees[(project_count+8)%num_employees]._id, "skill_name": employees[(project_count+8)%num_employees].skill[0].name});
+                        emp_insert.emp10.push({"employee_id": employees[(project_count+9)%num_employees]._id, "skill_name": employees[(project_count+9)%num_employees].skill[0].name});
+
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp1, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp2, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp3, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp4, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp5, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp6, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp7, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp8, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp9, Math.floor(Math.random()*(10-4+1))+4);
+                        dbs.insertAndAssignPastProject(json_project, emp_insert.emp10, Math.floor(Math.random()*(10-4+1))+4);
+                        project_count += 1;
+                    }
                 }
             }
-        }
-        console.log("created : " + project_count + " projects");
+            console.log("created : " + project_count + " projects");
+        });
     });
 };
 
@@ -477,32 +554,6 @@ exports.create_past_Projects = function (num_years) {
 //so for the beggining years (25%) we had the fewest amount of projects per year only enough that 25% of managers could do
 //the next 25% of years (50% years complete) we had 25% more projects
 //this follows for the following two 25% of years
-exports.assign_past_Projects = function () {
-    //FIRST LETS HAVE A COUNT AND MAKE SURE IT DOES NOT GO ABOVE THE AMOUNT OF PROJECTS
-    var projects_list = [];
-    var project_count = length(projects_list);
-    console.log("Assigning managers to the past projects");
-    //we need to get the amount of projects and create a list with them in
-    var num_projects = 0;
-    dbs.findAllProjects("role", "Manager", function (projects) {
-        num_projects = Object.keys(projects).length;
-        console.log(num_projects);
-    });
-    console.log("current number of stored projects : " + num_projects)
-    //we need to get the amount of years
-    //we need to get the first 25% of managers and assign them to each project in the list
-    //we need to then get the next 25% of managers + the last 25% and assign them to projects too
-    //we do this again for 25% + 25% +25% of managers
-    //finally we do it one last time for all managers
-
-    //25% of managers have been working for 25% of the number of years
-    //25% of managers have been working for 50% of the number of years
-    //25% of managers have been working for 75% of the number of years
-    //25% of managers have been working for 100% of the number of years
-    //so distribute the projects as such
-
-    //we assign managers to a project with a function which uses the manager id with the project id
-};
 
 
 exports.create_test_notifications = function () {

@@ -8,14 +8,154 @@
  * Date Revised: 18/08/2017 by Seonin David
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
+function make_graph() {
+    $.get("/progress_analytics",{id: $.urlParam('id')},function (data, status) {
+        let pc = document.getElementById('progressBarGraph').getContext('2d');
+        let myChart = new Chart(pc, {
+            type: 'bar',
+            data: {
+                labels: ["Completed", "Uncompleted"],
+                datasets: [{
+                    label: '# of Tasks',
+                    data: data,
+                    backgroundColor: [
+                        'rgba(75, 192, 192, 0.2)', // GREEN
+                        'rgba(255, 99, 132, 0.2)', // RED
 
+                        // 'rgba(54, 162, 235, 0.2)', // BLUE
+                        // 'rgba(255, 206, 86, 0.2)', // YELLOW
+                        // 'rgba(153, 102, 255, 0.2)', // PURPLE
+                        // 'rgba(255, 159, 64, 0.2)' // Orange
+                    ],
+                    borderColor: [
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255,99,132,1)',
+                        //
+                        // 'rgba(54, 162, 235, 1)',
+                        // 'rgba(255, 206, 86, 1)',
+                        // 'rgba(153, 102, 255, 1)',
+                        // 'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Overall Project Progress Based On Tasks Completed To Tasks Uncompleted'
+                }
+            }
+        });
+    });
+}
+
+$("#sortable").sortable();
+$("#sortable").disableSelection();
+
+countTodos();
+
+// all done btn
+$("#checkAll").click(function(){
+    AllDone();
+});
+
+//create todo
+$('.add-todo').on('keypress',function (e) {
+    e.preventDefault
+    if (e.which == 13) {
+        if($(this).val() != ''){
+            var todo = $(this).val();
+            createTodo(todo);
+            countTodos();
+        }else{
+            // some validation
+        }
+    }
+});
+// mark task as done
+$('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
+    if($(this).prop('checked')){
+        $.get("remove_task", {task_id:$(".cbx").attr("id")});
+       // var count=$("#count_task").attr("id");
+       // alert(count)
+        //$("#count_task").append(parseInt(count)-1+" Tasks left");
+        var doneItem = $(this).parent().parent().find('label').text();
+        $(this).parent().parent().parent().addClass('remove');
+        done(doneItem);
+        countTodos();
+    }
+});
+
+
+
+//delete done task from "already done"
+$('.todolist').on('click','.remove-item',function(){
+    removeItem(this);
+});
+
+// count tasks
+function countTodos(){
+    var count = $("#sortable li").length;
+    $('.count-todos').html(count);
+}
+
+//create task
+function createTodo(text){
+    var markup = '<li class="ui-state-default"><div class="checkbox"><label><input type="checkbox" value="" />'+ text +'</label></div></li>';
+    $('#sortable').append(markup);
+    $('.add-todo').val('');
+}
+
+//mark task as done
+function done(doneItem){
+    var done = doneItem;
+    var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>';
+    $('#done-items').append(markup);
+    $('.remove').remove();
+}
+
+//mark all tasks as done
+function AllDone(){
+    var myArray = [];
+
+    $('#sortable li').each( function() {
+        myArray.push($(this).text());
+    });
+
+    // add to done
+    for (i = 0; i < myArray.length; i++) {
+        $('#done-items').append('<li>' + myArray[i] + '</li>');
+    }
+
+    // myArray
+    $('#sortable li').remove();
+    countTodos();
+}
+
+//remove done task from list
+function removeItem(element){
+    $(element).parent().remove();
+}
+
+// profile activate for edit password
+$('#editbutton').click(function ()
+{
+    $('#tab_content3').addClass('fade active in');
+});
 $(document).ready(function() {
 
     $.urlParam = function (name) {
         let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results[1] || 0;
     };
-
+    make_graph();
     let  i = 0;
 
     $.get("get_tasks", {id: $.urlParam('id')},
@@ -32,8 +172,12 @@ $(document).ready(function() {
                         "</li>");
                     i++;
                 }
+                else{
+                    $("#done-items").append('<li>' + value.description +'</li>')
+                }
             });
             $("#count_task").append(i+" Tasks left");
+            //$("#count_task").attr("id",i);
         });
 
     let  emp_ids = [];
@@ -75,7 +219,7 @@ $(document).ready(function() {
                         value.name+
                         "</option>");
                 }
-             });
+            });
 
             $('.multiselect-ui').multiselect({
                 includeSelectAllOption: true,
@@ -107,6 +251,7 @@ $(document).ready(function() {
                 emp_assigned:emp
             },
             function (data, status) {
+                make_graph();
                 $.get("get_tasks", {id: $.urlParam('id')},
                     function (data, status) {
                         $("#sortable").empty();

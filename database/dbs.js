@@ -132,13 +132,13 @@ exports.editProfileImage = function (user_id, filename) {
 
     let user = schemas.user;
 
-    /*let precount;
+    let precount;
     let count = 0;
     while (count != -1) {
         precount = count;
         count = filename.indexOf("\\", count + 1);
     }
-    filename = filename.substring(precount + 1, filename.length);*/
+    filename = filename.substring(precount + 1, filename.length);
 
     let _data = fs.readFileSync(filename);
 
@@ -343,17 +343,20 @@ _employeesAndSkills = {[
 //if you disagreee with this, remember that we need to keep track of the skill an employee was assigned to a project for, so that upon project review, we can increase the skill rating approppriately.
 
 
-exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating) {
+exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating, callback) {
 
     module.exports.insertProject(_json);
-
+	
 	let updated = 0 ;
 	let size = _employeesAndSkills.length ;
 	
     for (let loop = 0; loop < size ; loop++) {
         module.exports.assignProject(_employeesAndSkills[loop].employee_id, _json._id, _employeesAndSkills[loop].skill_name, function(res) {
 			if (++updated == size) {
-				module.exports.completeProject(_json._id, rating);
+				module.exports.completeProject(_json._id, rating, function(res) {
+					return callback(true) ;
+				});
+				
 			}
 		});
     }
@@ -382,7 +385,7 @@ exports.dismissProject = function (user_id, project_id) {
 
 
 // marks a project as completed, and moves project to past_project array of all employees_assigned and manager
-exports.completeProject = function (project_id, rating) {
+exports.completeProject = function (project_id, rating, callback) {
 
     module.exports.editProjects("_id", project_id, "status", "completed");
 
@@ -400,6 +403,7 @@ exports.completeProject = function (project_id, rating) {
 			user.update({current_projects: project_id}, {$pull: {current_projects: project_id}}, {multi: true}, function (err) {
 			if (!err) {
 				console.log("Projects removed from current projects for employees assigned.");
+				return callback(true) ;
 			}
 			else {
 				console.log("Error removing Projects from current projects for employees assigned.");
@@ -1160,7 +1164,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 				user.findOne({_id: array[x]}).exec().then(function(res) {
 					array[x] = res.name + " " + res.surname ;
 					if (++updated == array.length) {
-						//console.log(array) ;
+						console.log(array) ;
 						return callback(array) ;
 					}
 				});
@@ -1182,7 +1186,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 					user.findOne({_id: array[x][y]}).exec().then(function(res) {
 						array[x][y] = res.name + " " + res.surname ;
 						if (++updated == size) {
-							//console.log(array) ;
+							console.log(array) ;
 							return callback(array) ;
 						}
 					});
@@ -1232,7 +1236,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 					}
 					obj.data.push(subobj) ;
 				}
-				console.log(JSON.stringify(obj.data)) ;
+				
 				return callback(obj.data) ;
 			});
 		});

@@ -349,17 +349,22 @@ exports.create_past_Projects = function (num_years) {
                             milestones: [],
                             reviewed: null
                         };
-
-                        var emp1 = [{"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name}];
-                        var emp2 = [{"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name}];
-                        var emp3 = [{"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name}];
-                        var emp4 = [{"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name}];
-                        var emp5 = [{"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name}];
-                        dbs.insertAndAssignPastProject(json_project, emp1, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp2, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp3, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp4, Math.floor(Math.random()*(10-4+1))+4);
-                        dbs.insertAndAssignPastProject(json_project, emp5, Math.floor(Math.random()*(10-4+1))+4);
+						
+						var obj = {emps: []} ;
+                        var emp1 = {"employee_id": employees[(project_count+0)%num_employees]._id, "skill_name": employees[(project_count+0)%num_employees].skill[0].name};
+                        var emp2 = {"employee_id": employees[(project_count+1)%num_employees]._id, "skill_name": employees[(project_count+1)%num_employees].skill[0].name};
+                        var emp3 = {"employee_id": employees[(project_count+2)%num_employees]._id, "skill_name": employees[(project_count+2)%num_employees].skill[0].name};
+                        var emp4 = {"employee_id": employees[(project_count+3)%num_employees]._id, "skill_name": employees[(project_count+3)%num_employees].skill[0].name};
+                        var emp5 = {"employee_id": employees[(project_count+4)%num_employees]._id, "skill_name": employees[(project_count+4)%num_employees].skill[0].name};
+						
+						obj.emps.push(emp1) ;
+						obj.emps.push(emp2) ;
+						obj.emps.push(emp3) ;
+						obj.emps.push(emp4) ;
+						obj.emps.push(emp5) ;
+						
+						dbs.insertAndAssignPastProject(json_project, obj.emps, Math.floor(Math.random()*(10-4+1))+4, function(res) {});
+	                    
                         project_count += 1;
                     }
                 }

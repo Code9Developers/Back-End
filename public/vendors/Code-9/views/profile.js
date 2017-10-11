@@ -4,6 +4,8 @@
 //user get_emp route
 //checkout routes/employee/employee-profile.js
 
+
+
 $(document).ready(function() {
     let proj_id;
 
@@ -125,16 +127,13 @@ $(document).ready(function() {
 
     $('#updateProfile').on('click', function (e) {
         alert(document.getElementById("pic").files[0].name);
-//            $.get("store_image",
-//                {
-//                    pic:$("#pic").val()
-//                }
-//                ,
-//                function(data, status) {
-//
-//
-//
-//                });
+           $.get("store_image",
+               {
+                   pic:$("#pic").val()
+               }
+               ,
+               function(data, status) {
+               });
 
     });
 

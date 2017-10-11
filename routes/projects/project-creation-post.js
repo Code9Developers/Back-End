@@ -2,8 +2,6 @@ const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const algorithm = require('../../database/employee-evaluations');
-const generator = require('generate-password');
-const async = require("async");
 const email_functions = require('../email_functions');
 
 

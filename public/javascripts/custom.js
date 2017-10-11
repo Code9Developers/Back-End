@@ -2232,6 +2232,15 @@ function SendApproval() {
     });
 }
 
+function IncorrectLogin() {
+    new PNotify({
+        title: 'Invalid',
+        text: 'Incorrect information entered, please try again',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+}
+
 function ApproveApproval() {
     new PNotify({
         title: 'Approved',

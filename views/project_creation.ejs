@@ -35,7 +35,8 @@
     <!-- Ion.RangeSlider -->
     <link href="vendors/normalize-css/normalize.css" type="text/css" rel="stylesheet">
     <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css" rel="stylesheet">
-    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" type="text/css" rel="stylesheet">
+    <!--<link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" type="text/css" rel="stylesheet">-->
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinModern.css" type="text/css" rel="stylesheet">
     <!-- Select2-->
     <link href="vendors/select2/dist/css/select2.css" type="text/css" rel="stylesheet">
 
@@ -219,29 +220,33 @@
                 <!--TODO Fix employee allocation format Make it a table on click-->
                 <!-- TODO ask KPMG about min team size-->
                 <!-- Employees-->
-                <label>Employee Allocation</label><br/>
+                <br/>
+                <label style="font-size: 15pt; text-decoration: underline">Employee Allocation</label><br/>
                 <div class="row">
-                    <div class="col-md-4 col-sm-3 col-xs-4">
-                        <label>Assistant Manager</label>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <label>No. Assistant Manager</label>
                         <input type="text" id="Assistant_Manager" value=""/>
-                        <label>Supervisor</label>
+                        <label>No. Supervisor</label>
                         <input type="text" id="Supervisor" value=""/>
-                        <label>Senior Analyst</label>
+                        <label>No. Senior Analyst</label>
                         <input type="text" id="Senior_Analyst" value=""/>
                     </div>
-                    <div class="col-md-4 col-sm-3 col-xs-4">
-                        <label>Analyst</label>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <label>No. Analyst</label>
                         <input type="text" id="Analyst" value=""/>
-                        <label>Junior Analyst 1</label>
+                        <label>No. Junior Analyst 1</label>
                         <input type="text" id="Junior_Analyst_1" value=""/>
-                        <label>Junior Analyst 2</label>
+                        <label>No. Junior Analyst 2</label>
                         <input type="text" id="Junior_Analyst_2" value=""/>
                     </div>
+                </div>
+                <br/>
+                <div class="row">
                     <div class="col-md-3">
-                        <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
-                            <button id="assignEmployees" type="button" class="btn btn-dark "><span
-                                        class="fa fa-users"></span> Allocate Employees</button>
-                        </span>
+                            <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
+                                <button id="assignEmployees" type="button" class="btn btn-dark "><span
+                                            class="fa fa-users"></span> Allocate Employees</button>
+                            </span>
                     </div>
                 </div>
 

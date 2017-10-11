@@ -133,8 +133,32 @@ $(document).ready(function() {
                }
                ,
                function(data, status) {
+                   $.get("display_image",{},function(data, status) {
+                        alert(data);
+                   });
                });
 
+
+        //    //should check two passwords
+        // let oldPword = $("#oldpassword").val()
+        // let newPword = $("#newpassword").val()
+        //
+        // $.get("check_password",{
+        //         oldP:oldPword
+        //     },
+        //     function (data, status) {
+        //         if(data == true){
+        //             $.get("change_password",{
+        //                     oldP:oldPword,
+        //                     newP:newPword
+        //                 },
+        //                 function (data, status) {
+        //                     alert("Password Changed")
+        //                 });
+        //         }else{
+        //             alert("Check Password")
+        //         }
+        //     });
     });
 
 

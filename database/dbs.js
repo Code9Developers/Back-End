@@ -254,6 +254,7 @@ exports.findEvents = function (attrib, value, callback) {
         }
         else if (JSON.stringify(docs) === "[]") {
             console.log("No Events found.");
+            return callback(docs);
         }
         else {
             console.log("Events found.");
@@ -417,8 +418,6 @@ exports.completeProject = function (project_id, rating, callback) {
     });
 
     //de-reference all tasks from employees assigned
-
-
 };
 
 
@@ -478,6 +477,7 @@ exports.findProjects = function (attrib, value, callback) {
         }
         else if (JSON.stringify(docs) === "[]") {
             console.log("No Projects found.");
+            return callback(docs);
         }
         else {
             console.log("Projects found.");

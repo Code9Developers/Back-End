@@ -28,4 +28,8 @@ router.get("/user_dashboard", function (req, res, next) {
     res.render('index_dashboard');
 });
 
+router.get("/manager_calendar", function (req, res, next) {
+       res.render('manage_calendar');
+});
+
 module.exports = router;

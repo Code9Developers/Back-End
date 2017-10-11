@@ -1,8 +1,8 @@
 /**
  * Created by Seonin David on 2017/07/11.
  */
-var request = require('supertest')
-    , express = require('express');
+var request = require('supertest');
+var express = require('express');
 
 var app = require('../app');
 
@@ -41,4 +41,4 @@ describe('Page not found error', function () {
     it("Will route to error page", function (done) {
         request(app).get('/unknown_page').expect(200, done);
     })
-})
+});

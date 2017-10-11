@@ -1,19 +1,22 @@
 /**
+ * Created by Seonin David on 2017/10/11.
+ */
+/**
  * Page: N/A
- * Functionality: User Calendar
+ * Functionality: Manager Calendar
  * Note:
  * Bug(s): N/A
  *
  * Author(s): Nicaedin Suklal
- * Date Revised: 22/08/2017 by Nicaedin Suklal
- * Date Revised: 02/10/2017 by Joshua Moodley
+ * Date Revised: 11/10/2017 by Nicaedin Suklal
  */
+
 
 window.eve = [];
 function getCalendarEvents() {
     let  item;
 
-    let get1 = $.get("calendar_events",
+    let get1 = $.get("all_projects",
         {},
         function (data, status) {
             window.alert(JSON.stringify(data));
@@ -37,7 +40,7 @@ function getCalendarEvents() {
 
     let get2 = $.get("get_all_event_data",{}
         ,function(data,status){
-            window.alert(status);
+            // window.alert(JSON.stringify(data));
             $.each(data, function (key, value) {
                 //window.alert(value);
 
@@ -61,8 +64,6 @@ function getCalendarEvents() {
     $.when(get1,get2).done(function() {
         init_calendar()
     });
-
-
 
 }
 

@@ -54,27 +54,32 @@ function isAuntenticated(req, res, next) {
 }
 
 router.post('/login', function (req, res, next) {
-    req.session.username = req.body.username;
-    req.session.password = req.body.password;
-    console.log(req.session.username);
-    let  user = dbs.findUsers("_id", req.session.username, function (user) {
-        console.log(user[0]);
-        console.log(user[0].role);
-        if (user[0].role === "Manager") {
+
+    dbs.findUsers("_id", req.body.username, function (user) {
+
+        if(user== "no_user"){
+            res.send(user);
+        }
+        else{
+            req.session.username = req.body.username;
+            req.session.password = req.body.password;
             req.session.name = user[0].name;
             req.session.surname = user[0].surname;
             req.session.role = user[0].role;
-            res.redirect('project_creation');
+            if (user[0].role === "Manager") {
+                res.send('project_creation');
+            }
+            else if (user[0].role === "Admin") {
+                res.send('employees');
+            }
+            else if(user[0].role === "Employee"){
+                res.send('user_dashboard');
+            }
+            else{
+                res.send('director_dashboard');
+            }
         }
-        else if (user[0].role === "Admin") {
-            res.redirect('employees');
-        }
-        else if(user[0].role === "Employee"){
-            res.redirect('user_dashboard');
-        }
-        else{
-            res.redirect('director_dashboard');
-        }
+
     });
 });
 

@@ -9,7 +9,7 @@
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
 function make_graph() {
-    $.get("/progress_analytics",{id: $.urlParam('id')},function (data, status) {
+    $.get("/progress_analytics",function (data, status) {
         let pc = document.getElementById('progressBarGraph').getContext('2d');
         let myChart = new Chart(pc, {
             type: 'bar',
@@ -83,9 +83,29 @@ $('.add-todo').on('keypress',function (e) {
 $('.todolist').on('change','#sortable li input[type="checkbox"]',function(){
     if($(this).prop('checked')){
         $.get("remove_task", {task_id:$(".cbx").attr("id")});
-       // var count=$("#count_task").attr("id");
-       // alert(count)
-        //$("#count_task").append(parseInt(count)-1+" Tasks left");
+        $.get("get_tasks", {id: $.urlParam('id')},
+            function (data, status) {
+                $("#sortable").empty();
+                i=0;
+                $.each(data, function (key, value) {
+                    if(value.status=="active"){
+                        $("#sortable").append("<li class='ui-state-default'>" +
+                            "<div >" +
+                            "<label>" +
+                            "<input id="+value._id+" class='cbx' type='checkbox' />"+value.description+"</label>" +
+                            "</div>" +
+                            "</li>");
+                        i++;
+                    }
+                    else{
+
+                        $("#done-items").append('<li>' + value.description +'</li>')
+                    }
+                });
+                $("#count_task").empty();
+                $("#count_task").append(i+" Tasks left");
+                //$("#count_task").attr("id",i);
+            });
         var doneItem = $(this).parent().parent().find('label').text();
         $(this).parent().parent().parent().addClass('remove');
         done(doneItem);
@@ -116,7 +136,7 @@ function createTodo(text){
 //mark task as done
 function done(doneItem){
     var done = doneItem;
-    var markup = '<li>'+ done +'<button class="btn btn-default btn-xs pull-right  remove-item"><span class="glyphicon glyphicon-remove"></span></button></li>';
+    var markup = '<li>'+ done +'</li>';
     $('#done-items').append(markup);
     $('.remove').remove();
 }
@@ -176,6 +196,7 @@ $(document).ready(function() {
                     $("#done-items").append('<li>' + value.description +'</li>')
                 }
             });
+            $("#count_task").empty();
             $("#count_task").append(i+" Tasks left");
             //$("#count_task").attr("id",i);
         });
@@ -268,6 +289,7 @@ $(document).ready(function() {
                                 i++;
                             }
                         });
+                        $("#count_task").empty();
                         $("#count_task").empty().append(i+" Tasks left");
                     });
             });

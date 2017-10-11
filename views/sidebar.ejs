@@ -74,6 +74,7 @@
                         "<li><a href='projects'>View All Projects</a></li>"+
                         "<li><a href='display_reviews'>View All Projects To Review</a></li>"
                     );
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>");
                 }
                 else if (data === "Admin") {
                     $("#menu").append(
@@ -81,6 +82,7 @@
                         "<li><a href='employees'>Show All Employees</a></li>"+
                         "<li><a href='training'>Create Training Event</a></li>"
                     );
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>");
                 }
                 else if(data==="Employee"){
                     $("#home").append(
@@ -93,7 +95,8 @@
                 }
                 else{
                     $("#home").append(
-                        "<li><a href='director_dashboard'>Dashboard</a></li>"
+                        "<li><a href='director_dashboard'>Dashboard</a></li>"+
+                       "<li><a href='manager_calendar'>Calendar</a></li>"
                     );
                     $("#menu").append(
                         "<li><a href='profile'>Profile</a></li>"+

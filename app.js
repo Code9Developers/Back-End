@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var helmet = require('helmet');
 var session = require('client-sessions');
 
+
 var index = require('./routes/index');
 var users = require('./routes/users');
 
@@ -35,6 +36,7 @@ var logout = require("./routes/all-page-components/logout");
 var notifications = require("./routes/all-page-components/notifications");
 var tasks = require("./routes/all-page-components/tasks");
 var user_info = require("./routes/all-page-components/user-info");
+var analytics_data = require("./routes/all-page-components/analytics_data");
 
 //director routes
 var replacement_functionality=require("./routes/director_functionality/replacement_functionality");
@@ -70,6 +72,7 @@ app.use(logout);
 app.use(tasks);
 app.use(notifications);
 app.use(user_info);
+app.use(analytics_data);
 
 app.use(register_employee_post);
 app.use(admin_get);

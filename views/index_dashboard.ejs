@@ -60,36 +60,21 @@
         <div class="right_col" role="main">
             <!-- top tiles -->
             <div class="row tile_count">
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-spinner"></i> Current Project Progress</span>
-                    <div class="count kpmg-blue">65%</div>
-                    <span class="count_bottom"><i class="red"><i
-                                    class="fa fa-sort-desc"></i>12% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i> Your Tasks Todo</span>
-                    <div class="count kpmg-blue">10</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i>  Your Completed Projects</span>
-                    <div class="count kpmg-blue">5</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-                    <span class="count_top"><i class="fa fa-tasks"></i> Ongoing Projects</span>
-                    <div class="count kpmg-blue">437</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
-                </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-tasks"></i> Completed Projects</span>
-                    <div class="count kpmg-blue">437</div>
-                    <span class="count_bottom"><i class="kpmg-blue"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+                    <div class="count kpmg-blue" id="completed_projects"></div>
                 </div>
-                <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-tasks"></i> All Ongoing Projects</span>
+                    <div class="count kpmg-blue" id="ongoing_projects"></div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
                     <span class="count_top"><i class="fa fa-user"></i> Total Employees</span>
-                    <div class="count kpmg-blue">2500</div>
-                    <span class="count_bottom"><i class="kpmg-blue">4% </i> From last Week</span>
+                    <div class="count kpmg-blue" id="total_emp"></div>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-6 tile_stats_count">
+                    <span class="count_top"><i class="fa fa-user"></i> Total Managers</span>
+                    <div class="count kpmg-blue" id="total_man"></div>
                 </div>
             </div>
             <!-- /top tiles -->
@@ -101,56 +86,10 @@
                                 <h3>Current Project Progress</h3>
                             </div>
                         </div>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <canvas id="progressBarGraph"></canvas>
                         </div>
-                        <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
-                            <div class="x_title">
-                                <h2>On Going Projects</h2>
-                                <div class="clearfix"></div>
-                            </div>
 
-                            <div class="col-md-12 col-sm-12 col-xs-6">
-                                <div>
-                                    <p>Facebook Campaign</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="80"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Twitter Campaign</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="60"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 col-sm-12 col-xs-6">
-                                <div>
-                                    <p>Conventional Media</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="40"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <p>Bill boards</p>
-                                    <div class="">
-                                        <div class="progress progress_sm" style="width: 76%;">
-                                            <div class="progress-bar bg-kpmg-bar" role="progressbar"
-                                                 data-transitiongoal="50"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="clearfix"></div>
                     </div>
@@ -192,7 +131,21 @@
             <button class="btn btn-default source" onclick="CallError();">Error</button>
         </div>
         <!-- /page content -->
+        <script>
+            $(document).ready(function() {
+                $.get("get_all_past_projects",{},function (data,status) {
 
+                    $("#completed_projects").empty();
+                    $("#completed_projects").append(data[0]);
+                    $("#ongoing_projects").empty();
+                    $("#ongoing_projects").append(data[1]);
+                    $("#total_emp").empty();
+                    $("#total_emp").append(data[2]);
+                    $("#total_man").empty();
+                    $("#total_man").append(data[3]);
+                });
+            });
+        </script>
         <!-- footer content -->
         <footer>
             <div class="pull-right">
@@ -211,7 +164,7 @@
 <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Code 9 -->
 <script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
-<script type="text/javascript" src="vendors/Code-9/js/graphs.js"></script>
+<!--<script type="text/javascript" src="vendors/Code-9/js/graphs.js"></script>-->
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
 <!-- NProgress: Top load animation-->

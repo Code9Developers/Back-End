@@ -45,6 +45,7 @@ exports.findUsers = function (attrib, value, callback) {
         }
         else if (JSON.stringify(docs) === "[]") {
             console.log("No Users found.");
+            callback("no_user");
         }
         else {
             console.log("Users found.");
@@ -307,7 +308,7 @@ exports.deleteEvent = function (event_id) {
 
 // Note: You need to specify for which skill the user is being assigned to the project, BECAUSE THE SKILL ATTRIBUTE IS AN ARRAY!!
 
-exports.assignProject = function (user_id, project_id, _skill) {
+exports.assignProject = function (user_id, project_id, _skill, callback) {
 
     let user = schemas.user;
     let project = schemas.project;
@@ -315,37 +316,51 @@ exports.assignProject = function (user_id, project_id, _skill) {
     user.findByIdAndUpdate(user_id, { $push: {current_projects: project_id}}, function (err) {
         if (!err) {
             console.log("Project added to User.");
+            project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
+                if (!err) {
+                    console.log("User added to Project.");
+                    return callback(true) ;
+                }
+                else {
+                    console.log("Error adding User to Project.");
+                    console.log(err);
+                }
+            });
         }
         else {
             console.log("Error adding Project to User.");
             console.log(err);
         }
     });
-
-    project.findByIdAndUpdate(project_id, {$push: {employees_assigned: {_id: user_id, skill: _skill}}}, function (err) {
-        if (!err) {
-            console.log("User added to Project.");
-        }
-        else {
-            console.log("Error adding User to Project.");
-            console.log(err);
-        }
-    });
 };
 
-// WARNING! AUTISM ALERT: Race Conditions
-exports.insertAndAssignProject = function (_json, employees) {
+/*
+ _employeesAndSkills = {[
+ {employee_id: "emp1", skill_name: "skill1"},
+ {employee_id: "emp2", skill_name: "skill2"}
+ ]};
+ */
+//the parameter needs to be in this format since I need to know the skill for which the employee is being assigned to the project
+//if you disagreee with this, remember that we need to keep track of the skill an employee was assigned to a project for, so that upon project review, we can increase the skill rating approppriately.
 
-    let project = schemas.project;
+
+exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, rating, callback) {
 
     module.exports.insertProject(_json);
 
-    let _project = new project(_json);
+    let updated = 0 ;
+    let size = _employeesAndSkills.length ;
 
-    for (let loop = 0; loop < employees.length; loop++) {
-        module.exports.assignProject(employees[loop], _project._id);
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop].employee_id, _json._id, _employeesAndSkills[loop].skill_name, function(res) {
+            if (++updated == size) {
+                module.exports.completeProject(_json._id, rating, function(res) {
+                    return callback(true) ;
+                });
+
+            }
+        });
     }
-    module.exports.completeProject(_project._id, _project.project_rating);
 };
 
 // remove employee from project and vice versa
@@ -365,13 +380,11 @@ exports.dismissProject = function (user_id, project_id) {
             console.log(err);
         }
     });
-	
+
 };
 
-
-
 // marks a project as completed, and moves project to past_project array of all employees_assigned and manager
-exports.completeProject = function (project_id, rating) {
+exports.completeProject = function (project_id, rating, callback) {
 
     module.exports.editProjects("_id", project_id, "status", "completed");
 
@@ -385,16 +398,17 @@ exports.completeProject = function (project_id, rating) {
     user.update({current_projects: project_id}, {$push: {past_projects: project_id}}, {multi: true}, function (err) {
         if (!err) {
             console.log("Projects set as past projects for employees assigned.");
-			
-			user.update({current_projects: project_id}, {$pull: {current_projects: project_id}}, {multi: true}, function (err) {
-			if (!err) {
-				console.log("Projects removed from current projects for employees assigned.");
-			}
-			else {
-				console.log("Error removing Projects from current projects for employees assigned.");
-				console.log(err);
-			}
-    });
+
+            user.update({current_projects: project_id}, {$pull: {current_projects: project_id}}, {multi: true}, function (err) {
+                if (!err) {
+                    console.log("Projects removed from current projects for employees assigned.");
+                    return callback(true) ;
+                }
+                else {
+                    console.log("Error removing Projects from current projects for employees assigned.");
+                    console.log(err);
+                }
+            });
         }
         else {
             console.log("Error setting Projects as past projects for employees assigned.");
@@ -406,6 +420,8 @@ exports.completeProject = function (project_id, rating) {
 
 
 };
+
+
 
 /*********************************************************************************************************************************************************************************************************************************************
  **/

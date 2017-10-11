@@ -19,9 +19,12 @@
     <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- NProgress: Top load animation-->
     <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
-
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>
+    <!--<link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>-->
     <link href="stylesheets/custom.css" type="text/css" rel="stylesheet"/>
 </head>
 
@@ -33,16 +36,16 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form action="login" method="post">
+                <form >
                     <h1>Login Form</h1>
                     <div>
-                        <input type="text" class="form-control" name="username" placeholder="Username" required=""/>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required/>
                     </div>
                     <div>
-                        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required/>
                     </div>
                     <div>
-                        <button class="btn btn-default submit" type="submit" value="Submit">Submit</button>
+                        <button id="login_btn" class="btn btn-default submit" type="button" value="Submit">Submit</button>
                         <!--<a class="reset_pass" href="#">Lost your password?</a>-->
                         <!--Maybe we can add a lost your password part in later on -->
                     </div>
@@ -90,7 +93,7 @@
                         </div>
                     </div>
                     <div>
-                        <input class="btn btn-default submit" type="submit" value="Submit">
+                        <input  class="btn btn-default submit" type="button" value="Submit">
                     </div>
 
                     <div class="clearfix"></div>
@@ -119,6 +122,9 @@
 
 </body>
 <!--Vendors js files-->
+
+
+
 <!-- jQuery -->
 <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -130,5 +136,13 @@
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
 <!-- Custom Theme Scripts -->
+<script type="text/javascript" src="vendors/Code-9/views/login.js"></script>
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
+
 <script type="text/javascript" src="javascripts/custom.js"></script>
+
+
 </html>

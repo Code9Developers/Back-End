@@ -18,12 +18,12 @@ function alg_animate()
     var y_coord = origin_y;
     var circle_size = 8;
     //Animations
-    emp_found = Raphael.animation({fill: "#5897FB", stroke: "none"});
+    emp_found = Raphael.animation({fill: "#20b426", stroke: "none"});
 
-    ripple_out = Raphael.animation({r: 15, stroke: "#5897FB", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
+    ripple_out = Raphael.animation({r: 15, stroke: "#1b8d20", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
     ripple_fade = Raphael.animation({opacity: 0 }, 600);
     console.log("x : "+x_coord+" , y : "+y_coord);
-    var new_circle = paper.circle(origin_x, origin_y, circle_size).attr({stroke: "#2A3F54", fill: "none", "stroke-width": "2"});
+    var new_circle = paper.circle(origin_x, origin_y, circle_size).attr({stroke: "#2e566d", fill: "none", "stroke-width": "2"});
     var new_ripple = paper.circle(origin_x, origin_y, circle_size).attr({stroke: "none", fill: "none"},);
     new_ripple.attr({ opacity: 1 });
     new_circle.attr({ opacity: 0 });
@@ -39,7 +39,7 @@ function alg_animate()
     {
         angle_add-=angle;
         console.log("angle is : "+angle);
-        new_circle = paper.circle(origin_x+100, origin_y, circle_size).attr({stroke: "#2A3F54", fill: "none", "stroke-width": "2"});
+        new_circle = paper.circle(origin_x+100, origin_y, circle_size).attr({stroke: "#2e566d", fill: "none", "stroke-width": "2"});
         new_ripple = paper.circle(origin_x+100, origin_y, circle_size).attr({stroke: "none", fill: "none"});
         new_ripple.attr({ opacity: 1 });
         new_circle.attr({ opacity: 0 });

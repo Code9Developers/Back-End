@@ -5,7 +5,7 @@
  */
 const app = require('../app');
 const debug = require('debug')('back-end:server');
-let fs = require('fs');
+// const fs = require('fs'); Causes server to crash bug fix
 const http = require('http');
 const mongoose = require('mongoose');
 const connection = require('.././database/connect.js');
@@ -31,10 +31,9 @@ connection.connect();
 /**
  * Create HTTPS server.
  */
-console.log("Working from: " + __dirname);
-
 
 let https = require("https");
+let fs = require("fs");
 
 /**
  * Local Build
@@ -51,11 +50,6 @@ let options = {
     key: fs.readFileSync("/etc/ssl/live/code9devs.me/privkey.pem"),
     cert: fs.readFileSync("/etc/ssl/live/code9devs.me/fullchain.pem")
 };
-
-// let options = {
-//     key: fs.readFileSync("/etc/ssl/privatekey.pem"),
-//     cert: fs.readFileSync("/etc/ssl/fullchain.pem")
-// };
 
 let server = https.createServer(options, app);
 // var server = http.createServer(app);

@@ -38,7 +38,7 @@ $(document).ready(function() {
                     "</ul>"+
                     "</td>" +
                     "<td class='project_progress'>" +
-                    "<div class='progress progress-striped proj_progress'>" +
+                    "<div class='progress progress-bar-success progress-striped proj_progress'>" +
                     "<div class='progress-bar ' role='progressbar' data-transitiongoal="+progress+"></div>" +
                     "</div>" +
                     "</td>"+

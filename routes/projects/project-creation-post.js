@@ -37,9 +37,18 @@ router.get('/get_json_data', function (req, res, next) {
         arr_skills[x]=all_skills[x];
     }
 
-    algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
+    let start_date = (req.query.start_date);
+    let s = start_date.split("/");
+    let newStartDate = new Date((s[2] + "-" + s[1] + "-" + s[0]).toString());
+
+    let end_date = (req.query.end_date);
+    let temp_end_date = end_date.split("/");
+    let new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
+
+    algorithm.get_unallocated_users(position_array,amount_array,arr_skills,newStartDate,new_end_date, function (data) {
         let result = JSON.stringify(data[0]);
          rep_data = JSON.stringify(data[1]);
+         console.log(rep_data);
         let _obj = JSON.parse(result);
         let emp_data=[];
         for(let j in _obj){
@@ -57,16 +66,10 @@ router.get('/get_replacement', function (req, res, next) {
     // let result = JSON.stringify(rep_data);
     let _obj = JSON.parse(rep_data);
     let emp_data=[];
-    let c=0;
     for(let j in _obj){
-        let single_obj=_obj[j];
-        for(let i in single_obj){
-            emp_data[c]=single_obj[i];
-            c++
-        }
+        emp_data[j]=_obj[j];
     }
     let _json = {data:emp_data};
-    console.log(_json);
     res.send(_json);
     //res.contentType('application/json');
 });

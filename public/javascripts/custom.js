@@ -1869,7 +1869,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Supervisor").ionRangeSlider({
@@ -1877,7 +1877,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Senior_Analyst").ionRangeSlider({
@@ -1885,7 +1885,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Analyst").ionRangeSlider({
@@ -1893,7 +1893,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Junior_Analyst_2").ionRangeSlider({
@@ -1901,7 +1901,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Junior_Analyst_1").ionRangeSlider({
@@ -1909,7 +1909,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
 

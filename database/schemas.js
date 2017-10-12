@@ -41,7 +41,7 @@ function create_user(db) {
         surname: String,
         password: String,
         password_date: Date, //could be countdown integer
-        image: {data: Buffer, contentType: String},
+        image: {data: String, contentType: String},
         contact: String,
         email: String,
         role: String,

@@ -92,79 +92,79 @@ window.onload = function()
     ] ;
 
     $.get("/analytics", function (data, status) {
-
-        document.getElementById("analytics_graphs").innerHTML = "" ;
-        let space = "" ;
-        for (let x = 0 ; x < data.length ; x++) {
-            if (x%2 == 0) {
-                space += "<div class=\"row\">" ;
-                space +=	"<div class=\"col-md-12 col-sm-12 col-xs-12\">" ;
-            }
-
-            space +=			"<div class=\"col-md-6 col-sm-6 col-xs-12\">" ;
-            space +=				"<div class=\"x_panel\">" ;
-            space +=					"<div class=\"x_title\">" ;
-            space +=						"<h2>Manager: " + data[x].manager_name + "<small></small></h2>" ;
-            space +=						"<ul class=\"nav navbar-right panel_toolbox\">" ;
-            space +=							"<li style=\"float: right\"><a class=\"collapse-link\"><i class=\"fa fa-chevron-up\"></i></a>" ;
-            space +=							"</li>" ;
-            space +=						"</ul>" ;
-            space +=						"<div class=\"clearfix\"></div>" ;
-            space +=					"</div>" ;
-            space +=					"<div class=\"x_content\">" ;
-            space +=						"<canvas id=\"analytics" + String(x) + "\"></canvas>" ;
-            space +=					"</div>" ;
-            space +=				"</div>" ;
-            space +=			"</div>" ;
-
-            if ((x+1)%2 == 0) {
-                space +=		"</div>" ;
-                space +=	"</div>" ;
-            }
-        }
-        document.getElementById("analytics_graphs").innerHTML = space ;
-
-        for (let x = 0 ; x < data.length ; x++) {
-            let employees = [] ;
-            let hours = [] ;
-            let myBackground = [] ;
-            let myBorder = [] ;
-            for (let y = 0 ; y < data[x].employees_worked_with.length ; y++) {
-                employees[y] = data[x].employees_worked_with[y].employee_name ;
-                hours[y] = parseInt(data[x].employees_worked_with[y].hours_worked) ;
-                myBackground[y] = defaultBackgroundColor[y % defaultBackgroundColor.length] ;
-                myBorder[y] = defaultBorderColor[y % defaultBorderColor.length] ;
-            }
-            let configAnalyGraph = {
-                type: 'bar',
-                data: {
-                    labels: employees,
-                    datasets: [{
-                        label: 'No. of hours worked ',
-                        data: hours,
-                        backgroundColor: myBackground,
-                        borderColor: myBorder,
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    }, title: {
-                        display: true,
-                        text: 'Number of Hours That A Manager Worked With A Specific Employee'
-                    }
+        if (data != null) {
+            document.getElementById("analytics_graphs").innerHTML = "";
+            let space = "";
+            for (let x = 0; x < data.length; x++) {
+                if (x % 2 == 0) {
+                    space += "<div class=\"row\">";
+                    space += "<div class=\"col-md-12 col-sm-12 col-xs-12\">";
                 }
-            };
 
-            let aOne = document.getElementById("analytics" + String(x)).getContext('2d');
-            let chartTwo = new Chart(aOne, configAnalyGraph);
+                space += "<div class=\"col-md-6 col-sm-6 col-xs-12\">";
+                space += "<div class=\"x_panel\">";
+                space += "<div class=\"x_title\">";
+                space += "<h2>Manager: " + data[x].manager_name + "<small></small></h2>";
+                space += "<ul class=\"nav navbar-right panel_toolbox\">";
+                space += "<li style=\"float: right\"><a class=\"collapse-link\"><i class=\"fa fa-chevron-up\"></i></a>";
+                space += "</li>";
+                space += "</ul>";
+                space += "<div class=\"clearfix\"></div>";
+                space += "</div>";
+                space += "<div class=\"x_content\">";
+                space += "<canvas id=\"analytics" + String(x) + "\"></canvas>";
+                space += "</div>";
+                space += "</div>";
+                space += "</div>";
+
+                if ((x + 1) % 2 == 0) {
+                    space += "</div>";
+                    space += "</div>";
+                }
+            }
+            document.getElementById("analytics_graphs").innerHTML = space;
+
+            for (let x = 0; x < data.length; x++) {
+                let employees = [];
+                let hours = [];
+                let myBackground = [];
+                let myBorder = [];
+                for (let y = 0; y < data[x].employees_worked_with.length; y++) {
+                    employees[y] = data[x].employees_worked_with[y].employee_name;
+                    hours[y] = parseInt(data[x].employees_worked_with[y].hours_worked);
+                    myBackground[y] = defaultBackgroundColor[y % defaultBackgroundColor.length];
+                    myBorder[y] = defaultBorderColor[y % defaultBorderColor.length];
+                }
+                let configAnalyGraph = {
+                    type: 'bar',
+                    data: {
+                        labels: employees,
+                        datasets: [{
+                            label: 'No. of hours worked ',
+                            data: hours,
+                            backgroundColor: myBackground,
+                            borderColor: myBorder,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }, title: {
+                            display: true,
+                            text: 'Number of Hours That A Manager Worked With A Specific Employee'
+                        }
+                    }
+                };
+
+                let aOne = document.getElementById("analytics" + String(x)).getContext('2d');
+                let chartTwo = new Chart(aOne, configAnalyGraph);
+            }
         }
-
     });
 
 };

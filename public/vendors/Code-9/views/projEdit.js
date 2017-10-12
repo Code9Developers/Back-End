@@ -286,7 +286,6 @@ $(document).ready(function() {
     });
 
     $('#removeEmployee').on('click', function (e) {
-        alert(project_id);
         $.get("edit_replacement_store", {
             emp_removed:emp_selected_ids,
             emp_replace:replacement_ids,

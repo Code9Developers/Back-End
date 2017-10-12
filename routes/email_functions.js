@@ -141,7 +141,7 @@ exports.TraningNotification = function (toEmail, empName, empSurname, startDate,
             // text:
             // html body
             html: 'Dear <b>' + empName + ' '  + empSurname +  '</b> please note you have training from the <b>' + startDate + '</b> to the <b>' + endDate + '</b>. ' +
-                  'If you have any questions please contact <b>' + trainer + '</b>: ' + trainerEmail + ' or ' +trainerNumber;
+                  'If you have any questions please contact <b>' + trainer + '</b>: ' + trainerEmail + ' or ' +trainerNumber
         };
 
     // send mail with defined transport object

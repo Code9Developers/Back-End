@@ -111,7 +111,6 @@ $(document).ready(function() {
 
     $.get("get_user_past_projects",{},
         function (data, status) {
-            // alert(JSON.stringify(data));
             let c = 1;
             $.each(data, function (key, value) {
                 //  alert(value["name"]);
@@ -142,7 +141,6 @@ $(document).ready(function() {
             }
             ,
             function(data, status) {
-
                 $.get("display_image", function(data, status) {
                     function bufferToBase64(buf) {
                         var binstr = Array.prototype.map.call(buf, function (ch) {
@@ -155,11 +153,7 @@ $(document).ready(function() {
 
                     document.getElementById("pro_image").src = "data:" + data[0] + ";base64," + b64 ;
                 });
-
-
-
             });
-
     });
 
     $("#updatePassword").on('click',function () {

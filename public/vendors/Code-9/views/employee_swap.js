@@ -74,11 +74,11 @@ $.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status
         "<br/>");
     $.each(data,function(key,value){
         $("#emptBody1").append("<tr id="+key+">"+
-            "<td>"+value.name+"</td>"+
-            "<td>"+value.surname+"</td>"+
-            "<td>"+value.position+"</td>"+
-            "<td>"+value.employment_length+"</td>"+
-            "<td>"+value.skill+"</td>"+
+            "<td>"+value._id.name+"</td>"+
+            "<td>"+value._id.surname+"</td>"+
+            "<td>"+value._id.position+"</td>"+
+            "<td>"+value._id.employment_length+"</td>"+
+            "<td>"+value._id.skill[0].name+"</td>"+
             "</tr>");
     });
 });

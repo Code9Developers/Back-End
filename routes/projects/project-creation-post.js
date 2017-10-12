@@ -176,7 +176,6 @@ router.post("/project_creation", function (req, res, next) {
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
         manager_id: req.session.username,
-        employees_assigned: employees,
         project_budget: 0,
         status: status,
         project_rating:0,
@@ -184,8 +183,9 @@ router.post("/project_creation", function (req, res, next) {
     };
     dbs.insertProject(project);
     // var emp_obj=JSON.parse(employee_id_array);
+    dbs.assignProjectMulti(project_id,employees,function (res) {});
     for (let x in employees) {
-        dbs.assignProject(employees[x], project_id,function (res) {});
+
 
         dbs.insertNotification({
             _id: employees[x]._id + project_id,

@@ -51,25 +51,9 @@ router.get('/get_replacement_employees', function (req, res, next) {
 
         let employees_to_add=data[0].employees_replaced;
 
-
-        dbs.findUsers("role", "Employee", function (user) {
-            for (let i = 0; i < user.length; i++) {
-                if (employees_to_add.includes(user[i]._id)) {
-                    let new_json_obj = {
-                        _id: user[i]._id,
-                        name: user[i].name,
-                        surname: user[i].surname,
-                        position: user[i].position,
-                        employment_length: user[i].employment_length,
-                        past_projects: user[i].past_projects,
-                        skill:user[i].skill[0].name
-                    };
-                    added_user_json[x] = new_json_obj;
-                    x++;
-                }
-            }
-            res.send(added_user_json);
-        });
+        dbs.get_replacement_user_data(employees_to_add,function (emp_data) {
+            res.send(emp_data);
+        })
     });
 });
 

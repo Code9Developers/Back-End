@@ -74,5 +74,7 @@ router.post('/add_training', function (req, res, next) {
            console.log(user_data[0].email);//Works
         });
     }
+
+    res.send("created")
 });
 module.exports = router;

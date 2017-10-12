@@ -364,6 +364,22 @@ exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, ratin
     }
 };
 
+//project-creation-post.js line 92
+
+exports.assignProjectMulti = function (project_id, _employeesAndSkills, callback) {
+
+    let updated = 0 ;
+    let size = _employeesAndSkills.length ;
+
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop]._id, project_id, _employeesAndSkills[loop].skill, function(res) {
+            if (++updated == size) {
+                return callback(true) ;
+            }
+        });
+    }
+};
+
 // remove employee from project and vice versa
 exports.dismissProject = function (user_id, project_id) {
 
@@ -1108,6 +1124,23 @@ exports.get_specific_user_data = function (user_ids,callback) {
     user.aggregate([
         {$match:{_id:{$in:user_ids}}},
         {$group:{_id:{id:"$_id",name:"$name",surname:"$surname",contact:"$contact",position:"$position",email:"$email"}}}//possibly add image if working
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
+exports.get_replacement_user_data = function (user_ids,callback) {
+    let user = schemas.user;
+    user.aggregate([
+        {$match:{_id:{$in:user_ids}}},
+        {$group:{_id:{id:"$_id",name:"$name",surname:"$surname",contact:"$contact",position:"$position",email:"$email",employment_length:"$employment_length",skill:"$skill"}}}//possibly add image if working
     ], function (err, result) {
         if (err) {
             console.log(err);

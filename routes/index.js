@@ -161,6 +161,17 @@ router.get("/create_past_projects", function (req, res, next) {
 });
 
 
+router.get("/p", function (req, res, next) {
+    //Because of the Math.floor() we get a less managers than planned
+    //And and less years for projects than we give
+    // test_data.create_past_Projects(1); changed for now
+
+    let v=dbs.get_projects_end_date("kpmg_kojjjjjjjjjjjj31",function (data) {
+        res.send(data);
+    });
+
+});
+
 // TEST ROUTES
 
 //

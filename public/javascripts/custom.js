@@ -2223,6 +2223,15 @@ function ReviewSuccessful() {
         styling: 'bootstrap3'
     });
 }
+function SentTraining() {
+    new PNotify({
+        title: 'Sent',
+        text: 'Training successfully sent to employees',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
 function SendApproval() {
     new PNotify({
         title: 'Sent',

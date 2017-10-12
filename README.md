@@ -72,6 +72,8 @@ Let me <i>(Joshua)</i> know if you have any issues.
  
 #### Software Versions & Requirements
 * ECMAScript 6 (Javascript Version)
+* Node node@v8.7.0
+* NPM npm@5.4.2    
 
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

@@ -31,7 +31,8 @@ connection.connect();
 /**
  * Create HTTPS server.
  */
-console.log(__dirname);
+console.log("Working from: " + __dirname);
+
 
 let https = require("https");
 

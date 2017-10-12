@@ -91,7 +91,7 @@ exports.create_test_projects = function () {
         status: "completed"
     };
     dbs.insertProject(proj2);
-}
+};
 
 //A function to statically create 250 managers and 750 employees into the db
 //TODO: pull random names from a text file

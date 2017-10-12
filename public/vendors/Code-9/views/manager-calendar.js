@@ -19,9 +19,8 @@ function getCalendarEvents() {
     let get1 = $.get("all_projects",
         {},
         function (data, status) {
-            window.alert(JSON.stringify(data));
+
             $.each(data, function (key, value) {
-                // window.alert(value.name);
 
                 item = {};
                 item["id"] = value._id;
@@ -40,9 +39,9 @@ function getCalendarEvents() {
 
     let get2 = $.get("get_all_event_data",{}
         ,function(data,status){
-            // window.alert(JSON.stringify(data));
+
             $.each(data, function (key, value) {
-                //window.alert(value);
+
 
                 item = {};
                 item["id"] = value._id;
@@ -50,15 +49,10 @@ function getCalendarEvents() {
                 item["start"] = value.event_start_date.substr(0,10);
                 item["end"] = value.event_end_date.substr(0,10);
                 item["url"] = "#";
-                //window.alert(JSON.stringify(item));
+
                 eve.push(item);
 
             });
-            /* eve.forEach(function(entry){
-             alert(entry.title+" "+entry.start+" "+entry.end);
-
-             });*/
-            // init_calendar();
         });
 
     $.when(get1,get2).done(function() {
@@ -71,9 +65,7 @@ function getCalendarEvents() {
 function  init_calendar() {
     if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
     console.log('init_calendar');
-// nEv = JSON.stringify();
 
-// window.alert(JSON.parse(eve));
     let  date = new Date(),
         d = date.getDate(),
         m = date.getMonth(),
@@ -94,16 +86,15 @@ function  init_calendar() {
 
             started = start;
             ended = end;
-            window.alert(eve[0]["end"]);
-            window.alert(start.format());
+
             for(var i =0; i < eve.size;i++){
                 if(eve[i]["start"] <= start.format()){
-                    alert.window("true");
+
                 }
             }
 
             $(".antosubmit").on("click", function() {
-                window.alert("submitted");
+
                 let  title = $("#title").val();
                 if (end) {
                     ended = end;

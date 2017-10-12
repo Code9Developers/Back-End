@@ -78,12 +78,12 @@ function  init_calendar() {
             ended = end;
             for(var i =0; i < eve.size;i++){
                 if(eve[i]["start"] <= start.format()){
-                    // alert.window("true");
+
                 }
             }
 
             $(".antosubmit").on("click", function() {
-                // window.alert("submitted");
+
                 let  title = $("#title").val();
                 if (end) {
                     ended = end;

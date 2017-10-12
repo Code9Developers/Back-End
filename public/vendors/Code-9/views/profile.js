@@ -126,11 +126,7 @@ $(document).ready(function() {
                     +"<td>"+value._id.name+"</td>"
                     +"<td>"+value._id.owner_name+"</td>"
                     +"<td class='hidden-phone'>"+start_date+"</td>"
-                    +"<td class='vertical-align-mid'>"
-                    +"<div class='p'>"
                     +"<td class='hidden-phone'>"+end_date+"</td>"
-                    +"</div>"
-                    +"</td>"
                     +"</tr>"
                 );
                 $('.p .progress-bar').progressbar({display_text: 'fill'});

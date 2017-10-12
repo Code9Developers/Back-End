@@ -1141,7 +1141,7 @@ exports.get_past_projects = function (project_ids,callback) {
     let project = schemas.project;
     project.aggregate([
         {$match:{_id:{$in:project_ids}}},
-        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date"}}}
+        {$group:{_id:{id:"$_id",name:"$name",owner_name:"$owner_name",project_start_date:"$project_start_date",project_end_date:"$project_end_date"}}}
     ], function (err, result) {
         if (err) {
             console.log(err);

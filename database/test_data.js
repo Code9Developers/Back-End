@@ -12,7 +12,7 @@ exports.create_test_employees = function () {
     var today = new Date();
     dbs.encrypt("test", function (enc_pass) {
         var dir = {
-            _id: "33",
+            _id: "testD",
             name: "Bob",
             surname: "Naidoo",
             password: enc_pass,
@@ -31,7 +31,7 @@ exports.create_test_employees = function () {
             past_projects: []
         };
         var emp = {
-            _id: "test_manager_12",
+            _id: "testM",
             name: "Sargon",
             surname: "David",
             password: enc_pass,
@@ -51,7 +51,7 @@ exports.create_test_employees = function () {
         };
 
         var emp2 = {
-            _id: "emp1",
+            _id: "testE",
             name: "Nebuchadnezzar",
             surname: "Shnebly",
             password: enc_pass,
@@ -71,7 +71,7 @@ exports.create_test_employees = function () {
         };
 
         var emp3 = {
-            _id: "test_admin_1",
+            _id: "testA",
             name: "Xerxes",
             surname: "Xenon",
             password: enc_pass,

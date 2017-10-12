@@ -1305,9 +1305,8 @@ exports.encrypt = function (value, callback) {
 };
 
 exports.authenticate = function (user_id, password, callback) {
-
     module.exports.findUsers("_id", user_id, function (user) {
-        let hash = user.password;
+        let hash = user[0].password;
         bcrypt.compare(password, hash, function (err, res) {
             if (err) {
                 console.log("Authentication error.");

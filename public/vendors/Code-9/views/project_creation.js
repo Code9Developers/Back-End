@@ -65,8 +65,8 @@ function init_EmployeeAllocationDT() {
         this.inline( this );
     });
 
-    let assistant_manager_slider=($('#Assistant_Manager').val()).split(";");
-    let assistant_manager= parseInt(assistant_manager_slider[1]);
+    // let assistant_manager_slider=($('#Assistant_Manager').val()).split(";");
+    // let assistant_manager= parseInt(assistant_manager_slider[1]);
 
     let supervisor_slider=($('#Supervisor').val()).split(";");
     let supervisor= parseInt(supervisor_slider[1]);
@@ -83,17 +83,26 @@ function init_EmployeeAllocationDT() {
     let junior_analyst_2_slider=($('#Junior_Analyst_2').val()).split(";");
     let junior_analyst_2= parseInt(junior_analyst_2_slider[1]);
 
-    let position_array=["Assistant Manager"," Supervisor","Senior Analyst","Analyst","Junior Analyst 2","Junior Analyst 1"];
-    let amount_array=[assistant_manager,supervisor,senior_analyst,analyst,junior_analyst_2,junior_analyst_1];
+    let position_array=[" Supervisor","Senior Analyst","Analyst","Junior Analyst 2","Junior Analyst 1"];
+    let amount_array=[supervisor,senior_analyst,analyst,junior_analyst_2,junior_analyst_1];
 
-
+    let final_pos=[];
+    let fin_amount=[];
+    let counter=0;
+    for(let k in amount_array){
+        if(amount_array[k]!=0){
+            final_pos[counter]=position_array[k];
+            fin_amount[counter]=amount_array[k];
+            counter++;
+        }
+    }
     let skills=$('#skills').val();
     let start_date= $('#start_date').val();//either to calculation to get number in days or put end date
     let end_date=$('#end_date').val();
 
     $EmployeeAllocationDT.dataTable({
         order: [[ 1, 'asc' ]],
-        ajax: "get_json_data?position_arr="+position_array+"&amount_arr="+amount_array+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
+        ajax: "get_json_data?position_arr="+final_pos+"&amount_arr="+fin_amount+"&start_date="+start_date+"&end_date="+end_date+"&skills="+skills,
         columns: [
             {
                 data: "<th><div class=\"text-center\"><input name=\"\" type=\"checkbox\" id=\"check-all\" class=\"flat\"></div></th>",

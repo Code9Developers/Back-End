@@ -24,6 +24,10 @@
     <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" type="text/css" rel="stylesheet">
     <!--Code 9-->
     <link href="vendors/Code-9/css/code9.css" type="text/css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.css" rel="stylesheet">
     <link href="stylesheets/custom.min.css" rel="stylesheet">
@@ -73,7 +77,7 @@
                                     <div class="profile_img">
                                         <div id="crop-avatar">
                                             <!-- Current avatar -->
-                                            <img class="img-responsive avatar-view" src="images/picture.jpg"
+                                            <img id="pro_image" class="img-responsive avatar-view" src="images/picture.jpg"
                                                  alt="Avatar" title="Change the avatar">
                                         </div>
                                     </div>
@@ -144,7 +148,7 @@
                                                         <th>Project Name</th>
                                                         <th>Client</th>
                                                         <th class="hidden-phone">Date Started</th>
-                                                        <th>Contribution</th>
+                                                        <th class="hidden-phone">Date Ended</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody id="emp_past_proj">
@@ -180,25 +184,28 @@
                                                                         </div>
                                                                     </span>
                                                         </div><!-- /input-group image-preview [TO HERE]-->
+                                                        <input id="updateImage" class="btn btn-dark docs-tooltip"
+                                                               data-toggle="tooltip" value="Update Image" type="submit"
+                                                        />
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="oldpassword">Old Password: *</label>
-                                                        <input type="password" id="oldpassword" name="oldpassword"
-                                                               class="form-control" placeholder="Old Password"
+                                                        <label for="oldpassword">Password: *</label>
+                                                        <input type="password" id="password" name="oldpassword"
+                                                               class="form-control" placeholder="Password"
                                                                required/>
                                                     </div>
                                                     <div class="col-md-6">
-                                                        <label for="newpassword">New Password: *</label>
-                                                        <input type="password" id="newpassword" name="newpassword"
-                                                               class="form-control" placeholder="New Password"
-                                                               required=""/>
+                                                        <label for="newpassword">Conform Password: *</label>
+                                                        <input type="password" id="confirm_password" name="newpassword"
+                                                               class="form-control" placeholder="Confirm Password"
+                                                               required/>
                                                     </div>
                                                 </div>
                                                 <div>
                                                     <br/>
-                                                    <input id="updateProfile" class="btn btn-dark docs-tooltip"
-                                                           data-toggle="tooltip" title="Update Profile" type="submit"
-                                                           value="Update Profile"/>
+                                                    <input id="updatePassword" class="btn btn-dark docs-tooltip"
+                                                           data-toggle="tooltip" title="Update Password" type="submit"
+                                                           value="Update Password"/>
                                                 </div>
 
                                             </div>
@@ -243,9 +250,15 @@
 <!-- bootstrap-daterangepicker -->
 <script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-
-<!-- Custom Theme Scripts -->
-<script type="text/javascript" src="javascripts/custom.min.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/profile.js"></script>
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.js"></script>
+
+
+
 </body>
 </html>

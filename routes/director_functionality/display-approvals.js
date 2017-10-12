@@ -15,7 +15,7 @@ const dbs = require('../../database/dbs');
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
 router.get('/get_all_approvals', function (req, res, next) {
-    dbs.find_approval("director_id","33", function (data) {
+    dbs.find_approval("director_id",req.session.username, function (data) {
         res.send(data)
     })
 });

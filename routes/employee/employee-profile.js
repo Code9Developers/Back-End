@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
-const Promise=require("promise");
 
 /**
  * Page:
@@ -100,18 +99,27 @@ router.get("/get_emp_milestone", function (req, res, next) {
     });
 });
 
-router.get("/store_image", function (req, res, next) {
-    console.log("user: " + req.session.username);
-    console.log("pic: " + req.query.pic);
-    dbs.editProfileImage(req.session.username, req.query.pic);
-    res.send('profile');
+router.get('/store_image', function (req, res, next) {
+    dbs.editProfileImage(req.session.username, req.query.pic) ;
+
 });
 
 router.get('/display_image', function (req, res, next) {
     dbs.findUsers("_id", req.session.username, function (doc) {
-        res.contentType(doc[0].image.contentType);
-        res.send(doc[0].image.data);
+        //res.contentType(doc[0].image.contentType);
+        let result = [] ;
+        result[0] = doc[0].image.contentType ;
+        result[1] = doc[0].image.data ;
+        res.send(result);
     });
 });
+
+router.get('/update_password', function (req, res, next) {
+    dbs.encrypt(req.query.pass, function (enc_pass) {
+        dbs.editUsers("_id",req.session.username,"password",enc_pass);
+    });
+    res.send("updated");
+});
+
 
 module.exports = router;

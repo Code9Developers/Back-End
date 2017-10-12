@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Milestone</title>
+    <title>J3NS | Milestones</title>
 
     <!-- Favicon -->
     <%- include('favicon'); %>
@@ -37,7 +37,7 @@
         <div class="right_col" role="main">
             <!--todo add project name to edit here-->
             <h3>Project Milestones
-                <small>asd</small>
+
             </h3>
             <hr/>
             <div class="clearfix"></div>
@@ -62,7 +62,19 @@
             <!-- end form for validations -->
             <div class="row">
                 <div class="col-md-8">
-                    <div id="echart_line" style="height:350px;"></div>
+                    <div class="milestone_graph">
+                        <div class="row x_title">
+                            <div class="col-md-6">
+                                <h3>Current Project Milestones Progress</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <canvas id="milestonesprogressBarGraph"></canvas>
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="x_panel">
@@ -98,7 +110,7 @@
 <!-- Bootstrap -->
 <script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Code 9 -->
-<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/milestones.js"></script>
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
@@ -107,7 +119,7 @@
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
 <!-- ECharts -->
-<script type="text/javascript" src="vendors/echarts/dist/echarts.js"></script>
+<script type="text/javascript" src="vendors/Chart.js/dist/Chart.js"></script>
 
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.min.js"></script>

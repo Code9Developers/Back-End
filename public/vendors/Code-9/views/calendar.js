@@ -1,17 +1,24 @@
 /**
- * Created by Nicaedin on 08/22/2017.
+ * Page: N/A
+ * Functionality: User Calendar
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Nicaedin Suklal
+ * Date Revised: 22/08/2017 by Nicaedin Suklal
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
+
 window.eve = [];
 function getCalendarEvents() {
-var item;
-    $.get("calendar_events",
+    let  item;
+
+    let get1 = $.get("calendar_events",
         {},
         function (data, status) {
-
             $.each(data, function (key, value) {
-                // window.alert(value.name);
-
                 item = {};
+                item["id"] = value._id;
                 item["title"] = value.name;
                 item["start"] = value.project_start_date.substr(0,10);
                 item["end"] = value.project_end_date.substr(0,10);
@@ -20,91 +27,126 @@ var item;
                 eve.push(item);
 
             });
-
-            // eve[eve.length - 1] = ']';
-            //window.alert(eve[eve.length - 1]);
-            init_calendar();
-
-            // window.alert(eve.length);
         });
+
+    let get2 = $.get("get_all_event_data",{}
+        ,function(data,status){
+
+            $.each(data, function (key, value) {
+                item = {};
+                item["id"] = value._id;
+                item["title"] = value.description;
+                item["start"] = value.event_start_date.substr(0,10);
+                item["end"] = value.event_end_date.substr(0,10);
+                item["url"] = "#";
+                eve.push(item);
+
+            });
+        });
+
+    $.when(get1,get2).done(function() {
+        init_calendar()
+    });
+
+
 
 }
 
 
 function  init_calendar() {
-           if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
-console.log('init_calendar');
-// nEv = JSON.stringify();
+    if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
+    console.log('init_calendar');
+    let  date = new Date(),
+        d = date.getDate(),
+        m = date.getMonth(),
+        y = date.getFullYear(),
+        started,
+        categoryClass;
 
-// window.alert(JSON.parse(eve));
-var date = new Date(),
-    d = date.getDate(),
-    m = date.getMonth(),
-    y = date.getFullYear(),
-    started,
-    categoryClass;
+    let  calendar = $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay,listMonth'
+        },
+        selectable: true,
+        selectHelper: true,
+        select: function(start, end, allDay) {
+            $('#fc_create').click();
 
-var calendar = $('#calendar').fullCalendar({
-    header: {
-        left: 'prev,next today',
-        center: 'title',
-        right: 'month,agendaWeek,agendaDay,listMonth'
-    },
-    selectable: true,
-    selectHelper: true,
-    select: function(start, end, allDay) {
-        $('#fc_create').click();
-
-        started = start;
-        ended = end;
-
-        $(".antosubmit").on("click", function() {
-            var title = $("#title").val();
-            if (end) {
-                ended = end;
+            started = start;
+            ended = end;
+            for(var i =0; i < eve.size;i++){
+                if(eve[i]["start"] <= start.format()){
+                    // alert.window("true");
+                }
             }
 
+            $(".antosubmit").on("click", function() {
+                // window.alert("submitted");
+                let  title = $("#title").val();
+                if (end) {
+                    ended = end;
+                }
+
+
+
+                categoryClass = $("#event_type").val();
+
+                if (title) {
+
+                    $.get("store_event",{
+                        description:title,
+                        start_date:start.format(),
+                        end_date:end.format()
+                    });
+
+                    calendar.fullCalendar('renderEvent', {
+                            id:title,
+                            title: title,
+                            start: started,
+                            end: end,
+                            allDay: allDay
+                        },
+                        true // make the event "stick"
+                    );
+                }
+
+                $('#title').val('');
+
+                calendar.fullCalendar('unselect');
+
+                $('.antoclose').click();
+
+                return false;
+            });
+        },
+        eventClick: function(calEvent, jsEvent, view) {
+            $('#fc_edit').click();
+            $('#title2').val(calEvent.title);
+            $('.modal-footer').append("<button type=\"button\" class=\"btn btn-primary delSub\">Delete Event</button>");
             categoryClass = $("#event_type").val();
 
-            if (title) {
+            $(".antosubmit2").on("click", function() {
+                calEvent.title = $("#title2").val();
 
-                calendar.fullCalendar('renderEvent', {
-                        title: title,
-                        start: started,
-                        end: end,
-                        allDay: allDay
-                    },
-                    true // make the event "stick"
-                );
-            }
+                calendar.fullCalendar('updateEvent', calEvent);
+                $('.antoclose2').click();
+            });
 
-            $('#title').val('');
+            $(".delSub").on("click", function() {
+                $.get("delete_event",{
+                    event_id:calEvent.id
+                });
+                calendar.fullCalendar('removeEvents', calEvent.id);
+                $('.antoclose2').click();
+            });
 
             calendar.fullCalendar('unselect');
-
-            $('.antoclose').click();
-
-            return false;
-        });
-    },
-    eventClick: function(calEvent, jsEvent, view) {
-        $('#fc_edit').click();
-        $('#title2').val(calEvent.title);
-
-        categoryClass = $("#event_type").val();
-
-        $(".antosubmit2").on("click", function() {
-            calEvent.title = $("#title2").val();
-
-            calendar.fullCalendar('updateEvent', calEvent);
-            $('.antoclose2').click();
-        });
-
-        calendar.fullCalendar('unselect');
-    },
-    editable: false,
-    events: eve
-});
+        },
+        editable: false,
+        events: eve
+    });
 
 }
 
@@ -112,5 +154,19 @@ var calendar = $('#calendar').fullCalendar({
 $(document).ready(function() {
 
     getCalendarEvents();
+
+
+    /**
+     *  The route /get_all_event_data will return all the data for that user as an array of objects
+     *
+     *  The route /store_event
+     *          requires the data that is send though to be named description,start_date,end_date
+     *          don't test this function, just implement it because I still need to see how the date is stored
+     *
+     *  The route /delete_event
+     *          only requires the event ID to be sent though, with the following name:event_id
+     *
+     */
+
 
 });

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>J3NS | Training</title>
+
+    <!-- Favicon -->
+    <%- include('favicon'); %>
+
+    <!-- Stylesheets -->
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation-->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!-- Datatables -->
+    <link href="vendors/datatables.net/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendors/datatables.net/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.min.css" rel="stylesheet">
+</head>
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <!--todo add project name to edit here-->
+            <h2>Training
+                <small id="project-name"> </small>
+            </h2>
+            <hr/>
+            <div class="clearfix"></div>
+            <form id="demo-form" data-parsley-validate >
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="trainerName">Trainer's Name: *</label>
+                        <input type="text" id="trainerName" class="form-control" name="trainerName"/>
+
+                        <label for="trainerEmail">Trainer's Email: *</label>
+                        <input type="email" id="trainerEmail" class="form-control" name="trainerEmail"/>
+
+                        <label for="trainerPhoneNumber">Trainer's Phone Number: *</label>
+                        <input type="text" class="form-control" id="trainerPhoneNumber" name="trainerPhoneNumber" data-inputmask="'mask' : '(999) 999 - 9999'"
+                               data-parsley-trigger="change" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="startDate">Start Date: *</label>
+                        <input type="date" id="startDate" class="form-control" name="startDate" required/>
+
+                        <label for="endDate">End Date: *</label>
+                        <input type="date" id="endDate" class="form-control" name="endDate" required/>
+                    </div>
+                </div>
+
+                <br/>
+                <!-- TODO show this table once button is clicked-->
+
+                <div id="EmpTrainingAllocationTableHide">
+                    <div id="EmpTrainingAllocationDT">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>All Employees</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="table_content"class="x_content">
+                                <table id="EmployeeTrainingAllocationDT" class="table table-striped table-bordered bulk_action">
+                                    <thead>
+                                    <tr>
+                                        <th><input name="select_all" value="1" type="checkbox"></th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Position</th>
+                                        <th>Employment Length</th>
+                                        <th>Email</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TODO Table end-->
+                <input id="addTraining"  class="btn btn-dark docs-tooltip" data-toggle="tooltip" title="Add Training" type="submit"  value="Add Training"/>
+            </form>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+<!--Vendors js files-->
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+
+<!-- jquery.inputmask -->
+<script type="text/javascript" src="vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+<!-- Datatables -->
+<script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
+
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.min.js"></script>
+
+<!-- Code 9 -->
+<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/training.js"></script>
+
+</body>
+</html>

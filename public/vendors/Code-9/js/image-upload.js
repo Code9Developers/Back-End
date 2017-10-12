@@ -1,3 +1,12 @@
+/**
+ * Page: Profile
+ * Functionality: Added image upload functions
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 12/09/2017 by Joshua Moodley
+ */
 
 // Image Upload
 $(document).on('click', '#close-preview', function(){

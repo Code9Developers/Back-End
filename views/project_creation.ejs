@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Register</title>
+    <title>KPMG | Project Creation</title>
 
     <!-- Favicon -->
     <%- include('favicon'); %>
@@ -35,10 +35,18 @@
     <!-- Ion.RangeSlider -->
     <link href="vendors/normalize-css/normalize.css" type="text/css" rel="stylesheet">
     <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.css" type="text/css" rel="stylesheet">
-    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" type="text/css" rel="stylesheet">
+    <!--<link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinFlat.css" type="text/css" rel="stylesheet">-->
+    <link href="vendors/ion.rangeSlider/css/ion.rangeSlider.skinModern.css" type="text/css" rel="stylesheet">
+    <!-- Select2-->
+    <link href="vendors/select2/dist/css/select2.css" type="text/css" rel="stylesheet">
 
     <link rel="stylesheet" href="vendors/Code-9/demo.css" media="screen">
     <link rel="stylesheet" href="vendors/Code-9/demo-print.css" media="print">
+
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="stylesheets/custom.min.css" rel="stylesheet">
@@ -74,7 +82,6 @@
             <div class="clearfix"></div>
             <!-- start form for validation -->
             <form id="demo-form" data-parsley-validate action="project_creation" method="post">
-
                 <div class="row">
                     <div class="col-md-6">
                         <label for="projectname">Project Name: *</label>
@@ -86,12 +93,12 @@
                         <br/>
                         <div class="col-md-5">
                             <label>Start Date: </label>
-                            <input name="start_date" class="form-control" type="date" required/>
+                            <input id="start_date" name="start_date" class="form-control" type="date" required/>
                         </div>
 
                         <div class="col-md-5 col-md-offset-1">
                             <label>End Date: </label>
-                            <input name="end_date" class="form-control" type="date" required/>
+                            <input id="end_date" name="end_date" class="form-control" type="date" required/>
                         </div>
                     </div>
                 </div>
@@ -110,30 +117,131 @@
                     <!-- Skills required-->
                     <div class="col-md-6">
                         <label class="control-label">Skill Tags</label>
-                        <input id="tags_1" type="text" class="tags form-control"
-                               value="MS Office, Accounting Skills, Auditor" data-parsley-trigger="change" required/>
-                        <!--<div id="suggestions-container" style="position: relative; float: left; width: 250px; margin: 10px;"></div>-->
+                        <select id="skills" class="form-control select-test" style="width: 100%;" multiple>
+                            <optgroup label="Cyber Security">
+                                <option value="Penetration Testing and Vulnerability">Penetration Testing and Vulnerability</option>
+                                <option value="Scanning (Nesus and Qualys)">Scanning (Nesus and Qualys)</option>
+                                <option value="Windows / Linux Security">Windows / Linux Security </option>
+                                <option value="Database Security">Database Security</option>
+                                <option value="Security Gap Assessments">Security Gap Assessments</option>
+                                <option value="Cyber Threat Detection And Root Cause ">Cyber Threat Detection And Root Cause</option>
+                                <option value="Analysis">Analysis</option>
+                                <option value="Virtualisation Technologies">Virtualisation Technologies</option>
+                                <option value="Strategic Management">Strategic Management</option>
+                                <option value="Regulatory Compliance">Regulatory Compliance</option>
+                                <option value="Risk Management">Risk Management</option>
+                                <option value="IT Corporate Governance">IT Corporate Governance</option>
+                                <option value="Data Centre Security">Data Centre Security</option>
+                                <option value="Report Writing">Report Writing</option>
+                                <option value="Policies, Procedures and Standards Writing skills">Policies, Procedures and Standards Writing skills</option>
+                                <option value="Policies, Procedures and Standards Compliance Measurement"> Policies, Procedures and Standards Compliance Measurement</option>
+                                <option value="IT Legislation Compliance Gap Assessments">IT Legislation Compliance Gap Assessments</option>
+                            </optgroup>
+
+                            <optgroup label="CIO Advisory">
+                                <option value="IT Procurement and Bid Management">IT Procurement and Bid Management</option>
+                                <option value="IT Governance and Service Management">IT Governance and Service Management</option>
+                                <option value="IT Strategy and Performance Management">IT Strategy and Performance Management</option>
+                                <option value="Enterprise Architecture and Design">Enterprise Architecture and Design</option>
+                                <option value="Digitisation">Digitisation</option>
+                            </optgroup>
+
+                            <optgroup label="IT External Audit">
+                                <option value="Specialist Supporting the Audit training">Specialist Supporting the Audit training</option>
+                                <option value="Eaudit skills">Eaudit skills</option>
+                                <option value="External Audit basics">External Audit basics</option>
+                                <option value="General IT controls">General IT controls</option>
+                            </optgroup>
+
+                            <optgroup label="IT Internal Audit">
+                                <option value="IT risk profiling">IT Risk Profiling</option>
+                                <option value="Risk and compliance assessment">Risk and Compliance Assessment</option>
+                                <option value="Application controls">Application Controls</option>
+                                <option value="General IT controls">General IT Controls</option>
+                                <option value="Report writing">Report Writing</option>
+                                <option value="IT fraud investigation">IT Fraud Investigation</option>
+                                <option value="Audit plan development">Audit Plan Development</option>
+                                <option value="Eaudit skills">Eaudit skills</option>
+                                <option value="ITIA basics">ITIA Basics</option>
+                                <option value="SAP basics">SAP Basics</option>
+                                <option value="IT assurance">IT Assurance</option>
+                                <option value="King 3 Assessments">King 3 Assessments</option>
+                                <option value="Data Migration Reviews">Data Migration Reviews</option>
+                                <option value="User Account Testing">User Account Testing</option>
+                            </optgroup>
+
+                            <optgroup label="Data Analytics">
+                                <option value="Data Analysis">Data Analysis</option>
+                                <option value="Data Visualization">Data Visualization</option>
+                                <option value="IDEA Skills">IDEA Skills</option>
+                                <option value="Qlikview Skills">Qlikview Skills</option>
+                                <option value="CAATS Basics Skills">CAATS Basics Skills</option>
+                                <option value="Data Insight Detection">Data Insight Detection</option>
+                                <option value="Report Writing">Report Writing</option>
+                            </optgroup>
+
+                            <optgroup label="TA Management">
+                                <option value="Vendor Sourcing and RFP Development">Vendor Sourcing and RFP Development</option>
+                                <option value="Vendor Contract Review">Vendor Contract Review</option>
+                                <option value="Business Case Review">Business Case Review</option>
+                                <option value="Project Assurance and Auditing">Project Assurance and Auditing</option>
+                                <option value="Project Risk Management">Project Risk Management</option>
+                                <option value="IT Strategy Development and Master Systems Plan">IT Strategy Development and Master Systems Plan</option>
+                                <option value="IT Governance and Maturity Assessment">IT Governance and Maturity Assessment</option>
+                                <option value="Data Migration">Data Migration</option>
+                                <option value="Business Process Risk and Control Analysis In Erp Environments">Business Process Risk and Control Analysis In Erp Environments</option>
+                                <option value="Automated Controls Testing">Automated Controls Testing</option>
+                                <option value="Requirements Management">Requirements Management</option>
+                                <option value="Blueprint / Process Design">Blueprint / Process Design</option>
+                                <option value="Controls Integration">Controls Integration</option>
+                                <option value="Master Data Management">Master Data Management</option>
+                                <option value="Security and Sod">Security and Sod</option>
+                                <option value="User Account Testing">User Account Testing</option>
+                                <option value="Support Management">Support Management</option>
+                                <option value="IT Service Management">IT Service Management</option>
+                                <option value="Develop It Governance Frameworks">Develop IT Governance Frameworks</option>
+                                <option value="IT Risks and Controls Assessments and Benchmarking">IT Risks and Controls Assessments and Benchmarking</option>
+                                <option value="Review It Policies and Procedures">Review It Policies and Procedures</option>
+                                <option value="Development of IT Strategies">Development of IT Strategies</option>
+                                <option value="Value IT Analysis and Reviews">Value IT Analysis and Reviews</option>
+                                <option value="It Governance Audits">IT Governance Audits</option>
+                                <option value="King 3 Assessments">King 3 Assessments</option>
+                                <option value="It Governance Maturity Reviews">IT Governance Maturity Reviews</option>
+                                <option value="Vendor Selection Assistance">Vendor Selection Assistance</option>
+                                <option value="It Project Assurance and Business Req Review">IT Project Assurance and Business Req Review</option>
+                                <option value="Disaster Recovery Test Assist and Reviews">Disaster Recovery Test Assist and Reviews</option>
+                                <option value="Project Management">Project Management</option>
+                            </optgroup>
+
+                        </select>
                     </div>
                 </div>
 
                 <!--TODO Fix employee allocation format Make it a table on click-->
                 <!-- TODO ask KPMG about min team size-->
                 <!-- Employees-->
-                <label>Employee Allocation</label><br/>
+                <br/>
+                <label style="font-size: 15pt; text-decoration: underline">Employee Allocation</label><br/>
                 <div class="row">
-                    <!--<div class="col-md-2 col-sm-2 col-xs-12">-->
-                    <!--<label>No. of Employees: *</label>-->
-                    <!--<input type="number" id="numemp" value="" min="0" name="numemp" placeholder="Other amount" />-->
-                    <!--</div>-->
-                    <div class="col-md-4 col-sm-4 col-xs-12">
-
-                        <input type="text" id="range_31" value="" name="numemp"/>
-                        <br/>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <label>No. Assistant Manager</label>
+                        <input type="text" id="Assistant_Manager" value=""/>
+                        <label>No. Supervisor</label>
+                        <input type="text" id="Supervisor" value=""/>
+                        <label>No. Senior Analyst</label>
+                        <input type="text" id="Senior_Analyst" value=""/>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-12">
-                        <label>Project Budget: *</label><br/><span> R</span>
-                        <input id="budget" name="budget" type="number" min="0.00" step="1" placeholder="0.00"/>
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <label>No. Analyst</label>
+                        <input type="text" id="Analyst" value=""/>
+                        <label>No. Junior Analyst 1</label>
+                        <input type="text" id="Junior_Analyst_1" value=""/>
+                        <label>No. Junior Analyst 2</label>
+                        <input type="text" id="Junior_Analyst_2" value=""/>
                     </div>
+                </div>
+                <br/>
+                <div class="row">
                     <div class="col-md-3">
                             <span class="docs-tooltip" data-toggle="tooltip" title="Click to generate employees">
                                 <button id="assignEmployees" type="button" class="btn btn-dark "><span
@@ -143,11 +251,88 @@
                 </div>
 
                 <!-- TODO show this table once button is clicked, hide div first-->
-                <div id="empTableHide">
-                    <div id="employeeTable" class="x_panel"></div>
+                <div id="EmpAllocationTableHide">
+                    <div id="EmpAllocationDT">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>Allocated Employees</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="table_content" class="x_content">
+                                <p class="text-muted font-13 m-b-30">
+                                 Below are the pre-selected employees that would best fit this project. Please select the employees you wish to replace and provide a reason for the replacement.
+                                </p>
+                                <table id="EmployeeAllocationDT" class="table table-striped table-bordered bulk_action">
+                                    <thead>
+                                    <tr>
+                                        <th><div class="text-center"><i class="fa fa-times" aria-hidden="true"></i></div></th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Position</th>
+                                        <th>Employment Length</th>
+                                        <th>Skill</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="EmpReplacementTableHide">
+                    <div id="EmpReplacementDT">
+                        <div class="x_panel">
+                            <div id='employeeRemoveReason'>
+                                <div>
+                                    <label for='empRemoval'>Reason/s for removing employee: *</label>
+                                    <textarea class='form-control' id='empRemoval' required='required' name='empRemoval'></textarea>
+                                </div>
+                            </div>
+                            <div class="x_title">
+                                <h2>Possible Replacement Employees</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li style="float: right;"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div id="table_content_Rep" class="x_content">
+                                <p class="text-muted font-13 m-b-30">
+                                    Below are the pre-selected employee replacements that would best fit this project. Please select the employee(s) you wish to add and provide a reason for the replacement.
+                                </p>
+                                <table id="EmployeeReplacementDT" class="table table-striped table-bordered bulk_action">
+                                    <thead>
+                                    <tr>
+                                        <th><div class="text-center"><i class="fa fa-times" aria-hidden="true"></i></div></th>
+                                        <th>Name</th>
+                                        <th>Surname</th>
+                                        <th>Position</th>
+                                        <th>Employment Length</th>
+                                        <th>Skill</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                                <div class='form-group'>
+                                    <div>
+                                        <select type='text' id='director_select' class='form-control'>
+                                            <optgroup label='Director' id='director'>
+                                                <option disabled selected>Select Director</option>
+                                                </optgroup>
+                                            </select>
+                                    </div>
+                                </div>
+                                <br/>
+                                <button id='removeEmployee' type='button' class='btn docs-tooltip btn-danger btn-round' data-toggle='tooltip' title='Remove selected employee/employees from project'>Remove Selection</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <br/>
-                <hr/>
+
+
                 <div class="row">
                     <!-- Project Owner Details-->
                     <div class="col-md-6">
@@ -159,26 +344,15 @@
                                data-parsley-trigger="change" required/>
 
                         <label class="control-label">Contact Number: *</label>
-                        <input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
+                        <input type="text" id="ownercontact" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'"
                                data-parsley-trigger="change" required>
                     </div>
-                    <!-- Project Manger Details-->
-                    <!--<div class="col-md-6">-->
-                    <!--<label for="projectmanager">Project Manager: *</label>-->
-                    <!--<input type="text" id="projectmanager" class="form-control" name="projectmanager" required />-->
-
-                    <!--<label for="projectmanageremail">Project Manager Email: *</label>-->
-                    <!--<input type="email" id="projectmanageremail" class="form-control" name="projectmanageremail" data-parsley-trigger="change" required />-->
-
-                    <!--<label class="control-label">Contact Number: *</label>-->
-                    <!--<input type="text" class="form-control" data-inputmask="'mask' : '(999) 999 - 9999'" data-parsley-trigger="change" required >-->
-                    <!--</div>-->
                 </div>
                 <br/>
                 <hr/>
                 <br/>
                 <input id="createProjectbtn" class="btn btn-dark docs-tooltip" data-toggle="tooltip"
-                       title="Confirm new project creation" type="submit" value="Create Project">
+                       title="Confirm new project creation" value="Create Project">
             </form>
             <div class="row">
                 <div style="margin-top: 300px" class="col-md-offset-4 col-md-4">
@@ -202,6 +376,7 @@
     </div>
 </div>
 
+
 <!-- jQuery -->
 <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -215,9 +390,8 @@
 <!-- jQuery Tags Input -->
 <script type="text/javascript" src="vendors/jquery.tagsinput/src/jquery.tagsinput.js"></script>
 <!-- Code 9 -->
-<script type="text/javascript" src="js/code9/js/code9Custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/js/animation.js"></script>
-<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/project_creation.js"></script>
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
@@ -226,29 +400,27 @@
 <!-- Datatables -->
 <script type="text/javascript" src="vendors/datatables.net/datatables.net/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.flash.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
-<script type="text/javascript"
-        src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+<script type="text/javascript" src="vendors/datatables.net/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/jszip/dist/jszip.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/pdfmake.min.js"></script>
 <script type="text/javascript" src="vendors/datatables.net/pdfmake/build/vfs_fonts.js"></script>
 <!-- Ion.RangeSlider -->
 <script type="text/javascript" src="vendors/ion.rangeSlider/js/ion.rangeSlider.min.js"></script>
-
+<!-- Select2 -->
+<script type="text/javascript" src="vendors/select2/dist/js/select2.full.js"></script>
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
 <!-- Custom Theme Scripts -->
 <script type="text/javascript" src="javascripts/custom.js"></script>
 <script type="text/javascript" src="vendors/Code-9/raphael.js"></script>

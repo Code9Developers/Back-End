@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Login</title>
+    <title>J3NS | Projects</title>
 
     <!-- Favicon -->
     <%- include('favicon'); %>
@@ -65,16 +65,6 @@
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
-                                    <!--<li class="dropdown">-->
-                                    <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>-->
-                                    <!--<ul class="dropdown-menu" role="menu">-->
-                                    <!--<li><a href="#">Settings 1</a>-->
-                                    <!--</li>-->
-                                    <!--<li><a href="#">Settings 2</a>-->
-                                    <!--</li>-->
-                                    <!--</ul>-->
-                                    <!--</li>-->
-                                    <!--<li><a class="close-link"><i class="fa fa-close"></i></a>-->
                                     <li style="float: right"><a href="project_creation" type="button"
                                                                 class="btn btn-default"><span class="docs-tooltip"
                                                                                               data-toggle="tooltip"
@@ -91,7 +81,6 @@
                                 <table id="projectsPageTable" class="table table-striped projects">
                                     <thead>
                                     <tr>
-                                        <th style="width: 1%">#</th>
                                         <th style="width: 20%">Project Name</th>
                                         <th>Team Members</th>
                                         <th>Project Progress</th>
@@ -99,7 +88,7 @@
                                         <th style="width: 20%">Options</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id='projViewTable'>
                                     <!--JQuery start-->
 
                                     <!-- JQuery End-->
@@ -133,7 +122,7 @@
 <!-- bootstrap-progressbar -->
 <script type="text/javascript" src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
 <!-- Code 9-->
-<script type="text/javascript" src="vendors/Code-9/js/fullscreen.js"></script>
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
 <script type="text/javascript" src="vendors/Code-9/views/projects.js"></script>
 <!-- FastClick: Increase load time-->
 <script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>

@@ -1,23 +1,22 @@
-/**
- * Created by Seonin David on 2017/08/30.
- */
-/**
- -----------------------------------------------------------------------------------------------------------------------
- *  Name: SMTP
- *  Author: Joshua Moodley
- *  Date: 21 Aug 2017 R1
- -----------------------------------------------------------------------------------------------------------------------
- */
 const express = require('express');
 const router = express.Router();
 const dbs = require('../../database/dbs');
 const generator = require('generate-password');
-const nodemailer = require('nodemailer');
+const email_functions = require('../email_functions');
 
-
+/**
+ * Page:
+ * Functionality: GET Request
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ */
 router.post('/register_employee', function (req, res, next) {
     let rand_password = generator.generate({
-        length: 8,
+        length: 4,
         numbers: true,
         symbols: true,
         uppercase: true
@@ -25,28 +24,17 @@ router.post('/register_employee', function (req, res, next) {
 
     let today = new Date();
 
-
-    var _json = req.body.skills;
-    _json = _json.split(",");
-
-    var result;
-    result = "[";
-    for (let i = 0; i < _json.length; i++) {
-        if (i == _json.length - 1) {
-            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"count":' + 0 + '}';
-        }
-        else {
-            result += '{"name":"' + _json[i] + '","rating":' + 0 + ',"count":' + 0 + '},';
-        }
+    let result=[];
+    let _json = req.body.skills;
+    for(let i in _json){
+        result[i]={name:_json[i],rating:0,counter:0}
     }
 
-    result += "]";
 
-    let out = JSON.parse(JSON.stringify(result));
-    let formatted_skills = JSON.parse(out);
+    let employee_id= (req.body.empid).replace(/\s/g, '');
     dbs.encrypt(rand_password, function (enc_pass) {
-        var emp = {
-            _id: req.body.empid,
+        let emp = {
+            _id:employee_id,
             name: req.body.firstname,
             surname: req.body.lastname,
             password: enc_pass,
@@ -56,42 +44,15 @@ router.post('/register_employee', function (req, res, next) {
             role: req.body.role,
             position: req.body.positionlist,
             employment_length: req.body.emplength,
-            skill: formatted_skills,
-            past_projects: [req.body.pastprojects]
+            skill: result,
+            past_projects: req.body.pastprojects
         };
 
+        // Insert User into DB
         dbs.insertUser(emp);
 
-        // create reusable transporter object using the default SMTP transport
-        let transporter = nodemailer.createTransport({
-            host: 'smtp.gmail.com',
-            port: 465,
-            secure: true, // secure:true for port 465, secure:false for port 587
-            auth: {
-                user: 'code9devs@gmail.com',
-                pass: process.env.SMTP_PASSWORD
-            }
-        });
-
-        // setup email data with unicode symbols
-        let mailOptions =
-            {
-                from: '"Code 9 👻👻👻 BOO!!" < code9devs@gmail.com >', // sender address
-                to: 'code9devs@gmail.com,' + emp.email, // list of receivers
-                subject: 'KPMG Employee Registration Details - NO REPLY', // Subject line
-                // plain text body
-                // text: 'Welcome ' + emp.name + ' ' + emp.surname + '\nYour password is: ' + rand_password
-                // html body
-                html: 'Welcome ' + emp.name + ' ' + emp.surname + '<br/>User name is: ' + emp._id + '<br/>Your password is: ' + '<b>' + rand_password + '</b>'
-            };
-
-        // send mail with defined transport object
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message %s sent: %s', info.messageId, info.response);
-        });
+        // Send email
+        email_functions.NewEmployeeMailer(emp.email, emp.name, emp.surname, emp._id, rand_password);
 
         res.redirect('employees');
     });
@@ -100,13 +61,16 @@ router.post('/register_employee', function (req, res, next) {
 /**
  * Page: admin.ejs
  * Functionality: Display past projects on admin page
- * Author: Seonin David
- * Note: The past projects that are being displayed are test projects, eventually actual past projects
- * will need to be displayed
+ * Note: The past projects that are being displayed are test projects, eventually actual past projects will need to be displayed
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: DD/MM/2017 by author
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 
 router.get('/get_past_projects', function (req, res, next) {
-    var past_projects = dbs.findProjects("status", "completed", function (past_projects) {
+    let  past_projects = dbs.findProjects("status", "completed", function (past_projects) {
         res.send(past_projects);
     })
 });

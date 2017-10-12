@@ -2,7 +2,7 @@
     <div class="left_col scroll-view">
         <!-- KPMG Logo Side Bar-->
         <div class="navbar nav_title" style="border: 0;">
-            <a href="#" class="site_title"><img src="images/logo/KPMG_Square_White.png" width="55px" height="55px"></a>
+            <a href="#" class="site_title"><img src="images/logo/logo-white.png" width="145px" height="90px"></a>
         </div>
 
         <div class="clearfix"></div>
@@ -11,7 +11,6 @@
         <div class="profile clearfix">
             <div class="profile_pic">
                 <img src="images/default_user.png" alt="..." class="img-circle profile_img">
-                <!--TODO: Add call to get current users profile picture -->
             </div>
             <div class="profile_info">
                 <span>Welcome</span>
@@ -28,8 +27,6 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                         <ul id="home" class="nav child_menu">
-                            <li><a href="#">Inbox <span class="label label-success pull-right">Coming Soon</span></a>
-                            </li>
 
                         </ul>
                     </li>
@@ -47,10 +44,10 @@
             <a data-toggle="tooltip" data-placement="top" title="Settings">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+            <a data-toggle="tooltip" onclick="toggleFullScreen()" data-placement="top" title="FullScreen">
                 <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Lock">
+            <a data-toggle="tooltip" onclick="invertWebsite()" data-placement="top" title="Invert Colours">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
             <a data-toggle="tooltip" data-placement="top" title="Logout" href="logout">
@@ -67,25 +64,42 @@
     $(document).ready(function () {
         $.get("role",
             {}, function (data, status) {
-                if (data == "Manager") {
+
+                if (data === "Manager") {
                     $("#menu").append(
                         "<li><a href='project_creation'>Add Project</a></li>" +
-                        "<li><a href='projects'>View All Projects</a></li>"
+                        "<li><a href='projects'>View All Projects</a></li>"+
+                        "<li><a href='display_reviews'>View All Projects To Review</a></li>"
                     );
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>")+
+                    "<li><a href='profile'>Profile</a></li>";
                 }
-                else if (data == "Admin") {
+                else if (data === "Admin") {
                     $("#menu").append(
                         "<li><a href='admin'>Register Employee</a></li>" +
-                        "<li><a href='employees'>Show All Employees</a></li>"
+                        "<li><a href='employees'>Show All Employees</a></li>"+
+                        "<li><a href='training'>Create Training Event</a></li>"
                     );
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>"+
+                        "<li><a href='profile'>Profile</a></li>");
                 }
-                else {
+                else if(data==="Employee"){
                     $("#home").append(
-                        " <li><a href='user_dashboard'>Dashboard</a></li>" +
-                        " <li><a href='calendar'>Calendar</a></li>"
+                        "<li><a href='user_dashboard'>Dashboard</a></li>" +
+                        "<li><a href='calendar'>Calendar</a></li>"
                     );
                     $("#menu").append(
                         "<li><a href='profile'>Profile</a></li>"
+                    );
+                }
+                else{
+                    $("#home").append(
+                        "<li><a href='director_dashboard'>Dashboard</a></li>"+
+                       "<li><a href='manager_calendar'>Calendar</a></li>"
+                    );
+                    $("#menu").append(
+                        "<li><a href='profile'>Profile</a></li>"+
+                        "<li><a href='approvals'>Approval Page</a></li>"
                     );
                 }
             });

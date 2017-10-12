@@ -1,8 +1,13 @@
 /**
- * Created by Seonin David on 2017/08/23.
- */
-/**
- * Created by Seonin David on 2017/08/16.
+ * Page: N/A
+ * Functionality: Employees
+ * Note:
+ * Bug(s): N/A
+ *
+ * Author(s): Seonin David
+ * Date Revised: 16/08/2017 by Seonin David
+ * Date Revised: 23/08/2017 by Seonin David
+ * Date Revised: 02/10/2017 by Joshua Moodley
  */
 $(document).ready(function() {
 
@@ -32,7 +37,7 @@ $(document).ready(function() {
         $.each(data, function (key, value) {
             // console.log(value.name);
 
-           // view_id="";//"project_detail?id="+value._id;
+           let view_id="profile?id="+value._id;
 
 
             $("#projViewTable").append("<tr>" +
@@ -54,12 +59,19 @@ $(document).ready(function() {
                 "<a>" + value.employment_length+"</a>" +
                 "</td>" +
                 "<td>"+
-                "<a href='#'  class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
-                "<a href='#' class='btn btn-danger btn-xs'><i class='fa fa-trash-o'></i> Delete </a>"+
+                "<a href="+view_id+"  class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
+                "<a id="+value._id+" class='btn btn-danger btn-xs emp'><i class='fa fa-trash-o'></i> Delete </a>"+
                 "</td>"+
                 "</tr>");
 
         });
-
+        $(".emp").on("click",function () {
+            $(this).parent().parent().hide();
+            $.get("remove_emp",{
+                user_id:$(this).attr("id")
+            });
+        });
     });
+
+
 });

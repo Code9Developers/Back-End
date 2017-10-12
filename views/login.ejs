@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>KPMG | Login</title>
+    <title>J3NS | Login</title>
 
     <!-- Favicon -->
     <%- include('favicon'); %>
@@ -19,9 +19,12 @@
     <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
     <!-- NProgress: Top load animation-->
     <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
-
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>
+    <!--<link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>-->
     <link href="stylesheets/custom.css" type="text/css" rel="stylesheet"/>
 </head>
 
@@ -33,16 +36,16 @@
     <div class="login_wrapper">
         <div class="animate form login_form">
             <section class="login_content">
-                <form action="login" method="post">
-                    <h1>Login Form</h1>
+                <form >
+                    <h1>Login</h1>
                     <div>
-                        <input type="text" class="form-control" name="username" placeholder="Username" required=""/>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required/>
                     </div>
                     <div>
-                        <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required/>
                     </div>
                     <div>
-                        <button class="btn btn-default submit" type="submit" value="Submit">Submit</button>
+                        <button id="login_btn" class="btn btn-default submit" type="button" value="Submit">Login</button>
                         <!--<a class="reset_pass" href="#">Lost your password?</a>-->
                         <!--Maybe we can add a lost your password part in later on -->
                     </div>
@@ -54,61 +57,10 @@
                         <br/>
 
                         <div>
-                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
+                            <img src="images/logo/logo-black.png" width="145px" height="90px">
                             <br/>
                             <br/>
-                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and
-                                Terms</p>
-                        </div>
-                    </div>
-                </form>
-            </section>
-        </div>
-
-        <div id="register" class="animate form registration_form">
-            <section class="login_content">
-                <form class="form-horizontal form-label-left">
-                    <h1>Create Account</h1>
-                    <div>
-                        <input type="text" class="form-control" placeholder="Username" required=""/>
-                    </div>
-                    <div>
-                        <input type="email" class="form-control" placeholder="Email" required=""/>
-                    </div>
-                    <div>
-                        <input type="password" class="form-control" placeholder="Password" required=""/>
-                    </div>
-                    <div class="form-group">
-                        <div class="control-group">
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Input Tags</label>
-                            <div class="col-md-9 col-sm-9 col-xs-12">
-                                <input id="tags_1" type="text" class="tags form-control"
-                                       value="social, adverts, sales"/>
-                                <div id="suggestions-container"
-                                     style="position: relative; float: left; width: 250px; margin: 10px;"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <input class="btn btn-default submit" type="submit" value="Submit">
-                    </div>
-
-                    <div class="clearfix"></div>
-
-                    <div class="separator">
-                        <p class="change_link">Already a member ?
-                            <a href="#signin" class="to_register"> Log in </a>
-                        </p>
-
-                        <div class="clearfix"></div>
-                        <br/>
-
-                        <div>
-                            <img src="images/logo/KPMG_blue_logo_Rec.svg.png" width="100px" height=40px">
-                            <br/>
-                            <br/>
-                            <p>©2016 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and
-                                Terms</p>
+                            <p>©2017 All Rights Reserved.</p>
                         </div>
                     </div>
                 </form>
@@ -119,6 +71,9 @@
 
 </body>
 <!--Vendors js files-->
+
+
+
 <!-- jQuery -->
 <script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap -->
@@ -130,5 +85,13 @@
 <!-- Parsley -->
 <script type="text/javascript" src="vendors/parsleyjs/dist/parsley.min.js"></script>
 <!-- Custom Theme Scripts -->
+<script type="text/javascript" src="vendors/Code-9/views/login.js"></script>
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
+
 <script type="text/javascript" src="javascripts/custom.js"></script>
+
+
 </html>

@@ -12,6 +12,19 @@
 - Jordan Daubinet
 - Jacques Smulders
 
+### Versioning
+- 0 for alpha (status)
+- 1 for beta (status)
+- 2 for release candidate
+- 3 for (final) release
+
+#### Examples
+- 1.0.0.1 instead of 1.0-a1
+- 1.0.1.1 instead of 1.2-b1 (beta with some bug fixes)
+- 1.0.2.1 instead of 1.2-rc1 (release candidate)
+- 1.0.3.0 instead of 1.2-r (commercial distribution)
+- 1.0.3.1 instead of 1.2-r1 (commercial distribution with many bug fixes)
+
 ### Resources
 * <b>How to use Bootstrap HTML elements &amp; and attributes</b> : https://www.w3schools.com/bootstrap/
 
@@ -56,6 +69,9 @@ Let me <i>(Joshua)</i> know if you have any issues.
 #### Important Packages
  * `helmet` which proctects the app from well-known web vulnerabilities
  * `nsp` which can be used to check for vulnerabilities
+ 
+#### Software Versions
+* ECMAScript 6 (Javascript Version)
 
 ---
 ><i>Feel free to change anything, just put your reason into the commit message so everyone is on the same page :)</i>

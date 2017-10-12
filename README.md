@@ -5,7 +5,8 @@
 # Back-End
 >Back-End: Server & Database for Capstone Project
 
-### Code9; Team Members
+### Code 9 Team Members
+#### Our Team, documentation & Tutorials can be found [here](https://code9developers.github.io/Integration/)
 - Seonin David
 - Joshua Moodley
 - Nicaedin Suklal
@@ -61,7 +62,6 @@ Let me <i>(Joshua)</i> know if you have any issues.
 * <b>JavaScript Testing Framework</b>: https://mochajs.org/#installation 
 #### Integration Testing
 
-
 #### Running the server
 * Since nodemon is installed  to run the server type `npm run dev`
 * To restart at any time, enter `rs`
@@ -70,7 +70,7 @@ Let me <i>(Joshua)</i> know if you have any issues.
  * `helmet` which proctects the app from well-known web vulnerabilities
  * `nsp` which can be used to check for vulnerabilities
  
-#### Software Versions
+#### Software Versions & Requirements
 * ECMAScript 6 (Javascript Version)
 
 ---

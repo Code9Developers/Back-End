@@ -185,7 +185,7 @@ router.post("/project_creation", function (req, res, next) {
     dbs.insertProject(project);
     // var emp_obj=JSON.parse(employee_id_array);
     for (let x in employees) {
-        dbs.assignProject(employees[x], project_id);
+        dbs.assignProject(employees[x], project_id,function (res) {});
 
         dbs.insertNotification({
             _id: employees[x]._id + project_id,

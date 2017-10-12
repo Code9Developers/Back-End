@@ -89,7 +89,7 @@ router.get("/send_review",(req, res, next)=> {
     let project_skill_data=_data[0].value.split(";");
     let project_rating=parseInt(project_skill_data[1]);
     dbs.editProjects("_id",req.query.id,"reviewed","Yes");
-    dbs.completeProject(req.query.id,project_rating);
+    dbs.completeProject(req.query.id,project_rating,function(res){});
     res.send("display_reviews");
 
 });

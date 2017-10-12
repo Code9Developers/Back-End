@@ -8,7 +8,18 @@
 
 $(document).ready(function() {
     let proj_id;
+    $.get("display_image",{},function (data,status) {
+        function bufferToBase64(buf) {
+            var binstr = Array.prototype.map.call(buf, function (ch) {
+                return String.fromCharCode(ch);
+            }).join('');
+            return btoa(binstr);
+        }
 
+        var b64 = bufferToBase64(new Uint8Array(data[1].data)) ;
+
+        document.getElementById("pro_image").src = "data:" + data[0] + ";base64," + b64 ;
+    });
     $.get("get_emp", {},
         function (data, status) {
             // alert(JSON.stringify(data));
@@ -106,6 +117,9 @@ $(document).ready(function() {
                 //  alert(value["name"]);
                 let  tempDateArray=(value._id.project_start_date.substr(0,10)).split("-");
                 let  start_date=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
+
+                let  tempDateArray_end_date=(value._id.project_end_date.substr(0,10)).split("-");
+                let  end_date=(tempDateArray_end_date[2]+"/"+tempDateArray_end_date[1]+"/"+tempDateArray_end_date[0]).toString();
                 $("#emp_past_proj").append(
                     "<tr>"
                     +"<td>"+c+"</td>"
@@ -114,7 +128,7 @@ $(document).ready(function() {
                     +"<td class='hidden-phone'>"+start_date+"</td>"
                     +"<td class='vertical-align-mid'>"
                     +"<div class='p'>"
-                    +"<div class='progress-bar' data-transitiongoal='35' aria-valuemin='-40' aria-valuemax='200'></div>"
+                    +"<td class='hidden-phone'>"+end_date+"</td>"
                     +"</div>"
                     +"</td>"
                     +"</tr>"
@@ -125,24 +139,53 @@ $(document).ready(function() {
             });
         });
 
-    $('#updateProfile').on('click', function (e) {
-        alert(document.getElementById("pic").files[0].name);
-           $.get("store_image",
-               {
-                   pic:$("#pic").val()
-               }
-               ,
-               function(data, status) {
-                   $.get("display_image",{},function(data, status) {
-                        alert(data);
-                   });
-               });
+    $('#updateImage').on('click', function (event) {
+        $.get("store_image",
+            {
+                pic:$("#pic").val()
+            }
+            ,
+            function(data, status) {
+
+                $.get("display_image", function(data, status) {
+                    function bufferToBase64(buf) {
+                        var binstr = Array.prototype.map.call(buf, function (ch) {
+                            return String.fromCharCode(ch);
+                        }).join('');
+                        return btoa(binstr);
+                    }
+
+                    var b64 = bufferToBase64(new Uint8Array(data[1].data)) ;
+
+                    document.getElementById("pro_image").src = "data:" + data[0] + ";base64," + b64 ;
+                });
 
 
+
+            });
+
+    });
+
+    $("#updatePassword").on('click',function () {
         //    //should check two passwords
-        // let oldPword = $("#oldpassword").val()
-        // let newPword = $("#newpassword").val()
-        //
+        let Pword = $("#password").val();
+        let ConfPword = $("#confirm_password").val();
+
+        if(Pword==ConfPword){
+            $.get("update_password",{
+                    pass:Pword
+                },
+                function (data, status) {
+                    if(status=="success"){
+                        passwords_changed();
+                    }
+                });
+        }
+        else {
+            passwords_invalaid();
+            $("#confirm_password").empty();
+            $("#password").empty();
+        }
         // $.get("check_password",{
         //         oldP:oldPword
         //     },
@@ -159,8 +202,6 @@ $(document).ready(function() {
         //             alert("Check Password")
         //         }
         //     });
-    });
-
-
+    })
 
 });

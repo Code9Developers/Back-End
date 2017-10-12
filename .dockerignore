@@ -12,7 +12,6 @@ Back-End.iml
 README.md
 database/mongo.log
 database/Setting up MongoDB.txt
-database/data
 bin/cert.pem
 bin/key.pem
 

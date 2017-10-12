@@ -27,8 +27,6 @@
                 <ul class="nav side-menu">
                     <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
                         <ul id="home" class="nav child_menu">
-                            <li><a href="#">Inbox <span class="label label-success pull-right">Coming Soon</span></a>
-                            </li>
 
                         </ul>
                     </li>
@@ -73,7 +71,8 @@
                         "<li><a href='projects'>View All Projects</a></li>"+
                         "<li><a href='display_reviews'>View All Projects To Review</a></li>"
                     );
-                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>");
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>")+
+                    "<li><a href='profile'>Profile</a></li>";
                 }
                 else if (data === "Admin") {
                     $("#menu").append(
@@ -81,7 +80,8 @@
                         "<li><a href='employees'>Show All Employees</a></li>"+
                         "<li><a href='training'>Create Training Event</a></li>"
                     );
-                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>");
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>"+
+                        "<li><a href='profile'>Profile</a></li>");
                 }
                 else if(data==="Employee"){
                     $("#home").append(

@@ -101,12 +101,12 @@ router.get('/display_image', function (req, res, next) {
     });
 });
 
-router.get('/store_image', function (req, res, next) {
-    console.log("user: " + req.session.username);
-    console.log("pic: " + req.query.pic);
-    dbs.editProfileImage(req.session.username, req.query.pic);
-    res.render('profile');
-});
+// router.get('/store_image', function (req, res, next) {
+//     console.log("user: " + req.session.username);
+//     console.log("pic: " + req.query.pic);
+//     dbs.editProfileImage(req.session.username, req.query.pic);
+//     res.render('profile');
+// });
 
 router.get('/edit_test_employees', function (req, res, next) {
     dbs.editUserObject("_id", "emp2", "skill", "rating", "10", "rating", 1);
@@ -166,8 +166,8 @@ router.get("/create_past_projects", function (req, res, next) {
 //
 
 
-router.get("/training", function (req, res, next) {
-    res.render('training');
-});
+// router.get("/training", function (req, res, next) {
+//     res.render('training');
+// });
 
 module.exports = router;

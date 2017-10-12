@@ -38,7 +38,7 @@ $(document).ready(function() {
                     "</ul>" +
                     "</div>" +
                     "<div class='right col-xs-5 text-center'>" +
-                    "<img src='images/img.jpg'' alt='' class='img-circle img-responsive'>" +
+                    "<img src='images/default_user.png'' alt='' class='img-circle img-responsive'>" +
                     "</div>" +
                     "</div>"+
                     "<div class='col-xs-12 bottom text-center'>"+

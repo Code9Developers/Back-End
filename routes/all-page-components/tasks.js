@@ -88,7 +88,9 @@ router.get('/remove_task', function (req, res, next) {
 
 router.get('/progress_analytics', function (req, res, next) {
     let project_id=req.query.id;
+    console.log(project_id);
     dbs.findProjects("_id",project_id,function (project_data) {
+        console.log(project_data);
         let task_ids=project_data[0].tasks;
         let completed;
         if(task_ids.length!=0) {

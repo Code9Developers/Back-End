@@ -25,13 +25,9 @@ $(document).ready(function() {
                 milestone_pid="project_milestone?id="+value._id;
                 remove_pid="project_remove?id="+value._id;
                 value.status[0]=(value.status[0]).toUpperCase();
-                let index=parseInt(key)+1;
                 let  tempDateArray=(value.project_start_date.substr(0,10)).split("-");
                 let  newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
                 $("#projViewTable").append("<tr>" +
-                    "<td>" +
-                    index+
-                    "</td>" +
                     "<td>" +
                     "<a>" + value.name + "</a>" +
                     "<br/>" +
@@ -51,7 +47,7 @@ $(document).ready(function() {
                     "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
                     "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+
                     "<a href="+edit_id+" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
-                    "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Remove </a>"+
+                    "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Complated </a>"+
                     "</td>"+
                     "</tr>");
                 var len=(value.employees_assigned).length;
@@ -83,13 +79,10 @@ $(document).ready(function() {
                     milestone_pid="project_milestone?id="+value._id;
                     remove_pid="project_remove?id="+value._id;
                     value.status[0]=(value.status[0]).toUpperCase();
-                    let index=parseInt(key)+1;
+
                     let  tempDateArray=(value.project_start_date.substr(0,10)).split("-");
                     let  newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
                     $("#projViewTable").append("<tr>" +
-                        "<td>" +
-                        index+
-                        "</td>" +
                         "<td>" +
                         "<a>" + value.name + "</a>" +
                         "<br/>" +
@@ -109,7 +102,7 @@ $(document).ready(function() {
                         "<a href="+view_id+" class='btn btn-primary btn-xs'><i class='fa fa-folder'></i> View </a>"+
                         "<a href="+milestone_pid+" class='btn btn-warning btn-xs'><i class='fa fa-trophy'></i> Milestones </a>"+
                         "<a href="+edit_id+" class='btn btn-info btn-xs'><i class='fa fa-pencil'></i> Edit </a>"+
-                        "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Remove </a>"+
+                        "<a id="+value._id+"  class='btn btn-danger btn-xs remove'><i class='fa fa-trash-o'></i> Completed </a>"+
                         "</td>"+
                         "</tr>");
                     var len=(value.employees_assigned).length;

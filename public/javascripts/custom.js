@@ -2241,6 +2241,24 @@ function IncorrectLogin() {
     });
 }
 
+function passwords_invalaid() {
+    new PNotify({
+        title: 'Invalid',
+        text: 'Passwords do not match, please try again',
+        type: 'warning',
+        styling: 'bootstrap3'
+    });
+}
+
+function passwords_changed() {
+    new PNotify({
+        title: 'Sucess',
+        text: 'Passwords successfully changed',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
 function ApproveApproval() {
     new PNotify({
         title: 'Approved',

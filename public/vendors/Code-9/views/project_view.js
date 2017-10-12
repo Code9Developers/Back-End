@@ -8,8 +8,13 @@
  * Date Revised: 18/08/2017 by Seonin David
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
+$.urlParam = function (name) {
+    let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+};
+
 function make_graph() {
-    $.get("/progress_analytics",function (data, status) {
+    $.get("/progress_analytics",{id:$.urlParam('id')},function (data, status) {
         let pc = document.getElementById('progressBarGraph').getContext('2d');
         let myChart = new Chart(pc, {
             type: 'bar',
@@ -171,10 +176,7 @@ $('#editbutton').click(function ()
 });
 $(document).ready(function() {
 
-    $.urlParam = function (name) {
-        let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-        return results[1] || 0;
-    };
+
     make_graph();
     let  i = 0;
 

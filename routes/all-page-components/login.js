@@ -30,13 +30,12 @@ router.get('/', function (req, res, next) {
  */
 function login_check(req, res, next) {
     let  result = dbs.authenticate(req.body.username, req.body.password, function (result) {
-        console.log("result found");
+
         if (result) {
             return next();
         }
         else {
-            res.redirect('/');
-            console.log("Redirecting to login page");
+            res.send("no_user");
         }
     });
 }
@@ -48,12 +47,12 @@ function isAuntenticated(req, res, next) {
             return next();
         }
         else {
-            res.redirect('/');
+            res.send("no_user");
         }
     });
 }
 
-router.post('/login', function (req, res, next) {
+router.post('/login',login_check,function (req, res, next) {
 
     dbs.findUsers("_id", req.body.username, function (user) {
 

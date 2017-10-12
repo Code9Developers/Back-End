@@ -101,6 +101,7 @@ router.get("/get_emp_milestone", function (req, res, next) {
 
 router.get('/store_image', function (req, res, next) {
     dbs.editProfileImage(req.session.username, req.query.pic) ;
+    res.send(true) ;
 
 });
 

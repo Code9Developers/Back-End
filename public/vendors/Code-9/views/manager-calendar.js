@@ -16,7 +16,7 @@ function getCalendarEvents() {
     let get1 = $.get("all_projects",
         {},
         function (data, status) {
-            window.alert(JSON.stringify(data));
+
             $.each(data, function (key, value) {
 
                 item = {};
@@ -93,7 +93,7 @@ function  init_calendar() {
             // window.alert(start.format());
             for(var i =0; i < eve.size;i++){
                 if(eve[i]["start"] <= start.format()){
-                    alert.window("true");
+                    // alert.window("true");
                 }
             }
 

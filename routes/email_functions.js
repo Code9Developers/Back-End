@@ -39,7 +39,7 @@ exports.NewEmployeeMailer = function (toEmail, empName, empSurname, empId, randP
         {
             from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
             to: 'code9devs@gmail.com,' + toEmail, // list of receivers
-            subject: 'NO REPLY - KPMG Employee Registration Details', // Subject line
+            subject: 'NO REPLY - Employee Registration Details', // Subject line
             // text:
             html: 'Welcome ' + empName + ' ' + empSurname + '<br/>User name is: '+ '<b>' + empId + '</b>' + '<br/>Your password is: ' + '<b>' + randPass + '</b>'
         };
@@ -72,7 +72,7 @@ exports.NewProjectAllocation = function (toEmail, empName, empSurname, projectNa
         {
             from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
             to: 'code9devs@gmail.com,' + toEmail, // list of receivers
-            subject: 'NO REPLY - KPMG Project Allocation', // Subject line
+            subject: 'NO REPLY - Project Allocation', // Subject line
             // text:
             // html body
             html: '<b>' + empName + ' '  + empSurname +  '</b> you have been assigned to the <b>"' + projectName + '"</b> project.'
@@ -104,7 +104,7 @@ exports.EmployeeReplacement = function (toEmail, managerName, managerSurname, pr
         {
             from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
             to: 'code9devs@gmail.com,' + toEmail, // list of receivers
-            subject: 'NO REPLY - KPMG Employee Replacement', // Subject line
+            subject: 'NO REPLY - Employee Replacement', // Subject line
             // text:
             // html body
             html: '<b>' + managerName + ' '  + managerSurname +  '</b> requests a change of employee for the <b>"' + projectName + '"</b> project.'

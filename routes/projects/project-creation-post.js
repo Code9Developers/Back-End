@@ -25,7 +25,7 @@ let employee_info_array;
  */
 
 let rep_data;
-let budget;
+let budget = 0;
 router.get('/get_json_data', function (req, res, next) {
     let position_array=req.query.position_arr;
     let amount_array=req.query.amount_arr;
@@ -48,6 +48,7 @@ router.get('/get_json_data', function (req, res, next) {
     algorithm.get_unallocated_users(position_array,amount_array,arr_skills,newStartDate,new_end_date, function (data) {
         let result = JSON.stringify(data[0]);
          rep_data = JSON.stringify(data[1]);
+         budget = data[2];
          console.log(rep_data);
         let _obj = JSON.parse(result);
         let emp_data=[];
@@ -179,7 +180,7 @@ router.post("/project_creation", function (req, res, next) {
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
         manager_id: req.session.username,
-        project_budget: 0,
+        project_budget: budget,
         status: status,
         project_rating:0,
         reviewed:"No"

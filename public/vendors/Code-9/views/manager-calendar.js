@@ -19,7 +19,6 @@ function getCalendarEvents() {
     let get1 = $.get("all_projects",
         {},
         function (data, status) {
-            window.alert(JSON.stringify(data));
             $.each(data, function (key, value) {
                 // window.alert(value.name);
 
@@ -94,16 +93,15 @@ function  init_calendar() {
 
             started = start;
             ended = end;
-            window.alert(eve[0]["end"]);
-            window.alert(start.format());
+
             for(var i =0; i < eve.size;i++){
                 if(eve[i]["start"] <= start.format()){
-                    alert.window("true");
+
                 }
             }
 
             $(".antosubmit").on("click", function() {
-                window.alert("submitted");
+
                 let  title = $("#title").val();
                 if (end) {
                     ended = end;

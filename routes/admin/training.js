@@ -72,6 +72,7 @@ router.post('/add_training', function (req, res, next) {
     for(let i in ids){
         dbs.findUsers("_id",ids[i],function (user_data) {
            console.log(user_data[0].email);//Works
+            email_functions.TraningNotification(user_data[0].email, user_data[0].name, user_data[0].surname, training_obj.training_start_date, training_obj.training_end_date, training_obj.trainer_name, training_obj.trainer_email, training_obj.training_contact);
         });
     }
 

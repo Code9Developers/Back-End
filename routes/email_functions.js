@@ -118,3 +118,38 @@ exports.EmployeeReplacement = function (toEmail, managerName, managerSurname, pr
         console.log('Message %s sent: %s', info.messageId, info.response);
     });
 };
+
+/**
+ * Page: N/A
+ * Functionality: Send email to employees that they have training
+ * Note:
+ * Bug(s): Possible formatting bug - need the db filled with vaild data to test
+ *
+ * Author(s): Joshua Moodley
+ * Date Revised: 25/09/2017 by Joshua Moodley
+ * Date Revised: 02/10/2017 by Joshua Moodley
+ * Date Revised: 07/10/2017 by Joshua Moodley
+ */
+exports.TraningNotification = function (toEmail, empName, empSurname, startDate, endDate, trainer, trainerEmail, trainerNumber)
+{
+// setup email data with unicode symbols
+    let NewEmployeeMail  =
+        {
+            from: '"Code 9 ☁️" < code9devs@gmail.com >', // sender address
+            to: 'code9devs@gmail.com,' + toEmail, // list of receivers
+            subject: 'NO REPLY - Employee Training', // Subject line
+            // text:
+            // html body
+            html: 'Dear <b>' + empName + ' '  + empSurname +  '</b> please note you have training from <br/><b>' + startDate + '</b> to the <b>' + endDate + '</b><br/>. ' +
+            'If you have any questions please contact <b>' + trainer + '</b>: ' + trainerEmail + ' or ' +trainerNumber
+        };
+
+    // send mail with defined transport object
+    transporter.sendMail(NewEmployeeMail, (error, info) => {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+    });
+
+};

@@ -35,15 +35,21 @@ connection.connect();
 let https = require("https");
 let fs = require("fs");
 
-let options = {
-    key: fs.readFileSync("./bin/key.pem"),
-    cert: fs.readFileSync("./bin/cert.pem")
-};
-
+/**
+ * Local Build
+ */
 // let options = {
-//     key: fs.readFileSync("/etc/ssl/privatekey.pem"),
-//     cert: fs.readFileSync("/etc/ssl/fullchain.pem")
+//     key: fs.readFileSync("./bin/key.pem"),
+//     cert: fs.readFileSync("./bin/cert.pem")
 // };
+
+/**
+ * Docker Build
+ */
+let options = {
+    key: fs.readFileSync("/etc/ssl/live/code9devs.me/privkey.pem"),
+    cert: fs.readFileSync("/etc/ssl/live/code9devs.me/fullchain.pem")
+};
 
 let server = https.createServer(options, app);
 // var server = http.createServer(app);

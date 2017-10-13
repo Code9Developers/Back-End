@@ -2241,6 +2241,15 @@ function SendApproval() {
     });
 }
 
+function InvalidPassword() {
+    new PNotify({
+        title: 'Invalid!',
+        text: 'Password cannnot be blank',
+        type: 'danger',
+        styling: 'bootstrap3'
+    });
+}
+
 function IncorrectLogin() {
     new PNotify({
         title: 'Invalid',

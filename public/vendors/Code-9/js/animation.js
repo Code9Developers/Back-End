@@ -18,9 +18,9 @@ function alg_animate()
     var y_coord = origin_y;
     var circle_size = 8;
     //Animations
-    emp_found = Raphael.animation({fill: "#1b8d20", stroke: "none"});
+    emp_found = Raphael.animation({fill: "#01248c", stroke: "none"});
 
-    ripple_out = Raphael.animation({r: 15, stroke: "#20b426", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
+    ripple_out = Raphael.animation({r: 15, stroke: "#011f74", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
     ripple_fade = Raphael.animation({opacity: 0 }, 600);
     console.log("x : "+x_coord+" , y : "+y_coord);
     var new_circle = paper.circle(origin_x, origin_y, circle_size).attr({stroke: "#2A3F54", fill: "none", "stroke-width": "2"});

@@ -38,18 +38,18 @@ let fs = require("fs");
 /**
  * Local Build
  */
-// let options = {
-//     key: fs.readFileSync("./bin/key.pem"),
-//     cert: fs.readFileSync("./bin/cert.pem")
-// };
+let options = {
+    key: fs.readFileSync("./bin/key.pem"),
+    cert: fs.readFileSync("./bin/cert.pem")
+};
 
 /**
  * Docker Build
  */
-let options = {
-    key: fs.readFileSync("/etc/ssl/live/code9devs.me/privkey.pem"),
-    cert: fs.readFileSync("/etc/ssl/live/code9devs.me/fullchain.pem")
-};
+// let options = {
+//     key: fs.readFileSync("/etc/ssl/live/code9devs.me/privkey.pem"),
+//     cert: fs.readFileSync("/etc/ssl/live/code9devs.me/fullchain.pem")
+// };
 
 
 

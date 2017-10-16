@@ -2,6 +2,7 @@
 [![npm](https://img.shields.io/npm/v/npm.svg)]()
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)]()
 [![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)]()
+[![Build](https://travis-ci.org/Code9Developers/Back-End.svg?branch=travis-test)]()
 # Back-End
 >Back-End: Server & Database for Capstone Project
 

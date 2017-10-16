@@ -12,44 +12,6 @@
 			"description": "",
 			"item": [
 				{
-					"name": "https://localhost:4000/analytics",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Test if a manager is returned\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"manager_name\");",
-									"});",
-									"",
-									"pm.test(\"Test if a multiple employees return\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"Anisha algate\");",
-									"    pm.expect(pm.response.text()).to.include(\"Sana beam\");",
-									"});",
-									"",
-									"",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://code9devs.me/analytics",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic MzM6dGVzdA==",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
 					"name": "https://localhost:4000/all_employees",
 					"event": [
 						{

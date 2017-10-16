@@ -146,7 +146,7 @@ $(document).ready(function (){
                 emp_ids:JSON.stringify(emp_selected_ids)
             },
             function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+                SentTraining();
             });
     });
 

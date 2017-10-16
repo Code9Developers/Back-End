@@ -100,9 +100,8 @@ router.get("/get_emp_milestone", function (req, res, next) {
 });
 
 router.get('/store_image', function (req, res, next) {
-    dbs.editProfileImage(req.session.username, req.query.pic) ;
-    res.send(true) ;
-
+    dbs.editProfileImage(req.session.username, req.query.picdata, req.query.piccontent) ;
+    res.send(true);
 });
 
 router.get('/display_image', function (req, res, next) {

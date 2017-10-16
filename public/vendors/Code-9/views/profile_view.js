@@ -1,14 +1,19 @@
 /**
+ * Created by Seonin David on 2017/10/13.
+ */
+$.urlParam = function (name) {
+    let  results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    return results[1] || 0;
+};
+/**
  * Created by Seonin David on 2017/09/02.
  */
-//user get_emp route
-//checkout routes/employee/employee-profile.js
-
 
 
 $(document).ready(function() {
     let proj_id;
-    $.get("display_image",{},function (data,status) {
+    $.get("admin_display_image",{id:$.urlParam('id')},function (data,status) {
+
         if(data==","){
             //document.getElementById("pro_image").src = "/images/user.jpg" ;
 
@@ -16,8 +21,10 @@ $(document).ready(function() {
         else{
             document.getElementById("pro_image").src = "data:" + data[0] + ";base64," + data[1] ;
         }
+
+
     });
-    $.get("get_emp", {},
+    $.get("admin_get_emp", {id:$.urlParam('id')},
         function (data, status) {
             // alert(JSON.stringify(data));
             $.each(data, function (key, value) {
@@ -50,7 +57,7 @@ $(document).ready(function() {
             });
         });
 
-    $.get("get_emp_milestone", {},
+    $.get("admin_get_emp_milestone", {id:$.urlParam('id')},
         function (data, status) {
             //    alert(JSON.stringify(data));
             $.each(data, function (key, mValue) {
@@ -74,19 +81,8 @@ $(document).ready(function() {
                     "</li>"
                 );
 
-                /* mValue.tasks.forEach(function(curVal,ind,ini){
-                 $('#'+mValue._id).append(
-                 "<li>"+
-                 "<p>"+curVal+"<span class='right task_date'><b>Due: </b>"+
-                 "<b class='t_date'>30/08/2017</b></span>"+
-                 "</p>"+
-                 "</li>"
-                 );
-
-                 });*/
-
             });
-            $.get("get_emp_task",{},
+            $.get("admin_get_emp_task",{id:$.urlParam('id')},
                 function (data, status) {
                     //  alert(JSON.stringify(data));
 
@@ -106,7 +102,7 @@ $(document).ready(function() {
 
         });
 
-    $.get("get_user_past_projects",{},
+    $.get("admin_get_user_past_projects",{id:$.urlParam('id')},
         function (data, status) {
             let c = 1;
             $.each(data, function (key, value) {
@@ -131,58 +127,5 @@ $(document).ready(function() {
             });
         });
 
-    $('#updateImage').on('click', function (event) {
-
-        let source = document.getElementById("dynamic").src ;
-
-        let b64 = source.substring(source.indexOf("base64") + 7, source.length) ;
-
-        let content = source.substring(source.indexOf("data") + 5, source.indexOf(";")) ;
-
-        $.get("store_image",
-            {
-                picdata:b64,
-                piccontent:content,
-            }
-            ,
-            function(data, status) {
-                $.get("display_image", {}, function(data, status) {
-
-                    document.getElementById("pro_image").src = "data:" + data[0] + ";base64," + data[1] ;
-                });
-
-            });
-    });
-
-    $("#updatePassword").on('click',function () {
-        //    //should check two passwords
-        let Pword = $("#password").val();
-        let ConfPword = $("#confirm_password").val();
-
-        if(Pword=="" || ConfPword==""){
-
-            InvalidPassword();
-            $("#confirm_password").empty();
-            $("#password").empty()
-        }
-        else {
-            if(Pword==ConfPword){
-                $.get("update_password",{
-                        pass:Pword
-                    },
-                    function (data, status) {
-                        if(status=="success"){
-                            passwords_changed();
-                        }
-                    });
-            }
-            else {
-                passwords_invalaid();
-                $("#confirm_password").empty();
-                $("#password").empty()
-            }
-        }
-
-    })
 
 });

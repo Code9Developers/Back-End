@@ -37,7 +37,7 @@ $(document).ready(function() {
         $.each(data, function (key, value) {
             // console.log(value.name);
 
-           let view_id="profile?id="+value._id;
+           let view_id="profile_view?id="+value._id;
 
 
             $("#projViewTable").append("<tr>" +

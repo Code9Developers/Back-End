@@ -61,6 +61,13 @@ router.get("/view_all_test_employees", function (req, res, next) {
     });
 });
 
+router.get("/view_all_projects", function (req, res, next) {
+
+    var all_projects = dbs.findAllProjects(function (all_projects) {
+        res.send(all_projects);
+    });
+});
+
 /* TODO: create a duration variable for testing */
 /* TODO: create a skills list for testing */
 router.get("/view_all_assigned_test_employees", function (req, res, next) {
@@ -74,7 +81,14 @@ router.get("/view_all_assigned_test_employees", function (req, res, next) {
     end_date.setYear(2017);
     end_date.setMonth(0);
     end_date.setDate(28);
-    algorithm.get_unallocated_users(["Penetration Testing Vulnerability", "Windows / Linux Security", "Database Security"], start_date, end_date, function (all_users) {
+    positions = ["Junior Analyst 1", "Junior Analyst 2", "Senior Analyst"];
+    //, "Junior Analyst 1", "Junior Analyst 2"
+    positions_count = [1, 1, 1];
+    //positions = ["Junior Analyst 1"];
+    //positions_count = [1];
+    //, "Scanning (Nesus and Qualys)", "Windows / Linux Security"
+    skills = ["Penetration Testing and Vulnerability", "Scanning (Nesus and Qualys)", "Security Gap Assessments"];
+    algorithm.get_unallocated_users(positions, positions_count, skills, start_date, end_date, function (all_users) {
         res.send(JSON.stringify(all_users, 0, 2));
     });
 });
@@ -152,14 +166,14 @@ router.get('/refresh_project_status', function (req, res, next) {
 });
 
 router.get("/create_past_projects", function (req, res, next) {
-    //Because of the Math.floor() we get a less managers than planned
-    //And and less years for projects than we give
-    // test_data.create_past_Projects(1); changed for now
-
-    test_data.create_test_projects();
+    test_data.create_past_Projects(2);
     res.render('login');
 });
 
+router.get("/remove_past_projects", function (req, res, next) {
+    test_data.remove_projects();
+    res.render('login');
+});
 
 // TEST ROUTES
 

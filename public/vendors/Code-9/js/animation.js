@@ -18,9 +18,9 @@ function alg_animate()
     var y_coord = origin_y;
     var circle_size = 8;
     //Animations
-    emp_found = Raphael.animation({fill: "#20b426", stroke: "none"});
+    emp_found = Raphael.animation({fill: "#01248c", stroke: "none"});
 
-    ripple_out = Raphael.animation({r: 15, stroke: "#1b8d20", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
+    ripple_out = Raphael.animation({r: 15, stroke: "#011f74", "stroke-width": "3"}, 600, "linear",  function() { this.remove() }).repeat(10);
     ripple_fade = Raphael.animation({opacity: 0 }, 600);
     console.log("x : "+x_coord+" , y : "+y_coord);
     var new_circle = paper.circle(origin_x, origin_y, circle_size).attr({stroke: "#2A3F54", fill: "none", "stroke-width": "2"});
@@ -48,17 +48,36 @@ function alg_animate()
         new_ripple.animate({transform: "r" + angle_add + "," + origin_x + "," + origin_y}, 2000);
 
         timer = Math.floor(Math.random()*(($('#skills').val().length*1000)/2-2000+1)+2000);
+
         new_circle.animate(emp_found.delay(timer));
         new_ripple.animate(ripple_out.delay(timer));
         new_ripple.animate(ripple_fade.delay(timer));
         display(loop, timer);
     }
+    if ($('#skills').val().length<=2)
+    {
+        timer = 0;
+        display(0, timer);
+    }
+
 };
 
 var display = function (loop, timer)
 {
-    if(loop == ($('#skills').val().length-2))
+    if(timer == 0)
     {
+        console.log("HELLO");
+        setTimeout(function ()
+        {
+            $('#holder').hide();
+            init_EmployeeAllocationDT();
+            $('#demo-form').show();
+
+        }, timer+2000);
+    }
+    else if(loop == ($('#skills').val().length-2))
+    {
+        console.log("NO HELLO");
         setTimeout(function ()
         {
             $('#holder').hide();

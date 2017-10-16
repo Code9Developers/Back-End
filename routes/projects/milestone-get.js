@@ -48,6 +48,7 @@ router.get('/get_milestones', function (req, res, next) {
 
 router.get('/progress_milestone_analytics', function (req, res, next) {
     let  project_id = req.param('id');
+    dbs.removeExpiredMilestones(project_id);
  dbs.findMilestones("project_id", project_id, function (all_milestones) {
         res.send([all_milestones.length,0]);
     });

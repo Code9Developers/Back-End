@@ -1,4 +1,7 @@
 /**
+ * Created by Seonin David on 2017/10/11.
+ */
+/**
  * Page: N/A
  * Functionality: Manager Calendar
  * Note:
@@ -16,16 +19,15 @@ function getCalendarEvents() {
     let get1 = $.get("all_projects",
         {},
         function (data, status) {
-
             $.each(data, function (key, value) {
+                // window.alert(value.name);
 
                 item = {};
                 item["id"] = value._id;
                 item["title"] = value.name;
                 item["start"] = value.project_start_date.substr(0,10);
                 item["end"] = value.project_end_date.substr(0,10);
-                // item["url"] = "https://localhost:4000/user_project_detail?id="+value._id;
-                item["url"] = "/user_project_detail?id="+value._id;
+                item["url"] = "https://localhost:4000/user_project_detail?id="+value._id;
 
                 eve.push(item);
 
@@ -37,8 +39,9 @@ function getCalendarEvents() {
 
     let get2 = $.get("get_all_event_data",{}
         ,function(data,status){
-
+            // window.alert(JSON.stringify(data));
             $.each(data, function (key, value) {
+                //window.alert(value);
 
                 item = {};
                 item["id"] = value._id;
@@ -46,7 +49,7 @@ function getCalendarEvents() {
                 item["start"] = value.event_start_date.substr(0,10);
                 item["end"] = value.event_end_date.substr(0,10);
                 item["url"] = "#";
-
+                //window.alert(JSON.stringify(item));
                 eve.push(item);
 
             });
@@ -66,9 +69,10 @@ function getCalendarEvents() {
 
 function  init_calendar() {
     if( typeof ($.fn.fullCalendar) === 'undefined'){ return; }
-
     console.log('init_calendar');
+// nEv = JSON.stringify();
 
+// window.alert(JSON.parse(eve));
     let  date = new Date(),
         d = date.getDate(),
         m = date.getMonth(),
@@ -89,16 +93,15 @@ function  init_calendar() {
 
             started = start;
             ended = end;
-            // window.alert(eve[0]["end"]);
-            // window.alert(start.format());
+
             for(var i =0; i < eve.size;i++){
                 if(eve[i]["start"] <= start.format()){
-                    // alert.window("true");
+
                 }
             }
 
             $(".antosubmit").on("click", function() {
-                // window.alert("submitted");
+
                 let  title = $("#title").val();
                 if (end) {
                     ended = end;
@@ -183,5 +186,6 @@ $(document).ready(function() {
      *          only requires the event ID to be sent though, with the following name:event_id
      *
      */
+
 
 });

@@ -16,6 +16,7 @@ var register_employee_post = require("./routes/admin/register-employee-post");
 var admin_get = require("./routes/admin/admin-get");
 var display_employees_get = require("./routes/admin/display-employees-get");
 var training = require("./routes/admin/training");
+var profile_view = require("./routes/admin/profile-view");
 
 //project routes
 var display_all_projects = require("./routes/projects/display-all-projects-get");
@@ -78,6 +79,7 @@ app.use(register_employee_post);
 app.use(admin_get);
 app.use(display_employees_get);
 app.use(training);
+app.use(profile_view);
 
 app.use(project_creation);
 app.use(display_all_projects);

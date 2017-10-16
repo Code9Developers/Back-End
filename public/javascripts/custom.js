@@ -1869,7 +1869,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Supervisor").ionRangeSlider({
@@ -1877,7 +1877,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Senior_Analyst").ionRangeSlider({
@@ -1885,7 +1885,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Analyst").ionRangeSlider({
@@ -1893,7 +1893,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Junior_Analyst_2").ionRangeSlider({
@@ -1901,7 +1901,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
     $("#Junior_Analyst_1").ionRangeSlider({
@@ -1909,7 +1909,7 @@ function init_IonRangeSlider() {
         min: 0,
         max: 10,
         from: 0,
-        to: 10,
+        to: 0,
         from_fixed: true
     });
 
@@ -2223,11 +2223,29 @@ function ReviewSuccessful() {
         styling: 'bootstrap3'
     });
 }
+function SentTraining() {
+    new PNotify({
+        title: 'Sent',
+        text: 'Training successfully sent to employees',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
 function SendApproval() {
     new PNotify({
         title: 'Sent',
         text: 'Approval request successfully sent to director',
         type: 'success',
+        styling: 'bootstrap3'
+    });
+}
+
+function InvalidPassword() {
+    new PNotify({
+        title: 'Invalid!',
+        text: 'Password cannnot be blank',
+        type: 'danger',
         styling: 'bootstrap3'
     });
 }

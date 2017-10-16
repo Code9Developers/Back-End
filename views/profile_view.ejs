@@ -62,7 +62,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>Welcome Back
+                                    <small></small>
                                 </h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li style="float:right"><a class="collapse-link"><i
@@ -76,8 +76,7 @@
                                     <div class="profile_img">
                                         <div id="crop-avatar">
                                             <!-- Current avatar -->
-                                            <img id="pro_image" class="img-responsive avatar-view" src="/images/user.jpg"
-                                                 alt="Avatar" title="Change the avatar">
+                                            <img id="pro_image" class="img-responsive avatar-view" src="/images/user.png" alt="Avatar" title="Change the avatar">
                                         </div>
                                     </div>
                                     <h3 id="empName"></h3>
@@ -95,10 +94,7 @@
                                     </ul>
 
                                     <!-- EDIT PROFILE BUTTON-->
-                                    <a aria-labelledby="profile-tab" id="editbutton" href="#tab_content3"
-                                       aria-expanded="false" data-toggle="tab" class="btn btn-kpmg"><i
-                                                class="fa fa-edit m-right-xs"></i> Edit Profile</a>
-                                    <br/>
+
 
                                     <!-- start skills -->
                                     <div id="user-skills">
@@ -121,10 +117,6 @@
                                                                                 id="profile-tab" data-toggle="tab"
                                                                                 aria-expanded="false">Projects Worked
                                                     on</a></li>
-                                            <li role="presentation" class=""><a href="#tab_content3" role="tab"
-                                                                                id="profile-tab2" data-toggle="tab"
-                                                                                aria-expanded="false">Edit Profile</a>
-                                            </li>
                                         </ul>
 
                                         <div id="myTabContent" class="tab-content">
@@ -156,58 +148,6 @@
                                                 <!-- end user projects -->
                                             </div>
                                             <!-- Profile Bio-->
-                                            <div role="tabpanel" class="tab-pane fade" id="tab_content3"
-                                                 aria-labelledby="profile-tab">
-                                                <div class="row">
-                                                    <div class="col-md-12">
-                                                        <div class="input-group image-preview">
-                                                            <input type="text"
-                                                                   class="form-control image-preview-filename"
-                                                                   disabled="disabled">
-                                                            <!-- don't give a name === doesn't send on POST/GET -->
-                                                            <span class="input-group-btn">
-                                                                        <!-- image-preview-clear button -->
-                                                                        <button type="button"
-                                                                                class="btn btn-default image-preview-clear"
-                                                                                style="display:none;">
-                                                                            <span class="glyphicon glyphicon-remove"></span> Clear
-                                                                        </button>
-                                                                <!-- image-preview-input -->
-                                                                        <div class="btn btn-default image-preview-input">
-                                                                            <span class="glyphicon glyphicon-folder-open"></span>
-                                                                            <span class="image-preview-input-title">Choose Profile Picture</span>
-                                                                            <input id="pic" type="file"
-                                                                                   accept="image/png, image/jpeg, image/gif"
-                                                                                   name="input-file-preview"/>
-                                                                            <!-- rename it -->
-                                                                        </div>
-                                                                    </span>
-                                                        </div><!-- /input-group image-preview [TO HERE]-->
-                                                        <input id="updateImage" class="btn btn-dark docs-tooltip"
-                                                               data-toggle="tooltip" value="Update Image" type="submit"
-                                                        />
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="oldpassword">Password: *</label>
-                                                        <input type="password" id="password" name="oldpassword"
-                                                               class="form-control" placeholder="Password"
-                                                               required/>
-                                                    </div>
-                                                    <div class="col-md-6">
-                                                        <label for="newpassword">Confirm Password: *</label>
-                                                        <input type="password" id="confirm_password" name="newpassword"
-                                                               class="form-control" placeholder="Confirm Password"
-                                                               required/>
-                                                    </div>
-                                                </div>
-                                                <div>
-                                                    <br/>
-                                                    <input id="updatePassword" class="btn btn-dark docs-tooltip"
-                                                           data-toggle="tooltip" title="Update Password" type="submit"
-                                                           value="Update Password"/>
-                                                </div>
-
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -249,7 +189,7 @@
 <!-- bootstrap-daterangepicker -->
 <script type="text/javascript" src="vendors/moment/min/moment.min.js"></script>
 <script type="text/javascript" src="vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-<script type="text/javascript" src="vendors/Code-9/views/profile.js"></script>
+<script type="text/javascript" src="vendors/Code-9/views/profile_view.js"></script>
 <!-- PNotify -->
 <script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
 <script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>

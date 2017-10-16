@@ -51,25 +51,9 @@ router.get('/get_replacement_employees', function (req, res, next) {
 
         let employees_to_add=data[0].employees_replaced;
 
-
-        dbs.findUsers("role", "Employee", function (user) {
-            for (let i = 0; i < user.length; i++) {
-                if (employees_to_add.includes(user[i]._id)) {
-                    let new_json_obj = {
-                        _id: user[i]._id,
-                        name: user[i].name,
-                        surname: user[i].surname,
-                        position: user[i].position,
-                        employment_length: user[i].employment_length,
-                        past_projects: user[i].past_projects,
-                        skill:user[i].skill[0].name
-                    };
-                    added_user_json[x] = new_json_obj;
-                    x++;
-                }
-            }
-            res.send(added_user_json);
-        });
+        dbs.get_replacement_user_data(employees_to_add,function (emp_data) {
+            res.send(emp_data);
+        })
     });
 });
 
@@ -93,9 +77,6 @@ router.get('/approved_replacement', function (req, res, next) {
             dbs.findUsers("_id",employees_to_add[x],function (emp_data) {
                 let choosen_skill=emp_data[0].skill[0];
                 dbs.assignProject(employees_to_add[x],data[0].project_id,JSON.stringify(choosen_skill),function(res){});
-               // dbs.editProjectObject("_id",req.query.id,"employees_assigned","_id",employees_to_add[x],"skill",)
-                //dbs.editUserObject("_id",_data[x].name,"skill","name",user_skill_array[x-1],"rating",new_rating);
-               // dbs.editProjectObject("_id",req.query.id,"employees_assigned",);
             })
             //Need to change or make function to also add skill to current employees
         }

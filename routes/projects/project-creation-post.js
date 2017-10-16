@@ -25,7 +25,7 @@ let employee_info_array;
  */
 
 let rep_data;
-let budget;
+let budget = 0;
 router.get('/get_json_data', function (req, res, next) {
     let position_array=req.query.position_arr;
     let amount_array=req.query.amount_arr;
@@ -37,9 +37,19 @@ router.get('/get_json_data', function (req, res, next) {
         arr_skills[x]=all_skills[x];
     }
 
-    algorithm.get_unallocated_users(arr_skills,req.query.start_date,req.query.end_date, function (data) {
+    let start_date = (req.query.start_date);
+    let s = start_date.split("/");
+    let newStartDate = new Date((s[2] + "-" + s[1] + "-" + s[0]).toString());
+
+    let end_date = (req.query.end_date);
+    let temp_end_date = end_date.split("/");
+    let new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
+
+    algorithm.get_unallocated_users(position_array,amount_array,arr_skills,newStartDate,new_end_date, function (data) {
         let result = JSON.stringify(data[0]);
          rep_data = JSON.stringify(data[1]);
+         budget = data[2];
+         console.log(rep_data);
         let _obj = JSON.parse(result);
         let emp_data=[];
         for(let j in _obj){
@@ -57,16 +67,10 @@ router.get('/get_replacement', function (req, res, next) {
     // let result = JSON.stringify(rep_data);
     let _obj = JSON.parse(rep_data);
     let emp_data=[];
-    let c=0;
     for(let j in _obj){
-        let single_obj=_obj[j];
-        for(let i in single_obj){
-            emp_data[c]=single_obj[i];
-            c++
-        }
+        emp_data[j]=_obj[j];
     }
     let _json = {data:emp_data};
-    console.log(_json);
     res.send(_json);
     //res.contentType('application/json');
 });
@@ -176,16 +180,16 @@ router.post("/project_creation", function (req, res, next) {
         owner_contact: req.body.projectownercontact,
         owner_email: req.body.projectowneremail,
         manager_id: req.session.username,
-        employees_assigned: employees,
-        project_budget: 0,
+        project_budget: budget,
         status: status,
         project_rating:0,
         reviewed:"No"
     };
     dbs.insertProject(project);
     // var emp_obj=JSON.parse(employee_id_array);
+    dbs.assignProjectMulti(project_id,employees,function (res) {});
     for (let x in employees) {
-        dbs.assignProject(employees[x], project_id,function (res) {});
+
 
         dbs.insertNotification({
             _id: employees[x]._id + project_id,

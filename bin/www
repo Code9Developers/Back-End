@@ -39,7 +39,7 @@ let fs = require("fs");
  * Local Build
  */
 // let options = {
-//     key: fs.readFileSync("./key.pem"),
+//     key: fs.readFileSync("./bin/key.pem"),
 //     cert: fs.readFileSync("./bin/cert.pem")
 // };
 
@@ -50,6 +50,8 @@ let options = {
     key: fs.readFileSync("/etc/ssl/live/code9devs.me/privkey.pem"),
     cert: fs.readFileSync("/etc/ssl/live/code9devs.me/fullchain.pem")
 };
+
+
 
 let server = https.createServer(options, app);
 // var server = http.createServer(app);

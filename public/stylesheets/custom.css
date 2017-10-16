@@ -116,11 +116,11 @@ h5
 }
 
 .daterangepicker.picker_1 .calendar-table thead tr {
-    background: #20B426
+    background: #011F74
 }
 
 .daterangepicker.picker_1 .calendar-table thead tr:first-child {
-    background: #20B426
+    background: #011F74
 }
 
 .daterangepicker.picker_1 .calendar-table td.off {
@@ -133,7 +133,7 @@ h5
 }
 
 .daterangepicker.picker_2 .calendar-table thead tr {
-    color: #20B426
+    color: #011F74
 }
 
 .daterangepicker.picker_2 .calendar-table thead tr:first-child {
@@ -142,7 +142,7 @@ h5
 
 .daterangepicker.picker_3 .calendar-table thead tr:first-child {
     color: #fff;
-    background: #20B426
+    background: #011F74
 }
 
 .daterangepicker.picker_4 .calendar-table thead tr:first-child {
@@ -250,7 +250,7 @@ h5
 
 .nav-sm .nav.child_menu li.active,
 .nav-sm .nav.side-menu li.active-sm {
-    border-right: 5px solid #20B426
+    border-right: 5px solid #011F74
 }
 
 .nav-sm ul.nav.child_menu ul,
@@ -261,7 +261,7 @@ h5
 }
 
 .nav-sm > .nav.side-menu > li.active-sm > a {
-    color: #20B426 !important
+    color: #011F74 !important
 }
 
 .nav-sm .nav.side-menu li a i.toggle-up {
@@ -503,7 +503,7 @@ body .container.body .right_col {
 }
 
 .kpmg-blue {
-    color: #20B426
+    color: #011F74
 }
 
 .aero {
@@ -549,8 +549,8 @@ body .container.body .right_col {
 }
 
 .bg-kpmg-bar {
-    background: #20B426 !important;
-    border: 1px solid #20B426 !important;
+    background: #011F74 !important;
+    border: 1px solid #011F74 !important;
     color: #fff
 }
 
@@ -957,7 +957,7 @@ a:focus {
 
 .nav.side-menu > li.current-page,
 .nav.side-menu > li.active {
-    border-right: 5px solid #20B426
+    border-right: 5px solid #011F74
 }
 
 .nav li.current-page {
@@ -1652,7 +1652,7 @@ table.jambo_table tbody tr.selected td {
 
 table.dataTable th.focus,
 table.dataTable td.focus {
-    outline: 2px solid #20B426 !important;
+    outline: 2px solid #011F74 !important;
     outline-offset: -1px
 }
 
@@ -2551,7 +2551,7 @@ button,
 
 .compose .compose-header {
     padding: 5px;
-    background: #20B426;
+    background: #011F74;
     color: #fff;
     border-top-left-radius: 5px
 }
@@ -2964,7 +2964,7 @@ textarea:focus {
 
 .bs-glyphicons li:hover {
     color: #fff;
-    background-color: #20B426
+    background-color: #011F74
 }
 
 @media (min-width: 768px) {
@@ -2994,7 +2994,7 @@ span.tag {
     float: left;
     padding: 5px 9px;
     text-decoration: none;
-    background: #20B426;
+    background: #011F74;
     color: #F1F6F7;
     margin-right: 5px;
     font-weight: 500;
@@ -3143,7 +3143,7 @@ ul.timeline li {
 
 .tag {
     line-height: 1;
-    background: #20B426;
+    background: #011F74;
     color: #fff !important
 }
 
@@ -3158,7 +3158,7 @@ ul.timeline li {
     pointer-events: none;
     border-top: 14px solid transparent;
     border-bottom: 14px solid transparent;
-    border-left: 11px solid #20B426
+    border-left: 11px solid #011F74
 }
 
 .timeline h2.title {
@@ -3237,7 +3237,7 @@ ul.social li {
 }
 
 .chat .status.online {
-    background: #20B426
+    background: #011F74
 }
 
 .chat .status.away {
@@ -3390,8 +3390,8 @@ ul.widget_profile_box li a {
 }
 
 ul.widget_profile_box li a:hover {
-    color: #20B426 !important;
-    border: 1px solid #20B426
+    color: #011F74 !important;
+    border: 1px solid #011F74
 }
 
 ul.widget_profile_box li .profile_img {
@@ -3623,7 +3623,7 @@ ul.project_files li a i {
 }
 
 .pricing .title {
-    background: #20B426;
+    background: #011F74;
     height: 110px;
     color: #fff;
     padding: 15px 0 0;
@@ -4260,9 +4260,9 @@ form:after {
 .login_content form input[type="password"]:focus {
     -ms-box-shadow: 0 0 2px #ed1c24 inset;
     -o-box-shadow: 0 0 2px #ed1c24 inset;
-    box-shadow: 0 0 2px #20B426 inset;
+    box-shadow: 0 0 2px #011F74 inset;
     background-color: #fff;
-    border: 1px solid #20B426;
+    border: 1px solid #011F74;
     outline: none
 }
 
@@ -4332,16 +4332,16 @@ header {
 }
 
 #nprogress .bar {
-    background: #20B426
+    background: #011F74
 }
 
 #nprogress .peg {
-    box-shadow: 0 0 10px #20B426, 0 0 5px #20B426
+    box-shadow: 0 0 10px #011F74, 0 0 5px #011F74
 }
 
 #nprogress .spinner-icon {
-    border-top-color: #20B426;
-    border-left-color: #20B426
+    border-top-color: #011F74;
+    border-left-color: #011F74
 }
 
 .editor-wrapper {
@@ -4665,7 +4665,7 @@ fieldset {
 
 .wizard_horizontal ul.wizard_steps li a.done:before,
 .wizard_horizontal ul.wizard_steps li a.done .step_no {
-    background: #20B426;
+    background: #011F74;
     color: #fff
 }
 
@@ -4779,7 +4779,7 @@ fieldset {
 
 .wizard_verticle ul.wizard_steps li a.done:before,
 .wizard_verticle ul.wizard_steps li a.done .step_no {
-    background: #20B426;
+    background: #011F74;
     color: #fff
 }
 
@@ -4810,7 +4810,7 @@ fieldset {
 }
 
 .progress-bar-success {
-    background-color: #20B426
+    background-color: #011F74
 }
 
 .progress_summary .progress {

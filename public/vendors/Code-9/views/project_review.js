@@ -38,15 +38,8 @@ $(document).ready(function() {
                     "</ul>" +
                     "</div>" +
                     "<div class='right col-xs-5 text-center'>" +
-                    "<img src='images/default_user.png'' alt='' class='img-circle img-responsive'>" +
+                    "<img src='images/user.png'' alt='' class='img-circle img-responsive'>" +
                     "</div>" +
-                    "</div>"+
-                    "<div class='col-xs-12 bottom text-center'>"+
-                    "<div class='col-xs-12 col-sm-6 emphasis'>"+
-                    "<button type='button' class='btn btn-primary btn-xs'>"+
-                    "<i class='fa fa-user'> </i> View Profile"+
-                    "</button>"+
-                    "</div>"+
                     "</div>"+
                     "</div>"+
                     "</div>"+

@@ -129,24 +129,11 @@ exports.removeUserObject = function (user_id, object, attrib, value) {
 
 
 //edits the profile image of a user
-exports.editProfileImage = function (user_id, filename) {
+exports.editProfileImage = function (user_id, picdata, piccontent) {
 
     let user = schemas.user;
 
-    let precount;
-    let count = 0;
-    while (count != -1) {
-        precount = count;
-        count = filename.indexOf("\\", count + 1);
-    }
-    filename = filename.substring(precount + 1, filename.length);
-
-    let _data = fs.readFileSync(filename);
-
-    let _content = "image/" + filename.substring(filename.indexOf(".") + 1, filename.length);
-
-
-    user.update({_id: user_id}, {$set: {image: {data: _data, contentType: _content}}}, function (err) {
+    user.update({_id: user_id}, {$set: {image: {data: picdata, contentType: piccontent}}}, function (err) {
         if (!err) {
             console.log("User Image updated.");
         }
@@ -364,6 +351,22 @@ exports.insertAndAssignPastProject = function (_json, _employeesAndSkills, ratin
     }
 };
 
+//project-creation-post.js line 92
+
+exports.assignProjectMulti = function (project_id, _employeesAndSkills, callback) {
+
+    let updated = 0 ;
+    let size = _employeesAndSkills.length ;
+
+    for (let loop = 0; loop < size ; loop++) {
+        module.exports.assignProject(_employeesAndSkills[loop]._id, project_id, _employeesAndSkills[loop].skill, function(res) {
+            if (++updated == size) {
+                return callback(true) ;
+            }
+        });
+    }
+};
+
 // remove employee from project and vice versa
 exports.dismissProject = function (user_id, project_id) {
 
@@ -485,6 +488,21 @@ exports.findProjects = function (attrib, value, callback) {
         }
     });
 };
+
+//returns array of projects given array of project id's
+exports.findSpecificProjects = function(projects, callback) {
+    let project = schemas.project ;
+    let found = 0 ;
+    let obj = {data: []} ;
+    for (let x = 0 ; x < projects.length ; x++) {
+        project.findOne({_id: projects[x]}).exec().then(function(res) {
+            obj.data.push(res) ;
+            if (++found == projects.length) {
+                return callback(obj.data) ;
+            }
+        });
+    }
+}
 
 // returns all projects  --- Is this function even necessary? Like c'mon bruh
 exports.findAllProjects = function (callback) {
@@ -1120,6 +1138,23 @@ exports.get_specific_user_data = function (user_ids,callback) {
     });
 };
 
+exports.get_replacement_user_data = function (user_ids,callback) {
+    let user = schemas.user;
+    user.aggregate([
+        {$match:{_id:{$in:user_ids}}},
+        {$group:{_id:{id:"$_id",name:"$name",surname:"$surname",contact:"$contact",position:"$position",email:"$email",employment_length:"$employment_length",skill:"$skill"}}}//possibly add image if working
+    ], function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        else {
+            return callback(result);
+        }
+
+    });
+};
+
 exports.get_specific_user_skill = function (user_id,callback) {
     let user = schemas.user;
     user.aggregate([
@@ -1200,7 +1235,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 				  manager2					   [emp1, emp3, emp4, emp5]					    [20, 10, 10, 10]
 	*/
 	
-	module.exports.findProjects("status", "completed", function(res) {
+	module.exports.findProjects("reviewed", "Yes", function(res) {
 			
 		function getManagerNames(array, callback) {
 			let user = schemas.user ;
@@ -1238,7 +1273,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 				}
 			}
 		}
-		
+		if (res.length == 0) return callback(null) ;
 		for (let x = 0 ; x < res.length ; x++) {
 			let i = managerArray.indexOf(res[x].manager_id) ;
 			if (i == -1) {
@@ -1257,7 +1292,7 @@ exports.managerEmployeeCorrelation = function(callback) {
 			
 			for (let y = 0 ; y < res[x].employees_assigned.length ; y++) {
 				let j = employeeArray[i].indexOf(res[x].employees_assigned[y]._id) ;
-				
+
 				if (j == -1) {
 					j = employeeArray[i].length ;
 					employeeArray[i][j] = res[x].employees_assigned[y]._id ;

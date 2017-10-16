@@ -2,7 +2,7 @@
     <div class="left_col scroll-view">
         <!-- KPMG Logo Side Bar-->
         <div class="navbar nav_title" style="border: 0;">
-            <a href="#" class="site_title"><img src="images/logo/logo-white.png" width="140px" height="80px"></a>
+            <a href="#" class="site_title"><img src="images/logo/logo-white.png" width="145px" height="90px"></a>
         </div>
 
         <div class="clearfix"></div>
@@ -41,7 +41,7 @@
 
         <!-- /menu footer buttons -->
         <div class="sidebar-footer hidden-small">
-            <a data-toggle="tooltip" data-placement="top" title="Help Docs">
+            <a data-toggle="tooltip" data-placement="top" title="Help Docs" target="_blank" href="https://drive.google.com/open?id=0B_o9W-EclpZPSVlTbkZIbVlWWlk">
                 <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
             </a>
             <a data-toggle="tooltip" onclick="toggleFullScreen()" data-placement="top" title="FullScreen">
@@ -71,8 +71,8 @@
                         "<li><a href='projects'>View All Projects</a></li>"+
                         "<li><a href='display_reviews'>View All Projects To Review</a></li>"
                     );
-                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>")+
-                    "<li><a href='profile'>Profile</a></li>";
+                    $("#home").append("<li><a href='manager_calendar'>Calendar</a></li>"+
+                    "<li><a href='profile'>Profile</a></li>");
                 }
                 else if (data === "Admin") {
                     $("#menu").append(

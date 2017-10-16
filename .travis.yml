@@ -7,7 +7,17 @@ sudo: false
 cache:
   directories:
     - node_modules
+    
 before_install:
   - "npm install"
+  
+install:
+  - npm install newman
+  
+before_script:
+  - node --version
+  - npm --version
+  - node_modules/.bin/newman --version
+
 script:
-  - "npm test"
+  - node_modules/.bin/newman run tests/backend_server_tests.postman_collection.json -e tests/backend-tests.postman_environment.json

@@ -99,6 +99,186 @@
 			"name": "Test_Data_Functionality",
 			"description": "",
 			"item": []
+		},
+		{
+			"name": "PSO_Test",
+			"description": "",
+			"item": [
+				{
+					"name": "https://code9devs.me/get_json_data?position_arr=%20Supervisor,Senior%20Analyst,Analyst,Junior%20Analyst%202,Junior%20Analyst%201&amount_arr=10,10,10,10,10&start_date=15/10/2017&end_date=18/11/2017&skills=Penetration%20Testing%20and%20Vulnerability,Scanning%20(Nesus%20and%20Qualys),Windows%20/%20Linux%20Security,Database%20Security,Security%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause,Analysis,Virtualisation%20Technologies,Strategic%20Management,Regulatory%20Compliance,Risk%20Management,IT%20Corporate%20Governance,Data%20Centre%20Security,Report%20Writing,Policies,%20Procedures%20and%20Standards%20Writing%20skills,Policies,%20Procedures%20and%20Standards%20Compliance%20Measurement,IT%20Legislation%20Compliance%20Gap%20Assessments,IT%20Procurement%20and%20Bid%20Management,IT%20Governance%20and%20Service%20Management,IT%20Strategy%20and%20Performance%20Management,Enterprise%20Architecture%20and%20Design,Digitisation,Specialist%20Supporting%20the%20Audit%20training,Eaudit%20skills,External%20Audit%20basics,General%20IT%20controls,IT%20risk%20profiling,Risk%20and%20compliance%20assessment,Application%20controls,General%20IT%20controls,IT%20fraud%20investigation&_=1508222378223 200 929.436",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets highest psossible call to PSO and doesn't crash\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Returns requested position Analyst\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Analyst\");",
+									"});",
+									"",
+									"pm.test(\"Returns requested position Analyst\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"Analyst\");",
+									"});",
+									"",
+									"pm.test(\"Returns requested position Junior Analyst\", function () {",
+									"    pm.expect(pm.response.text()).to.include( \"Junior Analyst\");",
+									"});",
+									"",
+									"pm.test(\"Returns requested employees\", function () {",
+									"    pm.expect(pm.response.text()).to.include( \"emp_1\");",
+									"    pm.expect(pm.response.text()).to.include( \"emp_2\");",
+									"});",
+									"",
+									"pm.test(\"Returns requested skill Cyber Threat Detection And Root Caus\", function () {",
+									"    pm.expect(pm.response.text()).to.include( \"Cyber Threat Detection And Root Caus\");",
+									"});",
+									"",
+									"pm.test(\"Returns requested skill Analysis\", function () {",
+									"    pm.expect(pm.response.text()).to.include( \"Analysis\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "https://code9devs.me/get_json_data?position_arr=%20Supervisor,Senior%20Analyst,Analyst,Junior%20Analyst%202,Junior%20Analyst%201&amount_arr=10,10,10,10,10&start_date=15/10/2017&end_date=18/11/2017&skills=Penetration%20Testing%20and%20Vulnerability,Scanning%20(Nesus%20and%20Qualys),Windows%20/%20Linux%20Security,Database%20Security,Security%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause,Analysis,Virtualisation%20Technologies,Strategic%20Management,Regulatory%20Compliance,Risk%20Management,IT%20Corporate%20Governance,Data%20Centre%20Security,Report%20Writing,Policies,%20Procedures%20and%20Standards%20Writing%20skills,Policies,%20Procedures%20and%20Standards%20Compliance%20Measurement,IT%20Legislation%20Compliance%20Gap%20Assessments,IT%20Procurement%20and%20Bid%20Management,IT%20Governance%20and%20Service%20Management,IT%20Strategy%20and%20Performance%20Management,Enterprise%20Architecture%20and%20Design,Digitisation,Specialist%20Supporting%20the%20Audit%20training,Eaudit%20skills,External%20Audit%20basics,General%20IT%20controls,IT%20risk%20profiling,Risk%20and%20compliance%20assessment,Application%20controls,General%20IT%20controls,IT%20fraud%20investigation&_=1508222378223 200 929.436",
+							"protocol": "https",
+							"host": [
+								"code9devs",
+								"me"
+							],
+							"path": [
+								"get_json_data"
+							],
+							"query": [
+								{
+									"key": "position_arr",
+									"value": "%20Supervisor,Senior%20Analyst,Analyst,Junior%20Analyst%202,Junior%20Analyst%201",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "amount_arr",
+									"value": "10,10,10,10,10",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "start_date",
+									"value": "15/10/2017",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "end_date",
+									"value": "18/11/2017",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "skills",
+									"value": "Penetration%20Testing%20and%20Vulnerability,Scanning%20(Nesus%20and%20Qualys),Windows%20/%20Linux%20Security,Database%20Security,Security%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause,Analysis,Virtualisation%20Technologies,Strategic%20Management,Regulatory%20Compliance,Risk%20Management,IT%20Corporate%20Governance,Data%20Centre%20Security,Report%20Writing,Policies,%20Procedures%20and%20Standards%20Writing%20skills,Policies,%20Procedures%20and%20Standards%20Compliance%20Measurement,IT%20Legislation%20Compliance%20Gap%20Assessments,IT%20Procurement%20and%20Bid%20Management,IT%20Governance%20and%20Service%20Management,IT%20Strategy%20and%20Performance%20Management,Enterprise%20Architecture%20and%20Design,Digitisation,Specialist%20Supporting%20the%20Audit%20training,Eaudit%20skills,External%20Audit%20basics,General%20IT%20controls,IT%20risk%20profiling,Risk%20and%20compliance%20assessment,Application%20controls,General%20IT%20controls,IT%20fraud%20investigation",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "_",
+									"value": "1508222378223 200 929.436",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "https://code9devs.me/get_json_data?position_arr=%20Supervisor,Senior%20Analyst,Junior%20Analyst%201&amount_arr=1,1,1&start_date=17/08/2017&end_date=18/09/2017&skills=Windows%20/%20Linux%20Security,S\necurity%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause&_=1507880073255",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Suppose to get 2 specific employees with the following ids:emp_76,emp_79\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"emp_76\");",
+									"    pm.expect(pm.response.text()).to.include(\"emp_79\");",
+									"});",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": {
+							"raw": "https://code9devs.me/get_json_data?position_arr=%20Supervisor,Senior%20Analyst,Junior%20Analyst%201&amount_arr=1,1,1&start_date=17/08/2017&end_date=18/09/2017&skills=Windows%20/%20Linux%20Security,S\necurity%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause&_=1507880073255",
+							"protocol": "https",
+							"host": [
+								"code9devs",
+								"me"
+							],
+							"path": [
+								"get_json_data"
+							],
+							"query": [
+								{
+									"key": "position_arr",
+									"value": "%20Supervisor,Senior%20Analyst,Junior%20Analyst%201",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "amount_arr",
+									"value": "1,1,1",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "start_date",
+									"value": "17/08/2017",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "end_date",
+									"value": "18/09/2017",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "skills",
+									"value": "Windows%20/%20Linux%20Security,S\necurity%20Gap%20Assessments,Cyber%20Threat%20Detection%20And%20Root%20Cause",
+									"equals": true,
+									"description": ""
+								},
+								{
+									"key": "_",
+									"value": "1507880073255",
+									"equals": true,
+									"description": ""
+								}
+							],
+							"variable": []
+						},
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

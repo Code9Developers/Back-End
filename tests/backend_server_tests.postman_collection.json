@@ -10,7 +10,46 @@
 		{
 			"name": "Admin Functionality",
 			"description": "",
-			"item": []
+			"item": [
+				{
+					"name": "https://code9devs.me/all_employees",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Gets the test employee data to display on page\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"emp_1\");",
+									"    pm.expect(pm.response.text()).to.include(\"emp_2\");",
+									"    pm.expect(pm.response.text()).to.include(\"emp_3\");",
+									"});",
+									"",
+									"pm.test(\"Successful GET request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+									"});",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "https://code9devs.me/all_employees",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic dGVzdF9tYW5hZ2VyXzEyOnRlc3Q=",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "This tests checks that the tests employees are returned in the body when the all_employees request is made to display all employees"
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Director_Functionality",
@@ -59,124 +98,7 @@
 		{
 			"name": "Test_Data_Functionality",
 			"description": "",
-			"item": [
-				{
-					"name": "https://localhost:4000/remove_all_test_employees",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Removes employees successfully\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://localhost:4000/remove_all_test_employees",
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "Basic MzM6dGVzdA==",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "https://localhost:4000/remove_past_projects",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Removes employees successfully\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://localhost:4000/remove_past_projects",
-						"method": "GET",
-						"header": [
-							{
-								"key": "my-sample-header",
-								"value": "Lorem ipsum dolor sit amet",
-								"description": ""
-							}
-						],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "https://localhost:4000/create_all_past_projects",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Successfully creates past projects for the PSO to use\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									""
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://localhost:4000/create_all_past_projects",
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				},
-				{
-					"name": "https://localhost:4000/create_all_test_employee",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"type": "text/javascript",
-								"exec": [
-									"pm.test(\"Successfully creates test employees to be used by the PSO\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"Response time is less than 200ms\", function () {",
-									"    pm.expect(pm.response.responseTime).to.be.below(200);",
-									"});"
-								]
-							}
-						}
-					],
-					"request": {
-						"url": "https://localhost:4000/create_all_test_employee",
-						"method": "GET",
-						"header": [],
-						"body": {},
-						"description": ""
-					},
-					"response": []
-				}
-			]
+			"item": []
 		}
 	]
 }

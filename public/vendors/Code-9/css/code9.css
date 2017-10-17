@@ -202,7 +202,7 @@ span.multiselect-native-select select {
     transition: 0.2s 0.4s ease;
 }
 .dsButtonAnim.loading {
-    background: #1b8d20;
+    background: #011f74;
     width: 3rem;
     height: 3rem;
     padding: 0rem;
@@ -218,7 +218,7 @@ span.multiselect-native-select select {
 }
 .dsButtonAnim.success {
     position: relative;
-    background: #1b8d20;
+    background: #0133ba;
     width: 4rem;
     height: 4rem;
     -webkit-animation: none;

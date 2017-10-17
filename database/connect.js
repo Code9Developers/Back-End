@@ -1,7 +1,7 @@
 /**
  * Local Build
  */
- var exports = module.exports = {};
+ /*var exports = module.exports = {};
 
  var mongoose = require('mongoose');
  mongoose.Promise = global.Promise;
@@ -19,11 +19,10 @@
         }
     });
  };
-
+*/
 /**
  * Docker Build
  */
-/*
 var exports = module.exports = {};
 
 var mongoose = require('mongoose');
@@ -41,4 +40,4 @@ exports.connect = function () {
             exports.db = db;
         }
     });
-};*/
+};

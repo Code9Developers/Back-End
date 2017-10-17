@@ -218,7 +218,7 @@ span.multiselect-native-select select {
 }
 .dsButtonAnim.success {
     position: relative;
-    background: #0133ba;
+    background: #011f74;
     width: 4rem;
     height: 4rem;
     -webkit-animation: none;
@@ -302,7 +302,7 @@ span.multiselect-native-select select {
 }
 @-webkit-keyframes loadingAnimation {
     0% {
-        box-shadow: 0px 0px 0px 0px #20b426;
+        box-shadow: 0px 0px 0px 0px #204c72;
     }
     100% {
         box-shadow: 0px 0px 0px 1rem rgba(255,187,0,0);
@@ -310,7 +310,7 @@ span.multiselect-native-select select {
 }
 @keyframes loadingAnimation {
     0% {
-        box-shadow: 0px 0px 0px 0px #20b426;
+        box-shadow: 0px 0px 0px 0px #204c72;
     }
     100% {
         box-shadow: 0px 0px 0px 1rem rgba(255,187,0,0);

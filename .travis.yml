@@ -15,10 +15,10 @@ install:
   - npm install newman
   
 before_script:
-  -sleep 15
   - node --version
   - npm --version
   - node_modules/.bin/newman --version
+  -sleep 15
 
 script:
   - node_modules/.bin/newman run tests/backend_server_tests.postman_collection.json -e tests/backend-tests.postman_environment.json

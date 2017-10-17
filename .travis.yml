@@ -10,4 +10,3 @@ after_success:
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker push code9devs/kpmg;
     fi
-  - curl -X POST http://128.199.50.151:8555/$SUPER_TOKEN

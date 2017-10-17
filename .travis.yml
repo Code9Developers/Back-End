@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+services:
+- docker
+before_install:
+- docker build -t code9devs/kpmg:latest .
+- docker run --env SMTP_PASSWORD="$SMTP_PASSWORD" -d --rm --name server --link kpmg_dbs -p 443:4000 -v /etc/letsencrypt/:/etc/ssl/ code9devs/kpmg:latest
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    print "Going to deploy...";
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker push code9devs/kpmg;
+    fi
+  - curl -X POST http://128.199.50.151:8555/$SUPER_TOKEN

@@ -15,7 +15,8 @@ install:
   - npm install newman
   
 before_script:
-  -sleep 15
+  - sleep 15
+  - mongo kpmg_dbs
 
 script:
   - node_modules/.bin/newman run tests/backend_server_tests.postman_collection.json -e tests/backend-tests.postman_environment.json

@@ -1,4 +1,5 @@
 ![](https://reposs.herokuapp.com/?path=Code9Developers/Back-End&style=flat)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c2b5e1ef9b094c69b24a7d70cf258a5b)](https://www.codacy.com/app/SirJosh/Back-End?utm_source=github.com&utm_medium=referral&utm_content=Code9Developers/Back-End&utm_campaign=badger)
 [![npm](https://img.shields.io/npm/v/npm.svg)]()
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)]()
 [![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)]()

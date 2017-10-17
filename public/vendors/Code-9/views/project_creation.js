@@ -214,6 +214,8 @@ function init_EmployeeReplacementDT() {
 
 $(document).ready(function() {
 
+    $("#createProjectbtn").hide();
+
     $(".select-test").select2({
         tags: false
     });
@@ -229,21 +231,23 @@ $(document).ready(function() {
         e.preventDefault(); // disable the default form submit event
         // Create datatable for employees allocated
        //position_array=["Assistant Manager"," Supervisor","Senior Analyst","Analyst","Junior Analyst 2","Junior Analyst 1"];
+        if($("#skills").val() == null){
+
+            EmployeesNotAssigned();
+
+        }else {
+
+            $('#demo-form').hide();
+            $('#holder').show();
+            alg_animate();
 
 
-        $('#demo-form').hide();
-        $('#holder').show();
-        alg_animate();
-
-
-
-        /*Animation*/
-
-        //$('#holder').hide();
-        $('#EmpAllocationTableHide').show();
-
-        $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
-    });
+            /*Animation*/
+            $("#createProjectbtn").show();
+            $('#EmpAllocationTableHide').show();
+            $("#table_content").append("<button id='replaceEmployee' type='button' class='btn docs-tooltip btn-warning btn-round' data-toggle='tooltip'>Get Replacements</button>");
+        }
+        });
 
     let emp_selected_ids = [];
     let count = 0;
@@ -271,13 +275,20 @@ $(document).ready(function() {
     let replacement_ids = [];
     let rep_count = 0;
     $('#EmpAllocationDT').on('click', '#replaceEmployee', function (e) {
-        init_EmployeeReplacementDT();
-        $('#EmpReplacementTableHide').show();
-        $('#removeEmployee').show();
-        $('#employeeRemoveReason').show();
-        $('#director_select').show();
 
-        $.get("get_directors", {},
+        $(this).attr("disabled", true);
+        if(count == 0){
+            replacementEmps();
+            $('#btnSubmit').removeAttr("disabled");
+        }else {
+
+            init_EmployeeReplacementDT();
+            $('#EmpReplacementTableHide').show();
+            $('#removeEmployee').show();
+            $('#employeeRemoveReason').show();
+            $('#director_select').show();
+
+            $.get("get_directors", {},
                 function (data, status) {
                     $("#director").empty();
                     $.each(data, function (key, value) {
@@ -287,6 +298,7 @@ $(document).ready(function() {
                             "</option>");
                     });
                 });
+        }
     });
 
     $('#EmployeeReplacementDT').on('click', 'input[type="checkbox"]', function (e) {
@@ -311,14 +323,26 @@ $(document).ready(function() {
     });
 
     $('#removeEmployee').on('click', function (e) {
-        $.get("replacement_store", {
-            emp_removed:emp_selected_ids,
-            emp_replace:replacement_ids,
-            reason:$("#empRemoval").val(),
-            director:$("#director_select").val(),
-            project_name:$("#projectname").val()
-         });
-        SendApproval();
+        $(this).attr("disabled", true);
+        if(count == 0 || rep_count == 0){
+
+            replacementEmps();
+            $('#btnSubmit').removeAttr("disabled");
+
+        }else{
+
+            $.get("replacement_store", {
+                emp_removed:emp_selected_ids,
+                emp_replace:replacement_ids,
+                reason:$("#empRemoval").val(),
+                director:$("#director_select").val(),
+                project_name:$("#projectname").val()
+            });
+            SendApproval();
+
+        }
+
+
     });
 
     $('#createProjectbtn').on('click', function (e) {
@@ -358,4 +382,5 @@ $(document).ready(function() {
             )
         }
     });
+
 });

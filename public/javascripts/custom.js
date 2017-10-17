@@ -2313,6 +2313,24 @@ function RejectApproval() {
         styling: 'bootstrap3'
     });
 }
+
+function EmployeesNotAssigned() {
+    new PNotify({
+        title: 'Invalid',
+        text: 'Skills or date not allocated',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+}
+
+function replacementEmps() {
+        new PNotify({
+            title: 'Invalid',
+            text: 'Employees not selected',
+            type: 'error',
+            styling: 'bootstrap3'
+        });
+}
 function init_PNotify() {
 
     if (typeof (PNotify) === 'undefined') {

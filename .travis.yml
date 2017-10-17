@@ -15,9 +15,6 @@ install:
   - npm install newman
   
 before_script:
-  - node --version
-  - npm --version
-  - node_modules/.bin/newman --version
   -sleep 15
 
 script:

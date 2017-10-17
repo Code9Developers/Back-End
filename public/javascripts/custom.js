@@ -2259,6 +2259,16 @@ function IncorrectLogin() {
     });
 }
 
+function correctLogin(){
+    new PNotify({
+        title:'Success',
+        text: 'Welcome',
+        type: 'success',
+        styling: 'bootstrap3'
+    });
+
+}
+
 function passwords_invalaid() {
     new PNotify({
         title: 'Invalid',

@@ -1,5 +1,3 @@
-let exports = module.exports = {};
-
 /**
  * Page: N/A
  * Functionality: Sanitize JSON strings

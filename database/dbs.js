@@ -1324,6 +1324,16 @@ exports.managerEmployeeCorrelation = function(callback) {
 	});
 };
 
+exports.readLatestConvergence = function(callback) {
+    let global_bests = fs.readFileSync('convergenceGraphGbest.txt').toString().split("\n");
+    let averages = fs.readFileSync('convergenceGraphAverage.txt').toString().split("\n");
+
+    let obj = {data: []} ;
+    for (let x = 0 ; x < global_bests.length ; x++) {
+        obj.data.push({"iteration": x, "global_best": global_bests[x], "average": averages[x]}) ;
+    }
+    return callback(obj.data) ;
+};
 /*********************************************************************************************************************************************************************************************************************************************
  **/
 

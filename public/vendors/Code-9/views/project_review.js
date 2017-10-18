@@ -44,7 +44,7 @@ $(document).ready(function() {
                     "</div>"+
                     "</div>"+
                     "<div class='col-md-offset-1 col-sm-offset-1 col-md-4 col-sm-4 col-xs-12'>"+
-                    "<h5>Skill: "+data.name+"</h5>"+
+                    "<h5>Skill: "+data+"</h5>"+
                     "<label for="+key+">Rating:</label>"+
                     "<input type='text' id="+value._id.id+" class='skill_rating' name="+value._id.id+">"+
                     "</div>"+
@@ -66,10 +66,11 @@ $(document).ready(function() {
     });
 
     $( "#submit_review" ).on("click",function( event ) {
-         ReviewSuccessful();
+
         // event.preventDefault();
         $.get("send_review", {data:$("form").serializeArray(),id:$.urlParam('id')},function (data, status) {
-            $( location ).attr("href", data);
+            ReviewSuccessful();
+            setTimeout(function(){  $( location ).attr("href", data);}, 2000);
         });
     });
 

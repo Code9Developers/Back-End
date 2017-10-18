@@ -39,9 +39,9 @@ $("#login_btn").on('click',function (e) {
 
                         correctLogin();
                         that.removeClass("loading").addClass( states[ curState ] );
-                        $( location ).attr("href", data);
-
+                        setTimeout(function(){  $( location ).attr("href", data); }, 1000);
                     }, 4000);
+
                 }
 
 

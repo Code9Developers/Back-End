@@ -9,7 +9,7 @@ const generator = require('generate-password');
  * Bug(s): N/A
  *
  * Author(s): author
- * Date Revised: DD/MM/2017 by Seonin David
+ * Date Revised: 01/10/2017 by Seonin David
  * Date Revised: 02/10/2017 by Joshua Moodley
  */
 router.get('/store_milestones', function (req, res, next) {
@@ -19,12 +19,6 @@ router.get('/store_milestones', function (req, res, next) {
 
     let  temp_end_date = end_date.split("/");
     let  new_end_date = new Date((temp_end_date[2] + "-" + temp_end_date[1] + "-" + temp_end_date[0]).toString());
-    let  rand_password = generator.generate({
-        length: 100,
-        numbers: true,
-        symbols: true,
-        uppercase: true
-    });
 
     let rand_id = Math.floor((Math.random() * 100) + 1).toString();
     let  milstone_id = milestone_name.substr(0, 4) + project_id + rand_id;
@@ -41,17 +35,17 @@ router.get('/store_milestones', function (req, res, next) {
 
 router.get('/get_milestones', function (req, res, next) {
     let  project_id = req.param('id');
-    let  all_milestones = dbs.findMilestones("project_id", project_id, function (all_milestones) {
+    dbs.findMilestones("project_id", project_id, function (all_milestones) {
         res.send(all_milestones);
     });
 });
 
 router.get('/progress_milestone_analytics', function (req, res, next) {
     let  project_id = req.param('id');
-    dbs.removeExpiredMilestones(project_id);
- dbs.findMilestones("project_id", project_id, function (all_milestones) {
-        res.send([all_milestones.length,0]);
-    });
+     dbs.removeExpiredMilestones(project_id);
+     dbs.findMilestones("project_id", project_id, function (all_milestones) {
+            res.send([all_milestones.length,0]);
+        });
 });
 
 module.exports = router;

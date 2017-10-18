@@ -84,28 +84,17 @@ router.get('/find_project_users', function (req, res, next) {
  * Functionality: Sends the request to change the project date to the new project date
  */
 router.get('/change_project_date', function (req, res, next) {
-    let  p_id = req.query.id;
-    // let director_id=req.query.director;
-    // let rand_id = Math.floor((Math.random() * 10) + 1).toString();
+    let  p_id = req.query.id;;
     let  oldDate = "";
     let p_name="";
     dbs.findProjects("_id", p_id, function (current_project) {
         oldDate = current_project[0].project_end_date;
         p_name=current_project[0].name;
 
-        let  tempDate = req.param("new_date");
+        let  tempDate = req.query.new_date;
         let  tempDateArray = tempDate.split("/");
         let  newDate = new Date((tempDateArray[2] + "-" + tempDateArray[1] + "-" + tempDateArray[0]).toString());
         dbs.editProjects("_id", p_id, "project_end_date", newDate);
-     //   let  today = new Date();
-    //
-    //     dbs.insertNotification({
-    //         _id: "noti_"+rand_id+p_id+director_id,
-    //         user_id: director_id,
-    //         message: "You have been requested to approve date change for project "+p_name+" from "+oldDate.toDateString()+" to "+newDate.toDateString(),
-    //         date_created: today,
-    //         isRead: false
-    //     });
     });
     res.send("Done");
 });
@@ -120,7 +109,7 @@ router.get('/edit_replacement_store', function (req, res, next) {
     let reason_for_removal = req.query.reason;
     let project_name = req.query.project_name;
     let project_id = req.query.project_id;
-    console.log("pid"+project_id);
+
 
     let _approval_json = {
         _id:ap_id,
@@ -132,14 +121,6 @@ router.get('/edit_replacement_store', function (req, res, next) {
     };
 
     dbs.insert_approval(_approval_json);
-    // dbs.findUsers("_id",director_id,function (director_details) {
-    //     let dirEmail = director_details[0].email;
-    //     let manName = req.session.name;
-    //     let manSur = req.session.surname;
-    //     let proj = project_name;
-    //     email_functions.EmployeeReplacement(dirEmail, manName, manSur, proj);
-    //
-    // });
 
     let today = new Date();
     dbs.insertNotification({

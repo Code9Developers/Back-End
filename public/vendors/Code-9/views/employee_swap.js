@@ -86,11 +86,15 @@ $.get("get_replacement_employees", {id: $.urlParam('id')},function (data, status
 $("#acceptChange").on("click",function (e) {
     ApproveApproval();
     $.get("approved_replacement", {id: $.urlParam('id')});
-   // $( location ).attr("href", "director_dashboard");
+    $(this).attr("disabled", "disabled");
+    setTimeout(function(){  $( location ).attr("href", "director_dashboard"); }, 2000);
 });
 
 $("#denyChange").on("click",function (e) {
+
     RejectApproval();
     $.get("rejected_replacement", {id: $.urlParam('id')});
-    //$( location ).attr("href", "director_dashboard");
+    $(this).attr("disabled", "disabled");
+    setTimeout(function(){  $( location ).attr("href", "director_dashboard"); }, 2000);
+
 });

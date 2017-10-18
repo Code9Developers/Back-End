@@ -107,13 +107,13 @@ router.get('/get_test_employees', function (req, res, next) {
     res.render('login');
 });
 
-router.get('/display_image', function (req, res, next) {
-    dbs.findUsers("_id", "emp1", function (doc) {
-        //console.log(doc[0]) ;
-        res.contentType(doc[0].image.contentType);
-        res.send(doc[0].image.data);
-    });
-});
+// /*router.get('/display_image', function (req, res, next) {
+//     dbs.findUsers("_id", "emp1", function (doc) {
+//         //console.log(doc[0]) ;
+//         res.contentType(doc[0].image.contentType);
+//         res.send(doc[0].image.data);
+//     });
+// });*/
 
 // router.get('/store_image', function (req, res, next) {
 //     console.log("user: " + req.session.username);

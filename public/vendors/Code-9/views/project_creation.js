@@ -276,12 +276,12 @@ $(document).ready(function() {
     let rep_count = 0;
     $('#EmpAllocationDT').on('click', '#replaceEmployee', function (e) {
 
-        $(this).attr("disabled", true);
+
         if(count == 0){
             replacementEmps();
             $('#btnSubmit').removeAttr("disabled");
         }else {
-
+            $(this).attr("disabled", true);
             init_EmployeeReplacementDT();
             $('#EmpReplacementTableHide').show();
             $('#removeEmployee').show();
@@ -323,14 +323,14 @@ $(document).ready(function() {
     });
 
     $('#removeEmployee').on('click', function (e) {
-        $(this).attr("disabled", true);
+
         if(count == 0 || rep_count == 0){
 
             replacementEmps();
-            $('#btnSubmit').removeAttr("disabled");
 
-        }else{
-
+        }
+        else{
+            $(this).attr("disabled", true);
             $.get("replacement_store", {
                 emp_removed:emp_selected_ids,
                 emp_replace:replacement_ids,
@@ -339,9 +339,8 @@ $(document).ready(function() {
                 project_name:$("#projectname").val()
             });
             SendApproval();
-
+            $('#btnSubmit').removeAttr("disabled");
         }
-
 
     });
 
@@ -356,13 +355,14 @@ $(document).ready(function() {
             emp_data[j] = globEmployees[j];
         }
         if (globEmployees == null) {
-
-            window.alert("Employees not assigned");
             $("#demo-form").submit(function (e) {
                 e.preventDefault();
             });
-        } else {
-            //var num_employees = ($('#range_31').val()).split(";");
+        }
+        else if($("#projectowner").val()=="" && $("#projectowneremail").val()==""  && $("#ownercontact").val()==""){
+            empty_boxes();
+        }
+        else {
             $.get("store_emp", {
                     emplArr: JSON.stringify(emp_data)
                 }, function (data, status) {

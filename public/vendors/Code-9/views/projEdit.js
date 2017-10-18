@@ -184,6 +184,7 @@ $(document).ready(function() {
                 let  newDate=(tempDateArray[2]+"/"+tempDateArray[1]+"/"+tempDateArray[0]).toString();
                 project_name=data.name;
                 project_id=data._id;
+                $("#CurrentDeadline").empty();
                 $("#CurrentDeadline").val(newDate);
 
                 $('#updateProject').on('click', function (e) {
@@ -196,7 +197,6 @@ $(document).ready(function() {
                         data: {
                             new_date: $("#ChangeDueDate").val(),
                             id:$.urlParam('id')
-                            // director:$("#director_select1").val()
                         }
                     });
                 });
@@ -286,6 +286,7 @@ $(document).ready(function() {
     });
 
     $('#removeEmployee').on('click', function (e) {
+
         $.get("edit_replacement_store", {
             emp_removed:emp_selected_ids,
             emp_replace:replacement_ids,
@@ -295,5 +296,7 @@ $(document).ready(function() {
             project_id:project_id
         });
         SendApproval();
+        $(this).attr("disabled", "disabled");
+        $( location ).attr("href", "projects");
     });
 });

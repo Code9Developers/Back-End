@@ -2244,7 +2244,7 @@ function SendApproval() {
 function InvalidPassword() {
     new PNotify({
         title: 'Invalid!',
-        text: 'Password cannnot be blank',
+        text: 'Password cannot be blank',
         type: 'danger',
         styling: 'bootstrap3'
     });
@@ -2266,7 +2266,6 @@ function correctLogin(){
         type: 'success',
         styling: 'bootstrap3'
     });
-
 }
 
 function passwords_invalaid() {
@@ -2278,9 +2277,18 @@ function passwords_invalaid() {
     });
 }
 
+function empty_boxes() {
+    new PNotify({
+        title: 'Invalid',
+        text: 'Input boxes cannot be blank',
+        type: 'warning',
+        styling: 'bootstrap3'
+    });
+}
+
 function passwords_changed() {
     new PNotify({
-        title: 'Sucess',
+        title: 'Success',
         text: 'Passwords successfully changed',
         type: 'success',
         styling: 'bootstrap3'
@@ -2312,6 +2320,24 @@ function RejectApproval() {
         type: 'error',
         styling: 'bootstrap3'
     });
+}
+
+function EmployeesNotAssigned() {
+    new PNotify({
+        title: 'Invalid',
+        text: 'Skills or date not allocated',
+        type: 'error',
+        styling: 'bootstrap3'
+    });
+}
+
+function replacementEmps() {
+        new PNotify({
+            title: 'Invalid',
+            text: 'Employees not selected',
+            type: 'error',
+            styling: 'bootstrap3'
+        });
 }
 function init_PNotify() {
 

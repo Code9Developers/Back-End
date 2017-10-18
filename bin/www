@@ -38,10 +38,10 @@ let fs = require("fs");
 /**
  * Local Build
  */
- // let options = {
- //     key: fs.readFileSync("./bin/key.pem"),
- //     cert: fs.readFileSync("./bin/cert.pem")
- // };
+//  let options = {
+//      key: fs.readFileSync("./bin/key.pem"),
+//     cert: fs.readFileSync("./bin/cert.pem")
+//  };
 
 /**
  * Docker Build

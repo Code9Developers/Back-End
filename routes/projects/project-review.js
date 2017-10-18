@@ -54,24 +54,23 @@ let user_rating_array=[];
 let user_counter_array=[];
 router.get("/get_chosen_skills",(req, res, next)=> {
     dbs.findProjects("_id",req.query.id,(project_data)=> {
-        let users=project_data[0].employees_assigned;
-        for(let i=0;i<users.length;i++){
-            if(users[i]._id===req.query.user_id){
-                dbs.get_specific_user_skill(req.query.user_id,function (data) {
-                    let el=data[0]._id.skill;
-                    for(let x=0;x<el.length;x++){
-                        if(el[x]._id==JSON.parse(users[i].skill)._id){
-                            user_skill_array[count]=el[x].name;
-                            user_rating_array[count]=parseInt(el[x].rating);
-                            user_counter_array[count]=parseInt(el[x].counter);
-                            count++;
-                            res.send(el[x]);
-                        }
-                    }
-
-                })
-            }
+        let skills=[];
+        for(let x =0;x<project_data[0].employees_assigned.length;x++ ){
+            skills[x]=JSON.parse(project_data[0].employees_assigned[x].skill).name;
         }
+        dbs.findUsers("_id",req.query.user_id,function (user) {
+            let _obj=[];
+            let choosen_skill;
+            for(let i=0;i<project_data[0].employees_assigned.length;i++){
+                if(project_data[0].employees_assigned[i]._id===req.query.user_id){
+                    choosen_skill=skills[i];
+                }
+            }
+            _obj[0]=user;
+            _obj[1]=choosen_skill;
+            res.send(choosen_skill);
+        });
+
     });
 });
 

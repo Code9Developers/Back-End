@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>J3NS | Convergence </title>
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon.ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon.ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon.ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon.ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon.ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon.ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon.ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon.ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicon.ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon.ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.ico/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon.ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicon.ico/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="vendors/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <!-- NProgress: Top load animation-->
+    <link href="vendors/nprogress/nprogress.css" type="text/css" rel="stylesheet">
+    <!--bootstrap-progressbar -->
+    <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" type="text/css" rel="stylesheet">
+    <!-- PNotify -->
+    <link href="vendors/pnotify/dist/pnotify.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.buttons.css" type="text/css" rel="stylesheet">
+    <link href="vendors/pnotify/dist/pnotify.nonblock.css" type="text/css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="stylesheets/custom.css" type="text/css" rel="stylesheet"/>
+    <link href="stylesheets/custom.min.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- Sidebar -->
+        <%- include('sidebar'); %>
+
+        <!-- top navigation -->
+        <%- include('top_nav'); %>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <!-- top tiles -->
+            
+            <!-- /top tiles -->
+            <div id="convergence_graph">
+                
+            </div>
+            <br/>
+        </div>
+        <!-- /page content -->
+        <script>
+            $(document).ready(function() {
+			
+				defaultBackgroundColor = [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)'
+				] ;
+
+				defaultBorderColor = [
+					'rgba(255,99,132,1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				] ;
+				
+                $.get("/converge", function (data, status) {
+					if (data != null) {
+						document.getElementById("convergence_graph").innerHTML = "";
+						let space = "" ;
+						space += "<div class=\"row\">";
+						
+						space += "<div class=\"col-md-10 col-sm-10 col-xs-12\">";
+						space += "<div class=\"x_panel\">";
+						space += "<div class=\"x_title\">";
+						space += "<h2>Convergence Report for Last Project Employee Allocation</h2>" ;
+						space += "<ul class=\"nav navbar-right panel_toolbox\">";
+						space += "</ul>";
+						space += "<div class=\"clearfix\"></div>";
+						space += "</div>";
+						space += "<div class=\"x_content\">";
+						space += "<canvas id=\"convergence1\" class=\"chartjs\"></canvas>";
+						space += "<div id=\"legend\"><div style=\"color: #FF6384; font-size: 16px\"><br>Global Best</div> <br> <div style=\"color: #36A2EB; font-size: 16px\">Particle Average</div> </div>" ;
+						space += "</div>";
+						space += "</div>";
+						space += "</div>";
+						space += "</div>";
+							
+						document.getElementById("convergence_graph").innerHTML = space;
+
+						let iterations = [] ;
+						let global_bests = [];
+						let averages = [];
+						let myBackground = [];
+						let myBorder = [];
+					 
+						for (let x = 0; x < data.length; x++) {
+							iterations[x] = parseInt(data[x].iteration) ;
+							global_bests[x] = parseInt(data[x].global_best) ;
+							averages[x] = parseInt(data[x].average) ;
+						}
+						let configAnalyGraph = {
+							type: 'line',
+							data: {
+								labels: iterations,
+								datasets: [{
+									label: 'Global Bests', 
+									data: global_bests,
+									fill: false,
+									pointStyle: 'dash',
+									borderColor: defaultBorderColor[0],
+									backgroundColor: defaultBackgroundColor[0]
+								}, {
+									label: 'Particle Average',
+									data: averages,
+									fill: false,
+									pointStyle: 'dash',
+									borderColor: defaultBorderColor[1],
+									backgroundColor: defaultBackgroundColor[1]
+								}]
+							},
+							options: {
+								title: {
+									display: false,
+									text: 'Convergence of Particle Swarm Optimisation'
+								},
+								scales: {
+									xAxes: [{
+										display: false
+									}],
+									yAxes: [{
+										ticks: {
+											beginAtZero: true
+										}
+									}]
+								}
+							}
+						};
+
+						var aOne = document.getElementById("convergence1").getContext('2d') ;
+						var chart = new Chart(aOne, configAnalyGraph) ;
+						
+					}
+				});
+            });
+        </script>
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script type="text/javascript" src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- FastClick: Increase load time-->
+<script type="text/javascript" src="vendors/fastclick/lib/fastclick.js"></script>
+<!-- NProgress: Top load animation-->
+<script type="text/javascript" src="vendors/nprogress/nprogress.js"></script>
+<!-- bootstrap-progressbar -->
+<script type="text/javascript" src="vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+<!-- PNotify -->
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.buttons.js"></script>
+<script type="text/javascript" src="vendors/pnotify/dist/pnotify.nonblock.js"></script>
+<!-- Chart.js -->
+<script type="text/javascript" src="vendors/Chart.js/dist/Chart.bundle.js"></script>
+<script type="text/javascript" src="vendors/Chart.js/dist/Chart.js"></script>
+
+<!-- Code 9 -->
+<script type="text/javascript" src="vendors/Code-9/js/bottombar.js"></script>
+
+<!-- Custom Theme Scripts -->
+<script type="text/javascript" src="javascripts/custom.js"></script>
+</body>
+</html>

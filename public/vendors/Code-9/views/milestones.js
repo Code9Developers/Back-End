@@ -19,7 +19,7 @@ function make_graph() {
         let myChart = new Chart(pc, {
             type: 'bar',
             data: {
-                labels: ["Completed", "Uncompleted"],
+                labels: ["Uncompleted", "Completed"],
                 datasets: [{
                     label: '# of Milestones',
                     data: data,

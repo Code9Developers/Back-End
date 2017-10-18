@@ -1235,14 +1235,15 @@ exports.managerEmployeeCorrelation = function(callback) {
 				  manager2					   [emp1, emp3, emp4, emp5]					    [20, 10, 10, 10]
 	*/
 	
-	module.exports.findProjects("reviewed", "Yes", function(res) {
+	module.exports.findProjects("status", "completed", function(res) {
 			
 		function getManagerNames(array, callback) {
 			let user = schemas.user ;
 			let updated = 0 ;
 			for (let x = 0 ; x < array.length ; x++) {
 				user.findOne({_id: array[x]}).exec().then(function(res) {
-					array[x] = res.name + " " + res.surname ;
+					if (res == null) array[x] = "manager id: " + array[x] ;
+					else array[x] = res.name + " " + res.surname ;
 					if (++updated == array.length) {
 						console.log(array) ;
 						return callback(array) ;
@@ -1322,6 +1323,17 @@ exports.managerEmployeeCorrelation = function(callback) {
 		});
 			
 	});
+};
+
+exports.readLatestConvergence = function(callback) {
+	let global_bests = fs.readFileSync('convergenceGraphGbest.txt').toString().split("\n");
+	let averages = fs.readFileSync('convergenceGraphAverage.txt').toString().split("\n");
+	
+	let obj = {data: []} ;
+	for (let x = 0 ; x < global_bests.length ; x++) {
+		obj.data.push({"iteration": x, "global_best": global_bests[x], "average": averages[x]}) ;
+	}
+	return callback(obj.data) ;
 };
 
 /*********************************************************************************************************************************************************************************************************************************************

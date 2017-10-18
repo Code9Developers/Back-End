@@ -70,12 +70,12 @@ method.getPbestValue = function() {
     return value;
 };
 
-method.updateParticlePosition = function(employees_lists, gbest_list, iteration) {
+method.updateParticlePosition = function(employees_lists, gbest_list, max_iterations, iteration) {
     var new_position = [];
     for(var loop = 0; loop < this.employee_list.length; loop++)
     {
         mean = (this.pBest[loop].pos+gbest_list[loop].pos)/2;
-        std_dev = (Math.abs(this.pBest[loop].pos-gbest_list[loop].pos))/iteration+1;
+        std_dev = (Math.abs(this.pBest[loop].pos-gbest_list[loop].pos))*(50-iteration)/50;
         if(std_dev !=0)
             new_position.push(this.getGaussianRandom(mean, std_dev));
         else

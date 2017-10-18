@@ -19,6 +19,7 @@ function Algorithm(start_date, employee_lists, positions, position_counts, swarm
     this.particle_gbest_list = [];
     this.particle_average_list = [];
     this.list_counter = 0;
+    this.max_iterations = 50;
 }
 
 /*Create and initialize all particles*/
@@ -58,11 +59,11 @@ method.runAlgorithm = function()
     this.calcGbest();
     this.displayGbest();
 
-    for(var loop = 0; loop < 100; loop++)
+    for(var loop = 0; loop < max_iterations; loop++)
     {
         for(var loop2 = 0; loop2 < this.particles.length; loop2++)
         {
-            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, loop);
+            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, max_iterations, loop);
             if (this.particles[loop2].getValue() > this.particles[loop2].getPbestValue())
                 this.particles[loop2].setPbest(this.particles[loop2].getEmployees());
             if (this.particles[loop2].getValue() > this.gbest_value)
@@ -94,8 +95,8 @@ method.calcGbest = function()
 method.displayGbest = function()
 {
     console.log("gBest value : "+this.gbest_value);
-    console.log("gbest employees");
-    console.log(this.gbest_list);
+    //console.log("gbest employees");
+    //console.log(this.gbest_list);
     console.log();
 };
 
@@ -129,6 +130,7 @@ method.storeInformation = function()
     //console.log(this.particle_average_list);
     //console.log(this.particle_gbest_list);
     //var file = fs.createWriteStream('convergenceGraphGbest.txt');
+    console.log(this.particle_gbest_list);
     fs.writeFile("convergenceGraphGbest.txt",'');
 
     //var file = fs.createWriteStream("convergenceGraphGbest.txt");

@@ -22,7 +22,7 @@ function getCalendarEvents() {
                 item["title"] = value.name;
                 item["start"] = value.project_start_date.substr(0,10);
                 item["end"] = value.project_end_date.substr(0,10);
-                item["url"] = "https://localhost:4000/user_project_detail?id="+value._id;
+                item["url"] = "/user_project_detail?id="+value._id;
 
                 eve.push(item);
 

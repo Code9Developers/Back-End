@@ -140,7 +140,7 @@ exports.get_unallocated_users = function (positions, position_counts, skills, st
                 //now get all projects which have these id's
                 //now add these projects past dates to the correct employees
 
-                var pso = new Algorithm(start_date, emp_check_list, positions, position_counts, 30);
+                var pso = new Algorithm(start_date, emp_check_list, positions, position_counts, 10);
                 var allocated_list = pso.runAlgorithm();
 
                 /*create a return list */
@@ -186,7 +186,6 @@ exports.get_unallocated_users = function (positions, position_counts, skills, st
                 return_list[2] = budget * diffDays;
                 return_list[3] = no_skills_list;
                 console.log("the budget for the project is : R" + return_list[2]);
-                //console.log(return_list[1]);
                 return callback(return_list);
             });
         }

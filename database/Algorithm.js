@@ -2,6 +2,7 @@
  * Created by Jordan on 22-09-2017.
  */
 var Particle = require('.././database/Particle.js');
+var fs = require('fs');
 var method = Algorithm.prototype;
 
 /*Store all lists of employees*/
@@ -15,6 +16,10 @@ function Algorithm(start_date, employee_lists, positions, position_counts, swarm
     this.particles = [swarm_size];
     this.gbest_list = [];
     this.gbest_value = -1;
+    this.particle_gbest_list = [];
+    this.particle_average_list = [];
+    this.list_counter = 0;
+    this.max_iterations = 25;
 }
 
 /*Create and initialize all particles*/
@@ -54,11 +59,11 @@ method.runAlgorithm = function()
     this.calcGbest();
     this.displayGbest();
 
-    for(var loop = 0; loop < 100; loop++)
+    for(var loop = 0; loop < this.max_iterations; loop++)
     {
         for(var loop2 = 0; loop2 < this.particles.length; loop2++)
         {
-            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list);
+            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, this.max_iterations, loop);
             if (this.particles[loop2].getValue() > this.particles[loop2].getPbestValue())
                 this.particles[loop2].setPbest(this.particles[loop2].getEmployees());
             if (this.particles[loop2].getValue() > this.gbest_value)
@@ -68,9 +73,11 @@ method.runAlgorithm = function()
                 console.log("New global best particle found");
                 this.displayGbest();
             }
+            this.calculateInformation();
         }
     }
     this.displayGbest();
+    this.storeInformation();
     return(this.gbest_list);
 };
 
@@ -88,8 +95,8 @@ method.calcGbest = function()
 method.displayGbest = function()
 {
     console.log("gBest value : "+this.gbest_value);
-    console.log("gbest employees");
-    console.log(this.gbest_list);
+    //console.log("gbest employees");
+    //console.log(this.gbest_list);
     console.log();
 };
 
@@ -104,6 +111,42 @@ method.sameID = function(id_list, new_id)
     }
     return return_value;
 };
+
+method.calculateInformation = function()
+{
+    //get a list of the gbest value and the particle's average values
+    this.particle_gbest_list.push(this.gbest_value);
+    var particle_average = 0;
+    for(var loop = 0; loop < this.swarm_size; loop++)
+    {
+        particle_average+= this.particles[loop].getValue();
+    }
+    this.particle_average_list.push(particle_average/this.swarm_size);
+    this.list_counter += 1;
+};
+
+method.storeInformation = function()
+{
+    //console.log(this.particle_average_list);
+    //console.log(this.particle_gbest_list);
+    //var file = fs.createWriteStream('convergenceGraphGbest.txt');
+    console.log(this.particle_gbest_list);
+    fs.writeFile("convergenceGraphGbest.txt",'');
+
+    //var file = fs.createWriteStream("convergenceGraphGbest.txt");
+    for(var loop = 0; loop < this.list_counter; loop++)
+    {
+        fs.appendFile("convergenceGraphGbest.txt", this.particle_gbest_list[loop]+"\n");
+    }
+    fs.writeFile("convergenceGraphAverage.txt",'');
+    for(var loop = 0; loop < this.list_counter; loop++)
+    {
+        fs.appendFile("convergenceGraphAverage.txt", this.particle_average_list[loop]+"\n");
+    }
+    console.log("information stored");
+};
+
+//we need another function to get all the std_dev and mean value (averages)
 
 module.exports = Algorithm;
 

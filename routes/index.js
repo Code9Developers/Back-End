@@ -5,7 +5,6 @@ const schemas = require('.././database/schemas.js');
 const dbs = require('.././database/dbs.js');
 const test_data = require('.././database/test_data.js');
 const algorithm = require('../database/employee-evaluations.js');
-const generator = require('generate-password');
 const nodemailer = require('nodemailer');
 
 

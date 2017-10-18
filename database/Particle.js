@@ -69,7 +69,7 @@ method.getPbestValue = function() {
     return return_value;
 };
 
-method.updateParticlePosition = function(employees_lists, gbest_list, max_iterations, iteration) {
+method.updateParticlePosition = function(employees_lists, gbest_list) {
     var new_position = [];
     for(var loop = 0; loop < this.employee_list.length; loop++)
     {

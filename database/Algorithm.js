@@ -19,7 +19,7 @@ function Algorithm(start_date, employee_lists, positions, position_counts, swarm
     this.particle_gbest_list = [];
     this.particle_average_list = [];
     this.list_counter = 0;
-    this.max_iterations = 25;
+    this.max_iterations = 30;
 }
 
 /*Create and initialize all particles*/
@@ -63,11 +63,12 @@ method.runAlgorithm = function()
     {
         for(var loop2 = 0; loop2 < this.particles.length; loop2++)
         {
-            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, this.max_iterations, loop);
+            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list);
             if (this.particles[loop2].getValue() > this.particles[loop2].getPbestValue())
                 this.particles[loop2].setPbest(this.particles[loop2].getEmployees());
             if (this.particles[loop2].getValue() > this.gbest_value)
             {
+                console.log()
                 this.gbest_list = this.particles[loop2].getPbestList();
                 this.gbest_value = this.particles[loop2].getValue();
                 console.log("New global best particle found");
@@ -95,8 +96,8 @@ method.calcGbest = function()
 method.displayGbest = function()
 {
     console.log("gBest value : "+this.gbest_value);
-    //console.log("gbest employees");
-    //console.log(this.gbest_list);
+    console.log("gbest employees");
+    console.log(this.gbest_list);
     console.log();
 };
 
@@ -127,26 +128,26 @@ method.calculateInformation = function()
 
 method.storeInformation = function()
 {
-    //console.log(this.particle_average_list);
-    //console.log(this.particle_gbest_list);
-    //var file = fs.createWriteStream('convergenceGraphGbest.txt');
     console.log(this.particle_gbest_list);
-    fs.writeFile("convergenceGraphGbest.txt",'');
-
-    //var file = fs.createWriteStream("convergenceGraphGbest.txt");
-    for(var loop = 0; loop < this.list_counter; loop++)
-    {
-        fs.appendFile("convergenceGraphGbest.txt", this.particle_gbest_list[loop]+"\n");
-    }
-    fs.writeFile("convergenceGraphAverage.txt",'');
-    for(var loop = 0; loop < this.list_counter; loop++)
-    {
-        fs.appendFile("convergenceGraphAverage.txt", this.particle_average_list[loop]+"\n");
-    }
+    var str = JSON.stringify(this.particle_gbest_list, null, 4);
+    fs.writeFile("convergenceGraphGbest.txt", str, function(err){
+        if(err) {
+            console.log(err)
+        } else {
+            console.log('File written!');
+        }
+    });
+    var str2 = JSON.stringify(this.particle_average_list, null, 4);
+    fs.writeFile("convergenceGraphAverage.txt", str2, function(err){
+        if(err) {
+            console.log(err)
+        } else {
+            console.log('File written!');
+        }
+    });
     console.log("information stored");
-};
 
-//we need another function to get all the std_dev and mean value (averages)
+};
 
 module.exports = Algorithm;
 

@@ -104,7 +104,7 @@
 						space += "</div>";
 						space += "<div class=\"x_content\">";
 						space += "<canvas id=\"convergence1\" class=\"chartjs\"></canvas>";
-						space += "<div id=\"legendDiv\"></div>" ;
+						space += "<div id=\"legend\"><div style=\"color: #FF6384; font-size: 16px\"><br>Global Best</div> <br> <div style=\"color: #36A2EB; font-size: 16px\">Particle Average</div> </div>" ;
 						space += "</div>";
 						space += "</div>";
 						space += "</div>";
@@ -130,14 +130,14 @@
 								datasets: [{
 									label: 'Global Bests', 
 									data: global_bests,
-									fill: true,
+									fill: false,
 									pointStyle: 'dash',
 									borderColor: defaultBorderColor[0],
 									backgroundColor: defaultBackgroundColor[0]
 								}, {
 									label: 'Particle Average',
 									data: averages,
-									fill: true,
+									fill: false,
 									pointStyle: 'dash',
 									borderColor: defaultBorderColor[1],
 									backgroundColor: defaultBackgroundColor[1]
@@ -153,18 +153,17 @@
 										display: false
 									}],
 									yAxes: [{
-									
+										ticks: {
+											beginAtZero: true
+										}
 									}]
 								}
 							}
 						};
 
-						let aOne = document.getElementById("convergence1").getContext('2d');
-						let chart = new Chart(aOne, configAnalyGraph);
+						let aOne = document.getElementById("convergence1").getContext('2d') ;
+						let chart = new Chart(aOne, configAnalyGraph) ;
 						
-						let legend = chart.generateLegend() ;
-						
-						document.getElementById("legendDiv").innerHTML = legend ;
 					}
 				});
             });

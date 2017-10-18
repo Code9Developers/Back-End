@@ -58,7 +58,7 @@ method.runAlgorithm = function()
     this.calcGbest();
     this.displayGbest();
 
-    for(var loop = 0; loop < 100; loop++)
+    for(var loop = 0; loop < 50; loop++)
     {
         for(var loop2 = 0; loop2 < this.particles.length; loop2++)
         {

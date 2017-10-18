@@ -19,7 +19,7 @@ function Algorithm(start_date, employee_lists, positions, position_counts, swarm
     this.particle_gbest_list = [];
     this.particle_average_list = [];
     this.list_counter = 0;
-    this.max_iterations = 50;
+    this.max_iterations = 25;
 }
 
 /*Create and initialize all particles*/
@@ -59,11 +59,11 @@ method.runAlgorithm = function()
     this.calcGbest();
     this.displayGbest();
 
-    for(var loop = 0; loop < max_iterations; loop++)
+    for(var loop = 0; loop < this.max_iterations; loop++)
     {
         for(var loop2 = 0; loop2 < this.particles.length; loop2++)
         {
-            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, max_iterations, loop);
+            this.particles[loop2].updateParticlePosition(this.employee_lists, this.gbest_list, this.max_iterations, loop);
             if (this.particles[loop2].getValue() > this.particles[loop2].getPbestValue())
                 this.particles[loop2].setPbest(this.particles[loop2].getEmployees());
             if (this.particles[loop2].getValue() > this.gbest_value)
@@ -73,8 +73,8 @@ method.runAlgorithm = function()
                 console.log("New global best particle found");
                 this.displayGbest();
             }
+            this.calculateInformation();
         }
-        this.calculateInformation();
     }
     this.displayGbest();
     this.storeInformation();

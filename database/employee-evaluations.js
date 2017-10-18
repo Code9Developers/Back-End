@@ -140,7 +140,7 @@ exports.get_unallocated_users = function (positions, position_counts, skills, st
                 //now get all projects which have these id's
                 //now add these projects past dates to the correct employees
 
-                var pso = new Algorithm(start_date, emp_check_list, positions, position_counts, 5);
+                var pso = new Algorithm(start_date, emp_check_list, positions, position_counts, 10);
                 var allocated_list = pso.runAlgorithm();
 
                 /*create a return list */
